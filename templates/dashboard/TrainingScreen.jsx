@@ -40,7 +40,7 @@ function TrainingScreen() {
         </div>
         <Panel caption="등록된 프로젝트" padding="sm">
           <DataTable aria-label="학습 프로젝트와 revision 목록" rows={TR.projects} rowKey={(p) => p.id} rowLabel={(p) => p.name}
-            empty={<EmptyState plain title="등록된 학습 프로젝트가 없습니다" description="프로젝트 등록으로 첫 ZIP bundle을 추가하세요." />}
+            empty={<EmptyState plain title="등록된 학습 프로젝트가 없습니다" description="프로젝트 등록으로 첫 ZIP bundle이 추가됩니다." />}
             columns={[
               { key: "name", header: "프로젝트", render: (p) => <span className="kit-cell2"><b style={{ fontWeight: 500 }}>{p.name}</b><span className="kit-dim bds-mono">{p.id} · {p.owner}</span></span> },
               { key: "rev", header: "revision", hideBelow: "tablet", render: (p) => <span className="bds-mono">{p.rev.version} · {p.rev.id}</span> },
@@ -57,7 +57,7 @@ function TrainingScreen() {
           </Panel>
           <Panel caption="Revision diff">
             {diff ? <DiffView from={diff.prev.id} to={diff.rev.id} changes={diff.changed.map(([field, v]) => { const [from, to] = String(v).includes(" → ") ? String(v).split(" → ") : String(v).startsWith("+ ") ? [null, String(v).slice(2)] : [null, String(v)]; return { field, from, to }; })} />
-              : <EmptyState plain title="비교 결과가 없습니다" description="프로젝트 목록에서 revision 비교를 선택하세요." />}
+              : <EmptyState plain title="비교 결과가 없습니다" description="프로젝트 목록에서 revision 비교를 선택하면 표시됩니다." />}
           </Panel>
         </Grid>
         <Panel caption="학습 실행" padding="sm">

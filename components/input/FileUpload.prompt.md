@@ -1,4 +1,4 @@
-FileUpload — 프로젝트 ZIP·Dataset ZIP 청크 업로드. 이미지 한 장은 Dropzone.
+FileUpload · 프로젝트 ZIP·Dataset ZIP 청크 업로드. 이미지 한 장은 Dropzone.
 
 ```jsx
 <FileUpload accept=".zip" onFiles={start} onPause={pause} onResume={resume} onRetry={retry} onCancel={cancel} hint="ZIP · 최대 2 GiB · 페이지를 닫아도 서버 상태는 보존"

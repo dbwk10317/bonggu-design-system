@@ -68,11 +68,11 @@ function SettingsScreen() {
         </Panel>
         <div className="kit-endactions">{actions}</div>
       </PageStack>
-      <FormModal open={tokenOpen} onClose={() => setTokenOpen(false)} onSubmit={() => setIssued("bgt_9f2c1e7a4b8d3f60a1c5e2b7d4f8a9c0e3b6d1f2a5c8e7b4d0f3a6c9e2b5d8f1")} title="자동화 토큰 발급" submitLabel={issued ? null : "토큰 발급"} description={issued ? undefined : "필요한 권한만 하나 이상 선택하세요."}>
+      <FormModal open={tokenOpen} onClose={() => setTokenOpen(false)} onSubmit={() => setIssued("bgt_9f2c1e7a4b8d3f60a1c5e2b7d4f8a9c0e3b6d1f2a5c8e7b4d0f3a6c9e2b5d8f1")} title="자동화 토큰 발급" submitLabel={issued ? null : "토큰 발급"} description={issued ? undefined : "필요한 권한을 하나 이상 선택해야 발급됩니다."}>
         {issued ? (
           <Panel caption="발급된 토큰" sunken>
-            <p><b style={{ fontWeight: 500 }}>지금 복사하세요. 다시 표시되지 않습니다.</b></p>
-            <CopyField secret value={issued} onCopy={(ok) => toast({ message: ok ? "토큰을 클립보드에 복사했습니다." : "자동 복사가 차단되었습니다. 토큰을 직접 선택해 복사하세요.", tone: ok ? "ok" : "warn" })} />
+            <p><b style={{ fontWeight: 500 }}>지금 복사해 두어야 합니다. 다시 표시되지 않습니다.</b></p>
+            <CopyField secret value={issued} onCopy={(ok) => toast({ message: ok ? "토큰을 클립보드에 복사했습니다." : "자동 복사가 차단되었습니다. 토큰을 직접 선택해 복사해야 합니다.", tone: ok ? "ok" : "warn" })} />
           </Panel>
         ) : (
           <>

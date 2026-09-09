@@ -5,11 +5,12 @@
   color-scheme:light;
   /* 바탕·면·선 */
   --canvas:#ffffff;--canvas-sunken:#f4f5f7;--panel:#ffffff;--panel-2:#f0f2f5;--panel-3:#e8ebef;
-  --line:#e4e7ec;--line-strong:#c8cdd6;--hairline:#eef0f3;
+  --line:#e4e7ec;--line-strong:#c8cdd6;--hairline:#eef0f3;--line-input:#7d8596; /* 입력 경계선: 흰 바탕·sunken 위 3:1 이상 */
   --scrim:rgba(20,23,28,.42);
-  --stage:#0a0b10; /* LCD·LED 프리뷰: 테마 무관 검정 */
+  --stage:#0a0b10;--stage-ink:#ecf0f5;--stage-muted:#7a8394;--stage-ok:#4ce6a0; /* LCD·LED·기기 프리뷰: 테마 무관(다크에서 재정의하지 않는다) */
   /* 잉크 */
-  --ink:#15181d;--ink-2:#4a5160;--ink-3:#737b8c;--ink-muted:#a6adba;--ink-inverse:#ffffff;
+  --ink:#15181d;--ink-2:#4a5160;--ink-3:#656d7d;--ink-muted:#a6adba;--ink-inverse:#ffffff; /* ink-3: 흰 바탕 5.2:1, panel-2 위 4.64:1 (보조 텍스트 AA) */
+  --on-warn:#15181d; /* warn 채움 위 글자. 다크 warn도 밝은 앰버라 같은 값 */
   /* 시그널 */
   --signal:oklch(0.55 0.17 255);--signal-hover:oklch(0.50 0.17 255);--signal-active:oklch(0.45 0.17 255);
   --signal-tint:oklch(0.95 0.03 255);--signal-tint-line:oklch(0.85 0.07 255);--signal-fg:#ffffff;
@@ -19,7 +20,7 @@
   --warn:oklch(0.72 0.16 72);--warn-tint:oklch(0.96 0.05 80);--warn-ink:oklch(0.50 0.13 65);
   --crit:oklch(0.58 0.20 25);--crit-tint:oklch(0.95 0.04 25);--crit-ink:oklch(0.45 0.18 25);
   --info:oklch(0.60 0.12 225);--info-tint:oklch(0.95 0.03 225);--info-ink:oklch(0.45 0.11 225);
-  --neutral:#737b8c;--neutral-tint:#f0f2f5;--neutral-ink:#4a5160;
+  --neutral:#656d7d;--neutral-tint:#f0f2f5;--neutral-ink:#4a5160;
   /* 미터 */
   --meter-track:#e8ebef;--meter-ok:oklch(0.58 0.15 152);--meter-warn:oklch(0.72 0.16 72);--meter-crit:oklch(0.58 0.20 25);
   /* 차트: 범주형 8색(명도 0.62 채도 0.14 고정) · 의미 고정 쌍 · 순차 램프 */
@@ -27,16 +28,16 @@
   --series-5:oklch(0.62 0.14 95);--series-6:oklch(0.62 0.14 205);--series-7:oklch(0.62 0.14 345);--series-8:oklch(0.62 0.14 125);
   --series-rx:oklch(0.60 0.12 225);--series-tx:oklch(0.55 0.17 255);--series-used:oklch(0.55 0.17 255);--series-reserved:oklch(0.62 0.14 300);--series-free:#e8ebef;
   --ramp-1:oklch(0.96 0.02 255);--ramp-2:oklch(0.88 0.06 255);--ramp-3:oklch(0.78 0.10 255);--ramp-4:oklch(0.66 0.14 255);--ramp-5:oklch(0.52 0.17 255);--ramp-6:oklch(0.38 0.14 255);
-  --plot-grid:#eef0f3;--plot-axis:#c8cdd6;--plot-axis-ink:#737b8c;
+  --plot-grid:#eef0f3;--plot-axis:#c8cdd6;--plot-axis-ink:#656d7d;
   /* 그림자: 떠 있는 것에만 */
   --elev-1:0 1px 2px rgba(20,23,28,.06);--elev-2:0 4px 12px rgba(20,23,28,.08),0 1px 2px rgba(20,23,28,.05);--elev-3:0 16px 40px rgba(20,23,28,.14),0 2px 6px rgba(20,23,28,.06);
   /* 마스코트 마크(기존 시스템 이관): 얼굴은 양 테마 모두 밝게. 귀는 실제 강아지 봉구의 앰버(기존 @bonggu/ui --accent 값 그대로) — 시그널 파랑과 무관, UI 어디에도 재사용하지 않는다 */
   --mark-face:#ffffff;--mark-line:#15181d;--mark-edge:#c8cdd6;--mark-ear:#99581F;
   --scrollbar-thumb:#c8cdd6;--scrollbar-thumb-hover:#a6adba;
 
-  /* ---- 컴포넌트 별칭(styles/c-*.css가 읽는 짧은 이름) ---- */
+  /* ---- 컴포넌트 별칭 (deprecated: 소비 코드 호환용. 시스템 CSS는 가이드 이름만 쓴다. 다음 메이저에서 제거) ---- */
   --bg:var(--canvas);--bg-sunken:var(--canvas-sunken);--surface:var(--panel);--surface-2:var(--panel-2);--surface-3:var(--panel-3);
-  --border:var(--line);--border-strong:var(--line-strong);
+  --border:var(--line);--border-strong:var(--line-strong);--border-input:var(--line-input);
   --text:var(--ink);--text-2:var(--ink-2);--text-3:var(--ink-3);--text-disabled:var(--ink-muted);
   --accent:var(--signal);--accent-hover:var(--signal-hover);--accent-press:var(--signal-active);--accent-subtle:var(--signal-tint);--accent-ring:var(--focus-ring);--on-accent:var(--signal-fg);
   --off:var(--neutral);
@@ -49,21 +50,21 @@
 :root.dark,:root[data-theme="dark"]{
   color-scheme:dark;
   --canvas:#0f1115;--canvas-sunken:#0a0b0f;--panel:#161920;--panel-2:#1d2129;--panel-3:#262b35;
-  --line:#262b35;--line-strong:#3a414e;--hairline:#1d2129;--scrim:rgba(0,0,0,.6);
-  --ink:#eef0f4;--ink-2:#aeb5c2;--ink-3:#7d8596;--ink-muted:#555d6c;--ink-inverse:#15181d;
+  --line:#2e3440;--line-strong:#3a414e;--hairline:#262b35;--line-input:#555d6c;--scrim:rgba(0,0,0,.6);
+  --ink:#eef0f4;--ink-2:#aeb5c2;--ink-3:#848c9d;--ink-muted:#555d6c;--ink-inverse:#15181d;--on-warn:#15181d;
   --signal:oklch(0.72 0.14 255);--signal-hover:oklch(0.77 0.13 255);--signal-active:oklch(0.66 0.15 255);
   --signal-tint:oklch(0.30 0.06 255);--signal-tint-line:oklch(0.42 0.09 255);--signal-fg:#0f1115;--focus-ring:oklch(0.72 0.14 255 / .45);
   --ok:oklch(0.72 0.14 152);--ok-tint:oklch(0.28 0.05 152);--ok-ink:oklch(0.80 0.13 152);
   --warn:oklch(0.80 0.15 78);--warn-tint:oklch(0.30 0.06 78);--warn-ink:oklch(0.85 0.14 80);
   --crit:oklch(0.70 0.18 25);--crit-tint:oklch(0.30 0.07 25);--crit-ink:oklch(0.80 0.15 25);
   --info:oklch(0.74 0.11 225);--info-tint:oklch(0.28 0.05 225);--info-ink:oklch(0.82 0.10 225);
-  --neutral:#7d8596;--neutral-tint:#1d2129;--neutral-ink:#aeb5c2;
+  --neutral:#848c9d;--neutral-tint:#1d2129;--neutral-ink:#aeb5c2;
   --meter-track:#262b35;--meter-ok:oklch(0.72 0.14 152);--meter-warn:oklch(0.80 0.15 78);--meter-crit:oklch(0.70 0.18 25);
   --series-1:oklch(0.72 0.13 255);--series-2:oklch(0.72 0.13 160);--series-3:oklch(0.72 0.13 40);--series-4:oklch(0.72 0.13 300);
   --series-5:oklch(0.72 0.13 95);--series-6:oklch(0.72 0.13 205);--series-7:oklch(0.72 0.13 345);--series-8:oklch(0.72 0.13 125);
   --series-rx:oklch(0.74 0.11 225);--series-tx:oklch(0.72 0.14 255);--series-used:oklch(0.72 0.14 255);--series-reserved:oklch(0.72 0.13 300);--series-free:#262b35;
   --ramp-1:oklch(0.25 0.03 255);--ramp-2:oklch(0.35 0.07 255);--ramp-3:oklch(0.48 0.11 255);--ramp-4:oklch(0.60 0.14 255);--ramp-5:oklch(0.72 0.14 255);--ramp-6:oklch(0.84 0.10 255);
-  --plot-grid:#1d2129;--plot-axis:#3a414e;--plot-axis-ink:#7d8596;
+  --plot-grid:#1d2129;--plot-axis:#3a414e;--plot-axis-ink:#848c9d;
   --elev-1:0 1px 2px rgba(0,0,0,.4);--elev-2:0 4px 12px rgba(0,0,0,.5);--elev-3:0 16px 40px rgba(0,0,0,.6);
   --mark-face:#eef0f4;--mark-line:#15181d;--mark-edge:rgba(0,0,0,.28);--mark-ear:#D08A4C;
   --scrollbar-thumb:#3a414e;--scrollbar-thumb-hover:#555d6c;

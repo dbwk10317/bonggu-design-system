@@ -16,7 +16,7 @@ export function SearchField({ value, onChange, onSearch, placeholder = "검색",
       <span className="bds-ctl__affix"><Icon name="magnifying-glass" size={15} /></span>
       <input ref={ref} type="search" value={value} onChange={(e) => onChange?.(e.target.value, e)} placeholder={placeholder} aria-label={ariaLabel}
         onKeyDown={(e) => { if (e.key === "Enter") onSearch?.(e.currentTarget.value); if (e.key === "Escape") onChange?.("", e); }} {...rest} />
-      {value ? <button type="button" className="bds-ctl__affix" aria-label="검색어 지우기" style={{ border: 0, background: "none", padding: 0, cursor: "pointer" }} onClick={(e) => onChange?.("", e)}><Icon name="x-circle" size={15} /></button>
+      {value ? <button type="button" className="bds-ctl__affix" aria-label="검색어 지우기" onClick={(e) => onChange?.("", e)}><Icon name="x-circle" size={15} /></button>
         : shortcut && <span className="bds-ctl__affix bds-ctl__kbd" aria-hidden="true">/</span>}
     </div>
   );

@@ -13,7 +13,8 @@ export function ToastProvider({ children, max = 3 }) {
   const toast = useCallback((t) => {
     const id = ++seq.current;
     setItems((p) => [...p, { id, tone: "info", duration: 4000, ...t }].slice(-max));
-    const d = t.duration ?? 4000; if (d > 0) setTimeout(() => dismiss(id), d);
+    /* 행동(action)이 있거나 crit이면 닫기 전까지 남는다. duration을 직접 주면 그대로 따른다 */
+    const d = t.duration ?? (t.action || t.tone === "crit" ? 0 : 4000); if (d > 0) setTimeout(() => dismiss(id), d);
     return id;
   }, [dismiss, max]);
   return (
@@ -32,11 +33,11 @@ ToastProvider.useToast = useToast;
 /** 토스트 한 장. 보통 Provider가 그린다. */
 export function Toast({ message, tone = "info", action, onAction, onDismiss, className }) {
   return (
-    <div role="status" className={cx("bds-toast", `bds-tone--${tone}`, className)}>
+    <div role={tone === "crit" ? "alert" : "status"} className={cx("bds-toast", `bds-tone--${tone}`, className)}>
       <Icon name={ICON[tone]} />
       <span className="bds-toast__m">{message}</span>
       {action && <button type="button" className="bds-toast__a" onClick={() => { onAction?.(); onDismiss?.(); }}>{action}</button>}
-      {onDismiss && <button type="button" className="bds-toast__a" style={{ color: "var(--text-3)" }} aria-label="닫기" onClick={onDismiss}><Icon name="x" size={14} /></button>}
+      {onDismiss && <button type="button" className="bds-toast__a" style={{ color: "var(--ink-3)" }} aria-label="닫기" onClick={onDismiss}><Icon name="x" size={14} /></button>}
     </div>
   );
 }

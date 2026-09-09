@@ -1,7 +1,7 @@
 /* 전역 기반: 리셋, 한글 줄바꿈, mono 유틸, 포커스, 스크롤바, 모션 키프레임, reduced-motion. */
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;height:100%;overscroll-behavior:none}
-body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:var(--font-ui);font-size:var(--text-md);line-height:var(--leading-body);letter-spacing:var(--ls-ui);-webkit-font-smoothing:antialiased;
+body{margin:0;min-height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-ui);font-size:var(--fs-body);line-height:var(--lh-body);letter-spacing:var(--ls-ui);-webkit-font-smoothing:antialiased;
   /* 한글: 어절 단위로만 개행, 긴 토큰은 강제 개행 */
   word-break:keep-all;overflow-wrap:anywhere;text-wrap:pretty}
 h1,h2,h3,h4,p,ul,ol,figure{margin:0}
@@ -9,12 +9,12 @@ h1,h2,h3,h4{text-wrap:balance;line-height:var(--lh-snug);letter-spacing:0}
 ul,ol{padding:0;list-style:none}
 button,input,select,textarea{font:inherit;color:inherit}
 button{cursor:pointer}
-a{color:var(--accent);text-decoration:none}
-a:hover{color:var(--accent-hover);text-decoration:underline;text-underline-offset:.15em}
+a{color:var(--signal);text-decoration:none}
+a:hover{color:var(--signal-hover);text-decoration:underline;text-underline-offset:.15em}
 img,svg{display:block;max-width:100%}
 table{border-collapse:collapse;border-spacing:0}
-:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px;border-radius:var(--r-sm)}
-::selection{background:var(--accent-subtle)}
+:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px;border-radius:var(--radius-ctl)}
+::selection{background:var(--signal-tint)}
 /* 수치·코드·시각: 결측 문구("수집 안 됨")에는 붙이지 않는다 */
 .bds-mono,.u-data{font-family:var(--font-data);font-variant-numeric:tabular-nums;letter-spacing:var(--ls-data)}
 .u-caps{letter-spacing:var(--ls-caps);text-transform:uppercase}

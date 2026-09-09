@@ -1,4 +1,4 @@
-Icon — Phosphor Bold 아이콘 하나. 장식이면 label 없이(aria-hidden), 단독 의미면 label.
+Icon · Phosphor Bold 아이콘 하나. 장식이면 label 없이(aria-hidden), 단독 의미면 label.
 
 ```jsx
 <Icon name="pulse" />

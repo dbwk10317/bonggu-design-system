@@ -57,7 +57,7 @@ function ArgbScreen() {
             <div className="bds-field"><span className="bds-field__label">밝기</span><SegmentedControl aria-label="밝기" value={bright} onChange={setBright} options={[1, 2, 3, 4, 5].map((n) => ({ value: String(n), label: n }))} /></div>
           </div>
           <div className="kit-bottom">
-            <p className="kit-dim" style={{ maxWidth: "46em" }}>{sync ? "미리보기 카드 두 개가 함께 선택됩니다. 적용하면 두 장치에 즉시 함께 반영됩니다." : "미리보기 카드를 눌러 적용 대상을 고르세요. 선택한 카드의 장치에만 즉시 반영됩니다."}</p>
+            <p className="kit-dim" style={{ maxWidth: "46em" }}>{sync ? "미리보기 카드 두 개가 함께 선택됩니다. 적용하면 두 장치에 즉시 함께 반영됩니다." : "미리보기 카드를 누르면 적용 대상으로 선택됩니다. 선택한 카드의 장치에만 즉시 반영됩니다."}</p>
             <div className="kit-actions"><Button variant="secondary">켜기</Button><Button variant="secondary">소등</Button><Button variant="primary" busy={busy} onClick={apply}>적용</Button></div>
           </div>
         </Panel>

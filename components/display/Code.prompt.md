@@ -1,4 +1,4 @@
-Code · CodeBlock · Kbd — 텍스트 안의 기술 토막.
+Code · CodeBlock · Kbd · 텍스트 안의 기술 토막.
 
 ```jsx
 <p>모델 <Code>ko-embed-v3</Code>는 <Kbd>⌘</Kbd><Kbd>K</Kbd>로 검색합니다.</p>

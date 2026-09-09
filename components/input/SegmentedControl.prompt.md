@@ -1,4 +1,4 @@
-SegmentedControl — 2~5개 중 하나(속도·방향·밝기). 6개 이상은 Select.
+SegmentedControl · 2~5개 중 하나(속도·방향·밝기). 6개 이상은 Select.
 
 ```jsx
 <SegmentedControl aria-label="속도" value={speed} onChange={setSpeed}

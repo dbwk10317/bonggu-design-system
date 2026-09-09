@@ -1,4 +1,4 @@
-DateRangePicker — 차트 기간. 프리셋이 기본, "직접"을 누르면 시작/끝 입력이 펼쳐진다.
+DateRangePicker · 차트 기간. 프리셋이 기본, "직접"을 누르면 시작/끝 입력이 펼쳐진다.
 
 ```jsx
 <DateRangePicker value={range} onChange={setRange} />   // {preset:"12h"} 또는 {from,to}

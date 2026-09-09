@@ -4,9 +4,10 @@ import { Icon } from "../action/Icon.jsx";
 
 /** ⌘K 명령 팔레트. items: {id, label, icon?, group?, hint?, keywords?, onSelect}. open/onClose 제어형. inline이면 딤 없이 패널만(문서용). */
 export function CommandPalette({ open = false, onClose, items = [], placeholder = "명령 또는 화면 검색", inline = false, className }) {
-  const [q, setQ] = useState(""), [idx, setIdx] = useState(0), input = useRef(null);
+  const [q, setQ] = useState(""), [idx, setIdx] = useState(0), input = useRef(null), opener = useRef(null);
   const list = useMemo(() => { const s = q.trim().toLowerCase(); return !s ? items : items.filter((it) => (it.label + " " + (it.keywords ?? "") + " " + (it.group ?? "")).toLowerCase().includes(s)); }, [q, items]);
-  useEffect(() => { if (open) { setQ(""); setIdx(0); setTimeout(() => input.current?.focus(), 0); } }, [open]);
+  /* 열 때 포커스를 입력으로, 닫을 때 열기 전 요소로 되돌린다 */
+  useEffect(() => { if (!open || inline) return; opener.current = document.activeElement; setQ(""); setIdx(0); setTimeout(() => input.current?.focus(), 0); return () => opener.current?.focus?.(); }, [open, inline]);
   useEffect(() => { setIdx(0); }, [q]);
   if (!open) return null;
   const run = (it) => { if (!it) return; onClose?.(); it.onSelect?.(it); };
@@ -25,7 +26,7 @@ export function CommandPalette({ open = false, onClose, items = [], placeholder 
           {list.length === 0 && <li className="bds-cmdk__empty">일치하는 항목이 없습니다</li>}
           {list.map((it, i) => { const g = it.group !== lastGroup ? it.group : null; lastGroup = it.group; return <React.Fragment key={it.id}>
             {g && <li className="bds-cmdk__grp" role="presentation">{g}</li>}
-            <li role="option" id={"bds-cmdk-" + it.id} aria-selected={i === idx}><button type="button" className="bds-cmdk__item" aria-selected={i === idx} onMouseEnter={() => setIdx(i)} onClick={() => run(it)}>{it.icon && <Icon name={it.icon} size={16} />}<span className="bds-ellipsis">{it.label}</span>{it.hint && <small>{it.hint}</small>}</button></li>
+            <li role="option" id={"bds-cmdk-" + it.id} aria-selected={i === idx}><button type="button" className="bds-cmdk__item" tabIndex={-1} onMouseEnter={() => setIdx(i)} onClick={() => run(it)}>{it.icon && <Icon name={it.icon} size={16} />}<span className="bds-ellipsis">{it.label}</span>{it.hint && <small>{it.hint}</small>}</button></li>
           </React.Fragment>; })}
         </ul>
         <div className="bds-cmdk__ft"><span><kbd className="bds-kbd">↑↓</kbd> 이동</span><span><kbd className="bds-kbd">↵</kbd> 실행</span></div>

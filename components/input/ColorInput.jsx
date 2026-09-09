@@ -3,7 +3,7 @@ import { cx, frameStyle } from "../core/frame.js";
 import { useFieldContext } from "./Field.jsx";
 
 const HEX = /^#?([0-9a-f]{6})$/i;
-/** 색 선택: 스와치(네이티브 picker) + hex 입력 + 프리셋 칩. 값은 #RRGGBB. 조명(ARGB) 색 지정용 — UI 토큰 색이 아니다. */
+/** 색 선택: 스와치(네이티브 picker) + hex 입력 + 프리셋 칩. 값은 #RRGGBB. 조명(ARGB) 색 지정용 · UI 토큰 색이 아니다. */
 export function ColorInput({ value, defaultValue = "#5CA8FF", presets = [], size = "md", fit = "flex", width, disabled, invalid, onChange, className, style, "aria-label": ariaLabel }) {
   const f = useFieldContext();
   const [inner, setInner] = useState(defaultValue);
@@ -13,7 +13,7 @@ export function ColorInput({ value, defaultValue = "#5CA8FF", presets = [], size
   return (
     <div className={cx("bds-color", size === "sm" && "bds-color--sm", disabled && "bds-ctl--disabled", className)} style={frameStyle({ fit, width, style })}>
       <div className={cx("bds-ctl bds-color__ctl", size === "sm" && "bds-ctl--sm", (invalid ?? f?.invalid) && "bds-ctl--err")}>
-        <label className="bds-color__swatch" style={{ background: v }} aria-label={ariaLabel ?? "색 선택"}><input type="color" value={v} disabled={disabled} onChange={(e) => set(e.target.value)} /></label>
+        <label className="bds-color__swatch" style={{ background: v }}><input type="color" aria-label={ariaLabel ?? "색 선택"} value={v} disabled={disabled} onChange={(e) => set(e.target.value)} /></label>
         <input id={f?.id} aria-describedby={f?.describedBy} className="bds-mono" spellCheck={false} maxLength={7} value={text ?? v} disabled={disabled}
           onChange={(e) => setText(e.target.value)} onBlur={() => { if (text != null) { set(text); setText(null); } }} onKeyDown={(e) => { if (e.key === "Enter" && text != null) { set(text); setText(null); } }} />
       </div>

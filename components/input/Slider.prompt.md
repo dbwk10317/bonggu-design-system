@@ -1,4 +1,4 @@
-Slider — 밝기·주기·임계값 같은 연속 값. Field 안에서 라벨을 받는다.
+Slider · 밝기·주기·임계값 같은 연속 값. Field 안에서 라벨을 받는다.
 
 ```jsx
 <Field label="밝기"><Slider min={1} max={5} value={b} onChange={setB} marks={[1,2,3,4,5]} /></Field>

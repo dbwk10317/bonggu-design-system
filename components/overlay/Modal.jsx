@@ -1,29 +1,29 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useId, useRef } from "react";
 import { cx } from "../core/frame.js";
 import { IconButton } from "../action/IconButton.jsx";
 
-/** 모달. Esc·딤·닫기 → onClose. 640 미만에서는 바텀시트. size: sm 360 · md 440 · lg 560 · xl 760. */
+/** 모달. 네이티브 <dialog>.showModal()로 포커스를 가둔다. Esc·딤·닫기 → onClose. 640 미만에서는 바텀시트. size: sm 360 · md 440 · lg 560 · xl 760. */
 export function Modal({ open, onClose, title, description, actions, size = "md", closeButton = true, className, children, ...rest }) {
-  const panel = useRef(null), opener = useRef(null);
+  const panel = useRef(null), opener = useRef(null), tid = useId();
   useEffect(() => {
-    if (!open) return;
+    const d = panel.current;
+    if (!open || !d) return;
     opener.current = document.activeElement;
-    const first = panel.current?.querySelector("input,select,textarea,button:not([aria-label='닫기'])") ?? panel.current;
+    if (!d.open) d.showModal();
+    const first = d.querySelector("input,select,textarea,button:not([aria-label='닫기'])") ?? d;
     first?.focus?.();
-    const onKey = (e) => { if (e.key === "Escape") onClose?.(); };
-    document.addEventListener("keydown", onKey);
     const prev = document.body.style.overflow; document.body.style.overflow = "hidden";
-    return () => { document.removeEventListener("keydown", onKey); document.body.style.overflow = prev; opener.current?.focus?.(); };
-  }, [open, onClose]);
+    return () => { if (d.open) d.close(); document.body.style.overflow = prev; opener.current?.focus?.(); };
+  }, [open]);
+  const outside = (e) => { const r = e.currentTarget.getBoundingClientRect(); return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom; };
   if (!open) return null;
   return (
-    <div className={cx("bds-modal", size !== "md" && `bds-modal--${size}`)} onMouseDown={(e) => { if (e.target === e.currentTarget) onClose?.(); }}>
-      <div ref={panel} role="dialog" aria-modal="true" aria-label={typeof title === "string" ? title : undefined} tabIndex={-1} className={cx("bds-modal__panel", className)} {...rest}>
-        {(title || closeButton) && <div className="bds-modal__hd">{title && <h2>{title}</h2>}{closeButton && <IconButton icon="x" size="sm" variant="ghost" aria-label="닫기" onClick={onClose} />}</div>}
-        {description && <p className="bds-modal__desc">{description}</p>}
-        {children && <div className="bds-modal__body">{children}</div>}
-        {actions && <div className="bds-modal__ft">{actions}</div>}
-      </div>
-    </div>
+    <dialog ref={panel} aria-labelledby={title ? tid : undefined} tabIndex={-1} className={cx("bds-modal__panel", size !== "md" && `bds-modal--${size}`, className)}
+      onCancel={(e) => { e.preventDefault(); onClose?.(); }} onMouseDown={(e) => { if (e.target === e.currentTarget && outside(e)) onClose?.(); }} {...rest}>
+      {(title || closeButton) && <div className="bds-modal__hd">{title && <h2 id={tid}>{title}</h2>}{closeButton && <IconButton icon="x" size="sm" variant="ghost" aria-label="닫기" onClick={onClose} />}</div>}
+      {description && <p className="bds-modal__desc">{description}</p>}
+      {children && <div className="bds-modal__body">{children}</div>}
+      {actions && <div className="bds-modal__ft">{actions}</div>}
+    </dialog>
   );
 }

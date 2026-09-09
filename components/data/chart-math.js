@@ -40,3 +40,17 @@ export function pathLength(pts) { let l = 0; for (let i = 1; i < pts.length; i++
 
 /** 텍스트 폭 추정(mono 10.5px ≈ 6.4px/char). y축 여백 계산용. */
 export const estWidth = (s) => String(s).length * 6.4 + 10;
+
+/** 3계열 이상이면 선 스타일을 실선·대시·점·대시점 순으로 돌린다. series.dash로 명시(문자열=그 패턴, false=실선). */
+export const DASHES = ["", "6 4", "2 4", "8 3 2 3"];
+export const seriesDash = (s, i, count) => s.dash === false ? undefined : typeof s.dash === "string" ? (s.dash || undefined) : count >= 3 ? (DASHES[i % DASHES.length] || undefined) : undefined;
+
+/** 히스토그램 구간. 표본 2개 미만이면 null. n은 bins 또는 √n(6~30). */
+export function histBins(samples, bins) {
+  const xs = (samples ?? []).filter((v) => v != null && Number.isFinite(v));
+  if (xs.length < 2) return null;
+  const lo = Math.min(...xs), hi = Math.max(...xs), span = hi - lo || 1;
+  const n = bins ?? Math.max(6, Math.min(30, Math.round(Math.sqrt(xs.length))));
+  const counts = Array(n).fill(0); xs.forEach((v) => { counts[Math.min(n - 1, Math.floor(((v - lo) / span) * n))]++; });
+  return { xs, lo, hi, span, n, counts };
+}

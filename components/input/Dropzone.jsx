@@ -11,7 +11,7 @@ export function Dropzone({ accept, multiple = false, onFiles, title = "파일을
     <div role="button" tabIndex={disabled ? -1 : 0} aria-disabled={disabled || undefined}
       className={cx("bds-drop", over && "bds-drop--over", className)} style={frameStyle({ fit, width, height, style })}
       onClick={() => !disabled && input.current?.click()}
-      onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); input.current?.click(); } }}
+      onKeyDown={(e) => { if (!disabled && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); input.current?.click(); } }}
       onDragOver={(e) => { e.preventDefault(); if (!disabled) setOver(true); }} onDragLeave={() => setOver(false)}
       onDrop={(e) => { e.preventDefault(); setOver(false); if (!disabled) emit(e.dataTransfer.files); }} {...rest}>
       <Icon name={icon} />

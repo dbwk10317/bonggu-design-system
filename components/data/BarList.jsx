@@ -18,7 +18,7 @@ export function BarList({ items = [], max, valueFormatter = (v) => v.toLocaleStr
         return (
           <div key={it.key ?? i} className="bds-barlist__row" role="listitem">
             <span className="bds-barlist__n bds-ellipsis">{it.name}</span>
-            <span className={cx("bds-barlist__v", it.value == null && "bds-barlist__v--na")} style={it.value == null ? { fontFamily: "var(--font-ui)", color: "var(--text-3)" } : undefined}>{it.value == null ? NOT : valueFormatter(it.value)}</span>
+            <span className={cx("bds-barlist__v", it.value == null && "bds-barlist__v--na")} style={it.value == null ? { fontFamily: "var(--font-ui)", color: "var(--ink-3)" } : undefined}>{it.value == null ? NOT : valueFormatter(it.value)}</span>
             <div className="bds-barlist__track" aria-hidden="true"><div className="bds-barlist__fill" style={{ width: `${pct}%`, "--bar": barColor(it.value, it), animationDelay: `${i * 60}ms` }} /></div>
           </div>
         );

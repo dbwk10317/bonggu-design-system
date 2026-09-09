@@ -1,4 +1,4 @@
-Stack — 세로 나열. 자식 사이 margin을 쓰지 않고 gap으로만 띄운다.
+Stack · 세로 나열. 자식 사이 margin을 쓰지 않고 gap으로만 띄운다.
 
 ```jsx
 <Stack gap={4}>…</Stack>           // 16px

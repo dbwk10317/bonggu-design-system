@@ -23,8 +23,8 @@
 
 ## VISUAL FOUNDATIONS
 
-- **색**: 라이트 기본(`:root`), 다크는 `:root.dark` / `[data-theme="dark"]`에서 같은 이름, 명도만 반전. 살짝 차가운 중성 회색(`--canvas #fff`, `--canvas-sunken #f4f5f7`, `--panel-2/3`, `--line #e4e7ec`) 위에 **시그널 파랑 하나** `oklch(0.55 0.17 255)`. 시그널은 선택·포커스·주 버튼·활성 탭·송신(tx)에만 쓰고, 상태색 넷(`--ok` 초록 · `--warn` 호박 · `--crit` 빨강 · `--info` 청록)과 절대 섞지 않는다. 각 상태는 원색 · `-tint`(배경) · `-ink`(그 위 글자) 세 개. 미터 임계는 0~70 정상 · 70~90 주의 · 90~ 위험이고 값 텍스트도 같은 상태 잉크. 장치 프리뷰 스테이지(LCD·LED)는 테마와 무관하게 `--stage #0a0b10` 검정.
-- **타이포**: UI·본문 **Spoqa Han Sans Neo**(300·400·500·700), 수치·코드·식별자 **JetBrains Mono** + `tabular-nums`. 두 서체 역할을 절대 바꾸지 않는다(한글에 monospace 금지). 크기: display 28/700 · title 20/700 · heading 16 · subheading 14.5 · body 14/1.55 · label 12.5 · caption 11.5 · micro 10.5(mono 단위·타임스탬프만) · metric 24/19/36. 모바일은 display 24 · title 18 · metric 22. 한글 자간 0(음수 금지), 영문 대문자 라벨(CPU, VRAM)만 +0.06em. `word-break: keep-all`, 본문 14 이하로 내리지 않는다.
+- **색**: 라이트 기본(`:root`), 다크는 `:root.dark` / `[data-theme="dark"]`에서 같은 이름, 명도만 반전. 살짝 차가운 중성 회색(`--canvas #fff`, `--canvas-sunken #f4f5f7`, `--panel-2/3`, `--line #e4e7ec`) 위에 **시그널 파랑 하나** `oklch(0.55 0.17 255)`. 시그널은 선택·포커스·주 버튼·활성 탭·송신(tx)에만 쓰고, 상태색 넷(`--ok` 초록 · `--warn` 호박 · `--crit` 빨강 · `--info` 청록)과 절대 섞지 않는다. 각 상태는 원색 · `-tint`(배경) · `-ink`(그 위 글자) 세 개. 미터 임계는 0~70 정상 · 70~90 주의 · 90~ 위험이고 값 텍스트도 같은 상태 잉크. 장치 프리뷰 스테이지(LCD·LED)는 테마와 무관하게 `--stage #0a0b10` 검정. 입력 컨트롤 경계는 `--line-input`(비텍스트 대비 3:1 이상).
+- **타이포**: UI·본문 **Spoqa Han Sans Neo**(300·400·500·700), 수치·코드·식별자 **JetBrains Mono** + `tabular-nums`. 두 서체 역할을 절대 바꾸지 않는다(한글에 monospace 금지). 크기: display 28/700 · title 20/700 · heading 16 · subheading 14.5 · body 14/1.55 · label 12.5 · caption 11.5 · micro 10.5(mono 단위·타임스탬프만) · metric 24/19/36. 모바일은 display 24 · title 18 · metric 22. 한글 자간 0(음수 금지), 영문 대문자 라벨(CPU, VRAM)만 +0.06em. `word-break: keep-all`, 본문 14 이하로 내리지 않는다. 본문체(Spoqa) 최소 11.5px. 10.5px(micro)는 `.bds-mono` 계열 단위·타임스탬프에만.
 - **간격**: 4px 스케일 `--sp-1…10`(4·8·12·16·20·24·32·40·48·64), 별칭 `--space-N`은 1:1. 패널 패딩 16(모바일 14), 격자 gap 14(12), 페이지 좌우 20(16), kv 행 사이 6, 버튼·칩 나열 8. 컨트롤 높이 28/32/40. **터치 기기(`pointer:coarse`)는 36/44/48로 자동 승격.** 밀도 `<html data-density="compact">`는 패딩 12·gap 10·컨트롤 24/28/36(글자 크기는 그대로).
 - **브레이크포인트**: 뷰포트 4단 `sm 640 · md 768 · lg 1024 · xl 1380`(`--bp-*`, media는 리터럴). 컴포넌트 접힘은 컨테이너 5단 `xs 240 · sm 320 · md 480 · lg 640 · xl 900`(`--cq-*`, `@container`). 셸: ≥1024 레일, <1024 드로어, <768 상태바 숨김, <640 모달은 바텀시트. 최대 폭 `--content-max 1440`(`Container`), 폼 `--content-narrow 760`. iOS safe-area는 `--safe-*`로 셸이 흡수한다.
 - **반경**: ctl 6 · panel 10 · sheet 14 · pill.
@@ -32,13 +32,13 @@
 - **배경**: 단색. 이미지·패턴·그라디언트 없음. 차트 면 채움만 alpha .14.
 - **카드(Panel)**: `--panel` + 1px `--line` + 10px. 선택은 `border: signal + 0 0 0 1px signal`, 배경은 바꾸지 않는다. 빈 상태는 점선 + 침강 바탕. 카드 제목 14.5/500, 헤더 메타 12.5 `--ink-3`.
 - **호버**: 배경 한 단계(panel → panel-2), 선 line → line-strong. **프레스**: signal-active, 크기 축소 없음. **포커스**: `--focus-ring` 2px 외곽선 + 2px 오프셋. 위험 동작은 crit 외곽선 버튼, 채움은 확인 모달 안에서만.
-- **모션**: 짧고 절제. fast 120(hover·색) · base 180(토글·드롭다운·탭 잉크) · slow 260(드로어·모달) · gauge 600(게이지·바 값 변화, 차트 진입 1회). `--ease-out cubic-bezier(.2,.8,.2,1)`. 실시간 숫자는 트랜지션 없이 즉시 바뀐다(tabular-nums로 흔들림 방지). reduced-motion이면 전부 0. 상시 루프는 실시간 pulse·스피너·마스코트 깜빡임만.
+- **모션**: 짧고 절제. fast 120(hover·색) · base 180(토글·드롭다운·탭 잉크) · slow 260(드로어·모달) · gauge 600(게이지·바 값 변화, 차트 진입 1회). `--ease-out cubic-bezier(.2,.8,.2,1)`. 실시간 숫자는 트랜지션 없이 즉시 바뀐다(tabular-nums로 흔들림 방지). reduced-motion이면 전부 0. 상시 루프는 실시간 pulse·스피너·마스코트 깜빡임만. StatTile 등 수치 카운트업 없음(animate 기본 false).
 - **레이아웃 고정 요소**: ≥1024 레일 228px(활성 항목 signal-tint 배경 + signal 글자), 미만은 상단 바 48 + 오버레이 드로어. 화면 안 2차 내비는 상단 탭 44(활성 2px 밑줄 signal). 하단 상태바 28(데스크톱). 모바일 하단 탭바 없음. 패널 격자는 컨테이너 쿼리 우선(auto-fit 3열 · 2열 · 1열), media는 폴백.
 - **이미지**: 장치 사진(4:3 크롭)만. 일러스트는 봉구 마크 하나.
 
 ## ICONOGRAPHY
 
-- **Phosphor Icons, `weight="bold"` 고정.** 리액트에서는 `@phosphor-icons/react`, 정적 HTML·이 시스템의 카드에서는 `@phosphor-icons/web` bold 웹폰트(`tokens/icons.css`가 unpkg에서 로드). `Icon name="bell"` 래퍼가 이를 감싼다.
+- **Phosphor Icons, `weight="bold"` 고정.** 리액트에서는 `@phosphor-icons/react`, 정적 HTML·이 시스템의 카드에서는 Phosphor Bold 웹폰트(`tokens/icons.css`가 `fonts/phosphor/`의 셀프호스팅 웹폰트를 로드, CDN 없음). `Icon name="bell"` 래퍼가 이를 감싼다. React 프로젝트는 같은 아이콘 이름으로 `@phosphor-icons/react`의 `weight="bold"`를 대신 써도 된다.
 - 크기 16 / 20 / 24, 색은 `currentColor`. 유니코드 도형은 상태 점(●)만 허용.
 - 손으로 그린 SVG 아이콘 금지. 예외는 `MascotMark`(봉구) 하나. 이모지·유니코드 기호를 아이콘으로 쓰지 않는다(가운뎃점 `·`은 텍스트 구분자로만).
 - 자산: `assets/mascot-neutral.svg`(정적 마스코트), `assets/favicon.svg`. 로고 워드마크는 없다. 브랜드 이름은 Spoqa 700 텍스트로 쓴다.
@@ -58,20 +58,22 @@
 - 밀도 격자는 `Heatmap`(ramp), 진행은 `ProgressBar`/`Stepper`, 시간축 사건은 `Timeline`, 설정 변경 비교는 `DiffView`.
 - 수치 하나만 있는 타일은 허전하다. `StatTile`에 `detail`·`pill`·`icon`으로 "무엇이 N개인지"를 함께 보여준다.
 - 격자는 `Grid`로만 만든다. 화면별 CSS에 격자를 다시 쓰지 않는다.
+- 빈 상태·힌트 문구도 서술형으로 쓴다(예: '카드를 누르면 적용 대상으로 선택됩니다').
 
 ## Index
 
-- `styles.css` — 진입점(@import만). `tokens/` fonts · colors · typography · layout · icons · base
-- `styles/c-*.css` — 컴포넌트 클래스(action · input · status · data · chart · layout · overlay · feedback · extra · more)
-- `fonts/` — Spoqa Han Sans Neo 300/400/500/700, JetBrains Mono latin/latin-ext (woff2)
-- `assets/` — mascot-neutral.svg, favicon.svg
-- `guidelines/` — 색·타이포·간격·반응형·모션 스펙 카드 13장
-- `theme-toggle.js` — 문서 카드 우상단 라이트/다크 토글(localStorage로 모든 카드 동기화). 제품에서는 `:root.dark` 클래스만 토글한다
-- `components/` — 9그룹, `components/<group>/<Name>.jsx` + `.d.ts` + `.prompt.md`(사용법), 그룹별 카드(`*.card.html`). 스타일은 `styles/c-*.css`의 `bds-*` 클래스와 토큰만. 번들 네임스페이스는 `window.Ds_d3ea90`(훅은 대문자 export만 노출되므로 `ToastProvider.useToast()`로 접근).
-- `templates/dashboard/` — 대시보드 템플릿(`Dashboard.dc.html`; 모니터링·인증·조명·쿨러·모델·학습·설정 7화면, 클릭 가능, 라이트 기본 + 다크 토글). 소비 프로젝트는 `ds-base.js` 한 줄만 고쳐 쓴다.
-- `uploads/styleguide_extracted.html` — 스타일가이드 원문(폰트 데이터 제거본)
+- `styles.css` · 진입점(@import만). `tokens/` fonts · colors · typography · layout · icons · base
+- `styles/c-*.css` · 컴포넌트 클래스(action · input · status · data · chart · layout · overlay · feedback · extra · more)
+- `fonts/` · Spoqa Han Sans Neo 300/400/500/700, JetBrains Mono latin/latin-ext (woff2), `fonts/phosphor/` Phosphor Bold 웹폰트(셀프호스팅)
+- `assets/` · mascot-neutral.svg, favicon.svg
+- `guidelines/` · 색·타이포·간격·반응형·모션 스펙 카드 13장
+- `theme-toggle.js` · 문서 카드 우상단 라이트/다크 토글(localStorage로 모든 카드 동기화). 제품에서는 `:root.dark` 클래스만 토글한다
+- `components/` · 9그룹, `components/<group>/<Name>.jsx` + `.d.ts` + `.prompt.md`(사용법), 그룹별 카드(`*.card.html`). 스타일은 `styles/c-*.css`의 `bds-*` 클래스와 토큰만. 번들 네임스페이스는 `window.Ds_d3ea90`(훅은 대문자 export만 노출되므로 `ToastProvider.useToast()`로 접근).
+- `templates/dashboard/` · 대시보드 템플릿(`Dashboard.dc.html`; 모니터링·인증·조명·쿨러·모델·학습·설정 7화면, 클릭 가능, 라이트 기본 + 다크 토글). 소비 프로젝트는 `ds-base.js` 한 줄만 고쳐 쓴다.
+- `STYLEGUIDE.html` · 스타일가이드 원문 번들
+- `build-bundle.mjs` · `_ds_bundle.js`·`_ds_manifest.json` 빌드. 컴포넌트 소스를 고치면 `node build-bundle.mjs`로 다시 만든다(`@babel/standalone` 필요, 없으면 `BABEL_STANDALONE=<경로>`)
 
-### Components (97 · 9그룹)
+### Components (96 · 9그룹)
 - action: Button, IconButton, Icon
 - brand: MascotMark
 - layout: PageStack, PageHeader, Panel, CardHead, Toolbar, ToolbarGrow, Grid, GridItem, StatusBar, Container, Stack, Inline, Spacer, Divider, AspectRatio, Visible

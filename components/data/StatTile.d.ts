@@ -1,6 +1,6 @@
 import type { HTMLAttributes, ReactNode } from "react";
 /**
- * 큰 수치 타일. 숫자면 카운트업, 문자열이면 그대로.
+ * 큰 수치 타일. 숫자면 mono(ko-KR 천 단위), 문자열이면 그대로. 기본은 즉시 갱신.
  */
 export interface StatTileProps extends HTMLAttributes<HTMLDivElement> {
   label: ReactNode;
@@ -22,6 +22,7 @@ export interface StatTileProps extends HTMLAttributes<HTMLDivElement> {
   tone?: 1 | 2 | 3 | 4 | 5 | 6;
   /** 카드 테두리 없이(Panel 안에 여러 개) */
   flat?: boolean;
+  /** 진입 1회 카운트업. 기본 false(실시간 수치는 트랜지션 없이 즉시 바뀐다) */
   animate?: boolean;
   /** flex=부모 폭(기본), fixed=width·height */
   fit?: "flex" | "fixed";

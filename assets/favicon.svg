@@ -1,8 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" role="img" aria-label="Bonggu">
-  <path d="M6.5 8C2.5 9.5 2 16 4.5 19.5C6 21.6 8.5 22.5 10.5 21.5L12.5 12C11.5 9 8.8 7.1 6.5 8Z" fill="#D08A4C"></path>
-  <path d="M29.5 8C33.5 9.5 34 16 31.5 19.5C30 21.6 27.5 22.5 25.5 21.5L23.5 12C24.5 9 27.2 7.1 29.5 8Z" fill="#D08A4C"></path>
-  <circle cx="18" cy="18" r="11" fill="#EDE7DD" stroke="#000000" stroke-opacity=".25" stroke-width=".75"></circle>
-  <circle cx="14.2" cy="16.5" r="1.6" fill="#141210"></circle>
-  <circle cx="21.8" cy="16.5" r="1.6" fill="#141210"></circle>
-  <ellipse cx="18" cy="21.2" rx="2.2" ry="1.7" fill="#141210"></ellipse>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 36 36" role="img" aria-label="봉구 기본"><g><path d="M13 5C8 4.8 5.7 8 4.6 12.4L1.5 21.3C-.2 27 2.4 30.1 8.8 29.5L11 28.9C7.9 27.1 10.8 22.6 11 19Z" fill="#99581F"/><path d="M23 5C28 4.8 30.3 8 31.4 12.4L34.5 21.3C36.2 27 33.6 30.1 27.2 29.5L25 28.9C28.1 27.1 25.2 22.6 25 19Z" fill="#99581F"/><path d="M18 3.8C12 3.8 9.5 6.4 9.4 12.1C9.1 17 9.3 21.2 10.6 24.2C12.4 27 23.6 27 25.4 24.2C26.7 21.2 26.9 17 26.6 12.1C26.5 6.4 24 3.8 18 3.8Z" fill="#ffffff"/><path d="M22.4 4.6C26 5.7 27 8.6 26.7 13.8L26 22.2C24.8 19.6 21.6 19.1 20.9 16.9C19.4 13.8 21.3 11.3 23.7 9.4C25.5 8 24.5 5.9 22.4 4.6Z" fill="#99581F"/><circle cx="12.5" cy="15.1" r="1.65" fill="#15181d"/><circle cx="23.4" cy="15.1" r="1.65" fill="#15181d"/><path d="M15.9 18.5Q18 17.8 20.1 18.5Q21.3 19.4 18 21.5Q14.7 19.4 15.9 18.5Z" fill="#15181d"/><path d="M18 21.1V22 M18 22l-1.5 1 M18 22l1.5 1" fill="none" stroke="#15181d" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></g></svg>

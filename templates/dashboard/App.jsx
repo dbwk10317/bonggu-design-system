@@ -37,7 +37,7 @@ function App() {
   const mon = view === "monitoring";
   const nav = (id, icon, label) => <SidebarNavItem key={id} icon={icon} label={label} href={`#${id}`} active={view === id} />;
   const screen = { monitoring: <Screen name="MonitoringScreen" />, auth: <Screen name="AuthScreen" />, argb: <Screen name="ArgbScreen" />, cooler: <CoolerScreen />, training: <Screen name="TrainingScreen" />, models: <Screen name="ModelsScreen" />, settings: <Screen name="SettingsScreen" /> }[view]
-    ?? <PageStack><PageHeader title={TITLES[view]} description="이 화면은 UI 키트 범위 밖입니다. 제품 코드의 조립을 참고하세요." /><EmptyState title="시안 없음" description="모델·설정 화면은 ai-hub 운영 UI에서 흡수한 조립을 그대로 따릅니다." /></PageStack>;
+    ?? <PageStack><PageHeader title={TITLES[view]} description="이 화면은 UI 키트 범위 밖입니다. 제품 코드의 조립이 기준이 됩니다." /><EmptyState title="시안 없음" description="모델·설정 화면은 ai-hub 운영 UI에서 흡수한 조립을 그대로 따릅니다." /></PageStack>;
   return (
     <ToastProvider>
       <div style={{ height: "100%", minHeight: 600 }}>

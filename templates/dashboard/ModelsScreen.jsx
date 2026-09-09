@@ -65,14 +65,14 @@ function ModelsScreen() {
             <SegmentedControl aria-label="모델 필터" value={filter} onChange={setFilter} options={[{ value: "all", label: "전체" }, { value: "active", label: "활성" }, { value: "localai", label: "LocalAI" }, { value: "custom-worker", label: "ONNX" }]} />
           </Toolbar>
           <DataTable aria-label="통합 모델 실행 상태와 제어" rows={rows} rowKey={(m) => m.id} rowLabel={(m) => m.name}
-            empty={<EmptyState plain title="조건에 맞는 모델이 없습니다" description="다른 필터를 선택해 보세요." />}
+            empty={<EmptyState plain title="조건에 맞는 모델이 없습니다" description="다른 필터를 선택하면 모델이 표시됩니다." />}
             columns={[
               { key: "name", header: "모델", render: (m) => <span className="kit-cell2"><b style={{ fontWeight: 500 }}>{m.name}</b><span className="kit-dim bds-mono">{m.id}</span></span> },
               { key: "runtime", header: "런타임", hideBelow: "tablet", render: (m) => <span className="bds-mono">{RUNTIME[m.runtime]}</span> },
               { key: "state", header: "실행 상태", render: (m) => <span className="kit-cell2"><StatusPill size="sm" tone={m.tone}>{m.label}</StatusPill><span className="kit-dim">{m.detail}</span></span> },
               { key: "usage", header: "용도", hideBelow: "desktop", render: (m) => <span className="kit-tags">{m.capabilities.map((c) => <Tag key={c}>{c}</Tag>)}</span> },
               { key: "policy", header: "정책", hideBelow: "desktop", render: (m) => m.pinned ? <Tag accent icon="push-pin">유지</Tag> : <span className="kit-dim">요청 시 로드</span> },
-              { key: "vram", header: "예약 VRAM", align: "num", render: (m) => <span className="bds-mono">{m.active ? fmt.gib(m.vram_mib) : "—"}</span> },
+              { key: "vram", header: "예약 VRAM", align: "num", render: (m) => m.active ? <span className="bds-mono">{fmt.gib(m.vram_mib)}</span> : "수집 안 됨" },
               { key: "act", header: "", render: (m) => <span className="kit-actions">{m.active ? <Button size="sm" variant="secondary" onClick={() => setUnload(m)}>비활성화</Button> : <Button size="sm" variant="primary" disabled={m.state === "queued"} onClick={() => toast({ message: `${m.name} 활성화를 요청했습니다.`, tone: "info" })}>활성화</Button>}<DropdownMenu aria-label={`${m.name} 더 보기`} items={[{ label: "관리", icon: "gear-six", onSelect: () => setEdit(m) }, { label: "호출 예시 복사", icon: "copy", onSelect: () => toast({ message: "curl 예시를 복사했습니다.", tone: "ok" }) }, { label: "로그 보기", icon: "scroll", disabled: !m.active }, "-", { label: "목록에서 제거", icon: "trash", danger: true, onSelect: () => toast({ message: `${m.name}을 허브 목록에서 제거했습니다.` }) }]} /></span> },
             ]}
             expandable={(m) => <div className="kit-expand"><DescriptionList items={[{ term: "런타임", detail: RUNTIME[m.runtime] }, { term: "상태 상세", detail: m.detail }, { term: "필요 VRAM", detail: fmt.gib(m.vram_mib), mono: true }, { term: "설명", detail: m.description }]} /><CopyField label="식별자" value={m.id} /><CopyField label="호출 예시" multiline value={`curl -X POST https://ai.bonggu.me/v2/models/${m.id}/infer \\\n  -H "Authorization: Bearer $TOKEN" -d @input.json`} /></div>} />

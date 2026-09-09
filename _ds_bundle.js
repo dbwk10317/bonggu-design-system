@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"Ds_d3ea90","components":[{"name":"Button","sourcePath":"components/action/Button.jsx"},{"name":"Icon","sourcePath":"components/action/Icon.jsx"},{"name":"IconButton","sourcePath":"components/action/IconButton.jsx"},{"name":"MascotMark","sourcePath":"components/brand/MascotMark.jsx"},{"name":"BarList","sourcePath":"components/data/BarList.jsx"},{"name":"Chart","sourcePath":"components/data/Chart.jsx"},{"name":"DataTable","sourcePath":"components/data/DataTable.jsx"},{"name":"DescriptionList","sourcePath":"components/data/DescriptionList.jsx"},{"name":"DiffView","sourcePath":"components/data/DiffView.jsx"},{"name":"Gauge","sourcePath":"components/data/Gauge.jsx"},{"name":"Heatmap","sourcePath":"components/data/Heatmap.jsx"},{"name":"KeyValues","sourcePath":"components/data/KeyValues.jsx"},{"name":"Legend","sourcePath":"components/data/Legend.jsx"},{"name":"LogViewer","sourcePath":"components/data/LogViewer.jsx"},{"name":"Sparkline","sourcePath":"components/data/Sparkline.jsx"},{"name":"StatTile","sourcePath":"components/data/StatTile.jsx"},{"name":"Timeline","sourcePath":"components/data/Timeline.jsx"},{"name":"TrendDelta","sourcePath":"components/data/TrendDelta.jsx"},{"name":"UptimeBar","sourcePath":"components/data/UptimeBar.jsx"},{"name":"Accordion","sourcePath":"components/display/Accordion.jsx"},{"name":"Avatar","sourcePath":"components/display/Avatar.jsx"},{"name":"AvatarGroup","sourcePath":"components/display/Avatar.jsx"},{"name":"Badge","sourcePath":"components/display/Badge.jsx"},{"name":"Code","sourcePath":"components/display/Code.jsx"},{"name":"CodeBlock","sourcePath":"components/display/Code.jsx"},{"name":"Kbd","sourcePath":"components/display/Code.jsx"},{"name":"CopyField","sourcePath":"components/display/CopyField.jsx"},{"name":"StatusPill","sourcePath":"components/display/StatusPill.jsx"},{"name":"Tag","sourcePath":"components/display/Tag.jsx"},{"name":"AlertBanner","sourcePath":"components/feedback/AlertBanner.jsx"},{"name":"ConfirmDialog","sourcePath":"components/feedback/ConfirmDialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"ErrorState","sourcePath":"components/feedback/ErrorState.jsx"},{"name":"InlineMessage","sourcePath":"components/feedback/InlineMessage.jsx"},{"name":"LoadingOverlay","sourcePath":"components/feedback/LoadingOverlay.jsx"},{"name":"NOTIFICATION_DRAWER_ID","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"NotificationTrigger","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"NotificationDrawer","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"ProgressBar","sourcePath":"components/feedback/ProgressBar.jsx"},{"name":"Skeleton","sourcePath":"components/feedback/Skeleton.jsx"},{"name":"Spinner","sourcePath":"components/feedback/Spinner.jsx"},{"name":"Stepper","sourcePath":"components/feedback/Stepper.jsx"},{"name":"ToastProvider","sourcePath":"components/feedback/Toast.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Checkbox","sourcePath":"components/input/Checkbox.jsx"},{"name":"CodeEditor","sourcePath":"components/input/CodeEditor.jsx"},{"name":"ColorInput","sourcePath":"components/input/ColorInput.jsx"},{"name":"Combobox","sourcePath":"components/input/Combobox.jsx"},{"name":"DatePicker","sourcePath":"components/input/DatePicker.jsx"},{"name":"DateRangePicker","sourcePath":"components/input/DateRangePicker.jsx"},{"name":"Dropzone","sourcePath":"components/input/Dropzone.jsx"},{"name":"Field","sourcePath":"components/input/Field.jsx"},{"name":"FileUpload","sourcePath":"components/input/FileUpload.jsx"},{"name":"MultiSelect","sourcePath":"components/input/MultiSelect.jsx"},{"name":"NumberStepper","sourcePath":"components/input/NumberStepper.jsx"},{"name":"OTPInput","sourcePath":"components/input/OTPInput.jsx"},{"name":"PasswordField","sourcePath":"components/input/PasswordField.jsx"},{"name":"RadioGroup","sourcePath":"components/input/RadioGroup.jsx"},{"name":"SearchField","sourcePath":"components/input/SearchField.jsx"},{"name":"SegmentedControl","sourcePath":"components/input/SegmentedControl.jsx"},{"name":"Select","sourcePath":"components/input/Select.jsx"},{"name":"Slider","sourcePath":"components/input/Slider.jsx"},{"name":"Switch","sourcePath":"components/input/Switch.jsx"},{"name":"TextArea","sourcePath":"components/input/TextArea.jsx"},{"name":"TextField","sourcePath":"components/input/TextField.jsx"},{"name":"TimePicker","sourcePath":"components/input/TimePicker.jsx"},{"name":"AspectRatio","sourcePath":"components/layout/AspectRatio.jsx"},{"name":"CardHead","sourcePath":"components/layout/CardHead.jsx"},{"name":"Container","sourcePath":"components/layout/Container.jsx"},{"name":"Divider","sourcePath":"components/layout/Divider.jsx"},{"name":"Grid","sourcePath":"components/layout/Grid.jsx"},{"name":"GridItem","sourcePath":"components/layout/Grid.jsx"},{"name":"Inline","sourcePath":"components/layout/Inline.jsx"},{"name":"PageHeader","sourcePath":"components/layout/PageHeader.jsx"},{"name":"PageStack","sourcePath":"components/layout/PageStack.jsx"},{"name":"Panel","sourcePath":"components/layout/Panel.jsx"},{"name":"Spacer","sourcePath":"components/layout/Spacer.jsx"},{"name":"Stack","sourcePath":"components/layout/Stack.jsx"},{"name":"StatusBar","sourcePath":"components/layout/StatusBar.jsx"},{"name":"Toolbar","sourcePath":"components/layout/Toolbar.jsx"},{"name":"ToolbarGrow","sourcePath":"components/layout/Toolbar.jsx"},{"name":"Visible","sourcePath":"components/layout/Visible.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"CommandPalette","sourcePath":"components/navigation/CommandPalette.jsx"},{"name":"Link","sourcePath":"components/navigation/Link.jsx"},{"name":"Pagination","sourcePath":"components/navigation/Pagination.jsx"},{"name":"SidebarShell","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavItem","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavGroup","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"},{"name":"TopNav","sourcePath":"components/navigation/TopNav.jsx"},{"name":"Drawer","sourcePath":"components/overlay/Drawer.jsx"},{"name":"DropdownMenu","sourcePath":"components/overlay/DropdownMenu.jsx"},{"name":"FormModal","sourcePath":"components/overlay/FormModal.jsx"},{"name":"Modal","sourcePath":"components/overlay/Modal.jsx"},{"name":"Popover","sourcePath":"components/overlay/Popover.jsx"},{"name":"Tooltip","sourcePath":"components/overlay/Tooltip.jsx"}],"sourceHashes":{"components/action/Button.jsx":"5a7e8ba0583c","components/action/Icon.jsx":"aeb9bddad130","components/action/IconButton.jsx":"ea07eb4758dc","components/brand/MascotMark.jsx":"ee600aaf7d73","components/core/frame.js":"f7f85baee1dd","components/data/BarList.jsx":"972409347da2","components/data/Chart.jsx":"4cd91ce3dc17","components/data/DataTable.jsx":"16c2bcaf388e","components/data/DescriptionList.jsx":"7c1079ff291d","components/data/DiffView.jsx":"74e826b1d761","components/data/Gauge.jsx":"d46f247300f5","components/data/Heatmap.jsx":"d48df05ff671","components/data/KeyValues.jsx":"b077d6cb7733","components/data/Legend.jsx":"97e8612fc593","components/data/LogViewer.jsx":"8da3439ff861","components/data/Sparkline.jsx":"3213a7fb56e3","components/data/StatTile.jsx":"c9cf07585b10","components/data/Timeline.jsx":"62e94ddc3f45","components/data/TrendDelta.jsx":"9fb64c9a68bb","components/data/UptimeBar.jsx":"10b780a3f347","components/data/chart-math.js":"c7257bac5328","components/display/Accordion.jsx":"21c1bb109fad","components/display/Avatar.jsx":"83b3b994cb94","components/display/Badge.jsx":"385d2533f37f","components/display/Code.jsx":"6cca3294c4f0","components/display/CopyField.jsx":"56e09f47133a","components/display/StatusPill.jsx":"800e424e54da","components/display/Tag.jsx":"bbb650669637","components/feedback/AlertBanner.jsx":"682a52f4dd31","components/feedback/ConfirmDialog.jsx":"db5e8d5fcf7b","components/feedback/EmptyState.jsx":"c085e4de100c","components/feedback/ErrorState.jsx":"8d1e78ea3ec6","components/feedback/InlineMessage.jsx":"34b5488f8fc8","components/feedback/LoadingOverlay.jsx":"fc8d6b336c10","components/feedback/NotificationDrawer.jsx":"6baf7c4e7449","components/feedback/ProgressBar.jsx":"8d4ae6b51d71","components/feedback/Skeleton.jsx":"b800adab501e","components/feedback/Spinner.jsx":"019571ef40dd","components/feedback/Stepper.jsx":"c17d235e9e2d","components/feedback/Toast.jsx":"30bca2db17a5","components/input/Checkbox.jsx":"12f5be84c0f7","components/input/CodeEditor.jsx":"a7879bdf91e5","components/input/ColorInput.jsx":"a1b77f5ede2f","components/input/Combobox.jsx":"8bd068e5e442","components/input/DatePicker.jsx":"cf93bd65cbbc","components/input/DateRangePicker.jsx":"7a720ebbb46a","components/input/Dropzone.jsx":"578ea3f8f274","components/input/Field.jsx":"bb93dca9a5f5","components/input/FileUpload.jsx":"f6e9805d7420","components/input/MultiSelect.jsx":"a2052f6a4134","components/input/NumberStepper.jsx":"4a892560763a","components/input/OTPInput.jsx":"2b6a5c74f55a","components/input/PasswordField.jsx":"a2ccb84f97c8","components/input/RadioGroup.jsx":"120f32c9b8f9","components/input/SearchField.jsx":"c671843434dc","components/input/SegmentedControl.jsx":"0e432e439927","components/input/Select.jsx":"3b7ac799ef82","components/input/Slider.jsx":"a5ab6da0f3a8","components/input/Switch.jsx":"0d2bdc54c1a0","components/input/TextArea.jsx":"9b271074f1bd","components/input/TextField.jsx":"7d7ce7382207","components/input/TimePicker.jsx":"e5fd1756b8ab","components/layout/AspectRatio.jsx":"ec1ca745e3a9","components/layout/CardHead.jsx":"b7eee3ef5171","components/layout/Container.jsx":"956f2e7a0283","components/layout/Divider.jsx":"2724b2da47dc","components/layout/Grid.jsx":"bd697fa55feb","components/layout/Inline.jsx":"b5018330169a","components/layout/PageHeader.jsx":"feb6eecf36c5","components/layout/PageStack.jsx":"a920ed8a7a71","components/layout/Panel.jsx":"0b58644bd1d6","components/layout/Spacer.jsx":"d30932b51b97","components/layout/Stack.jsx":"d9f5fc72c913","components/layout/StatusBar.jsx":"765e43ff3852","components/layout/Toolbar.jsx":"36c408022442","components/layout/Visible.jsx":"cfc947d272ed","components/navigation/Breadcrumb.jsx":"b7061c66498d","components/navigation/CommandPalette.jsx":"86a67f3f7c61","components/navigation/Link.jsx":"2fde01e61352","components/navigation/Pagination.jsx":"c3306480e75a","components/navigation/SidebarShell.jsx":"196c4ddfa62c","components/navigation/Tabs.jsx":"03ff2397eea8","components/navigation/TopNav.jsx":"a8218730e10d","components/overlay/Drawer.jsx":"613d92b439e8","components/overlay/DropdownMenu.jsx":"6dbb8e30cf84","components/overlay/FormModal.jsx":"c7439b9b50b4","components/overlay/Modal.jsx":"0c1144187e04","components/overlay/Popover.jsx":"d6d2d7471811","components/overlay/Tooltip.jsx":"1903b53c9044","theme-toggle.js":"959c3e68b82a"},"inlinedExternals":[],"unexposedExports":[{"name":"cx","sourcePath":"components/core/frame.js"},{"name":"estWidth","sourcePath":"components/data/chart-math.js"},{"name":"fmtKo","sourcePath":"components/data/chart-math.js"},{"name":"frameStyle","sourcePath":"components/core/frame.js"},{"name":"niceTicks","sourcePath":"components/data/chart-math.js"},{"name":"passwordStrength","sourcePath":"components/input/PasswordField.jsx"},{"name":"pathLength","sourcePath":"components/data/chart-math.js"},{"name":"r1","sourcePath":"components/data/chart-math.js"},{"name":"runsOf","sourcePath":"components/data/chart-math.js"},{"name":"smoothPath","sourcePath":"components/data/chart-math.js"},{"name":"spaceToken","sourcePath":"components/layout/Stack.jsx"},{"name":"toneInk","sourcePath":"components/data/chart-math.js"},{"name":"toneVar","sourcePath":"components/data/chart-math.js"},{"name":"useFieldContext","sourcePath":"components/input/Field.jsx"},{"name":"useToast","sourcePath":"components/feedback/Toast.jsx"}]} */
+/* @ds-bundle: {"format":4,"namespace":"Ds_d3ea90","components":[{"name":"Button","sourcePath":"components/action/Button.jsx"},{"name":"Icon","sourcePath":"components/action/Icon.jsx"},{"name":"IconButton","sourcePath":"components/action/IconButton.jsx"},{"name":"MascotMark","sourcePath":"components/brand/MascotMark.jsx"},{"name":"BarList","sourcePath":"components/data/BarList.jsx"},{"name":"Chart","sourcePath":"components/data/Chart.jsx"},{"name":"DataTable","sourcePath":"components/data/DataTable.jsx"},{"name":"DescriptionList","sourcePath":"components/data/DescriptionList.jsx"},{"name":"DiffView","sourcePath":"components/data/DiffView.jsx"},{"name":"Gauge","sourcePath":"components/data/Gauge.jsx"},{"name":"Heatmap","sourcePath":"components/data/Heatmap.jsx"},{"name":"KeyValues","sourcePath":"components/data/KeyValues.jsx"},{"name":"Legend","sourcePath":"components/data/Legend.jsx"},{"name":"LogViewer","sourcePath":"components/data/LogViewer.jsx"},{"name":"Sparkline","sourcePath":"components/data/Sparkline.jsx"},{"name":"StatTile","sourcePath":"components/data/StatTile.jsx"},{"name":"Timeline","sourcePath":"components/data/Timeline.jsx"},{"name":"TrendDelta","sourcePath":"components/data/TrendDelta.jsx"},{"name":"UptimeBar","sourcePath":"components/data/UptimeBar.jsx"},{"name":"Accordion","sourcePath":"components/display/Accordion.jsx"},{"name":"Avatar","sourcePath":"components/display/Avatar.jsx"},{"name":"AvatarGroup","sourcePath":"components/display/Avatar.jsx"},{"name":"Badge","sourcePath":"components/display/Badge.jsx"},{"name":"Code","sourcePath":"components/display/Code.jsx"},{"name":"CodeBlock","sourcePath":"components/display/Code.jsx"},{"name":"Kbd","sourcePath":"components/display/Code.jsx"},{"name":"CopyField","sourcePath":"components/display/CopyField.jsx"},{"name":"StatusPill","sourcePath":"components/display/StatusPill.jsx"},{"name":"Tag","sourcePath":"components/display/Tag.jsx"},{"name":"AlertBanner","sourcePath":"components/feedback/AlertBanner.jsx"},{"name":"ConfirmDialog","sourcePath":"components/feedback/ConfirmDialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"ErrorState","sourcePath":"components/feedback/ErrorState.jsx"},{"name":"InlineMessage","sourcePath":"components/feedback/InlineMessage.jsx"},{"name":"LoadingOverlay","sourcePath":"components/feedback/LoadingOverlay.jsx"},{"name":"NotificationTrigger","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"NotificationDrawer","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"ProgressBar","sourcePath":"components/feedback/ProgressBar.jsx"},{"name":"Skeleton","sourcePath":"components/feedback/Skeleton.jsx"},{"name":"Spinner","sourcePath":"components/feedback/Spinner.jsx"},{"name":"Stepper","sourcePath":"components/feedback/Stepper.jsx"},{"name":"ToastProvider","sourcePath":"components/feedback/Toast.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Checkbox","sourcePath":"components/input/Checkbox.jsx"},{"name":"CodeEditor","sourcePath":"components/input/CodeEditor.jsx"},{"name":"ColorInput","sourcePath":"components/input/ColorInput.jsx"},{"name":"Combobox","sourcePath":"components/input/Combobox.jsx"},{"name":"DatePicker","sourcePath":"components/input/DatePicker.jsx"},{"name":"DateRangePicker","sourcePath":"components/input/DateRangePicker.jsx"},{"name":"Dropzone","sourcePath":"components/input/Dropzone.jsx"},{"name":"Field","sourcePath":"components/input/Field.jsx"},{"name":"FileUpload","sourcePath":"components/input/FileUpload.jsx"},{"name":"MultiSelect","sourcePath":"components/input/MultiSelect.jsx"},{"name":"NumberStepper","sourcePath":"components/input/NumberStepper.jsx"},{"name":"OTPInput","sourcePath":"components/input/OTPInput.jsx"},{"name":"PasswordField","sourcePath":"components/input/PasswordField.jsx"},{"name":"RadioGroup","sourcePath":"components/input/RadioGroup.jsx"},{"name":"SearchField","sourcePath":"components/input/SearchField.jsx"},{"name":"SegmentedControl","sourcePath":"components/input/SegmentedControl.jsx"},{"name":"Select","sourcePath":"components/input/Select.jsx"},{"name":"Slider","sourcePath":"components/input/Slider.jsx"},{"name":"Switch","sourcePath":"components/input/Switch.jsx"},{"name":"TextArea","sourcePath":"components/input/TextArea.jsx"},{"name":"TextField","sourcePath":"components/input/TextField.jsx"},{"name":"TimePicker","sourcePath":"components/input/TimePicker.jsx"},{"name":"AspectRatio","sourcePath":"components/layout/AspectRatio.jsx"},{"name":"CardHead","sourcePath":"components/layout/CardHead.jsx"},{"name":"Container","sourcePath":"components/layout/Container.jsx"},{"name":"Divider","sourcePath":"components/layout/Divider.jsx"},{"name":"Grid","sourcePath":"components/layout/Grid.jsx"},{"name":"GridItem","sourcePath":"components/layout/Grid.jsx"},{"name":"Inline","sourcePath":"components/layout/Inline.jsx"},{"name":"PageHeader","sourcePath":"components/layout/PageHeader.jsx"},{"name":"PageStack","sourcePath":"components/layout/PageStack.jsx"},{"name":"Panel","sourcePath":"components/layout/Panel.jsx"},{"name":"Spacer","sourcePath":"components/layout/Spacer.jsx"},{"name":"Stack","sourcePath":"components/layout/Stack.jsx"},{"name":"StatusBar","sourcePath":"components/layout/StatusBar.jsx"},{"name":"Toolbar","sourcePath":"components/layout/Toolbar.jsx"},{"name":"ToolbarGrow","sourcePath":"components/layout/Toolbar.jsx"},{"name":"Visible","sourcePath":"components/layout/Visible.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"CommandPalette","sourcePath":"components/navigation/CommandPalette.jsx"},{"name":"Link","sourcePath":"components/navigation/Link.jsx"},{"name":"Pagination","sourcePath":"components/navigation/Pagination.jsx"},{"name":"SidebarShell","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavItem","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavGroup","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"},{"name":"TopNav","sourcePath":"components/navigation/TopNav.jsx"},{"name":"Drawer","sourcePath":"components/overlay/Drawer.jsx"},{"name":"DropdownMenu","sourcePath":"components/overlay/DropdownMenu.jsx"},{"name":"FormModal","sourcePath":"components/overlay/FormModal.jsx"},{"name":"Modal","sourcePath":"components/overlay/Modal.jsx"},{"name":"Popover","sourcePath":"components/overlay/Popover.jsx"},{"name":"Tooltip","sourcePath":"components/overlay/Tooltip.jsx"}],"sourceHashes":{"components/action/Button.jsx":"5a7e8ba0583c","components/action/Icon.jsx":"aeb9bddad130","components/action/IconButton.jsx":"573fc7e3ae35","components/brand/MascotMark.jsx":"c49125fa6915","components/core/frame.js":"f7f85baee1dd","components/data/BarList.jsx":"a0cbb96057c8","components/data/Chart.jsx":"0cd8343212ac","components/data/DataTable.jsx":"2fada61dce2f","components/data/DescriptionList.jsx":"7c1079ff291d","components/data/DiffView.jsx":"74e826b1d761","components/data/Gauge.jsx":"d46f247300f5","components/data/Heatmap.jsx":"4f7a3470a15e","components/data/KeyValues.jsx":"0e218c0693b0","components/data/Legend.jsx":"59d33485648e","components/data/LogViewer.jsx":"8da3439ff861","components/data/Sparkline.jsx":"3213a7fb56e3","components/data/StatTile.jsx":"08c4148e8c37","components/data/Timeline.jsx":"ea2c65867b69","components/data/TrendDelta.jsx":"9fb64c9a68bb","components/data/UptimeBar.jsx":"10b780a3f347","components/data/chart-math.js":"cd57f7da369c","components/display/Accordion.jsx":"baf5673b0f70","components/display/Avatar.jsx":"82bf7603f488","components/display/Badge.jsx":"385d2533f37f","components/display/Code.jsx":"6cca3294c4f0","components/display/CopyField.jsx":"a797dab55521","components/display/StatusPill.jsx":"800e424e54da","components/display/Tag.jsx":"bbb650669637","components/feedback/AlertBanner.jsx":"fe7a9a92ad74","components/feedback/ConfirmDialog.jsx":"db5e8d5fcf7b","components/feedback/EmptyState.jsx":"c085e4de100c","components/feedback/ErrorState.jsx":"8d1e78ea3ec6","components/feedback/InlineMessage.jsx":"34b5488f8fc8","components/feedback/LoadingOverlay.jsx":"fc8d6b336c10","components/feedback/NotificationDrawer.jsx":"6baf7c4e7449","components/feedback/ProgressBar.jsx":"4594effb9937","components/feedback/Skeleton.jsx":"b800adab501e","components/feedback/Spinner.jsx":"019571ef40dd","components/feedback/Stepper.jsx":"84ad89b06daa","components/feedback/Toast.jsx":"05d60879ab6f","components/input/Checkbox.jsx":"12f5be84c0f7","components/input/CodeEditor.jsx":"bf9268882591","components/input/ColorInput.jsx":"bcb2bf43c367","components/input/Combobox.jsx":"8bd068e5e442","components/input/DatePicker.jsx":"4d2a94c5a109","components/input/DateRangePicker.jsx":"7a720ebbb46a","components/input/Dropzone.jsx":"c229fb1f6334","components/input/Field.jsx":"bb93dca9a5f5","components/input/FileUpload.jsx":"f6e9805d7420","components/input/MultiSelect.jsx":"ad4a86d2b11e","components/input/NumberStepper.jsx":"4a892560763a","components/input/OTPInput.jsx":"2b6a5c74f55a","components/input/PasswordField.jsx":"a2ccb84f97c8","components/input/RadioGroup.jsx":"120f32c9b8f9","components/input/SearchField.jsx":"c53af994c91f","components/input/SegmentedControl.jsx":"0e432e439927","components/input/Select.jsx":"3b7ac799ef82","components/input/Slider.jsx":"a5ab6da0f3a8","components/input/Switch.jsx":"0d2bdc54c1a0","components/input/TextArea.jsx":"9b271074f1bd","components/input/TextField.jsx":"7d7ce7382207","components/input/TimePicker.jsx":"e5fd1756b8ab","components/layout/AspectRatio.jsx":"ec1ca745e3a9","components/layout/CardHead.jsx":"b7eee3ef5171","components/layout/Container.jsx":"956f2e7a0283","components/layout/Divider.jsx":"2724b2da47dc","components/layout/Grid.jsx":"bd697fa55feb","components/layout/Inline.jsx":"b5018330169a","components/layout/PageHeader.jsx":"feb6eecf36c5","components/layout/PageStack.jsx":"a920ed8a7a71","components/layout/Panel.jsx":"0b58644bd1d6","components/layout/Spacer.jsx":"d30932b51b97","components/layout/Stack.jsx":"d9f5fc72c913","components/layout/StatusBar.jsx":"765e43ff3852","components/layout/Toolbar.jsx":"a8f7fc524838","components/layout/Visible.jsx":"cfc947d272ed","components/navigation/Breadcrumb.jsx":"9b22abe659d3","components/navigation/CommandPalette.jsx":"9894e7d054d1","components/navigation/Link.jsx":"f16424582ea3","components/navigation/Pagination.jsx":"c3306480e75a","components/navigation/SidebarShell.jsx":"8b230eedd5ec","components/navigation/Tabs.jsx":"da326c5325db","components/navigation/TopNav.jsx":"a8218730e10d","components/overlay/Drawer.jsx":"7fe6ce4bc167","components/overlay/DropdownMenu.jsx":"33645b05d244","components/overlay/FormModal.jsx":"c7439b9b50b4","components/overlay/Modal.jsx":"12ef55ab2023","components/overlay/Popover.jsx":"88176ab514f6","components/overlay/Tooltip.jsx":"55de6eeb8093","theme-toggle.js":"a482d13b9a1d"},"inlinedExternals":[],"unexposedExports":[{"name":"cx","sourcePath":"components/core/frame.js"},{"name":"DASHES","sourcePath":"components/data/chart-math.js"},{"name":"estWidth","sourcePath":"components/data/chart-math.js"},{"name":"fmtKo","sourcePath":"components/data/chart-math.js"},{"name":"frameStyle","sourcePath":"components/core/frame.js"},{"name":"histBins","sourcePath":"components/data/chart-math.js"},{"name":"niceTicks","sourcePath":"components/data/chart-math.js"},{"name":"NOTIFICATION_DRAWER_ID","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"passwordStrength","sourcePath":"components/input/PasswordField.jsx"},{"name":"pathLength","sourcePath":"components/data/chart-math.js"},{"name":"r1","sourcePath":"components/data/chart-math.js"},{"name":"runsOf","sourcePath":"components/data/chart-math.js"},{"name":"seriesDash","sourcePath":"components/data/chart-math.js"},{"name":"smoothPath","sourcePath":"components/data/chart-math.js"},{"name":"spaceToken","sourcePath":"components/layout/Stack.jsx"},{"name":"toneInk","sourcePath":"components/data/chart-math.js"},{"name":"toneVar","sourcePath":"components/data/chart-math.js"},{"name":"useFieldContext","sourcePath":"components/input/Field.jsx"},{"name":"useToast","sourcePath":"components/feedback/Toast.jsx"}]} */
 
 (() => {
 
@@ -7,6 +7,8 @@ const __ds_ns = (window.Ds_d3ea90 = window.Ds_d3ea90 || {});
 const __ds_scope = {};
 
 (__ds_ns.__errors = __ds_ns.__errors || []);
+
+const __ds_run = () => {
 
 // components/core/frame.js
 try { (() => {
@@ -48,6 +50,7 @@ Object.assign(__ds_scope, { frameStyle, cx });
 
 // components/action/Icon.jsx
 try { (() => {
+const { cx } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** Phosphor Bold 아이콘. name은 Phosphor 아이콘 이름(kebab-case, 예: "bell", "gear-six").
  *  리액트 프로젝트에서는 @phosphor-icons/react의 동일 아이콘을 weight="bold"로 쓴다. 장식 아이콘은 aria-hidden. */
@@ -60,7 +63,7 @@ function Icon({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement("i", _extends({
-    className: __ds_scope.cx("bds-icon", "ph-bold", `ph-${name}`, className),
+    className: cx("bds-icon", "ph-bold", `ph-${name}`, className),
     style: {
       "--icon-size": `${size}px`,
       ...style
@@ -75,6 +78,7 @@ Object.assign(__ds_scope, { Icon });
 
 // components/action/Button.jsx
 try { (() => {
+const { cx, frameStyle, Icon } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 버튼. variant는 의미(primary/secondary/ghost/danger), size는 밀도, fit="flex"면 부모 폭을 채운다. */
 function Button({
@@ -95,17 +99,17 @@ function Button({
     type: type,
     disabled: disabled || busy,
     "aria-busy": busy || undefined,
-    className: __ds_scope.cx("bds-btn", `bds-btn--${variant}`, size !== "md" && `bds-btn--${size}`, fit === "flex" && "bds-btn--flex", className),
-    style: fit === "fixed" ? __ds_scope.frameStyle({
+    className: cx("bds-btn", `bds-btn--${variant}`, size !== "md" && `bds-btn--${size}`, fit === "flex" && "bds-btn--flex", className),
+    style: fit === "fixed" ? frameStyle({
       fit,
       width
     }) : undefined
   }, rest), busy ? /*#__PURE__*/React.createElement("span", {
     className: "bds-btn__spin",
     "aria-hidden": "true"
-  }) : icon ? /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }) : icon ? /*#__PURE__*/React.createElement(Icon, {
     name: icon
-  }) : null, /*#__PURE__*/React.createElement("span", null, children), iconRight && /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }) : null, /*#__PURE__*/React.createElement("span", null, children), iconRight && /*#__PURE__*/React.createElement(Icon, {
     name: iconRight
   }));
 }
@@ -114,12 +118,11 @@ Object.assign(__ds_scope, { Button });
 
 // components/action/IconButton.jsx
 try { (() => {
+const { forwardRef } = React;
+const { cx, Icon } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const {
-  forwardRef
-} = React;
-/** 아이콘 전용 버튼. aria-label 필수. badge(숫자)가 0보다 크면 우상단 카운트가 붙는다. */
-const IconButton = forwardRef(function IconButton({
+/** 아이콘 전용 버튼. aria-label 필수. badge(숫자)가 0보다 크면 우상단 카운트가 붙고 접근 가능한 이름에 "N건"이 더해진다. */
+const IconButton = /*#__PURE__*/forwardRef(function IconButton({
   icon,
   size = "md",
   variant = "outline",
@@ -130,227 +133,491 @@ const IconButton = forwardRef(function IconButton({
   ...rest
 }, ref) {
   if (!rest["aria-label"]) console.warn("IconButton: aria-label은 필수입니다.");
+  const count = badge > 99 ? "99+" : badge;
+  const label = badge > 0 && rest["aria-label"] ? `${rest["aria-label"]}, ${count}건` : rest["aria-label"];
   return /*#__PURE__*/React.createElement("button", _extends({
     ref: ref,
     type: type,
-    className: __ds_scope.cx("bds-iconbtn", size !== "md" && `bds-iconbtn--${size}`, variant !== "outline" && `bds-iconbtn--${variant}`, className)
-  }, rest), icon ? /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    className: cx("bds-iconbtn", size !== "md" && `bds-iconbtn--${size}`, variant !== "outline" && `bds-iconbtn--${variant}`, className)
+  }, rest, {
+    "aria-label": label
+  }), icon ? /*#__PURE__*/React.createElement(Icon, {
     name: icon,
     size: size === "sm" ? 14 : size === "lg" ? 20 : 16
   }) : children, badge > 0 && /*#__PURE__*/React.createElement("span", {
     className: "bds-iconbtn__badge",
     "aria-hidden": "true"
-  }, badge > 99 ? "99+" : badge));
+  }, count));
 });
 Object.assign(__ds_scope, { IconButton });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/action/IconButton.jsx", error: String((e && e.message) || e) }); }
 
 // components/brand/MascotMark.jsx
 try { (() => {
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const EAR_L = "M6.5 8 C2.5 9.5 2 16 4.5 19.5 C6 21.6 8.5 22.5 10.5 21.5 L12.5 12 C11.5 9 8.8 7.1 6.5 8Z";
-const EAR_R = "M29.5 8 C33.5 9.5 34 16 31.5 19.5 C30 21.6 27.5 22.5 25.5 21.5 L23.5 12 C24.5 9 27.2 7.1 29.5 8Z";
-const L = "var(--mark-line)";
-const S = (d, w = 1.2) => /*#__PURE__*/React.createElement("path", {
-  d: d,
-  fill: "none",
-  stroke: L,
-  strokeWidth: w,
-  strokeLinecap: "round"
+const { cx } = __ds_scope;
+const h = React.createElement;
+const SIZES = Object.freeze({
+  xxs: 16,
+  xs: 24,
+  sm: 32,
+  md: 48,
+  lg: 64,
+  xl: 96,
+  xxl: 128
 });
 function Face({
   face,
+  tiny,
   animated
 }) {
-  const eye = animated ? "bds-mark__eye" : undefined;
   switch (face) {
-    case "blank":
+    case 'neutral':
+      return tiny ? h('g', null, h('g', {
+        className: animated ? 'bds-mark__eye' : undefined
+      }, h('circle', {
+        "cx": "12.5",
+        "cy": "15.1",
+        "r": "1.65",
+        "fill": "var(--mark-line)"
+      })), h('g', {
+        className: animated ? 'bds-mark__eye' : undefined
+      }, h('circle', {
+        "cx": "23.4",
+        "cy": "15.1",
+        "r": "1.65",
+        "fill": "var(--mark-line)"
+      })), h('path', {
+        "d": "M15.9 18.5Q18 17.8 20.1 18.5Q21.3 19.4 18 21.5Q14.7 19.4 15.9 18.5Z",
+        "fill": "var(--mark-line)"
+      }), h('path', {
+        "d": "M18 21.1V22 M18 22l-1.5 1 M18 22l1.5 1",
+        "fill": "none",
+        "stroke": "var(--mark-line)",
+        "strokeWidth": "1.35",
+        "strokeLinecap": "round",
+        "strokeLinejoin": "round"
+      })) : h('g', null, h('g', {
+        className: animated ? 'bds-mark__eye' : undefined
+      }, h('circle', {
+        "cx": "12.5",
+        "cy": "15.1",
+        "r": "1.65",
+        "fill": "var(--mark-line)"
+      }), h('circle', {
+        "cx": "12",
+        "cy": "14.4",
+        "r": ".42",
+        "fill": "var(--mark-face)"
+      })), h('g', {
+        className: animated ? 'bds-mark__eye' : undefined
+      }, h('circle', {
+        "cx": "23.4",
+        "cy": "15.1",
+        "r": "1.65",
+        "fill": "var(--mark-line)"
+      }), h('circle', {
+        "cx": "22.9",
+        "cy": "14.1",
+        "r": ".42",
+        "fill": "var(--mark-face)"
+      })), h('path', {
+        "d": "M15.9 18.5Q18 17.8 20.1 18.5Q21.3 19.4 18 21.5Q14.7 19.4 15.9 18.5Z",
+        "fill": "var(--mark-line)"
+      }), h('path', {
+        "d": "M18 21.1V22 M18 22l-1.5 1 M18 22l1.5 1",
+        "fill": "none",
+        "stroke": "var(--mark-line)",
+        "strokeWidth": "1.05",
+        "strokeLinecap": "round",
+        "strokeLinejoin": "round"
+      }));
+    case 'curious':
+      return tiny ? h('g', null, h('circle', {
+        "cx": "12.5",
+        "cy": "15.2",
+        "r": "1.55",
+        "fill": "var(--mark-line)"
+      }), h('circle', {
+        "cx": "23.4",
+        "cy": "14.8",
+        "r": "1.9",
+        "fill": "var(--mark-line)"
+      }), h('path', {
+        "d": "M15.9 18.5Q18 17.8 20.1 18.5Q21.3 19.4 18 21.5Q14.7 19.4 15.9 18.5Z",
+        "fill": "var(--mark-line)"
+      }), h('path', {
+        "d": "M18 21.1V22 M18 22l-1.5 1 M18 22l1.5 1",
+        "fill": "none",
+        "stroke": "var(--mark-line)",
+        "strokeWidth": "1.35",
+        "strokeLinecap": "round",
+        "strokeLinejoin": "round"
+      })) : h('g', null, h('circle', {
+        "cx": "12.5",
+        "cy": "15.2",
+        "r": "1.55",
+        "fill": "var(--mark-line)"
+      }), h('circle', {
+        "cx": "23.4",
+        "cy": "14.8",
+        "r": "1.9",
+        "fill": "var(--mark-line)"
+      }), h('circle', {
+        "cx": "12",
+        "cy": "14.4",
+        "r": ".42",
+        "fill": "var(--mark-face)"
+      }), h('circle', {
+        "cx": "22.9",
+        "cy": "14.1",
+        "r": ".42",
+        "fill": "var(--mark-face)"
+      }), h('path', {
+        "d": "M15.9 18.5Q18 17.8 20.1 18.5Q21.3 19.4 18 21.5Q14.7 19.4 15.9 18.5Z",
+        "fill": "var(--mark-line)"
+      }), h('path', {
+        "d": "M18 21.1V22 M18 22l-1.5 1 M18 22l1.5 1",
+        "fill": "none",
+        "stroke": "var(--mark-line)",
+        "strokeWidth": "1.05",
+        "strokeLinecap": "round",
+        "strokeLinejoin": "round"
+      }));
+    case 'surprised':
+      return tiny ? h('g', null, h('circle', {
+        "cx": "12.5",
+        "cy": "14.7",
+        "r": "2",
+        "fill": "var(--mark-line)"
+      }), h('circle', {
+        "cx": "23.4",
+        "cy": "14.7",
+        "r": "2",
+        "fill": "var(--mark-line)"
+      }), h('path', {
+        "d": "M15.9 18.5Q18 17.8 20.1 18.5Q21.3 19.4 18 21.5Q14.7 19.4 15.9 18.5Z",
+        "fill": "var(--mark-line)"
+      }), h('ellipse', {
+        "cx": "18",
+        "cy": "23.3",
+        "rx": "1.25",
+        "ry": "1.6",
+        "fill": "var(--mark-line)"
+      })) : h('g', null, h('circle', {
+        "cx": "12.5",
+        "cy": "14.7",
+        "r": "2",
+        "fill": "var(--mark-line)"
+      }), h('circle', {
+        "cx": "23.4",
+        "cy": "14.7",
+        "r": "2",
+        "fill": "var(--mark-line)"
+      }), h('circle', {
+        "cx": "12",
+        "cy": "14.4",
+        "r": ".42",
+        "fill": "var(--mark-face)"
+      }), h('circle', {
+        "cx": "22.9",
+        "cy": "14.1",
+        "r": ".42",
+        "fill": "var(--mark-face)"
+      }), h('path', {
+        "d": "M15.9 18.5Q18 17.8 20.1 18.5Q21.3 19.4 18 21.5Q14.7 19.4 15.9 18.5Z",
+        "fill": "var(--mark-line)"
+      }), h('ellipse', {
+        "cx": "18",
+        "cy": "23.3",
+        "rx": "1.25",
+        "ry": "1.6",
+        "fill": "var(--mark-line)"
+      }));
+    case 'smiling':
+      return tiny ? h('g', null, h('circle', {
+        "cx": "12.5",
+        "cy": "15.1",
+        "r": "1.65",
+        "fill": "var(--mark-line)"
+      }), h('circle', {
+        "cx": "23.4",
+        "cy": "15.1",
+        "r": "1.65",
+        "fill": "var(--mark-line)"
+      }), h('path', {
+        "d": "M15.9 18.5Q18 17.8 20.1 18.5Q21.3 19.4 18 21.5Q14.7 19.4 15.9 18.5Z",
+        "fill": "var(--mark-line)"
+      }), h('path', {
+        "d": "M15.4 22.2Q18 25 20.6 22.2",
+        "fill": "none",
+        "stroke": "var(--mark-line)",
+        "strokeWidth": "1.15",
+        "strokeLinecap": "round",
+        "strokeLinejoin": "round"
+      })) : h('g', null, h('circle', {
+        "cx": "12.5",
+        "cy": "15.1",
+        "r": "1.65",
+        "fill": "var(--mark-line)"
+      }), h('circle', {
+        "cx": "23.4",
+        "cy": "15.1",
+        "r": "1.65",
+        "fill": "var(--mark-line)"
+      }), h('circle', {
+        "cx": "12",
+        "cy": "14.4",
+        "r": ".42",
+        "fill": "var(--mark-face)"
+      }), h('circle', {
+        "cx": "22.9",
+        "cy": "14.1",
+        "r": ".42",
+        "fill": "var(--mark-face)"
+      }), h('path', {
+        "d": "M15.9 18.5Q18 17.8 20.1 18.5Q21.3 19.4 18 21.5Q14.7 19.4 15.9 18.5Z",
+        "fill": "var(--mark-line)"
+      }), h('path', {
+        "d": "M15.4 22.2Q18 25 20.6 22.2",
+        "fill": "none",
+        "stroke": "var(--mark-line)",
+        "strokeWidth": "1.15",
+        "strokeLinecap": "round",
+        "strokeLinejoin": "round"
+      }));
+    case 'crying':
+      return tiny ? h('g', null, h('path', {
+        "d": "M10.7 14.8q1.8-1.8 3.6 0 M21.6 14.8q1.8-1.8 3.6 0",
+        "fill": "none",
+        "stroke": "var(--mark-line)",
+        "strokeWidth": "1.3",
+        "strokeLinecap": "round",
+        "strokeLinejoin": "round"
+      }), h('path', {
+        "d": "M11.1 16.4q-2.3 3.1 0 3.5q2.3-.4 0-3.5 M24.8 16.4q-2.3 3.1 0 3.5q2.3-.4 0-3.5",
+        "fill": "var(--mark-line)"
+      }), h('path', {
+        "d": "M15.9 18.5Q18 17.8 20.1 18.5Q21.3 19.4 18 21.5Q14.7 19.4 15.9 18.5Z",
+        "fill": "var(--mark-line)"
+      }), h('path', {
+        "d": "M16 24q2-2 4 0",
+        "fill": "none",
+        "stroke": "var(--mark-line)",
+        "strokeWidth": "1.15",
+        "strokeLinecap": "round",
+        "strokeLinejoin": "round"
+      })) : h('g', null, h('path', {
+        "d": "M10.7 14.8q1.8-1.8 3.6 0 M21.6 14.8q1.8-1.8 3.6 0",
+        "fill": "none",
+        "stroke": "var(--mark-line)",
+        "strokeWidth": "1.3",
+        "strokeLinecap": "round",
+        "strokeLinejoin": "round"
+      }), h('path', {
+        "d": "M11.1 16.4q-2.3 3.1 0 3.5q2.3-.4 0-3.5 M24.8 16.4q-2.3 3.1 0 3.5q2.3-.4 0-3.5",
+        "fill": "var(--mark-line)"
+      }), h('path', {
+        "d": "M15.9 18.5Q18 17.8 20.1 18.5Q21.3 19.4 18 21.5Q14.7 19.4 15.9 18.5Z",
+        "fill": "var(--mark-line)"
+      }), h('path', {
+        "d": "M16 24q2-2 4 0",
+        "fill": "none",
+        "stroke": "var(--mark-line)",
+        "strokeWidth": "1.15",
+        "strokeLinecap": "round",
+        "strokeLinejoin": "round"
+      }));
+    case 'worried':
+      return tiny ? h('g', null, h('circle', {
+        "cx": "12.5",
+        "cy": "15.1",
+        "r": "1.65",
+        "fill": "var(--mark-line)"
+      }), h('circle', {
+        "cx": "23.4",
+        "cy": "15.1",
+        "r": "1.65",
+        "fill": "var(--mark-line)"
+      }), h('path', {
+        "d": "M10.5 11.8l3-1 M22.4 10.8l3 1",
+        "fill": "none",
+        "stroke": "var(--mark-line)",
+        "strokeWidth": "1.1",
+        "strokeLinecap": "round",
+        "strokeLinejoin": "round"
+      }), h('path', {
+        "d": "M15.9 18.5Q18 17.8 20.1 18.5Q21.3 19.4 18 21.5Q14.7 19.4 15.9 18.5Z",
+        "fill": "var(--mark-line)"
+      }), h('path', {
+        "d": "M15.8 24q2.2-2.4 4.4 0",
+        "fill": "none",
+        "stroke": "var(--mark-line)",
+        "strokeWidth": "1.15",
+        "strokeLinecap": "round",
+        "strokeLinejoin": "round"
+      })) : h('g', null, h('circle', {
+        "cx": "12.5",
+        "cy": "15.1",
+        "r": "1.65",
+        "fill": "var(--mark-line)"
+      }), h('circle', {
+        "cx": "23.4",
+        "cy": "15.1",
+        "r": "1.65",
+        "fill": "var(--mark-line)"
+      }), h('circle', {
+        "cx": "12",
+        "cy": "14.4",
+        "r": ".42",
+        "fill": "var(--mark-face)"
+      }), h('circle', {
+        "cx": "22.9",
+        "cy": "14.1",
+        "r": ".42",
+        "fill": "var(--mark-face)"
+      }), h('path', {
+        "d": "M10.5 11.8l3-1 M22.4 10.8l3 1",
+        "fill": "none",
+        "stroke": "var(--mark-line)",
+        "strokeWidth": "1.1",
+        "strokeLinecap": "round",
+        "strokeLinejoin": "round"
+      }), h('path', {
+        "d": "M15.9 18.5Q18 17.8 20.1 18.5Q21.3 19.4 18 21.5Q14.7 19.4 15.9 18.5Z",
+        "fill": "var(--mark-line)"
+      }), h('path', {
+        "d": "M15.8 24q2.2-2.4 4.4 0",
+        "fill": "none",
+        "stroke": "var(--mark-line)",
+        "strokeWidth": "1.15",
+        "strokeLinecap": "round",
+        "strokeLinejoin": "round"
+      }));
+    case 'sleepy':
+      return tiny ? h('g', null, h('path', {
+        "d": "M10.7 15.3q1.8 2 3.6 0 M21.6 15.3q1.8 2 3.6 0",
+        "fill": "none",
+        "stroke": "var(--mark-line)",
+        "strokeWidth": "1.35",
+        "strokeLinecap": "round",
+        "strokeLinejoin": "round"
+      }), h('path', {
+        "d": "M15.9 18.5Q18 17.8 20.1 18.5Q21.3 19.4 18 21.5Q14.7 19.4 15.9 18.5Z",
+        "fill": "var(--mark-line)"
+      }), h('path', {
+        "d": "M18 21.1V22 M18 22l-1.5 1 M18 22l1.5 1",
+        "fill": "none",
+        "stroke": "var(--mark-line)",
+        "strokeWidth": "1.35",
+        "strokeLinecap": "round",
+        "strokeLinejoin": "round"
+      })) : h('g', null, h('path', {
+        "d": "M10.7 15.3q1.8 2 3.6 0 M21.6 15.3q1.8 2 3.6 0",
+        "fill": "none",
+        "stroke": "var(--mark-line)",
+        "strokeWidth": "1.35",
+        "strokeLinecap": "round",
+        "strokeLinejoin": "round"
+      }), h('path', {
+        "d": "M15.9 18.5Q18 17.8 20.1 18.5Q21.3 19.4 18 21.5Q14.7 19.4 15.9 18.5Z",
+        "fill": "var(--mark-line)"
+      }), h('path', {
+        "d": "M18 21.1V22 M18 22l-1.5 1 M18 22l1.5 1",
+        "fill": "none",
+        "stroke": "var(--mark-line)",
+        "strokeWidth": "1.05",
+        "strokeLinecap": "round",
+        "strokeLinejoin": "round"
+      }));
+    case 'excited':
+      return tiny ? h('g', null, h('path', {
+        "d": "M10.6 15.6q1.9-3 3.8 0 M21.5 15.6q1.9-3 3.8 0",
+        "fill": "none",
+        "stroke": "var(--mark-line)",
+        "strokeWidth": "1.35",
+        "strokeLinecap": "round",
+        "strokeLinejoin": "round"
+      }), h('path', {
+        "d": "M15.9 18.5Q18 17.8 20.1 18.5Q21.3 19.4 18 21.5Q14.7 19.4 15.9 18.5Z",
+        "fill": "var(--mark-line)"
+      }), h('path', {
+        "d": "M15.2 22h5.6q-.4 4-2.8 4t-2.8-4Z",
+        "fill": "var(--mark-line)"
+      })) : h('g', null, h('path', {
+        "d": "M10.6 15.6q1.9-3 3.8 0 M21.5 15.6q1.9-3 3.8 0",
+        "fill": "none",
+        "stroke": "var(--mark-line)",
+        "strokeWidth": "1.35",
+        "strokeLinecap": "round",
+        "strokeLinejoin": "round"
+      }), h('path', {
+        "d": "M15.9 18.5Q18 17.8 20.1 18.5Q21.3 19.4 18 21.5Q14.7 19.4 15.9 18.5Z",
+        "fill": "var(--mark-line)"
+      }), h('path', {
+        "d": "M15.2 22h5.6q-.4 4-2.8 4t-2.8-4Z",
+        "fill": "var(--mark-line)"
+      }));
+    case 'blank':
       return null;
-    case "curious":
-      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("circle", {
-        cx: "14.4",
-        cy: "16.4",
-        r: "1.55",
-        fill: L
-      }), /*#__PURE__*/React.createElement("circle", {
-        cx: "21.6",
-        cy: "15.9",
-        r: "1.55",
-        fill: L
-      }), S("M20 12.8 Q21.7 11.9 23.3 12.8", 1.1), /*#__PURE__*/React.createElement("ellipse", {
-        cx: "18.2",
-        cy: "21.2",
-        rx: "2.2",
-        ry: "1.7",
-        fill: L
-      }));
-    case "surprised":
-      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("circle", {
-        cx: "14.1",
-        cy: "15.8",
-        r: "2",
-        fill: L
-      }), /*#__PURE__*/React.createElement("circle", {
-        cx: "21.9",
-        cy: "15.8",
-        r: "2",
-        fill: L
-      }), /*#__PURE__*/React.createElement("ellipse", {
-        cx: "18",
-        cy: "20.7",
-        rx: "2",
-        ry: "1.45",
-        fill: L
-      }), /*#__PURE__*/React.createElement("ellipse", {
-        cx: "18",
-        cy: "24.2",
-        rx: "1.45",
-        ry: "1.75",
-        fill: "none",
-        stroke: L,
-        strokeWidth: "1.2"
-      }));
-    case "smiling":
-      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("circle", {
-        cx: "14.2",
-        cy: "16.2",
-        r: "1.5",
-        fill: L
-      }), /*#__PURE__*/React.createElement("circle", {
-        cx: "21.8",
-        cy: "16.2",
-        r: "1.5",
-        fill: L
-      }), /*#__PURE__*/React.createElement("ellipse", {
-        cx: "18",
-        cy: "20.7",
-        rx: "2.1",
-        ry: "1.55",
-        fill: L
-      }), S("M14.5 23 Q18 26.1 21.5 23", 1.25));
-    case "crying":
-      return /*#__PURE__*/React.createElement(React.Fragment, null, S("M12.1 16.8 Q14.2 15.1 16.3 16.8 M19.7 16.8 Q21.8 15.1 23.9 16.8", 1.25), /*#__PURE__*/React.createElement("path", {
-        d: "M12.8 19.2 C11.7 21 11.8 22.2 12.9 22.9 C14 22.2 14 21 12.8 19.2Z M23.2 19.2 C22 21 22 22.2 23.1 22.9 C24.2 22.2 24.3 21 23.2 19.2Z",
-        fill: L,
-        opacity: ".52"
-      }), /*#__PURE__*/React.createElement("ellipse", {
-        cx: "18",
-        cy: "21",
-        rx: "2",
-        ry: "1.5",
-        fill: L
-      }), S("M15.4 25 Q18 22.9 20.6 25"));
-    case "worried":
-      return /*#__PURE__*/React.createElement(React.Fragment, null, S("M12.2 13.4 Q14.2 12.2 16.2 13.7 M19.8 13.7 Q21.8 12.2 23.8 13.4", 1.1), /*#__PURE__*/React.createElement("circle", {
-        cx: "14.2",
-        cy: "16.7",
-        r: "1.45",
-        fill: L
-      }), /*#__PURE__*/React.createElement("circle", {
-        cx: "21.8",
-        cy: "16.7",
-        r: "1.45",
-        fill: L
-      }), /*#__PURE__*/React.createElement("ellipse", {
-        cx: "18",
-        cy: "21",
-        rx: "2.05",
-        ry: "1.5",
-        fill: L
-      }), S("M15.4 24.9 Q18 22.8 20.6 24.9"));
-    case "sleepy":
-      return /*#__PURE__*/React.createElement(React.Fragment, null, S("M12.7 16.6 H15.8 M20.2 16.6 H23.3", 1.45), /*#__PURE__*/React.createElement("ellipse", {
-        cx: "18",
-        cy: "21.2",
-        rx: "2.2",
-        ry: "1.7",
-        fill: L
-      }));
-    case "excited":
-      return /*#__PURE__*/React.createElement(React.Fragment, null, S("M11.7 17 Q14.2 13.8 16.7 17 M19.3 17 Q21.8 13.8 24.3 17", 1.35), /*#__PURE__*/React.createElement("ellipse", {
-        cx: "18",
-        cy: "20.4",
-        rx: "2",
-        ry: "1.45",
-        fill: L
-      }), /*#__PURE__*/React.createElement("path", {
-        d: "M14.2 23.1 Q18 27 21.8 23.1 Q21.1 27.2 18 27.4 Q14.9 27.2 14.2 23.1Z",
-        fill: L
-      }));
     default:
-      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("circle", {
-        className: eye,
-        cx: "14.2",
-        cy: "16.5",
-        r: "1.6",
-        fill: L
-      }), /*#__PURE__*/React.createElement("circle", {
-        className: eye,
-        cx: "21.8",
-        cy: "16.5",
-        r: "1.6",
-        fill: L
-      }), /*#__PURE__*/React.createElement("ellipse", {
-        cx: "18",
-        cy: "21.2",
-        rx: "2.2",
-        ry: "1.7",
-        fill: L
-      }));
+      return Face({
+        face: 'neutral',
+        tiny,
+        animated
+      });
   }
 }
 
-/** 봉구 마스코트 마크. 기존 디자인시스템에서 그대로 가져온 유일한 브랜드 요소.
- *  얼굴은 --mark-* 토큰만 쓴다(테마가 바뀌어도 얼굴은 밝게). 귀는 --mark-ear(봉구 앰버, 기존 시스템 값 유지 — 시그널 파랑 아님). */
+/** 봉구 심볼. 색은 마스코트 토큰, 크기는 7단계 또는 기존 px 값을 사용합니다. */
 function MascotMark({
-  face = "neutral",
-  size = 26,
+  face = 'neutral',
+  size = 'md',
   animated = true,
   className,
-  "aria-label": ariaLabel,
+  'aria-label': ariaLabel,
   ...rest
 }) {
-  const dim = face === "sleepy";
-  const body = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("path", {
-    className: "bds-mark__ear",
-    d: EAR_L,
-    fill: "var(--mark-ear)",
-    opacity: dim ? 0.8 : undefined
-  }), /*#__PURE__*/React.createElement("path", {
-    className: "bds-mark__ear",
-    d: EAR_R,
-    fill: "var(--mark-ear)",
-    opacity: dim ? 0.8 : undefined
-  }), /*#__PURE__*/React.createElement("circle", {
-    cx: "18",
-    cy: "18",
-    r: "11",
-    fill: "var(--mark-face)",
-    stroke: "var(--mark-edge)",
-    strokeWidth: "0.75",
-    opacity: dim ? 0.9 : undefined
-  }), /*#__PURE__*/React.createElement(Face, {
-    face: face,
-    animated: animated
-  }));
-  return /*#__PURE__*/React.createElement("svg", _extends({
-    width: size,
-    height: size,
-    viewBox: "0 0 36 36",
-    "aria-hidden": ariaLabel ? undefined : true,
-    "aria-label": ariaLabel,
-    role: ariaLabel ? "img" : undefined
-  }, rest, {
-    className: __ds_scope.cx("bds-mark", animated && "bds-mark--animated", className)
-  }), face === "curious" ? /*#__PURE__*/React.createElement("g", {
-    transform: "rotate(-4 18 18)"
-  }, body) : body);
+  const requested = typeof size === 'string' ? SIZES[size.toLowerCase()] : size;
+  const dimension = Number.isFinite(requested) && requested > 0 ? requested : SIZES.md;
+  return h('svg', {
+    ...rest,
+    width: dimension,
+    height: dimension,
+    viewBox: '0 0 36 36',
+    'aria-hidden': ariaLabel ? undefined : true,
+    'aria-label': ariaLabel,
+    role: ariaLabel ? 'img' : undefined,
+    className: cx('bds-mark', animated && 'bds-mark--animated', className)
+  }, h('g', {
+    transform: face === 'curious' ? 'rotate(-7 18 18)' : undefined
+  }, h('path', {
+    "d": "M13 5C8 4.8 5.7 8 4.6 12.4L1.5 21.3C-.2 27 2.4 30.1 8.8 29.5L11 28.9C7.9 27.1 10.8 22.6 11 19Z",
+    "fill": "var(--mark-ear)",
+    "className": "bds-mark__ear"
+  }), h('path', {
+    "d": "M23 5C28 4.8 30.3 8 31.4 12.4L34.5 21.3C36.2 27 33.6 30.1 27.2 29.5L25 28.9C28.1 27.1 25.2 22.6 25 19Z",
+    "fill": "var(--mark-ear)",
+    "className": "bds-mark__ear"
+  }), h('path', {
+    "d": "M18 3.8C12 3.8 9.5 6.4 9.4 12.1C9.1 17 9.3 21.2 10.6 24.2C12.4 27 23.6 27 25.4 24.2C26.7 21.2 26.9 17 26.6 12.1C26.5 6.4 24 3.8 18 3.8Z",
+    "fill": "var(--mark-face)",
+    "stroke": "var(--mark-edge)",
+    "strokeWidth": 0.45
+  }), h('path', {
+    "d": "M22.4 4.6C26 5.7 27 8.6 26.7 13.8L26 22.2C24.8 19.6 21.6 19.1 20.9 16.9C19.4 13.8 21.3 11.3 23.7 9.4C25.5 8 24.5 5.9 22.4 4.6Z",
+    "fill": "var(--mark-ear)"
+  }), h(Face, {
+    face,
+    tiny: dimension <= 20,
+    animated
+  })));
 }
 Object.assign(__ds_scope, { MascotMark });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/brand/MascotMark.jsx", error: String((e && e.message) || e) }); }
 
 // components/data/BarList.jsx
 try { (() => {
+const { cx, frameStyle } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const NOT = "수집 안 됨";
 /** 이름·값·막대 목록(디스크별 사용량, GPU 예약). max 생략 시 항목 최대값. thresholds로 warn/crit 색 전환. */
@@ -379,8 +646,8 @@ function BarList({
     return `var(--series-${tone})`;
   };
   return /*#__PURE__*/React.createElement("div", _extends({
-    className: __ds_scope.cx("bds-barlist", thick && "bds-barlist--thick", className),
-    style: __ds_scope.frameStyle({
+    className: cx("bds-barlist", thick && "bds-barlist--thick", className),
+    style: frameStyle({
       fit,
       width,
       style
@@ -396,10 +663,10 @@ function BarList({
     }, /*#__PURE__*/React.createElement("span", {
       className: "bds-barlist__n bds-ellipsis"
     }, it.name), /*#__PURE__*/React.createElement("span", {
-      className: __ds_scope.cx("bds-barlist__v", it.value == null && "bds-barlist__v--na"),
+      className: cx("bds-barlist__v", it.value == null && "bds-barlist__v--na"),
       style: it.value == null ? {
         fontFamily: "var(--font-ui)",
-        color: "var(--text-3)"
+        color: "var(--ink-3)"
       } : undefined
     }, it.value == null ? NOT : valueFormatter(it.value)), /*#__PURE__*/React.createElement("div", {
       className: "bds-barlist__track",
@@ -419,6 +686,7 @@ Object.assign(__ds_scope, { BarList });
 
 // components/data/DescriptionList.jsx
 try { (() => {
+const { cx } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 설명 목록(dl). 긴 값·문장이 있을 때 KeyValues 대신. 좁으면 한 열로 접힌다. */
 function DescriptionList({
@@ -427,7 +695,7 @@ function DescriptionList({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement("dl", _extends({
-    className: __ds_scope.cx("bds-dl", className)
+    className: cx("bds-dl", className)
   }, rest), items.map((it, i) => /*#__PURE__*/React.createElement(React.Fragment, {
     key: i
   }, /*#__PURE__*/React.createElement("dt", null, it.term), /*#__PURE__*/React.createElement("dd", {
@@ -439,6 +707,7 @@ Object.assign(__ds_scope, { DescriptionList });
 
 // components/data/DiffView.jsx
 try { (() => {
+const { cx, frameStyle } = __ds_scope;
 /** 필드 단위 변경 비교(Revision diff). changes: {field, from, to, kind?: changed|added|removed}. 값은 mono. */
 function DiffView({
   changes = [],
@@ -452,9 +721,9 @@ function DiffView({
   style
 }) {
   return /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-diff", className),
+    className: cx("bds-diff", className),
     "aria-label": ariaLabel,
-    style: __ds_scope.frameStyle({
+    style: frameStyle({
       fit,
       width,
       style
@@ -471,7 +740,7 @@ function DiffView({
     const kind = c.kind ?? (c.from == null ? "added" : c.to == null ? "removed" : "changed");
     return /*#__PURE__*/React.createElement("li", {
       key: i,
-      className: __ds_scope.cx("bds-diff__row", `bds-diff__row--${kind}`)
+      className: cx("bds-diff__row", `bds-diff__row--${kind}`)
     }, /*#__PURE__*/React.createElement("span", {
       className: "bds-diff__f bds-mono"
     }, c.field), /*#__PURE__*/React.createElement("span", {
@@ -488,6 +757,7 @@ Object.assign(__ds_scope, { DiffView });
 
 // components/data/Gauge.jsx
 try { (() => {
+const { cx, frameStyle } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 반원 게이지. value 0~1(또는 max 기준). 임계 70/90으로 톤 자동(ok·warn·crit). null이면 "수집 안 됨". */
 function Gauge({
@@ -521,8 +791,8 @@ function Gauge({
   const d = "M " + (cx0 - R) + " " + cy + " A " + R + " " + R + " 0 0 1 " + (cx0 + R) + " " + cy;
   const txt = r == null ? "수집 안 됨" : valueFormatter ? valueFormatter(value) : Math.round(r * 100) + "%";
   return /*#__PURE__*/React.createElement("div", _extends({
-    className: __ds_scope.cx("bds-gauge", "bds-gauge--" + t, className),
-    style: __ds_scope.frameStyle({
+    className: cx("bds-gauge", "bds-gauge--" + t, className),
+    style: frameStyle({
       fit,
       width,
       height,
@@ -570,10 +840,11 @@ Object.assign(__ds_scope, { Gauge });
 
 // components/data/Heatmap.jsx
 try { (() => {
-const {
-  useState
-} = React;
-/** 시간×요일 같은 2차원 강도 격자. 색은 --ramp-1~6 순차 램프만 쓴다(상태색 금지). 값 null은 빈 칸(수집 안 됨). */
+const { useId, useState } = React;
+const { cx, frameStyle } = __ds_scope;
+const NA = "수집 안 됨";
+/** 시간×요일 같은 2차원 강도 격자. 색은 --ramp-1~6 순차 램프만 쓴다(상태색 금지). 값 null은 빈 칸(수집 안 됨).
+ *  격자는 tabIndex=0: 화살표로 셀 이동, Home/End 행 양끝, Esc 해제. 마우스 hover와 같은 아래 줄 텍스트가 뜬다. 숨김 표(bds-sr)가 aria-describedby로 연결된다. */
 function Heatmap({
   rows = [],
   cols = [],
@@ -590,16 +861,29 @@ function Heatmap({
   style
 }) {
   const [hover, setHover] = useState(null);
+  const srId = useId();
   const flat = values.flat().filter(v => v != null);
   const lo = flat.length ? Math.min(...flat) : 0,
     hi = flat.length ? Math.max(...flat) : 1;
   const step = v => v == null ? 0 : Math.min(6, 1 + Math.floor((v - lo) / (hi - lo || 1) * 5.999));
   const every = Math.max(1, Math.ceil(cols.length / 12));
+  const rl = r => rowLabel ? rowLabel(r) : r,
+    cl = c => colLabel ? colLabel(c) : c;
+  const fmt = (i, j) => values[i]?.[j] == null ? NA : valueFormatter(values[i][j]);
+  const onKey = e => {
+    if (!rows.length || !cols.length) return;
+    const [i, j] = hover ?? [0, -1];
+    let next;
+    if (e.key === "ArrowRight") next = [i, Math.min(cols.length - 1, j + 1)];else if (e.key === "ArrowLeft") next = [i, Math.max(0, j - 1)];else if (e.key === "ArrowDown") next = [Math.min(rows.length - 1, hover ? i + 1 : 0), Math.max(0, j)];else if (e.key === "ArrowUp") next = [Math.max(0, i - 1), Math.max(0, j)];else if (e.key === "Home") next = [i, 0];else if (e.key === "End") next = [i, cols.length - 1];else if (e.key === "Escape") next = null;else return;
+    e.preventDefault();
+    setHover(next);
+  };
   return /*#__PURE__*/React.createElement("div", {
     role: "img",
     "aria-label": ariaLabel,
-    className: __ds_scope.cx("bds-heat", className),
-    style: __ds_scope.frameStyle({
+    "aria-describedby": srId,
+    className: cx("bds-heat", className),
+    style: frameStyle({
       fit,
       width,
       style: {
@@ -610,30 +894,48 @@ function Heatmap({
       }
     })
   }, /*#__PURE__*/React.createElement("div", {
-    className: "bds-heat__grid"
+    className: "bds-heat__grid",
+    tabIndex: 0,
+    onKeyDown: onKey,
+    onBlur: () => setHover(null)
   }, /*#__PURE__*/React.createElement("span", null), cols.map((c, j) => /*#__PURE__*/React.createElement("span", {
     key: j,
     className: "bds-heat__col"
-  }, j % every === 0 ? colLabel ? colLabel(c) : c : "")), rows.map((r, i) => /*#__PURE__*/React.createElement(React.Fragment, {
+  }, j % every === 0 ? cl(c) : "")), rows.map((r, i) => /*#__PURE__*/React.createElement(React.Fragment, {
     key: i
   }, /*#__PURE__*/React.createElement("span", {
     className: "bds-heat__row"
-  }, rowLabel ? rowLabel(r) : r), cols.map((_, j) => {
+  }, rl(r)), cols.map((_, j) => {
     const v = values[i]?.[j];
     return /*#__PURE__*/React.createElement("i", {
       key: j,
-      className: __ds_scope.cx("bds-heat__cell", v == null && "bds-heat__cell--na"),
+      className: cx("bds-heat__cell", v == null && "bds-heat__cell--na", hover && hover[0] === i && hover[1] === j && "bds-heat__cell--on"),
       "data-step": step(v),
       onMouseEnter: () => setHover([i, j]),
       onMouseLeave: () => setHover(null)
     });
-  })))), /*#__PURE__*/React.createElement("div", {
+  })))), /*#__PURE__*/React.createElement("table", {
+    id: srId,
+    className: "bds-sr"
+  }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", {
+    scope: "col"
+  }), cols.map((c, j) => /*#__PURE__*/React.createElement("th", {
+    key: j,
+    scope: "col"
+  }, cl(c))))), /*#__PURE__*/React.createElement("tbody", null, rows.map((r, i) => /*#__PURE__*/React.createElement("tr", {
+    key: i
+  }, /*#__PURE__*/React.createElement("th", {
+    scope: "row"
+  }, rl(r)), cols.map((_, j) => /*#__PURE__*/React.createElement("td", {
+    key: j
+  }, fmt(i, j))))))), /*#__PURE__*/React.createElement("div", {
     className: "bds-heat__foot"
   }, /*#__PURE__*/React.createElement("span", {
-    className: "bds-heat__tip"
-  }, hover ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("b", null, rows[hover[0]], " \xB7 ", cols[hover[1]]), " ", /*#__PURE__*/React.createElement("span", {
+    className: "bds-heat__tip",
+    role: "status"
+  }, hover && hover[1] >= 0 ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("b", null, rl(rows[hover[0]]), " \xB7 ", cl(cols[hover[1]])), " ", /*#__PURE__*/React.createElement("span", {
     className: "bds-mono"
-  }, values[hover[0]]?.[hover[1]] == null ? "수집 안 됨" : valueFormatter(values[hover[0]][hover[1]]))) : "\u00a0"), /*#__PURE__*/React.createElement("span", {
+  }, fmt(hover[0], hover[1]))) : "\u00a0"), /*#__PURE__*/React.createElement("span", {
     className: "bds-heat__scale",
     "aria-hidden": "true"
   }, /*#__PURE__*/React.createElement("small", {
@@ -650,6 +952,7 @@ Object.assign(__ds_scope, { Heatmap });
 
 // components/data/KeyValues.jsx
 try { (() => {
+const { cx } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const NOT = "수집 안 됨";
 /** 키·값 행 목록. rows: [key, value][] 또는 {k,v,mono?}[]. 수치 값은 mono, 결측 문구는 mono를 벗는다. */
@@ -660,7 +963,7 @@ function KeyValues({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement("div", _extends({
-    className: __ds_scope.cx("bds-kv", lined && "bds-kv--lined", className)
+    className: cx("bds-kv", lined && "bds-kv--lined", className)
   }, rest), rows.map((r, i) => {
     const [k, v, mono] = Array.isArray(r) ? [r[0], r[1], r[2]] : [r.k, r.v, r.mono];
     const isMono = mono ?? (typeof v === "number" || typeof v === "string" && v !== NOT && /\d/.test(v));
@@ -670,9 +973,10 @@ function KeyValues({
     }, /*#__PURE__*/React.createElement("span", {
       className: "bds-kv__k"
     }, k), /*#__PURE__*/React.createElement("span", {
-      className: __ds_scope.cx("bds-kv__v bds-ellipsis", isMono && "bds-mono", v === NOT && "bds-kv__v--na"),
+      className: cx("bds-kv__v bds-ellipsis", isMono && "bds-mono", v === NOT && "bds-kv__v--na"),
+      title: typeof v === "string" || typeof v === "number" ? String(v) : undefined,
       style: v === NOT ? {
-        color: "var(--text-3)",
+        color: "var(--ink-3)",
         fontWeight: 400
       } : undefined
     }, v));
@@ -681,49 +985,11 @@ function KeyValues({
 Object.assign(__ds_scope, { KeyValues });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/data/KeyValues.jsx", error: String((e && e.message) || e) }); }
 
-// components/data/Legend.jsx
-try { (() => {
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const toneVar = t => typeof t === "number" ? "var(--series-" + t + ")" : /^(rx|tx|used|reserved|free)$/.test(t) ? "var(--series-" + t + ")" : /^(ok|warn|crit|info|signal)$/.test(t) ? "var(--" + t + ")" : t;
-/** 독립 범례. items: {label, tone(series 번호·의미 키·CSS 색), value?, hidden?}. onToggle을 주면 클릭으로 시리즈 숨김. */
-function Legend({
-  items = [],
-  shape = "square",
-  vertical = false,
-  onToggle,
-  className,
-  ...rest
-}) {
-  const Tag = onToggle ? "button" : "span";
-  return /*#__PURE__*/React.createElement("ul", _extends({
-    className: __ds_scope.cx("bds-legend", vertical && "bds-legend--vertical", className)
-  }, rest), items.map((it, i) => /*#__PURE__*/React.createElement("li", {
-    key: i
-  }, /*#__PURE__*/React.createElement(Tag, {
-    type: onToggle ? "button" : undefined,
-    className: __ds_scope.cx("bds-legend__i", it.hidden && "bds-legend__i--off"),
-    "aria-pressed": onToggle ? !it.hidden : undefined,
-    onClick: onToggle ? () => onToggle(i, it) : undefined
-  }, /*#__PURE__*/React.createElement("i", {
-    className: __ds_scope.cx("bds-legend__sw", shape !== "square" && "bds-legend__sw--" + shape),
-    style: {
-      background: toneVar(it.tone ?? i + 1)
-    },
-    "aria-hidden": "true"
-  }), it.label, it.value != null && /*#__PURE__*/React.createElement("span", {
-    className: "bds-legend__v"
-  }, it.value)))));
-}
-Object.assign(__ds_scope, { Legend });
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/data/Legend.jsx", error: String((e && e.message) || e) }); }
-
 // components/data/LogViewer.jsx
 try { (() => {
+const { useEffect, useRef } = React;
+const { cx, frameStyle } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const {
-  useEffect,
-  useRef
-} = React;
 /** 로그 뷰어. lines: string | {level,time,text}. follow=true면 새 줄에 따라 바닥으로 스크롤. */
 function LogViewer({
   lines = [],
@@ -743,8 +1009,8 @@ function LogViewer({
   }, [lines.length, follow]);
   return /*#__PURE__*/React.createElement("div", _extends({
     ref: ref,
-    className: __ds_scope.cx("bds-log", !wrap && "bds-log--nowrap", className),
-    style: __ds_scope.frameStyle({
+    className: cx("bds-log", !wrap && "bds-log--nowrap", className),
+    style: frameStyle({
       fit,
       width,
       height,
@@ -763,7 +1029,7 @@ function LogViewer({
       className: "bds-log__ln",
       "aria-hidden": "true"
     }, numbers ? i + 1 : ""), /*#__PURE__*/React.createElement("span", {
-      className: __ds_scope.cx("bds-log__lv", o.level && `bds-log__lv--${o.level}`)
+      className: cx("bds-log__lv", o.level && `bds-log__lv--${o.level}`)
     }, o.time ?? (o.level ? o.level.toUpperCase() : "")), /*#__PURE__*/React.createElement("span", {
       className: "bds-log__msg"
     }, o.level && o.time ? /*#__PURE__*/React.createElement("span", {
@@ -776,10 +1042,9 @@ Object.assign(__ds_scope, { LogViewer });
 
 // components/data/Sparkline.jsx
 try { (() => {
+const { useId } = React;
+const { cx } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const {
-  useId
-} = React;
 /** 미니 추세선. 부모 크기를 채운다(fit은 부모가 정한다). null 구간은 끊는다. 축·범례 없음. */
 function Sparkline({
   values = [],
@@ -794,7 +1059,7 @@ function Sparkline({
     P = 2;
   const nums = values.filter(v => v != null);
   if (nums.length < 2) return /*#__PURE__*/React.createElement("svg", {
-    className: __ds_scope.cx("bds-spark", className),
+    className: cx("bds-spark", className),
     viewBox: `0 0 ${W} ${H}`,
     preserveAspectRatio: "none",
     "aria-hidden": "true"
@@ -815,7 +1080,7 @@ function Sparkline({
   if (run.length) runs.push(run);
   const color = typeof tone === "string" ? `var(--series-${tone})` : `var(--series-${tone})`;
   return /*#__PURE__*/React.createElement("svg", _extends({
-    className: __ds_scope.cx("bds-spark", className),
+    className: cx("bds-spark", className),
     viewBox: `0 0 ${W} ${H}`,
     preserveAspectRatio: "none",
     "aria-hidden": "true"
@@ -856,7 +1121,14 @@ Object.assign(__ds_scope, { Sparkline });
 
 // components/data/Timeline.jsx
 try { (() => {
-/** 시간순 이벤트 목록(운영 변화, lease 상태 전이). items: {time, title, detail?, tone?, icon?}. 최신이 위. */
+const { cx, frameStyle, Icon } = __ds_scope;
+const TONE = {
+  ok: "정상",
+  warn: "주의",
+  crit: "위험",
+  info: "정보"
+};
+/** 시간순 이벤트 목록(운영 변화, lease 상태 전이). items: {time, title, detail?, tone?, icon?}. 최신이 위. tone은 점 색 + 스크린리더 텍스트. */
 function Timeline({
   items = [],
   dense = false,
@@ -867,29 +1139,31 @@ function Timeline({
   style
 }) {
   return /*#__PURE__*/React.createElement("ol", {
-    className: __ds_scope.cx("bds-timeline", dense && "bds-timeline--dense", className),
+    className: cx("bds-timeline", dense && "bds-timeline--dense", className),
     "aria-label": ariaLabel,
-    style: __ds_scope.frameStyle({
+    style: frameStyle({
       fit,
       width,
       style
     })
   }, items.map((it, i) => /*#__PURE__*/React.createElement("li", {
     key: it.id ?? i,
-    className: __ds_scope.cx("bds-tl", `bds-tone--${it.tone ?? "off"}`)
+    className: cx("bds-tl", `bds-tone--${it.tone ?? "off"}`)
   }, /*#__PURE__*/React.createElement("span", {
     className: "bds-tl__time bds-mono"
   }, it.time), /*#__PURE__*/React.createElement("span", {
     className: "bds-tl__dot",
     "aria-hidden": "true"
-  }, it.icon && /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, it.icon && /*#__PURE__*/React.createElement(Icon, {
     name: it.icon,
     size: 10
   })), /*#__PURE__*/React.createElement("span", {
     className: "bds-tl__body"
   }, /*#__PURE__*/React.createElement("span", {
     className: "bds-tl__t"
-  }, it.title), it.detail && /*#__PURE__*/React.createElement("span", {
+  }, TONE[it.tone] && /*#__PURE__*/React.createElement("span", {
+    className: "bds-sr"
+  }, TONE[it.tone], ", "), it.title), it.detail && /*#__PURE__*/React.createElement("span", {
     className: "bds-tl__d"
   }, it.detail)))));
 }
@@ -898,6 +1172,7 @@ Object.assign(__ds_scope, { Timeline });
 
 // components/data/TrendDelta.jsx
 try { (() => {
+const { cx, Icon } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 증감 표시. value는 변화량(숫자) 또는 비율(percent). inverse면 증가가 나쁜 지표(응답시간·오류). 항상 화살표+숫자, 색 단독 금지. */
 function TrendDelta({
@@ -910,16 +1185,16 @@ function TrendDelta({
   ...rest
 }) {
   if (value == null) return /*#__PURE__*/React.createElement("span", _extends({
-    className: __ds_scope.cx("bds-delta", "bds-delta--flat", className)
+    className: cx("bds-delta", "bds-delta--flat", className)
   }, rest), "\uC218\uC9D1 \uC548 \uB428");
   const dir = value > 0 ? "up" : value < 0 ? "down" : "flat";
   const txt = (value > 0 ? "+" : "") + (percent ? (value * 100).toFixed(precision) + "%" : Number(value).toLocaleString("ko-KR", {
     maximumFractionDigits: precision
   }));
   return /*#__PURE__*/React.createElement("span", _extends({
-    className: __ds_scope.cx("bds-delta", "bds-delta--" + dir, inverse && "bds-delta--inverse", className),
+    className: cx("bds-delta", "bds-delta--" + dir, inverse && "bds-delta--inverse", className),
     "aria-label": (dir === "up" ? "증가 " : dir === "down" ? "감소 " : "변화 없음 ") + txt
-  }, rest), dir !== "flat" && /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, rest), dir !== "flat" && /*#__PURE__*/React.createElement(Icon, {
     name: dir === "up" ? "arrow-up-right" : "arrow-down-right",
     size: 12
   }), txt, label && /*#__PURE__*/React.createElement("small", null, label));
@@ -929,6 +1204,7 @@ Object.assign(__ds_scope, { TrendDelta });
 
 // components/data/UptimeBar.jsx
 try { (() => {
+const { cx } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 가용성 막대(일/시간 단위 90칸). segments: {status: ok|warn|crit|off, label?}. 비율은 ok+warn 기준으로 계산해 텍스트로 병기. */
 function UptimeBar({
@@ -944,7 +1220,7 @@ function UptimeBar({
   const known = segments.filter(s => s.status !== "off");
   const pct = uptime ?? (known.length ? known.filter(s => s.status === "ok").length / known.length * 100 : null);
   return /*#__PURE__*/React.createElement("div", _extends({
-    className: __ds_scope.cx("bds-uptime", className),
+    className: cx("bds-uptime", className),
     style: {
       "--uh": height + "px"
     }
@@ -958,7 +1234,7 @@ function UptimeBar({
     "aria-label": (name ? name + " " : "") + segments.length + "칸 가용성"
   }, segments.map((s, i) => /*#__PURE__*/React.createElement("span", {
     key: i,
-    className: __ds_scope.cx("bds-uptime__b", "bds-uptime__b--" + (s.status ?? "off")),
+    className: cx("bds-uptime__b", "bds-uptime__b--" + (s.status ?? "off")),
     title: s.label ?? {
       ok: "정상",
       warn: "일부 지연",
@@ -1044,17 +1320,100 @@ function pathLength(pts) {
 
 /** 텍스트 폭 추정(mono 10.5px ≈ 6.4px/char). y축 여백 계산용. */
 const estWidth = s => String(s).length * 6.4 + 10;
-Object.assign(__ds_scope, { r1, toneVar, toneInk, fmtKo, niceTicks, smoothPath, runsOf, pathLength, estWidth });
+
+/** 3계열 이상이면 선 스타일을 실선·대시·점·대시점 순으로 돌린다. series.dash로 명시(문자열=그 패턴, false=실선). */
+const DASHES = ["", "6 4", "2 4", "8 3 2 3"];
+const seriesDash = (s, i, count) => s.dash === false ? undefined : typeof s.dash === "string" ? s.dash || undefined : count >= 3 ? DASHES[i % DASHES.length] || undefined : undefined;
+
+/** 히스토그램 구간. 표본 2개 미만이면 null. n은 bins 또는 √n(6~30). */
+function histBins(samples, bins) {
+  const xs = (samples ?? []).filter(v => v != null && Number.isFinite(v));
+  if (xs.length < 2) return null;
+  const lo = Math.min(...xs),
+    hi = Math.max(...xs),
+    span = hi - lo || 1;
+  const n = bins ?? Math.max(6, Math.min(30, Math.round(Math.sqrt(xs.length))));
+  const counts = Array(n).fill(0);
+  xs.forEach(v => {
+    counts[Math.min(n - 1, Math.floor((v - lo) / span * n))]++;
+  });
+  return {
+    xs,
+    lo,
+    hi,
+    span,
+    n,
+    counts
+  };
+}
+Object.assign(__ds_scope, { r1, toneVar, toneInk, fmtKo, niceTicks, smoothPath, runsOf, pathLength, estWidth, DASHES, seriesDash, histBins });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/data/chart-math.js", error: String((e && e.message) || e) }); }
+
+// components/data/Legend.jsx
+try { (() => {
+const { cx, toneVar } = __ds_scope;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* 스와치 색: color가 있으면 그대로, tone이 시리즈 번호·의미 키·미터 톤이면 토큰, info/signal은 상태 토큰, 그 외 문자열은 CSS 색으로 본다. */
+const swatchColor = (it, i) => it.color ?? (typeof it.tone === "string" && !/^(rx|tx|used|reserved|free|ok|warn|crit)$/.test(it.tone) ? /^(info|signal)$/.test(it.tone) ? `var(--${it.tone})` : it.tone : toneVar(it.tone, i));
+
+/** 독립 범례. items: {label, color?(CSS 색), tone?(series 번호·의미 키), value?, dash?(선 패턴), shape?, hidden?}.
+ *  shape="line"이면 선 스와치(dash 패턴 반영), square/dot은 네모·점. onToggle을 주면 클릭으로 시리즈 숨김. compact는 Chart 내장 범례용 작은 글자. */
+function Legend({
+  items = [],
+  shape = "square",
+  vertical = false,
+  compact = false,
+  onToggle,
+  className,
+  ...rest
+}) {
+  const Tag = onToggle ? "button" : "span";
+  return /*#__PURE__*/React.createElement("ul", _extends({
+    className: cx("bds-legend", vertical && "bds-legend--vertical", compact && "bds-legend--compact", className)
+  }, rest), items.map((it, i) => {
+    const sh = it.shape ?? shape,
+      color = swatchColor(it, i);
+    const sw = sh === "line" ? /*#__PURE__*/React.createElement("svg", {
+      className: "bds-legend__sw-line",
+      width: "14",
+      height: "8",
+      viewBox: "0 0 14 8",
+      "aria-hidden": "true"
+    }, /*#__PURE__*/React.createElement("line", {
+      x1: "0",
+      y1: "4",
+      x2: "14",
+      y2: "4",
+      stroke: color,
+      strokeWidth: "2",
+      strokeLinecap: "round",
+      strokeDasharray: it.dash || undefined
+    })) : /*#__PURE__*/React.createElement("i", {
+      className: cx("bds-legend__sw", sh === "dot" && "bds-legend__sw--dot"),
+      style: {
+        background: color
+      },
+      "aria-hidden": "true"
+    });
+    return /*#__PURE__*/React.createElement("li", {
+      key: i
+    }, /*#__PURE__*/React.createElement(Tag, {
+      type: onToggle ? "button" : undefined,
+      className: cx("bds-legend__i", it.hidden && "bds-legend__i--off"),
+      "aria-pressed": onToggle ? !it.hidden : undefined,
+      onClick: onToggle ? () => onToggle(i, it) : undefined
+    }, sw, it.label, it.value != null && /*#__PURE__*/React.createElement("span", {
+      className: "bds-legend__v"
+    }, it.value)));
+  }));
+}
+Object.assign(__ds_scope, { Legend });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/data/Legend.jsx", error: String((e && e.message) || e) }); }
 
 // components/data/Chart.jsx
 try { (() => {
-const {
-  useEffect,
-  useId,
-  useRef,
-  useState
-} = React;
+const { useEffect, useId, useRef, useState } = React;
+const { cx, frameStyle, r1, toneVar, toneInk, fmtKo, niceTicks, smoothPath, runsOf, pathLength, estWidth, seriesDash, histBins, Legend } = __ds_scope;
 /* ---------- 공용 크롬 ---------- */
 function useSize(ref, fixedW, fixedH) {
   const [size, setSize] = useState({
@@ -1091,25 +1450,6 @@ function useAnimateOnce(enabled) {
   }, [enabled]);
   return on;
 }
-function Legend({
-  items
-}) {
-  if (!items.length) return null;
-  return /*#__PURE__*/React.createElement("ul", {
-    className: "bds-chart__legend"
-  }, items.map((it, i) => /*#__PURE__*/React.createElement("li", {
-    key: i
-  }, /*#__PURE__*/React.createElement("i", {
-    style: {
-      background: it.color
-    },
-    "aria-hidden": "true"
-  }), /*#__PURE__*/React.createElement("span", {
-    className: "bds-ellipsis"
-  }, it.label), it.value != null && /*#__PURE__*/React.createElement("span", {
-    className: "bds-mono"
-  }, it.value))));
-}
 function Tip({
   x,
   w,
@@ -1118,7 +1458,7 @@ function Tip({
 }) {
   const flip = x > w * 0.6;
   return /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-chart__tip", flip && "bds-chart__tip--flip"),
+    className: cx("bds-chart__tip", flip && "bds-chart__tip--flip"),
     style: {
       left: x
     }
@@ -1137,25 +1477,27 @@ function Tip({
     className: "v"
   }, r.value))));
 }
+const MISSING = "수집 안 됨";
+const cell = (fmt, v) => v == null ? MISSING : fmt(v);
 
 /* ---------- 직교(line·area·bar) ---------- */
+/** hover/setHover는 Chart가 갖는다(마우스·키보드가 같은 인덱스를 움직여 같은 Tip을 띄운다). */
 function Cartesian({
   kind,
   labels,
   series,
   fmt,
   uid,
-  showLegend,
   xTicks,
   w,
   h,
   thresholds = [],
   stacked,
-  animate,
   yMin,
-  yMax
+  yMax,
+  hover,
+  setHover
 }) {
-  const [hover, setHover] = useState(null);
   const n = labels.length;
   const stackedVals = stacked && kind === "bar" ? labels.map((_, i) => series.reduce((a, s) => a + (s.values[i] ?? 0), 0)) : null;
   const all = (stackedVals ?? series.flatMap(s => s.values)).filter(v => v != null).concat(thresholds.map(t => t.value));
@@ -1166,8 +1508,8 @@ function Cartesian({
     ticks,
     lo,
     hi
-  } = __ds_scope.niceTicks(yMin ?? lo0, yMax ?? hi0, h < 140 ? 2 : 4);
-  const padL = Math.max(...ticks.map(t => __ds_scope.estWidth(fmt(t)))),
+  } = niceTicks(yMin ?? lo0, yMax ?? hi0, h < 140 ? 2 : 4);
+  const padL = Math.max(...ticks.map(t => estWidth(fmt(t)))),
     padR = 8,
     padT = 10,
     padB = xTicks === "none" ? 8 : 26;
@@ -1175,8 +1517,8 @@ function Cartesian({
     ih = h - padT - padB;
   const step = n > 1 ? iw / (n - 1) : 0;
   const bandW = iw / n;
-  const x = i => __ds_scope.r1(kind === "bar" ? padL + bandW * (i + 0.5) : n > 1 ? padL + i * step : padL + iw / 2);
-  const y = v => __ds_scope.r1(padT + (1 - (v - lo) / (hi - lo || 1)) * ih);
+  const x = i => r1(kind === "bar" ? padL + bandW * (i + 0.5) : n > 1 ? padL + i * step : padL + iw / 2);
+  const y = v => r1(padT + (1 - (v - lo) / (hi - lo || 1)) * ih);
   const every = Math.max(1, Math.ceil(n / Math.max(2, Math.floor(iw / 58))));
   const showX = i => xTicks !== "none" && (xTicks === "ends" ? i === 0 || i === n - 1 : i % every === 0 || i === n - 1);
   const groupW = Math.min(28, bandW * 0.62 / (stacked ? 1 : series.length));
@@ -1187,7 +1529,7 @@ function Cartesian({
     setHover(Math.max(0, Math.min(n - 1, i)));
   };
   const rows = hover == null ? [] : series.flatMap((s, si) => s.values[hover] == null ? [] : [{
-    color: __ds_scope.toneVar(s.tone, si),
+    color: toneVar(s.tone, si),
     name: s.label,
     value: fmt(s.values[hover])
   }]);
@@ -1210,11 +1552,11 @@ function Cartesian({
     y2: "1"
   }, /*#__PURE__*/React.createElement("stop", {
     offset: "0",
-    stopColor: __ds_scope.toneVar(s.tone, si),
+    stopColor: toneVar(s.tone, si),
     stopOpacity: ".14"
   }), /*#__PURE__*/React.createElement("stop", {
     offset: "1",
-    stopColor: __ds_scope.toneVar(s.tone, si),
+    stopColor: toneVar(s.tone, si),
     stopOpacity: "0"
   }))), /*#__PURE__*/React.createElement("clipPath", {
     id: `${uid}-c`
@@ -1267,7 +1609,7 @@ function Cartesian({
   }, t.label ?? fmt(t.value)))), /*#__PURE__*/React.createElement("g", {
     clipPath: `url(#${uid}-c)`
   }, series.map((s, si) => {
-    const color = __ds_scope.toneVar(s.tone, si);
+    const color = toneVar(s.tone, si);
     if (kind === "bar") {
       const off = stacked ? 0 : (si - (series.length - 1) / 2) * groupW;
       return /*#__PURE__*/React.createElement("g", {
@@ -1280,9 +1622,9 @@ function Cartesian({
         return /*#__PURE__*/React.createElement("rect", {
           key: i,
           className: "bds-chart__bar",
-          x: __ds_scope.r1(x(i) + off - groupW / 2),
+          x: r1(x(i) + off - groupW / 2),
           y: Math.min(y0, y1),
-          width: __ds_scope.r1(groupW),
+          width: r1(groupW),
           height: Math.max(1, Math.abs(y0 - y1)),
           rx: stacked ? 0 : 3,
           fill: color,
@@ -1293,8 +1635,10 @@ function Cartesian({
         });
       }));
     }
-    const runs = __ds_scope.runsOf(s.values, x, y),
-      baseY = y(Math.max(lo, 0));
+    /* 대시는 프레젠테이션 속성으로 준다. 진입 모션 동안은 .bds-chart--animate .bds-chart__line의 CSS(그리기용 dasharray)가 속성을 덮고, 클래스가 빠지면 이 패턴이 드러난다. */
+    const runs = runsOf(s.values, x, y),
+      baseY = y(Math.max(lo, 0)),
+      dash = seriesDash(s, si, series.length);
     return /*#__PURE__*/React.createElement("g", {
       key: si
     }, runs.map((pts, ri) => pts.length === 1 ? /*#__PURE__*/React.createElement("circle", {
@@ -1307,17 +1651,28 @@ function Cartesian({
       key: ri
     }, kind === "area" && /*#__PURE__*/React.createElement("path", {
       className: "bds-chart__area",
-      d: `${__ds_scope.smoothPath(pts)} L${pts[pts.length - 1][0]} ${baseY} L${pts[0][0]} ${baseY}Z`,
+      d: `${smoothPath(pts)} L${pts[pts.length - 1][0]} ${baseY} L${pts[0][0]} ${baseY}Z`,
       fill: `url(#${uid}-g${si})`
     }), /*#__PURE__*/React.createElement("path", {
       className: "bds-chart__line",
-      d: __ds_scope.smoothPath(pts),
+      d: smoothPath(pts),
       stroke: color,
+      strokeDasharray: dash,
       style: {
-        "--draw-len": __ds_scope.r1(__ds_scope.pathLength(pts))
+        "--draw-len": r1(pathLength(pts))
       }
     }))));
-  })), hover != null && kind !== "bar" && /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("line", {
+  })), kind !== "bar" && series.map((s, si) => {
+    const last = runsOf(s.values, x, y).pop();
+    return last ? /*#__PURE__*/React.createElement("circle", {
+      key: si,
+      className: "bds-chart__dot bds-chart__end",
+      cx: last[last.length - 1][0],
+      cy: last[last.length - 1][1],
+      r: 2.5,
+      fill: toneVar(s.tone, si)
+    }) : null;
+  }), hover != null && kind !== "bar" && /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("line", {
     className: "bds-chart__cursor",
     x1: x(hover),
     x2: x(hover),
@@ -1329,7 +1684,7 @@ function Cartesian({
     cx: x(hover),
     cy: y(s.values[hover]),
     r: 4,
-    fill: __ds_scope.toneVar(s.tone, si)
+    fill: toneVar(s.tone, si)
   })))), hover != null && rows.length > 0 && /*#__PURE__*/React.createElement(Tip, {
     x: x(hover),
     w: w,
@@ -1343,11 +1698,11 @@ function Pie({
   segments,
   fmt,
   caption,
-  showLegend,
   w,
-  h
+  h,
+  hover,
+  setHover
 }) {
-  const [hover, setHover] = useState(null);
   const vals = segments.map(s => Math.max(0, Number(s.value) || 0)),
     sum = vals.reduce((a, b) => a + b, 0);
   if (!sum || w < 40) return null;
@@ -1390,7 +1745,7 @@ function Pie({
     r: r,
     fill: "none",
     strokeWidth: hover === a.i ? stroke + 4 : stroke,
-    stroke: __ds_scope.toneVar(segments[a.i].tone, a.i),
+    stroke: toneVar(segments[a.i].tone, a.i),
     strokeDasharray: `${Math.max(0, a.dash - 2).toFixed(2)} ${C.toFixed(2)}`,
     strokeDashoffset: a.off.toFixed(2),
     transform: `rotate(-90 ${cx0} ${cy0})`,
@@ -1431,7 +1786,7 @@ function Radial({
     cy0 = r + stroke / 2 + 2;
   const a0 = Math.PI * 7 / 6,
     a1 = -Math.PI / 6;
-  const pt = a => [__ds_scope.r1(cx0 + Math.cos(a) * r), __ds_scope.r1(cy0 - Math.sin(a) * r)];
+  const pt = a => [r1(cx0 + Math.cos(a) * r), r1(cy0 - Math.sin(a) * r)];
   const [sx, sy] = pt(a0),
     [ex, ey] = pt(a1);
   const d = `M${sx} ${sy} A${r} ${r} 0 1 1 ${ex} ${ey}`;
@@ -1453,9 +1808,9 @@ function Radial({
     fill: "none",
     strokeWidth: stroke,
     strokeLinecap: "round",
-    stroke: __ds_scope.toneVar(tone, 0),
+    stroke: toneVar(tone, 0),
     strokeDasharray: len,
-    strokeDashoffset: __ds_scope.r1(len * (1 - Math.min(1, Math.max(0, shown)))),
+    strokeDashoffset: r1(len * (1 - Math.min(1, Math.max(0, shown)))),
     className: "bds-chart__arc"
   })), /*#__PURE__*/React.createElement("div", {
     className: "bds-chart__center",
@@ -1468,7 +1823,7 @@ function Radial({
     }
   }, /*#__PURE__*/React.createElement("b", {
     style: {
-      color: __ds_scope.toneInk(tone)
+      color: toneInk(tone)
     }
   }, fmt(v)), label != null && /*#__PURE__*/React.createElement("small", null, label)));
 }
@@ -1479,11 +1834,11 @@ function Radar({
   series,
   max,
   fmt,
-  showLegend,
   w,
-  h
+  h,
+  hover,
+  setHover
 }) {
-  const [hover, setHover] = useState(null);
   const n = axes.length;
   if (n < 3 || w < 40) return null;
   const all = series.flatMap(s => s.values).filter(v => v != null);
@@ -1493,7 +1848,7 @@ function Radar({
     R = Math.min(w, h) / 2 - 18;
   const pt = (i, f) => {
     const a = -Math.PI / 2 + i * 2 * Math.PI / n;
-    return [__ds_scope.r1(cx0 + Math.cos(a) * R * f), __ds_scope.r1(cy0 + Math.sin(a) * R * f)];
+    return [r1(cx0 + Math.cos(a) * R * f), r1(cy0 + Math.sin(a) * R * f)];
   };
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("svg", {
     viewBox: `0 0 ${w} ${h}`,
@@ -1516,9 +1871,9 @@ function Radar({
   })), series.map((s, si) => /*#__PURE__*/React.createElement("polygon", {
     key: si,
     points: s.values.map((v, i) => pt(i, Math.max(0, (v ?? 0) / top)).join(",")).join(" "),
-    fill: __ds_scope.toneVar(s.tone, si),
+    fill: toneVar(s.tone, si),
     fillOpacity: ".2",
-    stroke: __ds_scope.toneVar(s.tone, si),
+    stroke: toneVar(s.tone, si),
     strokeWidth: "2",
     strokeLinejoin: "round"
   })), series.map((s, si) => s.values.map((v, i) => v == null ? null : /*#__PURE__*/React.createElement("circle", {
@@ -1526,7 +1881,7 @@ function Radar({
     cx: pt(i, v / top)[0],
     cy: pt(i, v / top)[1],
     r: hover === i ? 5 : 3,
-    fill: __ds_scope.toneVar(s.tone, si),
+    fill: toneVar(s.tone, si),
     className: "bds-chart__dot",
     onMouseEnter: () => setHover(i)
   }))), axes.map((ax, i) => {
@@ -1544,7 +1899,7 @@ function Radar({
     w: w,
     title: axes[hover],
     rows: series.flatMap((s, si) => s.values[hover] == null ? [] : [{
-      color: __ds_scope.toneVar(s.tone, si),
+      color: toneVar(s.tone, si),
       name: s.label,
       value: fmt(s.values[hover])
     }])
@@ -1552,7 +1907,7 @@ function Radar({
 }
 
 /* ---------- 히스토그램 ---------- */
-/** 원시 표본(samples)을 bins개 구간으로 나눠 막대로. 분위선(p50/p95)은 thresholds처럼 세로 점선으로. */
+/** 원시 표본(samples)을 bins개 구간으로 나눠 막대로. 분위선(p50/p95)은 thresholds처럼 세로 점선으로. 구간 계산은 chart-math.histBins(SR 표와 공유). */
 function Histogram({
   samples,
   bins,
@@ -1562,23 +1917,23 @@ function Histogram({
   tone,
   percentiles = [],
   unit,
-  animate
+  animate,
+  hover,
+  setHover
 }) {
-  const [hover, setHover] = useState(null);
-  const xs = samples.filter(v => v != null && Number.isFinite(v));
-  if (xs.length < 2 || w < 40) return null;
-  const lo = Math.min(...xs),
-    hi = Math.max(...xs),
-    span = hi - lo || 1;
-  const n = bins ?? Math.max(6, Math.min(30, Math.round(Math.sqrt(xs.length))));
-  const counts = Array(n).fill(0);
-  xs.forEach(v => {
-    counts[Math.min(n - 1, Math.floor((v - lo) / span * n))]++;
-  });
+  const b = histBins(samples, bins);
+  if (!b || w < 40) return null;
+  const {
+    xs,
+    lo,
+    span,
+    n,
+    counts
+  } = b;
   const max = Math.max(...counts);
-  const sorted = [...xs].sort((a, b) => a - b);
+  const sorted = [...xs].sort((p, q2) => p - q2);
   const q = p => sorted[Math.min(sorted.length - 1, Math.floor(p * (sorted.length - 1)))];
-  const padL = __ds_scope.estWidth(String(max)),
+  const padL = estWidth(String(max)),
     padR = 8,
     padT = 10,
     padB = 26,
@@ -1587,9 +1942,9 @@ function Histogram({
   const bw = iw / n;
   const {
     ticks
-  } = __ds_scope.niceTicks(0, max, h < 140 ? 2 : 3);
-  const y = c => __ds_scope.r1(padT + (1 - c / (ticks[ticks.length - 1] || 1)) * ih);
-  const xv = v => __ds_scope.r1(padL + (v - lo) / span * iw);
+  } = niceTicks(0, max, h < 140 ? 2 : 3);
+  const y = c => r1(padT + (1 - c / (ticks[ticks.length - 1] || 1)) * ih);
+  const xv = v => r1(padL + (v - lo) / span * iw);
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("svg", {
     viewBox: `0 0 ${w} ${h}`,
     width: w,
@@ -1617,11 +1972,11 @@ function Histogram({
   }, t))), counts.map((c, i) => /*#__PURE__*/React.createElement("rect", {
     key: i,
     className: "bds-chart__bar",
-    x: __ds_scope.r1(padL + i * bw + 1),
+    x: r1(padL + i * bw + 1),
     y: y(c),
     width: Math.max(1, bw - 2),
-    height: __ds_scope.r1(y(0) - y(c)),
-    fill: __ds_scope.toneVar(tone, 0),
+    height: r1(y(0) - y(c)),
+    fill: toneVar(tone, 0),
     opacity: hover == null || hover === i ? 1 : 0.45,
     onMouseEnter: () => setHover(i),
     style: animate ? {
@@ -1650,22 +2005,63 @@ function Histogram({
         fill: "var(--ink-2)"
       }
     }, `p${Math.round(p * 100)} ${fmt(v)}${unit ?? ""}`));
-  }), [lo, lo + span / 2, hi].map((v, i) => /*#__PURE__*/React.createElement("text", {
+  }), [lo, lo + span / 2, lo + span].map((v, i) => /*#__PURE__*/React.createElement("text", {
     key: i,
     className: "bds-chart__tick",
     x: xv(v),
     y: h - 8,
     textAnchor: i === 0 ? "start" : i === 2 ? "end" : "middle"
   }, fmt(v), unit ?? ""))), hover != null && /*#__PURE__*/React.createElement(Tip, {
-    x: __ds_scope.r1(padL + (hover + 0.5) * bw),
+    x: r1(padL + (hover + 0.5) * bw),
     w: w,
-    title: `${fmt(lo + hover / n * span)}–${fmt(lo + (hover + 1) / n * span)}${unit ?? ""}`,
+    title: `${fmt(lo + hover / n * span)}~${fmt(lo + (hover + 1) / n * span)}${unit ?? ""}`,
     rows: [{
-      color: __ds_scope.toneVar(tone, 0),
+      color: toneVar(tone, 0),
       name: "표본",
       value: `${counts[hover]}건`
     }]
   }));
+}
+
+/* ---------- 스크린리더 표 ---------- */
+/** 시각 차트와 같은 데이터를 표로. 항상 렌더(bds-sr로 숨김)하고 루트가 aria-describedby로 가리킨다. */
+function SrTable({
+  id,
+  kind,
+  props,
+  fmt
+}) {
+  let head = [],
+    rows = [];
+  if (kind === "pie") {
+    head = ["항목", "값"];
+    rows = (props.segments ?? []).map(sg => [sg.label, fmt(Math.max(0, Number(sg.value) || 0))]);
+  } else if (kind === "radial") {
+    head = props.label != null ? ["값", "상태"] : ["값"];
+    rows = [[props.value == null ? MISSING : fmt(Math.min(1, Math.max(0, props.value)))].concat(props.label != null ? [props.label] : [])];
+  } else if (kind === "histogram") {
+    const b = histBins(props.samples, props.bins);
+    head = ["구간", "표본"];
+    rows = b ? b.counts.map((c, i) => [`${fmt(b.lo + i / b.n * b.span)}~${fmt(b.lo + (i + 1) / b.n * b.span)}${props.unit ?? ""}`, `${c}건`]) : [];
+  } else {
+    const cols = kind === "radar" ? props.axes ?? [] : props.labels ?? [];
+    head = ["계열"].concat(cols);
+    rows = (props.series ?? []).map(s => [s.label].concat(cols.map((_, i) => cell(fmt, s.values[i]))));
+  }
+  return /*#__PURE__*/React.createElement("table", {
+    id: id,
+    className: "bds-sr"
+  }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, head.map((c, i) => /*#__PURE__*/React.createElement("th", {
+    key: i,
+    scope: "col"
+  }, c)))), /*#__PURE__*/React.createElement("tbody", null, rows.map((r, i) => /*#__PURE__*/React.createElement("tr", {
+    key: i
+  }, r.map((c, j) => j === 0 ? /*#__PURE__*/React.createElement("th", {
+    key: j,
+    scope: "row"
+  }, c) : /*#__PURE__*/React.createElement("td", {
+    key: j
+  }, c))))));
 }
 
 /* ---------- 진입점 ---------- */
@@ -1681,49 +2077,63 @@ const DEFAULT_H = {
 
 /** 단일 차트. kind: line | area | bar | pie | radial | radar | histogram.
  *  fit="flex"(기본)면 부모 폭을 채우고 height(px)만 정한다. fit="fixed"면 width·height 그대로.
- *  색은 --chart-1~6만, 상태 의미는 라벨 텍스트가 전한다. 진입 시 1회 그리기 모션. */
-function Chart(props) {
+ *  색은 --series-1~8만, 상태 의미는 라벨 텍스트가 전한다. 진입 시 1회 그리기 모션(live면 끔).
+ *  paused=true면 마지막으로 받은 props 스냅샷을 그대로 그린다(스트림이 흘러도 화면은 멈춤).
+ *  stage는 tabIndex=0: ←/→ 로 인덱스 이동, Home/End 양끝, Esc 해제. 숨김 표(bds-sr)가 aria-describedby로 연결된다. */
+function Chart(rawProps) {
+  const last = useRef(rawProps);
+  if (!rawProps.paused) last.current = rawProps;
+  const props = rawProps.paused ? last.current : rawProps;
   const {
     kind = "line",
     fit = "flex",
     width,
     height,
-    valueFormatter = __ds_scope.fmtKo,
-    emptyText = "수집 안 됨",
+    valueFormatter = fmtKo,
+    emptyText = MISSING,
     showLegend = true,
-    animate = true,
+    live = false,
+    animate = !live,
     className,
     style,
     "aria-label": ariaLabel
   } = props;
   const uid = useId().replace(/:/g, "");
+  const srId = `${uid}-sr`;
   const ref = useRef(null);
+  const [hover, setHover] = useState(null);
   const h = height ?? DEFAULT_H[kind];
   const size = useSize(ref, fit === "fixed" ? Number(width) : undefined, Number(h));
-  const anim = useAnimateOnce(animate);
+  const anim = useAnimateOnce(animate && !live);
   const w = fit === "fixed" && typeof width === "number" ? width : size.w;
+  const lineKind = kind === "line" || kind === "area";
   let body = null,
     hasData = false,
-    legend = [];
+    legend = [],
+    count = 0;
   if (showLegend) {
     if (kind === "pie") legend = (props.segments ?? []).map((sg, i) => ({
-      color: __ds_scope.toneVar(sg.tone, i),
+      color: toneVar(sg.tone, i),
       label: sg.label,
       value: valueFormatter(Math.max(0, Number(sg.value) || 0))
     }));else if (kind !== "radial" && (props.series ?? []).length > 1) legend = props.series.map((sr, i) => ({
-      color: __ds_scope.toneVar(sr.tone, i),
-      label: sr.label
+      color: toneVar(sr.tone, i),
+      label: sr.label,
+      shape: lineKind ? "line" : "square",
+      dash: lineKind ? seriesDash(sr, i, props.series.length) : undefined
     }));
   }
   if (kind === "pie") {
     hasData = (props.segments ?? []).some(s => s.value > 0);
+    count = (props.segments ?? []).length;
     body = /*#__PURE__*/React.createElement(Pie, {
       segments: props.segments ?? [],
       fmt: valueFormatter,
       caption: props.caption,
-      showLegend: showLegend,
       w: w,
-      h: h
+      h: h,
+      hover: hover,
+      setHover: setHover
     });
   } else if (kind === "radial") {
     hasData = props.value != null;
@@ -1734,10 +2144,12 @@ function Chart(props) {
       fmt: valueFormatter,
       w: w,
       h: h,
-      animate: animate
+      animate: animate && !live
     });
   } else if (kind === "histogram") {
-    hasData = (props.samples ?? []).filter(v => v != null).length >= 2;
+    const b = histBins(props.samples, props.bins);
+    hasData = !!b;
+    count = b ? b.n : 0;
     body = /*#__PURE__*/React.createElement(Histogram, {
       samples: props.samples ?? [],
       bins: props.bins,
@@ -1747,44 +2159,56 @@ function Chart(props) {
       fmt: valueFormatter,
       w: w,
       h: h,
-      animate: anim
+      animate: anim,
+      hover: hover,
+      setHover: setHover
     });
   } else if (kind === "radar") {
     hasData = (props.axes ?? []).length >= 3 && (props.series ?? []).length > 0;
+    count = (props.axes ?? []).length;
     body = /*#__PURE__*/React.createElement(Radar, {
       axes: props.axes ?? [],
       series: props.series ?? [],
       max: props.max,
       fmt: valueFormatter,
-      showLegend: showLegend,
       w: w,
-      h: h
+      h: h,
+      hover: hover,
+      setHover: setHover
     });
   } else {
     hasData = (props.labels ?? []).length > 0 && (props.series ?? []).some(s => s.values.some(v => v != null));
+    count = (props.labels ?? []).length;
     body = /*#__PURE__*/React.createElement(Cartesian, {
       kind: kind,
       labels: props.labels ?? [],
       series: props.series ?? [],
       fmt: valueFormatter,
       uid: uid,
-      showLegend: showLegend,
       xTicks: props.xTicks ?? "auto",
       w: w,
       h: h,
       thresholds: props.thresholds,
       stacked: props.stacked,
-      animate: anim,
       yMin: props.yMin,
-      yMax: props.yMax
+      yMax: props.yMax,
+      hover: hover,
+      setHover: setHover
     });
   }
+  const onKey = e => {
+    if (!count) return;
+    let next;
+    if (e.key === "ArrowRight") next = hover == null ? 0 : Math.min(count - 1, hover + 1);else if (e.key === "ArrowLeft") next = hover == null ? count - 1 : Math.max(0, hover - 1);else if (e.key === "Home") next = 0;else if (e.key === "End") next = count - 1;else if (e.key === "Escape") next = null;else return;
+    e.preventDefault();
+    setHover(next);
+  };
   return /*#__PURE__*/React.createElement("div", {
     role: "img",
-    "aria-label": ariaLabel,
-    "aria-hidden": ariaLabel ? undefined : true,
-    className: __ds_scope.cx("bds-chart", `bds-chart--${kind}`, anim && "bds-chart--animate", className),
-    style: __ds_scope.frameStyle({
+    "aria-label": ariaLabel ?? "차트",
+    "aria-describedby": srId,
+    className: cx("bds-chart", `bds-chart--${kind}`, anim && "bds-chart--animate", className),
+    style: frameStyle({
       fit,
       width,
       style
@@ -1794,14 +2218,24 @@ function Chart(props) {
     className: "bds-chart__stage",
     style: {
       height: h
-    }
+    },
+    tabIndex: 0,
+    onKeyDown: onKey,
+    onBlur: () => setHover(null)
   }, w > 0 && body) : /*#__PURE__*/React.createElement("div", {
+    id: srId,
     className: "bds-chart__empty",
     style: {
       height: h
     }
-  }, emptyText), hasData && legend.length > 0 && /*#__PURE__*/React.createElement(Legend, {
-    items: legend
+  }, emptyText), hasData && /*#__PURE__*/React.createElement(SrTable, {
+    id: srId,
+    kind: kind,
+    props: props,
+    fmt: valueFormatter
+  }), hasData && legend.length > 0 && /*#__PURE__*/React.createElement(Legend, {
+    items: legend,
+    compact: true
   }));
 }
 Object.assign(__ds_scope, { Chart });
@@ -1809,11 +2243,9 @@ Object.assign(__ds_scope, { Chart });
 
 // components/display/Accordion.jsx
 try { (() => {
+const { useId, useState } = React;
+const { cx, Icon } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const {
-  useId,
-  useState
-} = React;
 /** 접이식 섹션. items: {id, title, meta?, content}. multiple이면 여러 개 동시 펼침. plain은 테두리 없음(설정 패널 안). */
 function Accordion({
   items = [],
@@ -1831,7 +2263,7 @@ function Accordion({
     return n;
   });
   return /*#__PURE__*/React.createElement("div", _extends({
-    className: __ds_scope.cx("bds-acc", plain && "bds-acc--plain", className)
+    className: cx("bds-acc", plain && "bds-acc--plain", className)
   }, rest), items.map(it => {
     const on = open.has(it.id);
     return /*#__PURE__*/React.createElement("div", {
@@ -1848,14 +2280,15 @@ function Accordion({
       "aria-controls": uid + "-" + it.id,
       id: uid + "-h-" + it.id,
       onClick: () => toggle(it.id)
-    }, it.icon && /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    }, it.icon && /*#__PURE__*/React.createElement(Icon, {
       name: it.icon,
       size: 16
     }), /*#__PURE__*/React.createElement("span", {
-      className: "bds-ellipsis"
+      className: "bds-ellipsis",
+      title: typeof it.title === "string" ? it.title : undefined
     }, it.title), it.meta && /*#__PURE__*/React.createElement("span", {
       className: "bds-acc__meta"
-    }, it.meta), /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    }, it.meta), /*#__PURE__*/React.createElement(Icon, {
       name: "caret-down",
       size: 14,
       className: "bds-acc__chev"
@@ -1872,6 +2305,7 @@ Object.assign(__ds_scope, { Accordion });
 
 // components/display/Avatar.jsx
 try { (() => {
+const { cx } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const SZ = {
   xs: 20,
@@ -1885,8 +2319,14 @@ const initials = n => {
   const s = n.trim();
   return /^[가-힣]/.test(s) ? s.slice(-2) : s.split(/\s+/).map(w => w[0]).join("").slice(0, 2).toUpperCase();
 };
+const STATUS = {
+  ok: "정상",
+  warn: "주의",
+  crit: "위험",
+  off: "오프라인"
+};
 
-/** 사용자·서비스 아바타. src 없으면 이름 이니셜(한글은 뒤 두 글자). status로 온라인 점. */
+/** 사용자·서비스 아바타. src 없으면 이름 이니셜(한글은 뒤 두 글자). status로 온라인 점(접근 가능한 이름에 텍스트로 병기). */
 function Avatar({
   name,
   src,
@@ -1898,14 +2338,15 @@ function Avatar({
   ...rest
 }) {
   const px = typeof size === "number" ? size : SZ[size] ?? 32;
+  const label = name && status ? `${name}, ${STATUS[status] ?? status}` : name;
   return /*#__PURE__*/React.createElement("span", _extends({
-    className: __ds_scope.cx("bds-avatar", square && "bds-avatar--square", className),
+    className: cx("bds-avatar", square && "bds-avatar--square", className),
     style: {
       "--av": px + "px",
       ...style
     },
-    title: name,
-    "aria-label": name,
+    title: label,
+    "aria-label": label,
     role: "img"
   }, rest), src ? /*#__PURE__*/React.createElement("img", {
     className: "bds-avatar__img",
@@ -1914,7 +2355,7 @@ function Avatar({
   }) : /*#__PURE__*/React.createElement("span", {
     "aria-hidden": "true"
   }, initials(name)), status && /*#__PURE__*/React.createElement("i", {
-    className: __ds_scope.cx("bds-avatar__st", "bds-avatar__st--" + status),
+    className: cx("bds-avatar__st", "bds-avatar__st--" + status),
     "aria-hidden": "true"
   }));
 }
@@ -1930,7 +2371,7 @@ function AvatarGroup({
   const shown = users.slice(0, max),
     more = users.length - shown.length;
   return /*#__PURE__*/React.createElement("span", {
-    className: __ds_scope.cx("bds-avatars", className),
+    className: cx("bds-avatars", className),
     style: {
       "--av": px + "px"
     }
@@ -1950,6 +2391,7 @@ Object.assign(__ds_scope, { Avatar, AvatarGroup });
 
 // components/display/Badge.jsx
 try { (() => {
+const { cx } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 숫자 카운트 배지. children으로 감싸면 오른쪽 위에 붙는다. max 초과는 "99+". dot은 숫자 없는 점. */
 function Badge({
@@ -1965,7 +2407,7 @@ function Badge({
   if (!dot && (count == null || count === 0) && children) return children;
   const label = dot ? null : count > max ? max + "+" : count;
   const b = /*#__PURE__*/React.createElement("span", _extends({
-    className: __ds_scope.cx("bds-badge", tone !== "neutral" && "bds-badge--" + tone, dot && "bds-badge--dot", className),
+    className: cx("bds-badge", tone !== "neutral" && "bds-badge--" + tone, dot && "bds-badge--dot", className),
     "aria-label": ariaLabel ?? (dot ? "새 항목" : count + "개")
   }, rest), label);
   return children ? /*#__PURE__*/React.createElement("span", {
@@ -1977,6 +2419,7 @@ Object.assign(__ds_scope, { Badge });
 
 // components/display/Code.jsx
 try { (() => {
+const { cx } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 인라인 코드 조각. 식별자·경로·명령 한 토막. */
 function Code({
@@ -1985,7 +2428,7 @@ function Code({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement("code", _extends({
-    className: __ds_scope.cx("bds-code bds-mono", className)
+    className: cx("bds-code bds-mono", className)
   }, rest), children);
 }
 /** 코드 블록. 여러 줄 명령·JSON. 가로 스크롤, 줄바꿈 안 함. */
@@ -1996,7 +2439,7 @@ function CodeBlock({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement("pre", _extends({
-    className: __ds_scope.cx("bds-codeblock bds-mono", className),
+    className: cx("bds-codeblock bds-mono", className),
     "data-lang": language
   }, rest), /*#__PURE__*/React.createElement("code", null, children));
 }
@@ -2007,7 +2450,7 @@ function Kbd({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement("kbd", _extends({
-    className: __ds_scope.cx("bds-kbd", className)
+    className: cx("bds-kbd", className)
   }, rest), children);
 }
 Object.assign(__ds_scope, { Code, CodeBlock, Kbd });
@@ -2015,9 +2458,8 @@ Object.assign(__ds_scope, { Code, CodeBlock, Kbd });
 
 // components/display/CopyField.jsx
 try { (() => {
-const {
-  useState
-} = React;
+const { useState } = React;
+const { cx, frameStyle, Icon } = __ds_scope;
 /** 복사 전용 값(토큰·식별자·curl). 읽기 전용 mono + 복사 버튼. multiline이면 <pre>. secret이면 마스킹 + 보기 토글. */
 function CopyField({
   value,
@@ -2046,8 +2488,8 @@ function CopyField({
   };
   const disp = shown ? value : "•".repeat(Math.min(32, value.length));
   return /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-copy", multiline && "bds-copy--multi", className),
-    style: __ds_scope.frameStyle({
+    className: cx("bds-copy", multiline && "bds-copy--multi", className),
+    style: frameStyle({
       fit,
       width,
       style
@@ -2069,23 +2511,27 @@ function CopyField({
     "aria-label": shown ? "숨기기" : "보기",
     "aria-pressed": shown,
     onClick: () => setShown(s => !s)
-  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, /*#__PURE__*/React.createElement(Icon, {
     name: shown ? "eye-slash" : "eye",
     size: 14
   })), /*#__PURE__*/React.createElement("button", {
     type: "button",
-    className: __ds_scope.cx("bds-copy__btn", copied && "bds-copy__btn--ok"),
+    className: cx("bds-copy__btn", copied && "bds-copy__btn--ok"),
     onClick: copy
-  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, /*#__PURE__*/React.createElement(Icon, {
     name: copied ? "check" : "copy",
     size: 14
-  }), /*#__PURE__*/React.createElement("span", null, copied ? copiedLabel : copyLabel)))));
+  }), /*#__PURE__*/React.createElement("span", null, copied ? copiedLabel : copyLabel)), /*#__PURE__*/React.createElement("span", {
+    className: "bds-sr",
+    role: "status"
+  }, copied ? copiedLabel : ""))));
 }
 Object.assign(__ds_scope, { CopyField });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/display/CopyField.jsx", error: String((e && e.message) || e) }); }
 
 // components/display/StatusPill.jsx
 try { (() => {
+const { cx } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 상태 pill. tone은 ok/warn/crit/info/off/accent. 색 단독 금지: children 텍스트 필수. pulse는 실시간일 때만. */
 function StatusPill({
@@ -2099,7 +2545,7 @@ function StatusPill({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement("span", _extends({
-    className: __ds_scope.cx("bds-pill", `bds-tone--${tone}`, size !== "md" && `bds-pill--${size}`, pulse && "bds-pill--pulse", outline && "bds-pill--outline", className)
+    className: cx("bds-pill", `bds-tone--${tone}`, size !== "md" && `bds-pill--${size}`, pulse && "bds-pill--pulse", outline && "bds-pill--outline", className)
   }, rest), dot && /*#__PURE__*/React.createElement("i", {
     className: "bds-pill__dot",
     "aria-hidden": "true"
@@ -2110,20 +2556,15 @@ Object.assign(__ds_scope, { StatusPill });
 
 // components/data/StatTile.jsx
 try { (() => {
+const { useEffect, useRef, useState } = React;
+const { cx, frameStyle, Icon, Sparkline, StatusPill } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const {
-  useEffect,
-  useRef,
-  useState
-} = React;
+/* animate=true일 때만 카운트업. 기본은 꺼짐: 실시간 수치는 트랜지션 없이 즉시 바뀐다. 꺼지면 target을 그대로 돌려주는 no-op. */
 function useCountUp(target, enabled) {
   const [v, setV] = useState(enabled ? 0 : target);
   const from = useRef(0);
   useEffect(() => {
-    if (!enabled || typeof target !== "number") {
-      setV(target);
-      return;
-    }
+    if (!enabled || typeof target !== "number") return;
     const start = performance.now(),
       f = from.current,
       dur = 900;
@@ -2137,10 +2578,10 @@ function useCountUp(target, enabled) {
     raf = requestAnimationFrame(step);
     return () => cancelAnimationFrame(raf);
   }, [target, enabled]);
-  return v;
+  return enabled ? v : target;
 }
 
-/** 큰 수치 하나. value가 숫자면 카운트업 + mono, 문자열이면 그대로. delta는 증감, spark는 최근 추세. */
+/** 큰 수치 하나. value가 숫자면 mono(ko-KR 천 단위), 문자열이면 그대로. 기본은 즉시 갱신, animate={true}일 때만 진입 카운트업. delta는 증감, spark는 최근 추세. */
 /** detail: 수치 아래 보조 줄(모델 이름·마지막 heartbeat 등). pill: {tone,text} 상태 pill(라벨 옆). icon: 라벨 앞 Phosphor 아이콘. */
 function StatTile({
   label,
@@ -2155,7 +2596,7 @@ function StatTile({
   icon,
   tone = 1,
   flat = false,
-  animate = true,
+  animate = false,
   fit = "flex",
   width,
   className,
@@ -2170,37 +2611,37 @@ function StatTile({
   }) : value;
   const dir = typeof delta === "number" ? delta > 0 ? "up" : delta < 0 ? "down" : null : null;
   return /*#__PURE__*/React.createElement("div", _extends({
-    className: __ds_scope.cx("bds-stat", flat && "bds-stat--flat", className),
-    style: __ds_scope.frameStyle({
+    className: cx("bds-stat", flat && "bds-stat--flat", className),
+    style: frameStyle({
       fit,
       width,
       style
     })
   }, rest), /*#__PURE__*/React.createElement("span", {
     className: "bds-stat__l"
-  }, icon && /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, icon && /*#__PURE__*/React.createElement(Icon, {
     name: icon,
     size: 13
-  }), /*#__PURE__*/React.createElement("span", null, label), pill && /*#__PURE__*/React.createElement(__ds_scope.StatusPill, {
+  }), /*#__PURE__*/React.createElement("span", null, label), pill && /*#__PURE__*/React.createElement(StatusPill, {
     size: "sm",
     tone: pill.tone
   }, pill.text)), /*#__PURE__*/React.createElement("span", {
-    className: __ds_scope.cx("bds-stat__v", !numeric && "bds-stat__v--text")
+    className: cx("bds-stat__v", !numeric && "bds-stat__v--text")
   }, text, unit && /*#__PURE__*/React.createElement("small", null, unit)), delta != null && /*#__PURE__*/React.createElement("span", {
-    className: __ds_scope.cx("bds-stat__d", dir && `bds-stat__d--${dir}`)
-  }, dir && /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    className: cx("bds-stat__d", dir && `bds-stat__d--${dir}`)
+  }, dir && /*#__PURE__*/React.createElement(Icon, {
     name: dir === "up" ? "arrow-up-right" : "arrow-down-right",
     size: 12
   }), typeof delta === "number" ? `${delta > 0 ? "+" : ""}${delta.toLocaleString("ko-KR")}` : delta, deltaLabel && /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: "var(--font-ui)",
-      color: "var(--text-3)"
+      color: "var(--ink-3)"
     }
   }, deltaLabel)), detail && /*#__PURE__*/React.createElement("div", {
     className: "bds-stat__detail"
   }, detail), spark && /*#__PURE__*/React.createElement("div", {
     className: "bds-stat__spark"
-  }, /*#__PURE__*/React.createElement(__ds_scope.Sparkline, {
+  }, /*#__PURE__*/React.createElement(Sparkline, {
     values: spark,
     tone: tone
   })));
@@ -2210,6 +2651,7 @@ Object.assign(__ds_scope, { StatTile });
 
 // components/display/Tag.jsx
 try { (() => {
+const { cx, Icon } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 태그. 분류·선택 표시. accent는 "선택됨" 같은 강조 하나에만. onRemove가 있으면 x 버튼. */
 function Tag({
@@ -2221,8 +2663,8 @@ function Tag({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement("span", _extends({
-    className: __ds_scope.cx("bds-tag", accent && "bds-tag--accent", className)
-  }, rest), icon && /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    className: cx("bds-tag", accent && "bds-tag--accent", className)
+  }, rest), icon && /*#__PURE__*/React.createElement(Icon, {
     name: icon,
     size: 12
   }), children, onRemove && /*#__PURE__*/React.createElement("button", {
@@ -2230,7 +2672,7 @@ function Tag({
     className: "bds-tag__x",
     "aria-label": `${typeof children === "string" ? children + " " : ""}제거`,
     onClick: onRemove
-  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, /*#__PURE__*/React.createElement(Icon, {
     name: "x",
     size: 10
   })));
@@ -2240,6 +2682,7 @@ Object.assign(__ds_scope, { Tag });
 
 // components/feedback/AlertBanner.jsx
 try { (() => {
+const { cx, Icon, IconButton } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const ICON = {
   info: "info",
@@ -2247,7 +2690,7 @@ const ICON = {
   warn: "warning",
   crit: "warning-octagon"
 };
-/** 인라인 알림 배너. 페이지·섹션 단위 상태(수집 실패, 미구성). 토스트가 아니라 남아 있어야 하는 알림. */
+/** 인라인 알림 배너. 페이지·섹션 단위 상태(수집 실패, 미구성). 토스트가 아니라 남아 있어야 하는 알림. warn·crit은 role="alert", 그 외는 role="status". */
 function AlertBanner({
   tone = "info",
   title,
@@ -2257,15 +2700,15 @@ function AlertBanner({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement("div", _extends({
-    role: tone === "crit" ? "alert" : "status",
-    className: __ds_scope.cx("bds-alert", `bds-tone--${tone}`, className)
-  }, rest), /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    role: tone === "crit" || tone === "warn" ? "alert" : "status",
+    className: cx("bds-alert", `bds-tone--${tone}`, className)
+  }, rest), /*#__PURE__*/React.createElement(Icon, {
     name: ICON[tone]
   }), title && /*#__PURE__*/React.createElement("div", {
     className: "bds-alert__t"
   }, title), /*#__PURE__*/React.createElement("div", {
     className: "bds-alert__b"
-  }, children), onClose && /*#__PURE__*/React.createElement(__ds_scope.IconButton, {
+  }, children), onClose && /*#__PURE__*/React.createElement(IconButton, {
     className: "bds-alert__x",
     icon: "x",
     size: "sm",
@@ -2279,6 +2722,7 @@ Object.assign(__ds_scope, { AlertBanner });
 
 // components/feedback/EmptyState.jsx
 try { (() => {
+const { cx, MascotMark } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 빈 상태. 봉구 표정으로 톤을 전한다(기본 curious, 오류는 worried). actions에 다음 행동 버튼. */
 function EmptyState({
@@ -2292,8 +2736,8 @@ function EmptyState({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement("div", _extends({
-    className: __ds_scope.cx("bds-empty", plain && "bds-empty--plain", tone === "error" && "bds-empty--error", className)
-  }, rest), face && /*#__PURE__*/React.createElement(__ds_scope.MascotMark, {
+    className: cx("bds-empty", plain && "bds-empty--plain", tone === "error" && "bds-empty--error", className)
+  }, rest), face && /*#__PURE__*/React.createElement(MascotMark, {
     face: tone === "error" && face === "curious" ? "worried" : face,
     size: 36,
     animated: false
@@ -2310,6 +2754,7 @@ Object.assign(__ds_scope, { EmptyState });
 
 // components/feedback/ErrorState.jsx
 try { (() => {
+const { cx, MascotMark, Button } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 영역 실패 상태(ErrorBoundary fallback·요청 실패). 마스코트 crying + 제목 + 원인 + 다시 시도. 빈 결과는 EmptyState. */
 function ErrorState({
@@ -2324,9 +2769,9 @@ function ErrorState({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement("div", _extends({
-    className: __ds_scope.cx("bds-errstate", className),
+    className: cx("bds-errstate", className),
     role: "alert"
-  }, rest), mascot && /*#__PURE__*/React.createElement(__ds_scope.MascotMark, {
+  }, rest), mascot && /*#__PURE__*/React.createElement(MascotMark, {
     face: "crying",
     size: 40,
     animated: false
@@ -2338,7 +2783,7 @@ function ErrorState({
     className: "bds-errstate__code"
   }, code), (onRetry || actions) && /*#__PURE__*/React.createElement("div", {
     className: "bds-errstate__a"
-  }, onRetry && /*#__PURE__*/React.createElement(__ds_scope.Button, {
+  }, onRetry && /*#__PURE__*/React.createElement(Button, {
     size: "sm",
     variant: "secondary",
     icon: "arrow-clockwise",
@@ -2350,6 +2795,7 @@ Object.assign(__ds_scope, { ErrorState });
 
 // components/feedback/InlineMessage.jsx
 try { (() => {
+const { cx, Icon } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const ICON = {
   ok: "check-circle",
@@ -2367,9 +2813,9 @@ function InlineMessage({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement("div", _extends({
-    className: __ds_scope.cx("bds-msg", tone !== "neutral" && "bds-msg--" + tone, className),
+    className: cx("bds-msg", tone !== "neutral" && "bds-msg--" + tone, className),
     role: tone === "crit" ? "alert" : "status"
-  }, rest), /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, rest), /*#__PURE__*/React.createElement(Icon, {
     name: icon ?? ICON[tone],
     size: 14
   }), /*#__PURE__*/React.createElement("span", null, children));
@@ -2379,11 +2825,9 @@ Object.assign(__ds_scope, { InlineMessage });
 
 // components/feedback/NotificationDrawer.jsx
 try { (() => {
+const { useEffect, useRef } = React;
+const { cx, IconButton, Button, EmptyState } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const {
-  useEffect,
-  useRef
-} = React;
 const NOTIFICATION_DRAWER_ID = "bds-notification-drawer";
 const TONE_LABEL = {
   info: "정보",
@@ -2400,7 +2844,7 @@ function NotificationTrigger({
   controls = NOTIFICATION_DRAWER_ID,
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement(__ds_scope.IconButton, _extends({
+  return /*#__PURE__*/React.createElement(IconButton, _extends({
     icon: "bell",
     badge: unreadCount,
     "aria-label": unreadCount > 0 ? `알림, 읽지 않음 ${unreadCount}건` : "알림",
@@ -2435,7 +2879,7 @@ function NotificationDrawer({
     };
   }, [open, onClose]);
   return /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-drawer", open && "bds-drawer--open", className)
+    className: cx("bds-drawer", open && "bds-drawer--open", className)
   }, /*#__PURE__*/React.createElement("div", {
     className: "bds-drawer__dim",
     onClick: onClose,
@@ -2455,13 +2899,13 @@ function NotificationDrawer({
     }
   }, /*#__PURE__*/React.createElement("h2", null, "\uC54C\uB9BC"), /*#__PURE__*/React.createElement("p", null, items.length === 0 ? "새 알림이 없습니다." : /*#__PURE__*/React.createElement(React.Fragment, null, "\uC54C\uB9BC ", /*#__PURE__*/React.createElement("span", {
     className: "bds-mono"
-  }, items.length), "\uAC74"))), /*#__PURE__*/React.createElement(__ds_scope.IconButton, {
+  }, items.length), "\uAC74"))), /*#__PURE__*/React.createElement(IconButton, {
     icon: "x",
     variant: "ghost",
     size: "sm",
     "aria-label": "\uC54C\uB9BC \uB2EB\uAE30",
     onClick: onClose
-  })), items.length === 0 ? /*#__PURE__*/React.createElement(__ds_scope.EmptyState, {
+  })), items.length === 0 ? /*#__PURE__*/React.createElement(EmptyState, {
     plain: true,
     face: "smiling",
     title: "\uBAA8\uB4E0 \uC0C1\uD0DC\uAC00 \uC815\uC0C1\uC785\uB2C8\uB2E4",
@@ -2470,7 +2914,7 @@ function NotificationDrawer({
     className: "bds-drawer__tools"
   }, /*#__PURE__*/React.createElement("span", null, "\uC77D\uC9C0 \uC54A\uC74C ", /*#__PURE__*/React.createElement("span", {
     className: "bds-mono"
-  }, unread), "\uAC74"), /*#__PURE__*/React.createElement(__ds_scope.Button, {
+  }, unread), "\uAC74"), /*#__PURE__*/React.createElement(Button, {
     size: "sm",
     variant: "ghost",
     disabled: unread === 0,
@@ -2481,7 +2925,7 @@ function NotificationDrawer({
     key: it.id
   }, /*#__PURE__*/React.createElement("button", {
     type: "button",
-    className: __ds_scope.cx("bds-notif", `bds-tone--${it.tone}`, it.read && "bds-notif--read"),
+    className: cx("bds-notif", `bds-tone--${it.tone}`, it.read && "bds-notif--read"),
     onClick: () => onRead?.(it.id),
     "aria-label": `${TONE_LABEL[it.tone]}, ${it.title}, ${it.read ? "읽음" : "읽지 않음"}${it.resolved ? ", 해제됨" : ""}`
   }, /*#__PURE__*/React.createElement("i", {
@@ -2500,6 +2944,8 @@ Object.assign(__ds_scope, { NOTIFICATION_DRAWER_ID, NotificationTrigger, Notific
 
 // components/feedback/ProgressBar.jsx
 try { (() => {
+const { useId } = React;
+const { cx, frameStyle } = __ds_scope;
 /** 선형 진행 바. value 0~1이면 결정형, null이면 비결정형(흐르는 띠). tone: accent(기본)·ok·warn·crit. */
 function ProgressBar({
   value,
@@ -2517,9 +2963,10 @@ function ProgressBar({
 }) {
   const det = typeof value === "number" && Number.isFinite(value);
   const v = det ? Math.min(1, Math.max(0, value)) : 0;
+  const lid = useId();
   return /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-progress", `bds-progress--${size}`, `bds-tone--${tone}`, !det && "bds-progress--indet", className),
-    style: __ds_scope.frameStyle({
+    className: cx("bds-progress", `bds-progress--${size}`, `bds-tone--${tone}`, !det && "bds-progress--indet", className),
+    style: frameStyle({
       fit,
       width,
       style
@@ -2527,13 +2974,15 @@ function ProgressBar({
   }, (label || showValue && det) && /*#__PURE__*/React.createElement("div", {
     className: "bds-progress__hd"
   }, label && /*#__PURE__*/React.createElement("span", {
+    id: lid,
     className: "bds-progress__l"
   }, label), showValue && det && /*#__PURE__*/React.createElement("span", {
     className: "bds-progress__v bds-mono"
   }, valueFormatter(v))), /*#__PURE__*/React.createElement("div", {
     className: "bds-progress__track",
     role: "progressbar",
-    "aria-label": ariaLabel ?? (typeof label === "string" ? label : undefined),
+    "aria-label": ariaLabel,
+    "aria-labelledby": !ariaLabel && label ? lid : undefined,
     "aria-valuemin": 0,
     "aria-valuemax": 100,
     "aria-valuenow": det ? Math.round(v * 100) : undefined
@@ -2551,6 +3000,7 @@ Object.assign(__ds_scope, { ProgressBar });
 
 // components/feedback/Skeleton.jsx
 try { (() => {
+const { cx, frameStyle } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 스켈레톤. variant: block | text | circle. fit="flex"면 폭을 채우고 height만, fixed면 width·height. */
 function Skeleton({
@@ -2564,7 +3014,7 @@ function Skeleton({
   ...rest
 }) {
   if (lines) return /*#__PURE__*/React.createElement("div", _extends({
-    className: __ds_scope.cx("bds-skel-group", className),
+    className: cx("bds-skel-group", className),
     "aria-hidden": "true"
   }, rest), Array.from({
     length: lines
@@ -2576,8 +3026,8 @@ function Skeleton({
     }
   })));
   return /*#__PURE__*/React.createElement("span", _extends({
-    className: __ds_scope.cx("bds-skel", variant !== "block" && `bds-skel--${variant}`, className),
-    style: __ds_scope.frameStyle({
+    className: cx("bds-skel", variant !== "block" && `bds-skel--${variant}`, className),
+    style: frameStyle({
       fit: variant === "circle" ? "fixed" : fit,
       width: variant === "circle" ? height : width,
       height,
@@ -2591,6 +3041,7 @@ Object.assign(__ds_scope, { Skeleton });
 
 // components/feedback/Spinner.jsx
 try { (() => {
+const { cx, MascotMark } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 스피너. size px. label이 있으면 옆에 텍스트(권장). mascot=true면 봉구 얼굴이 돈다(md 이상). */
 function Spinner({
@@ -2607,12 +3058,12 @@ function Spinner({
       height: size
     },
     "aria-hidden": "true"
-  }, /*#__PURE__*/React.createElement(__ds_scope.MascotMark, {
+  }, /*#__PURE__*/React.createElement(MascotMark, {
     face: "blank",
     size: size,
     animated: false
   })) : /*#__PURE__*/React.createElement("span", {
-    className: __ds_scope.cx("bds-spinner", className),
+    className: cx("bds-spinner", className),
     style: {
       width: size,
       height: size
@@ -2631,6 +3082,7 @@ Object.assign(__ds_scope, { Spinner });
 
 // components/feedback/LoadingOverlay.jsx
 try { (() => {
+const { cx, Spinner } = __ds_scope;
 /** 영역 위 로딩 덮개. children이 있으면 그 영역을 감싸고 active일 때 덮는다. fixed는 전체 화면(라우트 전환·긴 저장). */
 function LoadingOverlay({
   active = true,
@@ -2640,18 +3092,18 @@ function LoadingOverlay({
   children
 }) {
   const layer = active && /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-loading", fixed && "bds-loading--fixed"),
+    className: cx("bds-loading", fixed && "bds-loading--fixed"),
     role: "status",
     "aria-live": "polite",
     "aria-busy": "true"
   }, /*#__PURE__*/React.createElement("div", {
     className: "bds-loading__box"
-  }, /*#__PURE__*/React.createElement(__ds_scope.Spinner, {
+  }, /*#__PURE__*/React.createElement(Spinner, {
     size: 22
   }), /*#__PURE__*/React.createElement("span", null, label)));
   if (!children) return layer || null;
   return /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-loadwrap", className),
+    className: cx("bds-loadwrap", className),
     "aria-busy": active || undefined
   }, children, layer);
 }
@@ -2660,7 +3112,12 @@ Object.assign(__ds_scope, { LoadingOverlay });
 
 // components/feedback/Stepper.jsx
 try { (() => {
-/** 단계 표시(등록 9단계, 학습 stage). steps: {label, detail?, status?: done|current|error|todo}. current 인덱스를 주면 status를 자동 채운다. */
+const { cx, frameStyle, Icon } = __ds_scope;
+const SR = {
+  done: "완료",
+  error: "오류"
+};
+/** 단계 표시(등록 9단계, 학습 stage). steps: {label, detail?, status?: done|current|error|todo}. current 인덱스를 주면 status를 자동 채운다. done·error는 스크린리더용 텍스트를 함께 읽는다. */
 function Stepper({
   steps = [],
   current,
@@ -2674,9 +3131,9 @@ function Stepper({
 }) {
   const st = (s, i) => s.status ?? (current == null ? "todo" : i < current ? "done" : i === current ? "current" : "todo");
   return /*#__PURE__*/React.createElement("ol", {
-    className: __ds_scope.cx("bds-stepper", `bds-stepper--${orientation}`, size === "sm" && "bds-stepper--sm", className),
+    className: cx("bds-stepper", `bds-stepper--${orientation}`, size === "sm" && "bds-stepper--sm", className),
     "aria-label": ariaLabel,
-    style: __ds_scope.frameStyle({
+    style: frameStyle({
       fit,
       width,
       style
@@ -2685,15 +3142,15 @@ function Stepper({
     const k = st(s, i);
     return /*#__PURE__*/React.createElement("li", {
       key: i,
-      className: __ds_scope.cx("bds-step", `bds-step--${k}`),
+      className: cx("bds-step", `bds-step--${k}`),
       "aria-current": k === "current" ? "step" : undefined
     }, /*#__PURE__*/React.createElement("span", {
       className: "bds-step__dot",
       "aria-hidden": "true"
-    }, k === "done" ? /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    }, k === "done" ? /*#__PURE__*/React.createElement(Icon, {
       name: "check",
       size: 11
-    }) : k === "error" ? /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    }) : k === "error" ? /*#__PURE__*/React.createElement(Icon, {
       name: "x",
       size: 11
     }) : /*#__PURE__*/React.createElement("span", {
@@ -2702,7 +3159,9 @@ function Stepper({
       className: "bds-step__txt"
     }, /*#__PURE__*/React.createElement("span", {
       className: "bds-step__l"
-    }, s.label), s.detail && /*#__PURE__*/React.createElement("span", {
+    }, s.label, SR[k] && /*#__PURE__*/React.createElement("span", {
+      className: "bds-sr"
+    }, ", ", SR[k])), s.detail && /*#__PURE__*/React.createElement("span", {
       className: "bds-step__d"
     }, s.detail)), i < steps.length - 1 && /*#__PURE__*/React.createElement("span", {
       className: "bds-step__line",
@@ -2715,15 +3174,10 @@ Object.assign(__ds_scope, { Stepper });
 
 // components/feedback/Toast.jsx
 try { (() => {
+const { createContext, useCallback, useContext, useRef, useState } = React;
+const { cx, Icon } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const {
-  createContext,
-  useCallback,
-  useContext,
-  useRef,
-  useState
-} = React;
-const ToastCtx = createContext(null);
+const ToastCtx = /*#__PURE__*/createContext(null);
 const ICON = {
   info: "info",
   ok: "check-circle",
@@ -2747,7 +3201,8 @@ function ToastProvider({
       duration: 4000,
       ...t
     }].slice(-max));
-    const d = t.duration ?? 4000;
+    /* 행동(action)이 있거나 crit이면 닫기 전까지 남는다. duration을 직접 주면 그대로 따른다 */
+    const d = t.duration ?? (t.action || t.tone === "crit" ? 0 : 4000);
     if (d > 0) setTimeout(() => dismiss(id), d);
     return id;
   }, [dismiss, max]);
@@ -2784,9 +3239,9 @@ function Toast({
   className
 }) {
   return /*#__PURE__*/React.createElement("div", {
-    role: "status",
-    className: __ds_scope.cx("bds-toast", `bds-tone--${tone}`, className)
-  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    role: tone === "crit" ? "alert" : "status",
+    className: cx("bds-toast", `bds-tone--${tone}`, className)
+  }, /*#__PURE__*/React.createElement(Icon, {
     name: ICON[tone]
   }), /*#__PURE__*/React.createElement("span", {
     className: "bds-toast__m"
@@ -2801,11 +3256,11 @@ function Toast({
     type: "button",
     className: "bds-toast__a",
     style: {
-      color: "var(--text-3)"
+      color: "var(--ink-3)"
     },
     "aria-label": "\uB2EB\uAE30",
     onClick: onDismiss
-  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, /*#__PURE__*/React.createElement(Icon, {
     name: "x",
     size: 14
   })));
@@ -2815,12 +3270,11 @@ Object.assign(__ds_scope, { ToastProvider, useToast, Toast });
 
 // components/input/Checkbox.jsx
 try { (() => {
+const { forwardRef } = React;
+const { cx, Icon } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const {
-  forwardRef
-} = React;
 /** 체크박스. children이 라벨. 라벨 없이 쓰면 aria-label 필수(표 선택 열). indeterminate는 ref로 세팅. */
-const Checkbox = forwardRef(function Checkbox({
+const Checkbox = /*#__PURE__*/forwardRef(function Checkbox({
   children,
   radio = false,
   disabled,
@@ -2829,7 +3283,7 @@ const Checkbox = forwardRef(function Checkbox({
   ...rest
 }, ref) {
   return /*#__PURE__*/React.createElement("label", {
-    className: __ds_scope.cx("bds-check", radio && "bds-check--radio", disabled && "bds-check--disabled", className)
+    className: cx("bds-check", radio && "bds-check--radio", disabled && "bds-check--disabled", className)
   }, /*#__PURE__*/React.createElement("input", _extends({
     type: radio ? "radio" : "checkbox",
     disabled: disabled,
@@ -2840,7 +3294,7 @@ const Checkbox = forwardRef(function Checkbox({
   }, rest)), /*#__PURE__*/React.createElement("span", {
     className: "bds-check__box",
     "aria-hidden": "true"
-  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, /*#__PURE__*/React.createElement(Icon, {
     name: radio ? "circle" : indeterminate ? "minus" : "check"
   })), children != null && /*#__PURE__*/React.createElement("span", null, children));
 });
@@ -2849,11 +3303,9 @@ Object.assign(__ds_scope, { Checkbox });
 
 // components/data/DataTable.jsx
 try { (() => {
+const { Fragment, useId, useState } = React;
+const { cx, frameStyle, Icon, Checkbox } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const {
-  Fragment,
-  useState
-} = React;
 const hideCls = c => c.hideBelow === "desktop" ? "d-hide" : c.hideBelow === "tablet" || c.hideOnMobile ? "m-hide" : undefined;
 
 /** 데이터 표. 컨테이너 폭 기준으로 열을 숨기고(hideBelow), 숨긴 정보는 expandable로 펼쳐 본다.
@@ -2882,6 +3334,8 @@ function DataTable({
   ...rest
 }) {
   const [expanded, setExpanded] = useState(() => new Set(defaultExpandedKeys));
+  const autoId = useId(),
+    hid = header?.id ?? autoId;
   const keyOf = rowKey ?? ((r, i) => r.id ?? i);
   const keys = rows.map((r, i) => keyOf(r, i));
   const sel = new Set(selectedKeys);
@@ -2901,8 +3355,8 @@ function DataTable({
     dir: "asc"
   });
   return /*#__PURE__*/React.createElement("div", _extends({
-    className: __ds_scope.cx("bds-table", className),
-    style: __ds_scope.frameStyle({
+    className: cx("bds-table", className),
+    style: frameStyle({
       fit,
       width,
       height,
@@ -2911,7 +3365,7 @@ function DataTable({
   }, rest), header && /*#__PURE__*/React.createElement("div", {
     className: "bds-table__hd"
   }, /*#__PURE__*/React.createElement("h2", {
-    id: header.id
+    id: hid
   }, header.title), header.meta != null && /*#__PURE__*/React.createElement("span", null, header.meta)), /*#__PURE__*/React.createElement("div", {
     className: "bds-table__wrap",
     style: height ? {
@@ -2927,11 +3381,12 @@ function DataTable({
   }, "\uC120\uD0DD \uD574\uC81C")), /*#__PURE__*/React.createElement("div", {
     className: "bds-table__scroll"
   }, /*#__PURE__*/React.createElement("table", {
-    "aria-label": ariaLabel
+    "aria-label": ariaLabel,
+    "aria-labelledby": !ariaLabel && header ? hid : undefined
   }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, selectable && /*#__PURE__*/React.createElement("th", {
     scope: "col",
     className: "ck"
-  }, /*#__PURE__*/React.createElement(__ds_scope.Checkbox, {
+  }, /*#__PURE__*/React.createElement(Checkbox, {
     "aria-label": "\uC804\uCCB4 \uC120\uD0DD",
     checked: all,
     indeterminate: selCount > 0 && !all,
@@ -2947,13 +3402,13 @@ function DataTable({
       style: c.width != null ? {
         width: c.width
       } : undefined,
-      className: __ds_scope.cx(c.align === "num" && "num", sorted && "sorted", hideCls(c)),
+      className: cx(c.align === "num" && "num", sorted && "sorted", hideCls(c)),
       "aria-sort": c.sortable ? sorted ? sort.dir === "asc" ? "ascending" : "descending" : "none" : undefined
     }, c.sortable ? /*#__PURE__*/React.createElement("button", {
       type: "button",
       className: "bds-table__sort",
       onClick: () => requestSort(c.key)
-    }, c.header, sorted && /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    }, c.header, sorted && /*#__PURE__*/React.createElement(Icon, {
       name: sort.dir === "asc" ? "caret-up" : "caret-down",
       size: 10
     })) : c.header);
@@ -2968,10 +3423,10 @@ function DataTable({
     return /*#__PURE__*/React.createElement(Fragment, {
       key: k
     }, /*#__PURE__*/React.createElement("tr", {
-      className: __ds_scope.cx(isSel && "bds-table__sel")
+      className: cx(isSel && "bds-table__sel")
     }, selectable && /*#__PURE__*/React.createElement("td", {
       className: "ck"
-    }, /*#__PURE__*/React.createElement(__ds_scope.Checkbox, {
+    }, /*#__PURE__*/React.createElement(Checkbox, {
       "aria-label": `${name} 선택`,
       checked: isSel,
       onChange: () => onSelectionChange?.(toggle(selectedKeys, k))
@@ -2983,14 +3438,14 @@ function DataTable({
       "aria-expanded": open,
       "aria-label": `${name} 행 펼치기`,
       onClick: () => setExpanded(p => new Set(toggle(p, k)))
-    }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    }, /*#__PURE__*/React.createElement(Icon, {
       name: "caret-right",
       size: 12
     }))), columns.map(c => {
       const v = c.render ? c.render(row, i) : row[c.key] ?? "";
       return /*#__PURE__*/React.createElement("td", {
         key: c.key,
-        className: __ds_scope.cx(c.align === "num" && "num", v === "수집 안 됨" && "na", hideCls(c))
+        className: cx(c.align === "num" && "num", v === "수집 안 됨" && "na", hideCls(c))
       }, v);
     })), expandable && open && /*#__PURE__*/React.createElement("tr", {
       className: "bds-table__exprow"
@@ -3004,11 +3459,9 @@ Object.assign(__ds_scope, { DataTable });
 
 // components/input/Dropzone.jsx
 try { (() => {
+const { useRef, useState } = React;
+const { cx, frameStyle, Icon } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const {
-  useRef,
-  useState
-} = React;
 /** 파일 드롭존. 클릭/드롭/키보드로 파일을 받아 onFiles(File[])를 호출한다. */
 function Dropzone({
   accept,
@@ -3035,8 +3488,8 @@ function Dropzone({
     role: "button",
     tabIndex: disabled ? -1 : 0,
     "aria-disabled": disabled || undefined,
-    className: __ds_scope.cx("bds-drop", over && "bds-drop--over", className),
-    style: __ds_scope.frameStyle({
+    className: cx("bds-drop", over && "bds-drop--over", className),
+    style: frameStyle({
       fit,
       width,
       height,
@@ -3044,7 +3497,7 @@ function Dropzone({
     }),
     onClick: () => !disabled && input.current?.click(),
     onKeyDown: e => {
-      if (e.key === "Enter" || e.key === " ") {
+      if (!disabled && (e.key === "Enter" || e.key === " ")) {
         e.preventDefault();
         input.current?.click();
       }
@@ -3059,7 +3512,7 @@ function Dropzone({
       setOver(false);
       if (!disabled) emit(e.dataTransfer.files);
     }
-  }, rest), /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, rest), /*#__PURE__*/React.createElement(Icon, {
     name: icon
   }), /*#__PURE__*/React.createElement("b", null, title), hint && /*#__PURE__*/React.createElement("small", null, hint), /*#__PURE__*/React.createElement("input", {
     ref: input,
@@ -3077,13 +3530,10 @@ Object.assign(__ds_scope, { Dropzone });
 
 // components/input/Field.jsx
 try { (() => {
+const { createContext, useContext, useId } = React;
+const { cx, Icon } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const {
-  createContext,
-  useContext,
-  useId
-} = React;
-const FieldCtx = createContext(null);
+const FieldCtx = /*#__PURE__*/createContext(null);
 const useFieldContext = () => useContext(FieldCtx);
 
 /** 라벨·설명·오류를 입력에 연결하는 래퍼. 자식 입력은 useFieldContext()로 id·aria를 받는다. */
@@ -3110,7 +3560,7 @@ function Field({
   return /*#__PURE__*/React.createElement(FieldCtx.Provider, {
     value: ctx
   }, /*#__PURE__*/React.createElement("div", _extends({
-    className: __ds_scope.cx("bds-field", className)
+    className: cx("bds-field", className)
   }, rest), label != null && /*#__PURE__*/React.createElement("label", {
     className: "bds-field__label",
     htmlFor: inputId
@@ -3124,7 +3574,7 @@ function Field({
     id: errId,
     className: "bds-field__err",
     role: "alert"
-  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, /*#__PURE__*/React.createElement(Icon, {
     name: "warning-circle",
     size: 13
   }), error)));
@@ -3134,10 +3584,8 @@ Object.assign(__ds_scope, { useFieldContext, Field });
 
 // components/input/CodeEditor.jsx
 try { (() => {
-const {
-  useMemo,
-  useRef
-} = React;
+const { useMemo, useRef } = React;
+const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
 /** JSON/코드 입력. 줄번호 + mono + Tab 들여쓰기. language="json"이면 파싱해 오류 위치를 아래에 표시하고 onValidChange(obj|null)를 부른다. */
 function CodeEditor({
   value,
@@ -3157,7 +3605,7 @@ function CodeEditor({
   style,
   "aria-label": ariaLabel
 }) {
-  const f = __ds_scope.useFieldContext();
+  const f = useFieldContext();
   const [inner, setInner] = React.useState(defaultValue);
   const v = value ?? inner;
   const ta = useRef(null),
@@ -3187,7 +3635,8 @@ function CodeEditor({
     onChange?.(s);
   };
   const onKey = e => {
-    if (e.key === "Tab" && !readOnly) {
+    /* Tab은 들여쓰기, Shift+Tab은 가로채지 않아 키보드로 빠져나갈 수 있다 */
+    if (e.key === "Tab" && !e.shiftKey && !readOnly) {
       e.preventDefault();
       const t = e.currentTarget,
         s = t.selectionStart,
@@ -3200,15 +3649,15 @@ function CodeEditor({
     }
   };
   return /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-code-ed", err && "bds-code-ed--err", disabled && "bds-ctl--disabled", className),
-    style: __ds_scope.frameStyle({
+    className: cx("bds-code-ed", err && "bds-code-ed--err", disabled && "bds-ctl--disabled", className),
+    style: frameStyle({
       fit,
       width,
       height,
       style
     })
   }, /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-ctl bds-ctl--area bds-code-ed__box", (err || f?.invalid) && "bds-ctl--err")
+    className: cx("bds-ctl bds-ctl--area bds-code-ed__box", (err || f?.invalid) && "bds-ctl--err")
   }, lineNumbers && /*#__PURE__*/React.createElement("pre", {
     ref: gutter,
     className: "bds-code-ed__gutter bds-mono",
@@ -3217,7 +3666,7 @@ function CodeEditor({
     length: lines
   }, (_, i) => /*#__PURE__*/React.createElement("span", {
     key: i,
-    className: __ds_scope.cx(err?.line === i + 1 && "bds-code-ed__ln--err")
+    className: cx(err?.line === i + 1 && "bds-code-ed__ln--err")
   }, i + 1))), /*#__PURE__*/React.createElement("textarea", {
     ref: ta,
     id: f?.id,
@@ -3244,12 +3693,12 @@ function CodeEditor({
   }, language.toUpperCase(), " \xB7 ", lines, "\uC904"), err ? /*#__PURE__*/React.createElement("span", {
     className: "bds-code-ed__msg",
     role: "alert"
-  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, /*#__PURE__*/React.createElement(Icon, {
     name: "warning-circle",
     size: 13
   }), err.line ? `${err.line}번째 줄: ` : "", err.message) : language === "json" && v.trim() ? /*#__PURE__*/React.createElement("span", {
     className: "bds-code-ed__ok"
-  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, /*#__PURE__*/React.createElement(Icon, {
     name: "check",
     size: 13
   }), "\uC720\uD6A8\uD55C JSON") : null));
@@ -3259,11 +3708,10 @@ Object.assign(__ds_scope, { CodeEditor });
 
 // components/input/ColorInput.jsx
 try { (() => {
-const {
-  useState
-} = React;
+const { useState } = React;
+const { cx, frameStyle, useFieldContext } = __ds_scope;
 const HEX = /^#?([0-9a-f]{6})$/i;
-/** 색 선택: 스와치(네이티브 picker) + hex 입력 + 프리셋 칩. 값은 #RRGGBB. 조명(ARGB) 색 지정용 — UI 토큰 색이 아니다. */
+/** 색 선택: 스와치(네이티브 picker) + hex 입력 + 프리셋 칩. 값은 #RRGGBB. 조명(ARGB) 색 지정용 · UI 토큰 색이 아니다. */
 function ColorInput({
   value,
   defaultValue = "#5CA8FF",
@@ -3278,7 +3726,7 @@ function ColorInput({
   style,
   "aria-label": ariaLabel
 }) {
-  const f = __ds_scope.useFieldContext();
+  const f = useFieldContext();
   const [inner, setInner] = useState(defaultValue);
   const [text, setText] = useState(null);
   const v = value ?? inner;
@@ -3291,22 +3739,22 @@ function ColorInput({
     return true;
   };
   return /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-color", size === "sm" && "bds-color--sm", disabled && "bds-ctl--disabled", className),
-    style: __ds_scope.frameStyle({
+    className: cx("bds-color", size === "sm" && "bds-color--sm", disabled && "bds-ctl--disabled", className),
+    style: frameStyle({
       fit,
       width,
       style
     })
   }, /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-ctl bds-color__ctl", size === "sm" && "bds-ctl--sm", (invalid ?? f?.invalid) && "bds-ctl--err")
+    className: cx("bds-ctl bds-color__ctl", size === "sm" && "bds-ctl--sm", (invalid ?? f?.invalid) && "bds-ctl--err")
   }, /*#__PURE__*/React.createElement("label", {
     className: "bds-color__swatch",
     style: {
       background: v
-    },
-    "aria-label": ariaLabel ?? "색 선택"
+    }
   }, /*#__PURE__*/React.createElement("input", {
     type: "color",
+    "aria-label": ariaLabel ?? "색 선택",
     value: v,
     disabled: disabled,
     onChange: e => set(e.target.value)
@@ -3338,7 +3786,7 @@ function ColorInput({
   }, presets.map(p => /*#__PURE__*/React.createElement("button", {
     key: p,
     type: "button",
-    className: __ds_scope.cx("bds-color__chip", p.toUpperCase() === v.toUpperCase() && "bds-color__chip--on"),
+    className: cx("bds-color__chip", p.toUpperCase() === v.toUpperCase() && "bds-color__chip--on"),
     style: {
       background: p
     },
@@ -3353,12 +3801,8 @@ Object.assign(__ds_scope, { ColorInput });
 
 // components/input/Combobox.jsx
 try { (() => {
-const {
-  useEffect,
-  useId,
-  useRef,
-  useState
-} = React;
+const { useEffect, useId, useRef, useState } = React;
+const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
 /** 검색 가능한 선택. options {value,label,detail?,disabled?}. 타이핑으로 거르고 ↑↓ Enter Esc. 선택지 6개 이상이면 Select 대신 이것. */
 function Combobox({
   options = [],
@@ -3376,7 +3820,7 @@ function Combobox({
   style,
   "aria-label": ariaLabel
 }) {
-  const f = __ds_scope.useFieldContext();
+  const f = useFieldContext();
   const uid = useId().replace(/:/g, "");
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState("");
@@ -3424,16 +3868,16 @@ function Combobox({
   };
   return /*#__PURE__*/React.createElement("div", {
     ref: root,
-    className: __ds_scope.cx("bds-combo", open && "bds-combo--open", className),
-    style: __ds_scope.frameStyle({
+    className: cx("bds-combo", open && "bds-combo--open", className),
+    style: frameStyle({
       fit,
       width,
       style
     })
   }, /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-ctl", size === "sm" && "bds-ctl--sm", (invalid ?? f?.invalid) && "bds-ctl--err", disabled && "bds-ctl--disabled"),
+    className: cx("bds-ctl", size === "sm" && "bds-ctl--sm", (invalid ?? f?.invalid) && "bds-ctl--err", disabled && "bds-ctl--disabled"),
     onClick: () => !disabled && setOpen(true)
-  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, /*#__PURE__*/React.createElement(Icon, {
     name: "magnifying-glass",
     size: 14,
     className: "bds-ctl__affix"
@@ -3465,10 +3909,10 @@ function Combobox({
       e.stopPropagation();
       pick(null);
     }
-  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, /*#__PURE__*/React.createElement(Icon, {
     name: "x",
     size: 12
-  })), /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  })), /*#__PURE__*/React.createElement(Icon, {
     name: "caret-down",
     size: 14,
     className: "bds-ctl__affix bds-combo__caret"
@@ -3484,7 +3928,7 @@ function Combobox({
     role: "option",
     "aria-selected": o.value === value,
     "aria-disabled": o.disabled || undefined,
-    className: __ds_scope.cx("bds-combo__opt", i === idx && "bds-combo__opt--act", o.disabled && "bds-combo__opt--dis"),
+    className: cx("bds-combo__opt", i === idx && "bds-combo__opt--act", o.disabled && "bds-combo__opt--dis"),
     onMouseEnter: () => setIdx(i),
     onMouseDown: e => e.preventDefault(),
     onClick: () => pick(o)
@@ -3492,7 +3936,7 @@ function Combobox({
     className: "bds-combo__l"
   }, o.label), o.detail && /*#__PURE__*/React.createElement("span", {
     className: "bds-combo__d bds-mono"
-  }, o.detail), o.value === value && /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, o.detail), o.value === value && /*#__PURE__*/React.createElement(Icon, {
     name: "check",
     size: 13,
     className: "bds-combo__ck"
@@ -3503,11 +3947,8 @@ Object.assign(__ds_scope, { Combobox });
 
 // components/input/DatePicker.jsx
 try { (() => {
-const {
-  useEffect,
-  useRef,
-  useState
-} = React;
+const { useEffect, useRef, useState } = React;
+const { cx, frameStyle, Icon, IconButton, useFieldContext } = __ds_scope;
 const pad = n => String(n).padStart(2, "0");
 const iso = d => d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
 const DOW = ["일", "월", "화", "수", "목", "금", "토"];
@@ -3526,21 +3967,27 @@ function DatePicker({
   className,
   style
 }) {
-  const f = __ds_scope.useFieldContext();
+  const f = useFieldContext();
   const [open, setOpen] = useState(false);
   const sel = value ? new Date(value + "T00:00:00") : null;
   const [view, setView] = useState(() => {
     const d = sel ?? new Date();
     return new Date(d.getFullYear(), d.getMonth(), 1);
   });
-  const root = useRef(null);
+  const root = useRef(null),
+    trig = useRef(null);
+  /* 닫힐 때 포커스를 트리거 버튼으로 돌린다(달력 셀이 언마운트되면 포커스가 body로 떨어진다) */
+  const close = () => {
+    setOpen(false);
+    trig.current?.focus();
+  };
   useEffect(() => {
     if (!open) return;
     const on = e => {
       if (!root.current?.contains(e.target)) setOpen(false);
     };
     const key = e => {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") close();
     };
     document.addEventListener("mousedown", on);
     document.addEventListener("keydown", key);
@@ -3559,24 +4006,28 @@ function DatePicker({
     d.setDate(start.getDate() + i);
     return d;
   });
+  const weeks = Array.from({
+    length: 6
+  }, (_, r) => cells.slice(r * 7, r * 7 + 7));
   const today = iso(new Date());
   const inRange = d => (!min || iso(d) >= min) && (!max || iso(d) <= max);
   return /*#__PURE__*/React.createElement("div", {
     ref: root,
-    className: __ds_scope.cx("bds-date", className),
-    style: __ds_scope.frameStyle({
+    className: cx("bds-date", className),
+    style: frameStyle({
       fit,
       width,
       style
     })
   }, /*#__PURE__*/React.createElement("button", {
+    ref: trig,
     type: "button",
     id: f?.id,
     "aria-describedby": f?.describedBy,
     "aria-haspopup": "dialog",
     "aria-expanded": open,
     disabled: disabled,
-    className: __ds_scope.cx("bds-ctl", size === "sm" && "bds-ctl--sm", f?.invalid && "bds-ctl--err", disabled && "bds-ctl--disabled"),
+    className: cx("bds-ctl", size === "sm" && "bds-ctl--sm", f?.invalid && "bds-ctl--err", disabled && "bds-ctl--disabled"),
     style: {
       width: "100%",
       textAlign: "left"
@@ -3584,14 +4035,14 @@ function DatePicker({
     onClick: () => setOpen(o => !o)
   }, /*#__PURE__*/React.createElement("span", {
     className: "bds-ctl__affix"
-  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, /*#__PURE__*/React.createElement(Icon, {
     name: "calendar-blank",
     size: 15
   })), /*#__PURE__*/React.createElement("span", {
-    className: __ds_scope.cx("bds-ellipsis", value && "bds-mono"),
+    className: cx("bds-ellipsis", value && "bds-mono"),
     style: {
       flex: 1,
-      color: value ? undefined : "var(--text-3)"
+      color: value ? undefined : "var(--ink-3)"
     }
   }, value ?? placeholder)), open && /*#__PURE__*/React.createElement("div", {
     role: "dialog",
@@ -3599,13 +4050,13 @@ function DatePicker({
     className: "bds-date__pop"
   }, /*#__PURE__*/React.createElement("div", {
     className: "bds-cal__hd"
-  }, /*#__PURE__*/React.createElement(__ds_scope.IconButton, {
+  }, /*#__PURE__*/React.createElement(IconButton, {
     icon: "caret-left",
     size: "sm",
     variant: "ghost",
     "aria-label": "\uC774\uC804 \uB2EC",
     onClick: () => setView(new Date(view.getFullYear(), view.getMonth() - 1, 1))
-  }), /*#__PURE__*/React.createElement("b", null, view.getFullYear(), ".", pad(view.getMonth() + 1)), /*#__PURE__*/React.createElement(__ds_scope.IconButton, {
+  }), /*#__PURE__*/React.createElement("b", null, view.getFullYear(), ".", pad(view.getMonth() + 1)), /*#__PURE__*/React.createElement(IconButton, {
     icon: "caret-right",
     size: "sm",
     variant: "ghost",
@@ -3614,31 +4065,43 @@ function DatePicker({
   })), /*#__PURE__*/React.createElement("div", {
     className: "bds-cal__grid",
     role: "grid"
+  }, /*#__PURE__*/React.createElement("div", {
+    role: "row",
+    style: {
+      display: "contents"
+    }
   }, DOW.map(d => /*#__PURE__*/React.createElement("span", {
     key: d,
     className: "bds-cal__dow",
     role: "columnheader"
-  }, d)), cells.map(d => {
+  }, d))), weeks.map((wk, r) => /*#__PURE__*/React.createElement("div", {
+    key: r,
+    role: "row",
+    style: {
+      display: "contents"
+    }
+  }, wk.map(d => {
     const s = iso(d);
     return /*#__PURE__*/React.createElement("button", {
       key: s,
       type: "button",
       role: "gridcell",
-      className: __ds_scope.cx("bds-cal__d", d.getMonth() !== view.getMonth() && "bds-cal__d--out", s === today && "bds-cal__d--today"),
+      className: cx("bds-cal__d", d.getMonth() !== view.getMonth() && "bds-cal__d--out", s === today && "bds-cal__d--today"),
       "aria-selected": s === value,
       disabled: !inRange(d),
       onClick: () => {
         onChange?.(s);
-        setOpen(false);
+        close();
       }
     }, d.getDate());
-  }))));
+  }))))));
 }
 Object.assign(__ds_scope, { DatePicker });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/input/DatePicker.jsx", error: String((e && e.message) || e) }); }
 
 // components/input/DateRangePicker.jsx
 try { (() => {
+const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
 const PRESETS = [{
   value: "1h",
   label: "1시간"
@@ -3672,20 +4135,20 @@ function DateRangePicker({
   style,
   "aria-label": ariaLabel = "기간"
 }) {
-  const f = __ds_scope.useFieldContext();
+  const f = useFieldContext();
   const custom = !value.preset;
   const set = next => onChange?.(next);
   return /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-range", size === "sm" && "bds-range--sm", disabled && "bds-ctl--disabled", className),
+    className: cx("bds-range", size === "sm" && "bds-range--sm", disabled && "bds-ctl--disabled", className),
     role: "group",
     "aria-label": ariaLabel,
-    style: __ds_scope.frameStyle({
+    style: frameStyle({
       fit,
       width,
       style
     })
   }, /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-seg", size === "sm" && "bds-seg--sm"),
+    className: cx("bds-seg", size === "sm" && "bds-seg--sm"),
     role: "radiogroup",
     "aria-label": "\uCD5C\uADFC"
   }, presets.map(p => /*#__PURE__*/React.createElement("button", {
@@ -3708,13 +4171,13 @@ function DateRangePicker({
       from: value.from ?? new Date(Date.now() - 864e5),
       to: value.to ?? new Date()
     })
-  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, /*#__PURE__*/React.createElement(Icon, {
     name: "calendar-blank",
     size: 13
   }), " \uC9C1\uC811")), custom && /*#__PURE__*/React.createElement("div", {
     className: "bds-range__custom"
   }, /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-ctl", size === "sm" && "bds-ctl--sm")
+    className: cx("bds-ctl", size === "sm" && "bds-ctl--sm")
   }, /*#__PURE__*/React.createElement("input", {
     id: f?.id,
     type: "datetime-local",
@@ -3730,7 +4193,7 @@ function DateRangePicker({
     className: "bds-range__sep",
     "aria-hidden": "true"
   }, "\u2013"), /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-ctl", size === "sm" && "bds-ctl--sm")
+    className: cx("bds-ctl", size === "sm" && "bds-ctl--sm")
   }, /*#__PURE__*/React.createElement("input", {
     type: "datetime-local",
     className: "bds-mono",
@@ -3748,9 +4211,8 @@ Object.assign(__ds_scope, { DateRangePicker });
 
 // components/input/FileUpload.jsx
 try { (() => {
-const {
-  useState
-} = React;
+const { useState } = React;
+const { cx, frameStyle, Icon, Dropzone, ProgressBar, Button } = __ds_scope;
 const fmtBytes = v => {
   if (v == null) return "";
   const u = ["B", "KiB", "MiB", "GiB"];
@@ -3784,13 +4246,13 @@ function FileUpload({
   style
 }) {
   return /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-upload", className),
-    style: __ds_scope.frameStyle({
+    className: cx("bds-upload", className),
+    style: frameStyle({
       fit,
       width,
       style
     })
-  }, /*#__PURE__*/React.createElement(__ds_scope.Dropzone, {
+  }, /*#__PURE__*/React.createElement(Dropzone, {
     accept: accept,
     multiple: multiple,
     onFiles: onFiles,
@@ -3804,8 +4266,8 @@ function FileUpload({
     const det = it.status === "uploading" || it.status === "paused";
     return /*#__PURE__*/React.createElement("li", {
       key: it.id,
-      className: __ds_scope.cx("bds-upload__item", `bds-upload__item--${it.status}`)
-    }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+      className: cx("bds-upload__item", `bds-upload__item--${it.status}`)
+    }, /*#__PURE__*/React.createElement(Icon, {
       name: it.status === "done" ? "check-circle" : it.status === "failed" ? "warning-circle" : "file-zip",
       size: 18,
       className: "bds-upload__ic"
@@ -3817,35 +4279,35 @@ function FileUpload({
       className: "bds-ellipsis"
     }, it.name), /*#__PURE__*/React.createElement("span", {
       className: "bds-upload__meta bds-mono"
-    }, fmtBytes(it.size), it.chunks ? ` · ${it.chunk ?? 0}/${it.chunks} 청크` : "", it.rate ? ` · ${it.rate}` : "")), /*#__PURE__*/React.createElement(__ds_scope.ProgressBar, {
+    }, fmtBytes(it.size), it.chunks ? ` · ${it.chunk ?? 0}/${it.chunks} 청크` : "", it.rate ? ` · ${it.rate}` : "")), /*#__PURE__*/React.createElement(ProgressBar, {
       size: "sm",
       tone: tone === "accent" ? "accent" : tone,
       value: it.status === "verifying" ? null : it.status === "done" ? 1 : it.progress ?? 0,
       showValue: det,
       label: /*#__PURE__*/React.createElement("span", {
-        className: __ds_scope.cx("bds-upload__st", `bds-upload__st--${tone}`)
+        className: cx("bds-upload__st", `bds-upload__st--${tone}`)
       }, it.error ?? label)
     })), /*#__PURE__*/React.createElement("div", {
       className: "bds-upload__act"
-    }, it.status === "uploading" && onPause && /*#__PURE__*/React.createElement(__ds_scope.Button, {
+    }, it.status === "uploading" && onPause && /*#__PURE__*/React.createElement(Button, {
       size: "sm",
       variant: "ghost",
       icon: "pause",
       "aria-label": "\uC77C\uC2DC\uC815\uC9C0",
       onClick: () => onPause(it.id)
-    }), it.status === "paused" && onResume && /*#__PURE__*/React.createElement(__ds_scope.Button, {
+    }), it.status === "paused" && onResume && /*#__PURE__*/React.createElement(Button, {
       size: "sm",
       variant: "ghost",
       icon: "play",
       "aria-label": "\uC7AC\uAC1C",
       onClick: () => onResume(it.id)
-    }), it.status === "failed" && onRetry && /*#__PURE__*/React.createElement(__ds_scope.Button, {
+    }), it.status === "failed" && onRetry && /*#__PURE__*/React.createElement(Button, {
       size: "sm",
       variant: "ghost",
       icon: "arrow-counter-clockwise",
       "aria-label": "\uC7AC\uC2DC\uB3C4",
       onClick: () => onRetry(it.id)
-    }), it.status !== "done" && onCancel && /*#__PURE__*/React.createElement(__ds_scope.Button, {
+    }), it.status !== "done" && onCancel && /*#__PURE__*/React.createElement(Button, {
       size: "sm",
       variant: "ghost",
       icon: "x",
@@ -3859,11 +4321,8 @@ Object.assign(__ds_scope, { FileUpload });
 
 // components/input/MultiSelect.jsx
 try { (() => {
-const {
-  useEffect,
-  useRef,
-  useState
-} = React;
+const { useEffect, useId, useRef, useState } = React;
+const { cx, frameStyle, Icon, Tag, useFieldContext } = __ds_scope;
 /** 여러 개 선택(태그 입력). options: {value,label}. value는 배열. 입력으로 필터, Backspace로 마지막 제거. */
 function MultiSelect({
   options = [],
@@ -3877,7 +4336,8 @@ function MultiSelect({
   className,
   style
 }) {
-  const f = __ds_scope.useFieldContext();
+  const f = useFieldContext(),
+    uid = useId().replace(/:/g, "");
   const [q, setQ] = useState(""),
     [open, setOpen] = useState(false),
     [idx, setIdx] = useState(0);
@@ -3917,18 +4377,18 @@ function MultiSelect({
   };
   return /*#__PURE__*/React.createElement("div", {
     ref: root,
-    className: __ds_scope.cx("bds-multi", "bds-combo", className),
-    style: __ds_scope.frameStyle({
+    className: cx("bds-multi", "bds-combo", className),
+    style: frameStyle({
       fit,
       width,
       style
     })
   }, /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-ctl", f?.invalid && "bds-ctl--err", disabled && "bds-ctl--disabled"),
+    className: cx("bds-ctl", f?.invalid && "bds-ctl--err", disabled && "bds-ctl--disabled"),
     onClick: () => input.current?.focus()
   }, value.map(v => {
     const o = options.find(x => x.value === v);
-    return /*#__PURE__*/React.createElement(__ds_scope.Tag, {
+    return /*#__PURE__*/React.createElement(Tag, {
       key: v,
       onRemove: disabled ? undefined : () => remove(v)
     }, o?.label ?? v);
@@ -3938,6 +4398,8 @@ function MultiSelect({
     "aria-describedby": f?.describedBy,
     role: "combobox",
     "aria-expanded": open,
+    "aria-controls": `${uid}-list`,
+    "aria-activedescendant": open && !full && list[idx] ? `${uid}-${idx}` : undefined,
     "aria-autocomplete": "list",
     value: q,
     disabled: disabled || full,
@@ -3948,20 +4410,22 @@ function MultiSelect({
     },
     onFocus: () => setOpen(true),
     onKeyDown: onKey
-  }), /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }), /*#__PURE__*/React.createElement(Icon, {
     name: "caret-down",
     size: 13,
     className: "bds-multi__caret"
   })), open && !full && /*#__PURE__*/React.createElement("ul", {
+    id: `${uid}-list`,
     role: "listbox",
     className: "bds-combo__list"
   }, list.length === 0 && /*#__PURE__*/React.createElement("li", {
     className: "bds-combo__empty"
   }, q ? "일치하는 항목 없음" : "모두 선택됨"), list.map((o, i) => /*#__PURE__*/React.createElement("li", {
     key: o.value,
+    id: `${uid}-${i}`,
     role: "option",
     "aria-selected": i === idx,
-    className: __ds_scope.cx("bds-combo__opt", i === idx && "bds-combo__opt--act"),
+    className: cx("bds-combo__opt", i === idx && "bds-combo__opt--act"),
     onMouseEnter: () => setIdx(i),
     onMouseDown: e => {
       e.preventDefault();
@@ -3974,6 +4438,7 @@ Object.assign(__ds_scope, { MultiSelect });
 
 // components/input/NumberStepper.jsx
 try { (() => {
+const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 숫자 입력 + −/+ 버튼. 값은 mono. min/max에서 버튼 비활성. */
 function NumberStepper({
@@ -3993,7 +4458,7 @@ function NumberStepper({
   style,
   ...rest
 }) {
-  const f = __ds_scope.useFieldContext();
+  const f = useFieldContext();
   const [inner, setInner] = React.useState(defaultValue);
   const v = value ?? inner;
   const set = n => {
@@ -4003,8 +4468,8 @@ function NumberStepper({
   };
   const dec = Number.isFinite(step) ? String(step).split(".")[1]?.length ?? 0 : 0;
   return /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-ctl bds-stepper-ctl", size === "sm" && "bds-ctl--sm", (invalid ?? f?.invalid) && "bds-ctl--err", disabled && "bds-ctl--disabled", className),
-    style: __ds_scope.frameStyle({
+    className: cx("bds-ctl bds-stepper-ctl", size === "sm" && "bds-ctl--sm", (invalid ?? f?.invalid) && "bds-ctl--err", disabled && "bds-ctl--disabled", className),
+    style: frameStyle({
       fit,
       width,
       style
@@ -4015,7 +4480,7 @@ function NumberStepper({
     "aria-label": "\uAC10\uC18C",
     disabled: disabled || v <= min,
     onClick: () => set(+(v - step).toFixed(dec))
-  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, /*#__PURE__*/React.createElement(Icon, {
     name: "minus",
     size: 12
   })), /*#__PURE__*/React.createElement("input", _extends({
@@ -4041,7 +4506,7 @@ function NumberStepper({
     "aria-label": "\uC99D\uAC00",
     disabled: disabled || v >= max,
     onClick: () => set(+(v + step).toFixed(dec))
-  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, /*#__PURE__*/React.createElement(Icon, {
     name: "plus",
     size: 12
   })));
@@ -4051,9 +4516,8 @@ Object.assign(__ds_scope, { NumberStepper });
 
 // components/input/OTPInput.jsx
 try { (() => {
-const {
-  useRef
-} = React;
+const { useRef } = React;
+const { cx, useFieldContext } = __ds_scope;
 /** 인증 코드(OTP) 입력. length 자리 숫자, 붙여넣기 지원, 다 채우면 onComplete. */
 function OTPInput({
   length = 6,
@@ -4065,7 +4529,7 @@ function OTPInput({
   disabled,
   className
 }) {
-  const f = __ds_scope.useFieldContext();
+  const f = useFieldContext();
   const refs = useRef([]);
   const chars = Array.from({
     length
@@ -4102,7 +4566,7 @@ function OTPInput({
     refs.current[Math.min(length - 1, d.length)]?.focus();
   };
   return /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-otp", (invalid ?? f?.invalid) && "bds-otp--err", className),
+    className: cx("bds-otp", (invalid ?? f?.invalid) && "bds-otp--err", className),
     role: "group",
     "aria-label": "\uC778\uC99D \uCF54\uB4DC",
     "aria-describedby": f?.describedBy
@@ -4131,10 +4595,9 @@ Object.assign(__ds_scope, { OTPInput });
 
 // components/input/RadioGroup.jsx
 try { (() => {
+const { useId } = React;
+const { cx, Checkbox } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const {
-  useId
-} = React;
 /** 라디오 묶음. options: {value, label, hint?, disabled?}. layout: column(기본) · row · cards(설명 있는 선택지). */
 function RadioGroup({
   name,
@@ -4150,12 +4613,12 @@ function RadioGroup({
   const uid = useId().replace(/:/g, ""),
     nm = name ?? "rg-" + uid;
   return /*#__PURE__*/React.createElement("fieldset", _extends({
-    className: __ds_scope.cx("bds-radiogrp", layout === "row" && "bds-radiogrp--row", layout === "cards" && "bds-radiogrp--cards", className),
+    className: cx("bds-radiogrp", layout === "row" && "bds-radiogrp--row", layout === "cards" && "bds-radiogrp--cards", className),
     disabled: disabled
   }, rest), label && /*#__PURE__*/React.createElement("legend", {
     className: "bds-radiogrp__lg"
   }, label), options.map(o => {
-    const input = /*#__PURE__*/React.createElement(__ds_scope.Checkbox, {
+    const input = /*#__PURE__*/React.createElement(Checkbox, {
       radio: true,
       name: nm,
       value: o.value,
@@ -4180,11 +4643,9 @@ Object.assign(__ds_scope, { RadioGroup });
 
 // components/input/SearchField.jsx
 try { (() => {
+const { useEffect, useRef } = React;
+const { cx, frameStyle, Icon } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const {
-  useEffect,
-  useRef
-} = React;
 /** 검색 입력. `/` 단축키로 포커스, 값이 있으면 지우기 버튼. onSearch(value)는 Enter에 호출. */
 function SearchField({
   value,
@@ -4213,8 +4674,8 @@ function SearchField({
     return () => document.removeEventListener("keydown", onKey);
   }, [shortcut]);
   return /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-ctl bds-search", size === "sm" && "bds-ctl--sm", className),
-    style: __ds_scope.frameStyle({
+    className: cx("bds-ctl bds-search", size === "sm" && "bds-ctl--sm", className),
+    style: frameStyle({
       fit,
       width,
       style
@@ -4222,7 +4683,7 @@ function SearchField({
     role: "search"
   }, /*#__PURE__*/React.createElement("span", {
     className: "bds-ctl__affix"
-  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, /*#__PURE__*/React.createElement(Icon, {
     name: "magnifying-glass",
     size: 15
   })), /*#__PURE__*/React.createElement("input", _extends({
@@ -4240,14 +4701,8 @@ function SearchField({
     type: "button",
     className: "bds-ctl__affix",
     "aria-label": "\uAC80\uC0C9\uC5B4 \uC9C0\uC6B0\uAE30",
-    style: {
-      border: 0,
-      background: "none",
-      padding: 0,
-      cursor: "pointer"
-    },
     onClick: e => onChange?.("", e)
-  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, /*#__PURE__*/React.createElement(Icon, {
     name: "x-circle",
     size: 15
   })) : shortcut && /*#__PURE__*/React.createElement("span", {
@@ -4260,12 +4715,9 @@ Object.assign(__ds_scope, { SearchField });
 
 // components/input/SegmentedControl.jsx
 try { (() => {
+const { useEffect, useRef, useState } = React;
+const { cx, frameStyle } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const {
-  useEffect,
-  useRef,
-  useState
-} = React;
 /** 2~5개 상호배타 선택. 선택 thumb가 미끄러진다. fit="flex"면 옵션이 폭을 균등 분할. */
 function SegmentedControl({
   options = [],
@@ -4300,8 +4752,8 @@ function SegmentedControl({
     ref: root,
     role: "radiogroup",
     "aria-label": ariaLabel,
-    className: __ds_scope.cx("bds-seg", size === "sm" && "bds-seg--sm", fit === "flex" && "bds-seg--flex", className),
-    style: __ds_scope.frameStyle({
+    className: cx("bds-seg", size === "sm" && "bds-seg--sm", fit === "flex" && "bds-seg--flex", className),
+    style: frameStyle({
       fit,
       width,
       style
@@ -4330,6 +4782,7 @@ Object.assign(__ds_scope, { SegmentedControl });
 
 // components/input/Select.jsx
 try { (() => {
+const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 네이티브 select를 토큰으로 감싼 선택 입력. options: {value,label,disabled}[]. */
 function Select({
@@ -4344,10 +4797,10 @@ function Select({
   style,
   ...rest
 }) {
-  const f = __ds_scope.useFieldContext();
+  const f = useFieldContext();
   return /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-ctl bds-ctl--select", size === "sm" && "bds-ctl--sm", (invalid ?? f?.invalid) && "bds-ctl--err", disabled && "bds-ctl--disabled", className),
-    style: __ds_scope.frameStyle({
+    className: cx("bds-ctl bds-ctl--select", size === "sm" && "bds-ctl--sm", (invalid ?? f?.invalid) && "bds-ctl--err", disabled && "bds-ctl--disabled", className),
+    style: frameStyle({
       fit,
       width,
       style
@@ -4364,7 +4817,7 @@ function Select({
     key: o.value,
     value: o.value,
     disabled: o.disabled
-  }, o.label))), /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, o.label))), /*#__PURE__*/React.createElement(Icon, {
     name: "caret-down",
     size: 14,
     className: "bds-ctl__caret"
@@ -4375,6 +4828,7 @@ Object.assign(__ds_scope, { Select });
 
 // components/input/Slider.jsx
 try { (() => {
+const { cx, frameStyle, useFieldContext } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 범위 슬라이더. 네이티브 range를 토큰으로. marks면 눈금 라벨, showValue면 오른쪽에 현재 값(mono). */
 function Slider({
@@ -4396,13 +4850,13 @@ function Slider({
   style,
   ...rest
 }) {
-  const f = __ds_scope.useFieldContext();
+  const f = useFieldContext();
   const [inner, setInner] = React.useState(defaultValue ?? min);
   const v = value ?? inner;
   const pct = (v - min) / (max - min || 1) * 100;
   return /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-slider", size === "sm" && "bds-slider--sm", disabled && "bds-slider--disabled", className),
-    style: __ds_scope.frameStyle({
+    className: cx("bds-slider", size === "sm" && "bds-slider--sm", disabled && "bds-slider--disabled", className),
+    style: frameStyle({
       fit,
       width,
       style: {
@@ -4447,6 +4901,7 @@ Object.assign(__ds_scope, { Slider });
 
 // components/input/Switch.jsx
 try { (() => {
+const { cx } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 켬/끔 스위치. 즉시 반영되는 설정에만 쓴다(저장 버튼이 따로 있으면 Checkbox). */
 function Switch({
@@ -4456,7 +4911,7 @@ function Switch({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement("label", {
-    className: __ds_scope.cx("bds-switch", disabled && "bds-switch--disabled", className)
+    className: cx("bds-switch", disabled && "bds-switch--disabled", className)
   }, /*#__PURE__*/React.createElement("input", _extends({
     type: "checkbox",
     role: "switch",
@@ -4471,6 +4926,7 @@ Object.assign(__ds_scope, { Switch });
 
 // components/input/TextArea.jsx
 try { (() => {
+const { cx, frameStyle, useFieldContext } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 여러 줄 입력. rows로 초기 높이, 세로로만 리사이즈. */
 function TextArea({
@@ -4484,10 +4940,10 @@ function TextArea({
   style,
   ...rest
 }) {
-  const f = __ds_scope.useFieldContext();
+  const f = useFieldContext();
   return /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-ctl bds-ctl--area", (invalid ?? f?.invalid) && "bds-ctl--err", disabled && "bds-ctl--disabled", className),
-    style: __ds_scope.frameStyle({
+    className: cx("bds-ctl bds-ctl--area", (invalid ?? f?.invalid) && "bds-ctl--err", disabled && "bds-ctl--disabled", className),
+    style: frameStyle({
       fit,
       width,
       style
@@ -4506,6 +4962,7 @@ Object.assign(__ds_scope, { TextArea });
 
 // components/input/TextField.jsx
 try { (() => {
+const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 한 줄 텍스트 입력. Field 안에서 라벨을 받는다. prefix/suffix에 단위·아이콘. */
 function TextField({
@@ -4522,17 +4979,17 @@ function TextField({
   style,
   ...rest
 }) {
-  const f = __ds_scope.useFieldContext();
+  const f = useFieldContext();
   return /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-ctl", size === "sm" && "bds-ctl--sm", (invalid ?? f?.invalid) && "bds-ctl--err", disabled && "bds-ctl--disabled", className),
-    style: __ds_scope.frameStyle({
+    className: cx("bds-ctl", size === "sm" && "bds-ctl--sm", (invalid ?? f?.invalid) && "bds-ctl--err", disabled && "bds-ctl--disabled", className),
+    style: frameStyle({
       fit,
       width,
       style
     })
   }, icon && /*#__PURE__*/React.createElement("span", {
     className: "bds-ctl__affix"
-  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, /*#__PURE__*/React.createElement(Icon, {
     name: icon,
     size: 15
   })), prefix && /*#__PURE__*/React.createElement("span", {
@@ -4553,10 +5010,9 @@ Object.assign(__ds_scope, { TextField });
 
 // components/input/PasswordField.jsx
 try { (() => {
+const { useState } = React;
+const { cx, Icon, TextField } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const {
-  useState
-} = React;
 const LV = ["", "약함", "보통", "좋음", "강함"];
 const passwordStrength = (s = "") => {
   if (!s) return 0;
@@ -4580,7 +5036,7 @@ function PasswordField({
   const lv = strength ? passwordStrength(value) : 0;
   return /*#__PURE__*/React.createElement("div", {
     className: "bds-pw"
-  }, /*#__PURE__*/React.createElement(__ds_scope.TextField, _extends({
+  }, /*#__PURE__*/React.createElement(TextField, _extends({
     type: show ? "text" : "password",
     value: value,
     onChange: onChange,
@@ -4592,7 +5048,7 @@ function PasswordField({
       "aria-label": show ? "비밀번호 숨기기" : "비밀번호 보기",
       "aria-pressed": show,
       onClick: () => setShow(s => !s)
-    }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    }, /*#__PURE__*/React.createElement(Icon, {
       name: show ? "eye-slash" : "eye",
       size: 15
     }))
@@ -4610,6 +5066,7 @@ Object.assign(__ds_scope, { passwordStrength, PasswordField });
 
 // components/input/TimePicker.jsx
 try { (() => {
+const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
 const pad = n => String(n).padStart(2, "0");
 /** 시:분 선택(24시간). value "HH:MM". step은 분 단위(기본 5). */
 function TimePicker({
@@ -4623,22 +5080,22 @@ function TimePicker({
   className,
   style
 }) {
-  const f = __ds_scope.useFieldContext();
+  const f = useFieldContext();
   const [h, m] = value ? value.split(":").map(Number) : [null, null];
   const set = (hh, mm) => onChange?.(pad(hh ?? 0) + ":" + pad(mm ?? 0));
   const mins = Array.from({
     length: Math.floor(60 / step)
   }, (_, i) => i * step);
   return /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-ctl", "bds-time", size === "sm" && "bds-ctl--sm", f?.invalid && "bds-ctl--err", disabled && "bds-ctl--disabled", className),
-    style: __ds_scope.frameStyle({
+    className: cx("bds-ctl", "bds-time", size === "sm" && "bds-ctl--sm", f?.invalid && "bds-ctl--err", disabled && "bds-ctl--disabled", className),
+    style: frameStyle({
       fit,
       width,
       style
     })
   }, /*#__PURE__*/React.createElement("span", {
     className: "bds-ctl__affix"
-  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, /*#__PURE__*/React.createElement(Icon, {
     name: "clock",
     size: 15
   })), /*#__PURE__*/React.createElement("select", {
@@ -4675,6 +5132,7 @@ Object.assign(__ds_scope, { TimePicker });
 
 // components/layout/AspectRatio.jsx
 try { (() => {
+const { cx } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 비율 상자. 이미지·프리뷰(LCD 4:3)·iframe. ratio는 "16/9" 같은 문자열 또는 숫자. */
 function AspectRatio({
@@ -4685,7 +5143,7 @@ function AspectRatio({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement("div", _extends({
-    className: __ds_scope.cx("bds-ratio", className),
+    className: cx("bds-ratio", className),
     style: {
       "--ratio": typeof ratio === "number" ? String(ratio) : ratio.replace(":", "/"),
       ...style
@@ -4697,6 +5155,7 @@ Object.assign(__ds_scope, { AspectRatio });
 
 // components/layout/CardHead.jsx
 try { (() => {
+const { cx } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 카드 제목 줄: 제목(왼쪽) + 메타(오른쪽, 모델명·인터페이스 같은 고정 정보). */
 function CardHead({
@@ -4708,11 +5167,11 @@ function CardHead({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement("div", _extends({
-    className: __ds_scope.cx("bds-cardhead", className)
+    className: cx("bds-cardhead", className)
   }, rest), /*#__PURE__*/React.createElement("h3", {
     className: "bds-cardhead__t"
   }, title), children, meta != null && /*#__PURE__*/React.createElement("span", {
-    className: __ds_scope.cx("bds-cardhead__m bds-ellipsis", metaMono && "bds-mono")
+    className: cx("bds-cardhead__m bds-ellipsis", metaMono && "bds-mono")
   }, meta));
 }
 Object.assign(__ds_scope, { CardHead });
@@ -4720,6 +5179,7 @@ Object.assign(__ds_scope, { CardHead });
 
 // components/layout/Container.jsx
 try { (() => {
+const { cx } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 최대 폭 중앙 정렬 컨테이너. 기본 --content-max 1440, narrow는 760(설정·폼 페이지). pad는 좌우 --gutter. */
 function Container({
@@ -4730,7 +5190,7 @@ function Container({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement("div", _extends({
-    className: __ds_scope.cx("bds-container", narrow && "bds-container--narrow", pad && "bds-container--pad", className)
+    className: cx("bds-container", narrow && "bds-container--narrow", pad && "bds-container--pad", className)
   }, rest), children);
 }
 Object.assign(__ds_scope, { Container });
@@ -4738,6 +5198,7 @@ Object.assign(__ds_scope, { Container });
 
 // components/layout/Divider.jsx
 try { (() => {
+const { cx } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 구분선. label을 주면 가운데 글자, vertical은 Inline 안에서 세로선. */
 function Divider({
@@ -4748,10 +5209,10 @@ function Divider({
 }) {
   if (label) return /*#__PURE__*/React.createElement("div", _extends({
     role: "separator",
-    className: __ds_scope.cx("bds-divider", "bds-divider--label", className)
+    className: cx("bds-divider", "bds-divider--label", className)
   }, rest), label);
   return /*#__PURE__*/React.createElement("hr", _extends({
-    className: __ds_scope.cx("bds-divider", vertical && "bds-divider--vertical", className),
+    className: cx("bds-divider", vertical && "bds-divider--vertical", className),
     "aria-orientation": vertical ? "vertical" : undefined
   }, rest));
 }
@@ -4760,6 +5221,7 @@ Object.assign(__ds_scope, { Divider });
 
 // components/layout/Grid.jsx
 try { (() => {
+const { cx } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 반응형 카드 격자. cols는 '이상적' 열 수이고 minmax(auto-fit)로 폭에 따라 저절로 줄어든다. min으로 카드 최소 폭을 직접 줄 수도 있다.
  *  columns={12}를 주면 고정 열 격자가 되고 자식 GridItem의 span으로 2/3+1/3 같은 비대칭 배치를 만든다(컨테이너 폭 기준 접힘). */
@@ -4773,14 +5235,14 @@ function Grid({
   ...rest
 }) {
   if (columns) return /*#__PURE__*/React.createElement("div", _extends({
-    className: __ds_scope.cx("bds-grid", "bds-grid--fixed", className),
+    className: cx("bds-grid", "bds-grid--fixed", className),
     style: {
       "--cols": columns,
       ...style
     }
   }, rest), children);
   return /*#__PURE__*/React.createElement("div", _extends({
-    className: __ds_scope.cx("bds-grid", !min && `bds-grid--${cols}`, className),
+    className: cx("bds-grid", !min && `bds-grid--${cols}`, className),
     style: min ? {
       gridTemplateColumns: `repeat(auto-fit,minmax(min(100%,${typeof min === "number" ? `${min}px` : min}),1fr))`,
       ...style
@@ -4799,7 +5261,7 @@ function GridItem({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement("div", _extends({
-    className: __ds_scope.cx("bds-col", className),
+    className: cx("bds-col", className),
     style: {
       "--span": span,
       "--span-md": spanMd,
@@ -4813,6 +5275,7 @@ Object.assign(__ds_scope, { Grid, GridItem });
 
 // components/layout/PageHeader.jsx
 try { (() => {
+const { cx } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 페이지 제목 + 한 문장 설명 + 오른쪽 액션. 좁으면 액션이 아래로 감싼다. */
 function PageHeader({
@@ -4823,7 +5286,7 @@ function PageHeader({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement("div", _extends({
-    className: __ds_scope.cx("bds-pagehead", className)
+    className: cx("bds-pagehead", className)
   }, rest), /*#__PURE__*/React.createElement("div", {
     className: "bds-pagehead__text"
   }, /*#__PURE__*/React.createElement("h2", null, title), description && /*#__PURE__*/React.createElement("p", null, description)), actions && /*#__PURE__*/React.createElement("div", {
@@ -4835,6 +5298,7 @@ Object.assign(__ds_scope, { PageHeader });
 
 // components/layout/PageStack.jsx
 try { (() => {
+const { cx } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 페이지 본문 섹션 묶음. 섹션 간격은 --stack(뷰포트에 따라 흐른다). 셸 본문의 직계 자식은 항상 이것. */
 function PageStack({
@@ -4844,7 +5308,7 @@ function PageStack({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement("section", _extends({
-    className: __ds_scope.cx("bds-stack", gap !== "md" && `bds-stack--${gap}`, className)
+    className: cx("bds-stack", gap !== "md" && `bds-stack--${gap}`, className)
   }, rest), children);
 }
 Object.assign(__ds_scope, { PageStack });
@@ -4852,6 +5316,7 @@ Object.assign(__ds_scope, { PageStack });
 
 // components/layout/Panel.jsx
 try { (() => {
+const { cx, frameStyle } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 카드/패널. 층 구분은 보더, 그림자는 최소. caption은 상단 소문자 캡션. interactive면 호버 상승, selected면 악센트 링. */
 function Panel({
@@ -4871,8 +5336,8 @@ function Panel({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement(Tag, _extends({
-    className: __ds_scope.cx("bds-panel", padding !== "md" && `bds-panel--${padding}`, sunken && "bds-panel--sunken", interactive && "bds-panel--interactive", selected && "bds-panel--selected", enter && "bds-panel--enter", className),
-    style: __ds_scope.frameStyle({
+    className: cx("bds-panel", padding !== "md" && `bds-panel--${padding}`, sunken && "bds-panel--sunken", interactive && "bds-panel--interactive", selected && "bds-panel--selected", enter && "bds-panel--enter", className),
+    style: frameStyle({
       fit,
       width,
       height,
@@ -4887,6 +5352,7 @@ Object.assign(__ds_scope, { Panel });
 
 // components/layout/Stack.jsx
 try { (() => {
+const { cx } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const GAP = {
   0: 0,
@@ -4915,7 +5381,7 @@ function Stack({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement(Tag, _extends({
-    className: __ds_scope.cx("bds-vstack", className),
+    className: cx("bds-vstack", className),
     style: {
       gap: spaceToken(gap),
       alignItems: align,
@@ -4929,6 +5395,7 @@ Object.assign(__ds_scope, { spaceToken, Stack });
 
 // components/layout/Inline.jsx
 try { (() => {
+const { cx, spaceToken } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 가로 나열(버튼·칩·메타). 기본 wrap. gap은 --sp 단계 또는 CSS 길이. */
 function Inline({
@@ -4943,9 +5410,9 @@ function Inline({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement(Tag, _extends({
-    className: __ds_scope.cx("bds-inline", !wrap && "bds-inline--nowrap", className),
+    className: cx("bds-inline", !wrap && "bds-inline--nowrap", className),
     style: {
-      gap: __ds_scope.spaceToken(gap),
+      gap: spaceToken(gap),
       alignItems: align,
       justifyContent: justify,
       ...style
@@ -4957,6 +5424,7 @@ Object.assign(__ds_scope, { Inline });
 
 // components/layout/Spacer.jsx
 try { (() => {
+const { cx, spaceToken } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** flex 빈 공간. size를 주면 고정 간격(세로 스택 안). */
 function Spacer({
@@ -4966,12 +5434,12 @@ function Spacer({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement("div", _extends({
-    className: __ds_scope.cx("bds-spacer", className),
+    className: cx("bds-spacer", className),
     "aria-hidden": "true",
     style: size != null ? {
       flex: "none",
-      height: __ds_scope.spaceToken(size),
-      width: __ds_scope.spaceToken(size),
+      height: spaceToken(size),
+      width: spaceToken(size),
       ...style
     } : style
   }, rest));
@@ -4981,6 +5449,7 @@ Object.assign(__ds_scope, { Spacer });
 
 // components/layout/StatusBar.jsx
 try { (() => {
+const { cx } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 하단 상태바(28px, mono). live는 실제로 실시간 갱신 중일 때만. 항상 참인 값(호스트·업타임·시계)만 둔다. */
 function StatusBar({
@@ -4991,7 +5460,7 @@ function StatusBar({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement("div", _extends({
-    className: __ds_scope.cx("bds-statusbar", className)
+    className: cx("bds-statusbar", className)
   }, rest), live && /*#__PURE__*/React.createElement("span", {
     className: "bds-statusbar__live"
   }, /*#__PURE__*/React.createElement("i", {
@@ -5011,8 +5480,9 @@ Object.assign(__ds_scope, { StatusBar });
 
 // components/layout/Toolbar.jsx
 try { (() => {
+const { cx } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-/** 표 위 도구 줄: 검색(늘어남) + 필터 + 오른쪽 끝 액션. 좁으면 줄바꿈. */
+/** 표 위 도구 줄: 검색(늘어남) + 필터 + 오른쪽 끝 액션. 좁으면 줄바꿈. role="toolbar"는 화살표 이동을 약속하므로 붙이지 않는다(Tab으로 컨트롤 사이를 이동). */
 function Toolbar({
   children,
   end,
@@ -5020,8 +5490,7 @@ function Toolbar({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement("div", _extends({
-    className: __ds_scope.cx("bds-toolbar", className),
-    role: "toolbar"
+    className: cx("bds-toolbar", className)
   }, rest), children, end && /*#__PURE__*/React.createElement("div", {
     className: "bds-toolbar__end"
   }, end));
@@ -5039,6 +5508,7 @@ Object.assign(__ds_scope, { Toolbar, ToolbarGrow });
 
 // components/layout/Visible.jsx
 try { (() => {
+const { cx } = __ds_scope;
 /** 뷰포트 단계별 표시. above="md"는 768 이상에서만, below="md"는 768 미만에서만. 레이아웃 박스를 만들지 않는다(display:contents). */
 function Visible({
   above,
@@ -5047,7 +5517,7 @@ function Visible({
   children
 }) {
   return /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-visible", above && "bds-hide-" + above, below && "bds-only-" + below, className)
+    className: cx("bds-visible", above && "bds-hide-" + above, below && "bds-only-" + below, className)
   }, children);
 }
 Object.assign(__ds_scope, { Visible });
@@ -5055,10 +5525,9 @@ Object.assign(__ds_scope, { Visible });
 
 // components/navigation/Breadcrumb.jsx
 try { (() => {
+const { useState } = React;
+const { cx, Icon } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const {
-  useState
-} = React;
 /** 경로 표시. items: {label, href?}. 마지막은 현재 페이지. maxItems 초과 시 중간을 "…"로 접는다. */
 function Breadcrumb({
   items = [],
@@ -5083,19 +5552,22 @@ function Breadcrumb({
       className: "bds-crumb__more",
       "aria-label": "\uC228\uAE34 \uACBD\uB85C \uD3BC\uCE58\uAE30",
       onClick: () => setAll(true)
-    }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    }, /*#__PURE__*/React.createElement(Icon, {
       name: "dots-three",
       size: 14
     })) : last ? /*#__PURE__*/React.createElement("span", {
       "aria-current": "page",
-      className: "bds-ellipsis"
+      className: "bds-ellipsis",
+      title: typeof it.label === "string" ? it.label : undefined
     }, it.label) : it.href ? /*#__PURE__*/React.createElement("a", {
       href: it.href,
       onClick: it.onClick,
-      className: "bds-ellipsis"
+      className: "bds-ellipsis",
+      title: typeof it.label === "string" ? it.label : undefined
     }, it.label) : /*#__PURE__*/React.createElement("span", {
-      className: "bds-ellipsis"
-    }, it.label), !last && /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+      className: "bds-ellipsis",
+      title: typeof it.label === "string" ? it.label : undefined
+    }, it.label), !last && /*#__PURE__*/React.createElement(Icon, {
       name: "caret-right",
       size: 11,
       className: "bds-crumb__sep"
@@ -5107,12 +5579,8 @@ Object.assign(__ds_scope, { Breadcrumb });
 
 // components/navigation/CommandPalette.jsx
 try { (() => {
-const {
-  useEffect,
-  useMemo,
-  useRef,
-  useState
-} = React;
+const { useEffect, useMemo, useRef, useState } = React;
+const { cx, Icon } = __ds_scope;
 /** ⌘K 명령 팔레트. items: {id, label, icon?, group?, hint?, keywords?, onSelect}. open/onClose 제어형. inline이면 딤 없이 패널만(문서용). */
 function CommandPalette({
   open = false,
@@ -5124,18 +5592,21 @@ function CommandPalette({
 }) {
   const [q, setQ] = useState(""),
     [idx, setIdx] = useState(0),
-    input = useRef(null);
+    input = useRef(null),
+    opener = useRef(null);
   const list = useMemo(() => {
     const s = q.trim().toLowerCase();
     return !s ? items : items.filter(it => (it.label + " " + (it.keywords ?? "") + " " + (it.group ?? "")).toLowerCase().includes(s));
   }, [q, items]);
+  /* 열 때 포커스를 입력으로, 닫을 때 열기 전 요소로 되돌린다 */
   useEffect(() => {
-    if (open) {
-      setQ("");
-      setIdx(0);
-      setTimeout(() => input.current?.focus(), 0);
-    }
-  }, [open]);
+    if (!open || inline) return;
+    opener.current = document.activeElement;
+    setQ("");
+    setIdx(0);
+    setTimeout(() => input.current?.focus(), 0);
+    return () => opener.current?.focus?.();
+  }, [open, inline]);
   useEffect(() => {
     setIdx(0);
   }, [q]);
@@ -5159,7 +5630,7 @@ function CommandPalette({
   };
   let lastGroup = null;
   return /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-cmdk", inline && "bds-cmdk--inline", className),
+    className: cx("bds-cmdk", inline && "bds-cmdk--inline", className),
     onMouseDown: e => {
       if (e.target === e.currentTarget) onClose?.();
     }
@@ -5170,7 +5641,7 @@ function CommandPalette({
     onKeyDown: onKey
   }, /*#__PURE__*/React.createElement("div", {
     className: "bds-cmdk__in"
-  }, /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, /*#__PURE__*/React.createElement(Icon, {
     name: "magnifying-glass",
     size: 16
   }), /*#__PURE__*/React.createElement("input", {
@@ -5206,10 +5677,10 @@ function CommandPalette({
     }, /*#__PURE__*/React.createElement("button", {
       type: "button",
       className: "bds-cmdk__item",
-      "aria-selected": i === idx,
+      tabIndex: -1,
       onMouseEnter: () => setIdx(i),
       onClick: () => run(it)
-    }, it.icon && /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    }, it.icon && /*#__PURE__*/React.createElement(Icon, {
       name: it.icon,
       size: 16
     }), /*#__PURE__*/React.createElement("span", {
@@ -5228,6 +5699,7 @@ Object.assign(__ds_scope, { CommandPalette });
 
 // components/navigation/Link.jsx
 try { (() => {
+const { cx, Icon } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 텍스트 링크. 외부 링크는 external로 아이콘·rel 자동. quiet는 본문색. */
 function Link({
@@ -5240,12 +5712,13 @@ function Link({
 }) {
   return /*#__PURE__*/React.createElement("a", _extends({
     href: href,
-    className: __ds_scope.cx("bds-link", quiet && "bds-link--quiet", className),
+    className: cx("bds-link", quiet && "bds-link--quiet", className),
     target: external ? "_blank" : undefined,
     rel: external ? "noopener noreferrer" : undefined
-  }, rest), children, external && /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, rest), children, external && /*#__PURE__*/React.createElement(Icon, {
     name: "arrow-square-out",
-    size: 12
+    size: 12,
+    label: "\uC0C8 \uCC3D\uC5D0\uC11C \uC5F4\uB9BC"
   }));
 }
 Object.assign(__ds_scope, { Link });
@@ -5253,6 +5726,7 @@ Object.assign(__ds_scope, { Link });
 
 // components/navigation/Pagination.jsx
 try { (() => {
+const { cx, IconButton } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 페이지 번호. page는 1부터. total은 총 페이지 수. info에 "1–20 / 184" 같은 범위를 준다. */
 function Pagination({
@@ -5276,8 +5750,8 @@ function Pagination({
   if (total > 1) push(total);
   return /*#__PURE__*/React.createElement("nav", _extends({
     "aria-label": "\uD398\uC774\uC9C0",
-    className: __ds_scope.cx("bds-pager", className)
-  }, rest), /*#__PURE__*/React.createElement(__ds_scope.IconButton, {
+    className: cx("bds-pager", className)
+  }, rest), /*#__PURE__*/React.createElement(IconButton, {
     icon: "caret-left",
     size: size,
     variant: "ghost",
@@ -5294,7 +5768,7 @@ function Pagination({
     className: "bds-pager__pg",
     "aria-current": p === page ? "page" : undefined,
     onClick: () => onChange?.(p)
-  }, p)), /*#__PURE__*/React.createElement(__ds_scope.IconButton, {
+  }, p)), /*#__PURE__*/React.createElement(IconButton, {
     icon: "caret-right",
     size: size,
     variant: "ghost",
@@ -5310,16 +5784,10 @@ Object.assign(__ds_scope, { Pagination });
 
 // components/navigation/SidebarShell.jsx
 try { (() => {
+const { createContext, useContext, useEffect, useId, useRef, useState } = React;
+const { cx, Icon, IconButton, MascotMark } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const {
-  createContext,
-  useContext,
-  useEffect,
-  useId,
-  useRef,
-  useState
-} = React;
-const CloseCtx = createContext(null);
+const CloseCtx = /*#__PURE__*/createContext(null);
 
 /** 대시보드 셸: 240px 사이드바 + 52px 상단바 + 본문 + 28px 상태바. 부모가 높이를 정한다(페이지는 100dvh).
  *  1024 미만: 사이드바가 오버레이 드로어(햄버거). 768 미만: 상태바 숨김. 본문은 컨테이너 쿼리 대상(container-name: body). */
@@ -5336,9 +5804,12 @@ function SidebarShell({
 }) {
   const [open, setOpen] = useState(false);
   const id = useId();
-  const burger = useRef(null);
+  const burger = useRef(null),
+    side = useRef(null);
   useEffect(() => {
     if (!open) return;
+    /* 드로어로 열리면 포커스를 안으로(닫기 버튼) 옮기고, 닫히면 햄버거로 돌린다 */
+    side.current?.querySelector("button")?.focus();
     const onKey = e => e.key === "Escape" && setOpen(false);
     document.addEventListener("keydown", onKey);
     return () => {
@@ -5347,14 +5818,14 @@ function SidebarShell({
     };
   }, [open]);
   return /*#__PURE__*/React.createElement("div", _extends({
-    className: __ds_scope.cx("bds-shell", open && "bds-shell--open", className)
+    className: cx("bds-shell", open && "bds-shell--open", className)
   }, rest), /*#__PURE__*/React.createElement("aside", {
     id: id,
-    className: "bds-shell__side",
-    "aria-hidden": !open ? undefined : false
+    ref: side,
+    className: "bds-shell__side"
   }, /*#__PURE__*/React.createElement("div", {
     className: "bds-shell__logo"
-  }, brand.mark === undefined ? /*#__PURE__*/React.createElement(__ds_scope.MascotMark, {
+  }, brand.mark === undefined ? /*#__PURE__*/React.createElement(MascotMark, {
     size: 26
   }) : brand.mark, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -5364,7 +5835,7 @@ function SidebarShell({
     className: "bds-ellipsis"
   }, brand.name), brand.sub && /*#__PURE__*/React.createElement("small", {
     className: "bds-ellipsis"
-  }, brand.sub)), /*#__PURE__*/React.createElement(__ds_scope.IconButton, {
+  }, brand.sub)), /*#__PURE__*/React.createElement(IconButton, {
     className: "bds-shell__close",
     icon: "x",
     size: "sm",
@@ -5386,7 +5857,7 @@ function SidebarShell({
     className: "bds-shell__main"
   }, /*#__PURE__*/React.createElement("header", {
     className: "bds-shell__top"
-  }, /*#__PURE__*/React.createElement(__ds_scope.IconButton, {
+  }, /*#__PURE__*/React.createElement(IconButton, {
     ref: burger,
     className: "bds-shell__burger",
     icon: "list",
@@ -5413,8 +5884,8 @@ function SidebarNavItem({
   onClick
 }) {
   const close = useContext(CloseCtx);
-  const cls = __ds_scope.cx("bds-shell__item", active && "bds-shell__item--on");
-  const inner = /*#__PURE__*/React.createElement(React.Fragment, null, icon && /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  const cls = cx("bds-shell__item", active && "bds-shell__item--on");
+  const inner = /*#__PURE__*/React.createElement(React.Fragment, null, icon && /*#__PURE__*/React.createElement(Icon, {
     name: icon
   }), /*#__PURE__*/React.createElement("span", {
     className: "bds-ellipsis",
@@ -5423,9 +5894,10 @@ function SidebarNavItem({
     }
   }, label), badge != null && /*#__PURE__*/React.createElement("span", {
     className: "bds-shell__item__badge"
-  }, badge), target === "_blank" && /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, badge), target === "_blank" && /*#__PURE__*/React.createElement(Icon, {
     name: "arrow-square-out",
-    size: 12
+    size: 12,
+    label: "\uC0C8 \uCC3D\uC5D0\uC11C \uC5F4\uB9BC"
   }));
   const handle = () => {
     onClick?.();
@@ -5459,22 +5931,21 @@ Object.assign(__ds_scope, { SidebarShell, SidebarNavItem, SidebarNavGroup });
 
 // components/navigation/Tabs.jsx
 try { (() => {
+const { useEffect, useId, useRef, useState } = React;
+const { cx, Icon } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const {
-  useEffect,
-  useRef,
-  useState
-} = React;
-/** 탭. items: {value,label,count?,icon?}[]. 잉크바가 선택 탭 아래로 미끄러진다. 넘치면 가로 스크롤. */
+/** 탭. items: {value,label,count?,icon?}[]. 선택 탭만 Tab 순서에 들고 화살표·Home·End로 옮긴다. panelId(value)를 주면 aria-controls를 붙인다. 잉크바가 선택 탭 아래로 미끄러진다. 넘치면 가로 스크롤. */
 function Tabs({
   items = [],
   value,
   onChange,
+  panelId,
   className,
   "aria-label": ariaLabel,
   ...rest
 }) {
-  const root = useRef(null);
+  const root = useRef(null),
+    uid = useId().replace(/:/g, "");
   const [ink, setInk] = useState(null);
   useEffect(() => {
     const el = root.current?.querySelector('[aria-selected="true"]');
@@ -5488,24 +5959,32 @@ function Tabs({
     ro.observe(root.current);
     return () => ro.disconnect();
   }, [value, items.length]);
+  const move = e => {
+    const i = items.findIndex(x => x.value === value),
+      n = items.length;
+    const j = e.key === "ArrowRight" ? (i + 1) % n : e.key === "ArrowLeft" ? (i - 1 + n) % n : e.key === "Home" ? 0 : e.key === "End" ? n - 1 : -1;
+    if (j < 0) return;
+    e.preventDefault();
+    onChange?.(items[j].value);
+    document.getElementById(`${uid}-tab-${items[j].value}`)?.focus();
+  };
   return /*#__PURE__*/React.createElement("div", _extends({
     ref: root,
     role: "tablist",
     "aria-label": ariaLabel,
-    className: __ds_scope.cx("bds-tabs", className)
+    className: cx("bds-tabs", className)
   }, rest), items.map(t => /*#__PURE__*/React.createElement("button", {
     key: t.value,
     type: "button",
     role: "tab",
+    id: `${uid}-tab-${t.value}`,
     "aria-selected": t.value === value,
+    "aria-controls": panelId ? panelId(t.value) : undefined,
+    tabIndex: t.value === value ? 0 : -1,
     className: "bds-tabs__tab",
     onClick: () => onChange?.(t.value),
-    onKeyDown: e => {
-      const i = items.findIndex(x => x.value === value);
-      if (e.key === "ArrowRight") onChange?.(items[(i + 1) % items.length].value);
-      if (e.key === "ArrowLeft") onChange?.(items[(i - 1 + items.length) % items.length].value);
-    }
-  }, t.icon && /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+    onKeyDown: move
+  }, t.icon && /*#__PURE__*/React.createElement(Icon, {
     name: t.icon,
     size: 14
   }), t.label, t.count != null && /*#__PURE__*/React.createElement("span", {
@@ -5521,6 +6000,7 @@ Object.assign(__ds_scope, { Tabs });
 
 // components/navigation/TopNav.jsx
 try { (() => {
+const { cx, Icon, MascotMark } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 사이드바 없는 제품의 상단 내비. brand + links(가로 스크롤) + end. 화면 5개 이하일 때 SidebarShell 대신. */
 function TopNav({
@@ -5532,11 +6012,11 @@ function TopNav({
   ...rest
 }) {
   return /*#__PURE__*/React.createElement("header", _extends({
-    className: __ds_scope.cx("bds-topnav", sticky && "bds-topnav--sticky", className)
+    className: cx("bds-topnav", sticky && "bds-topnav--sticky", className)
   }, rest), /*#__PURE__*/React.createElement("a", {
     className: "bds-topnav__brand",
     href: brand?.href ?? "#"
-  }, brand?.mark === undefined ? /*#__PURE__*/React.createElement(__ds_scope.MascotMark, {
+  }, brand?.mark === undefined ? /*#__PURE__*/React.createElement(MascotMark, {
     size: 24
   }) : brand.mark, /*#__PURE__*/React.createElement("span", null, brand?.name)), /*#__PURE__*/React.createElement("nav", {
     className: "bds-topnav__links",
@@ -5547,7 +6027,7 @@ function TopNav({
     onClick: l.onClick,
     className: "bds-topnav__link",
     "aria-current": l.active ? "page" : undefined
-  }, l.icon && /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, l.icon && /*#__PURE__*/React.createElement(Icon, {
     name: l.icon,
     size: 15
   }), l.label))), end && /*#__PURE__*/React.createElement("div", {
@@ -5559,12 +6039,10 @@ Object.assign(__ds_scope, { TopNav });
 
 // components/overlay/Drawer.jsx
 try { (() => {
+const { useEffect, useId, useRef } = React;
+const { cx, IconButton } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const {
-  useEffect,
-  useRef
-} = React;
-/** 오른쪽 사이드 패널. 목록을 보면서 상세를 볼 때(실행 상세·모델 상세). 확인이 필요한 결정은 Modal. size: sm 380 · md 480 · lg 640. 768 미만은 전체 폭. */
+/** 오른쪽 사이드 패널. 네이티브 <dialog>.showModal()로 포커스를 가둔다. 목록을 보면서 상세를 볼 때(실행 상세·모델 상세). 확인이 필요한 결정은 Modal. size: sm 380 · md 480 · lg 640. 768 미만은 전체 폭. */
 function Drawer({
   open,
   onClose,
@@ -5578,38 +6056,43 @@ function Drawer({
   ...rest
 }) {
   const panel = useRef(null),
-    opener = useRef(null);
+    tid = useId();
   useEffect(() => {
-    if (!open) return;
-    opener.current = document.activeElement;
-    const onKey = e => {
-      if (e.key === "Escape") onClose?.();
-    };
-    document.addEventListener("keydown", onKey);
-    requestAnimationFrame(() => panel.current?.focus());
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      opener.current?.focus?.();
-    };
-  }, [open, onClose]);
+    const d = panel.current;
+    if (!d) return;
+    if (open) {
+      if (!d.open) d.showModal();
+      requestAnimationFrame(() => d.focus());
+    } else if (d.open) d.close();
+  }, [open]);
+  const outside = e => {
+    const r = e.currentTarget.getBoundingClientRect();
+    return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
+  };
   return /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-side", open && "bds-side--open", `bds-side--${size}`),
-    "aria-hidden": !open
+    className: cx("bds-side", open && "bds-side--open", `bds-side--${size}`)
   }, /*#__PURE__*/React.createElement("div", {
     className: "bds-side__dim",
     onMouseDown: onClose
-  }), /*#__PURE__*/React.createElement("aside", _extends({
+  }), /*#__PURE__*/React.createElement("dialog", _extends({
     ref: panel,
-    role: "dialog",
-    "aria-modal": "true",
-    "aria-label": typeof title === "string" ? title : undefined,
+    "aria-labelledby": title ? tid : undefined,
     tabIndex: -1,
-    className: __ds_scope.cx("bds-side__panel", className)
+    className: cx("bds-side__panel", className),
+    onCancel: e => {
+      e.preventDefault();
+      onClose?.();
+    },
+    onMouseDown: e => {
+      if (e.target === e.currentTarget && outside(e)) onClose?.();
+    }
   }, rest), (title || closeButton) && /*#__PURE__*/React.createElement("header", {
     className: "bds-side__hd"
   }, /*#__PURE__*/React.createElement("div", {
     className: "bds-side__ttl"
-  }, title && /*#__PURE__*/React.createElement("h2", null, title), description && /*#__PURE__*/React.createElement("p", null, description)), closeButton && /*#__PURE__*/React.createElement(__ds_scope.IconButton, {
+  }, title && /*#__PURE__*/React.createElement("h2", {
+    id: tid
+  }, title), description && /*#__PURE__*/React.createElement("p", null, description)), closeButton && /*#__PURE__*/React.createElement(IconButton, {
     icon: "x",
     size: "sm",
     variant: "ghost",
@@ -5626,12 +6109,8 @@ Object.assign(__ds_scope, { Drawer });
 
 // components/overlay/DropdownMenu.jsx
 try { (() => {
-const {
-  useEffect,
-  useId,
-  useRef,
-  useState
-} = React;
+const { useEffect, useId, useRef, useState } = React;
+const { cx, Icon, IconButton } = __ds_scope;
 /** "…" 메뉴. items: {label, icon?, onSelect, danger?, disabled?} | "-"(구분선). trigger를 안 주면 점 세 개 IconButton. */
 function DropdownMenu({
   items = [],
@@ -5646,13 +6125,18 @@ function DropdownMenu({
   const root = useRef(null),
     uid = useId().replace(/:/g, "");
   const enabled = items.map((it, i) => it !== "-" && !it.disabled ? i : -1).filter(i => i >= 0);
+  /* 닫힐 때 포커스를 트리거로 돌린다(메뉴 항목이 언마운트되면 포커스가 body로 떨어진다) */
+  const close = () => {
+    setOpen(false);
+    root.current?.querySelector("[aria-haspopup]")?.focus();
+  };
   useEffect(() => {
     if (!open) return;
     const on = e => {
       if (!root.current?.contains(e.target)) setOpen(false);
     };
     const key = e => {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") close();
     };
     document.addEventListener("mousedown", on);
     document.addEventListener("keydown", key);
@@ -5679,14 +6163,20 @@ function DropdownMenu({
     } else if (e.key === "ArrowUp") {
       e.preventDefault();
       setIdx(enabled[(p - 1 + enabled.length) % enabled.length]);
-    }
+    } else if (e.key === "Home") {
+      e.preventDefault();
+      setIdx(enabled[0]);
+    } else if (e.key === "End") {
+      e.preventDefault();
+      setIdx(enabled[enabled.length - 1]);
+    } else if (e.key === "Tab") setOpen(false);
   };
   const pick = it => {
     if (it.disabled) return;
-    setOpen(false);
+    close();
     it.onSelect?.();
   };
-  const trig = trigger ? React.cloneElement(trigger, {
+  const trig = trigger ? /*#__PURE__*/React.cloneElement(trigger, {
     "aria-haspopup": "menu",
     "aria-expanded": open,
     "aria-controls": `${uid}-menu`,
@@ -5695,7 +6185,7 @@ function DropdownMenu({
       setOpen(o => !o);
     },
     onKeyDown: onKey
-  }) : /*#__PURE__*/React.createElement(__ds_scope.IconButton, {
+  }) : /*#__PURE__*/React.createElement(IconButton, {
     icon: "dots-three",
     size: size,
     variant: "ghost",
@@ -5708,11 +6198,11 @@ function DropdownMenu({
   });
   return /*#__PURE__*/React.createElement("span", {
     ref: root,
-    className: __ds_scope.cx("bds-menu", className)
+    className: cx("bds-menu", className)
   }, trig, open && /*#__PURE__*/React.createElement("ul", {
     id: `${uid}-menu`,
     role: "menu",
-    className: __ds_scope.cx("bds-menu__list", `bds-menu__list--${align}`),
+    className: cx("bds-menu__list", `bds-menu__list--${align}`),
     onKeyDown: onKey
   }, items.map((it, i) => it === "-" ? /*#__PURE__*/React.createElement("li", {
     key: i,
@@ -5726,10 +6216,10 @@ function DropdownMenu({
     role: "menuitem",
     tabIndex: -1,
     disabled: it.disabled,
-    className: __ds_scope.cx("bds-menu__item", it.danger && "bds-menu__item--danger"),
+    className: cx("bds-menu__item", it.danger && "bds-menu__item--danger"),
     onClick: () => pick(it),
     onMouseEnter: () => setIdx(i)
-  }, it.icon && /*#__PURE__*/React.createElement(__ds_scope.Icon, {
+  }, it.icon && /*#__PURE__*/React.createElement(Icon, {
     name: it.icon,
     size: 15
   }), /*#__PURE__*/React.createElement("span", null, it.label), it.shortcut && /*#__PURE__*/React.createElement("kbd", {
@@ -5741,12 +6231,10 @@ Object.assign(__ds_scope, { DropdownMenu });
 
 // components/overlay/Modal.jsx
 try { (() => {
+const { useEffect, useId, useRef } = React;
+const { cx, IconButton } = __ds_scope;
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
-const {
-  useEffect,
-  useRef
-} = React;
-/** 모달. Esc·딤·닫기 → onClose. 640 미만에서는 바텀시트. size: sm 360 · md 440 · lg 560 · xl 760. */
+/** 모달. 네이티브 <dialog>.showModal()로 포커스를 가둔다. Esc·딤·닫기 → onClose. 640 미만에서는 바텀시트. size: sm 360 · md 440 · lg 560 · xl 760. */
 function Modal({
   open,
   onClose,
@@ -5760,40 +6248,45 @@ function Modal({
   ...rest
 }) {
   const panel = useRef(null),
-    opener = useRef(null);
+    opener = useRef(null),
+    tid = useId();
   useEffect(() => {
-    if (!open) return;
+    const d = panel.current;
+    if (!open || !d) return;
     opener.current = document.activeElement;
-    const first = panel.current?.querySelector("input,select,textarea,button:not([aria-label='닫기'])") ?? panel.current;
+    if (!d.open) d.showModal();
+    const first = d.querySelector("input,select,textarea,button:not([aria-label='닫기'])") ?? d;
     first?.focus?.();
-    const onKey = e => {
-      if (e.key === "Escape") onClose?.();
-    };
-    document.addEventListener("keydown", onKey);
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
-      document.removeEventListener("keydown", onKey);
+      if (d.open) d.close();
       document.body.style.overflow = prev;
       opener.current?.focus?.();
     };
-  }, [open, onClose]);
+  }, [open]);
+  const outside = e => {
+    const r = e.currentTarget.getBoundingClientRect();
+    return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
+  };
   if (!open) return null;
-  return /*#__PURE__*/React.createElement("div", {
-    className: __ds_scope.cx("bds-modal", size !== "md" && `bds-modal--${size}`),
-    onMouseDown: e => {
-      if (e.target === e.currentTarget) onClose?.();
-    }
-  }, /*#__PURE__*/React.createElement("div", _extends({
+  return /*#__PURE__*/React.createElement("dialog", _extends({
     ref: panel,
-    role: "dialog",
-    "aria-modal": "true",
-    "aria-label": typeof title === "string" ? title : undefined,
+    "aria-labelledby": title ? tid : undefined,
     tabIndex: -1,
-    className: __ds_scope.cx("bds-modal__panel", className)
+    className: cx("bds-modal__panel", size !== "md" && `bds-modal--${size}`, className),
+    onCancel: e => {
+      e.preventDefault();
+      onClose?.();
+    },
+    onMouseDown: e => {
+      if (e.target === e.currentTarget && outside(e)) onClose?.();
+    }
   }, rest), (title || closeButton) && /*#__PURE__*/React.createElement("div", {
     className: "bds-modal__hd"
-  }, title && /*#__PURE__*/React.createElement("h2", null, title), closeButton && /*#__PURE__*/React.createElement(__ds_scope.IconButton, {
+  }, title && /*#__PURE__*/React.createElement("h2", {
+    id: tid
+  }, title), closeButton && /*#__PURE__*/React.createElement(IconButton, {
     icon: "x",
     size: "sm",
     variant: "ghost",
@@ -5805,16 +6298,15 @@ function Modal({
     className: "bds-modal__body"
   }, children), actions && /*#__PURE__*/React.createElement("div", {
     className: "bds-modal__ft"
-  }, actions)));
+  }, actions));
 }
 Object.assign(__ds_scope, { Modal });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/overlay/Modal.jsx", error: String((e && e.message) || e) }); }
 
 // components/feedback/ConfirmDialog.jsx
 try { (() => {
-const {
-  useState
-} = React;
+const { useState } = React;
+const { Modal, Button, TextField } = __ds_scope;
 /** 확인 모달. danger면 확인 버튼 crit 채움. typeToConfirm에 이름을 주면 그대로 입력해야 확인이 활성화된다. */
 function ConfirmDialog({
   open,
@@ -5831,17 +6323,17 @@ function ConfirmDialog({
 }) {
   const [typed, setTyped] = useState("");
   const ok = !typeToConfirm || typed === typeToConfirm;
-  return /*#__PURE__*/React.createElement(__ds_scope.Modal, {
+  return /*#__PURE__*/React.createElement(Modal, {
     open: open,
     onClose: onClose,
     title: title,
     size: size,
     closeButton: false,
-    actions: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(__ds_scope.Button, {
+    actions: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Button, {
       variant: "ghost",
       onClick: onClose,
       disabled: busy
-    }, cancelLabel), /*#__PURE__*/React.createElement(__ds_scope.Button, {
+    }, cancelLabel), /*#__PURE__*/React.createElement(Button, {
       variant: danger ? "danger" : "primary",
       className: danger ? "bds-btn--danger-fill" : undefined,
       disabled: !ok,
@@ -5852,7 +6344,7 @@ function ConfirmDialog({
     className: "bds-confirm__msg"
   }, message), typeToConfirm && /*#__PURE__*/React.createElement("label", {
     className: "bds-confirm__typed"
-  }, /*#__PURE__*/React.createElement("span", null, "\uACC4\uC18D\uD558\uB824\uBA74 ", /*#__PURE__*/React.createElement("code", null, typeToConfirm), "\uC744(\uB97C) \uC785\uB825\uD569\uB2C8\uB2E4"), /*#__PURE__*/React.createElement(__ds_scope.TextField, {
+  }, /*#__PURE__*/React.createElement("span", null, "\uACC4\uC18D\uD558\uB824\uBA74 ", /*#__PURE__*/React.createElement("code", null, typeToConfirm), "\uC744(\uB97C) \uC785\uB825\uD569\uB2C8\uB2E4"), /*#__PURE__*/React.createElement(TextField, {
     mono: true,
     value: typed,
     onChange: e => setTyped(e.target.value),
@@ -5864,6 +6356,7 @@ Object.assign(__ds_scope, { ConfirmDialog });
 
 // components/overlay/FormModal.jsx
 try { (() => {
+const { Modal, Button } = __ds_scope;
 /** 폼 모달. Enter 제출, 제출 버튼 라벨은 동사. busy 중 취소도 막는다. */
 function FormModal({
   open,
@@ -5879,17 +6372,17 @@ function FormModal({
   error,
   children
 }) {
-  return /*#__PURE__*/React.createElement(__ds_scope.Modal, {
+  return /*#__PURE__*/React.createElement(Modal, {
     open: open,
     onClose: busy ? undefined : onClose,
     title: title,
     description: description,
     size: size,
-    actions: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(__ds_scope.Button, {
+    actions: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Button, {
       variant: "ghost",
       disabled: busy,
       onClick: onClose
-    }, cancelLabel), /*#__PURE__*/React.createElement(__ds_scope.Button, {
+    }, cancelLabel), /*#__PURE__*/React.createElement(Button, {
       variant: danger ? "danger" : "primary",
       type: "submit",
       form: "bds-form-modal",
@@ -5916,13 +6409,8 @@ Object.assign(__ds_scope, { FormModal });
 
 // components/overlay/Popover.jsx
 try { (() => {
-const {
-  cloneElement,
-  useEffect,
-  useId,
-  useRef,
-  useState
-} = React;
+const { cloneElement, useEffect, useId, useRef, useState } = React;
+const { cx } = __ds_scope;
 /** 클릭으로 여는 설명·미니 폼 패널. Tooltip과 달리 상호작용 요소를 넣을 수 있다. trigger 하나를 감싼다. */
 function Popover({
   trigger,
@@ -5947,7 +6435,10 @@ function Popover({
       if (!root.current?.contains(e.target)) set(false);
     };
     const key = e => {
-      if (e.key === "Escape") set(false);
+      if (e.key === "Escape") {
+        set(false);
+        root.current?.firstElementChild?.focus?.();
+      }
     };
     document.addEventListener("mousedown", on);
     document.addEventListener("keydown", key);
@@ -5956,7 +6447,7 @@ function Popover({
       document.removeEventListener("keydown", key);
     };
   }, [open]);
-  const trig = cloneElement(trigger, {
+  const trig = /*#__PURE__*/cloneElement(trigger, {
     "aria-expanded": open,
     "aria-controls": id,
     "aria-haspopup": "dialog",
@@ -5967,12 +6458,12 @@ function Popover({
   });
   return /*#__PURE__*/React.createElement("span", {
     ref: root,
-    className: __ds_scope.cx("bds-pop", className)
+    className: cx("bds-pop", className)
   }, trig, open && /*#__PURE__*/React.createElement("div", {
     id: id,
     role: "dialog",
     "aria-label": typeof title === "string" ? title : undefined,
-    className: __ds_scope.cx("bds-pop__panel", "bds-pop__panel--" + side)
+    className: cx("bds-pop__panel", "bds-pop__panel--" + side)
   }, title && /*#__PURE__*/React.createElement("b", {
     className: "bds-pop__t"
   }, title), /*#__PURE__*/React.createElement("div", {
@@ -5984,12 +6475,9 @@ Object.assign(__ds_scope, { Popover });
 
 // components/overlay/Tooltip.jsx
 try { (() => {
-const {
-  cloneElement,
-  useId,
-  useState
-} = React;
-/** 범용 툴팁. 자식 하나를 감싸 hover/focus에 content를 보인다. 잘린 텍스트·아이콘 버튼 설명용. 상호작용 요소는 넣지 않는다. */
+const { cloneElement, useEffect, useId, useRef, useState } = React;
+const { cx } = __ds_scope;
+/** 범용 툴팁. 자식 하나를 감싸 hover/focus에 content를 보인다. Esc·blur·mouseleave로 닫힌다. 잘린 텍스트·아이콘 버튼 설명용. 상호작용 요소는 넣지 않는다. */
 function Tooltip({
   content,
   side = "top",
@@ -5999,28 +6487,37 @@ function Tooltip({
 }) {
   const [open, setOpen] = useState(false);
   const id = useId().replace(/:/g, "");
-  let t;
+  const t = useRef(null);
   const show = () => {
-    clearTimeout(t);
-    t = setTimeout(() => setOpen(true), delay);
+    clearTimeout(t.current);
+    t.current = setTimeout(() => setOpen(true), delay);
   };
   const hide = () => {
-    clearTimeout(t);
+    clearTimeout(t.current);
     setOpen(false);
   };
+  useEffect(() => () => clearTimeout(t.current), []);
+  useEffect(() => {
+    if (!open) return;
+    const onKey = e => {
+      if (e.key === "Escape") hide();
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
   const child = React.Children.only(children);
   return /*#__PURE__*/React.createElement("span", {
-    className: __ds_scope.cx("bds-tipwrap", className),
+    className: cx("bds-tipwrap", className),
     onMouseEnter: show,
     onMouseLeave: hide,
     onFocus: show,
     onBlur: hide
-  }, cloneElement(child, {
+  }, /*#__PURE__*/cloneElement(child, {
     "aria-describedby": open ? id : child.props["aria-describedby"]
   }), open && content != null && /*#__PURE__*/React.createElement("span", {
     role: "tooltip",
     id: id,
-    className: __ds_scope.cx("bds-tip", `bds-tip--${side}`)
+    className: cx("bds-tip", `bds-tip--${side}`)
   }, content));
 }
 Object.assign(__ds_scope, { Tooltip });
@@ -6031,6 +6528,7 @@ try { (() => {
 /* 문서 카드용 라이트/다크 토글. localStorage("bds-theme")로 모든 카드가 함께 바뀐다(storage 이벤트). 제품 코드에서는 :root.dark 클래스만 토글하면 된다. */
 (() => {
   const KEY = "bds-theme";
+  const standalone = /theme-toggle\.js(\?|$)/.test(document.currentScript?.src || "");
   const apply = t => {
     document.documentElement.classList.toggle("dark", t === "dark");
     document.querySelectorAll("bds-theme-toggle").forEach(el => el.render && el.render());
@@ -6063,7 +6561,7 @@ try { (() => {
     }
   }
   if (!customElements.get("bds-theme-toggle")) customElements.define("bds-theme-toggle", Toggle);
-  if (!document.querySelector("bds-theme-toggle")) {
+  if (standalone && !document.querySelector("bds-theme-toggle")) {
     const mount = () => {
       const el = document.createElement("bds-theme-toggle");
       el.style.cssText = "position:fixed;top:8px;right:14px;z-index:99;display:inline-block;width:auto";
@@ -6143,8 +6641,6 @@ __ds_ns.ErrorState = __ds_scope.ErrorState;
 __ds_ns.InlineMessage = __ds_scope.InlineMessage;
 
 __ds_ns.LoadingOverlay = __ds_scope.LoadingOverlay;
-
-__ds_ns.NOTIFICATION_DRAWER_ID = __ds_scope.NOTIFICATION_DRAWER_ID;
 
 __ds_ns.NotificationTrigger = __ds_scope.NotificationTrigger;
 
@@ -6268,4 +6764,8 @@ __ds_ns.Popover = __ds_scope.Popover;
 
 __ds_ns.Tooltip = __ds_scope.Tooltip;
 
+};
+
+if (window.React) __ds_run();
+else { let r; Object.defineProperty(window, "React", { configurable: true, get: () => r, set: (v) => { r = v; Object.defineProperty(window, "React", { value: v, writable: true, configurable: true, enumerable: true }); __ds_run(); } }); }
 })();

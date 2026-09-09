@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useId, useState } from "react";
 import { cx, frameStyle } from "../core/frame.js";
 import { Icon } from "../action/Icon.jsx";
 import { Checkbox } from "../input/Checkbox.jsx";
@@ -9,6 +9,7 @@ const hideCls = (c) => (c.hideBelow === "desktop" ? "d-hide" : c.hideBelow === "
  *  정렬은 표시만 하고 실제 정렬은 소비자가 rows에 반영한다. */
 export function DataTable({ columns = [], rows = [], rowKey, rowLabel, sort, onSortChange, selectable = false, selectedKeys = [], onSelectionChange, bulkActions, expandable, defaultExpandedKeys = [], header, empty = "표시할 항목이 없습니다.", fit = "flex", width, height, className, style, "aria-label": ariaLabel, ...rest }) {
   const [expanded, setExpanded] = useState(() => new Set(defaultExpandedKeys));
+  const autoId = useId(), hid = header?.id ?? autoId;
   const keyOf = rowKey ?? ((r, i) => r.id ?? i);
   const keys = rows.map((r, i) => keyOf(r, i));
   const sel = new Set(selectedKeys);
@@ -19,11 +20,11 @@ export function DataTable({ columns = [], rows = [], rowKey, rowLabel, sort, onS
   const requestSort = (key) => onSortChange?.(sort?.key === key ? { key, dir: sort.dir === "asc" ? "desc" : "asc" } : { key, dir: "asc" });
   return (
     <div className={cx("bds-table", className)} style={frameStyle({ fit, width, height, style })} {...rest}>
-      {header && <div className="bds-table__hd"><h2 id={header.id}>{header.title}</h2>{header.meta != null && <span>{header.meta}</span>}</div>}
+      {header && <div className="bds-table__hd"><h2 id={hid}>{header.title}</h2>{header.meta != null && <span>{header.meta}</span>}</div>}
       <div className="bds-table__wrap" style={height ? { overflow: "auto", minHeight: 0 } : undefined}>
         {selectable && selCount > 0 && <div className="bds-table__bulk"><b>{selCount}개 선택됨</b>{bulkActions}<button type="button" className="bds-table__clear" onClick={() => onSelectionChange?.([])}>선택 해제</button></div>}
         <div className="bds-table__scroll">
-          <table aria-label={ariaLabel}>
+          <table aria-label={ariaLabel} aria-labelledby={!ariaLabel && header ? hid : undefined}>
             <thead><tr>
               {selectable && <th scope="col" className="ck"><Checkbox aria-label="전체 선택" checked={all} indeterminate={selCount > 0 && !all} onChange={() => onSelectionChange?.(all ? [] : keys)} /></th>}
               {expandable && <th scope="col" className="ck" />}

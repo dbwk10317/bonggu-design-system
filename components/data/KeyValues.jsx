@@ -12,7 +12,7 @@ export function KeyValues({ rows = [], lined = false, className, ...rest }) {
         return (
           <div key={i} className="bds-kv__row">
             <span className="bds-kv__k">{k}</span>
-            <span className={cx("bds-kv__v bds-ellipsis", isMono && "bds-mono", v === NOT && "bds-kv__v--na")} style={v === NOT ? { color: "var(--text-3)", fontWeight: 400 } : undefined}>{v}</span>
+            <span className={cx("bds-kv__v bds-ellipsis", isMono && "bds-mono", v === NOT && "bds-kv__v--na")} title={typeof v === "string" || typeof v === "number" ? String(v) : undefined} style={v === NOT ? { color: "var(--ink-3)", fontWeight: 400 } : undefined}>{v}</span>
           </div>
         );
       })}

@@ -1,4 +1,4 @@
-ProgressBar — 업로드·등록 같은 "시작과 끝이 있는" 진행. 사용률 같은 비율은 Chart radial/BarList.
+ProgressBar · 업로드·등록 같은 "시작과 끝이 있는" 진행. 사용률 같은 비율은 Chart radial/BarList.
 
 ```jsx
 <ProgressBar label="ocr-finetune.zip" value={0.44} detail={<>4/9 청크 · <span className="bds-mono">42 MiB/s</span></>} />

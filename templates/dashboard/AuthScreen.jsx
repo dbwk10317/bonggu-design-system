@@ -26,7 +26,7 @@ function AuthScreen() {
             </Toolbar>
             <DataTable aria-label="사용자" rows={rows} rowKey={(r) => r.id} rowLabel={(r) => r.name} selectable selectedKeys={sel} onSelectionChange={setSel}
               bulkActions={<><Button size="sm" variant="secondary">역할 부여</Button><Button size="sm" variant="danger" onClick={() => setDel(sel.length)}>삭제</Button></>}
-              empty={<EmptyState plain title="검색 결과가 없습니다" description="다른 이름이나 이메일로 다시 검색해 보세요." />}
+              empty={<EmptyState plain title="검색 결과가 없습니다" description="다른 이름이나 이메일로 다시 검색하면 결과가 표시됩니다." />}
               columns={[{ key: "name", header: "이름", sortable: true, render: (r) => <b style={{ fontWeight: 600 }}>{r.name}</b> }, { key: "email", header: "이메일", hideBelow: "tablet", render: (r) => <span className="bds-mono">{r.email}</span> },
                 { key: "roles", header: "역할", render: (r) => <span className="kit-tags">{r.roles.map((x) => <Tag key={x}>{x}</Tag>)}</span> }, { key: "state", header: "상태", render: (r) => <StatusPill size="sm" tone={r.state === "활성" ? "ok" : "off"}>{r.state}</StatusPill> },
                 { key: "last", header: "마지막 로그인", align: "num", hideBelow: "desktop" }, { key: "act", header: "", render: (r) => <Button size="sm" variant="ghost" onClick={() => setModal(r)}>편집</Button> }]}
@@ -40,7 +40,7 @@ function AuthScreen() {
               columns={[{ key: "key", header: "키", render: (r) => <span className="bds-mono">{r.key}</span> }, { key: "desc", header: "설명" }, { key: "n", header: "할당", align: "num", render: (r) => `${r.n}명` }, { key: "act", header: "", render: () => <Button size="sm" variant="ghost">편집</Button> }]} />
           </>
         )}
-        {tab === "grants" && <EmptyState title="사용자를 먼저 선택하세요" description="사용자 탭에서 한 명을 고르면 역할 할당을 여기서 편집합니다." actions={<Button size="sm" onClick={() => setTab("users")}>사용자 탭으로</Button>} />}
+        {tab === "grants" && <EmptyState title="먼저 선택한 사용자가 필요합니다" description="사용자 탭에서 한 명을 고르면 역할 할당을 여기서 편집합니다." actions={<Button size="sm" onClick={() => setTab("users")}>사용자 탭으로</Button>} />}
       </PageStack>
       <FormModal open={!!modal} onClose={() => setModal(null)} onSubmit={save} busy={busy} title={modal === "create" ? "사용자 추가" : `${modal?.name} 편집`} description="변경은 ZITADEL에 즉시 저장됩니다." submitLabel={modal === "create" ? "추가" : "저장"}>
         <Field label="이름" required><TextField autoFocus defaultValue={modal?.name ?? ""} /></Field>

@@ -1,6 +1,7 @@
 /* 문서 카드용 라이트/다크 토글. localStorage("bds-theme")로 모든 카드가 함께 바뀐다(storage 이벤트). 제품 코드에서는 :root.dark 클래스만 토글하면 된다. */
 (() => {
   const KEY = "bds-theme";
+  const standalone = /theme-toggle\.js(\?|$)/.test(document.currentScript?.src || "");
   const apply = (t) => { document.documentElement.classList.toggle("dark", t === "dark"); document.querySelectorAll("bds-theme-toggle").forEach((el) => el.render && el.render()); };
   const get = () => { try { return localStorage.getItem(KEY) || "light"; } catch { return "light"; } };
   apply(get());
@@ -14,7 +15,7 @@
     }
   }
   if (!customElements.get("bds-theme-toggle")) customElements.define("bds-theme-toggle", Toggle);
-  if (!document.querySelector("bds-theme-toggle")) {
+  if (standalone && !document.querySelector("bds-theme-toggle")) {
     const mount = () => { const el = document.createElement("bds-theme-toggle"); el.style.cssText = "position:fixed;top:8px;right:14px;z-index:99;display:inline-block;width:auto"; document.body.appendChild(el); };
     document.body ? mount() : document.addEventListener("DOMContentLoaded", mount);
   }

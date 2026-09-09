@@ -1,4 +1,4 @@
-<!-- @dsCard group="Components" viewport="1100x160" name="Brand · MascotMark" subtitle="봉구 표정 9종 (기존 시스템에서 유일하게 이관)" -->
+<!-- @dsCard group="Components" viewport="1100x720" name="Brand · MascotMark" subtitle="봉구 표정 8종 + blank · 7단계 크기" -->
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><title>MascotMark</title><link rel="stylesheet" href="../../styles.css"><script src="../../theme-toggle.js" defer></script>
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
@@ -9,8 +9,10 @@
 <script type="text/babel">
 const NS = window.Ds_d3ea90;
 
-const { MascotMark } = NS;
+const { MascotMark, Grid } = NS;
 const faces = ["neutral","curious","surprised","smiling","crying","worried","sleepy","excited","blank"];
-function App(){ return <div className="row" style={{gap:18,justifyContent:"space-between"}}>{faces.map(f => <div key={f} style={{display:"grid",gap:6,justifyItems:"center"}}><MascotMark face={f} size={44} /><span className="bds-mono" style={{fontSize:11,color:"var(--text-3)"}}>{f}</span></div>)}</div>; }
+const sizes = {xxs:16,xs:24,sm:32,md:48,lg:64,xl:96,xxl:128};
+const labels = ['기본','궁금','놀람','미소','울음','걱정','졸림','신남','얼굴 없음'];
+function App(){ return <div className="sec"><h1 style={{fontSize:'var(--fs-title)'}}>봉구 마스코트</h1><p>기본 크기는 MD 48px입니다. 표정은 24px 이상에서 사용합니다.</p><div className="row" style={{gap:'var(--sp-5)',alignItems:'end'}}>{Object.entries(sizes).map(([s,n])=><div key={s} style={{display:'grid',justifyItems:'center',gap:'var(--sp-2)'}}><MascotMark size={s}/><span className="bds-mono">{s.toUpperCase()} · {n}px</span></div>)}</div><Grid cols={3}>{faces.map((f,i)=><div key={f} style={{border:'1px solid var(--line)',borderRadius:'var(--radius-panel)',padding:'var(--panel-pad)',display:'grid',gap:'var(--sp-3)'}}><div className="row"><MascotMark face={f}/><span>{labels[i]} · <span className="bds-mono">{f}</span></span></div><div className="row">{Object.entries(sizes).map(([s,n])=><div key={s} style={{display:'grid',justifyItems:'center',gap:'var(--sp-1)'}}><MascotMark face={f} size={s} animated={false}/><span className="bds-mono" style={{fontSize:'var(--fs-caption)'}}>{n}</span></div>)}</div></div>)}</Grid></div>; }
 ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
 </script></body></html>

@@ -1,4 +1,4 @@
-Button — 행동을 일으키는 버튼. 한 화면에 primary는 하나, 파괴적 행동은 danger, 보조는 ghost.
+Button · 행동을 일으키는 버튼. 한 화면에 primary는 하나, 파괴적 행동은 danger, 보조는 ghost.
 
 ```jsx
 <Button variant="primary" icon="check" onClick={apply}>적용</Button>

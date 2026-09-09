@@ -1,4 +1,4 @@
-SidebarShell — 대시보드 화면의 바깥 틀. 부모가 100dvh를 준다. 사이드바는 1024 미만에서 드로어.
+SidebarShell · 대시보드 화면의 바깥 틀. 부모가 100dvh를 준다. 사이드바는 1024 미만에서 드로어.
 
 ```jsx
 <div style={{height:"100dvh"}}>
@@ -11,3 +11,4 @@ SidebarShell — 대시보드 화면의 바깥 틀. 부모가 100dvh를 준다. 
   <PageStack>…</PageStack>
 </SidebarShell></div>
 ```
+- 1024 미만 드로어가 열리면 포커스가 닫기 버튼으로 옮겨지고, 닫히면 햄버거로 돌아간다.

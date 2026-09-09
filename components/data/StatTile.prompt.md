@@ -1,4 +1,4 @@
-StatTile — 큰 수치 하나(활성 모델 3개, 요청 12,480건). 숫자면 mono+카운트업, delta로 증감, spark로 추세.
+StatTile · 큰 수치 하나(활성 모델 3개, 요청 12,480건). 숫자면 mono(천 단위)로 즉시 갱신, delta로 증감, spark로 추세.
 
 ```jsx
 <div className="bds-metric-grid">
@@ -7,6 +7,8 @@ StatTile — 큰 수치 하나(활성 모델 3개, 요청 12,480건). 숫자면 
   <StatTile label="프로세스 자동 제어" value="사용 중" flat />
 </div>
 ```
+
+- 기본은 트랜지션 없이 즉시 바뀐다(실시간 수치용). 진입 카운트업이 필요한 정적 요약에서만 animate={true}.
 
 허전하지 않게: 수치 하나만 두지 말고 detail(무엇이 3개인지: Tag 나열)·pill(상태)·spark(추세) 중 하나 이상을 붙인다.
 ```jsx

@@ -1,4 +1,4 @@
-Divider — 1px --line 구분선. 섹션 사이 여백 대용으로 남용하지 않는다.
+Divider · 1px --line 구분선. 섹션 사이 여백 대용으로 남용하지 않는다.
 
 ```jsx
 <Divider />

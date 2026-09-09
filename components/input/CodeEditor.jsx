@@ -17,7 +17,8 @@ export function CodeEditor({ value, defaultValue = "", onChange, onValidChange, 
   }, [v, language]);
   const set = (s) => { setInner(s); onChange?.(s); };
   const onKey = (e) => {
-    if (e.key === "Tab" && !readOnly) { e.preventDefault(); const t = e.currentTarget, s = t.selectionStart, en = t.selectionEnd; const next = v.slice(0, s) + "  " + v.slice(en); set(next); requestAnimationFrame(() => { t.selectionStart = t.selectionEnd = s + 2; }); }
+    /* Tab은 들여쓰기, Shift+Tab은 가로채지 않아 키보드로 빠져나갈 수 있다 */
+    if (e.key === "Tab" && !e.shiftKey && !readOnly) { e.preventDefault(); const t = e.currentTarget, s = t.selectionStart, en = t.selectionEnd; const next = v.slice(0, s) + "  " + v.slice(en); set(next); requestAnimationFrame(() => { t.selectionStart = t.selectionEnd = s + 2; }); }
   };
   return (
     <div className={cx("bds-code-ed", err && "bds-code-ed--err", disabled && "bds-ctl--disabled", className)} style={frameStyle({ fit, width, height, style })}>

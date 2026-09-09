@@ -9,7 +9,9 @@ export function DropdownMenu({ items = [], trigger, align = "end", size = "sm", 
   const [idx, setIdx] = useState(-1);
   const root = useRef(null), uid = useId().replace(/:/g, "");
   const enabled = items.map((it, i) => (it !== "-" && !it.disabled ? i : -1)).filter((i) => i >= 0);
-  useEffect(() => { if (!open) return; const on = (e) => { if (!root.current?.contains(e.target)) setOpen(false); }; const key = (e) => { if (e.key === "Escape") setOpen(false); }; document.addEventListener("mousedown", on); document.addEventListener("keydown", key); return () => { document.removeEventListener("mousedown", on); document.removeEventListener("keydown", key); }; }, [open]);
+  /* 닫힐 때 포커스를 트리거로 돌린다(메뉴 항목이 언마운트되면 포커스가 body로 떨어진다) */
+  const close = () => { setOpen(false); root.current?.querySelector("[aria-haspopup]")?.focus(); };
+  useEffect(() => { if (!open) return; const on = (e) => { if (!root.current?.contains(e.target)) setOpen(false); }; const key = (e) => { if (e.key === "Escape") close(); }; document.addEventListener("mousedown", on); document.addEventListener("keydown", key); return () => { document.removeEventListener("mousedown", on); document.removeEventListener("keydown", key); }; }, [open]);
   useEffect(() => { if (open) root.current?.querySelector(`#${uid}-${idx}`)?.focus(); }, [idx, open, uid]);
   const onKey = (e) => {
     if (!open && (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ")) { e.preventDefault(); setOpen(true); setIdx(enabled[0] ?? -1); return; }
@@ -17,8 +19,11 @@ export function DropdownMenu({ items = [], trigger, align = "end", size = "sm", 
     const p = enabled.indexOf(idx);
     if (e.key === "ArrowDown") { e.preventDefault(); setIdx(enabled[(p + 1) % enabled.length]); }
     else if (e.key === "ArrowUp") { e.preventDefault(); setIdx(enabled[(p - 1 + enabled.length) % enabled.length]); }
+    else if (e.key === "Home") { e.preventDefault(); setIdx(enabled[0]); }
+    else if (e.key === "End") { e.preventDefault(); setIdx(enabled[enabled.length - 1]); }
+    else if (e.key === "Tab") setOpen(false);
   };
-  const pick = (it) => { if (it.disabled) return; setOpen(false); it.onSelect?.(); };
+  const pick = (it) => { if (it.disabled) return; close(); it.onSelect?.(); };
   const trig = trigger ? React.cloneElement(trigger, { "aria-haspopup": "menu", "aria-expanded": open, "aria-controls": `${uid}-menu`, onClick: (e) => { trigger.props.onClick?.(e); setOpen((o) => !o); }, onKeyDown: onKey }) : <IconButton icon="dots-three" size={size} variant="ghost" aria-label={ariaLabel} aria-haspopup="menu" aria-expanded={open} aria-controls={`${uid}-menu`} onClick={() => setOpen((o) => !o)} onKeyDown={onKey} />;
   return (
     <span ref={root} className={cx("bds-menu", className)}>

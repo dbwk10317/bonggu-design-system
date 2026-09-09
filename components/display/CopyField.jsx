@@ -16,6 +16,7 @@ export function CopyField({ value, label, multiline = false, secret = false, cop
         <div className="bds-copy__act">
           {secret && <button type="button" className="bds-copy__btn" aria-label={shown ? "숨기기" : "보기"} aria-pressed={shown} onClick={() => setShown((s) => !s)}><Icon name={shown ? "eye-slash" : "eye"} size={14} /></button>}
           <button type="button" className={cx("bds-copy__btn", copied && "bds-copy__btn--ok")} onClick={copy}><Icon name={copied ? "check" : "copy"} size={14} /><span>{copied ? copiedLabel : copyLabel}</span></button>
+          <span className="bds-sr" role="status">{copied ? copiedLabel : ""}</span>
         </div>
       </div>
     </div>
