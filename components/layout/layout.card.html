@@ -1,0 +1,37 @@
+<!-- @dsCard group="Components" viewport="1100x740" name="Layout" subtitle="PageStack · PageHeader · Panel · CardHead · Toolbar · Grid/GridItem · StatusBar · Container · Stack · Inline · Spacer · Divider · AspectRatio · Visible" -->
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>Layout</title><link rel="stylesheet" href="../../styles.css"><script src="../../theme-toggle.js" defer></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{padding:24px;display:grid;gap:24px;align-content:start}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px;align-items:start}.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px}.lbl{font-size:12.5px;font-weight:500;color:var(--text-3);margin-bottom:10px}.sec{display:grid;gap:10px;min-width:0}.hd{font-size:14px;color:var(--text);font-weight:700;padding-top:8px;border-top:1px solid var(--line)}.box{border:1px dashed var(--line-strong);border-radius:var(--r-sm);padding:8px 10px;font-size:12px;color:var(--text-2);background:var(--canvas-sunken);font-family:var(--font-mono)}</style></head>
+<body><div id="root"></div>
+<script type="text/babel">
+const NS = window.Ds_d3ea90;
+
+const { PageStack, PageHeader, Panel, CardHead, Toolbar, ToolbarGrow, Grid, GridItem, StatusBar, Container, Stack, Inline, Spacer, Divider, AspectRatio, Visible, Button, SearchField, Select } = NS;
+function App(){ const [q,setQ]=React.useState(""); return <>
+  <PageStack>
+    <PageHeader title="인증" description="사용자, 프로젝트 역할, 사용자별 역할 할당을 관리합니다." actions={<Button variant="primary" icon="plus">사용자 추가</Button>} />
+    <Toolbar end={<Button size="sm" variant="secondary" icon="funnel">필터</Button>}><ToolbarGrow><SearchField value={q} onChange={setQ} placeholder="사용자 검색" /></ToolbarGrow><Select fit="auto" defaultValue="all" options={[{value:"all",label:"모든 역할"},{value:"admin",label:"admin"}]} /></Toolbar>
+    <Grid cols={3}>
+      <Panel enter><CardHead title="기본 카드" meta="Panel + CardHead" /><p style={{fontSize:13,color:"var(--text-2)"}}>층 구분은 보더로, 그림자 없음. 한글 본문은 어절 단위로만 줄이 바뀝니다.</p></Panel>
+      <Panel caption="캡션 카드" sunken><p style={{fontSize:13,color:"var(--text-2)"}}>sunken은 중첩된 안쪽 패널에.</p></Panel>
+      <Panel interactive selected><CardHead title="선택된 카드" meta="selected" /><p style={{fontSize:13,color:"var(--text-2)"}}>클릭 가능하면 interactive, 선택되면 시그널 링.</p></Panel>
+    </Grid>
+    <div style={{margin:"0 -24px"}}><StatusBar live={{label:"실시간"}} items={["연결됨","업타임 12d 04:31"]} right={["수집 주기 1s","18:42:07"]} /></div>
+  </PageStack>
+  <div className="hd">프리미티브 · Grid columns/GridItem · Stack · Inline · Spacer · Divider · Container · AspectRatio · Visible</div>
+  <div className="two">
+    <div className="sec"><div className="lbl">Grid columns={12} + GridItem span · 격자 900 미만이면 spanMd</div>
+      <Grid columns={12}><GridItem span={8} spanMd={12}><div className="box" style={{height:56}}>span 8 · 넓은 차트</div></GridItem><GridItem span={4} spanMd={12}><div className="box" style={{height:56}}>span 4 · 요약</div></GridItem><GridItem span={4}><div className="box">4</div></GridItem><GridItem span={4}><div className="box">4</div></GridItem><GridItem span={4}><div className="box">4</div></GridItem></Grid></div>
+    <div className="sec"><div className="lbl">Stack gap={3} · Inline gap={2} · Spacer · Divider</div>
+      <Panel><Stack gap={3}><Inline><CardHead title="ai-hub" meta="ops" /><Spacer /><Button size="sm">편집</Button><Button size="sm" variant="primary">재시작</Button></Inline><Divider /><Inline gap={2}><span className="box">Inline</span><span className="box">wrap</span><Divider vertical /><span className="box">gap 8</span></Inline><Divider label="고급" /><div className="box">Stack 자식 · gap 12</div></Stack></Panel></div>
+  </div>
+  <div className="two">
+    <div className="sec"><div className="lbl">AspectRatio 4/3 · 16/9</div><div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:12}}><AspectRatio ratio="4/3"><div className="box" style={{display:"grid",placeItems:"center",borderRadius:0}}>LCD 4:3</div></AspectRatio><AspectRatio><div className="box" style={{display:"grid",placeItems:"center",borderRadius:0}}>16:9</div></AspectRatio></div></div>
+    <div className="sec"><div className="lbl">Container narrow(760) · Visible above/below md</div><Container narrow><div className="box" style={{textAlign:"center"}}>Container narrow · max 760 · 중앙</div></Container><Inline><Visible above="md"><span className="box">≥768에서만 보임</span></Visible><Visible below="md"><span className="box">&lt;768에서만 보임</span></Visible></Inline></div>
+  </div>
+</>; }
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script></body></html>

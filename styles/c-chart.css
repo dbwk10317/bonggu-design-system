@@ -1,0 +1,35 @@
+/* chart: 모든 차트가 한 크롬을 공유한다(격자·축·범례·툴팁). 색은 --chart-n만. 진입 모션은 그리기 1회. */
+.bds-chart{position:relative;display:grid;gap:10px;min-width:0;container-type:inline-size}
+.bds-chart__stage{position:relative;min-width:0;width:100%}
+.bds-chart__svg{display:block;width:100%;height:100%;overflow:visible}
+.bds-chart__grid{stroke:var(--chart-grid);stroke-width:1;shape-rendering:crispEdges}
+.bds-chart__tick{fill:var(--plot-axis-ink);font-family:var(--font-data);font-size:10.5px;letter-spacing:var(--ls-data);font-variant-numeric:tabular-nums}
+.bds-chart__cursor{stroke:var(--border-strong);stroke-width:1;stroke-dasharray:3 3}
+.bds-chart__line{fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.bds-chart--animate .bds-chart__line{stroke-dasharray:var(--draw-len);stroke-dashoffset:var(--draw-len);animation:bds-draw var(--dur-draw) var(--ease-out) forwards}
+.bds-chart--animate .bds-chart__area{animation:bds-fade var(--dur-draw) var(--ease-out) both}
+.bds-chart__bar{transform-box:fill-box;transform-origin:bottom;transition:opacity var(--dur-1) var(--ease-out)}
+.bds-chart--animate .bds-chart__bar{animation:bds-grow-y var(--dur-draw) var(--ease-out) both}
+.bds-chart__dot{stroke:var(--surface);stroke-width:2}
+.bds-chart__legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:var(--text-xs);color:var(--text-2);margin:0;padding:0}
+.bds-chart__legend li{display:inline-flex;align-items:center;gap:6px;min-width:0}
+.bds-chart__legend i{width:8px;height:8px;border-radius:2px;flex:none}
+.bds-chart__legend .bds-mono{color:var(--text-3)}
+.bds-chart__tip{position:absolute;top:8px;transform:translateX(12px);z-index:2;pointer-events:none;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r-sm);padding:8px 10px;box-shadow:var(--sh-2);min-width:120px;max-width:min(260px,90%);font-size:var(--text-xs);animation:bds-fade var(--dur-1) var(--ease-out)}
+.bds-chart__tip--flip{transform:translateX(calc(-100% - 12px))}
+.bds-chart__tip-t{color:var(--text-3);font-family:var(--font-mono);margin-bottom:4px}
+.bds-chart__tip-row{display:flex;align-items:center;gap:6px;justify-content:space-between}
+.bds-chart__tip-row i{width:8px;height:8px;border-radius:2px;flex:none}
+.bds-chart__tip-row .n{color:var(--text-2);flex:1;min-width:0}
+.bds-chart__tip-row .v{font-family:var(--font-mono);font-variant-numeric:tabular-nums;color:var(--text)}
+.bds-chart__empty{display:grid;place-items:center;min-height:80px;color:var(--text-3);font-size:var(--text-xs);border:1px dashed var(--border);border-radius:var(--r-sm)}
+.bds-chart__track{stroke:var(--track)}
+.bds-chart__arc{transition:stroke-dashoffset var(--dur-draw) var(--ease-out)}
+.bds-chart__center{position:absolute;inset:0;display:grid;place-content:center;text-align:center;pointer-events:none;gap:2px}
+.bds-chart__center b{font-family:var(--font-mono);font-variant-numeric:tabular-nums;font-weight:var(--weight-bold);color:var(--text);line-height:1;font-size:var(--center-size,22px);letter-spacing:-.02em}
+.bds-chart__center small{font-size:var(--text-2xs);color:var(--text-3);line-height:1.2}
+.bds-chart--radial .bds-chart__center{align-content:center}
+.bds-chart__pieseg{transition:opacity var(--dur-1) var(--ease-out)}
+.bds-chart--animate .bds-chart__pieseg{animation:bds-fade var(--dur-draw) var(--ease-out) both}
+.bds-chart__radar-grid{fill:none;stroke:var(--chart-grid);stroke-width:1}
+.bds-spark{display:block;width:100%;height:100%;overflow:visible}

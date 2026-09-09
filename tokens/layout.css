@@ -1,0 +1,45 @@
+/* 간격·형태·모션·레이아웃 토큰 + 컴포넌트 별칭.
+   브레이크포인트 4단(뷰포트): sm 640 · md 768 · lg 1024 · xl 1380. media 쿼리는 리터럴로 쓰고 아래 토큰은 문서·JS용이다.
+   컨테이너 5단(@container, 컴포넌트 접힘 기준): xs 240 · sm 320 · md 480 · lg 640 · xl 900. */
+:root{
+  --sp-0:0; /* @kind spacing */
+  --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:20px;--sp-6:24px;--sp-7:32px;--sp-8:40px;--sp-9:48px;--sp-10:64px;
+  --grid-gap:14px;--panel-pad:16px;--page-pad:20px;--kv-gap:6px;--inline-gap:8px;
+  --radius-ctl:6px;--radius-panel:10px;--radius-sheet:14px;--radius-pill:999px;
+  --h-ctl-sm:28px;--h-ctl:32px;--h-ctl-lg:40px;--h-touch:44px;--line-w:1px;
+  --bp-sm:640px;--bp-md:768px;--bp-lg:1024px;--bp-xl:1380px;
+  --cq-xs:240px;--cq-sm:320px;--cq-md:480px;--cq-lg:640px;--cq-xl:900px;
+  --safe-top:env(safe-area-inset-top,0px);--safe-right:env(safe-area-inset-right,0px);--safe-bottom:env(safe-area-inset-bottom,0px);--safe-left:env(safe-area-inset-left,0px);
+  --ease-out:cubic-bezier(.2,.8,.2,1); /* @kind other */
+  --ease-in-out:cubic-bezier(.4,0,.2,1); /* @kind other */
+  --dur-fast:120ms; /* @kind other */
+  --dur-base:180ms; /* @kind other */
+  --dur-slow:260ms; /* @kind other */
+  --dur-gauge:600ms; /* @kind other */
+  --dur-theme:200ms; /* @kind other */
+  --rail-w:228px;--bar-h:48px;--tabs-h:44px;--content-max:1440px;--content-narrow:760px;--status-h:28px;
+  --z-sticky:10; /* @kind other */
+  --z-drawer:40; /* @kind other */
+  --z-modal:50; /* @kind other */
+  --z-toast:60; /* @kind other */
+  --z-tip:70; /* @kind other */
+  /* 컴포넌트 별칭: --space-N은 --sp-N과 1:1 */
+  --space-1:var(--sp-1);--space-2:var(--sp-2);--space-3:var(--sp-3);--space-4:var(--sp-4);--space-5:var(--sp-5);--space-6:var(--sp-6);--space-7:var(--sp-7);--space-8:var(--sp-8);--space-9:var(--sp-9);--space-10:var(--sp-10);
+  --gutter:var(--page-pad); /* @kind spacing */
+  --stack:var(--grid-gap); /* @kind spacing */
+  --card-gap:var(--grid-gap);--card-pad:var(--panel-pad);
+  --r-sm:var(--radius-ctl);--r-md:var(--radius-panel);--r-lg:var(--radius-sheet);--r-pill:var(--radius-pill);
+  --ease-spring:var(--ease-out); /* @kind other */
+  --dur-1:var(--dur-fast); /* @kind other */
+  --dur-2:var(--dur-base); /* @kind other */
+  --dur-3:var(--dur-slow); /* @kind other */
+  --dur-draw:var(--dur-gauge); /* @kind other */
+  --sidebar-w:var(--rail-w);--topbar-h:var(--bar-h);--statusbar-h:var(--status-h);
+  --control-h:var(--h-ctl);--control-h-sm:var(--h-ctl-sm);--control-h-lg:var(--h-ctl-lg);
+}
+/* 모바일(<768): 여백 한 단계 축소 */
+@media (width < 768px){:root{--panel-pad:14px;--page-pad:16px;--grid-gap:12px}}
+/* 터치 기기: 컨트롤 최소 44 */
+@media (pointer:coarse){:root{--h-ctl-sm:36px;--h-ctl:44px;--h-ctl-lg:48px}}
+/* 밀도: <html data-density="compact"> 표·운영 콘솔용. 글자 크기는 줄이지 않는다 */
+:root[data-density="compact"]{--panel-pad:12px;--grid-gap:10px;--kv-gap:4px;--inline-gap:6px;--h-ctl-sm:24px;--h-ctl:28px;--h-ctl-lg:36px}

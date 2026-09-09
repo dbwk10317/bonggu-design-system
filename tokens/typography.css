@@ -1,0 +1,26 @@
+/* 스타일가이드 타이포. UI·본문 Spoqa Han Sans Neo, 수치·코드·식별자 JetBrains Mono. 두 서체 역할을 바꾸지 않는다.
+   한글 자간 0(음수 금지), keep-all, 본문 14 이하로 내리지 않는다. 11.5 미만은 mono 단위·타임스탬프만. */
+:root{
+  --font-ui:"Spoqa Han Sans Neo","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --font-data:"JetBrains Mono","SF Mono",Menlo,Consolas,monospace;
+  --font-mono:var(--font-data);
+  --fs-display:28px;--fs-title:20px;--fs-heading:16px;--fs-subheading:14.5px;--fs-body:14px;--fs-label:12.5px;--fs-caption:11.5px;--fs-micro:10.5px;
+  --fs-metric:24px;--fs-metric-sm:19px;--fs-metric-lg:36px;
+  --lh-tight:1.1; /* @kind font */
+  --lh-snug:1.3; /* @kind font */
+  --lh-body:1.55; /* @kind font */
+  --lh-relaxed:1.7; /* @kind font */
+  --fw-light:300; /* @kind font */
+  --fw-regular:400; /* @kind font */
+  --fw-medium:500; /* @kind font */
+  --fw-bold:700; /* @kind font */
+  --ls-ui:0; /* @kind font */
+  --ls-data:0.01em; /* @kind font */
+  --ls-caps:0.06em; /* @kind font */
+  /* 컴포넌트 별칭 */
+  --text-2xs:var(--fs-micro);--text-xs:var(--fs-caption);--text-sm:var(--fs-label);--text-md:var(--fs-body);--text-lg:var(--fs-heading);--text-xl:var(--fs-title);--text-2xl:var(--fs-metric);--text-3xl:var(--fs-metric-lg);
+  --leading-tight:var(--lh-tight);--leading-snug:var(--lh-snug);--leading-body:var(--lh-body);
+  --tracking-tight:0;--tracking-caps:var(--ls-caps);
+  --weight-regular:400;--weight-medium:500;--weight-semibold:500;--weight-bold:700;
+}
+@media (width < 768px){:root{--fs-display:24px;--fs-title:18px;--fs-metric:22px;--fs-metric-lg:30px}}

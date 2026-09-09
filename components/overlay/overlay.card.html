@@ -1,0 +1,34 @@
+<!-- @dsCard group="Components" viewport="1100x740" name="Overlay" subtitle="Modal · FormModal · Drawer · Popover · Tooltip · DropdownMenu" -->
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>Overlay</title><link rel="stylesheet" href="../../styles.css"><script src="../../theme-toggle.js" defer></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{padding:24px;display:grid;gap:24px;align-content:start}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px;align-items:start}.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px}.lbl{font-size:12.5px;font-weight:500;color:var(--text-3);margin-bottom:10px}.sec{display:grid;gap:10px;min-width:0}.hd{font-size:14px;color:var(--text);font-weight:700;padding-top:8px;border-top:1px solid var(--line)}</style></head>
+<body><div id="root"></div>
+<script type="text/babel">
+const NS = window.Ds_d3ea90;
+
+const { Modal, FormModal, Drawer, Popover, Tooltip, DropdownMenu, Button, IconButton, Field, TextField, Select, Panel, DescriptionList, StatusPill, CopyField } = NS;
+function App(){ const [open,setOpen]=React.useState(false); return <>
+  <div className="row" style={{gap:24,alignItems:"flex-start"}}>
+    <div className="sec"><div className="lbl">Tooltip · 설명 한 줄, 상호작용 없음</div><div className="row"><Tooltip content="다크 테마로"><IconButton icon="moon" variant="ghost" aria-label="다크 테마로" /></Tooltip><Tooltip content="알림 3개 · 미확인 2" side="bottom"><IconButton icon="bell" variant="ghost" aria-label="알림" /></Tooltip><Tooltip content="bgt_9f2c1e7a4b8d3f60a1c5" side="right"><span className="bds-mono" style={{fontSize:12.5,borderBottom:"1px dotted var(--line-strong)"}}>bgt_9f2c…</span></Tooltip></div></div>
+    <div className="sec"><div className="lbl">DropdownMenu · 행 액션 3개 이상</div><div className="row"><DropdownMenu items={[{label:"관리",icon:"gear-six"},{label:"호출 예시 복사",icon:"copy"},{label:"로그 보기",icon:"scroll",shortcut:"L"},"-",{label:"목록에서 제거",icon:"trash",danger:true}]} /><DropdownMenu align="start" trigger={<Button variant="secondary" icon="caret-down">내보내기</Button>} items={[{label:"CSV",icon:"file-csv"},{label:"JSON",icon:"file-code"},{label:"PNG (그래프)",icon:"image",disabled:true}]} /></div></div>
+    <div className="sec"><div className="lbl">Popover · 클릭 설명 패널</div><div className="row"><Popover trigger={<IconButton icon="info" aria-label="임계 설명" size="sm" variant="ghost" />} title="임계 기준">0~70 정상 · 70~90 주의 · 90 이상 위험. 값 텍스트도 같은 색을 씁니다.</Popover><span style={{fontSize:12,color:"var(--text-3)"}}>← 클릭</span></div></div>
+    <div className="sec"><div className="lbl">Drawer · 목록 옆 상세</div><Button variant="primary" onClick={()=>setOpen(true)}>학습 실행 상세 열기</Button></div>
+  </div>
+  <div className="two" style={{gridTemplateColumns:"minmax(0,1fr) minmax(0,1.3fr)"}}>
+    <div className="sec"><div className="lbl">Modal · sm (인라인 렌더)</div><Modal open size="sm" title="명령이 처리되지 않았습니다" description="motherboard: 데몬이 명령을 거부했습니다. 하드웨어 상태를 확인한 뒤 다시 시도합니다." actions={<Button variant="primary">확인</Button>} onClose={()=>{}} /></div>
+    <div className="sec"><div className="lbl">FormModal · submitLabel은 동사</div><FormModal open title="사용자 추가" description="새 사용자를 만듭니다." submitLabel="추가" onClose={()=>{}} onSubmit={()=>{}}>
+      <Field label="이름" required><TextField defaultValue="서연호" /></Field>
+      <Field label="이메일" required><TextField type="email" placeholder="name@example.com" /></Field>
+      <Field label="역할"><Select defaultValue="viewer" options={[{value:"admin",label:"admin"},{value:"viewer",label:"viewer"}]} /></Field>
+    </FormModal></div>
+  </div>
+  <Drawer open={open} onClose={()=>setOpen(false)} size="md" title="학습 실행 상세" description="run-0913-a · 09-08 18:42" actions={<><Button variant="ghost" onClick={()=>setOpen(false)}>닫기</Button><Button variant="danger">학습 중지</Button></>}>
+    <Panel caption="실행 정보" padding="sm"><DescriptionList items={[{term:"상태",detail:<StatusPill size="sm" tone="ok">실행 중</StatusPill>},{term:"프로젝트 revision",detail:"rev_0913",mono:true},{term:"recipe",detail:"finetune"},{term:"우선순위",detail:"standard"}]} /></Panel>
+    <CopyField label="run id" value="run-0913-a" />
+  </Drawer>
+</>; }
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script></body></html>

@@ -1,0 +1,23 @@
+import React, { useEffect, useRef } from "react";
+import { cx, frameStyle } from "../core/frame.js";
+import { Icon } from "../action/Icon.jsx";
+
+/** 검색 입력. `/` 단축키로 포커스, 값이 있으면 지우기 버튼. onSearch(value)는 Enter에 호출. */
+export function SearchField({ value, onChange, onSearch, placeholder = "검색", shortcut = true, size = "md", fit = "flex", width, className, style, "aria-label": ariaLabel = "검색", ...rest }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    if (!shortcut) return;
+    const onKey = (e) => { if (e.key === "/" && !/input|textarea|select/i.test(document.activeElement?.tagName ?? "")) { e.preventDefault(); ref.current?.focus(); } };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [shortcut]);
+  return (
+    <div className={cx("bds-ctl bds-search", size === "sm" && "bds-ctl--sm", className)} style={frameStyle({ fit, width, style })} role="search">
+      <span className="bds-ctl__affix"><Icon name="magnifying-glass" size={15} /></span>
+      <input ref={ref} type="search" value={value} onChange={(e) => onChange?.(e.target.value, e)} placeholder={placeholder} aria-label={ariaLabel}
+        onKeyDown={(e) => { if (e.key === "Enter") onSearch?.(e.currentTarget.value); if (e.key === "Escape") onChange?.("", e); }} {...rest} />
+      {value ? <button type="button" className="bds-ctl__affix" aria-label="검색어 지우기" style={{ border: 0, background: "none", padding: 0, cursor: "pointer" }} onClick={(e) => onChange?.("", e)}><Icon name="x-circle" size={15} /></button>
+        : shortcut && <span className="bds-ctl__affix bds-ctl__kbd" aria-hidden="true">/</span>}
+    </div>
+  );
+}
