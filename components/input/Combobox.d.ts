@@ -12,6 +12,8 @@ export interface ComboboxProps extends Omit<HTMLAttributes<HTMLDivElement>, "onC
   width?: number | string;
   disabled?: boolean;
   invalid?: boolean;
+  /** Field.required를 재정의하는 접근성 상태. 제출 시 선택 value 검증은 폼에서 수행한다. */
+  required?: boolean;
   clearable?: boolean;
   "aria-label"?: string;
 }

@@ -25,7 +25,7 @@ function Tip({ x, w, title, rows }) {
   return (
     <div className={cx("bds-chart__tip", flip && "bds-chart__tip--flip")} style={{ left: x }}>
       {title != null && <div className="bds-chart__tip-t">{title}</div>}
-      {rows.map((r, i) => <div key={i} className="bds-chart__tip-row"><i style={{ background: r.color }} /><span className="n bds-ellipsis">{r.name}</span><span className="v">{r.value}</span></div>)}
+      {rows.map((r, i) => <div key={i} className="bds-chart__tip-row"><i style={{ background: r.color }} /><span className="n bds-ellipsis">{r.name}</span><span className="v" style={r.value === MISSING ? { fontFamily: "var(--font-ui)" } : undefined}>{r.value}</span></div>)}
     </div>
   );
 }
@@ -51,7 +51,7 @@ function Cartesian({ kind, labels, series, fmt, uid, xTicks, w, h, thresholds = 
   const showX = (i) => xTicks !== "none" && (xTicks === "ends" ? i === 0 || i === n - 1 : i % every === 0 || i === n - 1);
   const groupW = Math.min(28, bandW * 0.62 / (stacked ? 1 : series.length));
   const onMove = (e) => { const r = e.currentTarget.getBoundingClientRect(); const px = ((e.clientX ?? e.touches?.[0]?.clientX) - r.left); const i = kind === "bar" ? Math.floor((px - padL) / bandW) : Math.round((px - padL) / (step || 1)); setHover(Math.max(0, Math.min(n - 1, i))); };
-  const rows = hover == null ? [] : series.flatMap((s, si) => (s.values[hover] == null ? [] : [{ color: toneVar(s.tone, si), name: s.label, value: fmt(s.values[hover]) }]));
+  const rows = hover == null ? [] : series.map((s, si) => ({ color: toneVar(s.tone, si), name: s.label, value: cell(fmt, s.values[hover]) }));
   return (
     <>
       <svg viewBox={`0 0 ${w} ${h}`} width={w} height={h} className="bds-chart__svg" onMouseMove={onMove} onTouchStart={onMove} onTouchMove={onMove} onMouseLeave={() => setHover(null)} aria-hidden="true">
@@ -145,11 +145,20 @@ function Radar({ axes, series, max, fmt, w, h, hover, setHover }) {
       <svg viewBox={`0 0 ${w} ${h}`} width={w} height={h} className="bds-chart__svg" onMouseLeave={() => setHover(null)} aria-hidden="true">
         {[0.25, 0.5, 0.75, 1].map((f) => <polygon key={f} className="bds-chart__radar-grid" points={axes.map((_, i) => pt(i, f).join(",")).join(" ")} />)}
         {axes.map((_, i) => <line key={i} className="bds-chart__radar-grid" x1={cx0} y1={cy0} x2={pt(i, 1)[0]} y2={pt(i, 1)[1]} />)}
-        {series.map((s, si) => <polygon key={si} points={s.values.map((v, i) => pt(i, Math.max(0, (v ?? 0) / top)).join(",")).join(" ")} fill={toneVar(s.tone, si)} fillOpacity=".2" stroke={toneVar(s.tone, si)} strokeWidth="2" strokeLinejoin="round" />)}
-        {series.map((s, si) => s.values.map((v, i) => v == null ? null : <circle key={`${si}-${i}`} cx={pt(i, v / top)[0]} cy={pt(i, v / top)[1]} r={hover === i ? 5 : 3} fill={toneVar(s.tone, si)} className="bds-chart__dot" onMouseEnter={() => setHover(i)} />))}
-        {axes.map((ax, i) => { const [lx, ly] = pt(i, 1.14); return <text key={ax} className="bds-chart__tick" x={lx} y={ly} textAnchor="middle" dominantBaseline="central">{ax}</text>; })}
+        {series.map((s, si) => {
+          const points = axes.map((_, i) => s.values[i] == null ? null : pt(i, Math.max(0, s.values[i] / top)));
+          const color = toneVar(s.tone, si);
+          // 닫힌 면은 모든 축이 수집된 경우에만 그린다. 결측 축 양옆을 건너 연결하지 않는다.
+          if (points.every(Boolean)) return <polygon key={si} points={points.map((p) => p.join(",")).join(" ")} fill={color} fillOpacity=".2" stroke={color} strokeWidth="2" strokeLinejoin="round" />;
+          return <g key={si}>{points.map((p, i) => {
+            const next = points[(i + 1) % n];
+            return p && next ? <line key={i} x1={p[0]} y1={p[1]} x2={next[0]} y2={next[1]} stroke={color} strokeWidth="2" /> : null;
+          })}</g>;
+        })}
+        {series.map((s, si) => axes.map((_, i) => s.values[i] == null ? null : <circle key={`${si}-${i}`} cx={pt(i, Math.max(0, s.values[i] / top))[0]} cy={pt(i, Math.max(0, s.values[i] / top))[1]} r={hover === i ? 5 : 3} fill={toneVar(s.tone, si)} className="bds-chart__dot" onMouseEnter={() => setHover(i)} />))}
+        {axes.map((ax, i) => { const [lx, ly] = pt(i, 1.14); return <text key={ax} className="bds-chart__tick" x={lx} y={ly} textAnchor="middle" dominantBaseline="central" onMouseEnter={() => setHover(i)} onTouchStart={() => setHover(i)}>{ax}</text>; })}
       </svg>
-      {hover != null && <Tip x={pt(hover, 1)[0]} w={w} title={axes[hover]} rows={series.flatMap((s, si) => s.values[hover] == null ? [] : [{ color: toneVar(s.tone, si), name: s.label, value: fmt(s.values[hover]) }])} />}
+      {hover != null && <Tip x={pt(hover, 1)[0]} w={w} title={axes[hover]} rows={series.map((s, si) => ({ color: toneVar(s.tone, si), name: s.label, value: cell(fmt, s.values[hover]) }))} />}
     </>
   );
 }
@@ -227,7 +236,7 @@ export function Chart(rawProps) {
   if (kind === "pie") { hasData = (props.segments ?? []).some((s) => s.value > 0); count = (props.segments ?? []).length; body = <Pie segments={props.segments ?? []} fmt={valueFormatter} caption={props.caption} w={w} h={h} hover={hover} setHover={setHover} />; }
   else if (kind === "radial") { hasData = props.value != null; body = <Radial value={props.value ?? 0} label={props.label} tone={props.tone} fmt={valueFormatter} w={w} h={h} animate={animate && !live} />; }
   else if (kind === "histogram") { const b = histBins(props.samples, props.bins); hasData = !!b; count = b ? b.n : 0; body = <Histogram samples={props.samples ?? []} bins={props.bins} tone={props.tone} percentiles={props.percentiles ?? []} unit={props.unit} fmt={valueFormatter} w={w} h={h} animate={anim} hover={hover} setHover={setHover} />; }
-  else if (kind === "radar") { hasData = (props.axes ?? []).length >= 3 && (props.series ?? []).length > 0; count = (props.axes ?? []).length; body = <Radar axes={props.axes ?? []} series={props.series ?? []} max={props.max} fmt={valueFormatter} w={w} h={h} hover={hover} setHover={setHover} />; }
+  else if (kind === "radar") { hasData = (props.axes ?? []).length >= 3 && (props.series ?? []).some((s) => props.axes.some((_, i) => s.values[i] != null)); count = (props.axes ?? []).length; body = <Radar axes={props.axes ?? []} series={props.series ?? []} max={props.max} fmt={valueFormatter} w={w} h={h} hover={hover} setHover={setHover} />; }
   else { hasData = (props.labels ?? []).length > 0 && (props.series ?? []).some((s) => s.values.some((v) => v != null)); count = (props.labels ?? []).length; body = <Cartesian kind={kind} labels={props.labels ?? []} series={props.series ?? []} fmt={valueFormatter} uid={uid} xTicks={props.xTicks ?? "auto"} w={w} h={h} thresholds={props.thresholds} stacked={props.stacked} yMin={props.yMin} yMax={props.yMax} hover={hover} setHover={setHover} />; }
   const onKey = (e) => {
     if (!count) return;

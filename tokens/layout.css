@@ -39,7 +39,7 @@
 }
 /* 모바일(<768): 여백 한 단계 축소 */
 @media (width < 768px){:root{--panel-pad:14px;--page-pad:16px;--grid-gap:12px}}
-/* 터치 기기: 컨트롤 최소 44 */
-@media (pointer:coarse){:root{--h-ctl-sm:36px;--h-ctl:44px;--h-ctl-lg:48px}}
 /* 밀도: <html data-density="compact"> 표·운영 콘솔용. 글자 크기는 줄이지 않는다 */
 :root[data-density="compact"]{--panel-pad:12px;--grid-gap:10px;--kv-gap:4px;--inline-gap:6px;--h-ctl-sm:24px;--h-ctl:28px;--h-ctl-lg:36px}
+/* 터치 기기: compact에서도 컨트롤 높이 36/44/48 유지. 밀도의 여백 설정은 그대로 적용 */
+@media (pointer:coarse){:root,:root[data-density="compact"]{--h-ctl-sm:36px;--h-ctl:44px;--h-ctl-lg:48px}}

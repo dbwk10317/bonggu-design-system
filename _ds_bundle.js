@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"Ds_d3ea90","components":[{"name":"Button","sourcePath":"components/action/Button.jsx"},{"name":"Icon","sourcePath":"components/action/Icon.jsx"},{"name":"IconButton","sourcePath":"components/action/IconButton.jsx"},{"name":"MascotMark","sourcePath":"components/brand/MascotMark.jsx"},{"name":"BarList","sourcePath":"components/data/BarList.jsx"},{"name":"Chart","sourcePath":"components/data/Chart.jsx"},{"name":"DataTable","sourcePath":"components/data/DataTable.jsx"},{"name":"DescriptionList","sourcePath":"components/data/DescriptionList.jsx"},{"name":"DiffView","sourcePath":"components/data/DiffView.jsx"},{"name":"Gauge","sourcePath":"components/data/Gauge.jsx"},{"name":"Heatmap","sourcePath":"components/data/Heatmap.jsx"},{"name":"KeyValues","sourcePath":"components/data/KeyValues.jsx"},{"name":"Legend","sourcePath":"components/data/Legend.jsx"},{"name":"LogViewer","sourcePath":"components/data/LogViewer.jsx"},{"name":"Sparkline","sourcePath":"components/data/Sparkline.jsx"},{"name":"StatTile","sourcePath":"components/data/StatTile.jsx"},{"name":"Timeline","sourcePath":"components/data/Timeline.jsx"},{"name":"TrendDelta","sourcePath":"components/data/TrendDelta.jsx"},{"name":"UptimeBar","sourcePath":"components/data/UptimeBar.jsx"},{"name":"Accordion","sourcePath":"components/display/Accordion.jsx"},{"name":"Avatar","sourcePath":"components/display/Avatar.jsx"},{"name":"AvatarGroup","sourcePath":"components/display/Avatar.jsx"},{"name":"Badge","sourcePath":"components/display/Badge.jsx"},{"name":"Code","sourcePath":"components/display/Code.jsx"},{"name":"CodeBlock","sourcePath":"components/display/Code.jsx"},{"name":"Kbd","sourcePath":"components/display/Code.jsx"},{"name":"CopyField","sourcePath":"components/display/CopyField.jsx"},{"name":"StatusPill","sourcePath":"components/display/StatusPill.jsx"},{"name":"Tag","sourcePath":"components/display/Tag.jsx"},{"name":"AlertBanner","sourcePath":"components/feedback/AlertBanner.jsx"},{"name":"ConfirmDialog","sourcePath":"components/feedback/ConfirmDialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"ErrorState","sourcePath":"components/feedback/ErrorState.jsx"},{"name":"InlineMessage","sourcePath":"components/feedback/InlineMessage.jsx"},{"name":"LoadingOverlay","sourcePath":"components/feedback/LoadingOverlay.jsx"},{"name":"NotificationTrigger","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"NotificationDrawer","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"ProgressBar","sourcePath":"components/feedback/ProgressBar.jsx"},{"name":"Skeleton","sourcePath":"components/feedback/Skeleton.jsx"},{"name":"Spinner","sourcePath":"components/feedback/Spinner.jsx"},{"name":"Stepper","sourcePath":"components/feedback/Stepper.jsx"},{"name":"ToastProvider","sourcePath":"components/feedback/Toast.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Checkbox","sourcePath":"components/input/Checkbox.jsx"},{"name":"CodeEditor","sourcePath":"components/input/CodeEditor.jsx"},{"name":"ColorInput","sourcePath":"components/input/ColorInput.jsx"},{"name":"Combobox","sourcePath":"components/input/Combobox.jsx"},{"name":"DatePicker","sourcePath":"components/input/DatePicker.jsx"},{"name":"DateRangePicker","sourcePath":"components/input/DateRangePicker.jsx"},{"name":"Dropzone","sourcePath":"components/input/Dropzone.jsx"},{"name":"Field","sourcePath":"components/input/Field.jsx"},{"name":"FileUpload","sourcePath":"components/input/FileUpload.jsx"},{"name":"MultiSelect","sourcePath":"components/input/MultiSelect.jsx"},{"name":"NumberStepper","sourcePath":"components/input/NumberStepper.jsx"},{"name":"OTPInput","sourcePath":"components/input/OTPInput.jsx"},{"name":"PasswordField","sourcePath":"components/input/PasswordField.jsx"},{"name":"RadioGroup","sourcePath":"components/input/RadioGroup.jsx"},{"name":"SearchField","sourcePath":"components/input/SearchField.jsx"},{"name":"SegmentedControl","sourcePath":"components/input/SegmentedControl.jsx"},{"name":"Select","sourcePath":"components/input/Select.jsx"},{"name":"Slider","sourcePath":"components/input/Slider.jsx"},{"name":"Switch","sourcePath":"components/input/Switch.jsx"},{"name":"TextArea","sourcePath":"components/input/TextArea.jsx"},{"name":"TextField","sourcePath":"components/input/TextField.jsx"},{"name":"TimePicker","sourcePath":"components/input/TimePicker.jsx"},{"name":"AspectRatio","sourcePath":"components/layout/AspectRatio.jsx"},{"name":"CardHead","sourcePath":"components/layout/CardHead.jsx"},{"name":"Container","sourcePath":"components/layout/Container.jsx"},{"name":"Divider","sourcePath":"components/layout/Divider.jsx"},{"name":"Grid","sourcePath":"components/layout/Grid.jsx"},{"name":"GridItem","sourcePath":"components/layout/Grid.jsx"},{"name":"Inline","sourcePath":"components/layout/Inline.jsx"},{"name":"PageHeader","sourcePath":"components/layout/PageHeader.jsx"},{"name":"PageStack","sourcePath":"components/layout/PageStack.jsx"},{"name":"Panel","sourcePath":"components/layout/Panel.jsx"},{"name":"Spacer","sourcePath":"components/layout/Spacer.jsx"},{"name":"Stack","sourcePath":"components/layout/Stack.jsx"},{"name":"StatusBar","sourcePath":"components/layout/StatusBar.jsx"},{"name":"Toolbar","sourcePath":"components/layout/Toolbar.jsx"},{"name":"ToolbarGrow","sourcePath":"components/layout/Toolbar.jsx"},{"name":"Visible","sourcePath":"components/layout/Visible.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"CommandPalette","sourcePath":"components/navigation/CommandPalette.jsx"},{"name":"Link","sourcePath":"components/navigation/Link.jsx"},{"name":"Pagination","sourcePath":"components/navigation/Pagination.jsx"},{"name":"SidebarShell","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavItem","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavGroup","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"},{"name":"TopNav","sourcePath":"components/navigation/TopNav.jsx"},{"name":"Drawer","sourcePath":"components/overlay/Drawer.jsx"},{"name":"DropdownMenu","sourcePath":"components/overlay/DropdownMenu.jsx"},{"name":"FormModal","sourcePath":"components/overlay/FormModal.jsx"},{"name":"Modal","sourcePath":"components/overlay/Modal.jsx"},{"name":"Popover","sourcePath":"components/overlay/Popover.jsx"},{"name":"Tooltip","sourcePath":"components/overlay/Tooltip.jsx"}],"sourceHashes":{"components/action/Button.jsx":"5a7e8ba0583c","components/action/Icon.jsx":"aeb9bddad130","components/action/IconButton.jsx":"573fc7e3ae35","components/brand/MascotMark.jsx":"c49125fa6915","components/core/frame.js":"f7f85baee1dd","components/data/BarList.jsx":"a0cbb96057c8","components/data/Chart.jsx":"0cd8343212ac","components/data/DataTable.jsx":"2fada61dce2f","components/data/DescriptionList.jsx":"7c1079ff291d","components/data/DiffView.jsx":"74e826b1d761","components/data/Gauge.jsx":"d46f247300f5","components/data/Heatmap.jsx":"4f7a3470a15e","components/data/KeyValues.jsx":"0e218c0693b0","components/data/Legend.jsx":"59d33485648e","components/data/LogViewer.jsx":"8da3439ff861","components/data/Sparkline.jsx":"3213a7fb56e3","components/data/StatTile.jsx":"08c4148e8c37","components/data/Timeline.jsx":"ea2c65867b69","components/data/TrendDelta.jsx":"9fb64c9a68bb","components/data/UptimeBar.jsx":"10b780a3f347","components/data/chart-math.js":"cd57f7da369c","components/display/Accordion.jsx":"baf5673b0f70","components/display/Avatar.jsx":"82bf7603f488","components/display/Badge.jsx":"385d2533f37f","components/display/Code.jsx":"6cca3294c4f0","components/display/CopyField.jsx":"a797dab55521","components/display/StatusPill.jsx":"800e424e54da","components/display/Tag.jsx":"bbb650669637","components/feedback/AlertBanner.jsx":"fe7a9a92ad74","components/feedback/ConfirmDialog.jsx":"db5e8d5fcf7b","components/feedback/EmptyState.jsx":"c085e4de100c","components/feedback/ErrorState.jsx":"8d1e78ea3ec6","components/feedback/InlineMessage.jsx":"34b5488f8fc8","components/feedback/LoadingOverlay.jsx":"fc8d6b336c10","components/feedback/NotificationDrawer.jsx":"6baf7c4e7449","components/feedback/ProgressBar.jsx":"4594effb9937","components/feedback/Skeleton.jsx":"b800adab501e","components/feedback/Spinner.jsx":"019571ef40dd","components/feedback/Stepper.jsx":"84ad89b06daa","components/feedback/Toast.jsx":"05d60879ab6f","components/input/Checkbox.jsx":"12f5be84c0f7","components/input/CodeEditor.jsx":"bf9268882591","components/input/ColorInput.jsx":"bcb2bf43c367","components/input/Combobox.jsx":"8bd068e5e442","components/input/DatePicker.jsx":"4d2a94c5a109","components/input/DateRangePicker.jsx":"7a720ebbb46a","components/input/Dropzone.jsx":"c229fb1f6334","components/input/Field.jsx":"bb93dca9a5f5","components/input/FileUpload.jsx":"f6e9805d7420","components/input/MultiSelect.jsx":"ad4a86d2b11e","components/input/NumberStepper.jsx":"4a892560763a","components/input/OTPInput.jsx":"2b6a5c74f55a","components/input/PasswordField.jsx":"a2ccb84f97c8","components/input/RadioGroup.jsx":"120f32c9b8f9","components/input/SearchField.jsx":"c53af994c91f","components/input/SegmentedControl.jsx":"0e432e439927","components/input/Select.jsx":"3b7ac799ef82","components/input/Slider.jsx":"a5ab6da0f3a8","components/input/Switch.jsx":"0d2bdc54c1a0","components/input/TextArea.jsx":"9b271074f1bd","components/input/TextField.jsx":"7d7ce7382207","components/input/TimePicker.jsx":"e5fd1756b8ab","components/layout/AspectRatio.jsx":"ec1ca745e3a9","components/layout/CardHead.jsx":"b7eee3ef5171","components/layout/Container.jsx":"956f2e7a0283","components/layout/Divider.jsx":"2724b2da47dc","components/layout/Grid.jsx":"bd697fa55feb","components/layout/Inline.jsx":"b5018330169a","components/layout/PageHeader.jsx":"feb6eecf36c5","components/layout/PageStack.jsx":"a920ed8a7a71","components/layout/Panel.jsx":"0b58644bd1d6","components/layout/Spacer.jsx":"d30932b51b97","components/layout/Stack.jsx":"d9f5fc72c913","components/layout/StatusBar.jsx":"765e43ff3852","components/layout/Toolbar.jsx":"a8f7fc524838","components/layout/Visible.jsx":"cfc947d272ed","components/navigation/Breadcrumb.jsx":"9b22abe659d3","components/navigation/CommandPalette.jsx":"9894e7d054d1","components/navigation/Link.jsx":"f16424582ea3","components/navigation/Pagination.jsx":"c3306480e75a","components/navigation/SidebarShell.jsx":"8b230eedd5ec","components/navigation/Tabs.jsx":"da326c5325db","components/navigation/TopNav.jsx":"a8218730e10d","components/overlay/Drawer.jsx":"7fe6ce4bc167","components/overlay/DropdownMenu.jsx":"33645b05d244","components/overlay/FormModal.jsx":"c7439b9b50b4","components/overlay/Modal.jsx":"12ef55ab2023","components/overlay/Popover.jsx":"88176ab514f6","components/overlay/Tooltip.jsx":"55de6eeb8093","theme-toggle.js":"a482d13b9a1d"},"inlinedExternals":[],"unexposedExports":[{"name":"cx","sourcePath":"components/core/frame.js"},{"name":"DASHES","sourcePath":"components/data/chart-math.js"},{"name":"estWidth","sourcePath":"components/data/chart-math.js"},{"name":"fmtKo","sourcePath":"components/data/chart-math.js"},{"name":"frameStyle","sourcePath":"components/core/frame.js"},{"name":"histBins","sourcePath":"components/data/chart-math.js"},{"name":"niceTicks","sourcePath":"components/data/chart-math.js"},{"name":"NOTIFICATION_DRAWER_ID","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"passwordStrength","sourcePath":"components/input/PasswordField.jsx"},{"name":"pathLength","sourcePath":"components/data/chart-math.js"},{"name":"r1","sourcePath":"components/data/chart-math.js"},{"name":"runsOf","sourcePath":"components/data/chart-math.js"},{"name":"seriesDash","sourcePath":"components/data/chart-math.js"},{"name":"smoothPath","sourcePath":"components/data/chart-math.js"},{"name":"spaceToken","sourcePath":"components/layout/Stack.jsx"},{"name":"toneInk","sourcePath":"components/data/chart-math.js"},{"name":"toneVar","sourcePath":"components/data/chart-math.js"},{"name":"useFieldContext","sourcePath":"components/input/Field.jsx"},{"name":"useToast","sourcePath":"components/feedback/Toast.jsx"}]} */
+/* @ds-bundle: {"format":4,"namespace":"Ds_d3ea90","components":[{"name":"Button","sourcePath":"components/action/Button.jsx"},{"name":"Icon","sourcePath":"components/action/Icon.jsx"},{"name":"IconButton","sourcePath":"components/action/IconButton.jsx"},{"name":"MascotMark","sourcePath":"components/brand/MascotMark.jsx"},{"name":"BarList","sourcePath":"components/data/BarList.jsx"},{"name":"Chart","sourcePath":"components/data/Chart.jsx"},{"name":"DataTable","sourcePath":"components/data/DataTable.jsx"},{"name":"DescriptionList","sourcePath":"components/data/DescriptionList.jsx"},{"name":"DiffView","sourcePath":"components/data/DiffView.jsx"},{"name":"Gauge","sourcePath":"components/data/Gauge.jsx"},{"name":"Heatmap","sourcePath":"components/data/Heatmap.jsx"},{"name":"KeyValues","sourcePath":"components/data/KeyValues.jsx"},{"name":"Legend","sourcePath":"components/data/Legend.jsx"},{"name":"LogViewer","sourcePath":"components/data/LogViewer.jsx"},{"name":"Sparkline","sourcePath":"components/data/Sparkline.jsx"},{"name":"StatTile","sourcePath":"components/data/StatTile.jsx"},{"name":"Timeline","sourcePath":"components/data/Timeline.jsx"},{"name":"TrendDelta","sourcePath":"components/data/TrendDelta.jsx"},{"name":"UptimeBar","sourcePath":"components/data/UptimeBar.jsx"},{"name":"Accordion","sourcePath":"components/display/Accordion.jsx"},{"name":"Avatar","sourcePath":"components/display/Avatar.jsx"},{"name":"AvatarGroup","sourcePath":"components/display/Avatar.jsx"},{"name":"Badge","sourcePath":"components/display/Badge.jsx"},{"name":"Code","sourcePath":"components/display/Code.jsx"},{"name":"CodeBlock","sourcePath":"components/display/Code.jsx"},{"name":"Kbd","sourcePath":"components/display/Code.jsx"},{"name":"CopyField","sourcePath":"components/display/CopyField.jsx"},{"name":"StatusPill","sourcePath":"components/display/StatusPill.jsx"},{"name":"Tag","sourcePath":"components/display/Tag.jsx"},{"name":"AlertBanner","sourcePath":"components/feedback/AlertBanner.jsx"},{"name":"ConfirmDialog","sourcePath":"components/feedback/ConfirmDialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"ErrorState","sourcePath":"components/feedback/ErrorState.jsx"},{"name":"InlineMessage","sourcePath":"components/feedback/InlineMessage.jsx"},{"name":"LoadingOverlay","sourcePath":"components/feedback/LoadingOverlay.jsx"},{"name":"NotificationTrigger","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"NotificationDrawer","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"ProgressBar","sourcePath":"components/feedback/ProgressBar.jsx"},{"name":"Skeleton","sourcePath":"components/feedback/Skeleton.jsx"},{"name":"Spinner","sourcePath":"components/feedback/Spinner.jsx"},{"name":"Stepper","sourcePath":"components/feedback/Stepper.jsx"},{"name":"ToastProvider","sourcePath":"components/feedback/Toast.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Checkbox","sourcePath":"components/input/Checkbox.jsx"},{"name":"CodeEditor","sourcePath":"components/input/CodeEditor.jsx"},{"name":"ColorInput","sourcePath":"components/input/ColorInput.jsx"},{"name":"Combobox","sourcePath":"components/input/Combobox.jsx"},{"name":"DatePicker","sourcePath":"components/input/DatePicker.jsx"},{"name":"DateRangePicker","sourcePath":"components/input/DateRangePicker.jsx"},{"name":"Dropzone","sourcePath":"components/input/Dropzone.jsx"},{"name":"Field","sourcePath":"components/input/Field.jsx"},{"name":"FileUpload","sourcePath":"components/input/FileUpload.jsx"},{"name":"MultiSelect","sourcePath":"components/input/MultiSelect.jsx"},{"name":"NumberStepper","sourcePath":"components/input/NumberStepper.jsx"},{"name":"OTPInput","sourcePath":"components/input/OTPInput.jsx"},{"name":"PasswordField","sourcePath":"components/input/PasswordField.jsx"},{"name":"RadioGroup","sourcePath":"components/input/RadioGroup.jsx"},{"name":"SearchField","sourcePath":"components/input/SearchField.jsx"},{"name":"SegmentedControl","sourcePath":"components/input/SegmentedControl.jsx"},{"name":"Select","sourcePath":"components/input/Select.jsx"},{"name":"Slider","sourcePath":"components/input/Slider.jsx"},{"name":"Switch","sourcePath":"components/input/Switch.jsx"},{"name":"TextArea","sourcePath":"components/input/TextArea.jsx"},{"name":"TextField","sourcePath":"components/input/TextField.jsx"},{"name":"TimePicker","sourcePath":"components/input/TimePicker.jsx"},{"name":"AspectRatio","sourcePath":"components/layout/AspectRatio.jsx"},{"name":"CardHead","sourcePath":"components/layout/CardHead.jsx"},{"name":"Container","sourcePath":"components/layout/Container.jsx"},{"name":"Divider","sourcePath":"components/layout/Divider.jsx"},{"name":"Grid","sourcePath":"components/layout/Grid.jsx"},{"name":"GridItem","sourcePath":"components/layout/Grid.jsx"},{"name":"Inline","sourcePath":"components/layout/Inline.jsx"},{"name":"PageHeader","sourcePath":"components/layout/PageHeader.jsx"},{"name":"PageStack","sourcePath":"components/layout/PageStack.jsx"},{"name":"Panel","sourcePath":"components/layout/Panel.jsx"},{"name":"Spacer","sourcePath":"components/layout/Spacer.jsx"},{"name":"Stack","sourcePath":"components/layout/Stack.jsx"},{"name":"StatusBar","sourcePath":"components/layout/StatusBar.jsx"},{"name":"Toolbar","sourcePath":"components/layout/Toolbar.jsx"},{"name":"ToolbarGrow","sourcePath":"components/layout/Toolbar.jsx"},{"name":"Visible","sourcePath":"components/layout/Visible.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"CommandPalette","sourcePath":"components/navigation/CommandPalette.jsx"},{"name":"Link","sourcePath":"components/navigation/Link.jsx"},{"name":"Pagination","sourcePath":"components/navigation/Pagination.jsx"},{"name":"SidebarShell","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavItem","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavGroup","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"},{"name":"TopNav","sourcePath":"components/navigation/TopNav.jsx"},{"name":"Drawer","sourcePath":"components/overlay/Drawer.jsx"},{"name":"DropdownMenu","sourcePath":"components/overlay/DropdownMenu.jsx"},{"name":"FormModal","sourcePath":"components/overlay/FormModal.jsx"},{"name":"Modal","sourcePath":"components/overlay/Modal.jsx"},{"name":"Popover","sourcePath":"components/overlay/Popover.jsx"},{"name":"Tooltip","sourcePath":"components/overlay/Tooltip.jsx"}],"sourceHashes":{"components/action/Button.jsx":"5a7e8ba0583c","components/action/Icon.jsx":"aeb9bddad130","components/action/IconButton.jsx":"573fc7e3ae35","components/brand/MascotMark.jsx":"c49125fa6915","components/core/frame.js":"f7f85baee1dd","components/data/BarList.jsx":"a0cbb96057c8","components/data/Chart.jsx":"53dad7b077b1","components/data/DataTable.jsx":"2fada61dce2f","components/data/DescriptionList.jsx":"7c1079ff291d","components/data/DiffView.jsx":"74e826b1d761","components/data/Gauge.jsx":"d46f247300f5","components/data/Heatmap.jsx":"4f7a3470a15e","components/data/KeyValues.jsx":"0e218c0693b0","components/data/Legend.jsx":"59d33485648e","components/data/LogViewer.jsx":"8da3439ff861","components/data/Sparkline.jsx":"3213a7fb56e3","components/data/StatTile.jsx":"08c4148e8c37","components/data/Timeline.jsx":"ea2c65867b69","components/data/TrendDelta.jsx":"9fb64c9a68bb","components/data/UptimeBar.jsx":"10b780a3f347","components/data/chart-math.js":"cd57f7da369c","components/display/Accordion.jsx":"baf5673b0f70","components/display/Avatar.jsx":"82bf7603f488","components/display/Badge.jsx":"385d2533f37f","components/display/Code.jsx":"6cca3294c4f0","components/display/CopyField.jsx":"a797dab55521","components/display/StatusPill.jsx":"800e424e54da","components/display/Tag.jsx":"bbb650669637","components/feedback/AlertBanner.jsx":"fe7a9a92ad74","components/feedback/ConfirmDialog.jsx":"db5e8d5fcf7b","components/feedback/EmptyState.jsx":"c085e4de100c","components/feedback/ErrorState.jsx":"8d1e78ea3ec6","components/feedback/InlineMessage.jsx":"34b5488f8fc8","components/feedback/LoadingOverlay.jsx":"fc8d6b336c10","components/feedback/NotificationDrawer.jsx":"6baf7c4e7449","components/feedback/ProgressBar.jsx":"4594effb9937","components/feedback/Skeleton.jsx":"b800adab501e","components/feedback/Spinner.jsx":"019571ef40dd","components/feedback/Stepper.jsx":"84ad89b06daa","components/feedback/Toast.jsx":"05d60879ab6f","components/input/Checkbox.jsx":"12f5be84c0f7","components/input/CodeEditor.jsx":"bf9268882591","components/input/ColorInput.jsx":"bcb2bf43c367","components/input/Combobox.jsx":"0394e8812604","components/input/DatePicker.jsx":"4d2a94c5a109","components/input/DateRangePicker.jsx":"7a720ebbb46a","components/input/Dropzone.jsx":"c229fb1f6334","components/input/Field.jsx":"bb93dca9a5f5","components/input/FileUpload.jsx":"f6e9805d7420","components/input/MultiSelect.jsx":"ad4a86d2b11e","components/input/NumberStepper.jsx":"4a892560763a","components/input/OTPInput.jsx":"2b6a5c74f55a","components/input/PasswordField.jsx":"a2ccb84f97c8","components/input/RadioGroup.jsx":"120f32c9b8f9","components/input/SearchField.jsx":"c53af994c91f","components/input/SegmentedControl.jsx":"0e432e439927","components/input/Select.jsx":"3b7ac799ef82","components/input/Slider.jsx":"a5ab6da0f3a8","components/input/Switch.jsx":"0d2bdc54c1a0","components/input/TextArea.jsx":"9b271074f1bd","components/input/TextField.jsx":"7d7ce7382207","components/input/TimePicker.jsx":"e5fd1756b8ab","components/layout/AspectRatio.jsx":"ec1ca745e3a9","components/layout/CardHead.jsx":"b7eee3ef5171","components/layout/Container.jsx":"956f2e7a0283","components/layout/Divider.jsx":"2724b2da47dc","components/layout/Grid.jsx":"bd697fa55feb","components/layout/Inline.jsx":"b5018330169a","components/layout/PageHeader.jsx":"feb6eecf36c5","components/layout/PageStack.jsx":"a920ed8a7a71","components/layout/Panel.jsx":"0b58644bd1d6","components/layout/Spacer.jsx":"d30932b51b97","components/layout/Stack.jsx":"d9f5fc72c913","components/layout/StatusBar.jsx":"765e43ff3852","components/layout/Toolbar.jsx":"a8f7fc524838","components/layout/Visible.jsx":"cfc947d272ed","components/navigation/Breadcrumb.jsx":"9b22abe659d3","components/navigation/CommandPalette.jsx":"9894e7d054d1","components/navigation/Link.jsx":"f16424582ea3","components/navigation/Pagination.jsx":"c3306480e75a","components/navigation/SidebarShell.jsx":"8b230eedd5ec","components/navigation/Tabs.jsx":"da326c5325db","components/navigation/TopNav.jsx":"a8218730e10d","components/overlay/Drawer.jsx":"7fe6ce4bc167","components/overlay/DropdownMenu.jsx":"33645b05d244","components/overlay/FormModal.jsx":"c7439b9b50b4","components/overlay/Modal.jsx":"12ef55ab2023","components/overlay/Popover.jsx":"88176ab514f6","components/overlay/Tooltip.jsx":"55de6eeb8093","theme-toggle.js":"a482d13b9a1d"},"inlinedExternals":[],"unexposedExports":[{"name":"cx","sourcePath":"components/core/frame.js"},{"name":"DASHES","sourcePath":"components/data/chart-math.js"},{"name":"estWidth","sourcePath":"components/data/chart-math.js"},{"name":"fmtKo","sourcePath":"components/data/chart-math.js"},{"name":"frameStyle","sourcePath":"components/core/frame.js"},{"name":"histBins","sourcePath":"components/data/chart-math.js"},{"name":"niceTicks","sourcePath":"components/data/chart-math.js"},{"name":"NOTIFICATION_DRAWER_ID","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"passwordStrength","sourcePath":"components/input/PasswordField.jsx"},{"name":"pathLength","sourcePath":"components/data/chart-math.js"},{"name":"r1","sourcePath":"components/data/chart-math.js"},{"name":"runsOf","sourcePath":"components/data/chart-math.js"},{"name":"seriesDash","sourcePath":"components/data/chart-math.js"},{"name":"smoothPath","sourcePath":"components/data/chart-math.js"},{"name":"spaceToken","sourcePath":"components/layout/Stack.jsx"},{"name":"toneInk","sourcePath":"components/data/chart-math.js"},{"name":"toneVar","sourcePath":"components/data/chart-math.js"},{"name":"useFieldContext","sourcePath":"components/input/Field.jsx"},{"name":"useToast","sourcePath":"components/feedback/Toast.jsx"}]} */
 
 (() => {
 
@@ -51,7 +51,6 @@ Object.assign(__ds_scope, { frameStyle, cx });
 // components/action/Icon.jsx
 try { (() => {
 const { cx } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** Phosphor Bold 아이콘. name은 Phosphor 아이콘 이름(kebab-case, 예: "bell", "gear-six").
  *  리액트 프로젝트에서는 @phosphor-icons/react의 동일 아이콘을 weight="bold"로 쓴다. 장식 아이콘은 aria-hidden. */
 function Icon({
@@ -62,7 +61,7 @@ function Icon({
   style,
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement("i", _extends({
+  return /*#__PURE__*/React.createElement("i", {
     className: cx("bds-icon", "ph-bold", `ph-${name}`, className),
     style: {
       "--icon-size": `${size}px`,
@@ -70,8 +69,9 @@ function Icon({
     },
     "aria-hidden": label ? undefined : true,
     "aria-label": label,
-    role: label ? "img" : undefined
-  }, rest));
+    role: label ? "img" : undefined,
+    ...rest
+  });
 }
 Object.assign(__ds_scope, { Icon });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/action/Icon.jsx", error: String((e && e.message) || e) }); }
@@ -79,7 +79,6 @@ Object.assign(__ds_scope, { Icon });
 // components/action/Button.jsx
 try { (() => {
 const { cx, frameStyle, Icon } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 버튼. variant는 의미(primary/secondary/ghost/danger), size는 밀도, fit="flex"면 부모 폭을 채운다. */
 function Button({
   variant = "secondary",
@@ -95,7 +94,7 @@ function Button({
   type = "button",
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement("button", _extends({
+  return /*#__PURE__*/React.createElement("button", {
     type: type,
     disabled: disabled || busy,
     "aria-busy": busy || undefined,
@@ -103,8 +102,9 @@ function Button({
     style: fit === "fixed" ? frameStyle({
       fit,
       width
-    }) : undefined
-  }, rest), busy ? /*#__PURE__*/React.createElement("span", {
+    }) : undefined,
+    ...rest
+  }, busy ? /*#__PURE__*/React.createElement("span", {
     className: "bds-btn__spin",
     "aria-hidden": "true"
   }) : icon ? /*#__PURE__*/React.createElement(Icon, {
@@ -120,7 +120,6 @@ Object.assign(__ds_scope, { Button });
 try { (() => {
 const { forwardRef } = React;
 const { cx, Icon } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 아이콘 전용 버튼. aria-label 필수. badge(숫자)가 0보다 크면 우상단 카운트가 붙고 접근 가능한 이름에 "N건"이 더해진다. */
 const IconButton = /*#__PURE__*/forwardRef(function IconButton({
   icon,
@@ -135,13 +134,13 @@ const IconButton = /*#__PURE__*/forwardRef(function IconButton({
   if (!rest["aria-label"]) console.warn("IconButton: aria-label은 필수입니다.");
   const count = badge > 99 ? "99+" : badge;
   const label = badge > 0 && rest["aria-label"] ? `${rest["aria-label"]}, ${count}건` : rest["aria-label"];
-  return /*#__PURE__*/React.createElement("button", _extends({
+  return /*#__PURE__*/React.createElement("button", {
     ref: ref,
     type: type,
-    className: cx("bds-iconbtn", size !== "md" && `bds-iconbtn--${size}`, variant !== "outline" && `bds-iconbtn--${variant}`, className)
-  }, rest, {
+    className: cx("bds-iconbtn", size !== "md" && `bds-iconbtn--${size}`, variant !== "outline" && `bds-iconbtn--${variant}`, className),
+    ...rest,
     "aria-label": label
-  }), icon ? /*#__PURE__*/React.createElement(Icon, {
+  }, icon ? /*#__PURE__*/React.createElement(Icon, {
     name: icon,
     size: size === "sm" ? 14 : size === "lg" ? 20 : 16
   }) : children, badge > 0 && /*#__PURE__*/React.createElement("span", {
@@ -618,7 +617,6 @@ Object.assign(__ds_scope, { MascotMark });
 // components/data/BarList.jsx
 try { (() => {
 const { cx, frameStyle } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const NOT = "수집 안 됨";
 /** 이름·값·막대 목록(디스크별 사용량, GPU 예약). max 생략 시 항목 최대값. thresholds로 warn/crit 색 전환. */
 function BarList({
@@ -645,7 +643,7 @@ function BarList({
     }
     return `var(--series-${tone})`;
   };
-  return /*#__PURE__*/React.createElement("div", _extends({
+  return /*#__PURE__*/React.createElement("div", {
     className: cx("bds-barlist", thick && "bds-barlist--thick", className),
     style: frameStyle({
       fit,
@@ -653,8 +651,9 @@ function BarList({
       style
     }),
     role: "list",
-    "aria-label": ariaLabel
-  }, rest), items.map((it, i) => {
+    "aria-label": ariaLabel,
+    ...rest
+  }, items.map((it, i) => {
     const pct = it.value == null ? 0 : Math.min(100, Math.max(0, it.value / top * 100));
     return /*#__PURE__*/React.createElement("div", {
       key: it.key ?? i,
@@ -687,16 +686,16 @@ Object.assign(__ds_scope, { BarList });
 // components/data/DescriptionList.jsx
 try { (() => {
 const { cx } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 설명 목록(dl). 긴 값·문장이 있을 때 KeyValues 대신. 좁으면 한 열로 접힌다. */
 function DescriptionList({
   items = [],
   className,
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement("dl", _extends({
-    className: cx("bds-dl", className)
-  }, rest), items.map((it, i) => /*#__PURE__*/React.createElement(React.Fragment, {
+  return /*#__PURE__*/React.createElement("dl", {
+    className: cx("bds-dl", className),
+    ...rest
+  }, items.map((it, i) => /*#__PURE__*/React.createElement(React.Fragment, {
     key: i
   }, /*#__PURE__*/React.createElement("dt", null, it.term), /*#__PURE__*/React.createElement("dd", {
     className: it.mono ? "bds-mono" : undefined
@@ -732,7 +731,7 @@ function DiffView({
     className: "bds-diff__hd bds-mono"
   }, /*#__PURE__*/React.createElement("span", null, from), /*#__PURE__*/React.createElement("span", {
     "aria-hidden": "true"
-  }, "\u2192"), /*#__PURE__*/React.createElement("span", null, to)), !changes.length ? /*#__PURE__*/React.createElement("p", {
+  }, "→"), /*#__PURE__*/React.createElement("span", null, to)), !changes.length ? /*#__PURE__*/React.createElement("p", {
     className: "bds-diff__empty"
   }, emptyText) : /*#__PURE__*/React.createElement("ul", {
     className: "bds-diff__list"
@@ -758,7 +757,6 @@ Object.assign(__ds_scope, { DiffView });
 // components/data/Gauge.jsx
 try { (() => {
 const { cx, frameStyle } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 반원 게이지. value 0~1(또는 max 기준). 임계 70/90으로 톤 자동(ok·warn·crit). null이면 "수집 안 됨". */
 function Gauge({
   value,
@@ -790,7 +788,7 @@ function Gauge({
   const len = Math.PI * R;
   const d = "M " + (cx0 - R) + " " + cy + " A " + R + " " + R + " 0 0 1 " + (cx0 + R) + " " + cy;
   const txt = r == null ? "수집 안 됨" : valueFormatter ? valueFormatter(value) : Math.round(r * 100) + "%";
-  return /*#__PURE__*/React.createElement("div", _extends({
+  return /*#__PURE__*/React.createElement("div", {
     className: cx("bds-gauge", "bds-gauge--" + t, className),
     style: frameStyle({
       fit,
@@ -802,8 +800,9 @@ function Gauge({
     "aria-valuemin": 0,
     "aria-valuemax": max,
     "aria-valuenow": value ?? undefined,
-    "aria-valuetext": txt + (label ? " " + label : "")
-  }, rest), /*#__PURE__*/React.createElement("svg", {
+    "aria-valuetext": txt + (label ? " " + label : ""),
+    ...rest
+  }, /*#__PURE__*/React.createElement("svg", {
     viewBox: "0 0 " + W + " " + H,
     "aria-hidden": "true"
   }, /*#__PURE__*/React.createElement("path", {
@@ -933,7 +932,7 @@ function Heatmap({
   }, /*#__PURE__*/React.createElement("span", {
     className: "bds-heat__tip",
     role: "status"
-  }, hover && hover[1] >= 0 ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("b", null, rl(rows[hover[0]]), " \xB7 ", cl(cols[hover[1]])), " ", /*#__PURE__*/React.createElement("span", {
+  }, hover && hover[1] >= 0 ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("b", null, rl(rows[hover[0]]), " · ", cl(cols[hover[1]])), " ", /*#__PURE__*/React.createElement("span", {
     className: "bds-mono"
   }, fmt(hover[0], hover[1]))) : "\u00a0"), /*#__PURE__*/React.createElement("span", {
     className: "bds-heat__scale",
@@ -953,7 +952,6 @@ Object.assign(__ds_scope, { Heatmap });
 // components/data/KeyValues.jsx
 try { (() => {
 const { cx } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const NOT = "수집 안 됨";
 /** 키·값 행 목록. rows: [key, value][] 또는 {k,v,mono?}[]. 수치 값은 mono, 결측 문구는 mono를 벗는다. */
 function KeyValues({
@@ -962,9 +960,10 @@ function KeyValues({
   className,
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement("div", _extends({
-    className: cx("bds-kv", lined && "bds-kv--lined", className)
-  }, rest), rows.map((r, i) => {
+  return /*#__PURE__*/React.createElement("div", {
+    className: cx("bds-kv", lined && "bds-kv--lined", className),
+    ...rest
+  }, rows.map((r, i) => {
     const [k, v, mono] = Array.isArray(r) ? [r[0], r[1], r[2]] : [r.k, r.v, r.mono];
     const isMono = mono ?? (typeof v === "number" || typeof v === "string" && v !== NOT && /\d/.test(v));
     return /*#__PURE__*/React.createElement("div", {
@@ -989,7 +988,6 @@ Object.assign(__ds_scope, { KeyValues });
 try { (() => {
 const { useEffect, useRef } = React;
 const { cx, frameStyle } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 로그 뷰어. lines: string | {level,time,text}. follow=true면 새 줄에 따라 바닥으로 스크롤. */
 function LogViewer({
   lines = [],
@@ -1007,7 +1005,7 @@ function LogViewer({
   useEffect(() => {
     if (follow && ref.current) ref.current.scrollTop = ref.current.scrollHeight;
   }, [lines.length, follow]);
-  return /*#__PURE__*/React.createElement("div", _extends({
+  return /*#__PURE__*/React.createElement("div", {
     ref: ref,
     className: cx("bds-log", !wrap && "bds-log--nowrap", className),
     style: frameStyle({
@@ -1017,8 +1015,9 @@ function LogViewer({
       style
     }),
     role: "log",
-    "aria-live": follow ? "polite" : "off"
-  }, rest), lines.map((l, i) => {
+    "aria-live": follow ? "polite" : "off",
+    ...rest
+  }, lines.map((l, i) => {
     const o = typeof l === "string" ? {
       text: l
     } : l;
@@ -1044,7 +1043,6 @@ Object.assign(__ds_scope, { LogViewer });
 try { (() => {
 const { useId } = React;
 const { cx } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 미니 추세선. 부모 크기를 채운다(fit은 부모가 정한다). null 구간은 끊는다. 축·범례 없음. */
 function Sparkline({
   values = [],
@@ -1079,12 +1077,13 @@ function Sparkline({
   });
   if (run.length) runs.push(run);
   const color = typeof tone === "string" ? `var(--series-${tone})` : `var(--series-${tone})`;
-  return /*#__PURE__*/React.createElement("svg", _extends({
+  return /*#__PURE__*/React.createElement("svg", {
     className: cx("bds-spark", className),
     viewBox: `0 0 ${W} ${H}`,
     preserveAspectRatio: "none",
-    "aria-hidden": "true"
-  }, rest), /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("linearGradient", {
+    "aria-hidden": "true",
+    ...rest
+  }, /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("linearGradient", {
     id: `${uid}-g`,
     x1: "0",
     y1: "0",
@@ -1173,7 +1172,6 @@ Object.assign(__ds_scope, { Timeline });
 // components/data/TrendDelta.jsx
 try { (() => {
 const { cx, Icon } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 증감 표시. value는 변화량(숫자) 또는 비율(percent). inverse면 증가가 나쁜 지표(응답시간·오류). 항상 화살표+숫자, 색 단독 금지. */
 function TrendDelta({
   value,
@@ -1184,17 +1182,19 @@ function TrendDelta({
   className,
   ...rest
 }) {
-  if (value == null) return /*#__PURE__*/React.createElement("span", _extends({
-    className: cx("bds-delta", "bds-delta--flat", className)
-  }, rest), "\uC218\uC9D1 \uC548 \uB428");
+  if (value == null) return /*#__PURE__*/React.createElement("span", {
+    className: cx("bds-delta", "bds-delta--flat", className),
+    ...rest
+  }, "수집 안 됨");
   const dir = value > 0 ? "up" : value < 0 ? "down" : "flat";
   const txt = (value > 0 ? "+" : "") + (percent ? (value * 100).toFixed(precision) + "%" : Number(value).toLocaleString("ko-KR", {
     maximumFractionDigits: precision
   }));
-  return /*#__PURE__*/React.createElement("span", _extends({
+  return /*#__PURE__*/React.createElement("span", {
     className: cx("bds-delta", "bds-delta--" + dir, inverse && "bds-delta--inverse", className),
-    "aria-label": (dir === "up" ? "증가 " : dir === "down" ? "감소 " : "변화 없음 ") + txt
-  }, rest), dir !== "flat" && /*#__PURE__*/React.createElement(Icon, {
+    "aria-label": (dir === "up" ? "증가 " : dir === "down" ? "감소 " : "변화 없음 ") + txt,
+    ...rest
+  }, dir !== "flat" && /*#__PURE__*/React.createElement(Icon, {
     name: dir === "up" ? "arrow-up-right" : "arrow-down-right",
     size: 12
   }), txt, label && /*#__PURE__*/React.createElement("small", null, label));
@@ -1205,7 +1205,6 @@ Object.assign(__ds_scope, { TrendDelta });
 // components/data/UptimeBar.jsx
 try { (() => {
 const { cx } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 가용성 막대(일/시간 단위 90칸). segments: {status: ok|warn|crit|off, label?}. 비율은 ok+warn 기준으로 계산해 텍스트로 병기. */
 function UptimeBar({
   name,
@@ -1219,12 +1218,13 @@ function UptimeBar({
 }) {
   const known = segments.filter(s => s.status !== "off");
   const pct = uptime ?? (known.length ? known.filter(s => s.status === "ok").length / known.length * 100 : null);
-  return /*#__PURE__*/React.createElement("div", _extends({
+  return /*#__PURE__*/React.createElement("div", {
     className: cx("bds-uptime", className),
     style: {
       "--uh": height + "px"
-    }
-  }, rest), (name || pct != null) && /*#__PURE__*/React.createElement("div", {
+    },
+    ...rest
+  }, (name || pct != null) && /*#__PURE__*/React.createElement("div", {
     className: "bds-uptime__hd"
   }, name && /*#__PURE__*/React.createElement("b", null, name), /*#__PURE__*/React.createElement("span", {
     className: "bds-uptime__pct"
@@ -1352,7 +1352,6 @@ Object.assign(__ds_scope, { r1, toneVar, toneInk, fmtKo, niceTicks, smoothPath, 
 // components/data/Legend.jsx
 try { (() => {
 const { cx, toneVar } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /* 스와치 색: color가 있으면 그대로, tone이 시리즈 번호·의미 키·미터 톤이면 토큰, info/signal은 상태 토큰, 그 외 문자열은 CSS 색으로 본다. */
 const swatchColor = (it, i) => it.color ?? (typeof it.tone === "string" && !/^(rx|tx|used|reserved|free|ok|warn|crit)$/.test(it.tone) ? /^(info|signal)$/.test(it.tone) ? `var(--${it.tone})` : it.tone : toneVar(it.tone, i));
 
@@ -1368,9 +1367,10 @@ function Legend({
   ...rest
 }) {
   const Tag = onToggle ? "button" : "span";
-  return /*#__PURE__*/React.createElement("ul", _extends({
-    className: cx("bds-legend", vertical && "bds-legend--vertical", compact && "bds-legend--compact", className)
-  }, rest), items.map((it, i) => {
+  return /*#__PURE__*/React.createElement("ul", {
+    className: cx("bds-legend", vertical && "bds-legend--vertical", compact && "bds-legend--compact", className),
+    ...rest
+  }, items.map((it, i) => {
     const sh = it.shape ?? shape,
       color = swatchColor(it, i);
     const sw = sh === "line" ? /*#__PURE__*/React.createElement("svg", {
@@ -1474,7 +1474,10 @@ function Tip({
   }), /*#__PURE__*/React.createElement("span", {
     className: "n bds-ellipsis"
   }, r.name), /*#__PURE__*/React.createElement("span", {
-    className: "v"
+    className: "v",
+    style: r.value === MISSING ? {
+      fontFamily: "var(--font-ui)"
+    } : undefined
   }, r.value))));
 }
 const MISSING = "수집 안 됨";
@@ -1528,11 +1531,11 @@ function Cartesian({
     const i = kind === "bar" ? Math.floor((px - padL) / bandW) : Math.round((px - padL) / (step || 1));
     setHover(Math.max(0, Math.min(n - 1, i)));
   };
-  const rows = hover == null ? [] : series.flatMap((s, si) => s.values[hover] == null ? [] : [{
+  const rows = hover == null ? [] : series.map((s, si) => ({
     color: toneVar(s.tone, si),
     name: s.label,
-    value: fmt(s.values[hover])
-  }]);
+    value: cell(fmt, s.values[hover])
+  }));
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("svg", {
     viewBox: `0 0 ${w} ${h}`,
     width: w,
@@ -1868,18 +1871,37 @@ function Radar({
     y1: cy0,
     x2: pt(i, 1)[0],
     y2: pt(i, 1)[1]
-  })), series.map((s, si) => /*#__PURE__*/React.createElement("polygon", {
-    key: si,
-    points: s.values.map((v, i) => pt(i, Math.max(0, (v ?? 0) / top)).join(",")).join(" "),
-    fill: toneVar(s.tone, si),
-    fillOpacity: ".2",
-    stroke: toneVar(s.tone, si),
-    strokeWidth: "2",
-    strokeLinejoin: "round"
-  })), series.map((s, si) => s.values.map((v, i) => v == null ? null : /*#__PURE__*/React.createElement("circle", {
+  })), series.map((s, si) => {
+    const points = axes.map((_, i) => s.values[i] == null ? null : pt(i, Math.max(0, s.values[i] / top)));
+    const color = toneVar(s.tone, si);
+    // 닫힌 면은 모든 축이 수집된 경우에만 그린다. 결측 축 양옆을 건너 연결하지 않는다.
+    if (points.every(Boolean)) return /*#__PURE__*/React.createElement("polygon", {
+      key: si,
+      points: points.map(p => p.join(",")).join(" "),
+      fill: color,
+      fillOpacity: ".2",
+      stroke: color,
+      strokeWidth: "2",
+      strokeLinejoin: "round"
+    });
+    return /*#__PURE__*/React.createElement("g", {
+      key: si
+    }, points.map((p, i) => {
+      const next = points[(i + 1) % n];
+      return p && next ? /*#__PURE__*/React.createElement("line", {
+        key: i,
+        x1: p[0],
+        y1: p[1],
+        x2: next[0],
+        y2: next[1],
+        stroke: color,
+        strokeWidth: "2"
+      }) : null;
+    }));
+  }), series.map((s, si) => axes.map((_, i) => s.values[i] == null ? null : /*#__PURE__*/React.createElement("circle", {
     key: `${si}-${i}`,
-    cx: pt(i, v / top)[0],
-    cy: pt(i, v / top)[1],
+    cx: pt(i, Math.max(0, s.values[i] / top))[0],
+    cy: pt(i, Math.max(0, s.values[i] / top))[1],
     r: hover === i ? 5 : 3,
     fill: toneVar(s.tone, si),
     className: "bds-chart__dot",
@@ -1892,17 +1914,19 @@ function Radar({
       x: lx,
       y: ly,
       textAnchor: "middle",
-      dominantBaseline: "central"
+      dominantBaseline: "central",
+      onMouseEnter: () => setHover(i),
+      onTouchStart: () => setHover(i)
     }, ax);
   })), hover != null && /*#__PURE__*/React.createElement(Tip, {
     x: pt(hover, 1)[0],
     w: w,
     title: axes[hover],
-    rows: series.flatMap((s, si) => s.values[hover] == null ? [] : [{
+    rows: series.map((s, si) => ({
       color: toneVar(s.tone, si),
       name: s.label,
-      value: fmt(s.values[hover])
-    }])
+      value: cell(fmt, s.values[hover])
+    }))
   }));
 }
 
@@ -2164,7 +2188,7 @@ function Chart(rawProps) {
       setHover: setHover
     });
   } else if (kind === "radar") {
-    hasData = (props.axes ?? []).length >= 3 && (props.series ?? []).length > 0;
+    hasData = (props.axes ?? []).length >= 3 && (props.series ?? []).some(s => props.axes.some((_, i) => s.values[i] != null));
     count = (props.axes ?? []).length;
     body = /*#__PURE__*/React.createElement(Radar, {
       axes: props.axes ?? [],
@@ -2245,7 +2269,6 @@ Object.assign(__ds_scope, { Chart });
 try { (() => {
 const { useId, useState } = React;
 const { cx, Icon } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 접이식 섹션. items: {id, title, meta?, content}. multiple이면 여러 개 동시 펼침. plain은 테두리 없음(설정 패널 안). */
 function Accordion({
   items = [],
@@ -2262,9 +2285,10 @@ function Accordion({
     if (s.has(id)) n.delete(id);else n.add(id);
     return n;
   });
-  return /*#__PURE__*/React.createElement("div", _extends({
-    className: cx("bds-acc", plain && "bds-acc--plain", className)
-  }, rest), items.map(it => {
+  return /*#__PURE__*/React.createElement("div", {
+    className: cx("bds-acc", plain && "bds-acc--plain", className),
+    ...rest
+  }, items.map(it => {
     const on = open.has(it.id);
     return /*#__PURE__*/React.createElement("div", {
       key: it.id,
@@ -2306,7 +2330,6 @@ Object.assign(__ds_scope, { Accordion });
 // components/display/Avatar.jsx
 try { (() => {
 const { cx } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const SZ = {
   xs: 20,
   sm: 24,
@@ -2339,7 +2362,7 @@ function Avatar({
 }) {
   const px = typeof size === "number" ? size : SZ[size] ?? 32;
   const label = name && status ? `${name}, ${STATUS[status] ?? status}` : name;
-  return /*#__PURE__*/React.createElement("span", _extends({
+  return /*#__PURE__*/React.createElement("span", {
     className: cx("bds-avatar", square && "bds-avatar--square", className),
     style: {
       "--av": px + "px",
@@ -2347,8 +2370,9 @@ function Avatar({
     },
     title: label,
     "aria-label": label,
-    role: "img"
-  }, rest), src ? /*#__PURE__*/React.createElement("img", {
+    role: "img",
+    ...rest
+  }, src ? /*#__PURE__*/React.createElement("img", {
     className: "bds-avatar__img",
     src: src,
     alt: ""
@@ -2375,10 +2399,11 @@ function AvatarGroup({
     style: {
       "--av": px + "px"
     }
-  }, shown.map((u, i) => /*#__PURE__*/React.createElement(Avatar, _extends({
+  }, shown.map((u, i) => /*#__PURE__*/React.createElement(Avatar, {
     key: i,
-    size: px
-  }, u))), more > 0 && /*#__PURE__*/React.createElement("span", {
+    size: px,
+    ...u
+  })), more > 0 && /*#__PURE__*/React.createElement("span", {
     className: "bds-avatar bds-avatars__more",
     style: {
       "--av": px + "px"
@@ -2392,7 +2417,6 @@ Object.assign(__ds_scope, { Avatar, AvatarGroup });
 // components/display/Badge.jsx
 try { (() => {
 const { cx } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 숫자 카운트 배지. children으로 감싸면 오른쪽 위에 붙는다. max 초과는 "99+". dot은 숫자 없는 점. */
 function Badge({
   count,
@@ -2406,10 +2430,11 @@ function Badge({
 }) {
   if (!dot && (count == null || count === 0) && children) return children;
   const label = dot ? null : count > max ? max + "+" : count;
-  const b = /*#__PURE__*/React.createElement("span", _extends({
+  const b = /*#__PURE__*/React.createElement("span", {
     className: cx("bds-badge", tone !== "neutral" && "bds-badge--" + tone, dot && "bds-badge--dot", className),
-    "aria-label": ariaLabel ?? (dot ? "새 항목" : count + "개")
-  }, rest), label);
+    "aria-label": ariaLabel ?? (dot ? "새 항목" : count + "개"),
+    ...rest
+  }, label);
   return children ? /*#__PURE__*/React.createElement("span", {
     className: "bds-badge-anchor"
   }, children, b) : b;
@@ -2420,16 +2445,16 @@ Object.assign(__ds_scope, { Badge });
 // components/display/Code.jsx
 try { (() => {
 const { cx } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 인라인 코드 조각. 식별자·경로·명령 한 토막. */
 function Code({
   children,
   className,
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement("code", _extends({
-    className: cx("bds-code bds-mono", className)
-  }, rest), children);
+  return /*#__PURE__*/React.createElement("code", {
+    className: cx("bds-code bds-mono", className),
+    ...rest
+  }, children);
 }
 /** 코드 블록. 여러 줄 명령·JSON. 가로 스크롤, 줄바꿈 안 함. */
 function CodeBlock({
@@ -2438,10 +2463,11 @@ function CodeBlock({
   className,
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement("pre", _extends({
+  return /*#__PURE__*/React.createElement("pre", {
     className: cx("bds-codeblock bds-mono", className),
-    "data-lang": language
-  }, rest), /*#__PURE__*/React.createElement("code", null, children));
+    "data-lang": language,
+    ...rest
+  }, /*#__PURE__*/React.createElement("code", null, children));
 }
 /** 키보드 키. */
 function Kbd({
@@ -2449,9 +2475,10 @@ function Kbd({
   className,
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement("kbd", _extends({
-    className: cx("bds-kbd", className)
-  }, rest), children);
+  return /*#__PURE__*/React.createElement("kbd", {
+    className: cx("bds-kbd", className),
+    ...rest
+  }, children);
 }
 Object.assign(__ds_scope, { Code, CodeBlock, Kbd });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/display/Code.jsx", error: String((e && e.message) || e) }); }
@@ -2532,7 +2559,6 @@ Object.assign(__ds_scope, { CopyField });
 // components/display/StatusPill.jsx
 try { (() => {
 const { cx } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 상태 pill. tone은 ok/warn/crit/info/off/accent. 색 단독 금지: children 텍스트 필수. pulse는 실시간일 때만. */
 function StatusPill({
   tone = "off",
@@ -2544,9 +2570,10 @@ function StatusPill({
   children,
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement("span", _extends({
-    className: cx("bds-pill", `bds-tone--${tone}`, size !== "md" && `bds-pill--${size}`, pulse && "bds-pill--pulse", outline && "bds-pill--outline", className)
-  }, rest), dot && /*#__PURE__*/React.createElement("i", {
+  return /*#__PURE__*/React.createElement("span", {
+    className: cx("bds-pill", `bds-tone--${tone}`, size !== "md" && `bds-pill--${size}`, pulse && "bds-pill--pulse", outline && "bds-pill--outline", className),
+    ...rest
+  }, dot && /*#__PURE__*/React.createElement("i", {
     className: "bds-pill__dot",
     "aria-hidden": "true"
   }), children);
@@ -2558,7 +2585,6 @@ Object.assign(__ds_scope, { StatusPill });
 try { (() => {
 const { useEffect, useRef, useState } = React;
 const { cx, frameStyle, Icon, Sparkline, StatusPill } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /* animate=true일 때만 카운트업. 기본은 꺼짐: 실시간 수치는 트랜지션 없이 즉시 바뀐다. 꺼지면 target을 그대로 돌려주는 no-op. */
 function useCountUp(target, enabled) {
   const [v, setV] = useState(enabled ? 0 : target);
@@ -2610,14 +2636,15 @@ function StatTile({
     maximumFractionDigits: digits
   }) : value;
   const dir = typeof delta === "number" ? delta > 0 ? "up" : delta < 0 ? "down" : null : null;
-  return /*#__PURE__*/React.createElement("div", _extends({
+  return /*#__PURE__*/React.createElement("div", {
     className: cx("bds-stat", flat && "bds-stat--flat", className),
     style: frameStyle({
       fit,
       width,
       style
-    })
-  }, rest), /*#__PURE__*/React.createElement("span", {
+    }),
+    ...rest
+  }, /*#__PURE__*/React.createElement("span", {
     className: "bds-stat__l"
   }, icon && /*#__PURE__*/React.createElement(Icon, {
     name: icon,
@@ -2652,7 +2679,6 @@ Object.assign(__ds_scope, { StatTile });
 // components/display/Tag.jsx
 try { (() => {
 const { cx, Icon } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 태그. 분류·선택 표시. accent는 "선택됨" 같은 강조 하나에만. onRemove가 있으면 x 버튼. */
 function Tag({
   accent = false,
@@ -2662,9 +2688,10 @@ function Tag({
   children,
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement("span", _extends({
-    className: cx("bds-tag", accent && "bds-tag--accent", className)
-  }, rest), icon && /*#__PURE__*/React.createElement(Icon, {
+  return /*#__PURE__*/React.createElement("span", {
+    className: cx("bds-tag", accent && "bds-tag--accent", className),
+    ...rest
+  }, icon && /*#__PURE__*/React.createElement(Icon, {
     name: icon,
     size: 12
   }), children, onRemove && /*#__PURE__*/React.createElement("button", {
@@ -2683,7 +2710,6 @@ Object.assign(__ds_scope, { Tag });
 // components/feedback/AlertBanner.jsx
 try { (() => {
 const { cx, Icon, IconButton } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const ICON = {
   info: "info",
   ok: "check-circle",
@@ -2699,10 +2725,11 @@ function AlertBanner({
   children,
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement("div", _extends({
+  return /*#__PURE__*/React.createElement("div", {
     role: tone === "crit" || tone === "warn" ? "alert" : "status",
-    className: cx("bds-alert", `bds-tone--${tone}`, className)
-  }, rest), /*#__PURE__*/React.createElement(Icon, {
+    className: cx("bds-alert", `bds-tone--${tone}`, className),
+    ...rest
+  }, /*#__PURE__*/React.createElement(Icon, {
     name: ICON[tone]
   }), title && /*#__PURE__*/React.createElement("div", {
     className: "bds-alert__t"
@@ -2713,7 +2740,7 @@ function AlertBanner({
     icon: "x",
     size: "sm",
     variant: "ghost",
-    "aria-label": "\uC54C\uB9BC \uB2EB\uAE30",
+    "aria-label": "알림 닫기",
     onClick: onClose
   }));
 }
@@ -2723,7 +2750,6 @@ Object.assign(__ds_scope, { AlertBanner });
 // components/feedback/EmptyState.jsx
 try { (() => {
 const { cx, MascotMark } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 빈 상태. 봉구 표정으로 톤을 전한다(기본 curious, 오류는 worried). actions에 다음 행동 버튼. */
 function EmptyState({
   title,
@@ -2735,9 +2761,10 @@ function EmptyState({
   className,
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement("div", _extends({
-    className: cx("bds-empty", plain && "bds-empty--plain", tone === "error" && "bds-empty--error", className)
-  }, rest), face && /*#__PURE__*/React.createElement(MascotMark, {
+  return /*#__PURE__*/React.createElement("div", {
+    className: cx("bds-empty", plain && "bds-empty--plain", tone === "error" && "bds-empty--error", className),
+    ...rest
+  }, face && /*#__PURE__*/React.createElement(MascotMark, {
     face: tone === "error" && face === "curious" ? "worried" : face,
     size: 36,
     animated: false
@@ -2755,7 +2782,6 @@ Object.assign(__ds_scope, { EmptyState });
 // components/feedback/ErrorState.jsx
 try { (() => {
 const { cx, MascotMark, Button } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 영역 실패 상태(ErrorBoundary fallback·요청 실패). 마스코트 crying + 제목 + 원인 + 다시 시도. 빈 결과는 EmptyState. */
 function ErrorState({
   title = "불러오지 못했습니다",
@@ -2768,10 +2794,11 @@ function ErrorState({
   className,
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement("div", _extends({
+  return /*#__PURE__*/React.createElement("div", {
     className: cx("bds-errstate", className),
-    role: "alert"
-  }, rest), mascot && /*#__PURE__*/React.createElement(MascotMark, {
+    role: "alert",
+    ...rest
+  }, mascot && /*#__PURE__*/React.createElement(MascotMark, {
     face: "crying",
     size: 40,
     animated: false
@@ -2796,7 +2823,6 @@ Object.assign(__ds_scope, { ErrorState });
 // components/feedback/InlineMessage.jsx
 try { (() => {
 const { cx, Icon } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const ICON = {
   ok: "check-circle",
   warn: "warning",
@@ -2812,10 +2838,11 @@ function InlineMessage({
   children,
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement("div", _extends({
+  return /*#__PURE__*/React.createElement("div", {
     className: cx("bds-msg", tone !== "neutral" && "bds-msg--" + tone, className),
-    role: tone === "crit" ? "alert" : "status"
-  }, rest), /*#__PURE__*/React.createElement(Icon, {
+    role: tone === "crit" ? "alert" : "status",
+    ...rest
+  }, /*#__PURE__*/React.createElement(Icon, {
     name: icon ?? ICON[tone],
     size: 14
   }), /*#__PURE__*/React.createElement("span", null, children));
@@ -2827,7 +2854,6 @@ Object.assign(__ds_scope, { InlineMessage });
 try { (() => {
 const { useEffect, useRef } = React;
 const { cx, IconButton, Button, EmptyState } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const NOTIFICATION_DRAWER_ID = "bds-notification-drawer";
 const TONE_LABEL = {
   info: "정보",
@@ -2844,14 +2870,15 @@ function NotificationTrigger({
   controls = NOTIFICATION_DRAWER_ID,
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement(IconButton, _extends({
+  return /*#__PURE__*/React.createElement(IconButton, {
     icon: "bell",
     badge: unreadCount,
     "aria-label": unreadCount > 0 ? `알림, 읽지 않음 ${unreadCount}건` : "알림",
     "aria-expanded": open,
     "aria-controls": controls,
-    onClick: onToggle
-  }, rest));
+    onClick: onToggle,
+    ...rest
+  });
 }
 
 /** 오른쪽 알림 드로어(380px, 모바일 전폭). 항목을 누르면 onRead(id). */
@@ -2888,7 +2915,7 @@ function NotificationDrawer({
     id: id,
     ref: panel,
     role: "dialog",
-    "aria-label": "\uC54C\uB9BC \uC13C\uD130",
+    "aria-label": "알림 센터",
     "aria-hidden": !open || undefined,
     className: "bds-drawer__panel"
   }, /*#__PURE__*/React.createElement("header", {
@@ -2897,29 +2924,29 @@ function NotificationDrawer({
     style: {
       flex: 1
     }
-  }, /*#__PURE__*/React.createElement("h2", null, "\uC54C\uB9BC"), /*#__PURE__*/React.createElement("p", null, items.length === 0 ? "새 알림이 없습니다." : /*#__PURE__*/React.createElement(React.Fragment, null, "\uC54C\uB9BC ", /*#__PURE__*/React.createElement("span", {
+  }, /*#__PURE__*/React.createElement("h2", null, "알림"), /*#__PURE__*/React.createElement("p", null, items.length === 0 ? "새 알림이 없습니다." : /*#__PURE__*/React.createElement(React.Fragment, null, "알림 ", /*#__PURE__*/React.createElement("span", {
     className: "bds-mono"
-  }, items.length), "\uAC74"))), /*#__PURE__*/React.createElement(IconButton, {
+  }, items.length), "건"))), /*#__PURE__*/React.createElement(IconButton, {
     icon: "x",
     variant: "ghost",
     size: "sm",
-    "aria-label": "\uC54C\uB9BC \uB2EB\uAE30",
+    "aria-label": "알림 닫기",
     onClick: onClose
   })), items.length === 0 ? /*#__PURE__*/React.createElement(EmptyState, {
     plain: true,
     face: "smiling",
-    title: "\uBAA8\uB4E0 \uC0C1\uD0DC\uAC00 \uC815\uC0C1\uC785\uB2C8\uB2E4",
-    description: "\uC8FC\uC758\uAC00 \uD544\uC694\uD55C \uC0C1\uD0DC\uAC00 \uC0DD\uAE30\uBA74 \uC5EC\uAE30\uC5D0 \uD45C\uC2DC\uB429\uB2C8\uB2E4."
+    title: "모든 상태가 정상입니다",
+    description: "주의가 필요한 상태가 생기면 여기에 표시됩니다."
   }) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
     className: "bds-drawer__tools"
-  }, /*#__PURE__*/React.createElement("span", null, "\uC77D\uC9C0 \uC54A\uC74C ", /*#__PURE__*/React.createElement("span", {
+  }, /*#__PURE__*/React.createElement("span", null, "읽지 않음 ", /*#__PURE__*/React.createElement("span", {
     className: "bds-mono"
-  }, unread), "\uAC74"), /*#__PURE__*/React.createElement(Button, {
+  }, unread), "건"), /*#__PURE__*/React.createElement(Button, {
     size: "sm",
     variant: "ghost",
     disabled: unread === 0,
     onClick: onReadAll
-  }, "\uBAA8\uB450 \uC77D\uC74C")), /*#__PURE__*/React.createElement("ul", {
+  }, "모두 읽음")), /*#__PURE__*/React.createElement("ul", {
     className: "bds-drawer__list"
   }, items.map(it => /*#__PURE__*/React.createElement("li", {
     key: it.id
@@ -2935,7 +2962,7 @@ function NotificationDrawer({
     className: "bds-notif__t"
   }, it.title), /*#__PURE__*/React.createElement("span", {
     className: "bds-notif__d"
-  }, it.description && /*#__PURE__*/React.createElement(React.Fragment, null, it.description, " \xB7 "), /*#__PURE__*/React.createElement("span", {
+  }, it.description && /*#__PURE__*/React.createElement(React.Fragment, null, it.description, " · "), /*#__PURE__*/React.createElement("span", {
     className: "bds-mono"
   }, it.time), it.resolved && " · 해제됨"))))))));
 }
@@ -3001,7 +3028,6 @@ Object.assign(__ds_scope, { ProgressBar });
 // components/feedback/Skeleton.jsx
 try { (() => {
 const { cx, frameStyle } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 스켈레톤. variant: block | text | circle. fit="flex"면 폭을 채우고 height만, fixed면 width·height. */
 function Skeleton({
   variant = "block",
@@ -3013,10 +3039,11 @@ function Skeleton({
   style,
   ...rest
 }) {
-  if (lines) return /*#__PURE__*/React.createElement("div", _extends({
+  if (lines) return /*#__PURE__*/React.createElement("div", {
     className: cx("bds-skel-group", className),
-    "aria-hidden": "true"
-  }, rest), Array.from({
+    "aria-hidden": "true",
+    ...rest
+  }, Array.from({
     length: lines
   }, (_, i) => /*#__PURE__*/React.createElement("span", {
     key: i,
@@ -3025,7 +3052,7 @@ function Skeleton({
       width: i === lines - 1 ? "60%" : "100%"
     }
   })));
-  return /*#__PURE__*/React.createElement("span", _extends({
+  return /*#__PURE__*/React.createElement("span", {
     className: cx("bds-skel", variant !== "block" && `bds-skel--${variant}`, className),
     style: frameStyle({
       fit: variant === "circle" ? "fixed" : fit,
@@ -3033,8 +3060,9 @@ function Skeleton({
       height,
       style
     }),
-    "aria-hidden": "true"
-  }, rest));
+    "aria-hidden": "true",
+    ...rest
+  });
 }
 Object.assign(__ds_scope, { Skeleton });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/feedback/Skeleton.jsx", error: String((e && e.message) || e) }); }
@@ -3042,7 +3070,6 @@ Object.assign(__ds_scope, { Skeleton });
 // components/feedback/Spinner.jsx
 try { (() => {
 const { cx, MascotMark } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 스피너. size px. label이 있으면 옆에 텍스트(권장). mascot=true면 봉구 얼굴이 돈다(md 이상). */
 function Spinner({
   size = 18,
@@ -3070,12 +3097,13 @@ function Spinner({
     },
     "aria-hidden": "true"
   });
-  return /*#__PURE__*/React.createElement("span", _extends({
+  return /*#__PURE__*/React.createElement("span", {
     className: "bds-spinner-row",
     role: "status",
     "aria-live": "polite",
-    "aria-label": label ?? "불러오는 중"
-  }, rest), el, label && /*#__PURE__*/React.createElement("span", null, label));
+    "aria-label": label ?? "불러오는 중",
+    ...rest
+  }, el, label && /*#__PURE__*/React.createElement("span", null, label));
 }
 Object.assign(__ds_scope, { Spinner });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/feedback/Spinner.jsx", error: String((e && e.message) || e) }); }
@@ -3176,7 +3204,6 @@ Object.assign(__ds_scope, { Stepper });
 try { (() => {
 const { createContext, useCallback, useContext, useRef, useState } = React;
 const { cx, Icon } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const ToastCtx = /*#__PURE__*/createContext(null);
 const ICON = {
   info: "info",
@@ -3214,12 +3241,12 @@ function ToastProvider({
   }, children, /*#__PURE__*/React.createElement("div", {
     className: "bds-toasts",
     role: "region",
-    "aria-label": "\uC54C\uB9BC \uBA54\uC2DC\uC9C0"
-  }, items.map(t => /*#__PURE__*/React.createElement(Toast, _extends({
-    key: t.id
-  }, t, {
+    "aria-label": "알림 메시지"
+  }, items.map(t => /*#__PURE__*/React.createElement(Toast, {
+    key: t.id,
+    ...t,
     onDismiss: () => dismiss(t.id)
-  })))));
+  }))));
 }
 function useToast() {
   const c = useContext(ToastCtx);
@@ -3258,7 +3285,7 @@ function Toast({
     style: {
       color: "var(--ink-3)"
     },
-    "aria-label": "\uB2EB\uAE30",
+    "aria-label": "닫기",
     onClick: onDismiss
   }, /*#__PURE__*/React.createElement(Icon, {
     name: "x",
@@ -3272,7 +3299,6 @@ Object.assign(__ds_scope, { ToastProvider, useToast, Toast });
 try { (() => {
 const { forwardRef } = React;
 const { cx, Icon } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 체크박스. children이 라벨. 라벨 없이 쓰면 aria-label 필수(표 선택 열). indeterminate는 ref로 세팅. */
 const Checkbox = /*#__PURE__*/forwardRef(function Checkbox({
   children,
@@ -3284,14 +3310,15 @@ const Checkbox = /*#__PURE__*/forwardRef(function Checkbox({
 }, ref) {
   return /*#__PURE__*/React.createElement("label", {
     className: cx("bds-check", radio && "bds-check--radio", disabled && "bds-check--disabled", className)
-  }, /*#__PURE__*/React.createElement("input", _extends({
+  }, /*#__PURE__*/React.createElement("input", {
     type: radio ? "radio" : "checkbox",
     disabled: disabled,
     ref: el => {
       if (el && indeterminate !== undefined) el.indeterminate = indeterminate;
       if (typeof ref === "function") ref(el);else if (ref) ref.current = el;
-    }
-  }, rest)), /*#__PURE__*/React.createElement("span", {
+    },
+    ...rest
+  }), /*#__PURE__*/React.createElement("span", {
     className: "bds-check__box",
     "aria-hidden": "true"
   }, /*#__PURE__*/React.createElement(Icon, {
@@ -3305,7 +3332,6 @@ Object.assign(__ds_scope, { Checkbox });
 try { (() => {
 const { Fragment, useId, useState } = React;
 const { cx, frameStyle, Icon, Checkbox } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const hideCls = c => c.hideBelow === "desktop" ? "d-hide" : c.hideBelow === "tablet" || c.hideOnMobile ? "m-hide" : undefined;
 
 /** 데이터 표. 컨테이너 폭 기준으로 열을 숨기고(hideBelow), 숨긴 정보는 expandable로 펼쳐 본다.
@@ -3354,15 +3380,16 @@ function DataTable({
     key,
     dir: "asc"
   });
-  return /*#__PURE__*/React.createElement("div", _extends({
+  return /*#__PURE__*/React.createElement("div", {
     className: cx("bds-table", className),
     style: frameStyle({
       fit,
       width,
       height,
       style
-    })
-  }, rest), header && /*#__PURE__*/React.createElement("div", {
+    }),
+    ...rest
+  }, header && /*#__PURE__*/React.createElement("div", {
     className: "bds-table__hd"
   }, /*#__PURE__*/React.createElement("h2", {
     id: hid
@@ -3374,11 +3401,11 @@ function DataTable({
     } : undefined
   }, selectable && selCount > 0 && /*#__PURE__*/React.createElement("div", {
     className: "bds-table__bulk"
-  }, /*#__PURE__*/React.createElement("b", null, selCount, "\uAC1C \uC120\uD0DD\uB428"), bulkActions, /*#__PURE__*/React.createElement("button", {
+  }, /*#__PURE__*/React.createElement("b", null, selCount, "개 선택됨"), bulkActions, /*#__PURE__*/React.createElement("button", {
     type: "button",
     className: "bds-table__clear",
     onClick: () => onSelectionChange?.([])
-  }, "\uC120\uD0DD \uD574\uC81C")), /*#__PURE__*/React.createElement("div", {
+  }, "선택 해제")), /*#__PURE__*/React.createElement("div", {
     className: "bds-table__scroll"
   }, /*#__PURE__*/React.createElement("table", {
     "aria-label": ariaLabel,
@@ -3387,7 +3414,7 @@ function DataTable({
     scope: "col",
     className: "ck"
   }, /*#__PURE__*/React.createElement(Checkbox, {
-    "aria-label": "\uC804\uCCB4 \uC120\uD0DD",
+    "aria-label": "전체 선택",
     checked: all,
     indeterminate: selCount > 0 && !all,
     onChange: () => onSelectionChange?.(all ? [] : keys)
@@ -3461,7 +3488,6 @@ Object.assign(__ds_scope, { DataTable });
 try { (() => {
 const { useRef, useState } = React;
 const { cx, frameStyle, Icon } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 파일 드롭존. 클릭/드롭/키보드로 파일을 받아 onFiles(File[])를 호출한다. */
 function Dropzone({
   accept,
@@ -3484,7 +3510,7 @@ function Dropzone({
     const files = Array.from(list ?? []);
     if (files.length) onFiles?.(multiple ? files : files.slice(0, 1));
   };
-  return /*#__PURE__*/React.createElement("div", _extends({
+  return /*#__PURE__*/React.createElement("div", {
     role: "button",
     tabIndex: disabled ? -1 : 0,
     "aria-disabled": disabled || undefined,
@@ -3511,8 +3537,9 @@ function Dropzone({
       e.preventDefault();
       setOver(false);
       if (!disabled) emit(e.dataTransfer.files);
-    }
-  }, rest), /*#__PURE__*/React.createElement(Icon, {
+    },
+    ...rest
+  }, /*#__PURE__*/React.createElement(Icon, {
     name: icon
   }), /*#__PURE__*/React.createElement("b", null, title), hint && /*#__PURE__*/React.createElement("small", null, hint), /*#__PURE__*/React.createElement("input", {
     ref: input,
@@ -3532,7 +3559,6 @@ Object.assign(__ds_scope, { Dropzone });
 try { (() => {
 const { createContext, useContext, useId } = React;
 const { cx, Icon } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const FieldCtx = /*#__PURE__*/createContext(null);
 const useFieldContext = () => useContext(FieldCtx);
 
@@ -3559,9 +3585,10 @@ function Field({
   };
   return /*#__PURE__*/React.createElement(FieldCtx.Provider, {
     value: ctx
-  }, /*#__PURE__*/React.createElement("div", _extends({
-    className: cx("bds-field", className)
-  }, rest), label != null && /*#__PURE__*/React.createElement("label", {
+  }, /*#__PURE__*/React.createElement("div", {
+    className: cx("bds-field", className),
+    ...rest
+  }, label != null && /*#__PURE__*/React.createElement("label", {
     className: "bds-field__label",
     htmlFor: inputId
   }, label, required && /*#__PURE__*/React.createElement("span", {
@@ -3690,7 +3717,7 @@ function CodeEditor({
     className: "bds-code-ed__foot"
   }, /*#__PURE__*/React.createElement("span", {
     className: "bds-mono"
-  }, language.toUpperCase(), " \xB7 ", lines, "\uC904"), err ? /*#__PURE__*/React.createElement("span", {
+  }, language.toUpperCase(), " · ", lines, "줄"), err ? /*#__PURE__*/React.createElement("span", {
     className: "bds-code-ed__msg",
     role: "alert"
   }, /*#__PURE__*/React.createElement(Icon, {
@@ -3701,7 +3728,7 @@ function CodeEditor({
   }, /*#__PURE__*/React.createElement(Icon, {
     name: "check",
     size: 13
-  }), "\uC720\uD6A8\uD55C JSON") : null));
+  }), "유효한 JSON") : null));
 }
 Object.assign(__ds_scope, { CodeEditor });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/input/CodeEditor.jsx", error: String((e && e.message) || e) }); }
@@ -3782,7 +3809,7 @@ function ColorInput({
   })), presets.length > 0 && /*#__PURE__*/React.createElement("div", {
     className: "bds-color__presets",
     role: "group",
-    "aria-label": "\uC0C9 \uD504\uB9AC\uC14B"
+    "aria-label": "색 프리셋"
   }, presets.map(p => /*#__PURE__*/React.createElement("button", {
     key: p,
     type: "button",
@@ -3815,6 +3842,7 @@ function Combobox({
   width,
   disabled,
   invalid,
+  required,
   clearable = true,
   className,
   style,
@@ -3890,6 +3918,8 @@ function Combobox({
     "aria-autocomplete": "list",
     "aria-label": ariaLabel,
     "aria-describedby": f?.describedBy,
+    "aria-invalid": (invalid ?? f?.invalid) || undefined,
+    "aria-required": (required ?? f?.required) || undefined,
     value: open ? q : sel?.label ?? "",
     placeholder: sel ? sel.label : placeholder,
     disabled: disabled,
@@ -3903,7 +3933,7 @@ function Combobox({
   }), clearable && sel && !disabled && /*#__PURE__*/React.createElement("button", {
     type: "button",
     className: "bds-combo__x",
-    "aria-label": "\uC120\uD0DD \uD574\uC81C",
+    "aria-label": "선택 해제",
     onMouseDown: e => e.preventDefault(),
     onClick: e => {
       e.stopPropagation();
@@ -4046,7 +4076,7 @@ function DatePicker({
     }
   }, value ?? placeholder)), open && /*#__PURE__*/React.createElement("div", {
     role: "dialog",
-    "aria-label": "\uB0A0\uC9DC \uC120\uD0DD",
+    "aria-label": "날짜 선택",
     className: "bds-date__pop"
   }, /*#__PURE__*/React.createElement("div", {
     className: "bds-cal__hd"
@@ -4054,13 +4084,13 @@ function DatePicker({
     icon: "caret-left",
     size: "sm",
     variant: "ghost",
-    "aria-label": "\uC774\uC804 \uB2EC",
+    "aria-label": "이전 달",
     onClick: () => setView(new Date(view.getFullYear(), view.getMonth() - 1, 1))
   }), /*#__PURE__*/React.createElement("b", null, view.getFullYear(), ".", pad(view.getMonth() + 1)), /*#__PURE__*/React.createElement(IconButton, {
     icon: "caret-right",
     size: "sm",
     variant: "ghost",
-    "aria-label": "\uB2E4\uC74C \uB2EC",
+    "aria-label": "다음 달",
     onClick: () => setView(new Date(view.getFullYear(), view.getMonth() + 1, 1))
   })), /*#__PURE__*/React.createElement("div", {
     className: "bds-cal__grid",
@@ -4150,7 +4180,7 @@ function DateRangePicker({
   }, /*#__PURE__*/React.createElement("div", {
     className: cx("bds-seg", size === "sm" && "bds-seg--sm"),
     role: "radiogroup",
-    "aria-label": "\uCD5C\uADFC"
+    "aria-label": "최근"
   }, presets.map(p => /*#__PURE__*/React.createElement("button", {
     key: p.value,
     type: "button",
@@ -4174,7 +4204,7 @@ function DateRangePicker({
   }, /*#__PURE__*/React.createElement(Icon, {
     name: "calendar-blank",
     size: 13
-  }), " \uC9C1\uC811")), custom && /*#__PURE__*/React.createElement("div", {
+  }), " 직접")), custom && /*#__PURE__*/React.createElement("div", {
     className: "bds-range__custom"
   }, /*#__PURE__*/React.createElement("div", {
     className: cx("bds-ctl", size === "sm" && "bds-ctl--sm")
@@ -4182,7 +4212,7 @@ function DateRangePicker({
     id: f?.id,
     type: "datetime-local",
     className: "bds-mono",
-    "aria-label": "\uC2DC\uC791",
+    "aria-label": "시작",
     value: fmtLocal(value.from),
     disabled: disabled,
     onChange: e => set({
@@ -4192,12 +4222,12 @@ function DateRangePicker({
   })), /*#__PURE__*/React.createElement("span", {
     className: "bds-range__sep",
     "aria-hidden": "true"
-  }, "\u2013"), /*#__PURE__*/React.createElement("div", {
+  }, "–"), /*#__PURE__*/React.createElement("div", {
     className: cx("bds-ctl", size === "sm" && "bds-ctl--sm")
   }, /*#__PURE__*/React.createElement("input", {
     type: "datetime-local",
     className: "bds-mono",
-    "aria-label": "\uB05D",
+    "aria-label": "끝",
     value: fmtLocal(value.to),
     disabled: disabled,
     onChange: e => set({
@@ -4293,25 +4323,25 @@ function FileUpload({
       size: "sm",
       variant: "ghost",
       icon: "pause",
-      "aria-label": "\uC77C\uC2DC\uC815\uC9C0",
+      "aria-label": "일시정지",
       onClick: () => onPause(it.id)
     }), it.status === "paused" && onResume && /*#__PURE__*/React.createElement(Button, {
       size: "sm",
       variant: "ghost",
       icon: "play",
-      "aria-label": "\uC7AC\uAC1C",
+      "aria-label": "재개",
       onClick: () => onResume(it.id)
     }), it.status === "failed" && onRetry && /*#__PURE__*/React.createElement(Button, {
       size: "sm",
       variant: "ghost",
       icon: "arrow-counter-clockwise",
-      "aria-label": "\uC7AC\uC2DC\uB3C4",
+      "aria-label": "재시도",
       onClick: () => onRetry(it.id)
     }), it.status !== "done" && onCancel && /*#__PURE__*/React.createElement(Button, {
       size: "sm",
       variant: "ghost",
       icon: "x",
-      "aria-label": "\uCDE8\uC18C",
+      "aria-label": "취소",
       onClick: () => onCancel(it.id)
     })));
   })));
@@ -4439,7 +4469,6 @@ Object.assign(__ds_scope, { MultiSelect });
 // components/input/NumberStepper.jsx
 try { (() => {
 const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 숫자 입력 + −/+ 버튼. 값은 mono. min/max에서 버튼 비활성. */
 function NumberStepper({
   value,
@@ -4477,13 +4506,13 @@ function NumberStepper({
   }, /*#__PURE__*/React.createElement("button", {
     type: "button",
     className: "bds-stepper-ctl__btn",
-    "aria-label": "\uAC10\uC18C",
+    "aria-label": "감소",
     disabled: disabled || v <= min,
     onClick: () => set(+(v - step).toFixed(dec))
   }, /*#__PURE__*/React.createElement(Icon, {
     name: "minus",
     size: 12
-  })), /*#__PURE__*/React.createElement("input", _extends({
+  })), /*#__PURE__*/React.createElement("input", {
     id: f?.id,
     "aria-describedby": f?.describedBy,
     type: "number",
@@ -4497,13 +4526,14 @@ function NumberStepper({
     onChange: e => {
       const n = Number(e.target.value);
       if (Number.isFinite(n)) set(n);
-    }
-  }, rest)), unit && /*#__PURE__*/React.createElement("span", {
+    },
+    ...rest
+  }), unit && /*#__PURE__*/React.createElement("span", {
     className: "bds-ctl__affix"
   }, unit), /*#__PURE__*/React.createElement("button", {
     type: "button",
     className: "bds-stepper-ctl__btn",
-    "aria-label": "\uC99D\uAC00",
+    "aria-label": "증가",
     disabled: disabled || v >= max,
     onClick: () => set(+(v + step).toFixed(dec))
   }, /*#__PURE__*/React.createElement(Icon, {
@@ -4568,7 +4598,7 @@ function OTPInput({
   return /*#__PURE__*/React.createElement("div", {
     className: cx("bds-otp", (invalid ?? f?.invalid) && "bds-otp--err", className),
     role: "group",
-    "aria-label": "\uC778\uC99D \uCF54\uB4DC",
+    "aria-label": "인증 코드",
     "aria-describedby": f?.describedBy
   }, chars.map((c, i) => /*#__PURE__*/React.createElement(React.Fragment, {
     key: i
@@ -4597,7 +4627,6 @@ Object.assign(__ds_scope, { OTPInput });
 try { (() => {
 const { useId } = React;
 const { cx, Checkbox } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 라디오 묶음. options: {value, label, hint?, disabled?}. layout: column(기본) · row · cards(설명 있는 선택지). */
 function RadioGroup({
   name,
@@ -4612,10 +4641,11 @@ function RadioGroup({
 }) {
   const uid = useId().replace(/:/g, ""),
     nm = name ?? "rg-" + uid;
-  return /*#__PURE__*/React.createElement("fieldset", _extends({
+  return /*#__PURE__*/React.createElement("fieldset", {
     className: cx("bds-radiogrp", layout === "row" && "bds-radiogrp--row", layout === "cards" && "bds-radiogrp--cards", className),
-    disabled: disabled
-  }, rest), label && /*#__PURE__*/React.createElement("legend", {
+    disabled: disabled,
+    ...rest
+  }, label && /*#__PURE__*/React.createElement("legend", {
     className: "bds-radiogrp__lg"
   }, label), options.map(o => {
     const input = /*#__PURE__*/React.createElement(Checkbox, {
@@ -4645,7 +4675,6 @@ Object.assign(__ds_scope, { RadioGroup });
 try { (() => {
 const { useEffect, useRef } = React;
 const { cx, frameStyle, Icon } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 검색 입력. `/` 단축키로 포커스, 값이 있으면 지우기 버튼. onSearch(value)는 Enter에 호출. */
 function SearchField({
   value,
@@ -4686,7 +4715,7 @@ function SearchField({
   }, /*#__PURE__*/React.createElement(Icon, {
     name: "magnifying-glass",
     size: 15
-  })), /*#__PURE__*/React.createElement("input", _extends({
+  })), /*#__PURE__*/React.createElement("input", {
     ref: ref,
     type: "search",
     value: value,
@@ -4696,11 +4725,12 @@ function SearchField({
     onKeyDown: e => {
       if (e.key === "Enter") onSearch?.(e.currentTarget.value);
       if (e.key === "Escape") onChange?.("", e);
-    }
-  }, rest)), value ? /*#__PURE__*/React.createElement("button", {
+    },
+    ...rest
+  }), value ? /*#__PURE__*/React.createElement("button", {
     type: "button",
     className: "bds-ctl__affix",
-    "aria-label": "\uAC80\uC0C9\uC5B4 \uC9C0\uC6B0\uAE30",
+    "aria-label": "검색어 지우기",
     onClick: e => onChange?.("", e)
   }, /*#__PURE__*/React.createElement(Icon, {
     name: "x-circle",
@@ -4717,7 +4747,6 @@ Object.assign(__ds_scope, { SearchField });
 try { (() => {
 const { useEffect, useRef, useState } = React;
 const { cx, frameStyle } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 2~5개 상호배타 선택. 선택 thumb가 미끄러진다. fit="flex"면 옵션이 폭을 균등 분할. */
 function SegmentedControl({
   options = [],
@@ -4748,7 +4777,7 @@ function SegmentedControl({
     ro.observe(root.current);
     return () => ro.disconnect();
   }, [value, options.length]);
-  return /*#__PURE__*/React.createElement("div", _extends({
+  return /*#__PURE__*/React.createElement("div", {
     ref: root,
     role: "radiogroup",
     "aria-label": ariaLabel,
@@ -4757,8 +4786,9 @@ function SegmentedControl({
       fit,
       width,
       style
-    })
-  }, rest), thumb && /*#__PURE__*/React.createElement("span", {
+    }),
+    ...rest
+  }, thumb && /*#__PURE__*/React.createElement("span", {
     className: "bds-seg__thumb",
     style: thumb,
     "aria-hidden": "true"
@@ -4783,7 +4813,6 @@ Object.assign(__ds_scope, { SegmentedControl });
 // components/input/Select.jsx
 try { (() => {
 const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 네이티브 select를 토큰으로 감싼 선택 입력. options: {value,label,disabled}[]. */
 function Select({
   options = [],
@@ -4805,12 +4834,13 @@ function Select({
       width,
       style
     })
-  }, /*#__PURE__*/React.createElement("select", _extends({
+  }, /*#__PURE__*/React.createElement("select", {
     id: f?.id,
     "aria-describedby": f?.describedBy,
     "aria-invalid": (invalid ?? f?.invalid) || undefined,
-    disabled: disabled
-  }, rest), placeholder && /*#__PURE__*/React.createElement("option", {
+    disabled: disabled,
+    ...rest
+  }, placeholder && /*#__PURE__*/React.createElement("option", {
     value: "",
     disabled: true
   }, placeholder), options.map(o => /*#__PURE__*/React.createElement("option", {
@@ -4829,7 +4859,6 @@ Object.assign(__ds_scope, { Select });
 // components/input/Slider.jsx
 try { (() => {
 const { cx, frameStyle, useFieldContext } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 범위 슬라이더. 네이티브 range를 토큰으로. marks면 눈금 라벨, showValue면 오른쪽에 현재 값(mono). */
 function Slider({
   value,
@@ -4866,7 +4895,7 @@ function Slider({
     })
   }, /*#__PURE__*/React.createElement("div", {
     className: "bds-slider__row"
-  }, /*#__PURE__*/React.createElement("input", _extends({
+  }, /*#__PURE__*/React.createElement("input", {
     id: f?.id,
     "aria-describedby": f?.describedBy,
     type: "range",
@@ -4879,8 +4908,9 @@ function Slider({
       const n = Number(e.target.value);
       setInner(n);
       onChange?.(n, e);
-    }
-  }, rest)), showValue && /*#__PURE__*/React.createElement("output", {
+    },
+    ...rest
+  }), showValue && /*#__PURE__*/React.createElement("output", {
     className: "bds-slider__v bds-mono",
     htmlFor: f?.id
   }, valueFormatter(v), unit)), marks && /*#__PURE__*/React.createElement("div", {
@@ -4902,7 +4932,6 @@ Object.assign(__ds_scope, { Slider });
 // components/input/Switch.jsx
 try { (() => {
 const { cx } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 켬/끔 스위치. 즉시 반영되는 설정에만 쓴다(저장 버튼이 따로 있으면 Checkbox). */
 function Switch({
   children,
@@ -4912,11 +4941,12 @@ function Switch({
 }) {
   return /*#__PURE__*/React.createElement("label", {
     className: cx("bds-switch", disabled && "bds-switch--disabled", className)
-  }, /*#__PURE__*/React.createElement("input", _extends({
+  }, /*#__PURE__*/React.createElement("input", {
     type: "checkbox",
     role: "switch",
-    disabled: disabled
-  }, rest)), /*#__PURE__*/React.createElement("span", {
+    disabled: disabled,
+    ...rest
+  }), /*#__PURE__*/React.createElement("span", {
     className: "bds-switch__track",
     "aria-hidden": "true"
   }), children != null && /*#__PURE__*/React.createElement("span", null, children));
@@ -4927,7 +4957,6 @@ Object.assign(__ds_scope, { Switch });
 // components/input/TextArea.jsx
 try { (() => {
 const { cx, frameStyle, useFieldContext } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 여러 줄 입력. rows로 초기 높이, 세로로만 리사이즈. */
 function TextArea({
   rows = 3,
@@ -4948,14 +4977,15 @@ function TextArea({
       width,
       style
     })
-  }, /*#__PURE__*/React.createElement("textarea", _extends({
+  }, /*#__PURE__*/React.createElement("textarea", {
     id: f?.id,
     rows: rows,
     "aria-describedby": f?.describedBy,
     "aria-invalid": (invalid ?? f?.invalid) || undefined,
     disabled: disabled,
-    className: mono ? "bds-mono" : undefined
-  }, rest)));
+    className: mono ? "bds-mono" : undefined,
+    ...rest
+  }));
 }
 Object.assign(__ds_scope, { TextArea });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/input/TextArea.jsx", error: String((e && e.message) || e) }); }
@@ -4963,7 +4993,6 @@ Object.assign(__ds_scope, { TextArea });
 // components/input/TextField.jsx
 try { (() => {
 const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 한 줄 텍스트 입력. Field 안에서 라벨을 받는다. prefix/suffix에 단위·아이콘. */
 function TextField({
   size = "md",
@@ -4994,14 +5023,15 @@ function TextField({
     size: 15
   })), prefix && /*#__PURE__*/React.createElement("span", {
     className: "bds-ctl__affix"
-  }, prefix), /*#__PURE__*/React.createElement("input", _extends({
+  }, prefix), /*#__PURE__*/React.createElement("input", {
     id: f?.id,
     "aria-describedby": f?.describedBy,
     "aria-invalid": (invalid ?? f?.invalid) || undefined,
     required: f?.required,
     disabled: disabled,
-    className: mono ? "bds-mono" : undefined
-  }, rest)), suffix && /*#__PURE__*/React.createElement("span", {
+    className: mono ? "bds-mono" : undefined,
+    ...rest
+  }), suffix && /*#__PURE__*/React.createElement("span", {
     className: "bds-ctl__affix"
   }, suffix));
 }
@@ -5012,7 +5042,6 @@ Object.assign(__ds_scope, { TextField });
 try { (() => {
 const { useState } = React;
 const { cx, Icon, TextField } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const LV = ["", "약함", "보통", "좋음", "강함"];
 const passwordStrength = (s = "") => {
   if (!s) return 0;
@@ -5036,7 +5065,7 @@ function PasswordField({
   const lv = strength ? passwordStrength(value) : 0;
   return /*#__PURE__*/React.createElement("div", {
     className: "bds-pw"
-  }, /*#__PURE__*/React.createElement(TextField, _extends({
+  }, /*#__PURE__*/React.createElement(TextField, {
     type: show ? "text" : "password",
     value: value,
     onChange: onChange,
@@ -5051,8 +5080,9 @@ function PasswordField({
     }, /*#__PURE__*/React.createElement(Icon, {
       name: show ? "eye-slash" : "eye",
       size: 15
-    }))
-  }, rest)), strength && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    })),
+    ...rest
+  }), strength && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
     className: "bds-pw__meter",
     "data-level": lv,
     "aria-hidden": "true"
@@ -5100,7 +5130,7 @@ function TimePicker({
     size: 15
   })), /*#__PURE__*/React.createElement("select", {
     id: f?.id,
-    "aria-label": "\uC2DC",
+    "aria-label": "시",
     value: h ?? "",
     disabled: disabled,
     onChange: e => set(Number(e.target.value), m)
@@ -5115,7 +5145,7 @@ function TimePicker({
   }, pad(i)))), /*#__PURE__*/React.createElement("span", {
     className: "bds-time__sep"
   }, ":"), /*#__PURE__*/React.createElement("select", {
-    "aria-label": "\uBD84",
+    "aria-label": "분",
     value: m ?? "",
     disabled: disabled,
     onChange: e => set(h, Number(e.target.value))
@@ -5133,7 +5163,6 @@ Object.assign(__ds_scope, { TimePicker });
 // components/layout/AspectRatio.jsx
 try { (() => {
 const { cx } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 비율 상자. 이미지·프리뷰(LCD 4:3)·iframe. ratio는 "16/9" 같은 문자열 또는 숫자. */
 function AspectRatio({
   ratio = "16/9",
@@ -5142,13 +5171,14 @@ function AspectRatio({
   children,
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement("div", _extends({
+  return /*#__PURE__*/React.createElement("div", {
     className: cx("bds-ratio", className),
     style: {
       "--ratio": typeof ratio === "number" ? String(ratio) : ratio.replace(":", "/"),
       ...style
-    }
-  }, rest), children);
+    },
+    ...rest
+  }, children);
 }
 Object.assign(__ds_scope, { AspectRatio });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/layout/AspectRatio.jsx", error: String((e && e.message) || e) }); }
@@ -5156,7 +5186,6 @@ Object.assign(__ds_scope, { AspectRatio });
 // components/layout/CardHead.jsx
 try { (() => {
 const { cx } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 카드 제목 줄: 제목(왼쪽) + 메타(오른쪽, 모델명·인터페이스 같은 고정 정보). */
 function CardHead({
   title,
@@ -5166,9 +5195,10 @@ function CardHead({
   children,
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement("div", _extends({
-    className: cx("bds-cardhead", className)
-  }, rest), /*#__PURE__*/React.createElement("h3", {
+  return /*#__PURE__*/React.createElement("div", {
+    className: cx("bds-cardhead", className),
+    ...rest
+  }, /*#__PURE__*/React.createElement("h3", {
     className: "bds-cardhead__t"
   }, title), children, meta != null && /*#__PURE__*/React.createElement("span", {
     className: cx("bds-cardhead__m bds-ellipsis", metaMono && "bds-mono")
@@ -5180,7 +5210,6 @@ Object.assign(__ds_scope, { CardHead });
 // components/layout/Container.jsx
 try { (() => {
 const { cx } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 최대 폭 중앙 정렬 컨테이너. 기본 --content-max 1440, narrow는 760(설정·폼 페이지). pad는 좌우 --gutter. */
 function Container({
   narrow = false,
@@ -5189,9 +5218,10 @@ function Container({
   children,
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement("div", _extends({
-    className: cx("bds-container", narrow && "bds-container--narrow", pad && "bds-container--pad", className)
-  }, rest), children);
+  return /*#__PURE__*/React.createElement("div", {
+    className: cx("bds-container", narrow && "bds-container--narrow", pad && "bds-container--pad", className),
+    ...rest
+  }, children);
 }
 Object.assign(__ds_scope, { Container });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/layout/Container.jsx", error: String((e && e.message) || e) }); }
@@ -5199,7 +5229,6 @@ Object.assign(__ds_scope, { Container });
 // components/layout/Divider.jsx
 try { (() => {
 const { cx } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 구분선. label을 주면 가운데 글자, vertical은 Inline 안에서 세로선. */
 function Divider({
   vertical = false,
@@ -5207,14 +5236,16 @@ function Divider({
   className,
   ...rest
 }) {
-  if (label) return /*#__PURE__*/React.createElement("div", _extends({
+  if (label) return /*#__PURE__*/React.createElement("div", {
     role: "separator",
-    className: cx("bds-divider", "bds-divider--label", className)
-  }, rest), label);
-  return /*#__PURE__*/React.createElement("hr", _extends({
+    className: cx("bds-divider", "bds-divider--label", className),
+    ...rest
+  }, label);
+  return /*#__PURE__*/React.createElement("hr", {
     className: cx("bds-divider", vertical && "bds-divider--vertical", className),
-    "aria-orientation": vertical ? "vertical" : undefined
-  }, rest));
+    "aria-orientation": vertical ? "vertical" : undefined,
+    ...rest
+  });
 }
 Object.assign(__ds_scope, { Divider });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/layout/Divider.jsx", error: String((e && e.message) || e) }); }
@@ -5222,7 +5253,6 @@ Object.assign(__ds_scope, { Divider });
 // components/layout/Grid.jsx
 try { (() => {
 const { cx } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 반응형 카드 격자. cols는 '이상적' 열 수이고 minmax(auto-fit)로 폭에 따라 저절로 줄어든다. min으로 카드 최소 폭을 직접 줄 수도 있다.
  *  columns={12}를 주면 고정 열 격자가 되고 자식 GridItem의 span으로 2/3+1/3 같은 비대칭 배치를 만든다(컨테이너 폭 기준 접힘). */
 function Grid({
@@ -5234,20 +5264,22 @@ function Grid({
   children,
   ...rest
 }) {
-  if (columns) return /*#__PURE__*/React.createElement("div", _extends({
+  if (columns) return /*#__PURE__*/React.createElement("div", {
     className: cx("bds-grid", "bds-grid--fixed", className),
     style: {
       "--cols": columns,
       ...style
-    }
-  }, rest), children);
-  return /*#__PURE__*/React.createElement("div", _extends({
+    },
+    ...rest
+  }, children);
+  return /*#__PURE__*/React.createElement("div", {
     className: cx("bds-grid", !min && `bds-grid--${cols}`, className),
     style: min ? {
       gridTemplateColumns: `repeat(auto-fit,minmax(min(100%,${typeof min === "number" ? `${min}px` : min}),1fr))`,
       ...style
-    } : style
-  }, rest), children);
+    } : style,
+    ...rest
+  }, children);
 }
 
 /** Grid columns 모드의 칸. span(≥900) · spanMd(<900) · spanSm(<640), 480 미만은 항상 전폭. */
@@ -5260,15 +5292,16 @@ function GridItem({
   children,
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement("div", _extends({
+  return /*#__PURE__*/React.createElement("div", {
     className: cx("bds-col", className),
     style: {
       "--span": span,
       "--span-md": spanMd,
       "--span-sm": spanSm,
       ...style
-    }
-  }, rest), children);
+    },
+    ...rest
+  }, children);
 }
 Object.assign(__ds_scope, { Grid, GridItem });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/layout/Grid.jsx", error: String((e && e.message) || e) }); }
@@ -5276,7 +5309,6 @@ Object.assign(__ds_scope, { Grid, GridItem });
 // components/layout/PageHeader.jsx
 try { (() => {
 const { cx } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 페이지 제목 + 한 문장 설명 + 오른쪽 액션. 좁으면 액션이 아래로 감싼다. */
 function PageHeader({
   title,
@@ -5285,9 +5317,10 @@ function PageHeader({
   className,
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement("div", _extends({
-    className: cx("bds-pagehead", className)
-  }, rest), /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
+    className: cx("bds-pagehead", className),
+    ...rest
+  }, /*#__PURE__*/React.createElement("div", {
     className: "bds-pagehead__text"
   }, /*#__PURE__*/React.createElement("h2", null, title), description && /*#__PURE__*/React.createElement("p", null, description)), actions && /*#__PURE__*/React.createElement("div", {
     className: "bds-pagehead__actions"
@@ -5299,7 +5332,6 @@ Object.assign(__ds_scope, { PageHeader });
 // components/layout/PageStack.jsx
 try { (() => {
 const { cx } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 페이지 본문 섹션 묶음. 섹션 간격은 --stack(뷰포트에 따라 흐른다). 셸 본문의 직계 자식은 항상 이것. */
 function PageStack({
   gap = "md",
@@ -5307,9 +5339,10 @@ function PageStack({
   children,
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement("section", _extends({
-    className: cx("bds-stack", gap !== "md" && `bds-stack--${gap}`, className)
-  }, rest), children);
+  return /*#__PURE__*/React.createElement("section", {
+    className: cx("bds-stack", gap !== "md" && `bds-stack--${gap}`, className),
+    ...rest
+  }, children);
 }
 Object.assign(__ds_scope, { PageStack });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/layout/PageStack.jsx", error: String((e && e.message) || e) }); }
@@ -5317,7 +5350,6 @@ Object.assign(__ds_scope, { PageStack });
 // components/layout/Panel.jsx
 try { (() => {
 const { cx, frameStyle } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 카드/패널. 층 구분은 보더, 그림자는 최소. caption은 상단 소문자 캡션. interactive면 호버 상승, selected면 악센트 링. */
 function Panel({
   caption,
@@ -5335,15 +5367,16 @@ function Panel({
   children,
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement(Tag, _extends({
+  return /*#__PURE__*/React.createElement(Tag, {
     className: cx("bds-panel", padding !== "md" && `bds-panel--${padding}`, sunken && "bds-panel--sunken", interactive && "bds-panel--interactive", selected && "bds-panel--selected", enter && "bds-panel--enter", className),
     style: frameStyle({
       fit,
       width,
       height,
       style
-    })
-  }, rest), caption && /*#__PURE__*/React.createElement("span", {
+    }),
+    ...rest
+  }, caption && /*#__PURE__*/React.createElement("span", {
     className: "bds-panel__cap"
   }, caption), children);
 }
@@ -5353,7 +5386,6 @@ Object.assign(__ds_scope, { Panel });
 // components/layout/Stack.jsx
 try { (() => {
 const { cx } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const GAP = {
   0: 0,
   1: "var(--sp-1)",
@@ -5380,15 +5412,16 @@ function Stack({
   children,
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement(Tag, _extends({
+  return /*#__PURE__*/React.createElement(Tag, {
     className: cx("bds-vstack", className),
     style: {
       gap: spaceToken(gap),
       alignItems: align,
       justifyContent: justify,
       ...style
-    }
-  }, rest), children);
+    },
+    ...rest
+  }, children);
 }
 Object.assign(__ds_scope, { spaceToken, Stack });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/layout/Stack.jsx", error: String((e && e.message) || e) }); }
@@ -5396,7 +5429,6 @@ Object.assign(__ds_scope, { spaceToken, Stack });
 // components/layout/Inline.jsx
 try { (() => {
 const { cx, spaceToken } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 가로 나열(버튼·칩·메타). 기본 wrap. gap은 --sp 단계 또는 CSS 길이. */
 function Inline({
   gap = 2,
@@ -5409,15 +5441,16 @@ function Inline({
   children,
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement(Tag, _extends({
+  return /*#__PURE__*/React.createElement(Tag, {
     className: cx("bds-inline", !wrap && "bds-inline--nowrap", className),
     style: {
       gap: spaceToken(gap),
       alignItems: align,
       justifyContent: justify,
       ...style
-    }
-  }, rest), children);
+    },
+    ...rest
+  }, children);
 }
 Object.assign(__ds_scope, { Inline });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/layout/Inline.jsx", error: String((e && e.message) || e) }); }
@@ -5425,7 +5458,6 @@ Object.assign(__ds_scope, { Inline });
 // components/layout/Spacer.jsx
 try { (() => {
 const { cx, spaceToken } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** flex 빈 공간. size를 주면 고정 간격(세로 스택 안). */
 function Spacer({
   size,
@@ -5433,7 +5465,7 @@ function Spacer({
   style,
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement("div", _extends({
+  return /*#__PURE__*/React.createElement("div", {
     className: cx("bds-spacer", className),
     "aria-hidden": "true",
     style: size != null ? {
@@ -5441,8 +5473,9 @@ function Spacer({
       height: spaceToken(size),
       width: spaceToken(size),
       ...style
-    } : style
-  }, rest));
+    } : style,
+    ...rest
+  });
 }
 Object.assign(__ds_scope, { Spacer });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/layout/Spacer.jsx", error: String((e && e.message) || e) }); }
@@ -5450,7 +5483,6 @@ Object.assign(__ds_scope, { Spacer });
 // components/layout/StatusBar.jsx
 try { (() => {
 const { cx } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 하단 상태바(28px, mono). live는 실제로 실시간 갱신 중일 때만. 항상 참인 값(호스트·업타임·시계)만 둔다. */
 function StatusBar({
   live,
@@ -5459,9 +5491,10 @@ function StatusBar({
   className,
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement("div", _extends({
-    className: cx("bds-statusbar", className)
-  }, rest), live && /*#__PURE__*/React.createElement("span", {
+  return /*#__PURE__*/React.createElement("div", {
+    className: cx("bds-statusbar", className),
+    ...rest
+  }, live && /*#__PURE__*/React.createElement("span", {
     className: "bds-statusbar__live"
   }, /*#__PURE__*/React.createElement("i", {
     className: "bds-statusbar__dot",
@@ -5481,7 +5514,6 @@ Object.assign(__ds_scope, { StatusBar });
 // components/layout/Toolbar.jsx
 try { (() => {
 const { cx } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 표 위 도구 줄: 검색(늘어남) + 필터 + 오른쪽 끝 액션. 좁으면 줄바꿈. role="toolbar"는 화살표 이동을 약속하므로 붙이지 않는다(Tab으로 컨트롤 사이를 이동). */
 function Toolbar({
   children,
@@ -5489,9 +5521,10 @@ function Toolbar({
   className,
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement("div", _extends({
-    className: cx("bds-toolbar", className)
-  }, rest), children, end && /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
+    className: cx("bds-toolbar", className),
+    ...rest
+  }, children, end && /*#__PURE__*/React.createElement("div", {
     className: "bds-toolbar__end"
   }, end));
 }
@@ -5527,7 +5560,6 @@ Object.assign(__ds_scope, { Visible });
 try { (() => {
 const { useState } = React;
 const { cx, Icon } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 경로 표시. items: {label, href?}. 마지막은 현재 페이지. maxItems 초과 시 중간을 "…"로 접는다. */
 function Breadcrumb({
   items = [],
@@ -5538,10 +5570,11 @@ function Breadcrumb({
   const [all, setAll] = useState(false);
   const collapse = !all && items.length > maxItems;
   const shown = collapse ? [items[0], "…", ...items.slice(items.length - (maxItems - 2))] : items;
-  return /*#__PURE__*/React.createElement("nav", _extends({
-    "aria-label": "\uACBD\uB85C",
-    className: className
-  }, rest), /*#__PURE__*/React.createElement("ol", {
+  return /*#__PURE__*/React.createElement("nav", {
+    "aria-label": "경로",
+    className: className,
+    ...rest
+  }, /*#__PURE__*/React.createElement("ol", {
     className: "bds-crumb"
   }, shown.map((it, i) => {
     const last = i === shown.length - 1;
@@ -5550,7 +5583,7 @@ function Breadcrumb({
     }, it === "…" ? /*#__PURE__*/React.createElement("button", {
       type: "button",
       className: "bds-crumb__more",
-      "aria-label": "\uC228\uAE34 \uACBD\uB85C \uD3BC\uCE58\uAE30",
+      "aria-label": "숨긴 경로 펼치기",
       onClick: () => setAll(true)
     }, /*#__PURE__*/React.createElement(Icon, {
       name: "dots-three",
@@ -5636,7 +5669,7 @@ function CommandPalette({
     }
   }, /*#__PURE__*/React.createElement("div", {
     role: "dialog",
-    "aria-label": "\uBA85\uB839 \uD314\uB808\uD2B8",
+    "aria-label": "명령 팔레트",
     className: "bds-cmdk__panel",
     onKeyDown: onKey
   }, /*#__PURE__*/React.createElement("div", {
@@ -5662,7 +5695,7 @@ function CommandPalette({
     className: "bds-cmdk__list"
   }, list.length === 0 && /*#__PURE__*/React.createElement("li", {
     className: "bds-cmdk__empty"
-  }, "\uC77C\uCE58\uD558\uB294 \uD56D\uBAA9\uC774 \uC5C6\uC2B5\uB2C8\uB2E4"), list.map((it, i) => {
+  }, "일치하는 항목이 없습니다"), list.map((it, i) => {
     const g = it.group !== lastGroup ? it.group : null;
     lastGroup = it.group;
     return /*#__PURE__*/React.createElement(React.Fragment, {
@@ -5690,9 +5723,9 @@ function CommandPalette({
     className: "bds-cmdk__ft"
   }, /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("kbd", {
     className: "bds-kbd"
-  }, "\u2191\u2193"), " \uC774\uB3D9"), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("kbd", {
+  }, "↑↓"), " 이동"), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("kbd", {
     className: "bds-kbd"
-  }, "\u21B5"), " \uC2E4\uD589"))));
+  }, "↵"), " 실행"))));
 }
 Object.assign(__ds_scope, { CommandPalette });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/navigation/CommandPalette.jsx", error: String((e && e.message) || e) }); }
@@ -5700,7 +5733,6 @@ Object.assign(__ds_scope, { CommandPalette });
 // components/navigation/Link.jsx
 try { (() => {
 const { cx, Icon } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 텍스트 링크. 외부 링크는 external로 아이콘·rel 자동. quiet는 본문색. */
 function Link({
   href,
@@ -5710,15 +5742,16 @@ function Link({
   children,
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement("a", _extends({
+  return /*#__PURE__*/React.createElement("a", {
     href: href,
     className: cx("bds-link", quiet && "bds-link--quiet", className),
     target: external ? "_blank" : undefined,
-    rel: external ? "noopener noreferrer" : undefined
-  }, rest), children, external && /*#__PURE__*/React.createElement(Icon, {
+    rel: external ? "noopener noreferrer" : undefined,
+    ...rest
+  }, children, external && /*#__PURE__*/React.createElement(Icon, {
     name: "arrow-square-out",
     size: 12,
-    label: "\uC0C8 \uCC3D\uC5D0\uC11C \uC5F4\uB9BC"
+    label: "새 창에서 열림"
   }));
 }
 Object.assign(__ds_scope, { Link });
@@ -5727,7 +5760,6 @@ Object.assign(__ds_scope, { Link });
 // components/navigation/Pagination.jsx
 try { (() => {
 const { cx, IconButton } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 페이지 번호. page는 1부터. total은 총 페이지 수. info에 "1–20 / 184" 같은 범위를 준다. */
 function Pagination({
   page = 1,
@@ -5748,21 +5780,22 @@ function Pagination({
   for (let p = lo; p <= hi; p++) push(p);
   if (hi < total - 1) push("…");
   if (total > 1) push(total);
-  return /*#__PURE__*/React.createElement("nav", _extends({
-    "aria-label": "\uD398\uC774\uC9C0",
-    className: cx("bds-pager", className)
-  }, rest), /*#__PURE__*/React.createElement(IconButton, {
+  return /*#__PURE__*/React.createElement("nav", {
+    "aria-label": "페이지",
+    className: cx("bds-pager", className),
+    ...rest
+  }, /*#__PURE__*/React.createElement(IconButton, {
     icon: "caret-left",
     size: size,
     variant: "ghost",
-    "aria-label": "\uC774\uC804 \uD398\uC774\uC9C0",
+    "aria-label": "이전 페이지",
     disabled: page <= 1,
     onClick: () => onChange?.(page - 1)
   }), pages.map((p, i) => p === "…" ? /*#__PURE__*/React.createElement("span", {
     key: "g" + i,
     className: "bds-pager__gap",
     "aria-hidden": "true"
-  }, "\u2026") : /*#__PURE__*/React.createElement("button", {
+  }, "…") : /*#__PURE__*/React.createElement("button", {
     key: p,
     type: "button",
     className: "bds-pager__pg",
@@ -5772,7 +5805,7 @@ function Pagination({
     icon: "caret-right",
     size: size,
     variant: "ghost",
-    "aria-label": "\uB2E4\uC74C \uD398\uC774\uC9C0",
+    "aria-label": "다음 페이지",
     disabled: page >= total,
     onClick: () => onChange?.(page + 1)
   }), info && /*#__PURE__*/React.createElement("span", {
@@ -5786,7 +5819,6 @@ Object.assign(__ds_scope, { Pagination });
 try { (() => {
 const { createContext, useContext, useEffect, useId, useRef, useState } = React;
 const { cx, Icon, IconButton, MascotMark } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 const CloseCtx = /*#__PURE__*/createContext(null);
 
 /** 대시보드 셸: 240px 사이드바 + 52px 상단바 + 본문 + 28px 상태바. 부모가 높이를 정한다(페이지는 100dvh).
@@ -5817,9 +5849,10 @@ function SidebarShell({
       burger.current?.focus();
     };
   }, [open]);
-  return /*#__PURE__*/React.createElement("div", _extends({
-    className: cx("bds-shell", open && "bds-shell--open", className)
-  }, rest), /*#__PURE__*/React.createElement("aside", {
+  return /*#__PURE__*/React.createElement("div", {
+    className: cx("bds-shell", open && "bds-shell--open", className),
+    ...rest
+  }, /*#__PURE__*/React.createElement("aside", {
     id: id,
     ref: side,
     className: "bds-shell__side"
@@ -5840,7 +5873,7 @@ function SidebarShell({
     icon: "x",
     size: "sm",
     variant: "ghost",
-    "aria-label": "\uBA54\uB274 \uB2EB\uAE30",
+    "aria-label": "메뉴 닫기",
     onClick: () => setOpen(false)
   })), /*#__PURE__*/React.createElement("nav", {
     className: "bds-shell__nav",
@@ -5862,7 +5895,7 @@ function SidebarShell({
     className: "bds-shell__burger",
     icon: "list",
     variant: "ghost",
-    "aria-label": "\uBA54\uB274 \uC5F4\uAE30",
+    "aria-label": "메뉴 열기",
     "aria-expanded": open,
     "aria-controls": id,
     onClick: () => setOpen(true)
@@ -5897,7 +5930,7 @@ function SidebarNavItem({
   }, badge), target === "_blank" && /*#__PURE__*/React.createElement(Icon, {
     name: "arrow-square-out",
     size: 12,
-    label: "\uC0C8 \uCC3D\uC5D0\uC11C \uC5F4\uB9BC"
+    label: "새 창에서 열림"
   }));
   const handle = () => {
     onClick?.();
@@ -5933,7 +5966,6 @@ Object.assign(__ds_scope, { SidebarShell, SidebarNavItem, SidebarNavGroup });
 try { (() => {
 const { useEffect, useId, useRef, useState } = React;
 const { cx, Icon } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 탭. items: {value,label,count?,icon?}[]. 선택 탭만 Tab 순서에 들고 화살표·Home·End로 옮긴다. panelId(value)를 주면 aria-controls를 붙인다. 잉크바가 선택 탭 아래로 미끄러진다. 넘치면 가로 스크롤. */
 function Tabs({
   items = [],
@@ -5968,12 +6000,13 @@ function Tabs({
     onChange?.(items[j].value);
     document.getElementById(`${uid}-tab-${items[j].value}`)?.focus();
   };
-  return /*#__PURE__*/React.createElement("div", _extends({
+  return /*#__PURE__*/React.createElement("div", {
     ref: root,
     role: "tablist",
     "aria-label": ariaLabel,
-    className: cx("bds-tabs", className)
-  }, rest), items.map(t => /*#__PURE__*/React.createElement("button", {
+    className: cx("bds-tabs", className),
+    ...rest
+  }, items.map(t => /*#__PURE__*/React.createElement("button", {
     key: t.value,
     type: "button",
     role: "tab",
@@ -6001,7 +6034,6 @@ Object.assign(__ds_scope, { Tabs });
 // components/navigation/TopNav.jsx
 try { (() => {
 const { cx, Icon, MascotMark } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 사이드바 없는 제품의 상단 내비. brand + links(가로 스크롤) + end. 화면 5개 이하일 때 SidebarShell 대신. */
 function TopNav({
   brand,
@@ -6011,16 +6043,17 @@ function TopNav({
   className,
   ...rest
 }) {
-  return /*#__PURE__*/React.createElement("header", _extends({
-    className: cx("bds-topnav", sticky && "bds-topnav--sticky", className)
-  }, rest), /*#__PURE__*/React.createElement("a", {
+  return /*#__PURE__*/React.createElement("header", {
+    className: cx("bds-topnav", sticky && "bds-topnav--sticky", className),
+    ...rest
+  }, /*#__PURE__*/React.createElement("a", {
     className: "bds-topnav__brand",
     href: brand?.href ?? "#"
   }, brand?.mark === undefined ? /*#__PURE__*/React.createElement(MascotMark, {
     size: 24
   }) : brand.mark, /*#__PURE__*/React.createElement("span", null, brand?.name)), /*#__PURE__*/React.createElement("nav", {
     className: "bds-topnav__links",
-    "aria-label": "\uC8FC \uBA54\uB274"
+    "aria-label": "주 메뉴"
   }, links.map((l, i) => /*#__PURE__*/React.createElement("a", {
     key: i,
     href: l.href,
@@ -6041,7 +6074,6 @@ Object.assign(__ds_scope, { TopNav });
 try { (() => {
 const { useEffect, useId, useRef } = React;
 const { cx, IconButton } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 오른쪽 사이드 패널. 네이티브 <dialog>.showModal()로 포커스를 가둔다. 목록을 보면서 상세를 볼 때(실행 상세·모델 상세). 확인이 필요한 결정은 Modal. size: sm 380 · md 480 · lg 640. 768 미만은 전체 폭. */
 function Drawer({
   open,
@@ -6074,7 +6106,7 @@ function Drawer({
   }, /*#__PURE__*/React.createElement("div", {
     className: "bds-side__dim",
     onMouseDown: onClose
-  }), /*#__PURE__*/React.createElement("dialog", _extends({
+  }), /*#__PURE__*/React.createElement("dialog", {
     ref: panel,
     "aria-labelledby": title ? tid : undefined,
     tabIndex: -1,
@@ -6085,8 +6117,9 @@ function Drawer({
     },
     onMouseDown: e => {
       if (e.target === e.currentTarget && outside(e)) onClose?.();
-    }
-  }, rest), (title || closeButton) && /*#__PURE__*/React.createElement("header", {
+    },
+    ...rest
+  }, (title || closeButton) && /*#__PURE__*/React.createElement("header", {
     className: "bds-side__hd"
   }, /*#__PURE__*/React.createElement("div", {
     className: "bds-side__ttl"
@@ -6096,7 +6129,7 @@ function Drawer({
     icon: "x",
     size: "sm",
     variant: "ghost",
-    "aria-label": "\uB2EB\uAE30",
+    "aria-label": "닫기",
     onClick: onClose
   })), /*#__PURE__*/React.createElement("div", {
     className: "bds-side__body"
@@ -6233,7 +6266,6 @@ Object.assign(__ds_scope, { DropdownMenu });
 try { (() => {
 const { useEffect, useId, useRef } = React;
 const { cx, IconButton } = __ds_scope;
-function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /** 모달. 네이티브 <dialog>.showModal()로 포커스를 가둔다. Esc·딤·닫기 → onClose. 640 미만에서는 바텀시트. size: sm 360 · md 440 · lg 560 · xl 760. */
 function Modal({
   open,
@@ -6270,7 +6302,7 @@ function Modal({
     return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
   };
   if (!open) return null;
-  return /*#__PURE__*/React.createElement("dialog", _extends({
+  return /*#__PURE__*/React.createElement("dialog", {
     ref: panel,
     "aria-labelledby": title ? tid : undefined,
     tabIndex: -1,
@@ -6281,8 +6313,9 @@ function Modal({
     },
     onMouseDown: e => {
       if (e.target === e.currentTarget && outside(e)) onClose?.();
-    }
-  }, rest), (title || closeButton) && /*#__PURE__*/React.createElement("div", {
+    },
+    ...rest
+  }, (title || closeButton) && /*#__PURE__*/React.createElement("div", {
     className: "bds-modal__hd"
   }, title && /*#__PURE__*/React.createElement("h2", {
     id: tid
@@ -6290,7 +6323,7 @@ function Modal({
     icon: "x",
     size: "sm",
     variant: "ghost",
-    "aria-label": "\uB2EB\uAE30",
+    "aria-label": "닫기",
     onClick: onClose
   })), description && /*#__PURE__*/React.createElement("p", {
     className: "bds-modal__desc"
@@ -6344,7 +6377,7 @@ function ConfirmDialog({
     className: "bds-confirm__msg"
   }, message), typeToConfirm && /*#__PURE__*/React.createElement("label", {
     className: "bds-confirm__typed"
-  }, /*#__PURE__*/React.createElement("span", null, "\uACC4\uC18D\uD558\uB824\uBA74 ", /*#__PURE__*/React.createElement("code", null, typeToConfirm), "\uC744(\uB97C) \uC785\uB825\uD569\uB2C8\uB2E4"), /*#__PURE__*/React.createElement(TextField, {
+  }, /*#__PURE__*/React.createElement("span", null, "계속하려면 ", /*#__PURE__*/React.createElement("code", null, typeToConfirm), "을(를) 입력합니다"), /*#__PURE__*/React.createElement(TextField, {
     mono: true,
     value: typed,
     onChange: e => setTyped(e.target.value),

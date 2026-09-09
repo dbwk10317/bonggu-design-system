@@ -50,7 +50,7 @@
 :root.dark,:root[data-theme="dark"]{
   color-scheme:dark;
   --canvas:#0f1115;--canvas-sunken:#0a0b0f;--panel:#161920;--panel-2:#1d2129;--panel-3:#262b35;
-  --line:#2e3440;--line-strong:#3a414e;--hairline:#262b35;--line-input:#555d6c;--scrim:rgba(0,0,0,.6);
+  --line:#2e3440;--line-strong:#3a414e;--hairline:#262b35;--line-input:#6c7483;--scrim:rgba(0,0,0,.6); /* 입력 경계선: sunken·panel·panel-2/3 위 3:1 이상 */
   --ink:#eef0f4;--ink-2:#aeb5c2;--ink-3:#848c9d;--ink-muted:#555d6c;--ink-inverse:#15181d;--on-warn:#15181d;
   --signal:oklch(0.72 0.14 255);--signal-hover:oklch(0.77 0.13 255);--signal-active:oklch(0.66 0.15 255);
   --signal-tint:oklch(0.30 0.06 255);--signal-tint-line:oklch(0.42 0.09 255);--signal-fg:#0f1115;--focus-ring:oklch(0.72 0.14 255 / .45);

@@ -4,7 +4,7 @@ import { Icon } from "../action/Icon.jsx";
 import { useFieldContext } from "./Field.jsx";
 
 /** 검색 가능한 선택. options {value,label,detail?,disabled?}. 타이핑으로 거르고 ↑↓ Enter Esc. 선택지 6개 이상이면 Select 대신 이것. */
-export function Combobox({ options = [], value, onChange, placeholder = "검색 또는 선택", emptyText = "일치하는 항목이 없습니다", size = "md", fit = "flex", width, disabled, invalid, clearable = true, className, style, "aria-label": ariaLabel }) {
+export function Combobox({ options = [], value, onChange, placeholder = "검색 또는 선택", emptyText = "일치하는 항목이 없습니다", size = "md", fit = "flex", width, disabled, invalid, required, clearable = true, className, style, "aria-label": ariaLabel }) {
   const f = useFieldContext();
   const uid = useId().replace(/:/g, "");
   const [open, setOpen] = useState(false);
@@ -26,7 +26,7 @@ export function Combobox({ options = [], value, onChange, placeholder = "검색 
     <div ref={root} className={cx("bds-combo", open && "bds-combo--open", className)} style={frameStyle({ fit, width, style })}>
       <div className={cx("bds-ctl", size === "sm" && "bds-ctl--sm", (invalid ?? f?.invalid) && "bds-ctl--err", disabled && "bds-ctl--disabled")} onClick={() => !disabled && setOpen(true)}>
         <Icon name="magnifying-glass" size={14} className="bds-ctl__affix" />
-        <input id={f?.id} role="combobox" aria-expanded={open} aria-controls={`${uid}-list`} aria-activedescendant={open && list[idx] ? `${uid}-${idx}` : undefined} aria-autocomplete="list" aria-label={ariaLabel} aria-describedby={f?.describedBy}
+        <input id={f?.id} role="combobox" aria-expanded={open} aria-controls={`${uid}-list`} aria-activedescendant={open && list[idx] ? `${uid}-${idx}` : undefined} aria-autocomplete="list" aria-label={ariaLabel} aria-describedby={f?.describedBy} aria-invalid={(invalid ?? f?.invalid) || undefined} aria-required={(required ?? f?.required) || undefined}
           value={open ? q : (sel?.label ?? "")} placeholder={sel ? sel.label : placeholder} disabled={disabled} autoComplete="off"
           onChange={(e) => { setQ(e.target.value); setOpen(true); }} onFocus={() => setOpen(true)} onKeyDown={onKey} />
         {clearable && sel && !disabled && <button type="button" className="bds-combo__x" aria-label="선택 해제" onMouseDown={(e) => e.preventDefault()} onClick={(e) => { e.stopPropagation(); pick(null); }}><Icon name="x" size={12} /></button>}
