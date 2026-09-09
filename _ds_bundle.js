@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"Ds_d3ea90","components":[{"name":"Button","sourcePath":"components/action/Button.jsx"},{"name":"Icon","sourcePath":"components/action/Icon.jsx"},{"name":"IconButton","sourcePath":"components/action/IconButton.jsx"},{"name":"MascotMark","sourcePath":"components/brand/MascotMark.jsx"},{"name":"BarList","sourcePath":"components/data/BarList.jsx"},{"name":"Chart","sourcePath":"components/data/Chart.jsx"},{"name":"DataTable","sourcePath":"components/data/DataTable.jsx"},{"name":"DescriptionList","sourcePath":"components/data/DescriptionList.jsx"},{"name":"DiffView","sourcePath":"components/data/DiffView.jsx"},{"name":"Gauge","sourcePath":"components/data/Gauge.jsx"},{"name":"Heatmap","sourcePath":"components/data/Heatmap.jsx"},{"name":"KeyValues","sourcePath":"components/data/KeyValues.jsx"},{"name":"Legend","sourcePath":"components/data/Legend.jsx"},{"name":"LogViewer","sourcePath":"components/data/LogViewer.jsx"},{"name":"Sparkline","sourcePath":"components/data/Sparkline.jsx"},{"name":"StatTile","sourcePath":"components/data/StatTile.jsx"},{"name":"Timeline","sourcePath":"components/data/Timeline.jsx"},{"name":"TrendDelta","sourcePath":"components/data/TrendDelta.jsx"},{"name":"UptimeBar","sourcePath":"components/data/UptimeBar.jsx"},{"name":"Accordion","sourcePath":"components/display/Accordion.jsx"},{"name":"Avatar","sourcePath":"components/display/Avatar.jsx"},{"name":"AvatarGroup","sourcePath":"components/display/Avatar.jsx"},{"name":"Badge","sourcePath":"components/display/Badge.jsx"},{"name":"Code","sourcePath":"components/display/Code.jsx"},{"name":"CodeBlock","sourcePath":"components/display/Code.jsx"},{"name":"Kbd","sourcePath":"components/display/Code.jsx"},{"name":"CopyField","sourcePath":"components/display/CopyField.jsx"},{"name":"StatusPill","sourcePath":"components/display/StatusPill.jsx"},{"name":"Tag","sourcePath":"components/display/Tag.jsx"},{"name":"AlertBanner","sourcePath":"components/feedback/AlertBanner.jsx"},{"name":"ConfirmDialog","sourcePath":"components/feedback/ConfirmDialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"ErrorState","sourcePath":"components/feedback/ErrorState.jsx"},{"name":"InlineMessage","sourcePath":"components/feedback/InlineMessage.jsx"},{"name":"LoadingOverlay","sourcePath":"components/feedback/LoadingOverlay.jsx"},{"name":"NotificationTrigger","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"NotificationDrawer","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"ProgressBar","sourcePath":"components/feedback/ProgressBar.jsx"},{"name":"Skeleton","sourcePath":"components/feedback/Skeleton.jsx"},{"name":"Spinner","sourcePath":"components/feedback/Spinner.jsx"},{"name":"Stepper","sourcePath":"components/feedback/Stepper.jsx"},{"name":"ToastProvider","sourcePath":"components/feedback/Toast.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Checkbox","sourcePath":"components/input/Checkbox.jsx"},{"name":"CodeEditor","sourcePath":"components/input/CodeEditor.jsx"},{"name":"ColorInput","sourcePath":"components/input/ColorInput.jsx"},{"name":"Combobox","sourcePath":"components/input/Combobox.jsx"},{"name":"DatePicker","sourcePath":"components/input/DatePicker.jsx"},{"name":"DateRangePicker","sourcePath":"components/input/DateRangePicker.jsx"},{"name":"Dropzone","sourcePath":"components/input/Dropzone.jsx"},{"name":"Field","sourcePath":"components/input/Field.jsx"},{"name":"FileUpload","sourcePath":"components/input/FileUpload.jsx"},{"name":"MultiSelect","sourcePath":"components/input/MultiSelect.jsx"},{"name":"NumberStepper","sourcePath":"components/input/NumberStepper.jsx"},{"name":"OTPInput","sourcePath":"components/input/OTPInput.jsx"},{"name":"PasswordField","sourcePath":"components/input/PasswordField.jsx"},{"name":"RadioGroup","sourcePath":"components/input/RadioGroup.jsx"},{"name":"SearchField","sourcePath":"components/input/SearchField.jsx"},{"name":"SegmentedControl","sourcePath":"components/input/SegmentedControl.jsx"},{"name":"Select","sourcePath":"components/input/Select.jsx"},{"name":"Slider","sourcePath":"components/input/Slider.jsx"},{"name":"Switch","sourcePath":"components/input/Switch.jsx"},{"name":"TextArea","sourcePath":"components/input/TextArea.jsx"},{"name":"TextField","sourcePath":"components/input/TextField.jsx"},{"name":"TimePicker","sourcePath":"components/input/TimePicker.jsx"},{"name":"AspectRatio","sourcePath":"components/layout/AspectRatio.jsx"},{"name":"CardHead","sourcePath":"components/layout/CardHead.jsx"},{"name":"Container","sourcePath":"components/layout/Container.jsx"},{"name":"Divider","sourcePath":"components/layout/Divider.jsx"},{"name":"Grid","sourcePath":"components/layout/Grid.jsx"},{"name":"GridItem","sourcePath":"components/layout/Grid.jsx"},{"name":"Inline","sourcePath":"components/layout/Inline.jsx"},{"name":"PageHeader","sourcePath":"components/layout/PageHeader.jsx"},{"name":"PageStack","sourcePath":"components/layout/PageStack.jsx"},{"name":"Panel","sourcePath":"components/layout/Panel.jsx"},{"name":"Spacer","sourcePath":"components/layout/Spacer.jsx"},{"name":"Stack","sourcePath":"components/layout/Stack.jsx"},{"name":"StatusBar","sourcePath":"components/layout/StatusBar.jsx"},{"name":"Toolbar","sourcePath":"components/layout/Toolbar.jsx"},{"name":"ToolbarGrow","sourcePath":"components/layout/Toolbar.jsx"},{"name":"Visible","sourcePath":"components/layout/Visible.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"CommandPalette","sourcePath":"components/navigation/CommandPalette.jsx"},{"name":"Link","sourcePath":"components/navigation/Link.jsx"},{"name":"Pagination","sourcePath":"components/navigation/Pagination.jsx"},{"name":"SidebarShell","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavItem","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavGroup","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"},{"name":"TopNav","sourcePath":"components/navigation/TopNav.jsx"},{"name":"Drawer","sourcePath":"components/overlay/Drawer.jsx"},{"name":"DropdownMenu","sourcePath":"components/overlay/DropdownMenu.jsx"},{"name":"FormModal","sourcePath":"components/overlay/FormModal.jsx"},{"name":"Modal","sourcePath":"components/overlay/Modal.jsx"},{"name":"Popover","sourcePath":"components/overlay/Popover.jsx"},{"name":"Tooltip","sourcePath":"components/overlay/Tooltip.jsx"}],"sourceHashes":{"components/action/Button.jsx":"5a7e8ba0583c","components/action/Icon.jsx":"aeb9bddad130","components/action/IconButton.jsx":"573fc7e3ae35","components/brand/MascotMark.jsx":"c49125fa6915","components/core/frame.js":"f7f85baee1dd","components/data/BarList.jsx":"a0cbb96057c8","components/data/Chart.jsx":"53dad7b077b1","components/data/DataTable.jsx":"2fada61dce2f","components/data/DescriptionList.jsx":"7c1079ff291d","components/data/DiffView.jsx":"74e826b1d761","components/data/Gauge.jsx":"d46f247300f5","components/data/Heatmap.jsx":"4f7a3470a15e","components/data/KeyValues.jsx":"0e218c0693b0","components/data/Legend.jsx":"59d33485648e","components/data/LogViewer.jsx":"8da3439ff861","components/data/Sparkline.jsx":"3213a7fb56e3","components/data/StatTile.jsx":"08c4148e8c37","components/data/Timeline.jsx":"ea2c65867b69","components/data/TrendDelta.jsx":"9fb64c9a68bb","components/data/UptimeBar.jsx":"10b780a3f347","components/data/chart-math.js":"cd57f7da369c","components/display/Accordion.jsx":"baf5673b0f70","components/display/Avatar.jsx":"82bf7603f488","components/display/Badge.jsx":"385d2533f37f","components/display/Code.jsx":"6cca3294c4f0","components/display/CopyField.jsx":"a797dab55521","components/display/StatusPill.jsx":"800e424e54da","components/display/Tag.jsx":"bbb650669637","components/feedback/AlertBanner.jsx":"fe7a9a92ad74","components/feedback/ConfirmDialog.jsx":"db5e8d5fcf7b","components/feedback/EmptyState.jsx":"c085e4de100c","components/feedback/ErrorState.jsx":"8d1e78ea3ec6","components/feedback/InlineMessage.jsx":"34b5488f8fc8","components/feedback/LoadingOverlay.jsx":"fc8d6b336c10","components/feedback/NotificationDrawer.jsx":"6baf7c4e7449","components/feedback/ProgressBar.jsx":"4594effb9937","components/feedback/Skeleton.jsx":"b800adab501e","components/feedback/Spinner.jsx":"019571ef40dd","components/feedback/Stepper.jsx":"84ad89b06daa","components/feedback/Toast.jsx":"05d60879ab6f","components/input/Checkbox.jsx":"12f5be84c0f7","components/input/CodeEditor.jsx":"bf9268882591","components/input/ColorInput.jsx":"bcb2bf43c367","components/input/Combobox.jsx":"0394e8812604","components/input/DatePicker.jsx":"4d2a94c5a109","components/input/DateRangePicker.jsx":"7a720ebbb46a","components/input/Dropzone.jsx":"c229fb1f6334","components/input/Field.jsx":"bb93dca9a5f5","components/input/FileUpload.jsx":"f6e9805d7420","components/input/MultiSelect.jsx":"ad4a86d2b11e","components/input/NumberStepper.jsx":"4a892560763a","components/input/OTPInput.jsx":"2b6a5c74f55a","components/input/PasswordField.jsx":"a2ccb84f97c8","components/input/RadioGroup.jsx":"120f32c9b8f9","components/input/SearchField.jsx":"c53af994c91f","components/input/SegmentedControl.jsx":"0e432e439927","components/input/Select.jsx":"3b7ac799ef82","components/input/Slider.jsx":"a5ab6da0f3a8","components/input/Switch.jsx":"0d2bdc54c1a0","components/input/TextArea.jsx":"9b271074f1bd","components/input/TextField.jsx":"7d7ce7382207","components/input/TimePicker.jsx":"e5fd1756b8ab","components/layout/AspectRatio.jsx":"ec1ca745e3a9","components/layout/CardHead.jsx":"b7eee3ef5171","components/layout/Container.jsx":"956f2e7a0283","components/layout/Divider.jsx":"2724b2da47dc","components/layout/Grid.jsx":"bd697fa55feb","components/layout/Inline.jsx":"b5018330169a","components/layout/PageHeader.jsx":"feb6eecf36c5","components/layout/PageStack.jsx":"a920ed8a7a71","components/layout/Panel.jsx":"0b58644bd1d6","components/layout/Spacer.jsx":"d30932b51b97","components/layout/Stack.jsx":"d9f5fc72c913","components/layout/StatusBar.jsx":"765e43ff3852","components/layout/Toolbar.jsx":"a8f7fc524838","components/layout/Visible.jsx":"cfc947d272ed","components/navigation/Breadcrumb.jsx":"9b22abe659d3","components/navigation/CommandPalette.jsx":"9894e7d054d1","components/navigation/Link.jsx":"f16424582ea3","components/navigation/Pagination.jsx":"c3306480e75a","components/navigation/SidebarShell.jsx":"8b230eedd5ec","components/navigation/Tabs.jsx":"da326c5325db","components/navigation/TopNav.jsx":"a8218730e10d","components/overlay/Drawer.jsx":"7fe6ce4bc167","components/overlay/DropdownMenu.jsx":"33645b05d244","components/overlay/FormModal.jsx":"c7439b9b50b4","components/overlay/Modal.jsx":"12ef55ab2023","components/overlay/Popover.jsx":"88176ab514f6","components/overlay/Tooltip.jsx":"55de6eeb8093","theme-toggle.js":"a482d13b9a1d"},"inlinedExternals":[],"unexposedExports":[{"name":"cx","sourcePath":"components/core/frame.js"},{"name":"DASHES","sourcePath":"components/data/chart-math.js"},{"name":"estWidth","sourcePath":"components/data/chart-math.js"},{"name":"fmtKo","sourcePath":"components/data/chart-math.js"},{"name":"frameStyle","sourcePath":"components/core/frame.js"},{"name":"histBins","sourcePath":"components/data/chart-math.js"},{"name":"niceTicks","sourcePath":"components/data/chart-math.js"},{"name":"NOTIFICATION_DRAWER_ID","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"passwordStrength","sourcePath":"components/input/PasswordField.jsx"},{"name":"pathLength","sourcePath":"components/data/chart-math.js"},{"name":"r1","sourcePath":"components/data/chart-math.js"},{"name":"runsOf","sourcePath":"components/data/chart-math.js"},{"name":"seriesDash","sourcePath":"components/data/chart-math.js"},{"name":"smoothPath","sourcePath":"components/data/chart-math.js"},{"name":"spaceToken","sourcePath":"components/layout/Stack.jsx"},{"name":"toneInk","sourcePath":"components/data/chart-math.js"},{"name":"toneVar","sourcePath":"components/data/chart-math.js"},{"name":"useFieldContext","sourcePath":"components/input/Field.jsx"},{"name":"useToast","sourcePath":"components/feedback/Toast.jsx"}]} */
+/* @ds-bundle: {"format":4,"namespace":"Ds_d3ea90","components":[{"name":"Button","sourcePath":"components/action/Button.jsx"},{"name":"Icon","sourcePath":"components/action/Icon.jsx"},{"name":"IconButton","sourcePath":"components/action/IconButton.jsx"},{"name":"MascotMark","sourcePath":"components/brand/MascotMark.jsx"},{"name":"BarList","sourcePath":"components/data/BarList.jsx"},{"name":"Chart","sourcePath":"components/data/Chart.jsx"},{"name":"DataTable","sourcePath":"components/data/DataTable.jsx"},{"name":"DescriptionList","sourcePath":"components/data/DescriptionList.jsx"},{"name":"DiffView","sourcePath":"components/data/DiffView.jsx"},{"name":"Gauge","sourcePath":"components/data/Gauge.jsx"},{"name":"Heatmap","sourcePath":"components/data/Heatmap.jsx"},{"name":"KeyValues","sourcePath":"components/data/KeyValues.jsx"},{"name":"Legend","sourcePath":"components/data/Legend.jsx"},{"name":"LogViewer","sourcePath":"components/data/LogViewer.jsx"},{"name":"Sparkline","sourcePath":"components/data/Sparkline.jsx"},{"name":"StatTile","sourcePath":"components/data/StatTile.jsx"},{"name":"Timeline","sourcePath":"components/data/Timeline.jsx"},{"name":"TrendDelta","sourcePath":"components/data/TrendDelta.jsx"},{"name":"UptimeBar","sourcePath":"components/data/UptimeBar.jsx"},{"name":"Accordion","sourcePath":"components/display/Accordion.jsx"},{"name":"Avatar","sourcePath":"components/display/Avatar.jsx"},{"name":"AvatarGroup","sourcePath":"components/display/Avatar.jsx"},{"name":"Badge","sourcePath":"components/display/Badge.jsx"},{"name":"Code","sourcePath":"components/display/Code.jsx"},{"name":"CodeBlock","sourcePath":"components/display/Code.jsx"},{"name":"Kbd","sourcePath":"components/display/Code.jsx"},{"name":"CopyField","sourcePath":"components/display/CopyField.jsx"},{"name":"StatusPill","sourcePath":"components/display/StatusPill.jsx"},{"name":"Tag","sourcePath":"components/display/Tag.jsx"},{"name":"AlertBanner","sourcePath":"components/feedback/AlertBanner.jsx"},{"name":"ConfirmDialog","sourcePath":"components/feedback/ConfirmDialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"ErrorState","sourcePath":"components/feedback/ErrorState.jsx"},{"name":"InlineMessage","sourcePath":"components/feedback/InlineMessage.jsx"},{"name":"LoadingOverlay","sourcePath":"components/feedback/LoadingOverlay.jsx"},{"name":"NotificationTrigger","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"NotificationDrawer","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"ProgressBar","sourcePath":"components/feedback/ProgressBar.jsx"},{"name":"Skeleton","sourcePath":"components/feedback/Skeleton.jsx"},{"name":"Spinner","sourcePath":"components/feedback/Spinner.jsx"},{"name":"Stepper","sourcePath":"components/feedback/Stepper.jsx"},{"name":"ToastProvider","sourcePath":"components/feedback/Toast.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Checkbox","sourcePath":"components/input/Checkbox.jsx"},{"name":"CodeEditor","sourcePath":"components/input/CodeEditor.jsx"},{"name":"ColorInput","sourcePath":"components/input/ColorInput.jsx"},{"name":"Combobox","sourcePath":"components/input/Combobox.jsx"},{"name":"DatePicker","sourcePath":"components/input/DatePicker.jsx"},{"name":"DateRangePicker","sourcePath":"components/input/DateRangePicker.jsx"},{"name":"Dropzone","sourcePath":"components/input/Dropzone.jsx"},{"name":"Field","sourcePath":"components/input/Field.jsx"},{"name":"FileUpload","sourcePath":"components/input/FileUpload.jsx"},{"name":"MultiSelect","sourcePath":"components/input/MultiSelect.jsx"},{"name":"NumberStepper","sourcePath":"components/input/NumberStepper.jsx"},{"name":"OTPInput","sourcePath":"components/input/OTPInput.jsx"},{"name":"PasswordField","sourcePath":"components/input/PasswordField.jsx"},{"name":"RadioGroup","sourcePath":"components/input/RadioGroup.jsx"},{"name":"SearchField","sourcePath":"components/input/SearchField.jsx"},{"name":"SegmentedControl","sourcePath":"components/input/SegmentedControl.jsx"},{"name":"Select","sourcePath":"components/input/Select.jsx"},{"name":"Slider","sourcePath":"components/input/Slider.jsx"},{"name":"Switch","sourcePath":"components/input/Switch.jsx"},{"name":"TextArea","sourcePath":"components/input/TextArea.jsx"},{"name":"TextField","sourcePath":"components/input/TextField.jsx"},{"name":"TimePicker","sourcePath":"components/input/TimePicker.jsx"},{"name":"AspectRatio","sourcePath":"components/layout/AspectRatio.jsx"},{"name":"CardHead","sourcePath":"components/layout/CardHead.jsx"},{"name":"Container","sourcePath":"components/layout/Container.jsx"},{"name":"Divider","sourcePath":"components/layout/Divider.jsx"},{"name":"Grid","sourcePath":"components/layout/Grid.jsx"},{"name":"GridItem","sourcePath":"components/layout/Grid.jsx"},{"name":"Inline","sourcePath":"components/layout/Inline.jsx"},{"name":"PageHeader","sourcePath":"components/layout/PageHeader.jsx"},{"name":"PageStack","sourcePath":"components/layout/PageStack.jsx"},{"name":"Panel","sourcePath":"components/layout/Panel.jsx"},{"name":"Spacer","sourcePath":"components/layout/Spacer.jsx"},{"name":"Stack","sourcePath":"components/layout/Stack.jsx"},{"name":"StatusBar","sourcePath":"components/layout/StatusBar.jsx"},{"name":"Toolbar","sourcePath":"components/layout/Toolbar.jsx"},{"name":"ToolbarGrow","sourcePath":"components/layout/Toolbar.jsx"},{"name":"Visible","sourcePath":"components/layout/Visible.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"CommandPalette","sourcePath":"components/navigation/CommandPalette.jsx"},{"name":"Link","sourcePath":"components/navigation/Link.jsx"},{"name":"Pagination","sourcePath":"components/navigation/Pagination.jsx"},{"name":"SidebarShell","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavItem","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavGroup","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"},{"name":"TopNav","sourcePath":"components/navigation/TopNav.jsx"},{"name":"Drawer","sourcePath":"components/overlay/Drawer.jsx"},{"name":"DropdownMenu","sourcePath":"components/overlay/DropdownMenu.jsx"},{"name":"FormModal","sourcePath":"components/overlay/FormModal.jsx"},{"name":"Modal","sourcePath":"components/overlay/Modal.jsx"},{"name":"Popover","sourcePath":"components/overlay/Popover.jsx"},{"name":"Tooltip","sourcePath":"components/overlay/Tooltip.jsx"}],"sourceHashes":{"components/action/Button.jsx":"5a7e8ba0583c","components/action/Icon.jsx":"aeb9bddad130","components/action/IconButton.jsx":"573fc7e3ae35","components/brand/MascotMark.jsx":"c49125fa6915","components/core/frame.js":"f7f85baee1dd","components/core/useAnchoredPopover.js":"38cca5d52d44","components/data/BarList.jsx":"a0cbb96057c8","components/data/Chart.jsx":"26f357a5027d","components/data/DataTable.jsx":"2fada61dce2f","components/data/DescriptionList.jsx":"7c1079ff291d","components/data/DiffView.jsx":"74e826b1d761","components/data/Gauge.jsx":"d46f247300f5","components/data/Heatmap.jsx":"4f7a3470a15e","components/data/KeyValues.jsx":"0e218c0693b0","components/data/Legend.jsx":"59d33485648e","components/data/LogViewer.jsx":"8da3439ff861","components/data/Sparkline.jsx":"3213a7fb56e3","components/data/StatTile.jsx":"08c4148e8c37","components/data/Timeline.jsx":"ea2c65867b69","components/data/TrendDelta.jsx":"9fb64c9a68bb","components/data/UptimeBar.jsx":"751dba92bb17","components/data/chart-math.js":"485d821829c1","components/display/Accordion.jsx":"baf5673b0f70","components/display/Avatar.jsx":"82bf7603f488","components/display/Badge.jsx":"385d2533f37f","components/display/Code.jsx":"6cca3294c4f0","components/display/CopyField.jsx":"a797dab55521","components/display/StatusPill.jsx":"800e424e54da","components/display/Tag.jsx":"bbb650669637","components/feedback/AlertBanner.jsx":"fe7a9a92ad74","components/feedback/ConfirmDialog.jsx":"002f00827bf2","components/feedback/EmptyState.jsx":"c085e4de100c","components/feedback/ErrorState.jsx":"8d1e78ea3ec6","components/feedback/InlineMessage.jsx":"34b5488f8fc8","components/feedback/LoadingOverlay.jsx":"fc8d6b336c10","components/feedback/NotificationDrawer.jsx":"f3bb26471ee4","components/feedback/ProgressBar.jsx":"4594effb9937","components/feedback/Skeleton.jsx":"b800adab501e","components/feedback/Spinner.jsx":"019571ef40dd","components/feedback/Stepper.jsx":"84ad89b06daa","components/feedback/Toast.jsx":"05d60879ab6f","components/input/Checkbox.jsx":"12f5be84c0f7","components/input/CodeEditor.jsx":"bf9268882591","components/input/ColorInput.jsx":"bcb2bf43c367","components/input/Combobox.jsx":"0394e8812604","components/input/DatePicker.jsx":"8237082480de","components/input/DateRangePicker.jsx":"7a720ebbb46a","components/input/Dropzone.jsx":"c229fb1f6334","components/input/Field.jsx":"bb93dca9a5f5","components/input/FileUpload.jsx":"f6e9805d7420","components/input/MultiSelect.jsx":"50f44249ca86","components/input/NumberStepper.jsx":"b009f9710845","components/input/OTPInput.jsx":"878c99b0a06a","components/input/PasswordField.jsx":"a2ccb84f97c8","components/input/RadioGroup.jsx":"120f32c9b8f9","components/input/SearchField.jsx":"c53af994c91f","components/input/SegmentedControl.jsx":"0e432e439927","components/input/Select.jsx":"3b7ac799ef82","components/input/Slider.jsx":"a5ab6da0f3a8","components/input/Switch.jsx":"0d2bdc54c1a0","components/input/TextArea.jsx":"9b271074f1bd","components/input/TextField.jsx":"7d7ce7382207","components/input/TimePicker.jsx":"e5fd1756b8ab","components/layout/AspectRatio.jsx":"ec1ca745e3a9","components/layout/CardHead.jsx":"b7eee3ef5171","components/layout/Container.jsx":"956f2e7a0283","components/layout/Divider.jsx":"2724b2da47dc","components/layout/Grid.jsx":"bd697fa55feb","components/layout/Inline.jsx":"b5018330169a","components/layout/PageHeader.jsx":"feb6eecf36c5","components/layout/PageStack.jsx":"a920ed8a7a71","components/layout/Panel.jsx":"0b58644bd1d6","components/layout/Spacer.jsx":"d30932b51b97","components/layout/Stack.jsx":"d9f5fc72c913","components/layout/StatusBar.jsx":"765e43ff3852","components/layout/Toolbar.jsx":"a8f7fc524838","components/layout/Visible.jsx":"cfc947d272ed","components/navigation/Breadcrumb.jsx":"9b22abe659d3","components/navigation/CommandPalette.jsx":"9894e7d054d1","components/navigation/Link.jsx":"f16424582ea3","components/navigation/Pagination.jsx":"c3306480e75a","components/navigation/SidebarShell.jsx":"8b230eedd5ec","components/navigation/Tabs.jsx":"da326c5325db","components/navigation/TopNav.jsx":"a8218730e10d","components/overlay/Drawer.jsx":"b19e167b4b9e","components/overlay/DropdownMenu.jsx":"00be91bfb368","components/overlay/FormModal.jsx":"08cca2965ccc","components/overlay/Modal.jsx":"5bcf3781cd1d","components/overlay/Popover.jsx":"88176ab514f6","components/overlay/Tooltip.jsx":"55de6eeb8093","components/overlay/useModalDialog.js":"93e75b826452","theme-toggle.js":"a482d13b9a1d"},"inlinedExternals":[],"unexposedExports":[{"name":"cx","sourcePath":"components/core/frame.js"},{"name":"DASHES","sourcePath":"components/data/chart-math.js"},{"name":"estWidth","sourcePath":"components/data/chart-math.js"},{"name":"fmtKo","sourcePath":"components/data/chart-math.js"},{"name":"frameStyle","sourcePath":"components/core/frame.js"},{"name":"histBins","sourcePath":"components/data/chart-math.js"},{"name":"niceTicks","sourcePath":"components/data/chart-math.js"},{"name":"NOTIFICATION_DRAWER_ID","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"passwordStrength","sourcePath":"components/input/PasswordField.jsx"},{"name":"pathLength","sourcePath":"components/data/chart-math.js"},{"name":"r1","sourcePath":"components/data/chart-math.js"},{"name":"runsOf","sourcePath":"components/data/chart-math.js"},{"name":"seriesDash","sourcePath":"components/data/chart-math.js"},{"name":"smoothPath","sourcePath":"components/data/chart-math.js"},{"name":"spaceToken","sourcePath":"components/layout/Stack.jsx"},{"name":"stackBars","sourcePath":"components/data/chart-math.js"},{"name":"toneInk","sourcePath":"components/data/chart-math.js"},{"name":"toneVar","sourcePath":"components/data/chart-math.js"},{"name":"useAnchoredPopover","sourcePath":"components/core/useAnchoredPopover.js"},{"name":"useFieldContext","sourcePath":"components/input/Field.jsx"},{"name":"useModalDialog","sourcePath":"components/overlay/useModalDialog.js"},{"name":"useToast","sourcePath":"components/feedback/Toast.jsx"}]} */
 
 (() => {
 
@@ -614,6 +614,80 @@ function MascotMark({
 Object.assign(__ds_scope, { MascotMark });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/brand/MascotMark.jsx", error: String((e && e.message) || e) }); }
 
+// components/core/useAnchoredPopover.js
+try { (() => {
+const { useLayoutEffect, useRef } = React;
+/** 비모달 메뉴의 배치 계약: DOM 소속은 유지하고 native popover로 clipping 밖 top layer에 표시한다.
+ * fixed 좌표는 트리거·visual viewport에서 계산하고 스크롤/리사이즈 시 다시 맞춘다. */
+function useAnchoredPopover({
+  open,
+  anchorRef,
+  panelRef,
+  align = "end",
+  onDismiss
+}) {
+  const dismissRef = useRef(onDismiss);
+  dismissRef.current = onDismiss;
+  useLayoutEffect(() => {
+    const panel = panelRef.current,
+      anchor = anchorRef.current;
+    if (!open || !panel || !anchor) return;
+    panel.showPopover();
+    // A manual popover is a child interaction session, never longer-lived than its owning dialog.
+    const owner = anchor.closest('dialog');
+    const dismiss = () => {
+      if (panel.matches(":popover-open")) panel.hidePopover();
+      dismissRef.current?.();
+    };
+    const toggled = event => {
+      if (event.newState === "closed") dismissRef.current?.();
+    };
+    owner?.addEventListener("close", dismiss);
+    panel.addEventListener("toggle", toggled);
+    const place = () => {
+      const viewport = window.visualViewport;
+      const vx = viewport?.offsetLeft ?? 0,
+        vy = viewport?.offsetTop ?? 0;
+      const vw = viewport?.width ?? document.documentElement.clientWidth;
+      const vh = viewport?.height ?? document.documentElement.clientHeight;
+      const margin = 8,
+        gap = 4,
+        a = anchor.getBoundingClientRect();
+      panel.style.maxWidth = `${Math.max(0, vw - margin * 2)}px`;
+      panel.style.maxHeight = `${Math.max(0, vh - margin * 2)}px`;
+      const below = Math.max(0, vy + vh - margin - a.bottom - gap);
+      const above = Math.max(0, a.top - gap - vy - margin);
+      const upwards = panel.scrollHeight > below && above > below;
+      panel.style.maxHeight = `${Math.min(Math.max(0, vh - margin * 2), upwards ? above : below)}px`;
+      const w = panel.offsetWidth,
+        h = panel.offsetHeight;
+      const left = align === "start" ? a.left : a.right - w;
+      panel.style.left = `${Math.max(vx + margin, Math.min(left, vx + vw - margin - w))}px`;
+      panel.style.top = `${Math.max(vy + margin, Math.min(upwards ? a.top - gap - h : a.bottom + gap, vy + vh - margin - h))}px`;
+    };
+    place();
+    const ro = new ResizeObserver(place);
+    ro.observe(anchor);
+    ro.observe(panel);
+    window.addEventListener("resize", place);
+    document.addEventListener("scroll", place, true);
+    window.visualViewport?.addEventListener("resize", place);
+    window.visualViewport?.addEventListener("scroll", place);
+    return () => {
+      ro.disconnect();
+      owner?.removeEventListener("close", dismiss);
+      panel.removeEventListener("toggle", toggled);
+      window.removeEventListener("resize", place);
+      document.removeEventListener("scroll", place, true);
+      window.visualViewport?.removeEventListener("resize", place);
+      window.visualViewport?.removeEventListener("scroll", place);
+      if (panel.matches(":popover-open")) panel.hidePopover();
+    };
+  }, [open, align, anchorRef, panelRef]);
+}
+Object.assign(__ds_scope, { useAnchoredPopover });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/core/useAnchoredPopover.js", error: String((e && e.message) || e) }); }
+
 // components/data/BarList.jsx
 try { (() => {
 const { cx, frameStyle } = __ds_scope;
@@ -1216,8 +1290,8 @@ function UptimeBar({
   className,
   ...rest
 }) {
-  const known = segments.filter(s => s.status !== "off");
-  const pct = uptime ?? (known.length ? known.filter(s => s.status === "ok").length / known.length * 100 : null);
+  const known = segments.filter(s => ["ok", "warn", "crit"].includes(s.status));
+  const pct = uptime ?? (known.length ? known.filter(s => s.status === "ok" || s.status === "warn").length / known.length * 100 : null);
   return /*#__PURE__*/React.createElement("div", {
     className: cx("bds-uptime", className),
     style: {
@@ -1266,8 +1340,9 @@ const fmtKo = v => Math.abs(v) >= 1000 ? Math.round(v).toLocaleString("ko-KR") :
 /** 보기 좋은 축 눈금: 데이터 범위를 1·2·5×10^n 간격으로 나눈다. */
 function niceTicks(lo, hi, count = 4) {
   if (lo === hi) {
-    hi = lo === 0 ? 1 : lo * 1.2;
-    lo = lo === 0 ? 0 : lo * 0.8;
+    const pad = Math.abs(lo) * 0.2 || 1;
+    hi = lo + pad;
+    lo = lo === 0 ? 0 : lo - pad;
   }
   const span = hi - lo,
     raw = span / count,
@@ -1276,12 +1351,38 @@ function niceTicks(lo, hi, count = 4) {
     step = (norm >= 5 ? 10 : norm >= 2 ? 5 : norm >= 1 ? 2 : 1) * mag;
   const start = Math.floor(lo / step) * step,
     end = Math.ceil(hi / step) * step;
-  const ticks = [];
-  for (let v = start; v <= end + step / 2; v += step) ticks.push(r1(v));
+  // 데이터 눈금은 픽셀 좌표용 r1로 반올림하지 않는다. 인덱스로 생성해 누적 오차도 피한다.
+  const ticks = Array.from({
+    length: Math.round((end - start) / step) + 1
+  }, (_, i) => Number((start + i * step).toPrecision(15)));
   return {
     ticks,
     lo: start,
     hi: end
+  };
+}
+
+/** 누적 막대: 양수와 음수를 각각 0에서 쌓는다. null은 구간을 만들거나 합계에 기여하지 않는다. */
+function stackBars(series, count) {
+  const positive = Array(count).fill(0),
+    negative = Array(count).fill(0);
+  const bands = series.map(s => Array.from({
+    length: count
+  }, (_, i) => {
+    const value = s.values[i];
+    if (value == null) return null;
+    const totals = value < 0 ? negative : positive,
+      start = totals[i];
+    totals[i] += value;
+    return {
+      start,
+      end: totals[i]
+    };
+  }));
+  return {
+    bands,
+    lo: Math.min(0, ...negative),
+    hi: Math.max(0, ...positive)
   };
 }
 
@@ -1346,7 +1447,7 @@ function histBins(samples, bins) {
     counts
   };
 }
-Object.assign(__ds_scope, { r1, toneVar, toneInk, fmtKo, niceTicks, smoothPath, runsOf, pathLength, estWidth, DASHES, seriesDash, histBins });
+Object.assign(__ds_scope, { r1, toneVar, toneInk, fmtKo, niceTicks, stackBars, smoothPath, runsOf, pathLength, estWidth, DASHES, seriesDash, histBins });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/data/chart-math.js", error: String((e && e.message) || e) }); }
 
 // components/data/Legend.jsx
@@ -1413,7 +1514,7 @@ Object.assign(__ds_scope, { Legend });
 // components/data/Chart.jsx
 try { (() => {
 const { useEffect, useId, useRef, useState } = React;
-const { cx, frameStyle, r1, toneVar, toneInk, fmtKo, niceTicks, smoothPath, runsOf, pathLength, estWidth, seriesDash, histBins, Legend } = __ds_scope;
+const { cx, frameStyle, r1, toneVar, toneInk, fmtKo, niceTicks, stackBars, smoothPath, runsOf, pathLength, estWidth, seriesDash, histBins, Legend } = __ds_scope;
 /* ---------- 공용 크롬 ---------- */
 function useSize(ref, fixedW, fixedH) {
   const [size, setSize] = useState({
@@ -1502,8 +1603,8 @@ function Cartesian({
   setHover
 }) {
   const n = labels.length;
-  const stackedVals = stacked && kind === "bar" ? labels.map((_, i) => series.reduce((a, s) => a + (s.values[i] ?? 0), 0)) : null;
-  const all = (stackedVals ?? series.flatMap(s => s.values)).filter(v => v != null).concat(thresholds.map(t => t.value));
+  const stack = stacked && kind === "bar" ? stackBars(series, n) : null;
+  const all = (stack ? [stack.lo, stack.hi] : series.flatMap(s => s.values)).filter(v => v != null).concat(thresholds.map(t => t.value));
   if (!n || !all.length || w < 40) return null;
   const lo0 = Math.min(0, ...all),
     hi0 = Math.max(...all);
@@ -1619,9 +1720,9 @@ function Cartesian({
         key: si
       }, s.values.map((v, i) => {
         if (v == null) return null;
-        const base = stacked ? series.slice(0, si).reduce((a, p) => a + (p.values[i] ?? 0), 0) : 0;
-        const y1 = y(base + v),
-          y0 = y(base);
+        const band = stack?.bands[si][i];
+        const y1 = y(band ? band.end : v),
+          y0 = y(band ? band.start : 0);
         return /*#__PURE__*/React.createElement("rect", {
           key: i,
           className: "bds-chart__bar",
@@ -2850,125 +2951,6 @@ function InlineMessage({
 Object.assign(__ds_scope, { InlineMessage });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/feedback/InlineMessage.jsx", error: String((e && e.message) || e) }); }
 
-// components/feedback/NotificationDrawer.jsx
-try { (() => {
-const { useEffect, useRef } = React;
-const { cx, IconButton, Button, EmptyState } = __ds_scope;
-const NOTIFICATION_DRAWER_ID = "bds-notification-drawer";
-const TONE_LABEL = {
-  info: "정보",
-  warn: "주의",
-  crit: "위험",
-  ok: "정상"
-};
-
-/** 상단바 종 버튼. 읽지 않은 수가 배지로. */
-function NotificationTrigger({
-  unreadCount = 0,
-  open,
-  onToggle,
-  controls = NOTIFICATION_DRAWER_ID,
-  ...rest
-}) {
-  return /*#__PURE__*/React.createElement(IconButton, {
-    icon: "bell",
-    badge: unreadCount,
-    "aria-label": unreadCount > 0 ? `알림, 읽지 않음 ${unreadCount}건` : "알림",
-    "aria-expanded": open,
-    "aria-controls": controls,
-    onClick: onToggle,
-    ...rest
-  });
-}
-
-/** 오른쪽 알림 드로어(380px, 모바일 전폭). 항목을 누르면 onRead(id). */
-function NotificationDrawer({
-  open,
-  onClose,
-  items = [],
-  onRead,
-  onReadAll,
-  id = NOTIFICATION_DRAWER_ID,
-  className
-}) {
-  const panel = useRef(null),
-    opener = useRef(null);
-  const unread = items.filter(i => !i.read).length;
-  useEffect(() => {
-    if (!open) return;
-    opener.current = document.activeElement;
-    panel.current?.querySelector("button")?.focus();
-    const onKey = e => e.key === "Escape" && onClose?.();
-    document.addEventListener("keydown", onKey);
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      opener.current?.focus?.();
-    };
-  }, [open, onClose]);
-  return /*#__PURE__*/React.createElement("div", {
-    className: cx("bds-drawer", open && "bds-drawer--open", className)
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "bds-drawer__dim",
-    onClick: onClose,
-    "aria-hidden": "true"
-  }), /*#__PURE__*/React.createElement("div", {
-    id: id,
-    ref: panel,
-    role: "dialog",
-    "aria-label": "알림 센터",
-    "aria-hidden": !open || undefined,
-    className: "bds-drawer__panel"
-  }, /*#__PURE__*/React.createElement("header", {
-    className: "bds-drawer__hd"
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      flex: 1
-    }
-  }, /*#__PURE__*/React.createElement("h2", null, "알림"), /*#__PURE__*/React.createElement("p", null, items.length === 0 ? "새 알림이 없습니다." : /*#__PURE__*/React.createElement(React.Fragment, null, "알림 ", /*#__PURE__*/React.createElement("span", {
-    className: "bds-mono"
-  }, items.length), "건"))), /*#__PURE__*/React.createElement(IconButton, {
-    icon: "x",
-    variant: "ghost",
-    size: "sm",
-    "aria-label": "알림 닫기",
-    onClick: onClose
-  })), items.length === 0 ? /*#__PURE__*/React.createElement(EmptyState, {
-    plain: true,
-    face: "smiling",
-    title: "모든 상태가 정상입니다",
-    description: "주의가 필요한 상태가 생기면 여기에 표시됩니다."
-  }) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
-    className: "bds-drawer__tools"
-  }, /*#__PURE__*/React.createElement("span", null, "읽지 않음 ", /*#__PURE__*/React.createElement("span", {
-    className: "bds-mono"
-  }, unread), "건"), /*#__PURE__*/React.createElement(Button, {
-    size: "sm",
-    variant: "ghost",
-    disabled: unread === 0,
-    onClick: onReadAll
-  }, "모두 읽음")), /*#__PURE__*/React.createElement("ul", {
-    className: "bds-drawer__list"
-  }, items.map(it => /*#__PURE__*/React.createElement("li", {
-    key: it.id
-  }, /*#__PURE__*/React.createElement("button", {
-    type: "button",
-    className: cx("bds-notif", `bds-tone--${it.tone}`, it.read && "bds-notif--read"),
-    onClick: () => onRead?.(it.id),
-    "aria-label": `${TONE_LABEL[it.tone]}, ${it.title}, ${it.read ? "읽음" : "읽지 않음"}${it.resolved ? ", 해제됨" : ""}`
-  }, /*#__PURE__*/React.createElement("i", {
-    className: "bds-notif__dot",
-    "aria-hidden": "true"
-  }), /*#__PURE__*/React.createElement("span", {
-    className: "bds-notif__t"
-  }, it.title), /*#__PURE__*/React.createElement("span", {
-    className: "bds-notif__d"
-  }, it.description && /*#__PURE__*/React.createElement(React.Fragment, null, it.description, " · "), /*#__PURE__*/React.createElement("span", {
-    className: "bds-mono"
-  }, it.time), it.resolved && " · 해제됨"))))))));
-}
-Object.assign(__ds_scope, { NOTIFICATION_DRAWER_ID, NotificationTrigger, NotificationDrawer });
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/feedback/NotificationDrawer.jsx", error: String((e && e.message) || e) }); }
-
 // components/feedback/ProgressBar.jsx
 try { (() => {
 const { useId } = React;
@@ -4004,6 +3986,10 @@ function DatePicker({
     const d = sel ?? new Date();
     return new Date(d.getFullYear(), d.getMonth(), 1);
   });
+  useEffect(() => {
+    const d = value ? new Date(value + "T00:00:00") : new Date();
+    if (!Number.isNaN(d.getTime())) setView(new Date(d.getFullYear(), d.getMonth(), 1));
+  }, [value]);
   const root = useRef(null),
     trig = useRef(null);
   /* 닫힐 때 포커스를 트리거 버튼으로 돌린다(달력 셀이 언마운트되면 포커스가 body로 떨어진다) */
@@ -4062,7 +4048,13 @@ function DatePicker({
       width: "100%",
       textAlign: "left"
     },
-    onClick: () => setOpen(o => !o)
+    onClick: () => {
+      if (!open) {
+        const d = sel ?? new Date();
+        setView(new Date(d.getFullYear(), d.getMonth(), 1));
+      }
+      setOpen(o => !o);
+    }
   }, /*#__PURE__*/React.createElement("span", {
     className: "bds-ctl__affix"
   }, /*#__PURE__*/React.createElement(Icon, {
@@ -4375,6 +4367,7 @@ function MultiSelect({
     input = useRef(null);
   const sel = new Set(value);
   const list = options.filter(o => !sel.has(o.value) && o.label.toLowerCase().includes(q.trim().toLowerCase()));
+  const activeIdx = Math.min(idx, Math.max(0, list.length - 1));
   const full = max != null && value.length >= max;
   useEffect(() => {
     if (!open) return;
@@ -4388,6 +4381,7 @@ function MultiSelect({
   const add = v => {
     if (full) return;
     onChange?.([...value, v]);
+    setIdx(0);
     setQ("");
     input.current?.focus();
   };
@@ -4396,13 +4390,13 @@ function MultiSelect({
     if (e.key === "Backspace" && !q && value.length) remove(value[value.length - 1]);else if (e.key === "ArrowDown") {
       e.preventDefault();
       setOpen(true);
-      setIdx(i => Math.min(list.length - 1, i + 1));
+      setIdx(Math.max(0, Math.min(list.length - 1, activeIdx + 1)));
     } else if (e.key === "ArrowUp") {
       e.preventDefault();
-      setIdx(i => Math.max(0, i - 1));
-    } else if (e.key === "Enter" && open && list[idx]) {
+      setIdx(Math.max(0, activeIdx - 1));
+    } else if (e.key === "Enter" && open && list[activeIdx]) {
       e.preventDefault();
-      add(list[idx].value);
+      add(list[activeIdx].value);
     } else if (e.key === "Escape") setOpen(false);
   };
   return /*#__PURE__*/React.createElement("div", {
@@ -4429,7 +4423,7 @@ function MultiSelect({
     role: "combobox",
     "aria-expanded": open,
     "aria-controls": `${uid}-list`,
-    "aria-activedescendant": open && !full && list[idx] ? `${uid}-${idx}` : undefined,
+    "aria-activedescendant": open && !full && list[activeIdx] ? `${uid}-${activeIdx}` : undefined,
     "aria-autocomplete": "list",
     value: q,
     disabled: disabled || full,
@@ -4454,8 +4448,8 @@ function MultiSelect({
     key: o.value,
     id: `${uid}-${i}`,
     role: "option",
-    "aria-selected": i === idx,
-    className: cx("bds-combo__opt", i === idx && "bds-combo__opt--act"),
+    "aria-selected": i === activeIdx,
+    className: cx("bds-combo__opt", i === activeIdx && "bds-combo__opt--act"),
     onMouseEnter: () => setIdx(i),
     onMouseDown: e => {
       e.preventDefault();
@@ -4490,11 +4484,25 @@ function NumberStepper({
   const f = useFieldContext();
   const [inner, setInner] = React.useState(defaultValue);
   const v = value ?? inner;
+  const [draft, setDraft] = React.useState(String(v));
+  React.useEffect(() => {
+    setDraft(String(v));
+  }, [v]);
   const set = n => {
     const c = Math.min(max, Math.max(min, n));
     setInner(c);
-    onChange?.(c);
+    setDraft(String(c));
+    if (c !== v) onChange?.(c);
   };
+  const commit = () => {
+    const n = draft.trim() === "" ? NaN : Number(draft);
+    set(Number.isFinite(n) ? n : v);
+  };
+  const {
+    onBlur,
+    onKeyDown,
+    ...inputProps
+  } = rest;
   const dec = Number.isFinite(step) ? String(step).split(".")[1]?.length ?? 0 : 0;
   return /*#__PURE__*/React.createElement("div", {
     className: cx("bds-ctl bds-stepper-ctl", size === "sm" && "bds-ctl--sm", (invalid ?? f?.invalid) && "bds-ctl--err", disabled && "bds-ctl--disabled", className),
@@ -4518,16 +4526,21 @@ function NumberStepper({
     type: "number",
     inputMode: "decimal",
     className: "bds-mono",
-    value: v,
+    value: draft,
     min: Number.isFinite(min) ? min : undefined,
     max: Number.isFinite(max) ? max : undefined,
     step: step,
     disabled: disabled,
-    onChange: e => {
-      const n = Number(e.target.value);
-      if (Number.isFinite(n)) set(n);
+    onChange: e => setDraft(e.target.value),
+    ...inputProps,
+    onBlur: e => {
+      commit();
+      onBlur?.(e);
     },
-    ...rest
+    onKeyDown: e => {
+      onKeyDown?.(e);
+      if (e.key === "Enter" && !e.defaultPrevented) commit();
+    }
   }), unit && /*#__PURE__*/React.createElement("span", {
     className: "bds-ctl__affix"
   }, unit), /*#__PURE__*/React.createElement("button", {
@@ -4563,19 +4576,18 @@ function OTPInput({
   const refs = useRef([]);
   const chars = Array.from({
     length
-  }, (_, i) => value[i] ?? "");
+  }, (_, i) => value[i] === " " ? "" : value[i] ?? "");
   const commit = next => {
-    const v = next.slice(0, length);
+    const v = next.slice(0, length).replace(/ +$/, "");
     onChange?.(v);
     if (v.length === length && !/\D/.test(v)) onComplete?.(v);
   };
   const onInput = (i, e) => {
     const d = e.target.value.replace(/\D/g, "");
-    if (!d) return;
     const arr = chars.slice();
-    arr[i] = d[d.length - 1];
-    commit(arr.join(""));
-    refs.current[Math.min(length - 1, i + 1)]?.focus();
+    arr[i] = d ? d[d.length - 1] : "";
+    commit(arr.map(c => c || " ").join(""));
+    if (d) refs.current[Math.min(length - 1, i + 1)]?.focus();
   };
   const onKey = (i, e) => {
     if (e.key === "Backspace") {
@@ -4585,7 +4597,7 @@ function OTPInput({
         arr[i - 1] = "";
         refs.current[i - 1]?.focus();
       }
-      commit(arr.join(""));
+      commit(arr.map(c => c || " ").join(""));
     } else if (e.key === "ArrowLeft" && i > 0) refs.current[i - 1]?.focus();else if (e.key === "ArrowRight" && i < length - 1) refs.current[i + 1]?.focus();
   };
   const onPaste = e => {
@@ -6070,80 +6082,10 @@ function TopNav({
 Object.assign(__ds_scope, { TopNav });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/navigation/TopNav.jsx", error: String((e && e.message) || e) }); }
 
-// components/overlay/Drawer.jsx
-try { (() => {
-const { useEffect, useId, useRef } = React;
-const { cx, IconButton } = __ds_scope;
-/** 오른쪽 사이드 패널. 네이티브 <dialog>.showModal()로 포커스를 가둔다. 목록을 보면서 상세를 볼 때(실행 상세·모델 상세). 확인이 필요한 결정은 Modal. size: sm 380 · md 480 · lg 640. 768 미만은 전체 폭. */
-function Drawer({
-  open,
-  onClose,
-  title,
-  description,
-  actions,
-  size = "md",
-  closeButton = true,
-  className,
-  children,
-  ...rest
-}) {
-  const panel = useRef(null),
-    tid = useId();
-  useEffect(() => {
-    const d = panel.current;
-    if (!d) return;
-    if (open) {
-      if (!d.open) d.showModal();
-      requestAnimationFrame(() => d.focus());
-    } else if (d.open) d.close();
-  }, [open]);
-  const outside = e => {
-    const r = e.currentTarget.getBoundingClientRect();
-    return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
-  };
-  return /*#__PURE__*/React.createElement("div", {
-    className: cx("bds-side", open && "bds-side--open", `bds-side--${size}`)
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "bds-side__dim",
-    onMouseDown: onClose
-  }), /*#__PURE__*/React.createElement("dialog", {
-    ref: panel,
-    "aria-labelledby": title ? tid : undefined,
-    tabIndex: -1,
-    className: cx("bds-side__panel", className),
-    onCancel: e => {
-      e.preventDefault();
-      onClose?.();
-    },
-    onMouseDown: e => {
-      if (e.target === e.currentTarget && outside(e)) onClose?.();
-    },
-    ...rest
-  }, (title || closeButton) && /*#__PURE__*/React.createElement("header", {
-    className: "bds-side__hd"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "bds-side__ttl"
-  }, title && /*#__PURE__*/React.createElement("h2", {
-    id: tid
-  }, title), description && /*#__PURE__*/React.createElement("p", null, description)), closeButton && /*#__PURE__*/React.createElement(IconButton, {
-    icon: "x",
-    size: "sm",
-    variant: "ghost",
-    "aria-label": "닫기",
-    onClick: onClose
-  })), /*#__PURE__*/React.createElement("div", {
-    className: "bds-side__body"
-  }, children), actions && /*#__PURE__*/React.createElement("footer", {
-    className: "bds-side__ft"
-  }, actions)));
-}
-Object.assign(__ds_scope, { Drawer });
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/overlay/Drawer.jsx", error: String((e && e.message) || e) }); }
-
 // components/overlay/DropdownMenu.jsx
 try { (() => {
 const { useEffect, useId, useRef, useState } = React;
-const { cx, Icon, IconButton } = __ds_scope;
+const { cx, useAnchoredPopover, Icon, IconButton } = __ds_scope;
 /** "…" 메뉴. items: {label, icon?, onSelect, danger?, disabled?} | "-"(구분선). trigger를 안 주면 점 세 개 IconButton. */
 function DropdownMenu({
   items = [],
@@ -6156,10 +6098,19 @@ function DropdownMenu({
   const [open, setOpen] = useState(false);
   const [idx, setIdx] = useState(-1);
   const root = useRef(null),
+    panel = useRef(null),
     uid = useId().replace(/:/g, "");
   const enabled = items.map((it, i) => it !== "-" && !it.disabled ? i : -1).filter(i => i >= 0);
+  useAnchoredPopover({
+    open,
+    anchorRef: root,
+    panelRef: panel,
+    align,
+    onDismiss: () => setOpen(false)
+  });
   /* 닫힐 때 포커스를 트리거로 돌린다(메뉴 항목이 언마운트되면 포커스가 body로 떨어진다) */
   const close = () => {
+    if (panel.current?.matches(":popover-open")) panel.current.hidePopover();
     setOpen(false);
     root.current?.querySelector("[aria-haspopup]")?.focus();
   };
@@ -6169,18 +6120,30 @@ function DropdownMenu({
       if (!root.current?.contains(e.target)) setOpen(false);
     };
     const key = e => {
-      if (e.key === "Escape") close();
+      if (e.key === "Escape") {
+        e.preventDefault();
+        e.stopPropagation();
+        close();
+      }
     };
-    document.addEventListener("mousedown", on);
+    document.addEventListener("pointerdown", on);
     document.addEventListener("keydown", key);
     return () => {
-      document.removeEventListener("mousedown", on);
+      document.removeEventListener("pointerdown", on);
       document.removeEventListener("keydown", key);
     };
   }, [open]);
   useEffect(() => {
-    if (open) root.current?.querySelector(`#${uid}-${idx}`)?.focus();
-  }, [idx, open, uid]);
+    if (!open) return;
+    const active = enabled.includes(idx) ? idx : enabled[0];
+    if (active !== undefined) panel.current?.querySelector(`[data-menu-index="${active}"]`)?.focus();
+  }, [idx, open, items]);
+  const toggleOpen = () => {
+    if (open) close();else {
+      setIdx(enabled[0] ?? -1);
+      setOpen(true);
+    }
+  };
   const onKey = e => {
     if (!open && (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ")) {
       e.preventDefault();
@@ -6190,6 +6153,11 @@ function DropdownMenu({
     }
     if (!open) return;
     const p = enabled.indexOf(idx);
+    if (e.key === "Tab") {
+      close();
+      return;
+    }
+    if (!enabled.length) return;
     if (e.key === "ArrowDown") {
       e.preventDefault();
       setIdx(enabled[(p + 1) % enabled.length]);
@@ -6202,7 +6170,7 @@ function DropdownMenu({
     } else if (e.key === "End") {
       e.preventDefault();
       setIdx(enabled[enabled.length - 1]);
-    } else if (e.key === "Tab") setOpen(false);
+    }
   };
   const pick = it => {
     if (it.disabled) return;
@@ -6215,9 +6183,12 @@ function DropdownMenu({
     "aria-controls": `${uid}-menu`,
     onClick: e => {
       trigger.props.onClick?.(e);
-      setOpen(o => !o);
+      if (!e.defaultPrevented) toggleOpen();
     },
-    onKeyDown: onKey
+    onKeyDown: e => {
+      trigger.props.onKeyDown?.(e);
+      if (!e.defaultPrevented) onKey(e);
+    }
   }) : /*#__PURE__*/React.createElement(IconButton, {
     icon: "dots-three",
     size: size,
@@ -6226,24 +6197,29 @@ function DropdownMenu({
     "aria-haspopup": "menu",
     "aria-expanded": open,
     "aria-controls": `${uid}-menu`,
-    onClick: () => setOpen(o => !o),
+    onClick: toggleOpen,
     onKeyDown: onKey
   });
   return /*#__PURE__*/React.createElement("span", {
     ref: root,
     className: cx("bds-menu", className)
   }, trig, open && /*#__PURE__*/React.createElement("ul", {
+    ref: panel,
+    popover: "manual",
     id: `${uid}-menu`,
     role: "menu",
-    className: cx("bds-menu__list", `bds-menu__list--${align}`),
+    "aria-label": ariaLabel,
+    className: "bds-menu__list",
     onKeyDown: onKey
   }, items.map((it, i) => it === "-" ? /*#__PURE__*/React.createElement("li", {
     key: i,
     role: "separator",
     className: "bds-menu__sep"
   }) : /*#__PURE__*/React.createElement("li", {
-    key: i
+    key: i,
+    role: "none"
   }, /*#__PURE__*/React.createElement("button", {
+    "data-menu-index": i,
     id: `${uid}-${i}`,
     type: "button",
     role: "menuitem",
@@ -6251,7 +6227,7 @@ function DropdownMenu({
     disabled: it.disabled,
     className: cx("bds-menu__item", it.danger && "bds-menu__item--danger"),
     onClick: () => pick(it),
-    onMouseEnter: () => setIdx(i)
+    onMouseEnter: () => !it.disabled && setIdx(i)
   }, it.icon && /*#__PURE__*/React.createElement(Icon, {
     name: it.icon,
     size: 15
@@ -6261,184 +6237,6 @@ function DropdownMenu({
 }
 Object.assign(__ds_scope, { DropdownMenu });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/overlay/DropdownMenu.jsx", error: String((e && e.message) || e) }); }
-
-// components/overlay/Modal.jsx
-try { (() => {
-const { useEffect, useId, useRef } = React;
-const { cx, IconButton } = __ds_scope;
-/** 모달. 네이티브 <dialog>.showModal()로 포커스를 가둔다. Esc·딤·닫기 → onClose. 640 미만에서는 바텀시트. size: sm 360 · md 440 · lg 560 · xl 760. */
-function Modal({
-  open,
-  onClose,
-  title,
-  description,
-  actions,
-  size = "md",
-  closeButton = true,
-  className,
-  children,
-  ...rest
-}) {
-  const panel = useRef(null),
-    opener = useRef(null),
-    tid = useId();
-  useEffect(() => {
-    const d = panel.current;
-    if (!open || !d) return;
-    opener.current = document.activeElement;
-    if (!d.open) d.showModal();
-    const first = d.querySelector("input,select,textarea,button:not([aria-label='닫기'])") ?? d;
-    first?.focus?.();
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      if (d.open) d.close();
-      document.body.style.overflow = prev;
-      opener.current?.focus?.();
-    };
-  }, [open]);
-  const outside = e => {
-    const r = e.currentTarget.getBoundingClientRect();
-    return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
-  };
-  if (!open) return null;
-  return /*#__PURE__*/React.createElement("dialog", {
-    ref: panel,
-    "aria-labelledby": title ? tid : undefined,
-    tabIndex: -1,
-    className: cx("bds-modal__panel", size !== "md" && `bds-modal--${size}`, className),
-    onCancel: e => {
-      e.preventDefault();
-      onClose?.();
-    },
-    onMouseDown: e => {
-      if (e.target === e.currentTarget && outside(e)) onClose?.();
-    },
-    ...rest
-  }, (title || closeButton) && /*#__PURE__*/React.createElement("div", {
-    className: "bds-modal__hd"
-  }, title && /*#__PURE__*/React.createElement("h2", {
-    id: tid
-  }, title), closeButton && /*#__PURE__*/React.createElement(IconButton, {
-    icon: "x",
-    size: "sm",
-    variant: "ghost",
-    "aria-label": "닫기",
-    onClick: onClose
-  })), description && /*#__PURE__*/React.createElement("p", {
-    className: "bds-modal__desc"
-  }, description), children && /*#__PURE__*/React.createElement("div", {
-    className: "bds-modal__body"
-  }, children), actions && /*#__PURE__*/React.createElement("div", {
-    className: "bds-modal__ft"
-  }, actions));
-}
-Object.assign(__ds_scope, { Modal });
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/overlay/Modal.jsx", error: String((e && e.message) || e) }); }
-
-// components/feedback/ConfirmDialog.jsx
-try { (() => {
-const { useState } = React;
-const { Modal, Button, TextField } = __ds_scope;
-/** 확인 모달. danger면 확인 버튼 crit 채움. typeToConfirm에 이름을 주면 그대로 입력해야 확인이 활성화된다. */
-function ConfirmDialog({
-  open,
-  onClose,
-  onConfirm,
-  title,
-  message,
-  confirmLabel = "확인",
-  cancelLabel = "취소",
-  danger = false,
-  typeToConfirm,
-  busy = false,
-  size = "sm"
-}) {
-  const [typed, setTyped] = useState("");
-  const ok = !typeToConfirm || typed === typeToConfirm;
-  return /*#__PURE__*/React.createElement(Modal, {
-    open: open,
-    onClose: onClose,
-    title: title,
-    size: size,
-    closeButton: false,
-    actions: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Button, {
-      variant: "ghost",
-      onClick: onClose,
-      disabled: busy
-    }, cancelLabel), /*#__PURE__*/React.createElement(Button, {
-      variant: danger ? "danger" : "primary",
-      className: danger ? "bds-btn--danger-fill" : undefined,
-      disabled: !ok,
-      busy: busy,
-      onClick: () => onConfirm?.()
-    }, confirmLabel))
-  }, message && /*#__PURE__*/React.createElement("p", {
-    className: "bds-confirm__msg"
-  }, message), typeToConfirm && /*#__PURE__*/React.createElement("label", {
-    className: "bds-confirm__typed"
-  }, /*#__PURE__*/React.createElement("span", null, "계속하려면 ", /*#__PURE__*/React.createElement("code", null, typeToConfirm), "을(를) 입력합니다"), /*#__PURE__*/React.createElement(TextField, {
-    mono: true,
-    value: typed,
-    onChange: e => setTyped(e.target.value),
-    autoFocus: true
-  })));
-}
-Object.assign(__ds_scope, { ConfirmDialog });
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/feedback/ConfirmDialog.jsx", error: String((e && e.message) || e) }); }
-
-// components/overlay/FormModal.jsx
-try { (() => {
-const { Modal, Button } = __ds_scope;
-/** 폼 모달. Enter 제출, 제출 버튼 라벨은 동사. busy 중 취소도 막는다. */
-function FormModal({
-  open,
-  onClose,
-  onSubmit,
-  title,
-  description,
-  submitLabel = "저장",
-  cancelLabel = "취소",
-  busy = false,
-  danger = false,
-  size = "md",
-  error,
-  children
-}) {
-  return /*#__PURE__*/React.createElement(Modal, {
-    open: open,
-    onClose: busy ? undefined : onClose,
-    title: title,
-    description: description,
-    size: size,
-    actions: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Button, {
-      variant: "ghost",
-      disabled: busy,
-      onClick: onClose
-    }, cancelLabel), /*#__PURE__*/React.createElement(Button, {
-      variant: danger ? "danger" : "primary",
-      type: "submit",
-      form: "bds-form-modal",
-      busy: busy
-    }, submitLabel))
-  }, /*#__PURE__*/React.createElement("form", {
-    id: "bds-form-modal",
-    style: {
-      display: "grid",
-      gap: 14,
-      minWidth: 0
-    },
-    onSubmit: e => {
-      e.preventDefault();
-      if (!busy) onSubmit?.(e);
-    }
-  }, children, error && /*#__PURE__*/React.createElement("div", {
-    className: "bds-field__err",
-    role: "alert"
-  }, error)));
-}
-Object.assign(__ds_scope, { FormModal });
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/overlay/FormModal.jsx", error: String((e && e.message) || e) }); }
 
 // components/overlay/Popover.jsx
 try { (() => {
@@ -6555,6 +6353,400 @@ function Tooltip({
 }
 Object.assign(__ds_scope, { Tooltip });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/overlay/Tooltip.jsx", error: String((e && e.message) || e) }); }
+
+// components/overlay/useModalDialog.js
+try { (() => {
+const { useEffect } = React;
+// Share the body lock across nested dialogs, including dialogs closed out of order.
+const sessions = new WeakMap();
+function useModalDialog(panel, open) {
+  useEffect(() => {
+    const dialog = panel.current;
+    if (!open || !dialog) return;
+    const doc = dialog.ownerDocument;
+    let state = sessions.get(doc);
+    if (!state) {
+      state = {
+        entries: [],
+        overflow: doc.body.style.overflow
+      };
+      sessions.set(doc, state);
+    }
+    const entry = {
+      dialog,
+      opener: doc.activeElement
+    };
+    state.entries.push(entry);
+    doc.body.style.overflow = "hidden";
+    if (!dialog.open) dialog.showModal();
+    // showModal performs native autofocus; retain it and use the panel only as fallback.
+    if (!dialog.contains(doc.activeElement)) dialog.focus();
+    return () => {
+      const top = state.entries.at(-1) === entry;
+      state.entries = state.entries.filter(item => item !== entry);
+      for (const item of state.entries) {
+        if (dialog.contains(item.opener)) item.opener = entry.opener;
+      }
+      // Native manual popovers are separate top-layer entries; end their child sessions first.
+      dialog.querySelectorAll('[popover]:popover-open').forEach(popover => popover.hidePopover());
+      if (dialog.open) dialog.close();
+      const remaining = state.entries.at(-1)?.dialog;
+      if (!remaining) {
+        doc.body.style.overflow = state.overflow;
+        sessions.delete(doc);
+      }
+      if (top && entry.opener?.isConnected && (!remaining || remaining.contains(entry.opener))) entry.opener.focus?.();
+      if (remaining && !remaining.contains(doc.activeElement)) remaining.focus();
+    };
+  }, [open, panel]);
+}
+Object.assign(__ds_scope, { useModalDialog });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/overlay/useModalDialog.js", error: String((e && e.message) || e) }); }
+
+// components/overlay/Drawer.jsx
+try { (() => {
+const { useId, useRef } = React;
+const { useModalDialog, cx, IconButton } = __ds_scope;
+/** 오른쪽 사이드 패널. 네이티브 <dialog>.showModal()로 포커스를 가둔다. 목록을 보면서 상세를 볼 때(실행 상세·모델 상세). 확인이 필요한 결정은 Modal. size: sm 380 · md 480 · lg 640. 768 미만은 전체 폭. */
+function Drawer({
+  open,
+  onClose,
+  title,
+  description,
+  actions,
+  size = "md",
+  closeButton = true,
+  className,
+  children,
+  ...rest
+}) {
+  const panel = useRef(null),
+    tid = useId();
+  useModalDialog(panel, open);
+  const outside = e => {
+    const r = e.currentTarget.getBoundingClientRect();
+    return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    className: cx("bds-side", open && "bds-side--open", `bds-side--${size}`)
+  }, /*#__PURE__*/React.createElement("dialog", {
+    ref: panel,
+    "aria-labelledby": title ? tid : undefined,
+    tabIndex: -1,
+    className: cx("bds-side__panel", className),
+    onCancel: e => {
+      e.preventDefault();
+      onClose?.();
+    },
+    onMouseDown: e => {
+      if (e.target === e.currentTarget && outside(e)) onClose?.();
+    },
+    ...rest
+  }, (title || closeButton) && /*#__PURE__*/React.createElement("header", {
+    className: "bds-side__hd"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "bds-side__ttl"
+  }, title && /*#__PURE__*/React.createElement("h2", {
+    id: tid
+  }, title), description && /*#__PURE__*/React.createElement("p", null, description)), closeButton && /*#__PURE__*/React.createElement(IconButton, {
+    icon: "x",
+    size: "sm",
+    variant: "ghost",
+    "aria-label": "닫기",
+    onClick: onClose
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "bds-side__body"
+  }, children), actions && /*#__PURE__*/React.createElement("footer", {
+    className: "bds-side__ft"
+  }, actions)));
+}
+Object.assign(__ds_scope, { Drawer });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/overlay/Drawer.jsx", error: String((e && e.message) || e) }); }
+
+// components/feedback/NotificationDrawer.jsx
+try { (() => {
+const { Drawer, cx, IconButton, Button, EmptyState } = __ds_scope;
+const NOTIFICATION_DRAWER_ID = "bds-notification-drawer";
+const TONE_LABEL = {
+  info: "정보",
+  warn: "주의",
+  crit: "위험",
+  ok: "정상"
+};
+
+/** 상단바 종 버튼. 읽지 않은 수가 배지로. */
+function NotificationTrigger({
+  unreadCount = 0,
+  open,
+  onToggle,
+  controls = NOTIFICATION_DRAWER_ID,
+  ...rest
+}) {
+  return /*#__PURE__*/React.createElement(IconButton, {
+    icon: "bell",
+    badge: unreadCount,
+    "aria-label": unreadCount > 0 ? `알림, 읽지 않음 ${unreadCount}건` : "알림",
+    "aria-expanded": open,
+    "aria-controls": controls,
+    onClick: onToggle,
+    ...rest
+  });
+}
+
+/** 오른쪽 알림 드로어(380px, 모바일 전폭). 항목을 누르면 onRead(id). */
+function NotificationDrawer({
+  open,
+  onClose,
+  items = [],
+  onRead,
+  onReadAll,
+  id = NOTIFICATION_DRAWER_ID,
+  className
+}) {
+  const unread = items.filter(i => !i.read).length;
+  return /*#__PURE__*/React.createElement(Drawer, {
+    open: open,
+    onClose: onClose,
+    id: id,
+    size: "sm",
+    title: "알림",
+    "aria-label": "알림 센터",
+    description: items.length === 0 ? "새 알림이 없습니다." : /*#__PURE__*/React.createElement(React.Fragment, null, "알림 ", /*#__PURE__*/React.createElement("span", {
+      className: "bds-mono"
+    }, items.length), "건"),
+    className: cx("bds-notification-drawer", className)
+  }, items.length === 0 ? /*#__PURE__*/React.createElement(EmptyState, {
+    plain: true,
+    face: "smiling",
+    title: "모든 상태가 정상입니다",
+    description: "주의가 필요한 상태가 생기면 여기에 표시됩니다."
+  }) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    className: "bds-drawer__tools"
+  }, /*#__PURE__*/React.createElement("span", null, "읽지 않음 ", /*#__PURE__*/React.createElement("span", {
+    className: "bds-mono"
+  }, unread), "건"), /*#__PURE__*/React.createElement(Button, {
+    size: "sm",
+    variant: "ghost",
+    disabled: unread === 0,
+    onClick: onReadAll
+  }, "모두 읽음")), /*#__PURE__*/React.createElement("ul", {
+    className: "bds-drawer__list"
+  }, items.map(it => /*#__PURE__*/React.createElement("li", {
+    key: it.id
+  }, /*#__PURE__*/React.createElement("button", {
+    type: "button",
+    className: cx("bds-notif", `bds-tone--${it.tone}`, it.read && "bds-notif--read"),
+    onClick: () => onRead?.(it.id),
+    "aria-label": `${TONE_LABEL[it.tone]}, ${it.title}, ${it.read ? "읽음" : "읽지 않음"}${it.resolved ? ", 해제됨" : ""}`
+  }, /*#__PURE__*/React.createElement("i", {
+    className: "bds-notif__dot",
+    "aria-hidden": "true"
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "bds-notif__t"
+  }, it.title), /*#__PURE__*/React.createElement("span", {
+    className: "bds-notif__d"
+  }, it.description && /*#__PURE__*/React.createElement(React.Fragment, null, it.description, " · "), /*#__PURE__*/React.createElement("span", {
+    className: "bds-mono"
+  }, it.time), it.resolved && " · 해제됨")))))));
+}
+Object.assign(__ds_scope, { NOTIFICATION_DRAWER_ID, NotificationTrigger, NotificationDrawer });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/feedback/NotificationDrawer.jsx", error: String((e && e.message) || e) }); }
+
+// components/overlay/Modal.jsx
+try { (() => {
+const { useId, useRef } = React;
+const { useModalDialog, cx, IconButton } = __ds_scope;
+/** 모달. 네이티브 <dialog>.showModal()로 포커스를 가둔다. Esc·딤·닫기 → onClose. 640 미만에서는 바텀시트. size: sm 360 · md 440 · lg 560 · xl 760. */
+function Modal({
+  open,
+  onClose,
+  title,
+  description,
+  actions,
+  size = "md",
+  closeButton = true,
+  className,
+  children,
+  ...rest
+}) {
+  const panel = useRef(null),
+    tid = useId();
+  useModalDialog(panel, open);
+  const outside = e => {
+    const r = e.currentTarget.getBoundingClientRect();
+    return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
+  };
+  if (!open) return null;
+  return /*#__PURE__*/React.createElement("dialog", {
+    ref: panel,
+    "aria-labelledby": title ? tid : undefined,
+    tabIndex: -1,
+    className: cx("bds-modal__panel", size !== "md" && `bds-modal--${size}`, className),
+    onCancel: e => {
+      e.preventDefault();
+      onClose?.();
+    },
+    onMouseDown: e => {
+      if (e.target === e.currentTarget && outside(e)) onClose?.();
+    },
+    ...rest
+  }, (title || closeButton) && /*#__PURE__*/React.createElement("div", {
+    className: "bds-modal__hd"
+  }, title && /*#__PURE__*/React.createElement("h2", {
+    id: tid
+  }, title), closeButton && /*#__PURE__*/React.createElement(IconButton, {
+    icon: "x",
+    size: "sm",
+    variant: "ghost",
+    "aria-label": "닫기",
+    onClick: onClose
+  })), description && /*#__PURE__*/React.createElement("p", {
+    className: "bds-modal__desc"
+  }, description), children && /*#__PURE__*/React.createElement("div", {
+    className: "bds-modal__body"
+  }, children), actions && /*#__PURE__*/React.createElement("div", {
+    className: "bds-modal__ft"
+  }, actions));
+}
+Object.assign(__ds_scope, { Modal });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/overlay/Modal.jsx", error: String((e && e.message) || e) }); }
+
+// components/feedback/ConfirmDialog.jsx
+try { (() => {
+const { useState } = React;
+const { Modal, Button, TextField } = __ds_scope;
+/** 확인 모달. danger면 확인 버튼 crit 채움. typeToConfirm에 이름을 주면 그대로 입력해야 확인이 활성화된다. */
+function ConfirmDialog({
+  open,
+  onClose,
+  onConfirm,
+  title,
+  message,
+  confirmLabel = "확인",
+  cancelLabel = "취소",
+  danger = false,
+  typeToConfirm,
+  busy = false,
+  size = "sm"
+}) {
+  if (!open) return null;
+  return /*#__PURE__*/React.createElement(ConfirmSession, {
+    key: typeToConfirm ?? "",
+    onClose,
+    onConfirm,
+    title,
+    message,
+    confirmLabel,
+    cancelLabel,
+    danger,
+    typeToConfirm,
+    busy,
+    size
+  });
+}
+function ConfirmSession({
+  onClose,
+  onConfirm,
+  title,
+  message,
+  confirmLabel,
+  cancelLabel,
+  danger,
+  typeToConfirm,
+  busy,
+  size
+}) {
+  const [typed, setTyped] = useState("");
+  const ok = !typeToConfirm || typed === typeToConfirm;
+  return /*#__PURE__*/React.createElement(Modal, {
+    open: true,
+    onClose: busy ? undefined : onClose,
+    title: title,
+    size: size,
+    closeButton: false,
+    actions: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Button, {
+      variant: "ghost",
+      onClick: onClose,
+      disabled: busy
+    }, cancelLabel), /*#__PURE__*/React.createElement(Button, {
+      variant: danger ? "danger" : "primary",
+      className: danger ? "bds-btn--danger-fill" : undefined,
+      disabled: !ok,
+      busy: busy,
+      onClick: () => {
+        if (!busy && ok) onConfirm?.();
+      }
+    }, confirmLabel))
+  }, message && /*#__PURE__*/React.createElement("p", {
+    className: "bds-confirm__msg"
+  }, message), typeToConfirm && /*#__PURE__*/React.createElement("label", {
+    className: "bds-confirm__typed"
+  }, /*#__PURE__*/React.createElement("span", null, "계속하려면 ", /*#__PURE__*/React.createElement("code", null, typeToConfirm), "을(를) 입력합니다"), /*#__PURE__*/React.createElement(TextField, {
+    mono: true,
+    value: typed,
+    disabled: busy,
+    onChange: e => setTyped(e.target.value),
+    autoFocus: true
+  })));
+}
+Object.assign(__ds_scope, { ConfirmDialog });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/feedback/ConfirmDialog.jsx", error: String((e && e.message) || e) }); }
+
+// components/overlay/FormModal.jsx
+try { (() => {
+const { useId } = React;
+const { Modal, Button } = __ds_scope;
+/** 폼 모달. Enter 제출, 제출 버튼 라벨은 동사. busy 중 취소도 막는다. */
+function FormModal({
+  open,
+  onClose,
+  onSubmit,
+  title,
+  description,
+  submitLabel = "저장",
+  cancelLabel = "취소",
+  busy = false,
+  danger = false,
+  size = "md",
+  error,
+  children
+}) {
+  const formId = useId();
+  return /*#__PURE__*/React.createElement(Modal, {
+    open: open,
+    onClose: busy ? undefined : onClose,
+    closeButton: !busy,
+    title: title,
+    description: description,
+    size: size,
+    actions: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Button, {
+      variant: "ghost",
+      disabled: busy,
+      onClick: onClose
+    }, cancelLabel), submitLabel != null && /*#__PURE__*/React.createElement(Button, {
+      variant: danger ? "danger" : "primary",
+      type: "submit",
+      form: formId,
+      busy: busy
+    }, submitLabel))
+  }, /*#__PURE__*/React.createElement("form", {
+    id: formId,
+    style: {
+      display: "grid",
+      gap: 14,
+      minWidth: 0
+    },
+    onSubmit: e => {
+      e.preventDefault();
+      if (!busy && submitLabel != null) onSubmit?.(e);
+    }
+  }, children, error && /*#__PURE__*/React.createElement("div", {
+    className: "bds-field__err",
+    role: "alert"
+  }, error)));
+}
+Object.assign(__ds_scope, { FormModal });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/overlay/FormModal.jsx", error: String((e && e.message) || e) }); }
 
 // theme-toggle.js
 try { (() => {

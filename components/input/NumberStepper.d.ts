@@ -9,6 +9,7 @@ export interface NumberStepperProps extends Omit<InputHTMLAttributes<HTMLInputEl
   fit?: "flex" | "fixed" | "auto";
   width?: number | string;
   invalid?: boolean;
+  /** blur·Enter·증감 버튼에서 확정된 숫자만 전달. 입력 중 빈칸/범위 밖 값은 편집 상태로 유지한다. */
   onChange?: (value: number) => void;
 }
 export declare function NumberStepper(props: NumberStepperProps): JSX.Element;

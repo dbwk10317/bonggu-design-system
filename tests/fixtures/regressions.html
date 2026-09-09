@@ -1,0 +1,73 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/styles.css"><div id="app"></div>
+<script src="/test-react.js"></script><script src="/test-react-dom.js"></script><script src="/_ds_bundle.js"></script>
+<script>
+const h = React.createElement, D = window.Ds_d3ea90;
+const root = ReactDOM.createRoot(document.getElementById('app'));
+window.mount = (name, props) => root.render(h(D[name], props));
+window.demo = (name) => {
+  const examples = {
+    confirm() {
+      const [open, setOpen] = React.useState(true), [target, setTarget] = React.useState('DELETE'), [busy, setBusy] = React.useState(false);
+      window.setTarget = setTarget; window.setBusy = setBusy;
+      return h('div', null, h('button', { onClick: () => setOpen(true) }, '다시 열기'),
+        h(D.ConfirmDialog, { open, onClose: () => setOpen(false), title: '삭제 확인', typeToConfirm: target, busy, danger: true, confirmLabel: '삭제' }));
+    },
+    forms() {
+      window.submissions = [];
+      return h(React.Fragment, null,
+        h(D.FormModal, { open: true, title: '첫 폼', onSubmit: () => window.submissions.push('first') }),
+        h(D.FormModal, { open: true, title: '둘째 폼', onSubmit: () => window.submissions.push('second') }));
+    },
+    notification() {
+      const [open, setOpen] = React.useState(false);
+      return h('div', null, h('button', { onClick: () => setOpen(true) }, '알림 열기'),
+        h('button', null, '배경 동작'), h(D.NotificationDrawer, { open, onClose: () => setOpen(false), items: [] }));
+    },
+    nested() {
+      const [modal, setModal] = React.useState(true), [drawer, setDrawer] = React.useState(false);
+      window.closeUnderlying = () => setModal(false);
+      return h(React.Fragment, null, h(D.Modal, { open: modal, onClose: () => setModal(false), title: '기본 모달' },
+        h('button', { onClick: () => setDrawer(true) }, '상세 열기')),
+        h(D.Drawer, { open: drawer, onClose: () => setDrawer(false), title: '상세 드로어' }));
+    },
+    menu() {
+      window.picked = [];
+      return h('div', { style: { padding: 8 } },
+        h(D.DataTable, { columns: [{ key: 'name', header: '이름' }, { key: 'act', header: '작업', render: () => h(D.DropdownMenu, { items: [{ label: '수정', onSelect: () => picked.push('edit') }, { label: '삭제', onSelect: () => picked.push('delete') }, { label: '복사', onSelect: () => picked.push('copy') }] }) }], rows: [{ id: 1, name: '테스트' }] }),
+        h('button', { id: 'after-menu' }, '다음 동작'));
+    },
+    menuModal() {
+      const [open, setOpen] = React.useState(true);
+      return h(D.Modal, { open, onClose: () => setOpen(false), title: '메뉴 모달' }, h(D.DropdownMenu, { items: [{ label: '수정' }, { label: '복사' }] }));
+    },
+    menuDrawer() {
+      const [open, setOpen] = React.useState(true); window.setDrawerOpen = setOpen;
+      return h(D.Drawer, { open, onClose: () => setOpen(false), title: '메뉴 드로어' }, h(D.DropdownMenu, { items: [{ label: '수정' }, { label: '복사' }] }));
+    },
+    menuEdge() {
+      return h('div', { style: { position: 'fixed', right: 0, bottom: 0 } }, h(D.DropdownMenu, { align: 'start', items: Array.from({ length: 30 }, (_, i) => ({ label: '긴 메뉴 항목 ' + i })) }));
+    },
+    menuScroll() {
+      return h('div', { style: { paddingTop: 900, paddingBottom: 1800 } }, h(D.DropdownMenu, { items: Array.from({ length: 50 }, (_, i) => ({ label: '메뉴 ' + i })) }));
+    },
+    inputs() {
+      const [number, setNumber] = React.useState(25), [multi, setMulti] = React.useState([]), [date, setDate] = React.useState('2026-01-15'), [otp, setOtp] = React.useState('123456');
+      window.setDate = setDate; window.setOtp = setOtp; window.inputValues = { number, multi, date, otp };
+      return h('main', { style: { padding: 20 } },
+        h(D.Field, { label: '횟수' }, h(D.NumberStepper, { value: number, min: 10, max: 100, onChange: setNumber })),
+        h(D.Field, { label: '다중 선택' }, h(D.MultiSelect, { options: ['A', 'B', 'C'].map(v => ({ value: v, label: v })), value: multi, onChange: setMulti })),
+        h(D.Field, { label: '날짜' }, h(D.DatePicker, { value: date, onChange: setDate })),
+        h(D.OTPInput, { value: otp, onChange: setOtp }), h('button', null, '입력 완료'));
+    },
+    visuals() {
+      return h('main', { style: { padding: 20 } },
+        h(D.Field, { label: '모델', required: true, error: '선택이 필요합니다' }, h(D.Combobox, { options: [{ value: 'a', label: '모델 A' }], value: null, onChange() {} })),
+        h(D.Chart, { kind: 'radar', axes: ['CPU', 'RAM', 'GPU'], series: [{ label: '서버', values: [80, null, 60] }], max: 100, animate: false }),
+        h(D.Chart, { kind: 'bar', labels: ['A', 'B'], series: [{ label: '유입', values: [100, 20] }, { label: '유출', values: [-90, -30] }], stacked: true, animate: false }),
+        h(D.UptimeBar, { name: '가용성', segments: [{ status: 'ok' }, { status: 'warn' }] }));
+    },
+  };
+  root.render(h(examples[name]));
+};
+</script></html>

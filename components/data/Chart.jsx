@@ -1,6 +1,6 @@
 import React, { useEffect, useId, useRef, useState } from "react";
 import { cx, frameStyle } from "../core/frame.js";
-import { r1, toneVar, toneInk, fmtKo, niceTicks, smoothPath, runsOf, pathLength, estWidth, seriesDash, histBins } from "./chart-math.js";
+import { r1, toneVar, toneInk, fmtKo, niceTicks, stackBars, smoothPath, runsOf, pathLength, estWidth, seriesDash, histBins } from "./chart-math.js";
 import { Legend } from "./Legend.jsx";
 
 /* ---------- 공용 크롬 ---------- */
@@ -36,8 +36,8 @@ const cell = (fmt, v) => (v == null ? MISSING : fmt(v));
 /** hover/setHover는 Chart가 갖는다(마우스·키보드가 같은 인덱스를 움직여 같은 Tip을 띄운다). */
 function Cartesian({ kind, labels, series, fmt, uid, xTicks, w, h, thresholds = [], stacked, yMin, yMax, hover, setHover }) {
   const n = labels.length;
-  const stackedVals = stacked && kind === "bar" ? labels.map((_, i) => series.reduce((a, s) => a + (s.values[i] ?? 0), 0)) : null;
-  const all = (stackedVals ?? series.flatMap((s) => s.values)).filter((v) => v != null).concat(thresholds.map((t) => t.value));
+  const stack = stacked && kind === "bar" ? stackBars(series, n) : null;
+  const all = (stack ? [stack.lo, stack.hi] : series.flatMap((s) => s.values)).filter((v) => v != null).concat(thresholds.map((t) => t.value));
   if (!n || !all.length || w < 40) return null;
   const lo0 = Math.min(0, ...all), hi0 = Math.max(...all);
   const { ticks, lo, hi } = niceTicks(yMin ?? lo0, yMax ?? hi0, h < 140 ? 2 : 4);
@@ -67,8 +67,8 @@ function Cartesian({ kind, labels, series, fmt, uid, xTicks, w, h, thresholds = 
               const off = stacked ? 0 : (si - (series.length - 1) / 2) * groupW;
               return <g key={si}>{s.values.map((v, i) => {
                 if (v == null) return null;
-                const base = stacked ? series.slice(0, si).reduce((a, p) => a + (p.values[i] ?? 0), 0) : 0;
-                const y1 = y(base + v), y0 = y(base);
+                const band = stack?.bands[si][i];
+                const y1 = y(band ? band.end : v), y0 = y(band ? band.start : 0);
                 return <rect key={i} className="bds-chart__bar" x={r1(x(i) + off - groupW / 2)} y={Math.min(y0, y1)} width={r1(groupW)} height={Math.max(1, Math.abs(y0 - y1))} rx={stacked ? 0 : 3} fill={color} opacity={hover == null || hover === i ? 1 : 0.45} style={{ animationDelay: `${i * 25}ms` }} />;
               })}</g>;
             }

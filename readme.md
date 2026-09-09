@@ -10,6 +10,15 @@
 - **차트와 UI는 한 팔레트, 한 크롬.** 차트 색은 범주형 8색(`--series-1~8`, oklch 명도 0.62·채도 0.14 고정), 의미 고정 쌍(`--series-rx/tx/used/reserved/free`), 순차 램프(`--ramp-1~6`) 세 계열만. 상태색은 임계선·미터 전용. 모든 차트(`Chart` kind 7종)는 격자(hairline)·축(mono 10.5)·범례·툴팁(elev-2)·빈 상태 크롬을 공유한다. 결측 구간은 0으로 그리지 않고 선을 끊는다.
 - **반응형 검수 폭**: PC 1280 · 태블릿 834 · 모바일 390 + 라이트(기본)·다크 양쪽이 항상 깨지지 않아야 한다.
 
+## 동작 계약과 변경 검증
+
+증상별 예외 처리보다 규칙·공개 타입·실제 사용처를 먼저 대조한다. 원인과 계약 결정, 기존 소비자 영향은 [동작 계약](docs/behavior-contracts.md)에 기록한다. 작업 원칙은 [AGENTS.md](AGENTS.md), 재현 테스트 실행법은 [tests/README.md](tests/README.md)를 따른다.
+
+- Modal·Drawer·NotificationDrawer는 네이티브 dialog의 개방 세션·포커스·스크롤 잠금 규칙을 공유한다. 확인 문구는 확인 세션 소유이며 폼 ID는 인스턴스별로 독립적이다.
+- DropdownMenu는 네이티브 Popover API의 top layer를 사용해 표 스크롤과 분리한다. Popover API 지원 브라우저가 필요하다.
+- NumberStepper의 편집 문자열은 blur·Enter·증감 시 숫자로 확정한다. OTP의 부분값은 중간 빈자리를 ASCII 공백으로 보존하며, 완성된 onComplete 값은 숫자 문자열이다.
+- 차트 데이터 정밀도는 픽셀 반올림과 분리한다. 누적 막대는 양수·음수를 각각 0에서 쌓는다. 가용성은 `(ok+warn)/(ok+warn+crit)`이며 off는 분모에서 제외한다.
+
 ## CONTENT FUNDAMENTALS (카피)
 
 - **한국어 평문, 해요체가 아닌 서술형 종결("합니다", "됩니다").** 사용자는 "당신/여러분"으로 부르지 않고 주어를 생략한다. 예: "적용하면 데몬이 하드웨어에 즉시 반영합니다."

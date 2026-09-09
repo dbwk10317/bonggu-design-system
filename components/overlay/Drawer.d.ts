@@ -1,6 +1,6 @@
 import type { HTMLAttributes, ReactNode } from "react";
 /** 오른쪽 상세 패널. 네이티브 <dialog>로 렌더되어 포커스가 안에 갇힌다. 목록 맥락을 유지하며 상세를 본다. 결정(삭제·저장)은 Modal. */
-export interface DrawerProps extends HTMLAttributes<HTMLDialogElement> {
+export interface DrawerProps extends Omit<HTMLAttributes<HTMLDialogElement>, "title" | "onClose"> {
   open: boolean;
   onClose: () => void;
   title?: ReactNode;

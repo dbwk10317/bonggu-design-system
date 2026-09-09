@@ -3,8 +3,8 @@ import { cx } from "../core/frame.js";
 
 /** 가용성 막대(일/시간 단위 90칸). segments: {status: ok|warn|crit|off, label?}. 비율은 ok+warn 기준으로 계산해 텍스트로 병기. */
 export function UptimeBar({ name, segments = [], start, end, height = 28, uptime, className, ...rest }) {
-  const known = segments.filter((s) => s.status !== "off");
-  const pct = uptime ?? (known.length ? (known.filter((s) => s.status === "ok").length / known.length) * 100 : null);
+  const known = segments.filter((s) => ["ok", "warn", "crit"].includes(s.status));
+  const pct = uptime ?? (known.length ? (known.filter((s) => s.status === "ok" || s.status === "warn").length / known.length) * 100 : null);
   return (
     <div className={cx("bds-uptime", className)} style={{ "--uh": height + "px" }} {...rest}>
       {(name || pct != null) && <div className="bds-uptime__hd">{name && <b>{name}</b>}<span className="bds-uptime__pct">{pct == null ? "수집 안 됨" : pct.toFixed(pct >= 99.95 ? 3 : 2) + "%"}</span></div>}

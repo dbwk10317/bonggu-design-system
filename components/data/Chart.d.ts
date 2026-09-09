@@ -38,7 +38,7 @@ export interface CartesianChartProps extends ChartBase {
   xTicks?: "auto" | "ends" | "none";
   /** 임계선(경고·위험) */
   thresholds?: ChartThreshold[];
-  /** bar만: 누적 */
+  /** bar만: 양수·음수를 각각 0에서 누적. null은 막대와 합계에서 제외 */
   stacked?: boolean;
   yMin?: number; yMax?: number;
 }

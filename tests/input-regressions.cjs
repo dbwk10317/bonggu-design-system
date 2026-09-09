@@ -1,0 +1,67 @@
+// DS_TEST_NODE_MODULES may point to external dependencies; otherwise resolve locally.
+const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const path = require("node:path");
+const vm = require("node:vm");
+const dep = (name) => require(process.env.DS_TEST_NODE_MODULES ? path.join(process.env.DS_TEST_NODE_MODULES, name) : name);
+const Babel = dep("@babel/standalone");
+const React = dep("react");
+const { create, act } = dep("react-test-renderer");
+function component(name) {
+  const source = fs.readFileSync(path.join(__dirname, "../components/input", name + ".jsx"), "utf8").replace(/^import .*;\r?\n/gm, "").replace("export function", "function");
+  const scope = { React, ...React, useFieldContext: () => null, cx: (...v) => v.filter(Boolean).join(" "), frameStyle: () => ({}), Icon: () => null, IconButton: (p) => React.createElement("button", p), Tag: (p) => React.createElement("span", p), document: { addEventListener() {}, removeEventListener() {} } };
+  vm.createContext(scope);
+  vm.runInContext(Babel.transform(source, { presets: [["react", { runtime: "classic" }]] }).code, scope);
+  return scope[name];
+}
+const key = (key) => ({ key, preventDefault() {}, defaultPrevented: false });
+const NumberStepper = component("NumberStepper");
+let result, changes = [];
+act(() => { result = create(React.createElement(NumberStepper, { defaultValue: 15, min: 10, max: 50, onChange: (v) => changes.push(v) })); });
+const input = () => result.root.findByType("input");
+act(() => input().props.onChange({ target: { value: "" } }));
+assert.equal(input().props.value, ""); assert.equal(changes.length, 0);
+act(() => input().props.onBlur({})); assert.equal(input().props.value, "15");
+act(() => input().props.onChange({ target: { value: "2" } })); assert.equal(input().props.value, "2");
+act(() => input().props.onChange({ target: { value: "25" } }));
+act(() => input().props.onKeyDown(key("Enter"))); assert.equal(changes.at(-1), 25);
+act(() => input().props.onChange({ target: { value: "99" } }));
+act(() => input().props.onBlur({})); assert.equal(changes.at(-1), 50);
+act(() => result.update(React.createElement(NumberStepper, { value: 18 }))); assert.equal(input().props.value, "18");
+act(() => result.unmount());
+const MultiSelect = component("MultiSelect");
+let selected = [];
+const options = ["A", "B", "C"].map((value) => ({ value, label: value }));
+function Multi() { const [value, setValue] = React.useState([]); return React.createElement(MultiSelect, { options, value, onChange: (v) => { selected = v; setValue(v); } }); }
+act(() => { result = create(React.createElement(Multi)); });
+act(() => input().props.onFocus());
+act(() => result.root.findAllByType("li")[2].props.onMouseEnter());
+act(() => input().props.onKeyDown(key("Enter"))); assert.equal(selected.join(), "C");
+assert.match(input().props["aria-activedescendant"], /-0$/);
+act(() => input().props.onKeyDown(key("Enter"))); assert.equal(selected.join(), "C,A");
+act(() => result.unmount());
+const DatePicker = component("DatePicker");
+act(() => { result = create(React.createElement(DatePicker, { value: "2026-01-15" })); });
+act(() => result.root.findAllByType("button")[0].props.onClick());
+act(() => result.update(React.createElement(DatePicker, { value: "2026-09-15" })));
+assert.equal(result.root.findByType("b").children.join(""), "2026.09");
+act(() => result.root.findAllByType("button").find((b) => b.props["aria-label"] === "다음 달").props.onClick());
+assert.equal(result.root.findByType("b").children.join(""), "2026.10");
+act(() => result.root.findAllByType("button")[0].props.onClick());
+act(() => result.root.findAllByType("button")[0].props.onClick());
+assert.equal(result.root.findByType("b").children.join(""), "2026.09");
+act(() => result.unmount());
+const OTPInput = component("OTPInput");
+let code = "123456", completed = [];
+function OTP() { const [value, setValue] = React.useState(code); return React.createElement(OTPInput, { value, onChange: (v) => { code = v; setValue(v); }, onComplete: (v) => completed.push(v) }); }
+act(() => { result = create(React.createElement(OTP)); });
+act(() => result.root.findAllByType("input")[2].props.onKeyDown(key("Backspace")));
+assert.equal(code, "12 456"); assert.equal(completed.length, 0);
+assert.equal(result.root.findAllByType("input")[3].props.value, "4");
+act(() => result.root.findAllByType("input")[2].props.onChange({ target: { value: "9" } }));
+assert.equal(code, "129456"); assert.equal(completed.at(-1), "129456");
+act(() => result.update(React.createElement(OTPInput, { value: "", onChange: (v) => { code = v; } })));
+assert.ok(result.root.findAllByType("input").every((i) => i.props.value === ""));
+act(() => result.root.findAllByType("input")[2].props.onChange({ target: { value: "7" } })); assert.equal(code, "  7");
+act(() => result.unmount());
+console.log("PASS input regressions: numeric drafts, selection index, calendar synchronization, positional OTP");

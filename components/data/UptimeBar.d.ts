@@ -2,6 +2,7 @@ import type { HTMLAttributes, ReactNode } from "react";
 export interface UptimeSegment { status: "ok" | "warn" | "crit" | "off"; label?: string; }
 export interface UptimeBarProps extends HTMLAttributes<HTMLDivElement> {
   name?: ReactNode;
+  /** 가용성=(ok+warn)/(ok+warn+crit). off는 분모에서 제외, 수집된 칸이 없으면 미수집 */
   segments: UptimeSegment[];
   /** 왼쪽·오른쪽 끝 라벨 */
   start?: ReactNode;

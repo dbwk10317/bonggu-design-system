@@ -9,12 +9,26 @@ export const fmtKo = (v) => (Math.abs(v) >= 1000 ? Math.round(v).toLocaleString(
 
 /** 보기 좋은 축 눈금: 데이터 범위를 1·2·5×10^n 간격으로 나눈다. */
 export function niceTicks(lo, hi, count = 4) {
-  if (lo === hi) { hi = lo === 0 ? 1 : lo * 1.2; lo = lo === 0 ? 0 : lo * 0.8; }
+  if (lo === hi) { const pad = Math.abs(lo) * 0.2 || 1; hi = lo + pad; lo = lo === 0 ? 0 : lo - pad; }
   const span = hi - lo, raw = span / count, mag = Math.pow(10, Math.floor(Math.log10(raw)));
   const norm = raw / mag, step = (norm >= 5 ? 10 : norm >= 2 ? 5 : norm >= 1 ? 2 : 1) * mag;
   const start = Math.floor(lo / step) * step, end = Math.ceil(hi / step) * step;
-  const ticks = []; for (let v = start; v <= end + step / 2; v += step) ticks.push(r1(v));
+  // 데이터 눈금은 픽셀 좌표용 r1로 반올림하지 않는다. 인덱스로 생성해 누적 오차도 피한다.
+  const ticks = Array.from({ length: Math.round((end - start) / step) + 1 }, (_, i) => Number((start + i * step).toPrecision(15)));
   return { ticks, lo: start, hi: end };
+}
+
+/** 누적 막대: 양수와 음수를 각각 0에서 쌓는다. null은 구간을 만들거나 합계에 기여하지 않는다. */
+export function stackBars(series, count) {
+  const positive = Array(count).fill(0), negative = Array(count).fill(0);
+  const bands = series.map((s) => Array.from({ length: count }, (_, i) => {
+    const value = s.values[i];
+    if (value == null) return null;
+    const totals = value < 0 ? negative : positive, start = totals[i];
+    totals[i] += value;
+    return { start, end: totals[i] };
+  }));
+  return { bands, lo: Math.min(0, ...negative), hi: Math.max(0, ...positive) };
 }
 
 /** Catmull-Rom → 베지어. 두 점이면 직선. */

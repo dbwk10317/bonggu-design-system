@@ -179,9 +179,9 @@ pre.bds-copy__v{white-space:pre;overflow-x:auto;line-height:var(--lh-body)}
 .bds-tip--right{left:calc(100% + 6px);top:50%;transform:translateY(-50%)}
 /* ---- DropdownMenu ---- */
 .bds-menu{position:relative;display:inline-flex}
-.bds-menu__list{position:absolute;top:calc(100% + 4px);z-index:var(--z-drawer);margin:0;padding:4px;list-style:none;min-width:180px;border:1px solid var(--line);border-radius:var(--radius-panel);background:var(--panel);box-shadow:var(--elev-2);animation:bds-pop var(--dur-fast) var(--ease-out)}
-.bds-menu__list--end{right:0}.bds-menu__list--start{left:0}
-.bds-menu__item{display:flex;align-items:center;gap:8px;width:100%;padding:7px 10px;border:0;border-radius:var(--radius-ctl);background:transparent;color:var(--ink);font-size:var(--fs-label);text-align:left;white-space:nowrap;cursor:pointer}
+.bds-menu__list{position:fixed;inset:auto;margin:0;padding:4px;list-style:none;min-width:min(180px,calc(100vw - 16px));width:max-content;overflow:auto;border:1px solid var(--line);border-radius:var(--radius-panel);background:var(--panel);color:var(--ink);box-shadow:var(--elev-2)}
+.bds-menu__list::backdrop{background:transparent;pointer-events:none}
+.bds-menu__item{display:flex;align-items:center;gap:8px;width:100%;padding:7px 10px;border:0;border-radius:var(--radius-ctl);background:transparent;color:var(--ink);font-size:var(--fs-label);text-align:left;white-space:normal;cursor:pointer}
 .bds-menu__item .bds-icon{color:var(--ink-2)}
 .bds-menu__item span{flex:1}
 .bds-menu__item:hover,.bds-menu__item:focus-visible{background:var(--panel-2)}
@@ -192,8 +192,6 @@ pre.bds-copy__v{white-space:pre;overflow-x:auto;line-height:var(--lh-body)}
 /* ---- Drawer(side panel) ---- */
 .bds-side{position:fixed;inset:0;z-index:var(--z-drawer);visibility:hidden;pointer-events:none}
 .bds-side--open{visibility:visible;pointer-events:auto}
-.bds-side__dim{position:absolute;inset:0;background:var(--scrim);opacity:0;transition:opacity var(--dur-slow) var(--ease-out)}
-.bds-side--open .bds-side__dim{opacity:1}
 .bds-side__panel{position:absolute;top:0;right:0;bottom:0;width:min(480px,100vw);display:flex;flex-direction:column;background:var(--panel);border-left:1px solid var(--line);box-shadow:var(--elev-3);transform:translateX(100%);transition:transform var(--dur-slow) var(--ease-out);outline:0}
 .bds-side--sm .bds-side__panel{width:min(380px,100vw)}.bds-side--lg .bds-side__panel{width:min(640px,100vw)}
 .bds-side--open .bds-side__panel{transform:none}

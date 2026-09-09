@@ -1,20 +1,12 @@
-import React, { useEffect, useId, useRef } from "react";
+import React, { useId, useRef } from "react";
+import { useModalDialog } from "./useModalDialog.js";
 import { cx } from "../core/frame.js";
 import { IconButton } from "../action/IconButton.jsx";
 
 /** 모달. 네이티브 <dialog>.showModal()로 포커스를 가둔다. Esc·딤·닫기 → onClose. 640 미만에서는 바텀시트. size: sm 360 · md 440 · lg 560 · xl 760. */
 export function Modal({ open, onClose, title, description, actions, size = "md", closeButton = true, className, children, ...rest }) {
-  const panel = useRef(null), opener = useRef(null), tid = useId();
-  useEffect(() => {
-    const d = panel.current;
-    if (!open || !d) return;
-    opener.current = document.activeElement;
-    if (!d.open) d.showModal();
-    const first = d.querySelector("input,select,textarea,button:not([aria-label='닫기'])") ?? d;
-    first?.focus?.();
-    const prev = document.body.style.overflow; document.body.style.overflow = "hidden";
-    return () => { if (d.open) d.close(); document.body.style.overflow = prev; opener.current?.focus?.(); };
-  }, [open]);
+  const panel = useRef(null), tid = useId();
+  useModalDialog(panel, open);
   const outside = (e) => { const r = e.currentTarget.getBoundingClientRect(); return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom; };
   if (!open) return null;
   return (
