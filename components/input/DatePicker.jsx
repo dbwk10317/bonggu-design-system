@@ -28,7 +28,7 @@ export function DatePicker({ value, onChange, min, max, placeholder = "날짜 �
     <div ref={root} className={cx("bds-date", className)} style={frameStyle({ fit, width, style })}>
       <button ref={trig} type="button" id={f?.id} aria-describedby={f?.describedBy} aria-haspopup="dialog" aria-expanded={open} disabled={disabled} className={cx("bds-ctl", size === "sm" && "bds-ctl--sm", f?.invalid && "bds-ctl--err", disabled && "bds-ctl--disabled")} style={{ width: "100%", textAlign: "left" }} onClick={() => { if (!open) { const d = sel ?? new Date(); setView(new Date(d.getFullYear(), d.getMonth(), 1)); } setOpen((o) => !o); }}>
         <span className="bds-ctl__affix"><Icon name="calendar-blank" size={15} /></span>
-        <span className={cx("bds-ellipsis", value && "bds-mono")} style={{ flex: 1, color: value ? undefined : "var(--ink-3)" }}>{value ?? placeholder}</span>
+        <span className={cx("bds-ellipsis", value && "bds-mono", !value && "bds-date__placeholder")} style={{ flex: 1 }}>{value ?? placeholder}</span>
       </button>
       {open && <div role="dialog" aria-label="날짜 선택" className="bds-date__pop">
         <div className="bds-cal__hd"><IconButton icon="caret-left" size="sm" variant="ghost" aria-label="이전 달" onClick={() => setView(new Date(view.getFullYear(), view.getMonth() - 1, 1))} /><b>{view.getFullYear()}.{pad(view.getMonth() + 1)}</b><IconButton icon="caret-right" size="sm" variant="ghost" aria-label="다음 달" onClick={() => setView(new Date(view.getFullYear(), view.getMonth() + 1, 1))} /></div>

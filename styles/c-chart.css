@@ -15,15 +15,17 @@
 .bds-chart__tip--flip{transform:translateX(calc(-100% - 12px))}
 .bds-chart__tip-t{color:var(--ink-3);font-family:var(--font-data);margin-bottom:4px}
 .bds-chart__tip-row{display:flex;align-items:center;gap:6px;justify-content:space-between}
-.bds-chart__tip-row i{width:8px;height:8px;border-radius:2px;flex:none}
-.bds-chart__tip-row .n{color:var(--ink-2);flex:1;min-width:0}
-.bds-chart__tip-row .v{font-family:var(--font-data);font-variant-numeric:tabular-nums;color:var(--ink)}
+.bds-chart__tip-row i{width:8px;height:8px;border-radius:2px;flex:none;background:var(--series-color)}
+.bds-chart__tip-row .bds-chart__tip-n{color:var(--ink-2);flex:1;min-width:0}
+.bds-chart__tip-row .bds-chart__tip-v{font-family:var(--font-data);font-variant-numeric:tabular-nums;color:var(--ink)}
 .bds-chart__empty{display:grid;place-items:center;min-height:80px;color:var(--ink-3);font-size:var(--fs-caption);border:1px dashed var(--line);border-radius:var(--radius-ctl)}
 .bds-chart__track{stroke:var(--meter-track)}
 .bds-chart__arc{transition:stroke-dashoffset var(--dur-gauge) var(--ease-out)}
 .bds-chart__center{position:absolute;inset:0;display:grid;place-content:center;text-align:center;pointer-events:none;gap:2px}
-.bds-chart__center b{font-family:var(--font-data);font-variant-numeric:tabular-nums;font-weight:var(--fw-bold);color:var(--ink);line-height:1;font-size:var(--center-size,22px);letter-spacing:-.02em}
-.bds-chart__center small{font-size:var(--fs-micro);color:var(--ink-3);line-height:1.2}
+.bds-chart__center b{font-family:var(--font-data);font-variant-numeric:tabular-nums;font-weight:var(--fw-bold);color:var(--tone-ink,var(--ink));line-height:1;font-size:var(--center-size,22px);letter-spacing:-.02em}
+.bds-chart__center small{font-size:var(--fs-caption);color:var(--ink-3);line-height:1.2}
+.bds-chart__tick--secondary{fill:var(--ink-2)}
+.bds-chart__tick[style]{fill:var(--tick-ink,var(--plot-axis-ink))}
 .bds-chart--radial .bds-chart__center{align-content:center}
 .bds-chart__pieseg{transition:opacity var(--dur-fast) var(--ease-out)}
 .bds-chart--animate .bds-chart__pieseg{animation:bds-fade var(--dur-gauge) var(--ease-out) both}

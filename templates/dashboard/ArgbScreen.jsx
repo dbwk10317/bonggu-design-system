@@ -37,7 +37,7 @@ function ArgbScreen() {
               <Panel key={id} padding="sm" interactive selected={selected} onClick={() => setTarget(id)} role="button" aria-pressed={selected} aria-label={`${label} 선택`}>
                 <div className="kit-prevhead"><b>{label}</b><span className="bds-mono kit-dim">{dev}</span>{selected && <Tag accent>선택됨</Tag>}<StatusPill tone="ok" size="sm">사용 가능</StatusPill></div>
                 <div className="kit-stage"><LedRing colors={colors} effect={effect} count={id === "gpu" ? 8 : 12} /></div>
-                <div className="kit-dim bds-mono" style={{ fontSize: 11 }}>적용: 점등 · {EFFECTS.find((e) => e.value === effect)?.label} · {colors.join(" ")} · 밝기 {bright}</div>
+                <div className="kit-dim bds-mono">적용: 점등 · {EFFECTS.find((e) => e.value === effect)?.label} · {colors.join(" ")} · 밝기 {bright}</div>
               </Panel>
             );
           })}
@@ -51,7 +51,7 @@ function ArgbScreen() {
                 {colors.map((c, i) => <span key={i} className={"kit-chip" + (i === active ? " on" : "")}><input type="color" value={c} aria-label={`색 ${i + 1}`} onClick={() => setActive(i)} onChange={(e) => setColors(colors.map((x, j) => (j === i ? e.target.value : x)))} /><button type="button" className="bds-mono" onClick={() => setActive(i)}>{c.toUpperCase()}</button>{colors.length > 1 && <IconButton size="sm" variant="danger" icon="x" aria-label={`색 ${i + 1} 제거`} onClick={() => setColors(colors.filter((_, j) => j !== i))} />}</span>)}
                 {colors.length < 4 && <Button size="sm" variant="ghost" icon="plus" onClick={() => setColors([...colors, colors[active]])}>색 추가</Button>}
               </div>
-              <div className="kit-presets" role="group" aria-label="색 프리셋">{PRESETS.map((p) => <button key={p} type="button" style={{ background: p }} aria-label={`색 ${p} 적용`} onClick={() => setColors(colors.map((x, j) => (j === active ? p : x)))} />)}</div>
+              <div className="kit-presets" role="group" aria-label="색 프리셋">{PRESETS.map((p) => <button key={p} type="button" style={{ "--preset-color": p }} aria-label={`색 ${p} 적용`} onClick={() => setColors(colors.map((x, j) => (j === active ? p : x)))} />)}</div>
             </div>
             <div className="bds-field"><span className="bds-field__label">속도</span><SegmentedControl aria-label="속도" value={speed} onChange={setSpeed} options={[{ value: "slow", label: "느리게" }, { value: "medium", label: "보통" }, { value: "fast", label: "빠르게" }]} /></div>
             <div className="bds-field"><span className="bds-field__label">밝기</span><SegmentedControl aria-label="밝기" value={bright} onChange={setBright} options={[1, 2, 3, 4, 5].map((n) => ({ value: String(n), label: n }))} /></div>

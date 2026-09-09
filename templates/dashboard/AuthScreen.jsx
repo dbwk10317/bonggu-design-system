@@ -27,7 +27,7 @@ function AuthScreen() {
             <DataTable aria-label="사용자" rows={rows} rowKey={(r) => r.id} rowLabel={(r) => r.name} selectable selectedKeys={sel} onSelectionChange={setSel}
               bulkActions={<><Button size="sm" variant="secondary">역할 부여</Button><Button size="sm" variant="danger" onClick={() => setDel(sel.length)}>삭제</Button></>}
               empty={<EmptyState plain title="검색 결과가 없습니다" description="다른 이름이나 이메일로 다시 검색하면 결과가 표시됩니다." />}
-              columns={[{ key: "name", header: "이름", sortable: true, render: (r) => <b style={{ fontWeight: 600 }}>{r.name}</b> }, { key: "email", header: "이메일", hideBelow: "tablet", render: (r) => <span className="bds-mono">{r.email}</span> },
+              columns={[{ key: "name", header: "이름", sortable: true, render: (r) => <b className="kit-name">{r.name}</b> }, { key: "email", header: "이메일", hideBelow: "tablet", render: (r) => <span className="bds-mono">{r.email}</span> },
                 { key: "roles", header: "역할", render: (r) => <span className="kit-tags">{r.roles.map((x) => <Tag key={x}>{x}</Tag>)}</span> }, { key: "state", header: "상태", render: (r) => <StatusPill size="sm" tone={r.state === "활성" ? "ok" : "off"}>{r.state}</StatusPill> },
                 { key: "last", header: "마지막 로그인", align: "num", hideBelow: "desktop" }, { key: "act", header: "", render: (r) => <Button size="sm" variant="ghost" onClick={() => setModal(r)}>편집</Button> }]}
               sort={{ key: "name", dir: "asc" }} onSortChange={() => {}} expandable={(r) => <DescriptionList items={[{ term: "이메일", detail: r.email, mono: true }, { term: "마지막 로그인", detail: r.last, mono: true }, { term: "역할", detail: r.roles.join(", ") }]} />} />

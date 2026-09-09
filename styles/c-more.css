@@ -104,7 +104,7 @@
 .bds-radiocard .bds-check{grid-row:1/span 2;min-height:0;margin-top:1px}
 .bds-radiocard b{font-size:var(--fs-label);font-weight:var(--fw-medium);color:var(--ink)}.bds-radiocard small{font-size:var(--fs-caption);color:var(--ink-3);line-height:var(--lh-snug)}
 .bds-date{position:relative;min-width:0}
-.bds-date .bds-ctl{cursor:pointer}
+.bds-date .bds-ctl{cursor:pointer}.bds-date__placeholder{color:var(--ink-3)}
 .bds-date__pop{position:absolute;top:calc(100% + 4px);left:0;z-index:var(--z-drawer);padding:12px;border:1px solid var(--line);border-radius:var(--radius-panel);background:var(--panel);box-shadow:var(--elev-2);width:268px;animation:bds-pop var(--dur-base) var(--ease-out)}
 .bds-cal__hd{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;font-size:var(--fs-label);font-weight:var(--fw-medium)}
 .bds-cal__hd b{font-family:var(--font-data);font-weight:var(--fw-medium)}
@@ -170,7 +170,12 @@
 .bds-legend__i{display:inline-flex;align-items:center;gap:6px;border:0;background:transparent;padding:0;color:inherit;font:inherit;cursor:default}
 button.bds-legend__i{cursor:pointer}button.bds-legend__i:hover{color:var(--ink)}
 .bds-legend__i--off{opacity:.45;text-decoration:line-through}
-.bds-legend__sw{width:10px;height:10px;border-radius:2px;flex:none}.bds-legend__sw--dot{border-radius:50%}
+.bds-legend__sw{width:10px;height:10px;border-radius:2px;background:var(--legend-color,var(--series-1));flex:none}.bds-legend__sw--dot{border-radius:50%}
+.bds-card-hint{font-size:var(--fs-caption);color:var(--ink-3)}
+.bds-card-copy{font-size:var(--fs-label);color:var(--ink-2)}
+.bds-card-section-label{font-size:var(--fs-heading);color:var(--ink);font-weight:var(--fw-bold);margin:0;padding-top:8px;border-top:1px solid var(--line)}
+.bds-card-title{font-size:var(--fs-title)}
+.bds-card-code{font-size:var(--fs-label);border-bottom:1px dotted var(--line-strong)}
 .bds-legend__v{font-family:var(--font-data);font-variant-numeric:tabular-nums;color:var(--ink-3);margin-left:2px}
 .bds-uptime{display:grid;gap:6px;min-width:0}
 .bds-uptime__hd{display:flex;justify-content:space-between;gap:10px;font-size:var(--fs-label);color:var(--ink-2);align-items:baseline}.bds-uptime__hd b{color:var(--ink);font-weight:var(--fw-medium)}

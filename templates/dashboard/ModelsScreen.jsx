@@ -34,7 +34,7 @@ function ModelsScreen() {
           <Grid min={260}>
             <Panel padding="sm" sunken>
               <div className="kit-row"><Chart kind="radial" fit="fixed" width={96} height={72} aria-label="ko-rerank 등록 진행률" value={0.64} label="검증 중" tone="ok" valueFormatter={() => "64%"} />
-                <div className="kit-grow"><b style={{ fontWeight: 500 }}>ko-rerank</b><p className="kit-dim">ONNX REGISTRATION · GPU 검증과 smoke 추론 · VRAM 측정 대기</p><Stepper size="sm" aria-label="등록 단계" current={4} steps={[{ label: "업로드" }, { label: "해시 검증" }, { label: "계약 파싱" }, { label: "GPU 검증" }, { label: "smoke 추론", detail: "2분 14초" }, { label: "VRAM 측정" }]} /></div>
+                <div className="kit-grow"><b className="kit-name">ko-rerank</b><p className="kit-dim">ONNX REGISTRATION · GPU 검증과 smoke 추론 · VRAM 측정 대기</p><Stepper size="sm" aria-label="등록 단계" current={4} steps={[{ label: "업로드" }, { label: "해시 검증" }, { label: "계약 파싱" }, { label: "GPU 검증" }, { label: "smoke 추론", detail: "2분 14초" }, { label: "VRAM 측정" }]} /></div>
                 <div className="kit-actions"><Button size="sm" variant="ghost">이벤트</Button><Button size="sm" variant="danger">취소</Button></div></div>
             </Panel>
           </Grid>
@@ -67,7 +67,7 @@ function ModelsScreen() {
           <DataTable aria-label="통합 모델 실행 상태와 제어" rows={rows} rowKey={(m) => m.id} rowLabel={(m) => m.name}
             empty={<EmptyState plain title="조건에 맞는 모델이 없습니다" description="다른 필터를 선택하면 모델이 표시됩니다." />}
             columns={[
-              { key: "name", header: "모델", render: (m) => <span className="kit-cell2"><b style={{ fontWeight: 500 }}>{m.name}</b><span className="kit-dim bds-mono">{m.id}</span></span> },
+              { key: "name", header: "모델", render: (m) => <span className="kit-cell2"><b className="kit-name">{m.name}</b><span className="kit-dim bds-mono">{m.id}</span></span> },
               { key: "runtime", header: "런타임", hideBelow: "tablet", render: (m) => <span className="bds-mono">{RUNTIME[m.runtime]}</span> },
               { key: "state", header: "실행 상태", render: (m) => <span className="kit-cell2"><StatusPill size="sm" tone={m.tone}>{m.label}</StatusPill><span className="kit-dim">{m.detail}</span></span> },
               { key: "usage", header: "용도", hideBelow: "desktop", render: (m) => <span className="kit-tags">{m.capabilities.map((c) => <Tag key={c}>{c}</Tag>)}</span> },

@@ -26,7 +26,7 @@ function Tip({ x, w, title, rows }) {
   return (
     <div className={cx("bds-chart__tip", flip && "bds-chart__tip--flip")} style={{ left: x }}>
       {title != null && <div className="bds-chart__tip-t">{title}</div>}
-      {rows.map((r, i) => <div key={i} className="bds-chart__tip-row"><i style={{ background: r.color }} /><span className="n bds-ellipsis">{r.name}</span><span className={cx("v", isMissing(r.value) && MISSING_CLASS)}>{r.value}</span></div>)}
+      {rows.map((r, i) => <div key={i} className="bds-chart__tip-row"><i style={{ "--series-color": r.color }} /><span className="bds-chart__tip-n bds-ellipsis">{r.name}</span><span className={cx("bds-chart__tip-v", isMissing(r.value) && MISSING_CLASS)}>{r.value}</span></div>)}
     </div>
   );
 }
@@ -60,7 +60,7 @@ function Cartesian({ kind, labels, series, fmt, uid, xTicks, w, h, thresholds = 
           <clipPath id={`${uid}-c`}><rect x={padL} y={0} width={iw} height={h} /></clipPath></defs>
         {ticks.map((t) => <g key={t}><line className="bds-chart__grid" x1={padL} x2={w - padR} y1={y(t)} y2={y(t)} style={t === ticks[0] ? { stroke: "var(--plot-axis)" } : undefined} /><text className="bds-chart__tick" x={padL - 8} y={y(t) + 3.5} textAnchor="end">{fmt(t)}</text></g>)}
         {labels.map((lb, i) => showX(i) ? <text key={i} className="bds-chart__tick" x={x(i)} y={h - 8} textAnchor={i === 0 && kind !== "bar" ? "start" : i === n - 1 && kind !== "bar" ? "end" : "middle"}>{lb}</text> : null)}
-        {thresholds.map((t, i) => <g key={i}><line x1={padL} x2={w - padR} y1={y(t.value)} y2={y(t.value)} stroke={`var(--${t.tone ?? "warn"})`} strokeDasharray="4 4" strokeWidth="1" /><text className="bds-chart__tick" x={w - padR} y={y(t.value) - 4} textAnchor="end" fill={`var(--${t.tone ?? "warn"})`} style={{ fill: `var(--${t.tone ?? "warn"})` }}>{t.label ?? fmt(t.value)}</text></g>)}
+        {thresholds.map((t, i) => <g key={i}><line x1={padL} x2={w - padR} y1={y(t.value)} y2={y(t.value)} stroke={`var(--${t.tone ?? "warn"})`} strokeDasharray="4 4" strokeWidth="1" /><text className="bds-chart__tick" style={{ "--tick-ink": `var(--${t.tone ?? "warn"})` }} x={w - padR} y={y(t.value) - 4} textAnchor="end" fill={`var(--${t.tone ?? "warn"})`}>{t.label ?? fmt(t.value)}</text></g>)}
         <g clipPath={`url(#${uid}-c)`}>
           {series.map((s, si) => {
             const color = toneVar(s.tone, si);
@@ -101,7 +101,7 @@ function Pie({ segments, fmt, caption, w, h, hover, setHover }) {
     <>
       <svg viewBox={`0 0 ${w} ${h}`} width={w} height={h} className="bds-chart__svg" onMouseLeave={() => setHover(null)} aria-hidden="true">
         <circle cx={cx0} cy={cy0} r={r} fill="none" strokeWidth={stroke} className="bds-chart__track" />
-        {arcs.map((a) => <circle key={a.i} className="bds-chart__pieseg" cx={cx0} cy={cy0} r={r} fill="none" strokeWidth={hover === a.i ? stroke + 4 : stroke} stroke={toneVar(segments[a.i].tone, a.i)} strokeDasharray={`${Math.max(0, a.dash - 2).toFixed(2)} ${C.toFixed(2)}`} strokeDashoffset={a.off.toFixed(2)} transform={`rotate(-90 ${cx0} ${cy0})`} opacity={hover == null || hover === a.i ? 1 : 0.4} onMouseEnter={() => setHover(a.i)} style={{ transition: "stroke-width var(--dur-1) var(--ease-out), opacity var(--dur-1)" }} />)}
+        {arcs.map((a) => <circle key={a.i} className="bds-chart__pieseg" cx={cx0} cy={cy0} r={r} fill="none" strokeWidth={hover === a.i ? stroke + 4 : stroke} stroke={toneVar(segments[a.i].tone, a.i)} strokeDasharray={`${Math.max(0, a.dash - 2).toFixed(2)} ${C.toFixed(2)}`} strokeDashoffset={a.off.toFixed(2)} transform={`rotate(-90 ${cx0} ${cy0})`} opacity={hover == null || hover === a.i ? 1 : 0.4} onMouseEnter={() => setHover(a.i)} style={{ transition: "stroke-width var(--dur-fast) var(--ease-out), opacity var(--dur-fast)" }} />)}
       </svg>
       <div className="bds-chart__center" style={{ "--center-size": `${Math.max(14, Math.round(R * 0.42))}px` }}>
         <b>{act ? fmt(vals[hover]) : fmt(sum)}</b><small>{act ? act.label : caption}</small>
@@ -129,7 +129,7 @@ function Radial({ value, label, tone, fmt, w, h, animate }) {
         <path d={d} fill="none" strokeWidth={stroke} strokeLinecap="round" className="bds-chart__track" />
         <path d={d} fill="none" strokeWidth={stroke} strokeLinecap="round" stroke={toneVar(tone, 0)} strokeDasharray={len} strokeDashoffset={r1(len * (1 - Math.min(1, Math.max(0, shown))))} className="bds-chart__arc" />
       </svg>
-      <div className="bds-chart__center" style={{ "--center-size": `${Math.max(13, Math.round(r * 0.33))}px`, top: cy0 - r * 0.5, bottom: "auto", height: r * 1.05, padding: `0 ${Math.round(stroke + 6)}px` }}><b style={{ color: toneInk(tone) }}>{fmt(v)}</b>{label != null && <small>{label}</small>}</div>
+      <div className="bds-chart__center" style={{ "--center-size": `${Math.max(13, Math.round(r * 0.33))}px`, top: cy0 - r * 0.5, bottom: "auto", height: r * 1.05, padding: `0 ${Math.round(stroke + 6)}px` }}><b style={{ "--tone-ink": toneInk(tone) }}>{fmt(v)}</b>{label != null && <small>{label}</small>}</div>
     </>
   );
 }
@@ -182,8 +182,8 @@ function Histogram({ samples, bins, fmt, w, h, tone, percentiles = [], unit, ani
     <>
       <svg viewBox={`0 0 ${w} ${h}`} width={w} height={h} className="bds-chart__svg" onMouseLeave={() => setHover(null)} aria-hidden="true">
         {ticks.map((t) => <g key={t}><line className="bds-chart__grid" x1={padL} x2={w - padR} y1={y(t)} y2={y(t)} style={t === 0 ? { stroke: "var(--plot-axis)" } : undefined} /><text className="bds-chart__tick" x={padL - 6} y={y(t)} textAnchor="end" dominantBaseline="central">{t}</text></g>)}
-        {counts.map((c, i) => <rect key={i} className="bds-chart__bar" x={r1(padL + i * bw + 1)} y={y(c)} width={Math.max(1, bw - 2)} height={r1(y(0) - y(c))} fill={toneVar(tone, 0)} opacity={hover == null || hover === i ? 1 : 0.45} onMouseEnter={() => setHover(i)} style={animate ? { transformOrigin: `0 ${y(0)}px`, animation: "bds-grow-y var(--dur-draw) var(--ease-out) both" } : undefined} />)}
-        {percentiles.map((p) => { const v = q(p), x = xv(v); return <g key={p}><line x1={x} x2={x} y1={padT} y2={y(0)} stroke="var(--ink-2)" strokeDasharray="3 3" strokeWidth="1" /><text className="bds-chart__tick" x={x} y={padT - 2} textAnchor="middle" style={{ fill: "var(--ink-2)" }}>{`p${Math.round(p * 100)} ${fmt(v)}${unit ?? ""}`}</text></g>; })}
+        {counts.map((c, i) => <rect key={i} className="bds-chart__bar" x={r1(padL + i * bw + 1)} y={y(c)} width={Math.max(1, bw - 2)} height={r1(y(0) - y(c))} fill={toneVar(tone, 0)} opacity={hover == null || hover === i ? 1 : 0.45} onMouseEnter={() => setHover(i)} style={animate ? { transformOrigin: `0 ${y(0)}px`, animation: "bds-grow-y var(--dur-gauge) var(--ease-out) both" } : undefined} />)}
+        {percentiles.map((p) => { const v = q(p), x = xv(v); return <g key={p}><line x1={x} x2={x} y1={padT} y2={y(0)} stroke="var(--ink-2)" strokeDasharray="3 3" strokeWidth="1" /><text className="bds-chart__tick bds-chart__tick--secondary" x={x} y={padT - 2} textAnchor="middle">{`p${Math.round(p * 100)} ${fmt(v)}${unit ?? ""}`}</text></g>; })}
         {[lo, lo + span / 2, lo + span].map((v, i) => <text key={i} className="bds-chart__tick" x={xv(v)} y={h - 8} textAnchor={i === 0 ? "start" : i === 2 ? "end" : "middle"}>{fmt(v)}{unit ?? ""}</text>)}
       </svg>
       {hover != null && <Tip x={r1(padL + (hover + 0.5) * bw)} w={w} title={`${fmt(lo + (hover / n) * span)}~${fmt(lo + ((hover + 1) / n) * span)}${unit ?? ""}`} rows={[{ color: toneVar(tone, 0), name: "표본", value: `${counts[hover]}건` }]} />}

@@ -51,7 +51,7 @@ export function Toast({ message, tone = "info", action, onAction, onDismiss, lea
       <Icon name={ICON[tone]} />
       <span className="bds-toast__m">{message}</span>
       {action && <button type="button" className="bds-toast__a" onClick={() => { onAction?.(); onDismiss?.(); }}>{action}</button>}
-      {onDismiss && <button type="button" className="bds-toast__a" style={{ color: "var(--ink-3)" }} aria-label="닫기" onClick={onDismiss}><Icon name="x" size={14} /></button>}
+      {onDismiss && <button type="button" className="bds-toast__a bds-toast__a--quiet" aria-label="닫기" onClick={onDismiss}><Icon name="x" size={14} /></button>}
     </div>
   );
 }

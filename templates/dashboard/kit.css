@@ -4,7 +4,7 @@
 .kit-row2{display:flex;gap:14px;align-items:center;min-width:0}.kit-row2>:last-child{flex:1;min-width:0}
 .kit-dual{display:flex;justify-content:space-around;gap:12px}
 .kit-unit{display:block;line-height:1.2}
-.kit-copy,.kit-dim{color:var(--ink-3);font-size:var(--fs-caption)}
+.kit-copy,.kit-dim{color:var(--ink-3);font-size:var(--fs-caption)}.kit-name{font-weight:var(--fw-medium)}.kit-preset-name{font-size:var(--fs-label);font-weight:var(--fw-medium)}
 .kit-events{display:grid;gap:8px;font-size:var(--fs-label)}.kit-events b{font-weight:600}.kit-events .bds-mono{color:var(--ink-3);font-size:var(--fs-caption)}
 .kit-prevhead{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.kit-prevhead b{font-size:var(--fs-label);font-weight:600}.kit-prevhead .bds-mono{margin-left:auto;font-size:11px}
 .kit-stage{display:grid;place-items:center;height:132px;background:var(--canvas-sunken);border-radius:var(--radius-ctl);border:1px solid var(--line)}
@@ -17,7 +17,7 @@
 .kit-chip{display:inline-flex;align-items:center;gap:6px;padding:4px 8px;border:1px solid var(--line);border-radius:var(--radius-ctl);background:var(--canvas-sunken)}.kit-chip.on{border-color:var(--signal)}
 .kit-chip input{width:26px;height:26px;padding:0;border:1px solid var(--line-strong);border-radius:5px;background:none;cursor:pointer}
 .kit-chip button.bds-mono{border:0;background:none;color:var(--ink-2);font-size:11px;padding:0}
-.kit-presets{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.kit-presets button{width:24px;height:24px;border:1px solid var(--line-strong);border-radius:999px;padding:0;transition:box-shadow var(--dur-fast) var(--ease-out)}.kit-presets button:hover{box-shadow:0 0 0 2px var(--panel),0 0 0 4px var(--line-strong)}
+.kit-presets{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.kit-presets button{width:24px;height:24px;border:1px solid var(--line-strong);border-radius:999px;padding:0;background:var(--preset-color);transition:box-shadow var(--dur-fast) var(--ease-out)}.kit-presets button:hover{box-shadow:0 0 0 2px var(--panel),0 0 0 4px var(--line-strong)}
 .kit-bottom{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px;padding-top:12px;border-top:1px solid var(--line)}
 .kit-actions{display:flex;gap:8px;align-items:center}
 .kit-tags{display:flex;gap:4px;flex-wrap:wrap}.kit-checks{display:flex;gap:14px;flex-wrap:wrap}

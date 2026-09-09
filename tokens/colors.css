@@ -1,3 +1,7 @@
+/* @token-kinds
+   color: --canvas, --canvas-sunken, --panel, --panel-2, --panel-3, --line, --line-strong, --hairline, --line-input, --scrim, --stage, --stage-ink, --stage-muted, --stage-ok, --ink, --ink-2, --ink-3, --ink-muted, --ink-inverse, --on-warn, --signal, --signal-hover, --signal-active, --signal-tint, --signal-tint-line, --signal-fg, --focus-ring, --ok, --ok-tint, --ok-ink, --warn, --warn-tint, --warn-ink, --crit, --crit-tint, --crit-ink, --info, --info-tint, --info-ink, --neutral, --neutral-tint, --neutral-ink, --meter-track, --meter-ok, --meter-warn, --meter-crit, --series-1, --series-2, --series-3, --series-4, --series-5, --series-6, --series-7, --series-8, --series-rx, --series-tx, --series-used, --series-reserved, --series-free, --ramp-1, --ramp-2, --ramp-3, --ramp-4, --ramp-5, --ramp-6, --plot-grid, --plot-axis, --plot-axis-ink, --mark-face, --mark-line, --mark-edge, --mark-ear, --scrollbar-thumb, --scrollbar-thumb-hover
+   shadow: --elev-1, --elev-2, --elev-3
+*/
 /* 봉구서버 스타일가이드 v1(2026-09) 색 토큰. 라이트 기본(:root), 다크는 :root.dark / [data-theme="dark"].
    규칙: 시그널(파랑)은 선택·포커스·주 동작·송신(tx)에만. 상태색(ok/warn/crit/info)과 섞지 않는다. 색 단독으로 뜻을 전하지 않는다.
    이름은 여기 정의된 것이 전부다(--canvas, --ink, --signal …). 별칭은 두지 않는다. */

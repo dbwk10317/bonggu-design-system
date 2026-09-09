@@ -25,6 +25,6 @@
 .bds-iconbtn--danger{color:var(--crit)}
 .bds-iconbtn--danger:hover:not(:disabled){background:var(--crit-tint);border-color:transparent;color:var(--crit)}
 .bds-iconbtn[aria-expanded="true"]{background:var(--signal-tint);border-color:transparent;color:var(--signal)}
-.bds-iconbtn__badge{position:absolute;top:-5px;right:-5px;min-width:16px;height:16px;padding:0 4px;border-radius:var(--radius-pill);background:var(--crit);color:var(--ink-inverse);font:var(--fw-bold) 10px/16px var(--font-data);text-align:center;box-shadow:0 0 0 2px var(--panel)}
+.bds-iconbtn__badge{position:absolute;top:-5px;right:-5px;min-width:16px;height:16px;padding:0 4px;border-radius:var(--radius-pill);background:var(--crit);color:var(--ink-inverse);font:var(--fw-bold) 10.5px/16px var(--font-data);text-align:center;box-shadow:0 0 0 2px var(--panel)}
 .bds-icon{display:inline-block;line-height:1;font-size:var(--icon-size,16px);width:1em;height:1em;flex:none}
 .bds-icon::before{display:block}

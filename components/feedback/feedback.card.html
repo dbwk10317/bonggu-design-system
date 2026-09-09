@@ -37,7 +37,7 @@ function App(){ const [o,setO]=React.useState(false); const [notifications,setNo
     <EmptyState tone="error" title="GPU 예약 회계를 읽지 못했습니다." description="허브가 VRAM 용량 정보를 내려주지 않았습니다." actions={<Button size="sm">다시 시도</Button>} />
     <ErrorState description="monitoring-api가 응답하지 않습니다." code="HTTP 502 · req_8f2a" onRetry={()=>{}} />
   </div>
-  <div className="sec"><div className="lbl">ConfirmDialog · danger + typeToConfirm</div><div className="row"><Button variant="danger" icon="trash" onClick={()=>setO(true)}>모델 삭제</Button><span style={{fontSize:12,color:"var(--ink-3)"}}>클릭하면 확인 모달. crit 채움 버튼은 이 모달 안에서만.</span></div>
+  <div className="sec"><div className="lbl">ConfirmDialog · danger + typeToConfirm</div><div className="row"><Button variant="danger" icon="trash" onClick={()=>setO(true)}>모델 삭제</Button><span className="bds-card-hint">클릭하면 확인 모달. crit 채움 버튼은 이 모달 안에서만.</span></div>
     <ConfirmDialog open={o} onClose={()=>setO(false)} onConfirm={()=>setO(false)} danger title="모델 삭제" message="ko-embed-v3와 revision 4개가 삭제됩니다. 되돌릴 수 없습니다." confirmLabel="삭제" typeToConfirm="ko-embed-v3" /></div>
 </></ToastProvider>; }
 ReactDOM.createRoot(document.getElementById("root")).render(<App/>);

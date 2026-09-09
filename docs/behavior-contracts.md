@@ -2,6 +2,18 @@
 
 2026-09-09 추가 리뷰의 12건을 원인별로 정리했습니다. readme는 시각 원칙, .d.ts는 공개 API, .prompt.md는 사용 계약을 담당하며 세 자료와 구현을 함께 갱신합니다.
 
+## 후속 검증과 생성 규칙
+
+추가 검수에서 생성물이 이전 설정의 우연한 상태를 되풀이하지 않도록 원천과 검사 경계를 정했습니다.
+
+- `tokenKinds`는 `tokens/*.css`의 `@token-kinds` 원천 주석에서만 생성합니다. 모든 토큰은 이 주석에 한 번씩 분류되어야 하며, 누락·중복·정의되지 않은 주석이 있으면 번들 생성이 실패합니다. 기존 `_adherence.oxlintrc.json` 값이나 CSS 값 추정은 분류 근거로 사용하지 않습니다.
+- prop 규칙 생성기는 실제 함수 선언의 props 타입을 따라갑니다. 인터페이스 본문과 상속, type alias와 union, 인라인 객체를 해석하고 React의 HTML/SVG attribute 계열은 표준·ARIA·data 속성이 열려 있는 계약으로 처리합니다. `Code`와 `Kbd`는 직접 HTML attributes를 받으므로 미지 prop 금지 규칙을 만들지 않습니다. `Chart`는 union 전체의 허용 prop과 `kind`·`fit`·`xTicks` 값을 검사하고, `SidebarNavGroup`·`ToastProvider`·`ToolbarGrow`는 인라인 props 선언을 검사합니다.
+- `.bds-num`과 `.bds-clamp-1/2`는 선언 외 사용처와 문서 계약이 처음부터 없었으므로 삭제 상태를 유지합니다. `.u-num`·`.u-data`·`.u-caps`도 공개 계약이 없고 `bds-` namespace 규칙에 맞지 않으므로 제거합니다. 수치·데이터·대문자 표기는 컴포넌트 전용 `bds-*` 클래스와 토큰으로 처리합니다.
+- readme에서 기계적으로 판별 가능한 규칙 6종을 `tests/rule-regressions.cjs`로 이관했습니다. 가시 텍스트 em-dash, 색·폰트 inline style, CSS class의 `bds-` 접두사, 토큰 별칭, 본문 글자 크기, Phosphor Bold 아이콘 이름을 검사하며 기존 위반은 함께 수정했습니다.
+- 반경을 포함한 컴포넌트 토큰 별칭은 정본으로 사용처를 모두 이관한 뒤 정의를 삭제했습니다. 이 시스템은 자체 완결을 목표로 하므로 이전 소비 프로젝트와의 별칭 호환을 유지하지 않습니다.
+
+공개 영향은 세 가지입니다. 토큰 별칭과 미사용 유틸리티가 제거되어 그 이름을 직접 참조하던 외부 코드와 내부 class 이름 의존은 수정이 필요합니다. `Code`·`Kbd`에서는 표준 HTML attributes를 계속 사용할 수 있고, 제한 규칙이 생긴 `Chart` 및 인라인 props 컴포넌트는 선언된 prop만 허용됩니다. 토큰 종류와 prop 규칙이 원천에서 다시 생성되므로 생성물을 직접 고친 설정은 다음 빌드에서 유지되지 않습니다.
+
 ## 오버레이: 인스턴스와 개방 세션
 
 | 문제 | 원인 분류 | 기준과 해결 |

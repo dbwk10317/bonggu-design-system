@@ -85,9 +85,9 @@ function More(){ return <>
 
 function App(){ return <>
   <Basic />
-  <div className="lbl" style={{fontSize:14,color:"var(--ink)",fontWeight:700,marginBottom:0,paddingTop:8,borderTop:"1px solid var(--line)"}}>시각화 확장 · Heatmap · Chart histogram · Timeline · DiffView</div>
+  <div className="bds-card-section-label">시각화 확장 · Heatmap · Chart histogram · Timeline · DiffView</div>
   <Viz />
-  <div className="lbl" style={{fontSize:14,color:"var(--ink)",fontWeight:700,marginBottom:0,paddingTop:8,borderTop:"1px solid var(--line)"}}>게이지·추세·가용성 · Gauge · TrendDelta · Legend · UptimeBar</div>
+  <div className="bds-card-section-label">게이지·추세·가용성 · Gauge · TrendDelta · Legend · UptimeBar</div>
   <More />
 </>; }
 ReactDOM.createRoot(document.getElementById("root")).render(<App/>);

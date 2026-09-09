@@ -21,7 +21,6 @@
 - `SKILL.md` 스킬 진입점. 규범은 readme를 가리키기만 하고 옮겨 적지 않는다.
 - `docs/behavior-contracts.md` 동작 계약 결정과 근거, 기존 소비자 영향.
 - `tests/README.md` 검증 실행법과 재현 케이스 추가법.
-- `docs/next-steps.md` 잔여 작업 인수인계. 규범이 아니라 할 일 목록이며, 항목이 끝나면 지운다.
 - `guidelines/*.html` 시각 스펙을 눈으로 확인하는 카드 13장.
 - `components/<Name>.d.ts` 공개 API. `components/<Name>.prompt.md` 컴포넌트별 사용 계약과 예시.
 

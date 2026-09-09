@@ -42,7 +42,7 @@
 /* 지우기 같은 affix 버튼: 24px 최소 히트 영역 */
 button.bds-ctl__affix{min-width:24px;min-height:24px;justify-content:center;border:0;background:none;padding:0;cursor:pointer;border-radius:4px;margin-right:-4px}
 button.bds-ctl__affix:hover{color:var(--ink)}
-.bds-search .bds-ctl__kbd{border:1px solid var(--line);border-radius:4px;padding:0 5px;font:500 10px/16px var(--font-data);color:var(--ink-3)}
+.bds-search .bds-ctl__kbd{border:1px solid var(--line);border-radius:4px;padding:0 5px;font:500 11.5px/16px var(--font-ui);color:var(--ink-3)}
 .bds-drop{display:grid;place-items:center;gap:6px;padding:clamp(16px,2vw,28px);border:1.5px dashed var(--line-input);border-radius:var(--radius-panel);background:var(--canvas-sunken);color:var(--ink-3);text-align:center;cursor:pointer;transition:border-color var(--dur-fast) var(--ease-out),background var(--dur-fast) var(--ease-out)}
 .bds-drop:hover,.bds-drop--over{border-color:var(--signal);background:var(--signal-tint);color:var(--ink)}
 .bds-drop b{color:var(--ink);font-size:var(--fs-label)}

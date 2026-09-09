@@ -74,9 +74,9 @@ function More(){ const [pol,setPol]=React.useState("idle"); const [d,setD]=React
 
 function App(){ return <>
   <Basic />
-  <div className="lbl" style={{fontSize:14,color:"var(--ink)",fontWeight:700,marginBottom:0,paddingTop:8,borderTop:"1px solid var(--line)"}}>확장 · Slider · NumberStepper · ColorInput · Combobox · DateRangePicker · CodeEditor · FileUpload</div>
+  <div className="bds-card-section-label">확장 · Slider · NumberStepper · ColorInput · Combobox · DateRangePicker · CodeEditor · FileUpload</div>
   <Advanced />
-  <div className="lbl" style={{fontSize:14,color:"var(--ink)",fontWeight:700,marginBottom:0,paddingTop:8,borderTop:"1px solid var(--line)"}}>선택·날짜·인증 · RadioGroup · DatePicker · TimePicker · MultiSelect · PasswordField · OTPInput</div>
+  <div className="bds-card-section-label">선택·날짜·인증 · RadioGroup · DatePicker · TimePicker · MultiSelect · PasswordField · OTPInput</div>
   <More />
 </>; }
 ReactDOM.createRoot(document.getElementById("root")).render(<App/>);

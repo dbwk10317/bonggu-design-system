@@ -16,9 +16,7 @@ table{border-collapse:collapse;border-spacing:0}
 :focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px;border-radius:var(--radius-ctl)}
 ::selection{background:var(--signal-tint)}
 /* 수치·코드·시각: 결측 문구("수집 안 됨")에는 붙이지 않는다 */
-.bds-mono,.u-data{font-family:var(--font-data);font-variant-numeric:tabular-nums;letter-spacing:var(--ls-data)}
-.u-caps{letter-spacing:var(--ls-caps);text-transform:uppercase}
-.u-num{font-variant-numeric:tabular-nums}
+.bds-mono{font-family:var(--font-data);font-variant-numeric:tabular-nums;letter-spacing:var(--ls-data)}
 .bds-ellipsis{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 .bds-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 @media (pointer:fine){

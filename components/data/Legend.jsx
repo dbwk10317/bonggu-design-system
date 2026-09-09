@@ -15,7 +15,7 @@ export function Legend({ items = [], shape = "square", vertical = false, compact
         const sh = it.shape ?? shape, color = swatchColor(it, i);
         const sw = sh === "line"
           ? <svg className="bds-legend__sw-line" width="14" height="8" viewBox="0 0 14 8" aria-hidden="true"><line x1="0" y1="4" x2="14" y2="4" stroke={color} strokeWidth="2" strokeLinecap="round" strokeDasharray={it.dash || undefined} /></svg>
-          : <i className={cx("bds-legend__sw", sh === "dot" && "bds-legend__sw--dot")} style={{ background: color }} aria-hidden="true" />;
+          : <i className={cx("bds-legend__sw", sh === "dot" && "bds-legend__sw--dot")} style={{ "--legend-color": color }} aria-hidden="true" />;
         return <li key={i}><Tag type={onToggle ? "button" : undefined} className={cx("bds-legend__i", it.hidden && "bds-legend__i--off")} aria-pressed={onToggle ? !it.hidden : undefined} onClick={onToggle ? () => onToggle(i, it) : undefined}>{sw}{it.label}{it.value != null && <span className="bds-legend__v">{it.value}</span>}</Tag></li>;
       })}
     </ul>

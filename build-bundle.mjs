@@ -73,7 +73,6 @@ writeFileSync(join(ROOT, "_ds_bundle.js"), out);
 const mp = join(ROOT, "_ds_manifest.json");
 const man = JSON.parse(readFileSync(mp, "utf8"));
 man.components = components; man.unexposedExports = unexposed;
-writeFileSync(mp, JSON.stringify(man));
 console.log(`bundle: ${order.length} files, ${components.length} components, ${unexposed.length} unexposed, ${(out.length / 1024).toFixed(0)} KB`);
 
 // ── adherence 설정 ─────────────────────────────────────────────────────────
@@ -81,8 +80,8 @@ console.log(`bundle: ${order.length} files, ${components.length} components, ${u
 //   생성: x-omelette.tokens·tokenKinds(← tokens/*.css), x-omelette.components와 컴포넌트별
 //         no-restricted-syntax 규칙(← components/**/*.d.ts), no-restricted-imports의 경로 목록(← components/ 디렉터리)
 //   보존: plugins, overrides, react/forbid-elements, 전역 no-restricted-syntax 3개, x-omelette.fontFamilies
-// tokenKinds의 종류는 정의 옆 `/* @kind <종류> */` 주석이 있으면 그것을 쓴다. 없으면 기존 값을 유지하고,
-// 그것도 없으면(새 토큰) 값으로 추정한 뒤 로그에 남긴다. 옛 종류 판정 규칙은 복원하지 못했으므로 주석으로 옮겨 적는 것이 정답이다.
+// tokenKinds는 각 tokens/*.css의 `@token-kinds` 원천 주석에서만 읽는다. 기존 생성물이나
+// CSS 값에서 추정하지 않는다. 토큰이 주석에서 빠지면 빌드를 실패시켜 분류 누락을 조용히 허용하지 않는다.
 const CFG = join(ROOT, "_adherence.oxlintrc.json");
 const cfg = JSON.parse(readFileSync(CFG, "utf8"));
 const x = cfg["x-omelette"];
@@ -90,31 +89,102 @@ const x = cfg["x-omelette"];
 const tokenValues = {}, declaredKinds = {};
 for (const f of readdirSync(join(ROOT, "tokens")).sort()) {
   const raw = readFileSync(join(ROOT, "tokens", f), "utf8");
-  for (const m of raw.matchAll(/(--[\w-]+)\s*:[^;{}]*;?[^\S\n]*\/\*[^*]*?@kind\s+(\w+)/g)) declaredKinds[m[1]] = m[2];
+  for (const m of raw.matchAll(/\/\*\s*@token-kinds([\s\S]*?)\*\//g)) {
+    for (const line of m[1].split(/\r?\n/)) {
+      const row = line.match(/^\s*(\w+)\s*:\s*(.*)$/);
+      if (!row) continue;
+      for (const n of row[2].match(/--[\w-]+/g) || []) {
+        if (Object.hasOwn(declaredKinds, n)) throw new Error(`토큰 종류 중복: ${n} (${declaredKinds[n]}와 ${row[1]})`);
+        declaredKinds[n] = row[1];
+      }
+    }
+  }
   const css = raw.replace(/\/\*[\s\S]*?\*\//g, "");
   for (const m of css.matchAll(/[{;\s](--[\w-]+)\s*:([^;}]*)/g)) if (!(m[1] in tokenValues)) tokenValues[m[1]] = m[2].trim();
 }
 const tokens = Object.keys(tokenValues).sort();
-const kinds = {}, guessed = [], conflicts = [];
+const kinds = {}, missingKinds = [];
 for (const n of tokens) {
-  if (declaredKinds[n]) {
-    kinds[n] = declaredKinds[n];
-    if (x.tokenKinds[n] && x.tokenKinds[n] !== kinds[n]) conflicts.push(`${n} ${x.tokenKinds[n]}→${kinds[n]}`);
-  } else if (x.tokenKinds[n]) kinds[n] = x.tokenKinds[n];
-  else { kinds[n] = /#[0-9a-f]{3}|\b(?:oklch|rgba?|hsla?|color-mix)\(/i.test(tokenValues[n]) ? "color" : "other"; guessed.push(`${n}=${kinds[n]}`); }
+  if (!declaredKinds[n]) missingKinds.push(n); else kinds[n] = declaredKinds[n];
+}
+const staleKinds = Object.keys(declaredKinds).filter((n) => !tokenValues[n]);
+if (missingKinds.length || staleKinds.length) {
+  throw new Error(`tokenKinds 원천 불일치: 누락=${missingKinds.join(", ") || "없음"}; 정의되지 않은 주석=${staleKinds.join(", ") || "없음"}`);
 }
 
-// .d.ts: 컴포넌트는 `export declare function <대문자>`, 그 props는 같은 이름 + "Props" 인터페이스.
+// 매니페스트의 토큰 메타데이터도 생성물의 이전 목록을 재사용하지 않고 CSS에서 다시 만든다.
+// 스키마의 scope 문자열은 선택자와 중첩된 @media 조건을 함께 보존한다. 여러 선택자가 한
+// 블록을 공유하면 첫 선택자를 대표값으로 사용하되, 블록 안의 모든 선언은 한 번만 기록한다.
+const manifestTokens = [], tokenBlocks = (text, atRules = []) => {
+  let cursor = 0;
+  while (cursor < text.length) {
+    const open = text.indexOf("{", cursor);
+    if (open < 0) break;
+    const header = text.slice(cursor, open).trim();
+    let i = open + 1, depth = 1, quote = "";
+    while (i < text.length && depth) {
+      const ch = text[i++];
+      if (quote) { if (ch === quote) quote = ""; continue; }
+      if (ch === "\"" || ch === "'") { quote = ch; continue; }
+      if (ch === "{") depth++; else if (ch === "}") depth--;
+    }
+    const body = text.slice(open + 1, i - 1);
+    if (header.startsWith("@")) tokenBlocks(body, [...atRules, header]);
+    else if (header.includes(":root")) {
+      const selector = header.split(",")[0].trim();
+      const scope = [...atRules, selector].join(" ").trim();
+      for (const m of body.matchAll(/(--[\w-]+)\s*:([^;{}]*)/g)) {
+        const name = m[1];
+        if (!kinds[name]) throw new Error(`tokenKinds 원천에 없는 토큰: ${name}`);
+        const entry = { name, value: m[2].trim(), kind: kinds[name], definedIn: "" };
+        if (scope !== ":root") entry.scope = scope;
+        manifestTokens.push(entry);
+      }
+    }
+    cursor = i;
+  }
+};
+for (const f of readdirSync(join(ROOT, "tokens")).sort()) {
+  const raw = readFileSync(join(ROOT, "tokens", f), "utf8").replace(/\/\*[\s\S]*?\*\//g, "");
+  const before = manifestTokens.length;
+  tokenBlocks(raw);
+  for (const entry of manifestTokens.slice(before)) entry.definedIn = `tokens/${f}`;
+}
+const manifestKeys = new Set();
+for (const entry of manifestTokens) {
+  const key = `${entry.scope || ":root"}\u0000${entry.name}`;
+  if (manifestKeys.has(key)) throw new Error(`매니페스트 토큰 중복: ${entry.scope || ":root"} ${entry.name}`);
+  manifestKeys.add(key);
+}
+man.tokens = manifestTokens;
+writeFileSync(mp, JSON.stringify(man));
+
+// .d.ts: 컴포넌트 함수가 가리키는 props 타입을 인터페이스·상속·유니언·인라인 객체까지
+// 따라간다. React의 HTMLAttributes 계열은 임의의 표준/aria/data 속성을 열어 둔 계약이므로
+// 미지 속성 금지 규칙을 만들지 않고, 컴포넌트가 직접 선언한 문자열 유니언만 검사한다.
 const stripTs = (s) => s.replace(/\/\*[\s\S]*?\*\//g, "").replace(/\/\/.*$/gm, "");
-const ifaces = {}, comps = [];
+const ifaces = {}, aliases = {}, functions = [], comps = [];
 for (const p of walk(join(ROOT, "components")).filter((p) => p.endsWith(".d.ts")).sort()) {
   const src = stripTs(readFileSync(p, "utf8"));
-  for (const m of src.matchAll(/export interface (\w+)[^{]*\{/g)) {
+  for (const m of src.matchAll(/(?:export\s+)?interface (\w+)([^\{]*)\{/g)) {
     let i = m.index + m[0].length, depth = 1;
     while (i < src.length && depth) { const c = src[i++]; if (c === "{") depth++; else if (c === "}") depth--; }
-    ifaces[m[1]] = src.slice(m.index + m[0].length, i - 1);
+    ifaces[m[1]] = { body: src.slice(m.index + m[0].length, i - 1), extends: (m[2].match(/extends\s+([\s\S]*)$/) || [])[1] || "" };
   }
-  for (const m of src.matchAll(/^export declare function ([A-Z]\w*)/gm)) comps.push(m[1]);
+  for (const m of src.matchAll(/(?:export\s+)?type\s+(\w+)\s*=\s*/g)) {
+    let i = m.index + m[0].length, depth = 0, quote = "";
+    while (i < src.length) {
+      const ch = src[i++];
+      if (quote) { if (ch === quote) quote = ""; continue; }
+      if (ch === "\"" || ch === "'") { quote = ch; continue; }
+      if ("{[(".includes(ch)) depth++; else if ("}])".includes(ch)) depth--;
+      if (ch === ";" && depth === 0) break;
+    }
+    aliases[m[1]] = src.slice(m.index + m[0].length, i - 1).trim();
+  }
+  for (const m of src.matchAll(/^export declare function ([A-Z]\w*)(?:<[^>\n]+>)?\s*\(\s*props:\s*([^\)\n]+)\)/gm)) {
+    comps.push(m[1]); functions.push({ name: m[1], type: m[2].trim() });
+  }
 }
 comps.sort();
 
@@ -128,14 +198,70 @@ const membersOf = (body) => {
   return [...parts, cur].map((s) => s.trim().match(/^(\w+)\??\s*:\s*([\s\S]+)$/)).filter(Boolean).map((m) => ({ name: m[1], type: m[2].trim() }));
 };
 const STR_UNION = /^"[^"]*"(?:\s*\|\s*"[^"]*")*$/;
-const propRules = [], noProps = [];
+const splitTop = (s, delimiter) => {
+  const out = []; let cur = "", depth = 0, quote = "";
+  for (const ch of s) {
+    if (quote) { cur += ch; if (ch === quote) quote = ""; continue; }
+    if (ch === "\"" || ch === "'") { quote = ch; cur += ch; continue; }
+    if ("<{[(".includes(ch)) depth++; else if (">}])".includes(ch)) depth--;
+    if (ch === delimiter && depth === 0) { out.push(cur.trim()); cur = ""; } else cur += ch;
+  }
+  if (cur.trim()) out.push(cur.trim());
+  return out;
+};
+const emptyShape = () => ({ names: new Set(), literals: new Map(), open: false });
+const mergeShape = (to, from) => {
+  for (const n of from.names) to.names.add(n);
+  for (const [n, values] of from.literals) {
+    if (!to.literals.has(n)) to.literals.set(n, new Set());
+    for (const v of values) to.literals.get(n).add(v);
+  }
+  to.open ||= from.open;
+  return to;
+};
+const shapeFromMembers = (members) => {
+  const shape = emptyShape();
+  for (const p of members) {
+    shape.names.add(p.name);
+    if (STR_UNION.test(p.type)) shape.literals.set(p.name, new Set(p.type.split("|").map((s) => s.trim().slice(1, -1))));
+  }
+  return shape;
+};
+const reactAttrs = /(?:HTMLAttributes|SVGProps|ButtonHTMLAttributes|InputHTMLAttributes|SelectHTMLAttributes|TextareaHTMLAttributes|AnchorHTMLAttributes)\s*</;
+const resolving = new Set();
+const resolveType = (raw) => {
+  const type = raw.trim();
+  if (reactAttrs.test(type)) return Object.assign(emptyShape(), { open: true });
+  if (type.startsWith("{") && type.endsWith("}")) return shapeFromMembers(membersOf(type.slice(1, -1)));
+  const union = splitTop(type, "|");
+  if (union.length > 1) return union.reduce((out, part) => mergeShape(out, resolveType(part)), emptyShape());
+  const omit = type.match(/^Omit\s*<([\s\S]+)>$/);
+  if (omit) {
+    const args = splitTop(omit[1], ","), out = resolveType(args[0] || "");
+    for (const n of (args[1] || "").match(/\b\w+\b/g) || []) { out.names.delete(n); out.literals.delete(n); }
+    return out;
+  }
+  const generic = type.match(/^([A-Za-z_]\w*)\s*<[^>]*>$/);
+  if (generic && (aliases[generic[1]] || ifaces[generic[1]])) return resolveType(generic[1]);
+  if (aliases[type] && !resolving.has(type)) {
+    resolving.add(type); const out = resolveType(aliases[type]); resolving.delete(type); return out;
+  }
+  if (ifaces[type] && !resolving.has(type)) {
+    resolving.add(type);
+    const out = shapeFromMembers(membersOf(ifaces[type].body));
+    for (const parent of splitTop(ifaces[type].extends, ",")) mergeShape(out, resolveType(parent));
+    resolving.delete(type); return out;
+  }
+  return emptyShape();
+};
+const propRules = [];
 for (const c of comps) {
-  if (!(c + "Props" in ifaces)) { noProps.push(c); continue; } // props가 인터페이스가 아닌 컴포넌트(Chart의 유니언 등)는 규칙을 만들지 않는다
-  const props = membersOf(ifaces[c + "Props"]), names = props.map((p) => p.name);
-  propRules.push({ selector: `JSXOpeningElement[name.name='${c}'] > JSXAttribute > JSXIdentifier[name!=/^(?:${[...names, "key", "ref", "className", "style", "children"].join("|")})$/]`, message: `<${c}> doesn't accept that prop. Declared props: ${names.join(", ")}.` });
-  for (const p of props) if (STR_UNION.test(p.type)) {
-    const vals = p.type.split("|").map((s) => s.trim().slice(1, -1));
-    propRules.push({ selector: `JSXOpeningElement[name.name='${c}'] > JSXAttribute[name.name='${p.name}'] > Literal[value!=/^(?:${vals.join("|")})$/]`, message: `<${c}> ${p.name} must be one of ${vals.map((v) => `'${v}'`).join(" | ")}.` });
+  const fn = functions.find((f) => f.name === c), shape = resolveType(fn?.type || `${c}Props`);
+  const names = [...shape.names].sort();
+  if (!shape.open) propRules.push({ selector: `JSXOpeningElement[name.name='${c}'] > JSXAttribute > JSXIdentifier[name!=/^(?:${[...names, "key", "ref", "className", "style", "children"].join("|")})$/]`, message: `<${c}> doesn't accept that prop. Declared props: ${names.join(", ")}.` });
+  for (const [name, values] of shape.literals) {
+    const vals = [...values];
+    propRules.push({ selector: `JSXOpeningElement[name.name='${c}'] > JSXAttribute[name.name='${name}'] > Literal[value!=/^(?:${vals.join("|")})$/]`, message: `<${c}> ${name} must be one of ${vals.map((v) => `'${v}'`).join(" | ")}.` });
   }
 }
 
@@ -145,9 +271,9 @@ cfg.rules["no-restricted-imports"][1].patterns[0].group = [...readdirSync(join(R
 x.components = Object.fromEntries(comps.map((c) => [c, { replaces: [] }]));
 x.tokens = tokens;
 x.tokenKinds = kinds;
-const banner = "생성물. 직접 고치지 말고 tokens/*.css·components/**/*.d.ts를 고친 뒤 `node build-bundle.mjs`를 다시 실행한다. 토큰 종류는 정의 옆 `/* @kind <종류> */` 주석으로 정한다. plugins·overrides·react/forbid-elements·전역 no-restricted-syntax 3개·x-omelette.fontFamilies만 손으로 유지한다.";
-writeFileSync(CFG, JSON.stringify({ "x-generated": banner, ...cfg }, null, 2));
-console.log(`adherence: ${tokens.length} tokens(@kind ${Object.keys(declaredKinds).length}), ${comps.length} components, ${propRules.length} prop rules` +
-  (guessed.length ? `\n  새 토큰(종류 추정, @kind 주석으로 확정할 것): ${guessed.join(", ")}` : "") +
-  (conflicts.length ? `\n  @kind가 기존 종류를 덮음: ${conflicts.join(", ")}` : "") +
-  (noProps.length ? `\n  props 인터페이스 없어 규칙 제외: ${noProps.join(", ")}` : ""));
+const banner = "생성물. 직접 고치지 말고 tokens/*.css·components/**/*.d.ts를 고친 뒤 `node build-bundle.mjs`를 다시 실행한다. 토큰 종류는 각 tokens/*.css의 `/* @token-kinds ... */` 원천 주석으로 정한다. plugins·overrides·react/forbid-elements·전역 no-restricted-syntax 3개·x-omelette.fontFamilies만 손으로 유지한다.";
+const { ["x-generated"]: _previousBanner, ...cfgWithoutBanner } = cfg;
+const generatedCfg = { "x-generated": banner, ...cfgWithoutBanner };
+if (Object.keys(generatedCfg)[0] !== "x-generated" || generatedCfg["x-generated"] !== banner) throw new Error("생성물 배너가 최신 원천 문구로 기록되지 않음");
+writeFileSync(CFG, JSON.stringify(generatedCfg, null, 2));
+console.log(`adherence: ${tokens.length} tokens(@kind ${Object.keys(declaredKinds).length}), ${comps.length} components, ${propRules.length} prop rules`);

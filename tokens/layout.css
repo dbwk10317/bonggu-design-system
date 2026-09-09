@@ -1,8 +1,13 @@
-/* 간격·형태·모션·레이아웃 토큰 + 컴포넌트 별칭.
+/* @token-kinds
+   spacing: --sp-0, --sp-1, --sp-2, --sp-3, --sp-4, --sp-5, --sp-6, --sp-7, --sp-8, --sp-9, --sp-10, --grid-gap, --panel-pad, --page-pad, --kv-gap, --inline-gap, --h-ctl-sm, --h-ctl, --h-ctl-lg, --h-touch, --line-w, --bp-sm, --bp-md, --bp-lg, --bp-xl, --cq-xs, --cq-sm, --cq-md, --cq-lg, --cq-xl, --safe-top, --safe-right, --safe-bottom, --safe-left, --rail-w, --bar-h, --tabs-h, --content-max, --content-narrow, --status-h
+   radius: --radius-ctl, --radius-panel, --radius-sheet, --radius-pill
+   other: --ease-out, --ease-in-out, --dur-fast, --dur-base, --dur-slow, --dur-gauge, --dur-theme, --z-sticky, --z-drawer, --z-modal, --z-toast, --z-tip
+*/
+/* 간격·형태·모션·레이아웃 토큰.
    브레이크포인트 4단(뷰포트): sm 640 · md 768 · lg 1024 · xl 1380. media 쿼리는 리터럴로 쓰고 아래 토큰은 문서·JS용이다.
    컨테이너 5단(@container, 컴포넌트 접힘 기준): xs 240 · sm 320 · md 480 · lg 640 · xl 900. */
 :root{
-  --sp-0:0; /* @kind spacing */
+  --sp-0:0;
   --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:20px;--sp-6:24px;--sp-7:32px;--sp-8:40px;--sp-9:48px;--sp-10:64px;
   --grid-gap:14px;--panel-pad:16px;--page-pad:20px;--kv-gap:6px;--inline-gap:8px;
   --radius-ctl:6px;--radius-panel:10px;--radius-sheet:14px;--radius-pill:999px;
@@ -10,32 +15,19 @@
   --bp-sm:640px;--bp-md:768px;--bp-lg:1024px;--bp-xl:1380px;
   --cq-xs:240px;--cq-sm:320px;--cq-md:480px;--cq-lg:640px;--cq-xl:900px;
   --safe-top:env(safe-area-inset-top,0px);--safe-right:env(safe-area-inset-right,0px);--safe-bottom:env(safe-area-inset-bottom,0px);--safe-left:env(safe-area-inset-left,0px);
-  --ease-out:cubic-bezier(.2,.8,.2,1); /* @kind other */
-  --ease-in-out:cubic-bezier(.4,0,.2,1); /* @kind other */
-  --dur-fast:120ms; /* @kind other */
-  --dur-base:180ms; /* @kind other */
-  --dur-slow:260ms; /* @kind other */
-  --dur-gauge:600ms; /* @kind other */
-  --dur-theme:200ms; /* @kind other */
+  --ease-out:cubic-bezier(.2,.8,.2,1);
+  --ease-in-out:cubic-bezier(.4,0,.2,1);
+  --dur-fast:120ms;
+  --dur-base:180ms;
+  --dur-slow:260ms;
+  --dur-gauge:600ms;
+  --dur-theme:200ms;
   --rail-w:228px;--bar-h:48px;--tabs-h:44px;--content-max:1440px;--content-narrow:760px;--status-h:28px;
-  --z-sticky:10; /* @kind other */
-  --z-drawer:40; /* @kind other */
-  --z-modal:50; /* @kind other */
-  --z-toast:60; /* @kind other */
-  --z-tip:70; /* @kind other */
-  /* ---- 컴포넌트 별칭 (deprecated: 소비 코드 호환용. 시스템 CSS는 가이드 이름만 쓴다. 다음 메이저에서 제거) ----
-     --r-*는 guidelines/**와 *.card.html이 아직 참조하므로 남는다. 그 파일들을 --radius-*로 옮기면 함께 지운다. */
-  --gutter:var(--page-pad); /* @kind spacing */
-  --stack:var(--grid-gap); /* @kind spacing */
-  --card-gap:var(--grid-gap);--card-pad:var(--panel-pad);
-  --r-sm:var(--radius-ctl);--r-md:var(--radius-panel);--r-lg:var(--radius-sheet);--r-pill:var(--radius-pill);
-  --ease-spring:var(--ease-out); /* @kind other */
-  --dur-1:var(--dur-fast); /* @kind other */
-  --dur-2:var(--dur-base); /* @kind other */
-  --dur-3:var(--dur-slow); /* @kind other */
-  --dur-draw:var(--dur-gauge); /* @kind other */
-  --sidebar-w:var(--rail-w);--topbar-h:var(--bar-h);--statusbar-h:var(--status-h);
-  --control-h:var(--h-ctl);--control-h-sm:var(--h-ctl-sm);--control-h-lg:var(--h-ctl-lg);
+  --z-sticky:10;
+  --z-drawer:40;
+  --z-modal:50;
+  --z-toast:60;
+  --z-tip:70;
 }
 /* 모바일(<768): 여백 한 단계 축소 */
 @media (width < 768px){:root{--panel-pad:14px;--page-pad:16px;--grid-gap:12px}}

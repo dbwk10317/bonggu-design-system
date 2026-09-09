@@ -4,7 +4,9 @@ import { MISSING_CLASS, MISSING_TEXT, isMissing } from "../core/missing.js";
 import { Icon } from "../action/Icon.jsx";
 import { Checkbox } from "../input/Checkbox.jsx";
 
-const hideCls = (c) => (c.hideBelow === "desktop" ? "d-hide" : c.hideBelow === "tablet" || c.hideOnMobile ? "m-hide" : undefined);
+const TABLE_DESKTOP_HIDE = "bds-table__d-hide";
+const TABLE_MOBILE_HIDE = "bds-table__m-hide";
+const hideCls = (c) => (c.hideBelow === "desktop" ? TABLE_DESKTOP_HIDE : c.hideBelow === "tablet" || c.hideOnMobile ? TABLE_MOBILE_HIDE : undefined);
 
 /* 셀 하나의 결측 판정.
    render 없는 열: row[key]가 값이므로 core/missing.js 규칙을 그대로 쓴다. null/undefined는 빈 칸이 아니라 "수집 안 됨"이다.
@@ -38,11 +40,11 @@ export function DataTable({ columns = [], rows = [], rowKey, rowLabel, sort, onS
         <div className="bds-table__scroll">
           <table aria-label={ariaLabel} aria-labelledby={!ariaLabel && header ? hid : undefined}>
             <thead><tr>
-              {selectable && <th scope="col" className="ck"><Checkbox aria-label="전체 선택" checked={all} indeterminate={selCount > 0 && !all} onChange={() => onSelectionChange?.(all ? [] : keys)} /></th>}
-              {expandable && <th scope="col" className="ck" />}
+              {selectable && <th scope="col" className="bds-table__check"><Checkbox aria-label="전체 선택" checked={all} indeterminate={selCount > 0 && !all} onChange={() => onSelectionChange?.(all ? [] : keys)} /></th>}
+              {expandable && <th scope="col" className="bds-table__check" />}
               {columns.map((c) => {
                 const sorted = sort?.key === c.key;
-                return <th key={c.key} scope="col" style={c.width != null ? { width: c.width } : undefined} className={cx(c.align === "num" && "num", sorted && "sorted", hideCls(c))}
+                return <th key={c.key} scope="col" style={c.width != null ? { width: c.width } : undefined} className={cx(c.align === "num" && "bds-table__num", sorted && "bds-table__sorted", hideCls(c))}
                   aria-sort={c.sortable ? (sorted ? (sort.dir === "asc" ? "ascending" : "descending") : "none") : undefined}>
                   {c.sortable ? <button type="button" className="bds-table__sort" onClick={() => requestSort(c.key)}>{c.header}{sorted && <Icon name={sort.dir === "asc" ? "caret-up" : "caret-down"} size={10} />}</button> : c.header}
                 </th>;
@@ -55,9 +57,9 @@ export function DataTable({ columns = [], rows = [], rowKey, rowLabel, sort, onS
                 return (
                   <Fragment key={k}>
                     <tr className={cx(isSel && "bds-table__sel")}>
-                      {selectable && <td className="ck"><Checkbox aria-label={`${name} 선택`} checked={isSel} onChange={() => onSelectionChange?.(toggle(selectedKeys, k))} /></td>}
-                      {expandable && <td className="ck"><button type="button" className="bds-table__exp" aria-expanded={open} aria-label={`${name} 행 펼치기`} onClick={() => setExpanded((p) => new Set(toggle(p, k)))}><Icon name="caret-right" size={12} /></button></td>}
-                      {columns.map((c) => { const { value, na } = cellOf(c, row, i); return <td key={c.key} className={cx(c.align === "num" && "num", na && MISSING_CLASS, hideCls(c))}>{value}</td>; })}
+                      {selectable && <td className="bds-table__check"><Checkbox aria-label={`${name} 선택`} checked={isSel} onChange={() => onSelectionChange?.(toggle(selectedKeys, k))} /></td>}
+                      {expandable && <td className="bds-table__check"><button type="button" className="bds-table__exp" aria-expanded={open} aria-label={`${name} 행 펼치기`} onClick={() => setExpanded((p) => new Set(toggle(p, k)))}><Icon name="caret-right" size={12} /></button></td>}
+                      {columns.map((c) => { const { value, na } = cellOf(c, row, i); return <td key={c.key} className={cx(c.align === "num" && "bds-table__num", na && MISSING_CLASS, hideCls(c))}>{value}</td>; })}
                     </tr>
                     {expandable && open && <tr className="bds-table__exprow"><td colSpan={colCount}>{expandable(row)}</td></tr>}
                   </Fragment>

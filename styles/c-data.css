@@ -42,17 +42,17 @@
 .bds-table th{text-align:left;padding:9px 12px;font-size:var(--fs-caption);font-weight:var(--fw-medium);color:var(--ink-3);letter-spacing:var(--ls-caps);text-transform:uppercase;border-bottom:1px solid var(--line);background:var(--canvas-sunken);white-space:nowrap}
 .bds-table td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:middle;color:var(--ink);word-break:keep-all;overflow-wrap:anywhere}
 /* 첫 데이터 열(이름·식별자)은 글자 단위로 쪼개지지 않게 최소 폭을 보장하고, 마지막 열(작업 버튼)은 줄바꿈하지 않는다. 좁으면 표가 가로 스크롤(.bds-table__scroll)로 빠진다 */
-.bds-table td:first-child:not(.ck),.bds-table td.ck+td,.bds-table td:has(.bds-table__exp)+td{min-width:9em}
+.bds-table td:first-child:not(.bds-table__check),.bds-table td.bds-table__check+td,.bds-table td:has(.bds-table__exp)+td{min-width:9em}
 .bds-table td:last-child .bds-btn,.bds-table td:last-child{white-space:nowrap}
 .bds-table tbody tr:last-child td{border-bottom:0}
 .bds-table tbody tr{transition:background var(--dur-fast) var(--ease-out)}
 .bds-table tbody tr:hover td{background:var(--panel-2)}
 .bds-table tr.bds-table__sel td{background:var(--signal-tint)}
-.bds-table .num{text-align:right;font-family:var(--font-data);font-variant-numeric:tabular-nums;white-space:nowrap}
-.bds-table .ck{width:36px;padding-right:0}
+.bds-table .bds-table__num{text-align:right;font-family:var(--font-data);font-variant-numeric:tabular-nums;white-space:nowrap}
+.bds-table .bds-table__check{width:36px;padding-right:0}
 .bds-table__sort{display:inline-flex;align-items:center;gap:4px;border:0;background:transparent;padding:0;color:inherit;font:inherit;text-transform:inherit;letter-spacing:inherit}
 .bds-table__sort:hover{color:var(--ink)}
-.bds-table th.sorted{color:var(--signal)}
+.bds-table th.bds-table__sorted{color:var(--signal)}
 .bds-table__exp{display:grid;place-items:center;width:24px;height:24px;border:0;border-radius:4px;background:transparent;color:var(--ink-3);padding:0;transition:transform var(--dur-base) var(--ease-out),background var(--dur-fast)}
 .bds-table__exp:hover{background:var(--panel-3);color:var(--ink)}
 .bds-table__exp[aria-expanded="true"]{transform:rotate(90deg)}
@@ -61,8 +61,8 @@
 .bds-table__bulk{display:flex;align-items:center;gap:10px;padding:8px 12px;background:var(--signal-tint);border-bottom:1px solid var(--line);font-size:var(--fs-caption)}
 .bds-table__bulk b{color:var(--signal)}
 .bds-table__clear{margin-left:auto;border:0;background:transparent;color:var(--ink-2);font-size:var(--fs-caption);text-decoration:underline;text-underline-offset:2px;min-height:24px;padding:0 4px}
-@container (max-width:640px){.bds-table .m-hide{display:none}}
-@container (max-width:900px){.bds-table .d-hide{display:none}}
+@container (max-width:640px){.bds-table .bds-table__m-hide{display:none}}
+@container (max-width:900px){.bds-table .bds-table__d-hide{display:none}}
 .bds-log{display:grid;grid-auto-rows:min-content;gap:0;border:1px solid var(--line);border-radius:var(--radius-panel);background:var(--canvas-sunken);font-family:var(--font-data);font-size:var(--fs-caption);line-height:1.55;overflow:auto;overflow-x:hidden;padding:8px 0;color:var(--ink-2);font-variant-numeric:tabular-nums}
 .bds-log__line{display:grid;grid-template-columns:auto 5em minmax(0,1fr);gap:0 12px;padding:1px 12px;white-space:pre-wrap;word-break:break-all}
 .bds-log__line:hover{background:var(--panel-2)}
@@ -73,8 +73,8 @@
 .bds-log--nowrap{overflow-x:auto}.bds-log--nowrap .bds-log__line{white-space:pre}
 /* ---- 결측 표기(공통) ----
    components/core/missing.js의 MISSING_CLASS만 이 클래스를 붙인다. 결측 문구는 mono를 벗고(한글 고정폭은 벌어져 보인다)
-   --ink-3으로 내린다. 뒤의 선택자들은 각 컴포넌트가 값에 걸어 둔 mono 규칙(.bds-table td / .num, 차트 툴팁 값,
+   --ink-3으로 내린다. 뒤의 선택자들은 각 컴포넌트가 값에 걸어 둔 mono 규칙(.bds-table td / .bds-table__num, 차트 툴팁 값,
    TrendDelta, UptimeBar 비율)을 제자리에서 되돌리기 위한 것으로, 선언은 이 한 블록뿐이다. */
-.bds-na,.bds-table td.bds-na,.bds-chart__tip-row .v.bds-na,.bds-delta.bds-na,.bds-uptime__pct.bds-na{font-family:var(--font-ui);font-weight:var(--fw-regular);font-variant-numeric:normal;letter-spacing:var(--ls-ui);color:var(--ink-3)}
+.bds-na,.bds-table td.bds-na,.bds-chart__tip-row .bds-chart__tip-v.bds-na,.bds-delta.bds-na,.bds-uptime__pct.bds-na{font-family:var(--font-ui);font-weight:var(--fw-regular);font-variant-numeric:normal;letter-spacing:var(--ls-ui);color:var(--ink-3)}
 /* StatTile delta 뒤 보조 라벨. 수치가 아니라 설명이므로 mono를 쓰지 않는다(결측 표기와는 다른 자리). */
 .bds-stat__dl{font-family:var(--font-ui);color:var(--ink-3)}

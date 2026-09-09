@@ -27,7 +27,7 @@ function TrainingScreen() {
         <Panel caption="프로젝트 등록 작업" padding="sm">
           <Panel padding="sm" sunken>
             <div className="kit-row"><Chart kind="radial" fit="fixed" width={96} height={72} aria-label="ocr-finetune.zip 등록 진행률" value={0.44} label="4/9 단계" tone="ok" valueFormatter={() => "44%"} />
-              <div className="kit-grow"><span className="kit-inline"><b style={{ fontWeight: 500 }}>ocr-finetune.zip</b><StatusPill size="sm" tone="info">계약 검증</StatusPill></span><p className="kit-dim">PROJECT REGISTRATION · <span className="bds-mono">reg_7c1a · 184 MiB · 18:39:12</span></p><p className="kit-dim">mlproject.yaml 파싱 완료 · lockfile 해시 대조 중</p></div>
+              <div className="kit-grow"><span className="kit-inline"><b className="kit-name">ocr-finetune.zip</b><StatusPill size="sm" tone="info">계약 검증</StatusPill></span><p className="kit-dim">PROJECT REGISTRATION · <span className="bds-mono">reg_7c1a · 184 MiB · 18:39:12</span></p><p className="kit-dim">mlproject.yaml 파싱 완료 · lockfile 해시 대조 중</p></div>
               <div className="kit-actions"><Button size="sm" variant="ghost">이력</Button><Button size="sm" variant="danger" onClick={() => setConfirm({ title: "프로젝트 등록을 취소할까요?", description: "서버 등록 상태는 취소 후 정리됩니다.", label: "등록 취소" })}>등록 취소</Button></div></div>
           </Panel>
         </Panel>
@@ -42,7 +42,7 @@ function TrainingScreen() {
           <DataTable aria-label="학습 프로젝트와 revision 목록" rows={TR.projects} rowKey={(p) => p.id} rowLabel={(p) => p.name}
             empty={<EmptyState plain title="등록된 학습 프로젝트가 없습니다" description="프로젝트 등록으로 첫 ZIP bundle이 추가됩니다." />}
             columns={[
-              { key: "name", header: "프로젝트", render: (p) => <span className="kit-cell2"><b style={{ fontWeight: 500 }}>{p.name}</b><span className="kit-dim bds-mono">{p.id} · {p.owner}</span></span> },
+              { key: "name", header: "프로젝트", render: (p) => <span className="kit-cell2"><b className="kit-name">{p.name}</b><span className="kit-dim bds-mono">{p.id} · {p.owner}</span></span> },
               { key: "rev", header: "revision", hideBelow: "tablet", render: (p) => <span className="bds-mono">{p.rev.version} · {p.rev.id}</span> },
               { key: "status", header: "상태", render: (p) => pillOf(REV, p.rev.status) },
               { key: "updated", header: "업데이트", align: "num", hideBelow: "desktop", render: (p) => <span className="bds-mono">{p.updated}</span> },
@@ -63,7 +63,7 @@ function TrainingScreen() {
         <Panel caption="학습 실행" padding="sm">
           <DataTable aria-label="학습 실행 운영 목록" rows={runs} rowKey={(r) => r.id} rowLabel={(r) => r.id}
             columns={[
-              { key: "id", header: "실행", render: (r) => <span className="kit-cell2"><b style={{ fontWeight: 500 }} className="bds-mono">{r.id}</b><span className="kit-dim">{r.project} · {r.recipe}</span></span> },
+              { key: "id", header: "실행", render: (r) => <span className="kit-cell2"><b className="kit-name bds-mono">{r.id}</b><span className="kit-dim">{r.project} · {r.recipe}</span></span> },
               { key: "status", header: "상태", render: (r) => <span className="kit-cell2">{pillOf(STATE, r.status)}<span className="kit-dim">{r.detail}</span></span> },
               { key: "stage", header: "현재 단계", hideBelow: "tablet", render: (r) => r.stage ? <span>{r.stage} · <span className="kit-dim">{r.stageStatus}</span></span> : <span className="kit-dim">Prefect orchestration</span> },
               { key: "res", header: "리소스", hideBelow: "desktop", render: (r) => <span className="bds-mono">{r.priority}{r.vram ? ` · ${fmt.gib(r.vram)}` : ""}</span> },

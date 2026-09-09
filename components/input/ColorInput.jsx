@@ -13,11 +13,11 @@ export function ColorInput({ value, defaultValue = "#5CA8FF", presets = [], size
   return (
     <div className={cx("bds-color", size === "sm" && "bds-color--sm", disabled && "bds-ctl--disabled", className)} style={frameStyle({ fit, width, style })}>
       <div className={cx("bds-ctl bds-color__ctl", size === "sm" && "bds-ctl--sm", (invalid ?? f?.invalid) && "bds-ctl--err")}>
-        <label className="bds-color__swatch" style={{ background: v }}><input type="color" aria-label={ariaLabel ?? "색 선택"} value={v} disabled={disabled} onChange={(e) => set(e.target.value)} /></label>
+        <label className="bds-color__swatch" style={{ "--swatch-color": v }}><input type="color" aria-label={ariaLabel ?? "색 선택"} value={v} disabled={disabled} onChange={(e) => set(e.target.value)} /></label>
         <input id={f?.id} aria-describedby={f?.describedBy} className="bds-mono" spellCheck={false} maxLength={7} value={text ?? v} disabled={disabled}
           onChange={(e) => setText(e.target.value)} onBlur={() => { if (text != null) { set(text); setText(null); } }} onKeyDown={(e) => { if (e.key === "Enter" && text != null) { set(text); setText(null); } }} />
       </div>
-      {presets.length > 0 && <div className="bds-color__presets" role="group" aria-label="색 프리셋">{presets.map((p) => <button key={p} type="button" className={cx("bds-color__chip", p.toUpperCase() === v.toUpperCase() && "bds-color__chip--on")} style={{ background: p }} aria-label={`${p.toUpperCase()} 적용`} aria-pressed={p.toUpperCase() === v.toUpperCase()} disabled={disabled} onClick={() => set(p)} />)}</div>}
+      {presets.length > 0 && <div className="bds-color__presets" role="group" aria-label="색 프리셋">{presets.map((p) => <button key={p} type="button" className={cx("bds-color__chip", p.toUpperCase() === v.toUpperCase() && "bds-color__chip--on")} style={{ "--swatch-color": p }} aria-label={`${p.toUpperCase()} 적용`} aria-pressed={p.toUpperCase() === v.toUpperCase()} disabled={disabled} onClick={() => set(p)} />)}</div>}
     </div>
   );
 }

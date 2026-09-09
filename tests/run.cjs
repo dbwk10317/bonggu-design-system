@@ -7,7 +7,9 @@ const env = { ...process.env, BABEL_STANDALONE: deps.resolve('@babel/standalone'
 // 빠른 정적 검사부터. 목록에 적힌 파일은 모두 있어야 한다.
 const order = [
   'build-bundle.mjs',
+  'tests/manifest-token-regressions.cjs',
   'tests/consistency-regressions.cjs',
+  'tests/rule-regressions.cjs',
   'tests/smoke-regressions.cjs',
   'tests/data-regressions.cjs',
   'tests/missing-value-regressions.cjs',
