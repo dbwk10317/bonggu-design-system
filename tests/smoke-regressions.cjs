@@ -12,7 +12,16 @@ const OVERRIDES = {
   SidebarShell: { brand: { name: '봉구' } }, // brand는 필수. 로고 자리에서 brand.mark를 바로 읽는다
   Popover: { trigger },  // trigger를 cloneElement로 감싸므로 요소가 필수
   Tooltip: { children: trigger }, // Children.only로 단일 요소 자식을 요구한다
+  IconButton: { icon: 'bell', 'aria-label': '알림' }, // aria-label은 필수
+  NotificationTrigger: { unreadCount: 0, open: false, onToggle() {} },
 };
+
+// 서버 렌더가 경고 없이 끝나야 한다. 브라우저 전용 훅을 그대로 쓰면 여기서 걸린다.
+const warnings = [];
+for (const level of ['warn', 'error']) {
+  const original = console[level];
+  console[level] = (...args) => { warnings.push(String(args[0])); original(...args); };
+}
 
 const failures = [];
 for (const { name, sourcePath } of manifest.components) {
@@ -31,4 +40,9 @@ if (failures.length) {
   for (const line of failures) console.error(line);
   process.exit(1);
 }
-console.log(`PASS smoke regressions: ${manifest.components.length} components render from source`);
+if (warnings.length) {
+  console.error(`서버 렌더 경고 ${warnings.length}건. 경고 없이 끝나야 합니다.`);
+  for (const line of [...new Set(warnings)]) console.error(`  ${line}`);
+  process.exit(1);
+}
+console.log(`PASS smoke regressions: ${manifest.components.length} components render from source, 서버 렌더 무경고`);

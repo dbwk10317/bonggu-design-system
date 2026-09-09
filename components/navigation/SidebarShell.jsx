@@ -48,7 +48,7 @@ export function SidebarShell({ brand, nav, navLabel = "주 메뉴", footer, topb
 export function SidebarNavItem({ icon, label, href, target, active = false, badge, onClick }) {
   const close = useContext(CloseCtx);
   const cls = cx("bds-shell__item", active && "bds-shell__item--on");
-  const inner = <>{icon && <Icon name={icon} />}<span className="bds-ellipsis" style={{ flex: 1 }}>{label}</span>{badge != null && <span className="bds-shell__item__badge">{badge}</span>}{target === "_blank" && <Icon name="arrow-square-out" size={12} label="새 창에서 열림" />}</>;
+  const inner = <>{icon && <Icon name={icon} />}<span className="bds-ellipsis" style={{ flex: 1 }}>{label}</span>{badge != null && <><span className="bds-shell__item__badge" aria-hidden="true">{badge}</span><span className="bds-sr">{badge}건</span></>}{target === "_blank" && <Icon name="arrow-square-out" size={12} label="새 창에서 열림" />}</>;
   const handle = () => { onClick?.(); if (target !== "_blank") close?.(); };
   return href ? <a className={cls} href={href} target={target} rel={target === "_blank" ? "noopener noreferrer" : undefined} aria-current={active ? "page" : undefined} onClick={handle}>{inner}</a>
     : <button type="button" className={cls} aria-current={active ? "page" : undefined} onClick={handle}>{inner}</button>;

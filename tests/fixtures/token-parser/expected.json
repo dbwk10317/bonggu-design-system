@@ -1,0 +1,16 @@
+{
+  "blocks": [
+    { "name": "--demo-ink", "value": "#111", "scope": ":root" },
+    { "name": "--demo-bg", "value": "#fff", "scope": ":root" },
+    { "name": "--demo-gap", "value": "8px", "scope": ":root" },
+    { "name": "--demo-ink", "value": "#eee", "scope": ":root.dark" },
+    { "name": "--demo-gap", "value": "6px", "scope": "@media (width < 768px) :root" },
+    { "name": "--demo-gap", "value": "12px", "scope": "@media (pointer:coarse) :root" }
+  ],
+  "flatNames": ["--demo-ink", "--demo-bg", "--demo-gap", "--demo-ignored"],
+  "kinds": {
+    "--demo-ink": "color",
+    "--demo-bg": "color",
+    "--demo-gap": "spacing"
+  }
+}

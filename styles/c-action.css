@@ -1,9 +1,10 @@
 /* action: Button, IconButton, Icon */
-.bds-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:var(--h-ctl);padding:0 14px;border:1px solid transparent;border-radius:var(--radius-ctl);font-size:var(--fs-label);font-weight:var(--fw-medium);line-height:1;white-space:nowrap;user-select:none;transition:background var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out);position:relative}
+.bds-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:var(--h-ctl);flex:none;padding:0 14px;border:1px solid transparent;border-radius:var(--radius-ctl);font-size:var(--fs-label);font-weight:var(--fw-medium);line-height:1;white-space:nowrap;user-select:none;transition:background var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out);position:relative}
 .bds-btn:disabled{cursor:not-allowed;opacity:.5}
-.bds-btn--sm{height:var(--h-ctl-sm);padding:0 10px;font-size:var(--fs-caption)}
-.bds-btn--lg{height:var(--h-ctl-lg);padding:0 18px;font-size:var(--fs-body)}
-.bds-btn--flex{width:100%}
+.bds-btn--sm{min-height:var(--h-ctl-sm);padding:0 10px;font-size:var(--fs-caption)}
+.bds-btn--lg{min-height:var(--h-ctl-lg);padding:0 18px;font-size:var(--fs-body)}
+/* fit="flex" 버튼만 부모를 채우려고 늘어난다. 그 밖의 버튼은 위에서 flex:none으로 줄어들지 않는다 */
+.bds-btn--flex{width:100%;flex:1 1 auto}
 .bds-btn--primary{background:var(--signal);color:var(--signal-fg)}
 .bds-btn--primary:hover:not(:disabled){background:var(--signal-hover)}
 .bds-btn--primary:active:not(:disabled){background:var(--signal-active)}
@@ -16,15 +17,23 @@
 .bds-btn--danger-fill{background:var(--crit);border-color:var(--crit);color:var(--ink-inverse)}
 .bds-btn__spin{width:14px;height:14px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:bds-spin .7s linear infinite}
 .bds-btn .ph-bold{font-size:1.15em}
-.bds-iconbtn{display:inline-grid;place-items:center;width:var(--h-ctl);height:var(--h-ctl);padding:0;border:1px solid var(--line);border-radius:var(--radius-ctl);background:var(--panel);color:var(--ink-2);position:relative;transition:background var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out)}
+.bds-iconbtn{display:inline-grid;place-items:center;min-width:var(--h-ctl);min-height:var(--h-ctl);flex:none;padding:0;border:1px solid var(--line);border-radius:var(--radius-ctl);background:var(--panel);color:var(--ink-2);position:relative;transition:background var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out)}
 .bds-iconbtn:hover:not(:disabled){background:var(--panel-2);border-color:var(--line-strong);color:var(--ink)}
 .bds-iconbtn:disabled{opacity:.5;cursor:not-allowed}
-.bds-iconbtn--sm{width:var(--h-ctl-sm);height:var(--h-ctl-sm)}
-.bds-iconbtn--lg{width:var(--h-ctl-lg);height:var(--h-ctl-lg)}
+.bds-iconbtn--sm{min-width:var(--h-ctl-sm);min-height:var(--h-ctl-sm)}
+.bds-iconbtn--lg{min-width:var(--h-ctl-lg);min-height:var(--h-ctl-lg)}
 .bds-iconbtn--ghost{border-color:transparent;background:transparent}
-.bds-iconbtn--danger{color:var(--crit)}
-.bds-iconbtn--danger:hover:not(:disabled){background:var(--crit-tint);border-color:transparent;color:var(--crit)}
-.bds-iconbtn[aria-expanded="true"]{background:var(--signal-tint);border-color:transparent;color:var(--signal)}
+.bds-iconbtn--danger{color:var(--crit-ink)}
+.bds-iconbtn--danger:hover:not(:disabled){background:var(--crit-tint);border-color:transparent;color:var(--crit-ink)}
+.bds-iconbtn[aria-expanded="true"]{background:var(--signal-tint);border-color:transparent;color:var(--signal-ink)}
 .bds-iconbtn__badge{position:absolute;top:-5px;right:-5px;min-width:16px;height:16px;padding:0 4px;border-radius:var(--radius-pill);background:var(--crit);color:var(--ink-inverse);font:var(--fw-bold) 10.5px/16px var(--font-data);text-align:center;box-shadow:0 0 0 2px var(--panel)}
 .bds-icon{display:inline-block;line-height:1;font-size:var(--icon-size,16px);width:1em;height:1em;flex:none}
 .bds-icon::before{display:block}
+
+/* 터치 하한을 소유하는 유일한 규칙. 컨트롤 크기 토큰으로 이미 44 이상이 되는 버튼·입력은 여기 없고,
+   좁은 자리에 들어가려고 그보다 작게 그리는 조작 요소만 모은다. 새 조작 요소는 이 목록에 넣는다. */
+@media (pointer:coarse){
+  .bds-table__exp,.bds-table__clear,.bds-table__sort,.bds-copy__btn,.bds-stepper-ctl__btn,
+  .bds-color__swatch,.bds-color__chip,.bds-combo__x,.bds-check,
+  .bds-crumb__more,.bds-tag__x,.bds-cal__d{min-width:var(--h-touch);min-height:var(--h-touch);flex:none}
+}

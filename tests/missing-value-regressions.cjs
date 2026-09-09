@@ -87,4 +87,36 @@ for (const dead of ['bds-barlist__v--na', 'bds-kv__v--na', 'td.na{']) {
   assert(!files.some((p) => fs.readFileSync(p, 'utf8').includes(dead)) && !css.includes(dead), `죽은 클래스 ${dead} 제거`);
 }
 
-console.log('PASS: missing-value contract, DataTable null cells, single marker string and class');
+// 6. 판정이 계산에도 적용된다. 재현 조건: NaN 하나가 축 범위를 통해 차트 전체 좌표를 NaN으로 만들던 것.
+//    fit="fixed"로 폭을 주면 서버 렌더에서도 기하가 그려지므로 SVG 속성을 그대로 검사할 수 있다.
+const { Chart } = sourceModule('components/data/Chart.jsx');
+const { Sparkline } = sourceModule('components/data/Sparkline.jsx');
+const fixed = { fit: 'fixed', width: 400, height: 240, 'aria-label': '검사' };
+const labels7 = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
+const dirty = [1, NaN, 2, undefined, 3, Infinity, 4];
+const dirtyCharts = {
+  line: { kind: 'line', labels: labels7, series: [{ label: '정상', values: [10, 20, 30, 40, 50, 60, 70] }, { label: '오염', values: dirty }] },
+  area: { kind: 'area', labels: labels7, series: [{ label: '오염', values: dirty }] },
+  bar: { kind: 'bar', labels: labels7, series: [{ label: '오염', values: dirty }] },
+  barStacked: { kind: 'bar', stacked: true, labels: labels7, series: [{ label: 'a', values: dirty }, { label: 'b', values: dirty }] },
+  pie: { kind: 'pie', segments: [{ label: '수집실패', value: NaN }, { label: '정상', value: 5 }] },
+  radial: { kind: 'radial', value: NaN, label: 'CPU' },
+  radar: { kind: 'radar', axes: ['a', 'b', 'c', 'd'], series: [{ label: '오염', values: [1, NaN, 2, Infinity] }] },
+  histogram: { kind: 'histogram', samples: dirty },
+  threshold: { kind: 'line', labels: ['a', 'b'], series: [{ label: 's', values: [1, 2] }], thresholds: [{ value: NaN, label: '임계' }] },
+};
+for (const [name, props] of Object.entries(dirtyCharts)) {
+  const html = render(Chart, { ...fixed, ...props });
+  assert(!/NaN|Infinity/.test(html), `${name}: 결측이 SVG 좌표로 새지 않는다`);
+}
+assert(!/NaN|Infinity/.test(render(Sparkline, { values: dirty })), 'Sparkline: 결측이 좌표로 새지 않는다');
+// 오염된 계열이 있어도 축 눈금과 정상 계열의 좌표는 살아 있어야 한다.
+const mixed = render(Chart, { ...fixed, ...dirtyCharts.line });
+assert([...mixed.matchAll(/class="bds-chart__tick"/g)].length > 3, '결측 하나가 축 눈금을 지우지 않는다');
+assert(/class="bds-chart__line" d="M[\d.]+ [\d.]+/.test(mixed), '결측이 섞인 차트에서도 정상 계열은 그려진다');
+// 결측을 0으로 꾸미지 않는다.
+assert(render(Chart, { ...fixed, kind: 'pie', segments: [{ label: 'x', value: NaN }, { label: 'y', value: 5 }] }).includes(MISSING_TEXT), 'pie 결측 세그먼트는 0이 아니라 결측');
+// 0은 계속 값이다.
+assert(render(Chart, { ...fixed, kind: 'bar', labels: ['a', 'b'], series: [{ label: 's', values: [0, 5] }] }).includes('bds-chart__bar'), '0은 값이므로 막대를 그린다');
+
+console.log('PASS: missing-value contract, DataTable null cells, single marker string and class, chart geometry boundary');

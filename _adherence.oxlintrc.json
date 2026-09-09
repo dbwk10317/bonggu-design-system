@@ -97,6 +97,10 @@
         "message": "<Chart> fit must be one of 'flex' | 'fixed'."
       },
       {
+        "selector": "JSXOpeningElement[name.name='Checkbox'] > JSXAttribute > JSXIdentifier[name=/^(?:type)$/]",
+        "message": "<Checkbox> removes that prop from its base type. Not accepted: type."
+      },
+      {
         "selector": "JSXOpeningElement[name.name='CodeEditor'] > JSXAttribute[name.name='language'] > Literal[value!=/^(?:json|yaml|text)$/]",
         "message": "<CodeEditor> language must be one of 'json' | 'yaml' | 'text'."
       },
@@ -133,8 +137,16 @@
         "message": "<ConfirmDialog> size must be one of 'sm' | 'md'."
       },
       {
+        "selector": "JSXOpeningElement[name.name='CopyField'] > JSXAttribute > JSXIdentifier[name=/^(?:children)$/]",
+        "message": "<CopyField> removes that prop from its base type. Not accepted: children."
+      },
+      {
         "selector": "JSXOpeningElement[name.name='CopyField'] > JSXAttribute[name.name='fit'] > Literal[value!=/^(?:flex|fixed)$/]",
         "message": "<CopyField> fit must be one of 'flex' | 'fixed'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DataTable'] > JSXAttribute > JSXIdentifier[name=/^(?:children)$/]",
+        "message": "<DataTable> removes that prop from its base type. Not accepted: children."
       },
       {
         "selector": "JSXOpeningElement[name.name='DataTable'] > JSXAttribute[name.name='fit'] > Literal[value!=/^(?:flex|fixed)$/]",
@@ -159,6 +171,10 @@
       {
         "selector": "JSXOpeningElement[name.name='DateRangePicker'] > JSXAttribute[name.name='fit'] > Literal[value!=/^(?:flex|fixed|auto)$/]",
         "message": "<DateRangePicker> fit must be one of 'flex' | 'fixed' | 'auto'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DiffView'] > JSXAttribute > JSXIdentifier[name=/^(?:children)$/]",
+        "message": "<DiffView> removes that prop from its base type. Not accepted: children."
       },
       {
         "selector": "JSXOpeningElement[name.name='DiffView'] > JSXAttribute[name.name='fit'] > Literal[value!=/^(?:flex|fixed)$/]",
@@ -209,6 +225,10 @@
         "message": "<Gauge> fit must be one of 'flex' | 'fixed' | 'auto'."
       },
       {
+        "selector": "JSXOpeningElement[name.name='Heatmap'] > JSXAttribute > JSXIdentifier[name=/^(?:children)$/]",
+        "message": "<Heatmap> removes that prop from its base type. Not accepted: children."
+      },
+      {
         "selector": "JSXOpeningElement[name.name='Heatmap'] > JSXAttribute[name.name='fit'] > Literal[value!=/^(?:flex|fixed)$/]",
         "message": "<Heatmap> fit must be one of 'flex' | 'fixed'."
       },
@@ -243,6 +263,10 @@
       {
         "selector": "JSXOpeningElement[name.name='LogViewer'] > JSXAttribute[name.name='fit'] > Literal[value!=/^(?:flex|fixed)$/]",
         "message": "<LogViewer> fit must be one of 'flex' | 'fixed'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='MascotMark'] > JSXAttribute > JSXIdentifier[name=/^(?:children)$/]",
+        "message": "<MascotMark> removes that prop from its base type. Not accepted: children."
       },
       {
         "selector": "JSXOpeningElement[name.name='Modal'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:sm|md|lg|xl)$/]",
@@ -289,6 +313,10 @@
         "message": "<Panel> fit must be one of 'flex' | 'fixed' | 'auto'."
       },
       {
+        "selector": "JSXOpeningElement[name.name='PasswordField'] > JSXAttribute > JSXIdentifier[name=/^(?:type)$/]",
+        "message": "<PasswordField> removes that prop from its base type. Not accepted: type."
+      },
+      {
         "selector": "JSXOpeningElement[name.name='PasswordField'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:sm|md)$/]",
         "message": "<PasswordField> size must be one of 'sm' | 'md'."
       },
@@ -303,6 +331,10 @@
       {
         "selector": "JSXOpeningElement[name.name='Popover'] > JSXAttribute[name.name='side'] > Literal[value!=/^(?:bottom|bottom-end|top|top-end)$/]",
         "message": "<Popover> side must be one of 'bottom' | 'bottom-end' | 'top' | 'top-end'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ProgressBar'] > JSXAttribute > JSXIdentifier[name=/^(?:children)$/]",
+        "message": "<ProgressBar> removes that prop from its base type. Not accepted: children."
       },
       {
         "selector": "JSXOpeningElement[name.name='ProgressBar'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:accent|ok|warn|crit)$/]",
@@ -385,6 +417,10 @@
         "message": "<StatusPill> size must be one of 'sm' | 'md' | 'lg'."
       },
       {
+        "selector": "JSXOpeningElement[name.name='Stepper'] > JSXAttribute > JSXIdentifier[name=/^(?:children)$/]",
+        "message": "<Stepper> removes that prop from its base type. Not accepted: children."
+      },
+      {
         "selector": "JSXOpeningElement[name.name='Stepper'] > JSXAttribute[name.name='orientation'] > Literal[value!=/^(?:horizontal|vertical)$/]",
         "message": "<Stepper> orientation must be one of 'horizontal' | 'vertical'."
       },
@@ -395,6 +431,10 @@
       {
         "selector": "JSXOpeningElement[name.name='Stepper'] > JSXAttribute[name.name='fit'] > Literal[value!=/^(?:flex|fixed)$/]",
         "message": "<Stepper> fit must be one of 'flex' | 'fixed'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Switch'] > JSXAttribute > JSXIdentifier[name=/^(?:type)$/]",
+        "message": "<Switch> removes that prop from its base type. Not accepted: type."
       },
       {
         "selector": "JSXOpeningElement[name.name='TextArea'] > JSXAttribute[name.name='fit'] > Literal[value!=/^(?:flex|fixed|auto)$/]",
@@ -419,6 +459,10 @@
       {
         "selector": "JSXOpeningElement[name.name='TimePicker'] > JSXAttribute[name.name='fit'] > Literal[value!=/^(?:flex|fixed|auto)$/]",
         "message": "<TimePicker> fit must be one of 'flex' | 'fixed' | 'auto'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Timeline'] > JSXAttribute > JSXIdentifier[name=/^(?:children)$/]",
+        "message": "<Timeline> removes that prop from its base type. Not accepted: children."
       },
       {
         "selector": "JSXOpeningElement[name.name='Timeline'] > JSXAttribute[name.name='fit'] > Literal[value!=/^(?:flex|fixed)$/]",
@@ -785,7 +829,6 @@
       "--dur-fast",
       "--dur-gauge",
       "--dur-slow",
-      "--dur-theme",
       "--ease-in-out",
       "--ease-out",
       "--elev-1",
@@ -800,13 +843,10 @@
       "--fs-heading",
       "--fs-label",
       "--fs-metric",
-      "--fs-metric-lg",
-      "--fs-metric-sm",
       "--fs-micro",
       "--fs-subheading",
       "--fs-title",
       "--fw-bold",
-      "--fw-light",
       "--fw-medium",
       "--fw-regular",
       "--grid-gap",
@@ -826,13 +866,11 @@
       "--inline-gap",
       "--kv-gap",
       "--lh-body",
-      "--lh-relaxed",
       "--lh-snug",
       "--lh-tight",
       "--line",
       "--line-input",
       "--line-strong",
-      "--line-w",
       "--ls-caps",
       "--ls-data",
       "--ls-ui",
@@ -894,9 +932,9 @@
       "--signal-active",
       "--signal-fg",
       "--signal-hover",
+      "--signal-ink",
       "--signal-tint",
       "--signal-tint-line",
-      "--sp-0",
       "--sp-1",
       "--sp-10",
       "--sp-2",
@@ -944,7 +982,6 @@
       "--dur-fast": "other",
       "--dur-gauge": "other",
       "--dur-slow": "other",
-      "--dur-theme": "other",
       "--ease-in-out": "other",
       "--ease-out": "other",
       "--elev-1": "shadow",
@@ -959,13 +996,10 @@
       "--fs-heading": "font",
       "--fs-label": "font",
       "--fs-metric": "font",
-      "--fs-metric-lg": "font",
-      "--fs-metric-sm": "font",
       "--fs-micro": "font",
       "--fs-subheading": "font",
       "--fs-title": "font",
       "--fw-bold": "font",
-      "--fw-light": "font",
       "--fw-medium": "font",
       "--fw-regular": "font",
       "--grid-gap": "spacing",
@@ -985,13 +1019,11 @@
       "--inline-gap": "spacing",
       "--kv-gap": "spacing",
       "--lh-body": "font",
-      "--lh-relaxed": "font",
       "--lh-snug": "font",
       "--lh-tight": "font",
       "--line": "color",
       "--line-input": "color",
       "--line-strong": "color",
-      "--line-w": "spacing",
       "--ls-caps": "font",
       "--ls-data": "font",
       "--ls-ui": "font",
@@ -1053,9 +1085,9 @@
       "--signal-active": "color",
       "--signal-fg": "color",
       "--signal-hover": "color",
+      "--signal-ink": "color",
       "--signal-tint": "color",
       "--signal-tint-line": "color",
-      "--sp-0": "spacing",
       "--sp-1": "spacing",
       "--sp-10": "spacing",
       "--sp-2": "spacing",

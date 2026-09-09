@@ -6,6 +6,7 @@ import { readFileSync, writeFileSync, readdirSync, statSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { createRequire } from "node:module";
 import { join, relative, dirname, resolve } from "node:path";
+import { parseTokenBlocks, parseTokenKinds, stripComments } from "./token-parser.mjs";
 
 const ROOT = dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1"));
 const NS = "Ds_d3ea90";
@@ -89,17 +90,8 @@ const x = cfg["x-omelette"];
 const tokenValues = {}, declaredKinds = {};
 for (const f of readdirSync(join(ROOT, "tokens")).sort()) {
   const raw = readFileSync(join(ROOT, "tokens", f), "utf8");
-  for (const m of raw.matchAll(/\/\*\s*@token-kinds([\s\S]*?)\*\//g)) {
-    for (const line of m[1].split(/\r?\n/)) {
-      const row = line.match(/^\s*(\w+)\s*:\s*(.*)$/);
-      if (!row) continue;
-      for (const n of row[2].match(/--[\w-]+/g) || []) {
-        if (Object.hasOwn(declaredKinds, n)) throw new Error(`토큰 종류 중복: ${n} (${declaredKinds[n]}와 ${row[1]})`);
-        declaredKinds[n] = row[1];
-      }
-    }
-  }
-  const css = raw.replace(/\/\*[\s\S]*?\*\//g, "");
+  parseTokenKinds(raw, declaredKinds);
+  const css = stripComments(raw);
   for (const m of css.matchAll(/[{;\s](--[\w-]+)\s*:([^;}]*)/g)) if (!(m[1] in tokenValues)) tokenValues[m[1]] = m[2].trim();
 }
 const tokens = Object.keys(tokenValues).sort();
@@ -113,43 +105,22 @@ if (missingKinds.length || staleKinds.length) {
 }
 
 // 매니페스트의 토큰 메타데이터도 생성물의 이전 목록을 재사용하지 않고 CSS에서 다시 만든다.
-// 스키마의 scope 문자열은 선택자와 중첩된 @media 조건을 함께 보존한다. 여러 선택자가 한
-// 블록을 공유하면 첫 선택자를 대표값으로 사용하되, 블록 안의 모든 선언은 한 번만 기록한다.
-const manifestTokens = [], tokenBlocks = (text, atRules = []) => {
-  let cursor = 0;
-  while (cursor < text.length) {
-    const open = text.indexOf("{", cursor);
-    if (open < 0) break;
-    const header = text.slice(cursor, open).trim();
-    let i = open + 1, depth = 1, quote = "";
-    while (i < text.length && depth) {
-      const ch = text[i++];
-      if (quote) { if (ch === quote) quote = ""; continue; }
-      if (ch === "\"" || ch === "'") { quote = ch; continue; }
-      if (ch === "{") depth++; else if (ch === "}") depth--;
-    }
-    const body = text.slice(open + 1, i - 1);
-    if (header.startsWith("@")) tokenBlocks(body, [...atRules, header]);
-    else if (header.includes(":root")) {
-      const selector = header.split(",")[0].trim();
-      const scope = [...atRules, selector].join(" ").trim();
-      for (const m of body.matchAll(/(--[\w-]+)\s*:([^;{}]*)/g)) {
-        const name = m[1];
-        if (!kinds[name]) throw new Error(`tokenKinds 원천에 없는 토큰: ${name}`);
-        const entry = { name, value: m[2].trim(), kind: kinds[name], definedIn: "" };
-        if (scope !== ":root") entry.scope = scope;
-        manifestTokens.push(entry);
-      }
-    }
-    cursor = i;
-  }
-};
+// 파서는 token-parser.mjs 하나뿐이고 검사도 같은 파서를 독립 fixture로 시험한다.
+const manifestTokens = [];
 for (const f of readdirSync(join(ROOT, "tokens")).sort()) {
-  const raw = readFileSync(join(ROOT, "tokens", f), "utf8").replace(/\/\*[\s\S]*?\*\//g, "");
-  const before = manifestTokens.length;
-  tokenBlocks(raw);
-  for (const entry of manifestTokens.slice(before)) entry.definedIn = `tokens/${f}`;
+  const raw = stripComments(readFileSync(join(ROOT, "tokens", f), "utf8"));
+  for (const { name, value, scope } of parseTokenBlocks(raw)) {
+    if (!kinds[name]) throw new Error(`tokenKinds 원천에 없는 토큰: ${name}`);
+    const entry = { name, value, kind: kinds[name], definedIn: `tokens/${f}` };
+    if (scope !== ":root") entry.scope = scope;
+    manifestTokens.push(entry);
+  }
 }
+// 블록 파서와 평면 스캔은 서로 독립적인 두 경로다. 결과가 갈라지면 :root 조건이나 블록 스캔이 선언을
+// 놓치고 있다는 뜻이므로 조용히 넘기지 않는다.
+const blockNames = new Set(manifestTokens.map((t) => t.name));
+const flatOnly = tokens.filter((n) => !blockNames.has(n));
+if (flatOnly.length) throw new Error(`블록 파서가 놓친 토큰: ${flatOnly.join(", ")}`);
 const manifestKeys = new Set();
 for (const entry of manifestTokens) {
   const key = `${entry.scope || ":root"}\u0000${entry.name}`;
@@ -209,9 +180,10 @@ const splitTop = (s, delimiter) => {
   if (cur.trim()) out.push(cur.trim());
   return out;
 };
-const emptyShape = () => ({ names: new Set(), literals: new Map(), open: false });
+const emptyShape = () => ({ names: new Set(), literals: new Map(), banned: new Set(), open: false });
 const mergeShape = (to, from) => {
   for (const n of from.names) to.names.add(n);
+  for (const n of from.banned) to.banned.add(n);
   for (const [n, values] of from.literals) {
     if (!to.literals.has(n)) to.literals.set(n, new Set());
     for (const v of values) to.literals.get(n).add(v);
@@ -229,36 +201,49 @@ const shapeFromMembers = (members) => {
 };
 const reactAttrs = /(?:HTMLAttributes|SVGProps|ButtonHTMLAttributes|InputHTMLAttributes|SelectHTMLAttributes|TextareaHTMLAttributes|AnchorHTMLAttributes)\s*</;
 const resolving = new Set();
-const resolveType = (raw) => {
+/* Omit을 reactAttrs보다 먼저 본다. 순서가 반대면 Omit<HTMLAttributes<..>, "x">가 reactAttrs에서 먼저 잡혀
+   제외 목록이 사라진다. 해석하지 못한 타입은 조용히 빈 규칙이 되지 않고 빌드를 세운다. */
+const resolveType = (raw, owner) => {
   const type = raw.trim();
+  if (!type) return emptyShape();
+  const omit = type.match(/^Omit\s*<([\s\S]+)>$/);
+  if (omit) {
+    const args = splitTop(omit[1], ","), out = resolveType(args[0] || "", owner);
+    for (const n of (args[1] || "").match(/\b\w+\b/g) || []) { out.names.delete(n); out.literals.delete(n); out.banned.add(n); }
+    return out;
+  }
   if (reactAttrs.test(type)) return Object.assign(emptyShape(), { open: true });
   if (type.startsWith("{") && type.endsWith("}")) return shapeFromMembers(membersOf(type.slice(1, -1)));
   const union = splitTop(type, "|");
-  if (union.length > 1) return union.reduce((out, part) => mergeShape(out, resolveType(part)), emptyShape());
-  const omit = type.match(/^Omit\s*<([\s\S]+)>$/);
-  if (omit) {
-    const args = splitTop(omit[1], ","), out = resolveType(args[0] || "");
-    for (const n of (args[1] || "").match(/\b\w+\b/g) || []) { out.names.delete(n); out.literals.delete(n); }
-    return out;
+  if (union.length > 1) return union.reduce((out, part) => mergeShape(out, resolveType(part, owner)), emptyShape());
+  const generic = type.match(/^([A-Za-z_]\w*)\s*<[\s\S]*>$/);
+  if (generic && (aliases[generic[1]] || ifaces[generic[1]])) return resolveType(generic[1], owner);
+  if (aliases[type]) {
+    if (resolving.has(type)) return emptyShape();
+    resolving.add(type); const out = resolveType(aliases[type], owner); resolving.delete(type); return out;
   }
-  const generic = type.match(/^([A-Za-z_]\w*)\s*<[^>]*>$/);
-  if (generic && (aliases[generic[1]] || ifaces[generic[1]])) return resolveType(generic[1]);
-  if (aliases[type] && !resolving.has(type)) {
-    resolving.add(type); const out = resolveType(aliases[type]); resolving.delete(type); return out;
-  }
-  if (ifaces[type] && !resolving.has(type)) {
+  if (ifaces[type]) {
+    if (resolving.has(type)) return emptyShape();
     resolving.add(type);
     const out = shapeFromMembers(membersOf(ifaces[type].body));
-    for (const parent of splitTop(ifaces[type].extends, ",")) mergeShape(out, resolveType(parent));
+    for (const parent of splitTop(ifaces[type].extends, ",")) mergeShape(out, resolveType(parent, owner));
     resolving.delete(type); return out;
   }
-  return emptyShape();
+  throw new Error(`prop 타입 해석 실패: <${owner}>의 "${type}". resolveType이 아는 문법으로 바꾸거나, 규칙 대상에서 빼야 하면 PROP_RULE_EXEMPT에 사유와 함께 넣으세요.`);
 };
+/* 규칙 대상에서 의도적으로 빼는 컴포넌트. 사유 없이 비는 일이 없도록 값에 사유를 적는다. */
+const PROP_RULE_EXEMPT = {};
 const propRules = [];
 for (const c of comps) {
-  const fn = functions.find((f) => f.name === c), shape = resolveType(fn?.type || `${c}Props`);
+  const fn = functions.find((f) => f.name === c), shape = resolveType(fn?.type || `${c}Props`, c);
   const names = [...shape.names].sort();
-  if (!shape.open) propRules.push({ selector: `JSXOpeningElement[name.name='${c}'] > JSXAttribute > JSXIdentifier[name!=/^(?:${[...names, "key", "ref", "className", "style", "children"].join("|")})$/]`, message: `<${c}> doesn't accept that prop. Declared props: ${names.join(", ")}.` });
+  if (!shape.open && !names.length && !(c in PROP_RULE_EXEMPT)) {
+    throw new Error(`<${c}>의 공개 prop을 하나도 찾지 못했습니다. .d.ts 선언을 확인하거나 PROP_RULE_EXEMPT에 사유와 함께 넣으세요.`);
+  }
+  if (!shape.open && names.length) propRules.push({ selector: `JSXOpeningElement[name.name='${c}'] > JSXAttribute > JSXIdentifier[name!=/^(?:${[...names, "key", "ref", "className", "style", "children"].join("|")})$/]`, message: `<${c}> doesn't accept that prop. Declared props: ${names.join(", ")}.` });
+  // .d.ts가 Omit으로 뺀 prop은 열린 계약에서도 금지로 남긴다. 빼겠다고 선언만 하고 검사하지 않으면 선언이 거짓말이 된다.
+  const banned = [...shape.banned].filter((n) => !shape.names.has(n)).sort();
+  if (banned.length) propRules.push({ selector: `JSXOpeningElement[name.name='${c}'] > JSXAttribute > JSXIdentifier[name=/^(?:${banned.join("|")})$/]`, message: `<${c}> removes that prop from its base type. Not accepted: ${banned.join(", ")}.` });
   for (const [name, values] of shape.literals) {
     const vals = [...values];
     propRules.push({ selector: `JSXOpeningElement[name.name='${c}'] > JSXAttribute[name.name='${name}'] > Literal[value!=/^(?:${vals.join("|")})$/]`, message: `<${c}> ${name} must be one of ${vals.map((v) => `'${v}'`).join(" | ")}.` });

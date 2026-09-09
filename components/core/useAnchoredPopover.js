@@ -1,11 +1,14 @@
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
+
+// 서버에는 레이아웃이 없어 측정할 것이 없다. 브라우저에서만 그리기 전에 동기로 배치한다.
+const useIsoLayoutEffect = typeof document === "undefined" ? useEffect : useLayoutEffect;
 
 /** 비모달 메뉴의 배치 계약: DOM 소속은 유지하고 native popover로 clipping 밖 top layer에 표시한다.
  * fixed 좌표는 트리거·visual viewport에서 계산하고 스크롤/리사이즈 시 다시 맞춘다. */
 export function useAnchoredPopover({ open, anchorRef, panelRef, align = "end", onDismiss }) {
   const dismissRef = useRef(onDismiss);
   dismissRef.current = onDismiss;
-  useLayoutEffect(() => {
+  useIsoLayoutEffect(() => {
     const panel = panelRef.current, anchor = anchorRef.current;
     if (!open || !panel || !anchor) return;
     panel.showPopover();

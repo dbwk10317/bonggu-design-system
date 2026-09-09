@@ -1,6 +1,6 @@
 import React, { useEffect, useId, useRef, useState } from "react";
 import { cx, frameStyle } from "../core/frame.js";
-import { MISSING_CLASS, MISSING_TEXT, isMissing } from "../core/missing.js";
+import { MISSING_CLASS, MISSING_TEXT, isMissing, numeric } from "../core/missing.js";
 import { r1, toneVar, toneInk, fmtKo, niceTicks, stackBars, smoothPath, runsOf, pathLength, estWidth, seriesDash, histBins } from "./chart-math.js";
 import { Legend } from "./Legend.jsx";
 
@@ -30,8 +30,22 @@ function Tip({ x, w, title, rows }) {
     </div>
   );
 }
-/* 표시용 결측 판정은 core/missing.js가 담당한다. 좌표·누적 계산은 종전대로 값이 null인지로 판단한다(선 끊기·면 채움 생략). */
 const cell = (fmt, v) => (isMissing(v) ? MISSING_TEXT : fmt(v));
+
+/* 데이터가 기하 계산에 닿기 전 단 한 곳의 경계. 여기서 결측은 모두 null이 되므로 아래 계산은 값이 null인지만 본다.
+   이 경계가 없으면 NaN 하나가 축 범위를 통해 차트 전체의 좌표를 무효로 만든다. */
+function normalize(props) {
+  const series = props.series?.map((s) => ({ ...s, values: (s.values ?? []).map(numeric) }));
+  const segments = props.segments?.map((sg) => ({ ...sg, value: numeric(sg.value) }));
+  const out = { ...props };
+  if (series) out.series = series;
+  if (segments) out.segments = segments;
+  if ("value" in props) out.value = numeric(props.value);
+  if (props.samples) out.samples = props.samples.map(numeric);
+  if (props.thresholds) out.thresholds = props.thresholds.filter((t) => numeric(t.value) != null);
+  for (const key of ["max", "yMin", "yMax"]) if (props[key] != null) out[key] = numeric(props[key]);
+  return out;
+}
 
 /* ---------- 직교(line·area·bar) ---------- */
 /** hover/setHover는 Chart가 갖는다(마우스·키보드가 같은 인덱스를 움직여 같은 Tip을 띄운다). */
@@ -91,11 +105,12 @@ function Cartesian({ kind, labels, series, fmt, uid, xTicks, w, h, thresholds = 
 
 /* ---------- 도넛 ---------- */
 function Pie({ segments, fmt, caption, w, h, hover, setHover }) {
-  const vals = segments.map((s) => Math.max(0, Number(s.value) || 0)), sum = vals.reduce((a, b) => a + b, 0);
+  // 결측 세그먼트는 null로 남긴다. 0으로 바꾸면 수집 실패가 "0"으로 보인다.
+  const vals = segments.map((s) => (s.value == null ? null : Math.max(0, s.value))), sum = vals.reduce((a, b) => a + (b ?? 0), 0);
   if (!sum || w < 40) return null;
   const R = Math.min(w, h) / 2 - 4, stroke = Math.max(10, R * 0.34), r = R - stroke / 2, C = 2 * Math.PI * r, cx0 = w / 2, cy0 = h / 2;
   let acc = 0;
-  const arcs = vals.map((v, i) => { const a = { i, dash: (v / sum) * C, off: -(acc / sum) * C }; acc += v; return a; }).filter((a) => a.dash > 0);
+  const arcs = vals.map((v, i) => { if (v == null) return null; const a = { i, dash: (v / sum) * C, off: -(acc / sum) * C }; acc += v; return a; }).filter((a) => a && a.dash > 0);
   const act = hover != null ? segments[hover] : null;
   return (
     <>
@@ -104,7 +119,7 @@ function Pie({ segments, fmt, caption, w, h, hover, setHover }) {
         {arcs.map((a) => <circle key={a.i} className="bds-chart__pieseg" cx={cx0} cy={cy0} r={r} fill="none" strokeWidth={hover === a.i ? stroke + 4 : stroke} stroke={toneVar(segments[a.i].tone, a.i)} strokeDasharray={`${Math.max(0, a.dash - 2).toFixed(2)} ${C.toFixed(2)}`} strokeDashoffset={a.off.toFixed(2)} transform={`rotate(-90 ${cx0} ${cy0})`} opacity={hover == null || hover === a.i ? 1 : 0.4} onMouseEnter={() => setHover(a.i)} style={{ transition: "stroke-width var(--dur-fast) var(--ease-out), opacity var(--dur-fast)" }} />)}
       </svg>
       <div className="bds-chart__center" style={{ "--center-size": `${Math.max(14, Math.round(R * 0.42))}px` }}>
-        <b>{act ? fmt(vals[hover]) : fmt(sum)}</b><small>{act ? act.label : caption}</small>
+        <b className={cx(act && isMissing(vals[hover]) && MISSING_CLASS)}>{act ? cell(fmt, vals[hover]) : fmt(sum)}</b><small>{act ? act.label : caption}</small>
       </div>
     </>
   );
@@ -195,7 +210,7 @@ function Histogram({ samples, bins, fmt, w, h, tone, percentiles = [], unit, ani
 /** 시각 차트와 같은 데이터를 표로. 항상 렌더(bds-sr로 숨김)하고 루트가 aria-describedby로 가리킨다. */
 function SrTable({ id, kind, props, fmt }) {
   let head = [], rows = [];
-  if (kind === "pie") { head = ["항목", "값"]; rows = (props.segments ?? []).map((sg) => [sg.label, fmt(Math.max(0, Number(sg.value) || 0))]); }
+  if (kind === "pie") { head = ["항목", "값"]; rows = (props.segments ?? []).map((sg) => [sg.label, cell(fmt, sg.value == null ? null : Math.max(0, sg.value))]); }
   else if (kind === "radial") { head = props.label != null ? ["값", "상태"] : ["값"]; rows = [[isMissing(props.value) ? MISSING_TEXT : fmt(Math.min(1, Math.max(0, props.value)))].concat(props.label != null ? [props.label] : [])]; }
   else if (kind === "histogram") { const b = histBins(props.samples, props.bins); head = ["구간", "표본"]; rows = b ? b.counts.map((c, i) => [`${fmt(b.lo + (i / b.n) * b.span)}~${fmt(b.lo + ((i + 1) / b.n) * b.span)}${props.unit ?? ""}`, `${c}건`]) : []; }
   else { const cols = kind === "radar" ? (props.axes ?? []) : (props.labels ?? []); head = ["계열"].concat(cols); rows = (props.series ?? []).map((s) => [s.label].concat(cols.map((_, i) => cell(fmt, s.values[i])))); }
@@ -218,7 +233,7 @@ const DEFAULT_H = { line: 200, area: 200, bar: 200, pie: 180, radial: 110, radar
 export function Chart(rawProps) {
   const last = useRef(rawProps);
   if (!rawProps.paused) last.current = rawProps;
-  const props = rawProps.paused ? last.current : rawProps;
+  const props = normalize(rawProps.paused ? last.current : rawProps);
   const { kind = "line", fit = "flex", width, height, valueFormatter = fmtKo, emptyText = MISSING_TEXT, showLegend = true, live = false, animate = !live, className, style, "aria-label": ariaLabel } = props;
   const uid = useId().replace(/:/g, "");
   const srId = `${uid}-sr`;
@@ -231,7 +246,7 @@ export function Chart(rawProps) {
   const lineKind = kind === "line" || kind === "area";
   let body = null, hasData = false, legend = [], count = 0;
   if (showLegend) {
-    if (kind === "pie") legend = (props.segments ?? []).map((sg, i) => ({ color: toneVar(sg.tone, i), label: sg.label, value: valueFormatter(Math.max(0, Number(sg.value) || 0)) }));
+    if (kind === "pie") legend = (props.segments ?? []).map((sg, i) => ({ color: toneVar(sg.tone, i), label: sg.label, value: cell(valueFormatter, sg.value == null ? null : Math.max(0, sg.value)) }));
     else if (kind !== "radial" && (props.series ?? []).length > 1) legend = props.series.map((sr, i) => ({ color: toneVar(sr.tone, i), label: sr.label, shape: lineKind ? "line" : "square", dash: lineKind ? seriesDash(sr, i, props.series.length) : undefined }));
   }
   if (kind === "pie") { hasData = (props.segments ?? []).some((s) => s.value > 0); count = (props.segments ?? []).length; body = <Pie segments={props.segments ?? []} fmt={valueFormatter} caption={props.caption} w={w} h={h} hover={hover} setHover={setHover} />; }

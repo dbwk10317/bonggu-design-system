@@ -34,7 +34,7 @@ function ArgbScreen() {
           {devices.map(([id, label, dev]) => {
             const selected = sync || target === id;
             return (
-              <Panel key={id} padding="sm" interactive selected={selected} onClick={() => setTarget(id)} role="button" aria-pressed={selected} aria-label={`${label} 선택`}>
+              <Panel key={id} as="button" padding="sm" interactive selected={selected} onClick={() => setTarget(id)} aria-pressed={selected} aria-label={`${label} 선택`}>
                 <div className="kit-prevhead"><b>{label}</b><span className="bds-mono kit-dim">{dev}</span>{selected && <Tag accent>선택됨</Tag>}<StatusPill tone="ok" size="sm">사용 가능</StatusPill></div>
                 <div className="kit-stage"><LedRing colors={colors} effect={effect} count={id === "gpu" ? 8 : 12} /></div>
                 <div className="kit-dim bds-mono">적용: 점등 · {EFFECTS.find((e) => e.value === effect)?.label} · {colors.join(" ")} · 밝기 {bright}</div>

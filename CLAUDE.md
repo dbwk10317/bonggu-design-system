@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-프로젝트 작업 원칙·동작 계약·검증 규칙은 [AGENTS.md](AGENTS.md)를 따른다. 이 문서에는 Claude Code 실행 환경에만 해당하는 내용만 둔다.
+디자인 규칙은 [readme.md](readme.md) 한 곳에 있고, 기계로 판별하는 검사는 `tests/rule-regressions.cjs`에 있다. 규칙의 출처 선언과 작업 원칙은 [AGENTS.md](AGENTS.md)를 따른다. 이 문서에는 Claude Code 실행 환경에만 해당하는 내용만 둔다.
 
 ## 실행 환경 (Windows)
 

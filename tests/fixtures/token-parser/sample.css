@@ -1,0 +1,20 @@
+/* @token-kinds
+   color: --demo-ink, --demo-bg
+   spacing: --demo-gap
+*/
+:root{
+  --demo-ink:#111;
+  --demo-bg:#fff;
+  --demo-gap:8px;
+}
+/* 주석 안의 --demo-ghost는 선언이 아니다 */
+:root.dark,:root[data-theme="dark"]{
+  --demo-ink:#eee;
+}
+@media (width < 768px){
+  :root{--demo-gap:6px}
+}
+@media (pointer:coarse){
+  :root,:root[data-density="compact"]{--demo-gap:12px}
+}
+.not-root{--demo-ignored:1px}

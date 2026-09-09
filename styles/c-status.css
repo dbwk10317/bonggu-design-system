@@ -5,7 +5,7 @@
 .bds-pill__dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex:none}
 .bds-pill--pulse .bds-pill__dot{animation:bds-pulse-tone 1.8s var(--ease-out) infinite}
 .bds-tag{display:inline-flex;align-items:center;gap:4px;height:22px;padding:0 8px;border-radius:var(--radius-ctl);border:1px solid var(--line);background:var(--panel-2);color:var(--ink-2);font-size:var(--fs-caption);font-weight:var(--fw-medium);white-space:nowrap;flex:none}
-.bds-tag--accent{background:var(--signal-tint);border-color:transparent;color:var(--signal)}
+.bds-tag--accent{background:var(--signal-tint);border-color:transparent;color:var(--signal-ink)}
 .bds-tag__x{display:grid;place-items:center;width:16px;height:16px;min-width:24px;min-height:24px;margin:-4px -8px -4px -4px;border:0;border-radius:3px;background:transparent;color:inherit;padding:0}
 .bds-tag__x:hover{background:var(--panel-3)}
 /* 톤별 색. 컴포넌트 스코프 변수 대신 명시 규칙(토큰은 :root에만) */
@@ -14,5 +14,5 @@
 .bds-pill.bds-tone--crit{color:var(--crit-ink);background:var(--crit-tint)}.bds-pill.bds-tone--crit .bds-pill__dot{background:var(--crit)}.bds-pill--outline.bds-tone--crit{border-color:color-mix(in oklch,var(--crit) 45%,transparent)}
 .bds-pill.bds-tone--info{color:var(--info-ink);background:var(--info-tint)}.bds-pill.bds-tone--info .bds-pill__dot{background:var(--info)}.bds-pill--outline.bds-tone--info{border-color:color-mix(in oklch,var(--info) 45%,transparent)}
 .bds-pill.bds-tone--off{color:var(--neutral-ink);background:var(--neutral-tint)}.bds-pill.bds-tone--off .bds-pill__dot{background:var(--neutral)}.bds-pill--outline.bds-tone--off{border-color:color-mix(in oklch,var(--neutral) 45%,transparent)}
-.bds-pill.bds-tone--accent{color:var(--signal);background:var(--signal-tint)}.bds-pill--outline.bds-tone--accent{border-color:color-mix(in oklch,var(--signal) 45%,transparent)}
+.bds-pill.bds-tone--accent{color:var(--signal-ink);background:var(--signal-tint)}.bds-pill--outline.bds-tone--accent{border-color:color-mix(in oklch,var(--signal) 45%,transparent)}
 .bds-pill.bds-pill--outline{background:transparent}

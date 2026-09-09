@@ -1,4 +1,6 @@
-/* 차트 공용 계산. 렌더와 분리해 테스트·재사용 가능하게 둔다. */
+/* 차트 공용 계산. 렌더와 분리해 테스트·재사용 가능하게 둔다.
+   내보내는 함수는 어떤 입력에도 유한한 결과나 null만 낸다. 결측 판정은 core/missing.js의 numeric 하나를 쓴다. */
+import { numeric } from "../core/missing.js";
 export const r1 = (n) => Math.round(n * 10) / 10;
 /* 범주형 8색. tone에 문자열("rx","tx","used","reserved","free")을 주면 의미 고정 쌍을 쓴다. */
 const METER = { ok: 1, warn: 1, crit: 1 };
@@ -22,7 +24,7 @@ export function niceTicks(lo, hi, count = 4) {
 export function stackBars(series, count) {
   const positive = Array(count).fill(0), negative = Array(count).fill(0);
   const bands = series.map((s) => Array.from({ length: count }, (_, i) => {
-    const value = s.values[i];
+    const value = numeric(s.values[i]);
     if (value == null) return null;
     const totals = value < 0 ? negative : positive, start = totals[i];
     totals[i] += value;
@@ -42,10 +44,10 @@ export function smoothPath(pts, tension = 0.18) {
   return d;
 }
 
-/** null 구간에서 끊은 점 배열들. */
+/** 결측 구간에서 끊은 점 배열들. */
 export function runsOf(values, x, y) {
   const runs = []; let run = [];
-  values.forEach((v, i) => { if (v == null) { if (run.length) runs.push(run); run = []; } else run.push([x(i), y(v)]); });
+  values.forEach((raw, i) => { const v = numeric(raw); if (v == null) { if (run.length) runs.push(run); run = []; } else run.push([x(i), y(v)]); });
   if (run.length) runs.push(run);
   return runs;
 }
@@ -61,7 +63,7 @@ export const seriesDash = (s, i, count) => s.dash === false ? undefined : typeof
 
 /** 히스토그램 구간. 표본 2개 미만이면 null. n은 bins 또는 √n(6~30). */
 export function histBins(samples, bins) {
-  const xs = (samples ?? []).filter((v) => v != null && Number.isFinite(v));
+  const xs = (samples ?? []).map(numeric).filter((v) => v != null);
   if (xs.length < 2) return null;
   const lo = Math.min(...xs), hi = Math.max(...xs), span = hi - lo || 1;
   const n = bins ?? Math.max(6, Math.min(30, Math.round(Math.sqrt(xs.length))));

@@ -8,15 +8,37 @@ const { chromium } = deps('playwright');
 const root = path.resolve(__dirname, '..');
 const reactDir = path.dirname(deps.resolve('react/package.json'));
 const reactDomDir = path.dirname(deps.resolve('react-dom/package.json'));
+const babelDir = path.dirname(deps.resolve('@babel/standalone/package.json'));
+const localScripts = {
+  '/test-react.js': path.join(reactDir, 'umd/react.development.js'),
+  '/test-react-dom.js': path.join(reactDomDir, 'umd/react-dom.development.js'),
+  '/test-babel.js': path.join(babelDir, 'babel.min.js'),
+};
+// templates/dashboard/support.js는 dc-runtime 생성물이라 직접 고칠 수 없고, unpkg CDN URL과 SRI 해시를
+// 코드에 박아 둔다. 게이트가 네트워크에 의존하면 안 되므로 응답 본문에서만 그 URL을 이 서버가 서브하는
+// 로컬 경로로 바꾸고, 로컬 파일(개발 빌드/다른 babel 버전)이 SRI 불일치로 막히지 않게 integrity 값을 비운다.
+const CDN_LOCAL = {
+  'https://unpkg.com/react@18.3.1/umd/react.production.min.js': '/test-react.js',
+  'https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js': '/test-react-dom.js',
+  'https://unpkg.com/@babel/standalone@7.29.0/babel.min.js': '/test-babel.js',
+};
+const rewriteSupport = (src) => Object.entries(CDN_LOCAL)
+  .reduce((s, [from, to]) => s.split(from).join(to), src)
+  .replace(/"sha384-[^"]*"/g, '""')
+  // 로컬 @babel/standalone은 8.x라 preset-react 기본값이 automatic runtime이다. 그러면 x-import가
+  // new Function으로 실행하는 코드에 import 문이 섞여 터진다. 템플릿이 고정한 7.29와 같게 classic으로 되돌린다.
+  .replace('presets: ["react", "typescript"]', 'presets: [["react", { runtime: "classic" }], "typescript"]');
 const server = http.createServer((req, res) => {
   const url = new URL(req.url, 'http://localhost').pathname;
+  // 브라우저가 자동으로 요청한다. 404로 두면 콘솔 오류가 남아 실제 오류와 섞인다.
+  if (url === '/favicon.ico') { res.writeHead(204); res.end(); return; }
   const file = url === '/' ? path.join(__dirname, 'fixtures/regressions.html')
-    : url === '/test-react.js' ? path.join(reactDir, 'umd/react.development.js')
-    : url === '/test-react-dom.js' ? path.join(reactDomDir, 'umd/react-dom.development.js') : path.resolve(root, '.' + url);
-  if (!file.startsWith(root + path.sep) && ![path.join(reactDir, 'umd/react.development.js'), path.join(reactDomDir, 'umd/react-dom.development.js')].includes(file)) { res.writeHead(403); res.end(); return; }
+    : localScripts[url] ?? path.resolve(root, '.' + url);
+  if (!file.startsWith(root + path.sep) && !Object.values(localScripts).includes(file)) { res.writeHead(403); res.end(); return; }
   try {
     const type = file.endsWith('.css') ? 'text/css' : file.endsWith('.js') ? 'text/javascript' : file.endsWith('.html') ? 'text/html' : 'application/octet-stream';
-    res.setHeader('Content-Type', type); res.end(fs.readFileSync(file));
+    const body = url === '/templates/dashboard/support.js' ? rewriteSupport(fs.readFileSync(file, 'utf8')) : fs.readFileSync(file);
+    res.setHeader('Content-Type', type); res.end(body);
   } catch { res.writeHead(404); res.end(); }
 });
 async function run() {
@@ -133,8 +155,88 @@ async function run() {
       }
       await context.close();
     }
+    // 실제 대시보드 템플릿(templates/dashboard/Dashboard.dc.html) 게이트.
+    // 커버리지: 라우트 7개 × 1280·390 전수 + 834에서는 대표 3개(monitoring·argb·settings)만.
+    // 834는 1024 미만 드로어 경로를 390과 공유하므로 전수로 돌릴 이득이 적고 실행 시간만 늘어난다.
+    // 폭당 문서 로드는 1회고 라우트 전환은 hash로 한다(App이 hashchange를 구독한다).
+    const TITLES = { monitoring: '모니터링', auth: '인증', argb: '조명', cooler: '쿨러', models: '모델', training: '학습', settings: '설정' };
+    const dashContext = await browser.newContext({ viewport: { width: 1280, height: 900 }, reducedMotion: 'reduce' });
+    const dash = await dashContext.newPage();
+    dash.setDefaultTimeout(20000);
+    const dashErrors = [];
+    dash.on('pageerror', e => dashErrors.push(`pageerror: ${e.message}`));
+    dash.on('console', m => { if (m.type() === 'error') dashErrors.push(`console: ${m.text()}`); });
+    const url = `http://127.0.0.1:${server.address().port}/templates/dashboard/Dashboard.dc.html`;
+    for (const [width, routes] of [[1280, Object.keys(TITLES)], [834, ['monitoring', 'argb', 'settings']], [390, Object.keys(TITLES)]]) {
+      await dash.setViewportSize({ width, height: 900 });
+      await dash.goto(`${url}#${routes[0]}`);
+      for (const route of routes) {
+        await dash.evaluate(r => { window.location.hash = '#' + r; }, route);
+        // 셸 상단바 제목 + 화면의 PageHeader가 함께 보이면 App과 해당 x-import 화면이 실제로 마운트된 것이다.
+        await dash.waitForFunction(t => document.querySelector('.bds-shell__top h1')?.textContent === t
+          && !!document.querySelector('.bds-shell__body .bds-pagehead h2'), TITLES[route]);
+        assert.deepEqual(dashErrors, [], `${route} @${width}`);
+        assert.equal(await dash.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), true, `가로 넘침 ${route} @${width}`);
+      }
+      // 1024 이상은 고정 레일, 미만은 햄버거 → 드로어.
+      const rail = dash.locator('.bds-shell__side'), burger = dash.locator('.bds-shell__burger');
+      assert.equal(await rail.isVisible(), width >= 1024, `레일 표시 @${width}`);
+      assert.equal(await burger.isVisible(), width < 1024, `햄버거 표시 @${width}`);
+      if (width < 1024) {
+        await burger.click(); await rail.waitFor({ state: 'visible' });
+        assert.equal(await dash.locator('.bds-shell__dim').isVisible(), true, `드로어 딤 @${width}`);
+        await dash.keyboard.press('Escape'); await rail.waitFor({ state: 'hidden' });
+      }
+    }
+    await dashContext.close();
+    assert.deepEqual(dashErrors, []);
+
+    // 터치 하한 실측. readme의 최소 조작 영역은 높이와 너비 양쪽이고, 정적 CSS 검사로는
+    // flex가 실제로 줄여 놓은 결과를 볼 수 없다. coarse pointer로 실제 bounding box를 잰다.
+    const touchContext = await browser.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, reducedMotion: 'reduce' });
+    const touchPage = await touchContext.newPage();
+    touchPage.setDefaultTimeout(20000);
+    for (const route of Object.keys(TITLES)) {
+      await touchPage.goto(`${url}#${route}`);
+      await touchPage.waitForFunction(t => document.querySelector('.bds-shell__top h1')?.textContent === t
+        && !!document.querySelector('.bds-shell__body .bds-pagehead h2'), TITLES[route]);
+      const small = await touchPage.evaluate(() => {
+        const root = getComputedStyle(document.documentElement);
+        const floor = parseFloat(root.getPropertyValue('--h-touch'));
+        const out = [], name = (el) => `${el.tagName.toLowerCase()}.${(el.className || '').toString().split(' ')[0]}`;
+        const exposed = [];
+        // .bds-ctl은 입력의 껍데기이자 실제 조작 대상이므로 함께 잰다. 그 안의 native input,
+        // 그리고 label로 감싼 시각적으로 숨긴 input은 껍데기·라벨이 대상이라 세지 않는다.
+        for (const el of document.querySelectorAll('button,a[href],input,select,textarea,[role="button"],summary,.bds-ctl')) {
+          const box = el.getBoundingClientRect();
+          if (!box.width || !box.height) continue;                    // 숨겨진 것은 조작 대상이 아니다
+          const cs = getComputedStyle(el);
+          if (cs.visibility === 'hidden' || cs.opacity === '0') continue;
+          if (el.closest('[hidden],[aria-hidden="true"]')) continue;
+          const native = ['INPUT', 'SELECT', 'TEXTAREA'].includes(el.tagName);
+          if (native && (el.closest('.bds-ctl') || el.closest('label'))) continue;
+          exposed.push([el, box, cs]);
+        }
+        for (const [el, box, cs] of exposed) {
+          // 선언한 하한이 배치에 의해 깎이지 않았는가. 크기를 고정 상자로 주면 여기서 걸린다.
+          const minW = parseFloat(cs.minWidth) || 0, minH = parseFloat(cs.minHeight) || 0;
+          if (box.width + 0.5 < minW || box.height + 0.5 < minH) out.push(`${name(el)} ${Math.round(box.width)}x${Math.round(box.height)} < min ${minW}x${minH}`);
+          // 어떤 조작 대상도 24px 미만으로 그리지 않는다.
+          if (box.width < 23.5 || box.height < 23.5) out.push(`${name(el)} ${Math.round(box.width)}x${Math.round(box.height)} < 24`);
+        }
+        // 정사각 아이콘 버튼은 터치에서 정본 하한을 양쪽으로 채운다.
+        for (const [el, box] of exposed) {
+          if (!el.classList.contains('bds-iconbtn') || el.classList.contains('bds-iconbtn--sm')) continue;
+          if (box.width + 0.5 < floor || box.height + 0.5 < floor) out.push(`${name(el)} ${Math.round(box.width)}x${Math.round(box.height)} < h-touch ${floor}`);
+        }
+        return out;
+      });
+      assert.deepEqual(small, [], `coarse pointer 최소 조작 영역 미달 @${route}`);
+    }
+    await touchContext.close();
+
     assert.deepEqual(errors, []);
-    console.log('PASS: overlay lifecycle, menu clipping/top layer/keyboard, input editing, 12 responsive/theme/pointer combinations');
+    console.log('PASS: overlay lifecycle, menu clipping/top layer/keyboard, input editing, 12 responsive/theme/pointer combinations, dashboard 17 route/width combinations, coarse pointer 조작 영역');
   } finally { await browser.close(); }
 }
 run().catch(error => { console.error(error); process.exitCode = 1; }).finally(() => server.close());

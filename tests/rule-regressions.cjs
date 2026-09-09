@@ -40,6 +40,12 @@ function cssFiles() {
   return CSS_DIRS.flatMap((dir) => walk(dir)).filter((file) => file.endsWith('.css'));
 }
 
+// 템플릿 CSS는 자체 kit- 네임스페이스를 쓰므로 클래스 접두사 규칙 대상은 아니지만,
+// 글자 크기·색 계열처럼 값에 관한 규칙은 시스템과 같이 지켜야 한다.
+function templateCssFiles() {
+  return walk('templates').filter((file) => file.endsWith('.css'));
+}
+
 function tokenAliasViolations() {
   const violations = [];
   for (const file of cssFiles().filter((candidate) => candidate.startsWith('tokens/'))) {
@@ -200,7 +206,7 @@ function textSizeViolations() {
       variables.set(match[1], Number(match[2]));
     }
   }
-  for (const file of cssFiles()) {
+  for (const file of cssFiles().concat(templateCssFiles())) {
     const text = withoutComments(read(file));
     for (const rule of cssRuleBodies(text)) {
       // Shorthand `font:` can carry the family, so inspect the whole declaration
@@ -225,6 +231,87 @@ function textSizeViolations() {
           detail: `font shorthand ${size}px${mono ? '' : ' (본문체 또는 mono 맥락 미확인)'}`,
         });
       }
+    }
+  }
+  return violations;
+}
+
+// tokens/*.css의 @token-kinds 주석이 토큰 이름의 정본 목록이다(build-bundle.mjs가 같은 원천을 쓴다).
+function tokenRegistry() {
+  const names = new Map();
+  for (const file of cssFiles().filter((f) => f.startsWith('tokens/'))) {
+    const text = read(file);
+    const block = text.match(/@token-kinds([\s\S]*?)\*\//);
+    if (!block) continue;
+    for (const match of block[1].matchAll(/(--[\w-]+)/g)) if (!names.has(match[1])) names.set(match[1], file);
+  }
+  return names;
+}
+
+// media·container 쿼리는 var()를 받지 못해 리터럴로 써야 한다. tokens/layout.css 머리주석이 이 예외를 적어 둔다.
+const REFERENCE_ONLY_TOKENS = new Set([
+  '--bp-sm', '--bp-md', '--bp-lg', '--bp-xl',
+  '--cq-xs', '--cq-sm', '--cq-md', '--cq-lg', '--cq-xl',
+]);
+
+function deadTokenViolations() {
+  const consumed = new Set();
+  const consumers = sourceFiles(['tokens', 'styles', 'components', 'templates', 'guidelines'], new Set(['.css', '.js', '.jsx', '.html']));
+  for (const file of consumers) {
+    for (const match of read(file).matchAll(/var\(\s*(--[\w-]+)/g)) consumed.add(match[1]);
+  }
+  const violations = [];
+  for (const [name, file] of tokenRegistry()) {
+    if (consumed.has(name) || REFERENCE_ONLY_TOKENS.has(name)) continue;
+    violations.push({ file, line: lineOf(read(file), read(file).indexOf(name)), detail: `${name} 선언만 있고 var() 사용처가 없음` });
+  }
+  return violations;
+}
+
+// 원색은 채움 배경이다. -ink 짝이 있는 계열의 원색을 글자색으로 쓰면 라이트 테마에서 4.5:1을 넘지 못한다.
+function rawColorAsTextViolations() {
+  const registry = tokenRegistry();
+  const families = [...registry.keys()]
+    .filter((name) => registry.has(`${name}-ink`))
+    .map((name) => name.slice(2));
+  const violations = [];
+  for (const file of cssFiles().concat(templateCssFiles())) {
+    const text = withoutComments(read(file));
+    for (const family of families) {
+      for (const match of text.matchAll(new RegExp(`[;{]color:\\s*var\\(\\s*--${family}\\s*\\)`, 'g'))) {
+        violations.push({ file, line: lineOf(text, match.index), detail: `color:var(--${family}) (글자색은 --${family}-ink)` });
+      }
+    }
+  }
+  return violations;
+}
+
+// 값을 나타내는 그라디언트만 허용한다. 허용 범위는 readme의 배경 규칙에 있다.
+const FUNCTIONAL_GRADIENT_SELECTORS = [/-range-track/, /slider-runnable-track/, /\.bds-skel\b/];
+
+function gradientViolations() {
+  const violations = [];
+  for (const file of cssFiles()) {
+    const text = withoutComments(read(file));
+    for (const rule of cssRuleBodies(text)) {
+      if (!/[-\w]*gradient\(/.test(rule.body)) continue;
+      if (FUNCTIONAL_GRADIENT_SELECTORS.some((allowed) => allowed.test(rule.selector))) continue;
+      violations.push({ file, line: lineOf(text, rule.at), detail: `${rule.selector.trim().slice(0, 50)}에 장식 그라디언트` });
+    }
+  }
+  return violations;
+}
+
+// 차트 면 채움 alpha: 축이 있는 차트 .14, 면이 겹치거나 소형인 차트 .2. 0은 그라디언트의 끝점이다.
+const CHART_ALPHAS = new Set(['0', '.14', '.2']);
+
+function chartAlphaViolations() {
+  const violations = [];
+  for (const file of sourceFiles(['components/data'], new Set(['.jsx']))) {
+    const text = read(file);
+    for (const match of text.matchAll(/\b(stopOpacity|fillOpacity)\s*=\s*"([^"]*)"/g)) {
+      if (CHART_ALPHAS.has(match[2])) continue;
+      violations.push({ file, line: lineOf(text, match.index), detail: `${match[1]}="${match[2]}" (허용: ${[...CHART_ALPHAS].join(' · ')})` });
     }
   }
   return violations;
@@ -289,6 +376,10 @@ const checks = [
   ['토큰 별칭', tokenAliasViolations(), 'tokens/*.css에서 --x:var(--y) 별칭을 제거하고 정본 토큰과 사용처를 직접 이관합니다.'],
   ['본문 글자 크기', textSizeViolations(), '본문체는 11.5px 이상으로 올리고, 10.5px은 mono 단위·타임스탬프에만 사용합니다.'],
   ['Phosphor Bold 아이콘 이름', iconViolations(), 'fonts/phosphor/bold.css에 있는 이름으로 바꾸거나 해당 아이콘을 추가합니다.'],
+  ['미사용 토큰', deadTokenViolations(), '토큰을 실제로 참조하거나, 쓰지 않을 값이면 선언과 @token-kinds 항목을 함께 제거합니다.'],
+  ['tint 위 글자색', rawColorAsTextViolations(), '글자색은 같은 계열의 -ink를 씁니다. 원색은 채움 배경 전용입니다.'],
+  ['장식 그라디언트', gradientViolations(), '배경은 단색으로 두고, 값·진행을 나타내는 그라디언트만 readme가 허용한 범위에서 씁니다.'],
+  ['차트 면 채움 alpha', chartAlphaViolations(), '축이 있는 차트는 .14, 면이 겹치거나 소형인 차트는 .2를 씁니다.'],
 ];
 
 let failed = 0;
@@ -301,4 +392,4 @@ if (failed) {
   console.error(`\nFAIL rule regressions: ${failed}건. 위반을 수정한 뒤 다시 실행하세요.`);
   process.exit(1);
 }
-console.log('PASS rule regressions: readme 기계 규칙 6종');
+console.log(`PASS rule regressions: readme 기계 규칙 ${checks.length}종`);

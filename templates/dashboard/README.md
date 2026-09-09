@@ -10,7 +10,7 @@
 - `data.js` · 목 데이터(제품 `types.ts` Overview 모양)
 
 원본 조립: dashboard 저장소 `frontend/src/components/{Dashboard,HubStatus,Argb,AuthConsole,Cooler,Training}.tsx`. 모델·설정 화면은 범위 밖(빈 상태로 표시).
-1280 · 834 · 390 폭과 다크·라이트에서 확인한다.
+검수 폭과 테마 조건은 `readme.md`의 규칙을 따른다.
 
 - `ModelsScreen.jsx` · 모델 관리(제품 Models.tsx: StatTile 4 · 등록 작업 · 모델별 VRAM pie · GPU 게이지 · 요청/오류 area · 통합 모델 목록 + 등록/관리 모달, 비활성화 확인)
 - `SettingsScreen.jsx` · 허브 설정(제품 Settings.tsx 패널 순서 그대로: 화면 갱신 · Lease 기본값 · 개인 화면 설정 · 시스템 정보 · 운영 한도 · 학습 정책 · 자동화 토큰 + 발급/폐기 모달)

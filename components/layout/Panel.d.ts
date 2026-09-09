@@ -6,6 +6,7 @@ export interface PanelProps extends HTMLAttributes<HTMLElement> {
   caption?: ReactNode;
   padding?: "none" | "sm" | "md";
   sunken?: boolean;
+  /** 호버 상승과 커서만 주는 시각 prop. 조작 가능한 카드는 as="button"을 함께 쓴다 */
   interactive?: boolean;
   selected?: boolean;
   /** 진입 fade-up */

@@ -5,6 +5,6 @@ import { cx } from "../core/frame.js";
 export function Badge({ count, max = 99, tone = "neutral", dot = false, children, className, "aria-label": ariaLabel, ...rest }) {
   if (!dot && (count == null || count === 0) && children) return children;
   const label = dot ? null : count > max ? max + "+" : count;
-  const b = <span className={cx("bds-badge", tone !== "neutral" && "bds-badge--" + tone, dot && "bds-badge--dot", className)} aria-label={ariaLabel ?? (dot ? "새 항목" : count + "개")} {...rest}>{label}</span>;
+  const b = <span className={cx("bds-badge", tone !== "neutral" && "bds-badge--" + tone, dot && "bds-badge--dot", className)} aria-label={ariaLabel ?? (dot ? "새 항목" : count + "건")} {...rest}>{label}</span>;
   return children ? <span className="bds-badge-anchor">{children}{b}</span> : b;
 }
