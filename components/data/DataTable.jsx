@@ -1,12 +1,24 @@
 import React, { Fragment, useId, useState } from "react";
 import { cx, frameStyle } from "../core/frame.js";
+import { MISSING_CLASS, MISSING_TEXT, isMissing } from "../core/missing.js";
 import { Icon } from "../action/Icon.jsx";
 import { Checkbox } from "../input/Checkbox.jsx";
 
 const hideCls = (c) => (c.hideBelow === "desktop" ? "d-hide" : c.hideBelow === "tablet" || c.hideOnMobile ? "m-hide" : undefined);
 
+/* 셀 하나의 결측 판정.
+   render 없는 열: row[key]가 값이므로 core/missing.js 규칙을 그대로 쓴다. null/undefined는 빈 칸이 아니라 "수집 안 됨"이다.
+   render 있는 열: 반환은 ReactNode다. React 규칙대로 null은 "아무것도 그리지 않음"이므로 결측으로 보지 않는다
+                   (예: 폐기된 토큰 행의 버튼 없음). 이미 문구로 포맷해 반환하는 사용처만 결측으로 인식한다. */
+const cellOf = (c, row, i) => {
+  const v = c.render ? c.render(row, i) : row[c.key];
+  const na = c.render ? v === MISSING_TEXT : isMissing(v);
+  return { value: na ? MISSING_TEXT : v, na };
+};
+
 /** 데이터 표. 컨테이너 폭 기준으로 열을 숨기고(hideBelow), 숨긴 정보는 expandable로 펼쳐 본다.
- *  정렬은 표시만 하고 실제 정렬은 소비자가 rows에 반영한다. */
+ *  정렬은 표시만 하고 실제 정렬은 소비자가 rows에 반영한다.
+ *  결측: render 없는 열의 null·undefined·NaN은 "수집 안 됨"으로 표시한다(빈 칸으로 감추지 않는다). */
 export function DataTable({ columns = [], rows = [], rowKey, rowLabel, sort, onSortChange, selectable = false, selectedKeys = [], onSelectionChange, bulkActions, expandable, defaultExpandedKeys = [], header, empty = "표시할 항목이 없습니다.", fit = "flex", width, height, className, style, "aria-label": ariaLabel, ...rest }) {
   const [expanded, setExpanded] = useState(() => new Set(defaultExpandedKeys));
   const autoId = useId(), hid = header?.id ?? autoId;
@@ -45,7 +57,7 @@ export function DataTable({ columns = [], rows = [], rowKey, rowLabel, sort, onS
                     <tr className={cx(isSel && "bds-table__sel")}>
                       {selectable && <td className="ck"><Checkbox aria-label={`${name} 선택`} checked={isSel} onChange={() => onSelectionChange?.(toggle(selectedKeys, k))} /></td>}
                       {expandable && <td className="ck"><button type="button" className="bds-table__exp" aria-expanded={open} aria-label={`${name} 행 펼치기`} onClick={() => setExpanded((p) => new Set(toggle(p, k)))}><Icon name="caret-right" size={12} /></button></td>}
-                      {columns.map((c) => { const v = c.render ? c.render(row, i) : row[c.key] ?? ""; return <td key={c.key} className={cx(c.align === "num" && "num", v === "수집 안 됨" && "na", hideCls(c))}>{v}</td>; })}
+                      {columns.map((c) => { const { value, na } = cellOf(c, row, i); return <td key={c.key} className={cx(c.align === "num" && "num", na && MISSING_CLASS, hideCls(c))}>{value}</td>; })}
                     </tr>
                     {expandable && open && <tr className="bds-table__exprow"><td colSpan={colCount}>{expandable(row)}</td></tr>}
                   </Fragment>

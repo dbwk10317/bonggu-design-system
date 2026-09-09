@@ -1,12 +1,13 @@
-// DS_TEST_NODE_MODULES may point to external dependencies; otherwise resolve locally.
+// Isolated scope evaluation: these components are exercised with stubbed context helpers,
+// so they are compiled here instead of through the shared source-modules loader.
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
 const vm = require("node:vm");
-const dep = (name) => require(process.env.DS_TEST_NODE_MODULES ? path.join(process.env.DS_TEST_NODE_MODULES, name) : name);
-const Babel = dep("@babel/standalone");
-const React = dep("react");
-const { create, act } = dep("react-test-renderer");
+const { dependencyRequire } = require("./source-modules.cjs");
+const Babel = dependencyRequire("@babel/standalone");
+const React = dependencyRequire("react");
+const { create, act } = dependencyRequire("react-test-renderer");
 function component(name) {
   const source = fs.readFileSync(path.join(__dirname, "../components/input", name + ".jsx"), "utf8").replace(/^import .*;\r?\n/gm, "").replace("export function", "function");
   const scope = { React, ...React, useFieldContext: () => null, cx: (...v) => v.filter(Boolean).join(" "), frameStyle: () => ({}), Icon: () => null, IconButton: (p) => React.createElement("button", p), Tag: (p) => React.createElement("span", p), document: { addEventListener() {}, removeEventListener() {} } };

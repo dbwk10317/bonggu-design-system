@@ -11,7 +11,7 @@ export function DateRangePicker({ value = { preset: "12h" }, onChange, presets =
   const custom = !value.preset;
   const set = (next) => onChange?.(next);
   return (
-    <div className={cx("bds-range", size === "sm" && "bds-range--sm", disabled && "bds-ctl--disabled", className)} role="group" aria-label={ariaLabel} style={frameStyle({ fit, width, style })}>
+    <div className={cx("bds-range", disabled && "bds-ctl--disabled", className)} role="group" aria-label={ariaLabel} style={frameStyle({ fit, width, style })}>
       <div className={cx("bds-seg", size === "sm" && "bds-seg--sm")} role="radiogroup" aria-label="최근">
         {presets.map((p) => <button key={p.value} type="button" role="radio" aria-checked={value.preset === p.value} className="bds-seg__opt" disabled={disabled} onClick={() => set({ preset: p.value })}>{p.label}</button>)}
         {allowCustom && <button type="button" role="radio" aria-checked={custom} className="bds-seg__opt" disabled={disabled} onClick={() => set({ from: value.from ?? new Date(Date.now() - 864e5), to: value.to ?? new Date() })}><Icon name="calendar-blank" size={13} /> 직접</button>}
@@ -19,7 +19,7 @@ export function DateRangePicker({ value = { preset: "12h" }, onChange, presets =
       {custom && (
         <div className="bds-range__custom">
           <div className={cx("bds-ctl", size === "sm" && "bds-ctl--sm")}><input id={f?.id} type="datetime-local" className="bds-mono" aria-label="시작" value={fmtLocal(value.from)} disabled={disabled} onChange={(e) => set({ from: e.target.value ? new Date(e.target.value) : undefined, to: value.to })} /></div>
-          <span className="bds-range__sep" aria-hidden="true">–</span>
+          <span className="bds-range__sep" aria-hidden="true">~</span>
           <div className={cx("bds-ctl", size === "sm" && "bds-ctl--sm")}><input type="datetime-local" className="bds-mono" aria-label="끝" value={fmtLocal(value.to)} disabled={disabled} onChange={(e) => set({ from: value.from, to: e.target.value ? new Date(e.target.value) : undefined })} /></div>
         </div>
       )}

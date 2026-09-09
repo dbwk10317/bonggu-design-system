@@ -1,6 +1,6 @@
 import type { HTMLAttributes, ReactNode } from "react";
 export interface TrendDeltaProps extends HTMLAttributes<HTMLSpanElement> {
-  /** 변화량. null이면 "수집 안 됨" */
+  /** 변화량. null·undefined·NaN이면 화살표 없이 "수집 안 됨" */
   value: number | null;
   /** value가 비율(0.12 → +12.0%) */
   percent?: boolean;

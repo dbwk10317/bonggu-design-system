@@ -4,7 +4,7 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 <script src="../../_ds_bundle.js"></script>
-<style>body{padding:24px;display:grid;gap:24px;align-content:start}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px;align-items:start}.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px}.lbl{font-size:12.5px;font-weight:500;color:var(--text-3);margin-bottom:10px}.sec{display:grid;gap:10px;min-width:0}</style></head>
+<style>body{padding:24px;display:grid;gap:24px;align-content:start}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px;align-items:start}.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px}.lbl{font-size:12.5px;font-weight:500;color:var(--ink-3);margin-bottom:10px}.sec{display:grid;gap:10px;min-width:0}</style></head>
 <body><div id="root"></div>
 <script type="text/babel">
 const NS = window.Ds_d3ea90;
@@ -85,9 +85,9 @@ function More(){ return <>
 
 function App(){ return <>
   <Basic />
-  <div className="lbl" style={{fontSize:14,color:"var(--text)",fontWeight:700,marginBottom:0,paddingTop:8,borderTop:"1px solid var(--line)"}}>시각화 확장 · Heatmap · Chart histogram · Timeline · DiffView</div>
+  <div className="lbl" style={{fontSize:14,color:"var(--ink)",fontWeight:700,marginBottom:0,paddingTop:8,borderTop:"1px solid var(--line)"}}>시각화 확장 · Heatmap · Chart histogram · Timeline · DiffView</div>
   <Viz />
-  <div className="lbl" style={{fontSize:14,color:"var(--text)",fontWeight:700,marginBottom:0,paddingTop:8,borderTop:"1px solid var(--line)"}}>게이지·추세·가용성 · Gauge · TrendDelta · Legend · UptimeBar</div>
+  <div className="lbl" style={{fontSize:14,color:"var(--ink)",fontWeight:700,marginBottom:0,paddingTop:8,borderTop:"1px solid var(--line)"}}>게이지·추세·가용성 · Gauge · TrendDelta · Legend · UptimeBar</div>
   <More />
 </>; }
 ReactDOM.createRoot(document.getElementById("root")).render(<App/>);

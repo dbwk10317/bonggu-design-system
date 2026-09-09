@@ -3,5 +3,5 @@ Gauge · 사용률 하나(CPU·VRAM·디스크). 0~70 정상 · 70~90 주의 · 
 ```jsx
 <Gauge value={0.62} label="CPU" />
 <Gauge value={18.4} max={24} unit="GiB" valueFormatter={v=>v.toFixed(1)} label="VRAM" ticks />
-<Gauge value={null} label="온도" />
+<Gauge value={null} label="온도" />   {/* null·undefined·NaN → tone off + "수집 안 됨" */}
 ```

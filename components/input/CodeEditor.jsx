@@ -21,7 +21,7 @@ export function CodeEditor({ value, defaultValue = "", onChange, onValidChange, 
     if (e.key === "Tab" && !e.shiftKey && !readOnly) { e.preventDefault(); const t = e.currentTarget, s = t.selectionStart, en = t.selectionEnd; const next = v.slice(0, s) + "  " + v.slice(en); set(next); requestAnimationFrame(() => { t.selectionStart = t.selectionEnd = s + 2; }); }
   };
   return (
-    <div className={cx("bds-code-ed", err && "bds-code-ed--err", disabled && "bds-ctl--disabled", className)} style={frameStyle({ fit, width, height, style })}>
+    <div className={cx("bds-code-ed", disabled && "bds-ctl--disabled", className)} style={frameStyle({ fit, width, height, style })}>
       <div className={cx("bds-ctl bds-ctl--area bds-code-ed__box", (err || f?.invalid) && "bds-ctl--err")}>
         {lineNumbers && <pre ref={gutter} className="bds-code-ed__gutter bds-mono" aria-hidden="true">{Array.from({ length: lines }, (_, i) => <span key={i} className={cx(err?.line === i + 1 && "bds-code-ed__ln--err")}>{i + 1}</span>)}</pre>}
         <textarea ref={ta} id={f?.id} aria-describedby={f?.describedBy} aria-label={ariaLabel} aria-invalid={!!err || undefined} className="bds-mono" rows={rows} spellCheck={false} wrap="off" readOnly={readOnly} disabled={disabled} placeholder={placeholder} value={v}

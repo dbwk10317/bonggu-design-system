@@ -1,18 +1,19 @@
 import React from "react";
 import { cx } from "../core/frame.js";
+import { MISSING_CLASS, MISSING_TEXT, isMissing } from "../core/missing.js";
 
-const NOT = "수집 안 됨";
-/** 키·값 행 목록. rows: [key, value][] 또는 {k,v,mono?}[]. 수치 값은 mono, 결측 문구는 mono를 벗는다. */
+/** 키·값 행 목록. rows: [key, value][] 또는 {k,v,mono?}[]. 수치 값은 mono, 결측 값은 "수집 안 됨"으로 그리고 mono를 벗는다. */
 export function KeyValues({ rows = [], lined = false, className, ...rest }) {
   return (
     <div className={cx("bds-kv", lined && "bds-kv--lined", className)} {...rest}>
       {rows.map((r, i) => {
         const [k, v, mono] = Array.isArray(r) ? [r[0], r[1], r[2]] : [r.k, r.v, r.mono];
-        const isMono = mono ?? (typeof v === "number" || (typeof v === "string" && v !== NOT && /\d/.test(v)));
+        const na = isMissing(v);
+        const isMono = mono ?? (!na && (typeof v === "number" || (typeof v === "string" && /\d/.test(v))));
         return (
           <div key={i} className="bds-kv__row">
             <span className="bds-kv__k">{k}</span>
-            <span className={cx("bds-kv__v bds-ellipsis", isMono && "bds-mono", v === NOT && "bds-kv__v--na")} title={typeof v === "string" || typeof v === "number" ? String(v) : undefined} style={v === NOT ? { color: "var(--ink-3)", fontWeight: 400 } : undefined}>{v}</span>
+            <span className={cx("bds-kv__v bds-ellipsis", isMono && "bds-mono", na && MISSING_CLASS)} title={na ? MISSING_TEXT : typeof v === "string" || typeof v === "number" ? String(v) : undefined}>{na ? MISSING_TEXT : v}</span>
           </div>
         );
       })}

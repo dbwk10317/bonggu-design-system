@@ -1,29 +1,7 @@
 const assert = require('node:assert/strict');
-const fs = require('node:fs');
-const path = require('node:path');
-const { createRequire } = require('node:module');
-const dependencyRequire = process.env.DS_TEST_NODE_MODULES
-  ? createRequire(path.join(path.resolve(process.env.DS_TEST_NODE_MODULES), '__data-tests.cjs'))
-  : require;
-const Babel = dependencyRequire('@babel/standalone');
+const { sourceModule, dependencyRequire } = require('./source-modules.cjs');
 const React = dependencyRequire('react');
 const { renderToStaticMarkup } = dependencyRequire('react-dom/server');
-const root = path.resolve(__dirname, '..');
-const cache = new Map();
-function sourceModule(relative) {
-  const filename = path.resolve(root, relative);
-  if (cache.has(filename)) return cache.get(filename).exports;
-  let source = fs.readFileSync(filename, 'utf8');
-  if (filename.endsWith(`${path.sep}Chart.jsx`)) source += '\nexport { Cartesian, Radar };';
-  const module = { exports: {} };
-  cache.set(filename, module);
-  const code = Babel.transform(source, { presets: ['react'], plugins: ['transform-modules-commonjs'] }).code;
-  new Function('require', 'module', 'exports', code)(
-    (id) => id.startsWith('.') ? sourceModule(path.resolve(path.dirname(filename), id)) : dependencyRequire(id),
-    module, module.exports,
-  );
-  return module.exports;
-}
 const { niceTicks, stackBars } = sourceModule('components/data/chart-math.js');
 for (const [lo, hi] of [[0, 0.04], [0, 0.000004], [-0.04, 0.04], [0.11, 0.19], [-5, -5]]) {
   const axis = niceTicks(lo, hi);

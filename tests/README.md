@@ -11,10 +11,12 @@ npx playwright install chromium
 npm test
 ```
 
-`npm test`는 소스로 번들을 다시 생성한 뒤 데이터 계산, React 입력 상태, 오버레이 렌더링, 실제 브라우저 통합 검증을 순서대로 실행합니다. 실패하면 즉시 중단합니다. 생성된 `_ds_bundle.js`와 `_ds_manifest.json` 변경은 소스와 함께 검토합니다.
+`npm test`는 소스로 번들을 다시 생성한 뒤 클래스 정합성, 전체 컴포넌트 렌더, 데이터 계산, React 입력 상태, 오버레이 렌더링, 실제 브라우저 통합 검증을 순서대로 실행합니다. 실패하면 즉시 중단합니다. 생성된 `_ds_bundle.js`와 `_ds_manifest.json` 변경은 소스와 함께 검토합니다.
 
 기존 외부 의존성을 사용하는 경우 `DS_TEST_NODE_MODULES`에 node_modules 절대 경로를 설정하고 `node tests/run.cjs`를 실행할 수 있습니다. 설치된 Chrome/Edge로 검증하려면 `DS_TEST_BROWSER_EXECUTABLE`에 실행 파일 경로를 설정합니다. 스크린샷을 저장하려면 `DS_TEST_SCREENSHOTS`에 출력 폴더를 설정합니다. 로컬 파일 서버는 loopback에만 바인딩하고 테스트 종료 시 닫습니다.
 
+- consistency-regressions.cjs: CSS와 소스의 클래스 사용을 양방향으로 대조합니다. 소스가 붙이는 `bds-*` 클래스에 규칙이 없거나, `styles/`·`tokens/`에 있는 클래스를 아무 소비자도 붙이지 않으면 위반 목록을 모두 출력하고 실패합니다. `bds-btn--${variant}` 같은 동적 조합은 고정 접두사로 인정합니다.
+- smoke-regressions.cjs: `_ds_manifest.json`에 실린 컴포넌트 전부를 소스에서 로드해 서버 렌더가 예외 없이 끝나는지 확인합니다. 목록을 매니페스트에서 읽으므로 새 컴포넌트가 자동으로 포함됩니다.
 - data-regressions.cjs: 소수 눈금, 양음 누적 막대, 결측 표현, 가용성 공식. 실제 계산 함수와 React 서버 렌더링을 사용합니다.
 - input-regressions.cjs: 숫자 편집과 확정, 선택 후 목록, 달력 동기화, OTP 자리 보존. React test renderer로 상태 전이를 검증합니다.
 - overlay-regressions.cjs: 독립 폼 ID, 확인 세션, busy/제출 없음 계약, 알림의 공통 dialog 사용.

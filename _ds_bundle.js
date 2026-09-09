@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"Ds_d3ea90","components":[{"name":"Button","sourcePath":"components/action/Button.jsx"},{"name":"Icon","sourcePath":"components/action/Icon.jsx"},{"name":"IconButton","sourcePath":"components/action/IconButton.jsx"},{"name":"MascotMark","sourcePath":"components/brand/MascotMark.jsx"},{"name":"BarList","sourcePath":"components/data/BarList.jsx"},{"name":"Chart","sourcePath":"components/data/Chart.jsx"},{"name":"DataTable","sourcePath":"components/data/DataTable.jsx"},{"name":"DescriptionList","sourcePath":"components/data/DescriptionList.jsx"},{"name":"DiffView","sourcePath":"components/data/DiffView.jsx"},{"name":"Gauge","sourcePath":"components/data/Gauge.jsx"},{"name":"Heatmap","sourcePath":"components/data/Heatmap.jsx"},{"name":"KeyValues","sourcePath":"components/data/KeyValues.jsx"},{"name":"Legend","sourcePath":"components/data/Legend.jsx"},{"name":"LogViewer","sourcePath":"components/data/LogViewer.jsx"},{"name":"Sparkline","sourcePath":"components/data/Sparkline.jsx"},{"name":"StatTile","sourcePath":"components/data/StatTile.jsx"},{"name":"Timeline","sourcePath":"components/data/Timeline.jsx"},{"name":"TrendDelta","sourcePath":"components/data/TrendDelta.jsx"},{"name":"UptimeBar","sourcePath":"components/data/UptimeBar.jsx"},{"name":"Accordion","sourcePath":"components/display/Accordion.jsx"},{"name":"Avatar","sourcePath":"components/display/Avatar.jsx"},{"name":"AvatarGroup","sourcePath":"components/display/Avatar.jsx"},{"name":"Badge","sourcePath":"components/display/Badge.jsx"},{"name":"Code","sourcePath":"components/display/Code.jsx"},{"name":"CodeBlock","sourcePath":"components/display/Code.jsx"},{"name":"Kbd","sourcePath":"components/display/Code.jsx"},{"name":"CopyField","sourcePath":"components/display/CopyField.jsx"},{"name":"StatusPill","sourcePath":"components/display/StatusPill.jsx"},{"name":"Tag","sourcePath":"components/display/Tag.jsx"},{"name":"AlertBanner","sourcePath":"components/feedback/AlertBanner.jsx"},{"name":"ConfirmDialog","sourcePath":"components/feedback/ConfirmDialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"ErrorState","sourcePath":"components/feedback/ErrorState.jsx"},{"name":"InlineMessage","sourcePath":"components/feedback/InlineMessage.jsx"},{"name":"LoadingOverlay","sourcePath":"components/feedback/LoadingOverlay.jsx"},{"name":"NotificationTrigger","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"NotificationDrawer","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"ProgressBar","sourcePath":"components/feedback/ProgressBar.jsx"},{"name":"Skeleton","sourcePath":"components/feedback/Skeleton.jsx"},{"name":"Spinner","sourcePath":"components/feedback/Spinner.jsx"},{"name":"Stepper","sourcePath":"components/feedback/Stepper.jsx"},{"name":"ToastProvider","sourcePath":"components/feedback/Toast.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Checkbox","sourcePath":"components/input/Checkbox.jsx"},{"name":"CodeEditor","sourcePath":"components/input/CodeEditor.jsx"},{"name":"ColorInput","sourcePath":"components/input/ColorInput.jsx"},{"name":"Combobox","sourcePath":"components/input/Combobox.jsx"},{"name":"DatePicker","sourcePath":"components/input/DatePicker.jsx"},{"name":"DateRangePicker","sourcePath":"components/input/DateRangePicker.jsx"},{"name":"Dropzone","sourcePath":"components/input/Dropzone.jsx"},{"name":"Field","sourcePath":"components/input/Field.jsx"},{"name":"FileUpload","sourcePath":"components/input/FileUpload.jsx"},{"name":"MultiSelect","sourcePath":"components/input/MultiSelect.jsx"},{"name":"NumberStepper","sourcePath":"components/input/NumberStepper.jsx"},{"name":"OTPInput","sourcePath":"components/input/OTPInput.jsx"},{"name":"PasswordField","sourcePath":"components/input/PasswordField.jsx"},{"name":"RadioGroup","sourcePath":"components/input/RadioGroup.jsx"},{"name":"SearchField","sourcePath":"components/input/SearchField.jsx"},{"name":"SegmentedControl","sourcePath":"components/input/SegmentedControl.jsx"},{"name":"Select","sourcePath":"components/input/Select.jsx"},{"name":"Slider","sourcePath":"components/input/Slider.jsx"},{"name":"Switch","sourcePath":"components/input/Switch.jsx"},{"name":"TextArea","sourcePath":"components/input/TextArea.jsx"},{"name":"TextField","sourcePath":"components/input/TextField.jsx"},{"name":"TimePicker","sourcePath":"components/input/TimePicker.jsx"},{"name":"AspectRatio","sourcePath":"components/layout/AspectRatio.jsx"},{"name":"CardHead","sourcePath":"components/layout/CardHead.jsx"},{"name":"Container","sourcePath":"components/layout/Container.jsx"},{"name":"Divider","sourcePath":"components/layout/Divider.jsx"},{"name":"Grid","sourcePath":"components/layout/Grid.jsx"},{"name":"GridItem","sourcePath":"components/layout/Grid.jsx"},{"name":"Inline","sourcePath":"components/layout/Inline.jsx"},{"name":"PageHeader","sourcePath":"components/layout/PageHeader.jsx"},{"name":"PageStack","sourcePath":"components/layout/PageStack.jsx"},{"name":"Panel","sourcePath":"components/layout/Panel.jsx"},{"name":"Spacer","sourcePath":"components/layout/Spacer.jsx"},{"name":"Stack","sourcePath":"components/layout/Stack.jsx"},{"name":"StatusBar","sourcePath":"components/layout/StatusBar.jsx"},{"name":"Toolbar","sourcePath":"components/layout/Toolbar.jsx"},{"name":"ToolbarGrow","sourcePath":"components/layout/Toolbar.jsx"},{"name":"Visible","sourcePath":"components/layout/Visible.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"CommandPalette","sourcePath":"components/navigation/CommandPalette.jsx"},{"name":"Link","sourcePath":"components/navigation/Link.jsx"},{"name":"Pagination","sourcePath":"components/navigation/Pagination.jsx"},{"name":"SidebarShell","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavItem","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavGroup","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"},{"name":"TopNav","sourcePath":"components/navigation/TopNav.jsx"},{"name":"Drawer","sourcePath":"components/overlay/Drawer.jsx"},{"name":"DropdownMenu","sourcePath":"components/overlay/DropdownMenu.jsx"},{"name":"FormModal","sourcePath":"components/overlay/FormModal.jsx"},{"name":"Modal","sourcePath":"components/overlay/Modal.jsx"},{"name":"Popover","sourcePath":"components/overlay/Popover.jsx"},{"name":"Tooltip","sourcePath":"components/overlay/Tooltip.jsx"}],"sourceHashes":{"components/action/Button.jsx":"5a7e8ba0583c","components/action/Icon.jsx":"aeb9bddad130","components/action/IconButton.jsx":"573fc7e3ae35","components/brand/MascotMark.jsx":"c49125fa6915","components/core/frame.js":"f7f85baee1dd","components/core/useAnchoredPopover.js":"38cca5d52d44","components/data/BarList.jsx":"a0cbb96057c8","components/data/Chart.jsx":"26f357a5027d","components/data/DataTable.jsx":"2fada61dce2f","components/data/DescriptionList.jsx":"7c1079ff291d","components/data/DiffView.jsx":"74e826b1d761","components/data/Gauge.jsx":"d46f247300f5","components/data/Heatmap.jsx":"4f7a3470a15e","components/data/KeyValues.jsx":"0e218c0693b0","components/data/Legend.jsx":"59d33485648e","components/data/LogViewer.jsx":"8da3439ff861","components/data/Sparkline.jsx":"3213a7fb56e3","components/data/StatTile.jsx":"08c4148e8c37","components/data/Timeline.jsx":"ea2c65867b69","components/data/TrendDelta.jsx":"9fb64c9a68bb","components/data/UptimeBar.jsx":"751dba92bb17","components/data/chart-math.js":"485d821829c1","components/display/Accordion.jsx":"baf5673b0f70","components/display/Avatar.jsx":"82bf7603f488","components/display/Badge.jsx":"385d2533f37f","components/display/Code.jsx":"6cca3294c4f0","components/display/CopyField.jsx":"a797dab55521","components/display/StatusPill.jsx":"800e424e54da","components/display/Tag.jsx":"bbb650669637","components/feedback/AlertBanner.jsx":"fe7a9a92ad74","components/feedback/ConfirmDialog.jsx":"002f00827bf2","components/feedback/EmptyState.jsx":"c085e4de100c","components/feedback/ErrorState.jsx":"8d1e78ea3ec6","components/feedback/InlineMessage.jsx":"34b5488f8fc8","components/feedback/LoadingOverlay.jsx":"fc8d6b336c10","components/feedback/NotificationDrawer.jsx":"f3bb26471ee4","components/feedback/ProgressBar.jsx":"4594effb9937","components/feedback/Skeleton.jsx":"b800adab501e","components/feedback/Spinner.jsx":"019571ef40dd","components/feedback/Stepper.jsx":"84ad89b06daa","components/feedback/Toast.jsx":"05d60879ab6f","components/input/Checkbox.jsx":"12f5be84c0f7","components/input/CodeEditor.jsx":"bf9268882591","components/input/ColorInput.jsx":"bcb2bf43c367","components/input/Combobox.jsx":"0394e8812604","components/input/DatePicker.jsx":"8237082480de","components/input/DateRangePicker.jsx":"7a720ebbb46a","components/input/Dropzone.jsx":"c229fb1f6334","components/input/Field.jsx":"bb93dca9a5f5","components/input/FileUpload.jsx":"f6e9805d7420","components/input/MultiSelect.jsx":"50f44249ca86","components/input/NumberStepper.jsx":"b009f9710845","components/input/OTPInput.jsx":"878c99b0a06a","components/input/PasswordField.jsx":"a2ccb84f97c8","components/input/RadioGroup.jsx":"120f32c9b8f9","components/input/SearchField.jsx":"c53af994c91f","components/input/SegmentedControl.jsx":"0e432e439927","components/input/Select.jsx":"3b7ac799ef82","components/input/Slider.jsx":"a5ab6da0f3a8","components/input/Switch.jsx":"0d2bdc54c1a0","components/input/TextArea.jsx":"9b271074f1bd","components/input/TextField.jsx":"7d7ce7382207","components/input/TimePicker.jsx":"e5fd1756b8ab","components/layout/AspectRatio.jsx":"ec1ca745e3a9","components/layout/CardHead.jsx":"b7eee3ef5171","components/layout/Container.jsx":"956f2e7a0283","components/layout/Divider.jsx":"2724b2da47dc","components/layout/Grid.jsx":"bd697fa55feb","components/layout/Inline.jsx":"b5018330169a","components/layout/PageHeader.jsx":"feb6eecf36c5","components/layout/PageStack.jsx":"a920ed8a7a71","components/layout/Panel.jsx":"0b58644bd1d6","components/layout/Spacer.jsx":"d30932b51b97","components/layout/Stack.jsx":"d9f5fc72c913","components/layout/StatusBar.jsx":"765e43ff3852","components/layout/Toolbar.jsx":"a8f7fc524838","components/layout/Visible.jsx":"cfc947d272ed","components/navigation/Breadcrumb.jsx":"9b22abe659d3","components/navigation/CommandPalette.jsx":"9894e7d054d1","components/navigation/Link.jsx":"f16424582ea3","components/navigation/Pagination.jsx":"c3306480e75a","components/navigation/SidebarShell.jsx":"8b230eedd5ec","components/navigation/Tabs.jsx":"da326c5325db","components/navigation/TopNav.jsx":"a8218730e10d","components/overlay/Drawer.jsx":"b19e167b4b9e","components/overlay/DropdownMenu.jsx":"00be91bfb368","components/overlay/FormModal.jsx":"08cca2965ccc","components/overlay/Modal.jsx":"5bcf3781cd1d","components/overlay/Popover.jsx":"88176ab514f6","components/overlay/Tooltip.jsx":"55de6eeb8093","components/overlay/useModalDialog.js":"93e75b826452","theme-toggle.js":"a482d13b9a1d"},"inlinedExternals":[],"unexposedExports":[{"name":"cx","sourcePath":"components/core/frame.js"},{"name":"DASHES","sourcePath":"components/data/chart-math.js"},{"name":"estWidth","sourcePath":"components/data/chart-math.js"},{"name":"fmtKo","sourcePath":"components/data/chart-math.js"},{"name":"frameStyle","sourcePath":"components/core/frame.js"},{"name":"histBins","sourcePath":"components/data/chart-math.js"},{"name":"niceTicks","sourcePath":"components/data/chart-math.js"},{"name":"NOTIFICATION_DRAWER_ID","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"passwordStrength","sourcePath":"components/input/PasswordField.jsx"},{"name":"pathLength","sourcePath":"components/data/chart-math.js"},{"name":"r1","sourcePath":"components/data/chart-math.js"},{"name":"runsOf","sourcePath":"components/data/chart-math.js"},{"name":"seriesDash","sourcePath":"components/data/chart-math.js"},{"name":"smoothPath","sourcePath":"components/data/chart-math.js"},{"name":"spaceToken","sourcePath":"components/layout/Stack.jsx"},{"name":"stackBars","sourcePath":"components/data/chart-math.js"},{"name":"toneInk","sourcePath":"components/data/chart-math.js"},{"name":"toneVar","sourcePath":"components/data/chart-math.js"},{"name":"useAnchoredPopover","sourcePath":"components/core/useAnchoredPopover.js"},{"name":"useFieldContext","sourcePath":"components/input/Field.jsx"},{"name":"useModalDialog","sourcePath":"components/overlay/useModalDialog.js"},{"name":"useToast","sourcePath":"components/feedback/Toast.jsx"}]} */
+/* @ds-bundle: {"format":4,"namespace":"Ds_d3ea90","components":[{"name":"Button","sourcePath":"components/action/Button.jsx"},{"name":"Icon","sourcePath":"components/action/Icon.jsx"},{"name":"IconButton","sourcePath":"components/action/IconButton.jsx"},{"name":"MascotMark","sourcePath":"components/brand/MascotMark.jsx"},{"name":"BarList","sourcePath":"components/data/BarList.jsx"},{"name":"Chart","sourcePath":"components/data/Chart.jsx"},{"name":"DataTable","sourcePath":"components/data/DataTable.jsx"},{"name":"DescriptionList","sourcePath":"components/data/DescriptionList.jsx"},{"name":"DiffView","sourcePath":"components/data/DiffView.jsx"},{"name":"Gauge","sourcePath":"components/data/Gauge.jsx"},{"name":"Heatmap","sourcePath":"components/data/Heatmap.jsx"},{"name":"KeyValues","sourcePath":"components/data/KeyValues.jsx"},{"name":"Legend","sourcePath":"components/data/Legend.jsx"},{"name":"LogViewer","sourcePath":"components/data/LogViewer.jsx"},{"name":"Sparkline","sourcePath":"components/data/Sparkline.jsx"},{"name":"StatTile","sourcePath":"components/data/StatTile.jsx"},{"name":"Timeline","sourcePath":"components/data/Timeline.jsx"},{"name":"TrendDelta","sourcePath":"components/data/TrendDelta.jsx"},{"name":"UptimeBar","sourcePath":"components/data/UptimeBar.jsx"},{"name":"Accordion","sourcePath":"components/display/Accordion.jsx"},{"name":"Avatar","sourcePath":"components/display/Avatar.jsx"},{"name":"AvatarGroup","sourcePath":"components/display/Avatar.jsx"},{"name":"Badge","sourcePath":"components/display/Badge.jsx"},{"name":"Code","sourcePath":"components/display/Code.jsx"},{"name":"CodeBlock","sourcePath":"components/display/Code.jsx"},{"name":"Kbd","sourcePath":"components/display/Code.jsx"},{"name":"CopyField","sourcePath":"components/display/CopyField.jsx"},{"name":"StatusPill","sourcePath":"components/display/StatusPill.jsx"},{"name":"Tag","sourcePath":"components/display/Tag.jsx"},{"name":"AlertBanner","sourcePath":"components/feedback/AlertBanner.jsx"},{"name":"ConfirmDialog","sourcePath":"components/feedback/ConfirmDialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"ErrorState","sourcePath":"components/feedback/ErrorState.jsx"},{"name":"InlineMessage","sourcePath":"components/feedback/InlineMessage.jsx"},{"name":"LoadingOverlay","sourcePath":"components/feedback/LoadingOverlay.jsx"},{"name":"NotificationTrigger","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"NotificationDrawer","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"ProgressBar","sourcePath":"components/feedback/ProgressBar.jsx"},{"name":"Skeleton","sourcePath":"components/feedback/Skeleton.jsx"},{"name":"Spinner","sourcePath":"components/feedback/Spinner.jsx"},{"name":"Stepper","sourcePath":"components/feedback/Stepper.jsx"},{"name":"ToastProvider","sourcePath":"components/feedback/Toast.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Checkbox","sourcePath":"components/input/Checkbox.jsx"},{"name":"CodeEditor","sourcePath":"components/input/CodeEditor.jsx"},{"name":"ColorInput","sourcePath":"components/input/ColorInput.jsx"},{"name":"Combobox","sourcePath":"components/input/Combobox.jsx"},{"name":"DatePicker","sourcePath":"components/input/DatePicker.jsx"},{"name":"DateRangePicker","sourcePath":"components/input/DateRangePicker.jsx"},{"name":"Dropzone","sourcePath":"components/input/Dropzone.jsx"},{"name":"Field","sourcePath":"components/input/Field.jsx"},{"name":"FileUpload","sourcePath":"components/input/FileUpload.jsx"},{"name":"MultiSelect","sourcePath":"components/input/MultiSelect.jsx"},{"name":"NumberStepper","sourcePath":"components/input/NumberStepper.jsx"},{"name":"OTPInput","sourcePath":"components/input/OTPInput.jsx"},{"name":"PasswordField","sourcePath":"components/input/PasswordField.jsx"},{"name":"RadioGroup","sourcePath":"components/input/RadioGroup.jsx"},{"name":"SearchField","sourcePath":"components/input/SearchField.jsx"},{"name":"SegmentedControl","sourcePath":"components/input/SegmentedControl.jsx"},{"name":"Select","sourcePath":"components/input/Select.jsx"},{"name":"Slider","sourcePath":"components/input/Slider.jsx"},{"name":"Switch","sourcePath":"components/input/Switch.jsx"},{"name":"TextArea","sourcePath":"components/input/TextArea.jsx"},{"name":"TextField","sourcePath":"components/input/TextField.jsx"},{"name":"TimePicker","sourcePath":"components/input/TimePicker.jsx"},{"name":"AspectRatio","sourcePath":"components/layout/AspectRatio.jsx"},{"name":"CardHead","sourcePath":"components/layout/CardHead.jsx"},{"name":"Container","sourcePath":"components/layout/Container.jsx"},{"name":"Divider","sourcePath":"components/layout/Divider.jsx"},{"name":"Grid","sourcePath":"components/layout/Grid.jsx"},{"name":"GridItem","sourcePath":"components/layout/Grid.jsx"},{"name":"Inline","sourcePath":"components/layout/Inline.jsx"},{"name":"PageHeader","sourcePath":"components/layout/PageHeader.jsx"},{"name":"PageStack","sourcePath":"components/layout/PageStack.jsx"},{"name":"Panel","sourcePath":"components/layout/Panel.jsx"},{"name":"Spacer","sourcePath":"components/layout/Spacer.jsx"},{"name":"Stack","sourcePath":"components/layout/Stack.jsx"},{"name":"StatusBar","sourcePath":"components/layout/StatusBar.jsx"},{"name":"Toolbar","sourcePath":"components/layout/Toolbar.jsx"},{"name":"ToolbarGrow","sourcePath":"components/layout/Toolbar.jsx"},{"name":"Visible","sourcePath":"components/layout/Visible.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"CommandPalette","sourcePath":"components/navigation/CommandPalette.jsx"},{"name":"Link","sourcePath":"components/navigation/Link.jsx"},{"name":"Pagination","sourcePath":"components/navigation/Pagination.jsx"},{"name":"SidebarShell","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavItem","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavGroup","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"},{"name":"TopNav","sourcePath":"components/navigation/TopNav.jsx"},{"name":"Drawer","sourcePath":"components/overlay/Drawer.jsx"},{"name":"DropdownMenu","sourcePath":"components/overlay/DropdownMenu.jsx"},{"name":"FormModal","sourcePath":"components/overlay/FormModal.jsx"},{"name":"Modal","sourcePath":"components/overlay/Modal.jsx"},{"name":"Popover","sourcePath":"components/overlay/Popover.jsx"},{"name":"Tooltip","sourcePath":"components/overlay/Tooltip.jsx"}],"sourceHashes":{"components/action/Button.jsx":"5a7e8ba0583c","components/action/Icon.jsx":"aeb9bddad130","components/action/IconButton.jsx":"573fc7e3ae35","components/brand/MascotMark.jsx":"c49125fa6915","components/core/frame.js":"f7f85baee1dd","components/core/missing.js":"6c808c2c4aca","components/core/useAnchoredPopover.js":"38cca5d52d44","components/data/BarList.jsx":"8913a0c14387","components/data/Chart.jsx":"30e5dc60a10b","components/data/DataTable.jsx":"3d481417cf66","components/data/DescriptionList.jsx":"7c1079ff291d","components/data/DiffView.jsx":"74e826b1d761","components/data/Gauge.jsx":"9ca49df1f81b","components/data/Heatmap.jsx":"8d524bb1f015","components/data/KeyValues.jsx":"c8a13cd87b57","components/data/Legend.jsx":"59d33485648e","components/data/LogViewer.jsx":"8da3439ff861","components/data/Sparkline.jsx":"3213a7fb56e3","components/data/StatTile.jsx":"a2420479fd25","components/data/Timeline.jsx":"ea2c65867b69","components/data/TrendDelta.jsx":"f38fb93a803d","components/data/UptimeBar.jsx":"094feea28c32","components/data/chart-math.js":"485d821829c1","components/display/Accordion.jsx":"baf5673b0f70","components/display/Avatar.jsx":"82bf7603f488","components/display/Badge.jsx":"385d2533f37f","components/display/Code.jsx":"6cca3294c4f0","components/display/CopyField.jsx":"a797dab55521","components/display/StatusPill.jsx":"800e424e54da","components/display/Tag.jsx":"bbb650669637","components/feedback/AlertBanner.jsx":"fe7a9a92ad74","components/feedback/ConfirmDialog.jsx":"002f00827bf2","components/feedback/EmptyState.jsx":"c085e4de100c","components/feedback/ErrorState.jsx":"8d1e78ea3ec6","components/feedback/InlineMessage.jsx":"34b5488f8fc8","components/feedback/LoadingOverlay.jsx":"fc8d6b336c10","components/feedback/NotificationDrawer.jsx":"f3bb26471ee4","components/feedback/ProgressBar.jsx":"4594effb9937","components/feedback/Skeleton.jsx":"b800adab501e","components/feedback/Spinner.jsx":"019571ef40dd","components/feedback/Stepper.jsx":"84ad89b06daa","components/feedback/Toast.jsx":"cca21e37db7f","components/input/Checkbox.jsx":"12f5be84c0f7","components/input/CodeEditor.jsx":"29c81ec0eb1f","components/input/ColorInput.jsx":"bcb2bf43c367","components/input/Combobox.jsx":"0394e8812604","components/input/DatePicker.jsx":"8237082480de","components/input/DateRangePicker.jsx":"2f3983ee6eb4","components/input/Dropzone.jsx":"c229fb1f6334","components/input/Field.jsx":"bb93dca9a5f5","components/input/FileUpload.jsx":"f6e9805d7420","components/input/MultiSelect.jsx":"50f44249ca86","components/input/NumberStepper.jsx":"b009f9710845","components/input/OTPInput.jsx":"878c99b0a06a","components/input/PasswordField.jsx":"a2ccb84f97c8","components/input/RadioGroup.jsx":"120f32c9b8f9","components/input/SearchField.jsx":"c53af994c91f","components/input/SegmentedControl.jsx":"0e432e439927","components/input/Select.jsx":"3b7ac799ef82","components/input/Slider.jsx":"a5ab6da0f3a8","components/input/Switch.jsx":"0d2bdc54c1a0","components/input/TextArea.jsx":"9b271074f1bd","components/input/TextField.jsx":"7d7ce7382207","components/input/TimePicker.jsx":"e5fd1756b8ab","components/layout/AspectRatio.jsx":"ec1ca745e3a9","components/layout/CardHead.jsx":"b7eee3ef5171","components/layout/Container.jsx":"956f2e7a0283","components/layout/Divider.jsx":"2724b2da47dc","components/layout/Grid.jsx":"bd697fa55feb","components/layout/Inline.jsx":"b5018330169a","components/layout/PageHeader.jsx":"feb6eecf36c5","components/layout/PageStack.jsx":"a920ed8a7a71","components/layout/Panel.jsx":"0b58644bd1d6","components/layout/Spacer.jsx":"d30932b51b97","components/layout/Stack.jsx":"d9f5fc72c913","components/layout/StatusBar.jsx":"765e43ff3852","components/layout/Toolbar.jsx":"a8f7fc524838","components/layout/Visible.jsx":"cfc947d272ed","components/navigation/Breadcrumb.jsx":"9b22abe659d3","components/navigation/CommandPalette.jsx":"9894e7d054d1","components/navigation/Link.jsx":"f16424582ea3","components/navigation/Pagination.jsx":"c3306480e75a","components/navigation/SidebarShell.jsx":"8b230eedd5ec","components/navigation/Tabs.jsx":"da326c5325db","components/navigation/TopNav.jsx":"a8218730e10d","components/overlay/Drawer.jsx":"b19e167b4b9e","components/overlay/DropdownMenu.jsx":"00be91bfb368","components/overlay/FormModal.jsx":"08cca2965ccc","components/overlay/Modal.jsx":"5bcf3781cd1d","components/overlay/Popover.jsx":"88176ab514f6","components/overlay/Tooltip.jsx":"55de6eeb8093","components/overlay/useModalDialog.js":"93e75b826452","theme-toggle.js":"7197a6308866"},"inlinedExternals":[],"unexposedExports":[{"name":"cx","sourcePath":"components/core/frame.js"},{"name":"DASHES","sourcePath":"components/data/chart-math.js"},{"name":"estWidth","sourcePath":"components/data/chart-math.js"},{"name":"fmtKo","sourcePath":"components/data/chart-math.js"},{"name":"frameStyle","sourcePath":"components/core/frame.js"},{"name":"histBins","sourcePath":"components/data/chart-math.js"},{"name":"isMissing","sourcePath":"components/core/missing.js"},{"name":"MISSING_CLASS","sourcePath":"components/core/missing.js"},{"name":"MISSING_TEXT","sourcePath":"components/core/missing.js"},{"name":"niceTicks","sourcePath":"components/data/chart-math.js"},{"name":"NOTIFICATION_DRAWER_ID","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"passwordStrength","sourcePath":"components/input/PasswordField.jsx"},{"name":"pathLength","sourcePath":"components/data/chart-math.js"},{"name":"r1","sourcePath":"components/data/chart-math.js"},{"name":"runsOf","sourcePath":"components/data/chart-math.js"},{"name":"seriesDash","sourcePath":"components/data/chart-math.js"},{"name":"smoothPath","sourcePath":"components/data/chart-math.js"},{"name":"spaceToken","sourcePath":"components/layout/Stack.jsx"},{"name":"stackBars","sourcePath":"components/data/chart-math.js"},{"name":"toneInk","sourcePath":"components/data/chart-math.js"},{"name":"toneVar","sourcePath":"components/data/chart-math.js"},{"name":"useAnchoredPopover","sourcePath":"components/core/useAnchoredPopover.js"},{"name":"useFieldContext","sourcePath":"components/input/Field.jsx"},{"name":"useModalDialog","sourcePath":"components/overlay/useModalDialog.js"},{"name":"useToast","sourcePath":"components/feedback/Toast.jsx"}]} */
 
 (() => {
 
@@ -614,6 +614,27 @@ function MascotMark({
 Object.assign(__ds_scope, { MascotMark });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/brand/MascotMark.jsx", error: String((e && e.message) || e) }); }
 
+// components/core/missing.js
+try { (() => {
+/* 결측 계약: "데이터는 nullable이 기본. 수집되지 않은 값은 꾸미지 않고 '수집 안 됨'으로 그대로 보여준다"를
+   한 곳에서 구현한다. 표기 문자열·판정 함수·표기 클래스는 전부 여기서만 나온다.
+
+   판정 규칙(isMissing)
+   - null · undefined  결측. 수집되지 않은 값의 기본 표현이다.
+   - NaN               결측. 계산이 실패한 수치를 "NaN"으로 꾸며 보여주지 않는다.
+   - MISSING_TEXT      결측. 이미 문구로 포맷해서 넘기는 사용처(templates/dashboard/data.js의 fmt.*)를 그대로 지원한다.
+                       문자열 비교는 이 파일 안 한 곳에만 있으므로 문구를 바꿔도 판정과 표기가 함께 움직인다.
+   - "" · 0 · false    값. 수집된 결과가 비어 있거나 0인 것과 수집 실패는 다르다. 빈 문자열은 빈 칸으로 그린다.
+   - ReactNode(요소·배열) 판정하지 않는다. 노드를 만드는 것은 소비자 몫이고 React 규칙(null = 아무것도 그리지 않음)을 따른다.
+
+   isMissing은 "어떻게 보여줄지"를 정한다. 차트 좌표·누적 같은 기하 계산은 종전대로 값이 null인지로 판단한다. */
+const MISSING_TEXT = "수집 안 됨";
+/** 결측 문구에 붙는 유일한 클래스. 규칙은 styles/c-data.css에 있다(mono를 벗고 --ink-3). */
+const MISSING_CLASS = "bds-na";
+const isMissing = v => v == null || v === MISSING_TEXT || typeof v === "number" && Number.isNaN(v);
+Object.assign(__ds_scope, { MISSING_TEXT, MISSING_CLASS, isMissing });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/core/missing.js", error: String((e && e.message) || e) }); }
+
 // components/core/useAnchoredPopover.js
 try { (() => {
 const { useLayoutEffect, useRef } = React;
@@ -690,9 +711,9 @@ Object.assign(__ds_scope, { useAnchoredPopover });
 
 // components/data/BarList.jsx
 try { (() => {
-const { cx, frameStyle } = __ds_scope;
-const NOT = "수집 안 됨";
-/** 이름·값·막대 목록(디스크별 사용량, GPU 예약). max 생략 시 항목 최대값. thresholds로 warn/crit 색 전환. */
+const { cx, frameStyle, MISSING_CLASS, MISSING_TEXT, isMissing } = __ds_scope;
+/** 이름·값·막대 목록(디스크별 사용량, GPU 예약). max 생략 시 항목 최대값. thresholds로 warn/crit 색 전환.
+ *  결측 값(null·undefined·NaN)은 막대 0 + "수집 안 됨" 문구로 그린다. */
 function BarList({
   items = [],
   max,
@@ -707,11 +728,11 @@ function BarList({
   "aria-label": ariaLabel,
   ...rest
 }) {
-  const nums = items.map(it => it.value).filter(v => v != null);
+  const nums = items.map(it => it.value).filter(v => !isMissing(v));
   const top = (max ?? (nums.length ? Math.max(...nums) : 1)) || 1;
   const barColor = (v, it) => {
     if (it.tone) return `var(--series-${it.tone})`;
-    if (thresholds && v != null) {
+    if (thresholds && !isMissing(v)) {
       if (v >= thresholds.crit) return "var(--crit)";
       if (v >= thresholds.warn) return "var(--warn)";
     }
@@ -728,7 +749,8 @@ function BarList({
     "aria-label": ariaLabel,
     ...rest
   }, items.map((it, i) => {
-    const pct = it.value == null ? 0 : Math.min(100, Math.max(0, it.value / top * 100));
+    const na = isMissing(it.value);
+    const pct = na ? 0 : Math.min(100, Math.max(0, it.value / top * 100));
     return /*#__PURE__*/React.createElement("div", {
       key: it.key ?? i,
       className: "bds-barlist__row",
@@ -736,12 +758,8 @@ function BarList({
     }, /*#__PURE__*/React.createElement("span", {
       className: "bds-barlist__n bds-ellipsis"
     }, it.name), /*#__PURE__*/React.createElement("span", {
-      className: cx("bds-barlist__v", it.value == null && "bds-barlist__v--na"),
-      style: it.value == null ? {
-        fontFamily: "var(--font-ui)",
-        color: "var(--ink-3)"
-      } : undefined
-    }, it.value == null ? NOT : valueFormatter(it.value)), /*#__PURE__*/React.createElement("div", {
+      className: cx("bds-barlist__v", na && MISSING_CLASS)
+    }, na ? MISSING_TEXT : valueFormatter(it.value)), /*#__PURE__*/React.createElement("div", {
       className: "bds-barlist__track",
       "aria-hidden": "true"
     }, /*#__PURE__*/React.createElement("div", {
@@ -830,8 +848,9 @@ Object.assign(__ds_scope, { DiffView });
 
 // components/data/Gauge.jsx
 try { (() => {
-const { cx, frameStyle } = __ds_scope;
-/** 반원 게이지. value 0~1(또는 max 기준). 임계 70/90으로 톤 자동(ok·warn·crit). null이면 "수집 안 됨". */
+const { cx, frameStyle, MISSING_TEXT, isMissing } = __ds_scope;
+/** 반원 게이지. value 0~1(또는 max 기준). 임계 70/90으로 톤 자동(ok·warn·crit). 결측이면 "수집 안 됨".
+ *  결측 문구의 표기는 SVG text라 색이 fill이다. 공통 .bds-na 대신 tone off 규칙(.bds-gauge--off .bds-gauge__v)이 담당한다. */
 function Gauge({
   value,
   max = 1,
@@ -851,7 +870,7 @@ function Gauge({
   style,
   ...rest
 }) {
-  const r = value == null ? null : Math.max(0, Math.min(1, value / max));
+  const r = isMissing(value) ? null : Math.max(0, Math.min(1, value / max));
   const t = tone ?? (r == null ? "off" : r >= thresholds.crit ? "crit" : r >= thresholds.warn ? "warn" : "ok");
   const W = 120,
     H = 70,
@@ -861,7 +880,7 @@ function Gauge({
     sw = 10;
   const len = Math.PI * R;
   const d = "M " + (cx0 - R) + " " + cy + " A " + R + " " + R + " 0 0 1 " + (cx0 + R) + " " + cy;
-  const txt = r == null ? "수집 안 됨" : valueFormatter ? valueFormatter(value) : Math.round(r * 100) + "%";
+  const txt = r == null ? MISSING_TEXT : valueFormatter ? valueFormatter(value) : Math.round(r * 100) + "%";
   return /*#__PURE__*/React.createElement("div", {
     className: cx("bds-gauge", "bds-gauge--" + t, className),
     style: frameStyle({
@@ -873,7 +892,7 @@ function Gauge({
     role: "meter",
     "aria-valuemin": 0,
     "aria-valuemax": max,
-    "aria-valuenow": value ?? undefined,
+    "aria-valuenow": r == null ? undefined : value,
     "aria-valuetext": txt + (label ? " " + label : ""),
     ...rest
   }, /*#__PURE__*/React.createElement("svg", {
@@ -914,8 +933,7 @@ Object.assign(__ds_scope, { Gauge });
 // components/data/Heatmap.jsx
 try { (() => {
 const { useId, useState } = React;
-const { cx, frameStyle } = __ds_scope;
-const NA = "수집 안 됨";
+const { cx, frameStyle, MISSING_CLASS, MISSING_TEXT, isMissing } = __ds_scope;
 /** 시간×요일 같은 2차원 강도 격자. 색은 --ramp-1~6 순차 램프만 쓴다(상태색 금지). 값 null은 빈 칸(수집 안 됨).
  *  격자는 tabIndex=0: 화살표로 셀 이동, Home/End 행 양끝, Esc 해제. 마우스 hover와 같은 아래 줄 텍스트가 뜬다. 숨김 표(bds-sr)가 aria-describedby로 연결된다. */
 function Heatmap({
@@ -935,14 +953,14 @@ function Heatmap({
 }) {
   const [hover, setHover] = useState(null);
   const srId = useId();
-  const flat = values.flat().filter(v => v != null);
+  const flat = values.flat().filter(v => !isMissing(v));
   const lo = flat.length ? Math.min(...flat) : 0,
     hi = flat.length ? Math.max(...flat) : 1;
-  const step = v => v == null ? 0 : Math.min(6, 1 + Math.floor((v - lo) / (hi - lo || 1) * 5.999));
+  const step = v => isMissing(v) ? 0 : Math.min(6, 1 + Math.floor((v - lo) / (hi - lo || 1) * 5.999));
   const every = Math.max(1, Math.ceil(cols.length / 12));
   const rl = r => rowLabel ? rowLabel(r) : r,
     cl = c => colLabel ? colLabel(c) : c;
-  const fmt = (i, j) => values[i]?.[j] == null ? NA : valueFormatter(values[i][j]);
+  const fmt = (i, j) => isMissing(values[i]?.[j]) ? MISSING_TEXT : valueFormatter(values[i][j]);
   const onKey = e => {
     if (!rows.length || !cols.length) return;
     const [i, j] = hover ?? [0, -1];
@@ -982,7 +1000,7 @@ function Heatmap({
     const v = values[i]?.[j];
     return /*#__PURE__*/React.createElement("i", {
       key: j,
-      className: cx("bds-heat__cell", v == null && "bds-heat__cell--na", hover && hover[0] === i && hover[1] === j && "bds-heat__cell--on"),
+      className: cx("bds-heat__cell", isMissing(v) && "bds-heat__cell--na", hover && hover[0] === i && hover[1] === j && "bds-heat__cell--on"),
       "data-step": step(v),
       onMouseEnter: () => setHover([i, j]),
       onMouseLeave: () => setHover(null)
@@ -1007,7 +1025,7 @@ function Heatmap({
     className: "bds-heat__tip",
     role: "status"
   }, hover && hover[1] >= 0 ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("b", null, rl(rows[hover[0]]), " · ", cl(cols[hover[1]])), " ", /*#__PURE__*/React.createElement("span", {
-    className: "bds-mono"
+    className: isMissing(values[hover[0]]?.[hover[1]]) ? MISSING_CLASS : "bds-mono"
   }, fmt(hover[0], hover[1]))) : "\u00a0"), /*#__PURE__*/React.createElement("span", {
     className: "bds-heat__scale",
     "aria-hidden": "true"
@@ -1025,9 +1043,8 @@ Object.assign(__ds_scope, { Heatmap });
 
 // components/data/KeyValues.jsx
 try { (() => {
-const { cx } = __ds_scope;
-const NOT = "수집 안 됨";
-/** 키·값 행 목록. rows: [key, value][] 또는 {k,v,mono?}[]. 수치 값은 mono, 결측 문구는 mono를 벗는다. */
+const { cx, MISSING_CLASS, MISSING_TEXT, isMissing } = __ds_scope;
+/** 키·값 행 목록. rows: [key, value][] 또는 {k,v,mono?}[]. 수치 값은 mono, 결측 값은 "수집 안 됨"으로 그리고 mono를 벗는다. */
 function KeyValues({
   rows = [],
   lined = false,
@@ -1039,20 +1056,17 @@ function KeyValues({
     ...rest
   }, rows.map((r, i) => {
     const [k, v, mono] = Array.isArray(r) ? [r[0], r[1], r[2]] : [r.k, r.v, r.mono];
-    const isMono = mono ?? (typeof v === "number" || typeof v === "string" && v !== NOT && /\d/.test(v));
+    const na = isMissing(v);
+    const isMono = mono ?? (!na && (typeof v === "number" || typeof v === "string" && /\d/.test(v)));
     return /*#__PURE__*/React.createElement("div", {
       key: i,
       className: "bds-kv__row"
     }, /*#__PURE__*/React.createElement("span", {
       className: "bds-kv__k"
     }, k), /*#__PURE__*/React.createElement("span", {
-      className: cx("bds-kv__v bds-ellipsis", isMono && "bds-mono", v === NOT && "bds-kv__v--na"),
-      title: typeof v === "string" || typeof v === "number" ? String(v) : undefined,
-      style: v === NOT ? {
-        color: "var(--ink-3)",
-        fontWeight: 400
-      } : undefined
-    }, v));
+      className: cx("bds-kv__v bds-ellipsis", isMono && "bds-mono", na && MISSING_CLASS),
+      title: na ? MISSING_TEXT : typeof v === "string" || typeof v === "number" ? String(v) : undefined
+    }, na ? MISSING_TEXT : v));
   }));
 }
 Object.assign(__ds_scope, { KeyValues });
@@ -1245,8 +1259,9 @@ Object.assign(__ds_scope, { Timeline });
 
 // components/data/TrendDelta.jsx
 try { (() => {
-const { cx, Icon } = __ds_scope;
-/** 증감 표시. value는 변화량(숫자) 또는 비율(percent). inverse면 증가가 나쁜 지표(응답시간·오류). 항상 화살표+숫자, 색 단독 금지. */
+const { cx, MISSING_CLASS, MISSING_TEXT, isMissing, Icon } = __ds_scope;
+/** 증감 표시. value는 변화량(숫자) 또는 비율(percent). inverse면 증가가 나쁜 지표(응답시간·오류). 항상 화살표+숫자, 색 단독 금지.
+ *  결측이면 화살표 없이 "수집 안 됨"을 mono 없이 표시한다. */
 function TrendDelta({
   value,
   percent = false,
@@ -1256,10 +1271,10 @@ function TrendDelta({
   className,
   ...rest
 }) {
-  if (value == null) return /*#__PURE__*/React.createElement("span", {
-    className: cx("bds-delta", "bds-delta--flat", className),
+  if (isMissing(value)) return /*#__PURE__*/React.createElement("span", {
+    className: cx("bds-delta", "bds-delta--flat", MISSING_CLASS, className),
     ...rest
-  }, "수집 안 됨");
+  }, MISSING_TEXT);
   const dir = value > 0 ? "up" : value < 0 ? "down" : "flat";
   const txt = (value > 0 ? "+" : "") + (percent ? (value * 100).toFixed(precision) + "%" : Number(value).toLocaleString("ko-KR", {
     maximumFractionDigits: precision
@@ -1278,8 +1293,10 @@ Object.assign(__ds_scope, { TrendDelta });
 
 // components/data/UptimeBar.jsx
 try { (() => {
-const { cx } = __ds_scope;
-/** 가용성 막대(일/시간 단위 90칸). segments: {status: ok|warn|crit|off, label?}. 비율은 ok+warn 기준으로 계산해 텍스트로 병기. */
+const { cx, MISSING_CLASS, MISSING_TEXT, isMissing } = __ds_scope;
+/** 가용성 막대(일/시간 단위 90칸). segments: {status: ok|warn|crit|off, label?}. 비율은 ok+warn 기준으로 계산해 텍스트로 병기.
+ *  칸의 off는 상태 넷 중 하나(그 구간이 수집되지 않음)이고 문구는 같은 MISSING_TEXT를 쓴다.
+ *  다만 칸의 표기는 텍스트가 아니라 track 색이므로 .bds-na를 붙이지 않는다. 헤더 비율만 결측 문구로 표시한다. */
 function UptimeBar({
   name,
   segments = [],
@@ -1291,7 +1308,9 @@ function UptimeBar({
   ...rest
 }) {
   const known = segments.filter(s => ["ok", "warn", "crit"].includes(s.status));
-  const pct = uptime ?? (known.length ? known.filter(s => s.status === "ok" || s.status === "warn").length / known.length * 100 : null);
+  const raw = uptime ?? (known.length ? known.filter(s => s.status === "ok" || s.status === "warn").length / known.length * 100 : null);
+  const na = isMissing(raw),
+    pct = na ? null : raw;
   return /*#__PURE__*/React.createElement("div", {
     className: cx("bds-uptime", className),
     style: {
@@ -1301,8 +1320,8 @@ function UptimeBar({
   }, (name || pct != null) && /*#__PURE__*/React.createElement("div", {
     className: "bds-uptime__hd"
   }, name && /*#__PURE__*/React.createElement("b", null, name), /*#__PURE__*/React.createElement("span", {
-    className: "bds-uptime__pct"
-  }, pct == null ? "수집 안 됨" : pct.toFixed(pct >= 99.95 ? 3 : 2) + "%")), /*#__PURE__*/React.createElement("div", {
+    className: cx("bds-uptime__pct", na && MISSING_CLASS)
+  }, na ? MISSING_TEXT : pct.toFixed(pct >= 99.95 ? 3 : 2) + "%")), /*#__PURE__*/React.createElement("div", {
     className: "bds-uptime__bars",
     role: "img",
     "aria-label": (name ? name + " " : "") + segments.length + "칸 가용성"
@@ -1313,7 +1332,7 @@ function UptimeBar({
       ok: "정상",
       warn: "일부 지연",
       crit: "장애",
-      off: "수집 안 됨"
+      off: MISSING_TEXT
     }[s.status ?? "off"]
   }))), (start || end) && /*#__PURE__*/React.createElement("div", {
     className: "bds-uptime__ft"
@@ -1514,7 +1533,7 @@ Object.assign(__ds_scope, { Legend });
 // components/data/Chart.jsx
 try { (() => {
 const { useEffect, useId, useRef, useState } = React;
-const { cx, frameStyle, r1, toneVar, toneInk, fmtKo, niceTicks, stackBars, smoothPath, runsOf, pathLength, estWidth, seriesDash, histBins, Legend } = __ds_scope;
+const { cx, frameStyle, MISSING_CLASS, MISSING_TEXT, isMissing, r1, toneVar, toneInk, fmtKo, niceTicks, stackBars, smoothPath, runsOf, pathLength, estWidth, seriesDash, histBins, Legend } = __ds_scope;
 /* ---------- 공용 크롬 ---------- */
 function useSize(ref, fixedW, fixedH) {
   const [size, setSize] = useState({
@@ -1575,14 +1594,11 @@ function Tip({
   }), /*#__PURE__*/React.createElement("span", {
     className: "n bds-ellipsis"
   }, r.name), /*#__PURE__*/React.createElement("span", {
-    className: "v",
-    style: r.value === MISSING ? {
-      fontFamily: "var(--font-ui)"
-    } : undefined
+    className: cx("v", isMissing(r.value) && MISSING_CLASS)
   }, r.value))));
 }
-const MISSING = "수집 안 됨";
-const cell = (fmt, v) => v == null ? MISSING : fmt(v);
+/* 표시용 결측 판정은 core/missing.js가 담당한다. 좌표·누적 계산은 종전대로 값이 null인지로 판단한다(선 끊기·면 채움 생략). */
+const cell = (fmt, v) => isMissing(v) ? MISSING_TEXT : fmt(v);
 
 /* ---------- 직교(line·area·bar) ---------- */
 /** hover/setHover는 Chart가 갖는다(마우스·키보드가 같은 인덱스를 움직여 같은 Tip을 띄운다). */
@@ -2163,7 +2179,7 @@ function SrTable({
     rows = (props.segments ?? []).map(sg => [sg.label, fmt(Math.max(0, Number(sg.value) || 0))]);
   } else if (kind === "radial") {
     head = props.label != null ? ["값", "상태"] : ["값"];
-    rows = [[props.value == null ? MISSING : fmt(Math.min(1, Math.max(0, props.value)))].concat(props.label != null ? [props.label] : [])];
+    rows = [[isMissing(props.value) ? MISSING_TEXT : fmt(Math.min(1, Math.max(0, props.value)))].concat(props.label != null ? [props.label] : [])];
   } else if (kind === "histogram") {
     const b = histBins(props.samples, props.bins);
     head = ["구간", "표본"];
@@ -2215,7 +2231,7 @@ function Chart(rawProps) {
     width,
     height,
     valueFormatter = fmtKo,
-    emptyText = MISSING,
+    emptyText = MISSING_TEXT,
     showLegend = true,
     live = false,
     animate = !live,
@@ -2685,7 +2701,7 @@ Object.assign(__ds_scope, { StatusPill });
 // components/data/StatTile.jsx
 try { (() => {
 const { useEffect, useRef, useState } = React;
-const { cx, frameStyle, Icon, Sparkline, StatusPill } = __ds_scope;
+const { cx, frameStyle, MISSING_CLASS, MISSING_TEXT, isMissing, Icon, Sparkline, StatusPill } = __ds_scope;
 /* animate=true일 때만 카운트업. 기본은 꺼짐: 실시간 수치는 트랜지션 없이 즉시 바뀐다. 꺼지면 target을 그대로 돌려주는 no-op. */
 function useCountUp(target, enabled) {
   const [v, setV] = useState(enabled ? 0 : target);
@@ -2708,7 +2724,8 @@ function useCountUp(target, enabled) {
   return enabled ? v : target;
 }
 
-/** 큰 수치 하나. value가 숫자면 mono(ko-KR 천 단위), 문자열이면 그대로. 기본은 즉시 갱신, animate={true}일 때만 진입 카운트업. delta는 증감, spark는 최근 추세. */
+/** 큰 수치 하나. value가 숫자면 mono(ko-KR 천 단위), 문자열이면 그대로, 결측이면 "수집 안 됨"(mono·단위 없음).
+ *  기본은 즉시 갱신, animate={true}일 때만 진입 카운트업. delta는 증감, spark는 최근 추세. */
 /** detail: 수치 아래 보조 줄(모델 이름·마지막 heartbeat 등). pill: {tone,text} 상태 pill(라벨 옆). icon: 라벨 앞 Phosphor 아이콘. */
 function StatTile({
   label,
@@ -2730,9 +2747,10 @@ function StatTile({
   style,
   ...rest
 }) {
-  const numeric = typeof value === "number";
+  const na = isMissing(value);
+  const numeric = !na && typeof value === "number";
   const shown = useCountUp(numeric ? value : 0, animate && numeric);
-  const text = numeric ? shown.toLocaleString("ko-KR", {
+  const text = na ? MISSING_TEXT : numeric ? shown.toLocaleString("ko-KR", {
     minimumFractionDigits: digits,
     maximumFractionDigits: digits
   }) : value;
@@ -2754,17 +2772,14 @@ function StatTile({
     size: "sm",
     tone: pill.tone
   }, pill.text)), /*#__PURE__*/React.createElement("span", {
-    className: cx("bds-stat__v", !numeric && "bds-stat__v--text")
-  }, text, unit && /*#__PURE__*/React.createElement("small", null, unit)), delta != null && /*#__PURE__*/React.createElement("span", {
+    className: cx("bds-stat__v", !numeric && "bds-stat__v--text", na && MISSING_CLASS)
+  }, text, !na && unit && /*#__PURE__*/React.createElement("small", null, unit)), delta != null && /*#__PURE__*/React.createElement("span", {
     className: cx("bds-stat__d", dir && `bds-stat__d--${dir}`)
   }, dir && /*#__PURE__*/React.createElement(Icon, {
     name: dir === "up" ? "arrow-up-right" : "arrow-down-right",
     size: 12
   }), typeof delta === "number" ? `${delta > 0 ? "+" : ""}${delta.toLocaleString("ko-KR")}` : delta, deltaLabel && /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontFamily: "var(--font-ui)",
-      color: "var(--ink-3)"
-    }
+    className: "bds-stat__dl"
   }, deltaLabel)), detail && /*#__PURE__*/React.createElement("div", {
     className: "bds-stat__detail"
   }, detail), spark && /*#__PURE__*/React.createElement("div", {
@@ -3193,6 +3208,9 @@ const ICON = {
   warn: "warning",
   crit: "warning-octagon"
 };
+/* 퇴장 길이는 .bds-toast--leaving의 transition(--dur-base)과 같아야 한다. reduced-motion이면 애니메이션 없이 즉시 제거한다 */
+const EXIT_MS = 180;
+const reducedMotion = () => typeof matchMedia === "function" && matchMedia("(prefers-reduced-motion:reduce)").matches;
 
 /** 토스트 프로바이더. 앱 루트에 한 번. useToast().toast({message, tone?, action?, duration?}) */
 function ToastProvider({
@@ -3201,15 +3219,29 @@ function ToastProvider({
 }) {
   const [items, setItems] = useState([]);
   const seq = useRef(0);
-  const dismiss = useCallback(id => setItems(p => p.filter(t => t.id !== id)), []);
+  const drop = useCallback(id => setItems(p => p.filter(t => t.id !== id)), []);
+  /* 닫기는 leaving 표시 → 퇴장 트랜지션 → 제거. 같은 토스트를 다시 닫아도 leaving은 그대로고 제거만 한 번 더 시도한다(없으면 무시) */
+  const dismiss = useCallback(id => {
+    if (reducedMotion()) return drop(id);
+    setItems(p => p.map(t => t.id === id ? {
+      ...t,
+      leaving: true
+    } : t));
+    setTimeout(() => drop(id), EXIT_MS);
+  }, [drop]);
   const toast = useCallback(t => {
     const id = ++seq.current;
-    setItems(p => [...p, {
-      id,
-      tone: "info",
-      duration: 4000,
-      ...t
-    }].slice(-max));
+    setItems(p => {
+      const next = [...p, {
+        id,
+        tone: "info",
+        duration: 4000,
+        ...t
+      }];
+      /* 퇴장 중인 토스트는 자리를 비우는 중이므로 max에서 세지 않는다. 넘치는 만큼 오래된 것부터 즉시 뺀다 */
+      let over = next.filter(x => !x.leaving).length - max;
+      return next.filter(x => x.leaving || over-- <= 0);
+    });
     /* 행동(action)이 있거나 crit이면 닫기 전까지 남는다. duration을 직접 주면 그대로 따른다 */
     const d = t.duration ?? (t.action || t.tone === "crit" ? 0 : 4000);
     if (d > 0) setTimeout(() => dismiss(id), d);
@@ -3238,18 +3270,19 @@ function useToast() {
 /* 번들 네임스페이스에는 대문자 export만 노출되므로 정적 HTML에서는 ToastProvider.useToast()로 접근한다. */
 ToastProvider.useToast = useToast;
 
-/** 토스트 한 장. 보통 Provider가 그린다. */
+/** 토스트 한 장. 보통 Provider가 그린다. leaving은 Provider가 퇴장 중에 세운다. */
 function Toast({
   message,
   tone = "info",
   action,
   onAction,
   onDismiss,
+  leaving,
   className
 }) {
   return /*#__PURE__*/React.createElement("div", {
     role: tone === "crit" ? "alert" : "status",
-    className: cx("bds-toast", `bds-tone--${tone}`, className)
+    className: cx("bds-toast", `bds-tone--${tone}`, leaving && "bds-toast--leaving", className)
   }, /*#__PURE__*/React.createElement(Icon, {
     name: ICON[tone]
   }), /*#__PURE__*/React.createElement("span", {
@@ -3313,11 +3346,25 @@ Object.assign(__ds_scope, { Checkbox });
 // components/data/DataTable.jsx
 try { (() => {
 const { Fragment, useId, useState } = React;
-const { cx, frameStyle, Icon, Checkbox } = __ds_scope;
+const { cx, frameStyle, MISSING_CLASS, MISSING_TEXT, isMissing, Icon, Checkbox } = __ds_scope;
 const hideCls = c => c.hideBelow === "desktop" ? "d-hide" : c.hideBelow === "tablet" || c.hideOnMobile ? "m-hide" : undefined;
 
+/* 셀 하나의 결측 판정.
+   render 없는 열: row[key]가 값이므로 core/missing.js 규칙을 그대로 쓴다. null/undefined는 빈 칸이 아니라 "수집 안 됨"이다.
+   render 있는 열: 반환은 ReactNode다. React 규칙대로 null은 "아무것도 그리지 않음"이므로 결측으로 보지 않는다
+                   (예: 폐기된 토큰 행의 버튼 없음). 이미 문구로 포맷해 반환하는 사용처만 결측으로 인식한다. */
+const cellOf = (c, row, i) => {
+  const v = c.render ? c.render(row, i) : row[c.key];
+  const na = c.render ? v === MISSING_TEXT : isMissing(v);
+  return {
+    value: na ? MISSING_TEXT : v,
+    na
+  };
+};
+
 /** 데이터 표. 컨테이너 폭 기준으로 열을 숨기고(hideBelow), 숨긴 정보는 expandable로 펼쳐 본다.
- *  정렬은 표시만 하고 실제 정렬은 소비자가 rows에 반영한다. */
+ *  정렬은 표시만 하고 실제 정렬은 소비자가 rows에 반영한다.
+ *  결측: render 없는 열의 null·undefined·NaN은 "수집 안 됨"으로 표시한다(빈 칸으로 감추지 않는다). */
 function DataTable({
   columns = [],
   rows = [],
@@ -3451,11 +3498,14 @@ function DataTable({
       name: "caret-right",
       size: 12
     }))), columns.map(c => {
-      const v = c.render ? c.render(row, i) : row[c.key] ?? "";
+      const {
+        value,
+        na
+      } = cellOf(c, row, i);
       return /*#__PURE__*/React.createElement("td", {
         key: c.key,
-        className: cx(c.align === "num" && "num", v === "수집 안 됨" && "na", hideCls(c))
-      }, v);
+        className: cx(c.align === "num" && "num", na && MISSING_CLASS, hideCls(c))
+      }, value);
     })), expandable && open && /*#__PURE__*/React.createElement("tr", {
       className: "bds-table__exprow"
     }, /*#__PURE__*/React.createElement("td", {
@@ -3658,7 +3708,7 @@ function CodeEditor({
     }
   };
   return /*#__PURE__*/React.createElement("div", {
-    className: cx("bds-code-ed", err && "bds-code-ed--err", disabled && "bds-ctl--disabled", className),
+    className: cx("bds-code-ed", disabled && "bds-ctl--disabled", className),
     style: frameStyle({
       fit,
       width,
@@ -4161,7 +4211,7 @@ function DateRangePicker({
   const custom = !value.preset;
   const set = next => onChange?.(next);
   return /*#__PURE__*/React.createElement("div", {
-    className: cx("bds-range", size === "sm" && "bds-range--sm", disabled && "bds-ctl--disabled", className),
+    className: cx("bds-range", disabled && "bds-ctl--disabled", className),
     role: "group",
     "aria-label": ariaLabel,
     style: frameStyle({
@@ -4214,7 +4264,7 @@ function DateRangePicker({
   })), /*#__PURE__*/React.createElement("span", {
     className: "bds-range__sep",
     "aria-hidden": "true"
-  }, "–"), /*#__PURE__*/React.createElement("div", {
+  }, "~"), /*#__PURE__*/React.createElement("div", {
     className: cx("bds-ctl", size === "sm" && "bds-ctl--sm")
   }, /*#__PURE__*/React.createElement("input", {
     type: "datetime-local",
@@ -6775,7 +6825,7 @@ try { (() => {
     }
     render() {
       const dark = get() === "dark";
-      this.innerHTML = '<button type="button" aria-pressed="' + dark + '" aria-label="' + (dark ? "라이트 테마로" : "다크 테마로") + '" style="white-space:nowrap;display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--text-2);font:500 11.5px var(--font-ui);cursor:pointer;white-space:nowrap"><i class="ph-bold ' + (dark ? "ph-sun" : "ph-moon") + '" style="font-size:13px"></i>' + (dark ? "Light" : "Dark") + '</button>';
+      this.innerHTML = '<button type="button" aria-pressed="' + dark + '" aria-label="' + (dark ? "라이트 테마로" : "다크 테마로") + '" style="white-space:nowrap;display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--ink-2);font:500 11.5px var(--font-ui);cursor:pointer;white-space:nowrap"><i class="ph-bold ' + (dark ? "ph-sun" : "ph-moon") + '" style="font-size:13px"></i>' + (dark ? "Light" : "Dark") + '</button>';
       this.firstChild.onclick = () => {
         const t = dark ? "light" : "dark";
         try {

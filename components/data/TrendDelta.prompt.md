@@ -3,4 +3,5 @@ TrendDelta · StatTile 옆 증감. 응답시간·오류율·온도는 inverse(�
 ```jsx
 <TrendDelta value={0.12} percent label="1시간 전 대비" />
 <TrendDelta value={-12} inverse label="ms" />
+<TrendDelta value={null} />   {/* null·undefined·NaN → 화살표 없이 "수집 안 됨" */}
 ```

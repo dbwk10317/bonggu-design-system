@@ -1,6 +1,7 @@
 // _ds_bundle.js 빌드. components/**/*.jsx + core/*.js + theme-toggle.js를 Babel(react preset)로 변환해 한 파일로 묶는다.
 // 실행: node build-bundle.mjs   (@babel/standalone이 필요. 없으면 BABEL_STANDALONE=<경로> 로 지정하거나 `npm i -g @babel/standalone`)
-// 출력: _ds_bundle.js(헤더 JSON에 components·sourceHashes 갱신), _ds_manifest.json(components·unexposedExports 갱신)
+// 출력: _ds_bundle.js(헤더 JSON에 components·sourceHashes 갱신), _ds_manifest.json(components·unexposedExports 갱신),
+//       _adherence.oxlintrc.json(파생 부분만 갱신 — 아래 "adherence 설정" 참고)
 import { readFileSync, writeFileSync, readdirSync, statSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { createRequire } from "node:module";
@@ -74,3 +75,79 @@ const man = JSON.parse(readFileSync(mp, "utf8"));
 man.components = components; man.unexposedExports = unexposed;
 writeFileSync(mp, JSON.stringify(man));
 console.log(`bundle: ${order.length} files, ${components.length} components, ${unexposed.length} unexposed, ${(out.length / 1024).toFixed(0)} KB`);
+
+// ── adherence 설정 ─────────────────────────────────────────────────────────
+// _adherence.oxlintrc.json에서 출처가 있는 부분만 다시 만든다.
+//   생성: x-omelette.tokens·tokenKinds(← tokens/*.css), x-omelette.components와 컴포넌트별
+//         no-restricted-syntax 규칙(← components/**/*.d.ts), no-restricted-imports의 경로 목록(← components/ 디렉터리)
+//   보존: plugins, overrides, react/forbid-elements, 전역 no-restricted-syntax 3개, x-omelette.fontFamilies
+// tokenKinds의 종류는 정의 옆 `/* @kind <종류> */` 주석이 있으면 그것을 쓴다. 없으면 기존 값을 유지하고,
+// 그것도 없으면(새 토큰) 값으로 추정한 뒤 로그에 남긴다. 옛 종류 판정 규칙은 복원하지 못했으므로 주석으로 옮겨 적는 것이 정답이다.
+const CFG = join(ROOT, "_adherence.oxlintrc.json");
+const cfg = JSON.parse(readFileSync(CFG, "utf8"));
+const x = cfg["x-omelette"];
+
+const tokenValues = {}, declaredKinds = {};
+for (const f of readdirSync(join(ROOT, "tokens")).sort()) {
+  const raw = readFileSync(join(ROOT, "tokens", f), "utf8");
+  for (const m of raw.matchAll(/(--[\w-]+)\s*:[^;{}]*;?[^\S\n]*\/\*[^*]*?@kind\s+(\w+)/g)) declaredKinds[m[1]] = m[2];
+  const css = raw.replace(/\/\*[\s\S]*?\*\//g, "");
+  for (const m of css.matchAll(/[{;\s](--[\w-]+)\s*:([^;}]*)/g)) if (!(m[1] in tokenValues)) tokenValues[m[1]] = m[2].trim();
+}
+const tokens = Object.keys(tokenValues).sort();
+const kinds = {}, guessed = [], conflicts = [];
+for (const n of tokens) {
+  if (declaredKinds[n]) {
+    kinds[n] = declaredKinds[n];
+    if (x.tokenKinds[n] && x.tokenKinds[n] !== kinds[n]) conflicts.push(`${n} ${x.tokenKinds[n]}→${kinds[n]}`);
+  } else if (x.tokenKinds[n]) kinds[n] = x.tokenKinds[n];
+  else { kinds[n] = /#[0-9a-f]{3}|\b(?:oklch|rgba?|hsla?|color-mix)\(/i.test(tokenValues[n]) ? "color" : "other"; guessed.push(`${n}=${kinds[n]}`); }
+}
+
+// .d.ts: 컴포넌트는 `export declare function <대문자>`, 그 props는 같은 이름 + "Props" 인터페이스.
+const stripTs = (s) => s.replace(/\/\*[\s\S]*?\*\//g, "").replace(/\/\/.*$/gm, "");
+const ifaces = {}, comps = [];
+for (const p of walk(join(ROOT, "components")).filter((p) => p.endsWith(".d.ts")).sort()) {
+  const src = stripTs(readFileSync(p, "utf8"));
+  for (const m of src.matchAll(/export interface (\w+)[^{]*\{/g)) {
+    let i = m.index + m[0].length, depth = 1;
+    while (i < src.length && depth) { const c = src[i++]; if (c === "{") depth++; else if (c === "}") depth--; }
+    ifaces[m[1]] = src.slice(m.index + m[0].length, i - 1);
+  }
+  for (const m of src.matchAll(/^export declare function ([A-Z]\w*)/gm)) comps.push(m[1]);
+}
+comps.sort();
+
+// 인터페이스 본문 → 멤버. 깊이 0의 `;`로만 자른다(`<`·`>`는 화살표 함수 때문에 세지 않는다).
+const membersOf = (body) => {
+  const parts = []; let depth = 0, cur = "";
+  for (const ch of body) {
+    if ("{[(".includes(ch)) depth++; else if ("}])".includes(ch)) depth--;
+    if (ch === ";" && !depth) { parts.push(cur); cur = ""; } else cur += ch;
+  }
+  return [...parts, cur].map((s) => s.trim().match(/^(\w+)\??\s*:\s*([\s\S]+)$/)).filter(Boolean).map((m) => ({ name: m[1], type: m[2].trim() }));
+};
+const STR_UNION = /^"[^"]*"(?:\s*\|\s*"[^"]*")*$/;
+const propRules = [], noProps = [];
+for (const c of comps) {
+  if (!(c + "Props" in ifaces)) { noProps.push(c); continue; } // props가 인터페이스가 아닌 컴포넌트(Chart의 유니언 등)는 규칙을 만들지 않는다
+  const props = membersOf(ifaces[c + "Props"]), names = props.map((p) => p.name);
+  propRules.push({ selector: `JSXOpeningElement[name.name='${c}'] > JSXAttribute > JSXIdentifier[name!=/^(?:${[...names, "key", "ref", "className", "style", "children"].join("|")})$/]`, message: `<${c}> doesn't accept that prop. Declared props: ${names.join(", ")}.` });
+  for (const p of props) if (STR_UNION.test(p.type)) {
+    const vals = p.type.split("|").map((s) => s.trim().slice(1, -1));
+    propRules.push({ selector: `JSXOpeningElement[name.name='${c}'] > JSXAttribute[name.name='${p.name}'] > Literal[value!=/^(?:${vals.join("|")})$/]`, message: `<${c}> ${p.name} must be one of ${vals.map((v) => `'${v}'`).join(" | ")}.` });
+  }
+}
+
+const nrs = cfg.rules["no-restricted-syntax"];
+cfg.rules["no-restricted-syntax"] = [nrs[0], ...nrs.slice(1).filter((r) => !r.selector.startsWith("JSXOpeningElement")), ...propRules];
+cfg.rules["no-restricted-imports"][1].patterns[0].group = [...readdirSync(join(ROOT, "components")).sort().map((d) => `components/${d}/**`), "theme-toggle.js"];
+x.components = Object.fromEntries(comps.map((c) => [c, { replaces: [] }]));
+x.tokens = tokens;
+x.tokenKinds = kinds;
+const banner = "생성물. 직접 고치지 말고 tokens/*.css·components/**/*.d.ts를 고친 뒤 `node build-bundle.mjs`를 다시 실행한다. 토큰 종류는 정의 옆 `/* @kind <종류> */` 주석으로 정한다. plugins·overrides·react/forbid-elements·전역 no-restricted-syntax 3개·x-omelette.fontFamilies만 손으로 유지한다.";
+writeFileSync(CFG, JSON.stringify({ "x-generated": banner, ...cfg }, null, 2));
+console.log(`adherence: ${tokens.length} tokens(@kind ${Object.keys(declaredKinds).length}), ${comps.length} components, ${propRules.length} prop rules` +
+  (guessed.length ? `\n  새 토큰(종류 추정, @kind 주석으로 확정할 것): ${guessed.join(", ")}` : "") +
+  (conflicts.length ? `\n  @kind가 기존 종류를 덮음: ${conflicts.join(", ")}` : "") +
+  (noProps.length ? `\n  props 인터페이스 없어 규칙 제외: ${noProps.join(", ")}` : ""));

@@ -10,3 +10,19 @@
 6. 소스 변경 후 번들을 다시 생성한다. 결과 보고에는 원인, 기준 규칙, 수정 방식, 기존 사용처 영향, 검증 결과를 포함한다.
 
 현재 계약 결정은 docs/behavior-contracts.md에 기록한다.
+
+# 문서 관할
+
+새 규칙은 관할 문서 한 곳에만 적고, 다른 문서에서는 가리키기만 한다.
+
+- `readme.md` 시각·카피 규범, fit 계약, 컴포넌트 선택 가이드, 파일 Index. 규범이 어긋나면 여기가 기준이다.
+- `AGENTS.md` 변경 원칙과 이 관할표.
+- `CLAUDE.md` Claude Code 실행 환경(경로·셸·빌드·검증 명령).
+- `SKILL.md` 스킬 진입점. 규범은 readme를 가리키기만 하고 옮겨 적지 않는다.
+- `docs/behavior-contracts.md` 동작 계약 결정과 근거, 기존 소비자 영향.
+- `tests/README.md` 검증 실행법과 재현 케이스 추가법.
+- `docs/next-steps.md` 잔여 작업 인수인계. 규범이 아니라 할 일 목록이며, 항목이 끝나면 지운다.
+- `guidelines/*.html` 시각 스펙을 눈으로 확인하는 카드 13장.
+- `components/<Name>.d.ts` 공개 API. `components/<Name>.prompt.md` 컴포넌트별 사용 계약과 예시.
+
+`_ds_bundle.js`, `_ds_manifest.json`, `_adherence.oxlintrc.json`은 생성물이다. 손으로 고치지 않고 출처(`components/**`, `tokens/*.css`)를 고친 뒤 `node build-bundle.mjs`를 다시 실행한다. adherence 설정에는 손으로 유지하는 항목이 섞여 있고, 첫 키 `x-generated`가 그 경계를 적어 둔다.

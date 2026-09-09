@@ -1,6 +1,6 @@
 /* 봉구서버 스타일가이드 v1(2026-09) 색 토큰. 라이트 기본(:root), 다크는 :root.dark / [data-theme="dark"].
    규칙: 시그널(파랑)은 선택·포커스·주 동작·송신(tx)에만. 상태색(ok/warn/crit/info)과 섞지 않는다. 색 단독으로 뜻을 전하지 않는다.
-   가이드 이름(--canvas, --ink, --signal …)이 원본이고, 아래 "컴포넌트 별칭"은 같은 값을 짧은 이름으로 다시 가리킨다. */
+   이름은 여기 정의된 것이 전부다(--canvas, --ink, --signal …). 별칭은 두지 않는다. */
 :root{
   color-scheme:light;
   /* 바탕·면·선 */
@@ -34,18 +34,6 @@
   /* 마스코트 마크(기존 시스템 이관): 얼굴은 양 테마 모두 밝게. 귀는 실제 강아지 봉구의 앰버(기존 @bonggu/ui --accent 값 그대로) — 시그널 파랑과 무관, UI 어디에도 재사용하지 않는다 */
   --mark-face:#ffffff;--mark-line:#15181d;--mark-edge:#c8cdd6;--mark-ear:#99581F;
   --scrollbar-thumb:#c8cdd6;--scrollbar-thumb-hover:#a6adba;
-
-  /* ---- 컴포넌트 별칭 (deprecated: 소비 코드 호환용. 시스템 CSS는 가이드 이름만 쓴다. 다음 메이저에서 제거) ---- */
-  --bg:var(--canvas);--bg-sunken:var(--canvas-sunken);--surface:var(--panel);--surface-2:var(--panel-2);--surface-3:var(--panel-3);
-  --border:var(--line);--border-strong:var(--line-strong);--border-input:var(--line-input);
-  --text:var(--ink);--text-2:var(--ink-2);--text-3:var(--ink-3);--text-disabled:var(--ink-muted);
-  --accent:var(--signal);--accent-hover:var(--signal-hover);--accent-press:var(--signal-active);--accent-subtle:var(--signal-tint);--accent-ring:var(--focus-ring);--on-accent:var(--signal-fg);
-  --off:var(--neutral);
-  --ok-subtle:var(--ok-tint);--warn-subtle:var(--warn-tint);--crit-subtle:var(--crit-tint);--info-subtle:var(--info-tint);--off-subtle:var(--neutral-tint);--accent-subtle-line:var(--signal-tint-line);
-  --chart-1:var(--series-1);--chart-2:var(--series-2);--chart-3:var(--series-3);--chart-4:var(--series-4);--chart-5:var(--series-5);--chart-6:var(--series-6);--chart-7:var(--series-7);--chart-8:var(--series-8);
-  --chart-grid:var(--plot-grid);--chart-axis:var(--plot-axis-ink);--track:var(--meter-track);--focus:var(--focus-ring); /* 포커스 외곽선은 --focus-ring 하나. --focus는 별칭 */
-  --sh-1:none; /* @kind shadow */
-  --sh-2:var(--elev-2);--sh-pop:var(--elev-3);
 }
 :root.dark,:root[data-theme="dark"]{
   color-scheme:dark;

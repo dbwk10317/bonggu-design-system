@@ -23,8 +23,8 @@
   --z-modal:50; /* @kind other */
   --z-toast:60; /* @kind other */
   --z-tip:70; /* @kind other */
-  /* ---- 컴포넌트 별칭 (deprecated: 소비 코드 호환용. 시스템 CSS는 가이드 이름만 쓴다. 다음 메이저에서 제거) ---- */
-  --space-1:var(--sp-1);--space-2:var(--sp-2);--space-3:var(--sp-3);--space-4:var(--sp-4);--space-5:var(--sp-5);--space-6:var(--sp-6);--space-7:var(--sp-7);--space-8:var(--sp-8);--space-9:var(--sp-9);--space-10:var(--sp-10);
+  /* ---- 컴포넌트 별칭 (deprecated: 소비 코드 호환용. 시스템 CSS는 가이드 이름만 쓴다. 다음 메이저에서 제거) ----
+     --r-*는 guidelines/**와 *.card.html이 아직 참조하므로 남는다. 그 파일들을 --radius-*로 옮기면 함께 지운다. */
   --gutter:var(--page-pad); /* @kind spacing */
   --stack:var(--grid-gap); /* @kind spacing */
   --card-gap:var(--grid-gap);--card-pad:var(--panel-pad);

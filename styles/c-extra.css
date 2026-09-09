@@ -123,6 +123,8 @@ pre.bds-copy__v{white-space:pre;overflow-x:auto;line-height:var(--lh-body)}
 .bds-color__ctl{padding-left:6px}
 .bds-color__swatch{width:24px;height:24px;border-radius:5px;border:1px solid var(--line-strong);flex:none;position:relative;cursor:pointer;overflow:hidden}
 .bds-color__swatch input{position:absolute;inset:-4px;width:calc(100% + 8px);height:calc(100% + 8px);opacity:0;cursor:pointer}
+/* sm 컨트롤(28, compact 24)에 24px 스와치는 들어가지 않는다. 크기 modifier가 스와치도 함께 줄인다 */
+.bds-color--sm .bds-color__swatch{width:20px;height:20px}
 .bds-color__presets{display:flex;gap:6px;flex-wrap:wrap}
 .bds-color__chip{width:24px;height:24px;border-radius:50%;border:1px solid var(--line-strong);padding:0;cursor:pointer;transition:box-shadow var(--dur-fast) var(--ease-out)}
 .bds-color__chip:hover{box-shadow:0 0 0 2px var(--panel),0 0 0 4px var(--line-strong)}
@@ -167,6 +169,8 @@ pre.bds-copy__v{white-space:pre;overflow-x:auto;line-height:var(--lh-body)}
 .bds-upload__hd{display:flex;justify-content:space-between;gap:10px;align-items:baseline;font-size:var(--fs-label);min-width:0}
 .bds-upload__hd b{font-weight:var(--fw-medium);min-width:0}
 .bds-upload__meta{font-size:var(--fs-caption);color:var(--ink-3);white-space:nowrap}
+/* 상태 문구의 기본 색. queued(off)·uploading/verifying(accent)은 이 값을 쓰고 아래 셋만 덮는다 */
+.bds-upload__st{color:var(--ink-2)}
 .bds-upload__st--ok{color:var(--ok-ink)}.bds-upload__st--warn{color:var(--warn-ink)}.bds-upload__st--crit{color:var(--crit-ink)}
 .bds-upload__act{display:flex;gap:2px}
 @container (max-width:480px){.bds-upload__hd{flex-direction:column;gap:2px}}

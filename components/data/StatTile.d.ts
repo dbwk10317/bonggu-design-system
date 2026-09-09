@@ -1,10 +1,12 @@
 import type { HTMLAttributes, ReactNode } from "react";
 /**
  * 큰 수치 타일. 숫자면 mono(ko-KR 천 단위), 문자열이면 그대로. 기본은 즉시 갱신.
+ * 결측(null·undefined·NaN)이면 "수집 안 됨"을 mono 없이 표시하고 단위는 붙이지 않는다.
  */
 export interface StatTileProps extends HTMLAttributes<HTMLDivElement> {
   label: ReactNode;
-  value: number | string;
+  /** 결측이면 null. "수집 안 됨"으로 표시한다 */
+  value: number | string | null;
   unit?: string;
   /** 소수 자릿수 */
   digits?: number;

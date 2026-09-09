@@ -1,5 +1,6 @@
 import React, { useEffect, useId, useRef, useState } from "react";
 import { cx, frameStyle } from "../core/frame.js";
+import { MISSING_CLASS, MISSING_TEXT, isMissing } from "../core/missing.js";
 import { r1, toneVar, toneInk, fmtKo, niceTicks, stackBars, smoothPath, runsOf, pathLength, estWidth, seriesDash, histBins } from "./chart-math.js";
 import { Legend } from "./Legend.jsx";
 
@@ -25,12 +26,12 @@ function Tip({ x, w, title, rows }) {
   return (
     <div className={cx("bds-chart__tip", flip && "bds-chart__tip--flip")} style={{ left: x }}>
       {title != null && <div className="bds-chart__tip-t">{title}</div>}
-      {rows.map((r, i) => <div key={i} className="bds-chart__tip-row"><i style={{ background: r.color }} /><span className="n bds-ellipsis">{r.name}</span><span className="v" style={r.value === MISSING ? { fontFamily: "var(--font-ui)" } : undefined}>{r.value}</span></div>)}
+      {rows.map((r, i) => <div key={i} className="bds-chart__tip-row"><i style={{ background: r.color }} /><span className="n bds-ellipsis">{r.name}</span><span className={cx("v", isMissing(r.value) && MISSING_CLASS)}>{r.value}</span></div>)}
     </div>
   );
 }
-const MISSING = "수집 안 됨";
-const cell = (fmt, v) => (v == null ? MISSING : fmt(v));
+/* 표시용 결측 판정은 core/missing.js가 담당한다. 좌표·누적 계산은 종전대로 값이 null인지로 판단한다(선 끊기·면 채움 생략). */
+const cell = (fmt, v) => (isMissing(v) ? MISSING_TEXT : fmt(v));
 
 /* ---------- 직교(line·area·bar) ---------- */
 /** hover/setHover는 Chart가 갖는다(마우스·키보드가 같은 인덱스를 움직여 같은 Tip을 띄운다). */
@@ -195,7 +196,7 @@ function Histogram({ samples, bins, fmt, w, h, tone, percentiles = [], unit, ani
 function SrTable({ id, kind, props, fmt }) {
   let head = [], rows = [];
   if (kind === "pie") { head = ["항목", "값"]; rows = (props.segments ?? []).map((sg) => [sg.label, fmt(Math.max(0, Number(sg.value) || 0))]); }
-  else if (kind === "radial") { head = props.label != null ? ["값", "상태"] : ["값"]; rows = [[props.value == null ? MISSING : fmt(Math.min(1, Math.max(0, props.value)))].concat(props.label != null ? [props.label] : [])]; }
+  else if (kind === "radial") { head = props.label != null ? ["값", "상태"] : ["값"]; rows = [[isMissing(props.value) ? MISSING_TEXT : fmt(Math.min(1, Math.max(0, props.value)))].concat(props.label != null ? [props.label] : [])]; }
   else if (kind === "histogram") { const b = histBins(props.samples, props.bins); head = ["구간", "표본"]; rows = b ? b.counts.map((c, i) => [`${fmt(b.lo + (i / b.n) * b.span)}~${fmt(b.lo + ((i + 1) / b.n) * b.span)}${props.unit ?? ""}`, `${c}건`]) : []; }
   else { const cols = kind === "radar" ? (props.axes ?? []) : (props.labels ?? []); head = ["계열"].concat(cols); rows = (props.series ?? []).map((s) => [s.label].concat(cols.map((_, i) => cell(fmt, s.values[i])))); }
   return (
@@ -218,7 +219,7 @@ export function Chart(rawProps) {
   const last = useRef(rawProps);
   if (!rawProps.paused) last.current = rawProps;
   const props = rawProps.paused ? last.current : rawProps;
-  const { kind = "line", fit = "flex", width, height, valueFormatter = fmtKo, emptyText = MISSING, showLegend = true, live = false, animate = !live, className, style, "aria-label": ariaLabel } = props;
+  const { kind = "line", fit = "flex", width, height, valueFormatter = fmtKo, emptyText = MISSING_TEXT, showLegend = true, live = false, animate = !live, className, style, "aria-label": ariaLabel } = props;
   const uid = useId().replace(/:/g, "");
   const srId = `${uid}-sr`;
   const ref = useRef(null);

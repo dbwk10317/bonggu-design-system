@@ -1,6 +1,6 @@
 import type { HTMLAttributes, ReactNode } from "react";
 export interface GaugeProps extends HTMLAttributes<HTMLDivElement> {
-  /** null이면 "수집 안 됨" */
+  /** null·undefined·NaN이면 "수집 안 됨"(tone off) */
   value: number | null;
   max?: number;
   label?: ReactNode;

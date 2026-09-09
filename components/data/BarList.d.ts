@@ -1,5 +1,5 @@
 import type { HTMLAttributes } from "react";
-export interface BarListItem { key?: string; name: React.ReactNode; value: number | null; tone?: 1 | 2 | 3 | 4 | 5 | 6 }
+export interface BarListItem { key?: string; name: React.ReactNode; /** null·undefined·NaN이면 막대 0 + "수집 안 됨" */ value: number | null; tone?: 1 | 2 | 3 | 4 | 5 | 6 }
 export interface BarListProps extends HTMLAttributes<HTMLDivElement> {
   items: BarListItem[];
   /** 생략 시 최대값 */

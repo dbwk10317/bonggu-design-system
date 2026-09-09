@@ -10,7 +10,7 @@
     connectedCallback() { this.render(); }
     render() {
       const dark = get() === "dark";
-      this.innerHTML = '<button type="button" aria-pressed="' + dark + '" aria-label="' + (dark ? "라이트 테마로" : "다크 테마로") + '" style="white-space:nowrap;display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--text-2);font:500 11.5px var(--font-ui);cursor:pointer;white-space:nowrap"><i class="ph-bold ' + (dark ? "ph-sun" : "ph-moon") + '" style="font-size:13px"></i>' + (dark ? "Light" : "Dark") + '</button>';
+      this.innerHTML = '<button type="button" aria-pressed="' + dark + '" aria-label="' + (dark ? "라이트 테마로" : "다크 테마로") + '" style="white-space:nowrap;display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--ink-2);font:500 11.5px var(--font-ui);cursor:pointer;white-space:nowrap"><i class="ph-bold ' + (dark ? "ph-sun" : "ph-moon") + '" style="font-size:13px"></i>' + (dark ? "Light" : "Dark") + '</button>';
       this.firstChild.onclick = () => { const t = dark ? "light" : "dark"; try { localStorage.setItem(KEY, t); } catch {} apply(t); };
     }
   }
