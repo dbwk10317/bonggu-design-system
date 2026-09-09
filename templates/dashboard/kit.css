@@ -1,41 +1,40 @@
+/* 화면 배치용 CSS만. 색·간격·반경·글자 크기는 디자인 시스템 토큰을 참조한다.
+   컴포넌트가 이미 하는 일(카드, 격자, 간격 나열)은 여기서 다시 만들지 않는다. */
 
-/* 화면 배치용 CSS만. 색·간격·반경은 토큰. */
-.kit-strip{display:none;flex-wrap:wrap;gap:8px}
-.kit-row2{display:flex;gap:14px;align-items:center;min-width:0}.kit-row2>:last-child{flex:1;min-width:0}
-.kit-dual{display:flex;justify-content:space-around;gap:12px}
-.kit-unit{display:block;line-height:1.2}
-.kit-copy,.kit-dim{color:var(--ink-3);font-size:var(--fs-caption)}.kit-name{font-weight:var(--fw-medium)}.kit-preset-name{font-size:var(--fs-label);font-weight:var(--fw-medium)}
-.kit-events{display:grid;gap:8px;font-size:var(--fs-label)}.kit-events b{font-weight:600}.kit-events .bds-mono{color:var(--ink-3);font-size:var(--fs-caption)}
-.kit-prevhead{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.kit-prevhead b{font-size:var(--fs-label);font-weight:600}.kit-prevhead .bds-mono{margin-left:auto;font-size:var(--fs-caption)}
-.kit-stage{display:grid;place-items:center;height:132px;background:var(--canvas-sunken);border-radius:var(--radius-ctl);border:1px solid var(--line)}
-.kit-led{position:relative;width:110px;height:110px}.kit-led i{position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px;border-radius:50%;background:var(--c);box-shadow:0 0 10px var(--c);animation:kit-breathe 2.4s ease-in-out infinite;animation-delay:calc(var(--i) * -.2s)}
-.kit-led[data-effect="static"] i{animation:none}.kit-led[data-effect="off"] i{opacity:.12;box-shadow:none;animation:none}
-@keyframes kit-breathe{0%,100%{opacity:.35}50%{opacity:1}}
-.kit-ctlhead{display:flex;align-items:center;gap:14px;flex-wrap:wrap}.kit-ctlhead b{font-size:var(--fs-label)}
-.kit-fields{display:grid;gap:14px}
-.kit-colors{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
-.kit-chip{display:inline-flex;align-items:center;gap:6px;padding:4px 8px;border:1px solid var(--line);border-radius:var(--radius-ctl);background:var(--canvas-sunken)}.kit-chip.on{border-color:var(--signal)}
-.kit-chip input{width:26px;height:26px;padding:0;border:1px solid var(--line-strong);border-radius:5px;background:none;cursor:pointer}
-.kit-chip button.bds-mono{border:0;background:none;color:var(--ink-2);font-size:var(--fs-caption);padding:0 2px;min-height:24px}
-.kit-presets{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.kit-presets button{width:24px;height:24px;border:1px solid var(--line-strong);border-radius:999px;padding:0;background:var(--preset-color);transition:box-shadow var(--dur-fast) var(--ease-out)}.kit-presets button:hover{box-shadow:0 0 0 2px var(--panel),0 0 0 4px var(--line-strong)}
-.kit-bottom{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px;padding-top:12px;border-top:1px solid var(--line)}
-.kit-actions{display:flex;gap:8px;align-items:center}
-.kit-tags{display:flex;gap:4px;flex-wrap:wrap}.kit-checks{display:flex;gap:14px;flex-wrap:wrap}
-/* 장치 프리뷰 예외: micro 허용 */
-.kit-lcd{aspect-ratio:4/3;border-radius:7px;border:1px solid var(--line);background:var(--stage);color:var(--stage-ink);display:grid;place-content:center;text-align:center;gap:2px;font-family:var(--font-data)}.kit-lcd span{font-family:var(--font-data);font-size:var(--fs-micro);color:var(--stage-muted);letter-spacing:.1em}.kit-lcd b{font-size:28px;color:var(--stage-ok)}.kit-lcd small{font-family:var(--font-data);font-size:var(--fs-micro);color:var(--stage-muted)}
-.kit-corner{position:absolute;top:8px;right:8px}
-/* 템플릿 안 작은 조작 요소의 터치 하한. 디자인 시스템의 같은 규칙을 따른다 */
-@media (pointer:coarse){.kit-chip input,.kit-chip button.bds-mono,.kit-presets button{min-width:var(--h-touch);min-height:var(--h-touch);flex:none}}
-/* 좁은 폭 상단바: 장식용 마스코트를 빼고 상태 배지를 줄어들게 둔다. 둘 다 고정 폭이면
-   버거+제목+아이콘 3개와 합쳐 390px에서 문서 가로 넘침이 난다. */
-@media (width < 768px){.kit-strip{display:flex}.kit-row2{flex-direction:column;align-items:stretch}.kit-logout span{display:none}.kit-bottom{flex-direction:column;align-items:stretch}.kit-actions>:last-child{flex:1}.bds-shell__top .bds-mark{display:none}.bds-shell__top .bds-pill{min-width:0;flex-shrink:1;overflow:hidden;text-overflow:ellipsis}}
+.kit-app{height:100%}
+.kit-dim{color:var(--ink-3);font-size:var(--fs-caption)}
 
-/* 모델·설정 화면 */
-.kit-row{display:flex;gap:12px;align-items:center;min-width:0;flex-wrap:wrap}.kit-row>.kit-actions{margin-left:auto}.kit-row>.kit-grow{flex:1 1 200px}
-@media (width < 640px){.kit-row>.kit-actions{margin-left:0;width:100%}}.kit-grow{flex:1;min-width:0;display:grid;gap:4px}
-.kit-gauges{display:flex;gap:8px;justify-content:space-around;flex-wrap:wrap}
-.kit-cell2{display:grid;gap:2px;min-width:0;justify-items:start}.kit-cell2 .kit-dim{font-size:var(--fs-caption)}
-.kit-panelbar{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}.kit-panelbar .kit-dim{flex:1 1 280px;min-width:0}
-.kit-endactions{display:flex;gap:8px;justify-content:flex-end}
-.kit-inline{display:inline-flex;gap:8px;align-items:center;flex-wrap:wrap}
-.kit-expand{display:grid;gap:12px}
+/* 좁은 폭 상단바: 로그아웃 라벨과 장식용 마스코트를 접는다. 둘 다 고정 폭이면 버거+제목+아이콘 3개와
+   합쳐 390px에서 문서 가로 넘침이 난다. */
+@media (width < 768px){.kit-logout span{display:none}.bds-shell__top .bds-mark{display:none}.bds-shell__top .bds-pill{min-width:0;flex-shrink:1;overflow:hidden;text-overflow:ellipsis}}
+
+/* 표 셀 안에서 상세를 여는 글자 버튼. 스케일보다 작게 그리는 조작 요소라 24px을 하한으로 받고
+   터치 기기에서는 --h-touch까지 올린다(디자인 시스템의 조작 영역 규칙). */
+.kit-linkcell{display:inline-flex;align-items:center;min-height:24px;padding:0;border:0;background:none;color:var(--signal-ink);cursor:pointer;text-align:left}
+.kit-linkcell:hover{color:var(--signal-hover);text-decoration:underline}
+@media (pointer:coarse){.kit-linkcell{min-height:var(--h-touch)}}
+
+/* 값 옆에 붙는 작은 추세선 자리. Sparkline은 부모 상자를 채운다. */
+.kit-spark{width:96px;height:32px;flex:none}
+
+/* 장치 카드 */
+.kit-prevhead{display:flex;align-items:center;gap:var(--sp-2);flex-wrap:wrap}
+.kit-prevhead b{font-size:var(--fs-label);font-weight:var(--fw-medium)}
+.kit-prevhead .bds-mono{margin-left:auto}
+.kit-row2{display:flex;gap:var(--sp-4);align-items:center;min-width:0}
+.kit-row2>:last-child{flex:1;min-width:0}
+.kit-photo{border:1px solid var(--line);border-radius:var(--radius-ctl)}
+.kit-photo>span{display:grid;place-items:center;padding:var(--sp-2);text-align:center;background:var(--canvas-sunken);font-size:var(--fs-caption);color:var(--ink-3);overflow:hidden}
+
+/* 제어부 */
+.kit-ctlhead{display:flex;align-items:center;gap:var(--sp-4);flex-wrap:wrap}
+.kit-ctlhead b{font-size:var(--fs-label)}
+.kit-fields{display:grid;gap:var(--sp-4)}
+.kit-bottom{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:var(--sp-4);padding-top:var(--sp-3);border-top:1px solid var(--line)}
+.kit-actions{display:flex;gap:var(--sp-2);align-items:center}
+@media (width < 640px){.kit-bottom{flex-direction:column;align-items:stretch}.kit-actions>*{flex:1}}
+
+/* 공개 상태 페이지: 셸 없이 TopNav + Container로 선다 */
+.kit-public{min-height:100%;background:var(--canvas-sunken);padding-bottom:var(--sp-8)}
+.kit-public .bds-container{padding-top:var(--sp-5)}
+.kit-foot{padding-top:var(--sp-3);border-top:1px solid var(--line)}

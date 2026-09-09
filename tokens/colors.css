@@ -1,5 +1,5 @@
 /* @token-kinds
-   color: --canvas, --canvas-sunken, --panel, --panel-2, --panel-3, --line, --line-strong, --hairline, --line-input, --scrim, --stage, --stage-ink, --stage-muted, --stage-ok, --ink, --ink-2, --ink-3, --ink-muted, --ink-inverse, --on-warn, --signal, --signal-hover, --signal-active, --signal-tint, --signal-tint-line, --signal-ink, --signal-fg, --focus-ring, --ok, --ok-tint, --ok-ink, --warn, --warn-tint, --warn-ink, --crit, --crit-tint, --crit-ink, --info, --info-tint, --info-ink, --neutral, --neutral-tint, --neutral-ink, --meter-track, --meter-ok, --meter-warn, --meter-crit, --series-1, --series-2, --series-3, --series-4, --series-5, --series-6, --series-7, --series-8, --series-rx, --series-tx, --series-used, --series-reserved, --series-free, --ramp-1, --ramp-2, --ramp-3, --ramp-4, --ramp-5, --ramp-6, --plot-grid, --plot-axis, --plot-axis-ink, --mark-face, --mark-line, --mark-edge, --mark-ear, --scrollbar-thumb, --scrollbar-thumb-hover
+   color: --canvas, --canvas-sunken, --panel, --panel-2, --panel-3, --line, --line-strong, --hairline, --line-input, --scrim, --ink, --ink-2, --ink-3, --ink-muted, --ink-inverse, --on-warn, --signal, --signal-hover, --signal-active, --signal-tint, --signal-tint-line, --signal-ink, --signal-fg, --focus-ring, --ok, --ok-tint, --ok-ink, --warn, --warn-tint, --warn-ink, --crit, --crit-tint, --crit-ink, --info, --info-tint, --info-ink, --neutral, --neutral-tint, --neutral-ink, --meter-track, --meter-ok, --meter-warn, --meter-crit, --series-1, --series-2, --series-3, --series-4, --series-5, --series-6, --series-7, --series-8, --series-rx, --series-tx, --series-used, --series-reserved, --series-free, --ramp-1, --ramp-2, --ramp-3, --ramp-4, --ramp-5, --ramp-6, --plot-grid, --plot-axis, --plot-axis-ink, --mark-face, --mark-line, --mark-edge, --mark-ear, --scrollbar-thumb, --scrollbar-thumb-hover
    shadow: --elev-1, --elev-2, --elev-3
 */
 /* 봉구서버 스타일가이드 v1(2026-09) 색 토큰. 라이트 기본(:root), 다크는 :root.dark / [data-theme="dark"].
@@ -9,9 +9,8 @@
   color-scheme:light;
   /* 바탕·면·선 */
   --canvas:#ffffff;--canvas-sunken:#f4f5f7;--panel:#ffffff;--panel-2:#f0f2f5;--panel-3:#e8ebef;
-  --line:#e4e7ec;--line-strong:#c8cdd6;--hairline:#eef0f3;--line-input:#7d8596; /* 입력 경계선: 흰 바탕·sunken 위 3:1 이상 */
+  --line:#e4e7ec;--line-strong:#c8cdd6;--hairline:#eef0f3;--line-input:#7d8596; /* 컨트롤 식별 경계선: panel·canvas·sunken 위 3:1 이상 */
   --scrim:rgba(20,23,28,.42);
-  --stage:#0a0b10;--stage-ink:#ecf0f5;--stage-muted:#7a8394;--stage-ok:#4ce6a0; /* LCD·LED·기기 프리뷰: 테마 무관(다크에서 재정의하지 않는다) */
   /* 잉크 */
   --ink:#15181d;--ink-2:#4a5160;--ink-3:#656d7d;--ink-muted:#a6adba;--ink-inverse:#ffffff; /* ink-3: 흰 바탕 5.2:1, panel-2 위 4.64:1 (보조 텍스트 AA) */
   --on-warn:#15181d; /* warn 채움 위 글자. 다크 warn도 밝은 앰버라 같은 값 */
@@ -43,7 +42,7 @@
 :root.dark,:root[data-theme="dark"]{
   color-scheme:dark;
   --canvas:#0f1115;--canvas-sunken:#0a0b0f;--panel:#161920;--panel-2:#1d2129;--panel-3:#262b35;
-  --line:#2e3440;--line-strong:#3a414e;--hairline:#262b35;--line-input:#6c7483;--scrim:rgba(0,0,0,.6); /* 입력 경계선: sunken·panel·panel-2/3 위 3:1 이상 */
+  --line:#2e3440;--line-strong:#3a414e;--hairline:#262b35;--line-input:#6c7483;--scrim:rgba(0,0,0,.6); /* 컨트롤 식별 경계선: sunken·panel·panel-2/3 위 3:1 이상 */
   --ink:#eef0f4;--ink-2:#aeb5c2;--ink-3:#848c9d;--ink-muted:#555d6c;--ink-inverse:#15181d;--on-warn:#15181d;
   --signal:oklch(0.72 0.14 255);--signal-hover:oklch(0.77 0.13 255);--signal-active:oklch(0.66 0.15 255);
   --signal-tint:oklch(0.30 0.06 255);--signal-tint-line:oklch(0.42 0.09 255);--signal-fg:#0f1115;--focus-ring:oklch(0.72 0.14 255 / .45);

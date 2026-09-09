@@ -14,6 +14,12 @@
 node build-bundle.mjs
 ```
 
+`@babel/standalone`이 전역에 없으면 tests에 설치된 것을 가리킨다.
+
+```bash
+BABEL_STANDALONE="$PWD/tests/node_modules/@babel/standalone" node build-bundle.mjs
+```
+
 ```bash
 DS_TEST_BROWSER_EXECUTABLE="C:\Program Files\Google\Chrome\Application\chrome.exe" node tests/run.cjs
 ```
@@ -22,9 +28,22 @@ DS_TEST_BROWSER_EXECUTABLE="C:\Program Files\Google\Chrome\Application\chrome.ex
 - Playwright 번들 Chromium이 설치돼 있지 않다. 설치된 Chrome을 `DS_TEST_BROWSER_EXECUTABLE`로 지정하거나 `npx playwright install chromium`을 먼저 실행한다.
 - `_ds_bundle.js`·`_ds_manifest.json`은 생성물이다. 직접 고치지 않고 소스를 고친 뒤 다시 만든다.
 
+## 브라우저로 보기
+
+템플릿은 `x-import`가 `fetch`로 화면 파일을 읽어 `file://`에서 열리지 않는다. 저장소 루트에서 정적 서버를 띄운다.
+
+```bash
+python -m http.server 8080
+```
+
+- 템플릿 `http://localhost:8080/templates/dashboard/Dashboard.dc.html`
+- 가이드 `http://localhost:8080/guidelines/index.html`
+
+카드(`guidelines/*.html`, `components/*/*.card.html`)는 파일을 그대로 열어도 된다.
+
 ## 도구 사용
 
-- 파일 탐색·검색은 Glob/Grep을 쓴다. `_ds_bundle.js`(245 KB)와 `STYLEGUIDE.html`(1.2 MB)은 통째로 읽지 않는다.
+- 파일 탐색·검색은 Glob/Grep을 쓴다. `_ds_bundle.js`(236 KB)와 `STYLEGUIDE.html`(1.2 MB)은 통째로 읽지 않는다.
 - 커밋 메시지는 한국어로 쓰고 끝에 다음 줄을 넣는다.
 
 ```

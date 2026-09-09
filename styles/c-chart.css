@@ -22,7 +22,7 @@
 .bds-chart__track{stroke:var(--meter-track)}
 .bds-chart__arc{transition:stroke-dashoffset var(--dur-gauge) var(--ease-out)}
 .bds-chart__center{position:absolute;inset:0;display:grid;place-content:center;text-align:center;pointer-events:none;gap:2px}
-.bds-chart__center b{font-family:var(--font-data);font-variant-numeric:tabular-nums;font-weight:var(--fw-bold);color:var(--tone-ink,var(--ink));line-height:1;font-size:var(--center-size,22px);letter-spacing:-.02em}
+.bds-chart__center b{font-family:var(--font-data);font-variant-numeric:tabular-nums;font-weight:var(--fw-bold);color:var(--tone-ink,var(--ink));line-height:1;font-size:min(var(--center-size,22px),var(--fs-metric));letter-spacing:-.02em}
 .bds-chart__center small{font-size:var(--fs-caption);color:var(--ink-3);line-height:1.2}
 .bds-chart__tick--secondary{fill:var(--ink-2)}
 .bds-chart__tick[style]{fill:var(--tick-ink,var(--plot-axis-ink))}

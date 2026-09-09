@@ -248,7 +248,7 @@ function tokenRegistry() {
   return names;
 }
 
-// media·container 쿼리는 var()를 받지 못해 리터럴로 써야 한다. tokens/layout.css 머리주석이 이 예외를 적어 둔다.
+// media·container 쿼리는 var()를 받지 못해 리터럴로 써야 한다. tokens/layout.css 머리주석이 이 제약을 적어 둔다.
 const REFERENCE_ONLY_TOKENS = new Set([
   '--bp-sm', '--bp-md', '--bp-lg', '--bp-xl',
   '--cq-xs', '--cq-sm', '--cq-md', '--cq-lg', '--cq-xl',
@@ -360,6 +360,61 @@ function iconViolations() {
     .map((use) => ({ file: use.file, line: use.line, detail: `Icon name "${use.name}"가 fonts/phosphor/bold.css에 없음` }));
 }
 
+// readme: 컴포넌트는 자기 그룹 카드에 한 번 이상 나오고, guidelines/index.html은 모든 컴포넌트와 카드·템플릿을
+// 가리키며, 템플릿은 모든 컴포넌트를 한 번 이상 쓴다. 셋 다 "사람이 눈으로 확인할 수 있는가"를 지킨다.
+// 컴포넌트 목록은 생성물이 아니라 .d.ts의 공개 선언에서 읽는다.
+function declaredComponents() {
+  const found = [];
+  for (const file of walk('components').filter((candidate) => candidate.endsWith('.d.ts'))) {
+    const group = file.split('/')[1];
+    for (const match of read(file).matchAll(/export declare function ([A-Z]\w*)/g)) found.push({ name: match[1], group, file });
+  }
+  return found;
+}
+
+const mentions = (text, name) => new RegExp(`\\b${name}\\b`).test(text);
+const GUIDE_INDEX = 'guidelines/index.html';
+
+function cardCoverageViolations() {
+  const violations = [];
+  const cards = new Map();
+  for (const { name, group, file } of declaredComponents()) {
+    const card = `components/${group}/${group}.card.html`;
+    if (!cards.has(card)) cards.set(card, fs.existsSync(path.join(root, card)) ? read(card) : null);
+    const text = cards.get(card);
+    if (text == null) violations.push({ file, line: 1, detail: `${group} 그룹 카드(${card})가 없음` });
+    else if (!mentions(text, name)) violations.push({ file: card, line: 1, detail: `${name}이 그룹 카드에 없음` });
+  }
+  return violations;
+}
+
+function guideIndexViolations() {
+  if (!fs.existsSync(path.join(root, GUIDE_INDEX))) return [{ file: GUIDE_INDEX, line: 1, detail: '가이드 페이지가 없음' }];
+  const text = read(GUIDE_INDEX);
+  const violations = [];
+  for (const { name, file } of declaredComponents()) {
+    if (!mentions(text, name)) violations.push({ file: GUIDE_INDEX, line: 1, detail: `${name}이 가이드 페이지에 없음 (${file})` });
+  }
+  const targets = [
+    ...walk('guidelines').filter((f) => f.endsWith('.html') && f !== GUIDE_INDEX),
+    ...walk('components').filter((f) => f.endsWith('.card.html')),
+    'templates/dashboard/Dashboard.dc.html',
+  ];
+  for (const target of targets) {
+    const href = path.posix.relative('guidelines', target);
+    if (!text.includes(href)) violations.push({ file: GUIDE_INDEX, line: 1, detail: `${target} 링크가 없음(${href})` });
+  }
+  return violations;
+}
+
+function templateCoverageViolations() {
+  const source = sourceFiles(['templates/dashboard'], new Set(['.jsx', '.js'])).map(read).join('\n');
+  return declaredComponents()
+    // Toast는 ToastProvider가 렌더한다. 화면이 직접 마운트하지 않는 유일한 컴포넌트다.
+    .filter(({ name }) => name !== 'Toast' && !mentions(source, name))
+    .map(({ name, file }) => ({ file: 'templates/dashboard', line: 1, detail: `${name}을 템플릿이 쓰지 않음 (${file})` }));
+}
+
 function printViolations(title, violations, recommendation) {
   if (!violations.length) return;
   console.error(`\n${title}: ${violations.length}건`);
@@ -380,6 +435,9 @@ const checks = [
   ['tint 위 글자색', rawColorAsTextViolations(), '글자색은 같은 계열의 -ink를 씁니다. 원색은 채움 배경 전용입니다.'],
   ['장식 그라디언트', gradientViolations(), '배경은 단색으로 두고, 값·진행을 나타내는 그라디언트만 readme가 허용한 범위에서 씁니다.'],
   ['차트 면 채움 alpha', chartAlphaViolations(), '축이 있는 차트는 .14, 면이 겹치거나 소형인 차트는 .2를 씁니다.'],
+  ['그룹 카드 누락', cardCoverageViolations(), '그 컴포넌트를 자기 그룹의 *.card.html에 한 번 이상 그립니다.'],
+  ['가이드 페이지 누락', guideIndexViolations(), 'guidelines/index.html의 목록과 목차에 그 컴포넌트·카드를 넣습니다.'],
+  ['템플릿 미사용 컴포넌트', templateCoverageViolations(), 'templates/dashboard의 화면에서 그 컴포넌트를 실제로 씁니다.'],
 ];
 
 let failed = 0;

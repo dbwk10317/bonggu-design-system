@@ -1,10 +1,10 @@
 /* input: Field, TextField, TextArea, Select, Checkbox, Switch, SearchField, Dropzone, SegmentedControl, Tabs */
-.bds-field{display:grid;gap:6px;min-width:0}
+.bds-field{display:grid;gap:6px;min-width:0;align-content:start}
 .bds-field__label{display:flex;align-items:baseline;gap:6px;font-size:var(--fs-label);font-weight:var(--fw-medium);color:var(--ink-2)}
 .bds-field__req{color:var(--crit-ink);font-weight:var(--fw-bold)}
 .bds-field__hint{font-size:var(--fs-caption);color:var(--ink-3);line-height:var(--lh-snug)}
 .bds-field__err{font-size:var(--fs-caption);color:var(--crit-ink);line-height:var(--lh-snug);display:flex;gap:4px;align-items:center}
-.bds-ctl{display:flex;align-items:center;gap:8px;min-height:var(--h-ctl);padding:0 12px;border:1px solid var(--line-input);border-radius:var(--radius-ctl);background:var(--canvas-sunken);color:var(--ink);font-size:var(--fs-label);transition:border-color var(--dur-fast) var(--ease-out),box-shadow var(--dur-fast) var(--ease-out);min-width:0}
+.bds-ctl{display:flex;align-items:center;gap:8px;min-height:var(--h-ctl);padding:0 12px;border:1px solid var(--line-input);border-radius:var(--radius-ctl);background:var(--panel);color:var(--ink);font-size:var(--fs-label);transition:border-color var(--dur-fast) var(--ease-out),box-shadow var(--dur-fast) var(--ease-out);min-width:0}
 .bds-ctl:hover{border-color:var(--ink-3)}
 .bds-ctl:focus-within{border-color:var(--signal);box-shadow:0 0 0 3px var(--focus-ring)}
 .bds-ctl--err{border-color:var(--crit)}
@@ -18,11 +18,22 @@
 .bds-ctl--select{position:relative;padding-right:32px;height:var(--h-ctl)}
 .bds-ctl--select select{appearance:none;cursor:pointer;height:100%;line-height:normal}
 .bds-ctl--select .bds-ctl__caret{position:absolute;right:10px;pointer-events:none;color:var(--ink-3)}
+/* 목록은 브라우저가 그린다. base-select를 지원하면 같은 토큰으로 다시 그리고, 아니면 네이티브 목록 그대로 둔다. */
+@supports (appearance: base-select) {
+  .bds-ctl--select select,.bds-ctl--select select::picker(select){appearance:base-select}
+  .bds-ctl--select select::picker-icon{display:none}
+  .bds-ctl--select select::picker(select){min-width:anchor-size(width);border:1px solid var(--line);border-radius:var(--radius-ctl);background:var(--panel);box-shadow:var(--elev-2);padding:4px;margin-top:4px;font-family:var(--font-ui)}
+  .bds-ctl--select option{display:flex;align-items:center;min-height:var(--h-ctl-sm);padding:0 10px;border-radius:4px;background:var(--panel);color:var(--ink);font-size:var(--fs-label)}
+  .bds-ctl--select option::checkmark{display:none}
+  .bds-ctl--select option:hover{background:var(--panel-2)}
+  .bds-ctl--select option:checked{background:var(--signal-tint);color:var(--signal-ink);font-weight:var(--fw-medium)}
+  .bds-ctl--select option:disabled{color:var(--ink-muted);background:var(--panel)}
+}
 .bds-ctl--sm{min-height:var(--h-ctl-sm);font-size:var(--fs-caption);padding:0 10px}
 .bds-ctl--select.bds-ctl--sm{height:var(--h-ctl-sm)}
 .bds-check{display:inline-flex;align-items:center;gap:8px;font-size:var(--fs-label);cursor:pointer;min-height:24px;min-width:24px;user-select:none}
 .bds-check input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
-.bds-check__box{width:18px;height:18px;border:1.5px solid var(--line-input);border-radius:5px;background:var(--canvas-sunken);display:grid;place-items:center;color:var(--signal-fg);transition:background var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out);flex:none}
+.bds-check__box{width:18px;height:18px;border:1.5px solid var(--line-input);border-radius:5px;background:var(--panel);display:grid;place-items:center;color:var(--signal-fg);transition:background var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out);flex:none}
 .bds-check__box .ph-bold{font-size:12px;opacity:0;transform:scale(.6);transition:all var(--dur-fast) var(--ease-out)}
 .bds-check input:checked+.bds-check__box,.bds-check input:indeterminate+.bds-check__box{background:var(--signal);border-color:var(--signal)}
 .bds-check input:checked+.bds-check__box .ph-bold,.bds-check input:indeterminate+.bds-check__box .ph-bold{opacity:1;transform:none}
@@ -49,7 +60,7 @@ button.bds-ctl__affix:hover{color:var(--ink)}
 .bds-drop small{font-size:var(--fs-caption)}
 .bds-drop .bds-icon{font-size:22px;color:var(--signal-ink)}
 .bds-drop input{display:none}
-.bds-seg{display:inline-flex;padding:3px;gap:2px;border:1px solid var(--line-input);border-radius:var(--radius-ctl);background:var(--canvas-sunken);position:relative;max-width:100%;overflow:clip}
+.bds-seg{display:inline-flex;padding:3px;gap:2px;border:1px solid var(--line);border-radius:var(--radius-ctl);background:var(--canvas-sunken);position:relative;max-width:100%;overflow:clip}
 .bds-seg--flex{display:flex;width:100%}
 .bds-seg--flex .bds-seg__opt{flex:1}
 .bds-seg__opt{position:relative;padding:0 12px;height:calc(var(--h-ctl) - 8px);border:0;border-radius:4px;background:transparent;color:var(--ink-2);font-size:var(--fs-label);font-weight:var(--fw-medium);white-space:nowrap;transition:color var(--dur-fast) var(--ease-out);z-index:1}

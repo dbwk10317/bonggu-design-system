@@ -17,12 +17,12 @@ npm test
 
 - consistency-regressions.cjs: CSS와 소스의 클래스 사용을 양방향으로 대조합니다. 소스가 붙이는 `bds-*` 클래스에 규칙이 없거나, `styles/`·`tokens/`에 있는 클래스를 아무 소비자도 붙이지 않으면 위반 목록을 모두 출력하고 실패합니다. `bds-btn--${variant}` 같은 동적 조합은 고정 접두사로 인정합니다.
 - manifest-token-regressions.cjs: 먼저 `token-parser.mjs`를 `fixtures/token-parser`의 독립 fixture와 손으로 적은 기대값으로 시험하고, 같은 파서로 `_ds_manifest.json`의 토큰 이름·값·scope·정의 파일을 `tokens/*.css` 선언과 대조합니다. 모든 토큰이 `:root` 계열 블록 안에 있는지도 평면 스캔과 교차 확인합니다.
-- rule-regressions.cjs: `readme.md`의 규칙 중 기계로 판별할 수 있는 항목을 검사합니다. 현재 10종으로, 가시 텍스트 em-dash, inline style의 색·폰트 선언, CSS 클래스의 `bds-` 접두사, 토큰 별칭 정의, 본문 글자 크기 하한, Phosphor Bold 아이콘 이름, 미사용 토큰, 원색을 글자색으로 쓰는 자리, 장식 그라디언트, 차트 면 채움 alpha입니다. 기준값은 `readme.md`에 있고 이 파일은 그 기준을 검사만 합니다. 판단이 필요한 카피 품질·색 조합·컴포넌트 선택은 검사하지 않습니다. 위반마다 파일·줄·권장 수정안을 출력합니다.
-- smoke-regressions.cjs: `_ds_manifest.json`에 실린 컴포넌트 전부를 소스에서 로드해 서버 렌더가 예외 없이, 그리고 경고 없이 끝나는지 확인합니다. 목록을 매니페스트에서 읽으므로 새 컴포넌트가 자동으로 포함됩니다.
+- rule-regressions.cjs: `readme.md`의 규칙 중 기계로 판별할 수 있는 항목을 검사합니다. 현재 13종으로, 가시 텍스트 em-dash, inline style의 색·폰트 선언, CSS 클래스의 `bds-` 접두사, 토큰 별칭 정의, 본문 글자 크기 하한, Phosphor Bold 아이콘 이름, 미사용 토큰, 원색을 글자색으로 쓰는 자리, 장식 그라디언트, 차트 면 채움 alpha, 그룹 카드 누락, 가이드 페이지 누락, 템플릿 미사용 컴포넌트입니다. 뒤 3종은 `.d.ts`의 공개 선언에서 컴포넌트 목록을 읽어 그 컴포넌트를 눈으로 확인할 자리가 있는지 봅니다. 기준값은 `readme.md`에 있고 이 파일은 그 기준을 검사만 합니다. 판단이 필요한 카피 품질·색 조합·컴포넌트 선택은 검사하지 않습니다. 위반마다 파일·줄·권장 수정안을 출력합니다.
+- smoke-regressions.cjs: `_ds_manifest.json`에 실린 컴포넌트 전부를 소스에서 로드해 서버 렌더가 오류 없이, 그리고 경고 없이 끝나는지 확인합니다. 목록을 매니페스트에서 읽으므로 새 컴포넌트가 자동으로 포함됩니다.
 - data-regressions.cjs: 소수 눈금, 양음 누적 막대, 결측 표현, 가용성 공식. 실제 계산 함수와 React 서버 렌더링을 사용합니다.
 - input-regressions.cjs: 숫자 편집과 확정, 선택 후 목록, 달력 동기화, OTP 자리 보존. React test renderer로 상태 전이를 검증합니다.
 - overlay-regressions.cjs: 독립 폼 ID, 확인 세션, busy/제출 없음 계약, 알림의 공통 dialog 사용.
-- browser-regressions.cjs: 모달 크기, 실제 폼 제출, 재개방·중첩·역순 닫기·포커스, 메뉴 clipping/키보드/뷰포트/스크롤, 입력 수정. 1280·834·390 × 라이트·다크 × 포인터·터치 총 12개 조합을 추가 확인합니다. 실제 `templates/dashboard/Dashboard.dc.html`을 라우트 7개 × 1280·390 전수와 834 대표 3개로 열어 콘솔 오류·가로 넘침·레일과 드로어 전환을 확인하고, coarse pointer에서 노출된 조작 대상의 실제 bounding box가 선언한 하한과 24px을 지키는지 잽니다.
+- browser-regressions.cjs: 모달 크기, 실제 폼 제출, 재개방·중첩·역순 닫기·포커스, 메뉴 clipping/키보드/뷰포트/스크롤, 입력 수정. 1280·834·390 × 라이트·다크 × 포인터·터치 총 12개 조합을 추가 확인합니다. 실제 `templates/dashboard/Dashboard.dc.html`을 라우트 7개(개요·노드·장치·배포·접근·설정과 셸 없이 서는 공개 상태 페이지) × 1280·390 전수와 834 대표 3개로 열어 콘솔 오류·가로 넘침·레일과 드로어 전환을 확인하고, coarse pointer에서 노출된 조작 대상의 실제 bounding box가 선언한 하한과 24px을 지키는지 잽니다.
 
 ## 게이트 범위
 

@@ -37,10 +37,12 @@ export function Heatmap({ rows = [], cols = [], values = [], valueFormatter = (v
           {cols.map((_, j) => { const v = values[i]?.[j]; return <i key={j} className={cx("bds-heat__cell", isMissing(v) && "bds-heat__cell--na", hover && hover[0] === i && hover[1] === j && "bds-heat__cell--on")} data-step={step(v)} onMouseEnter={() => setHover([i, j])} onMouseLeave={() => setHover(null)} />; })}
         </React.Fragment>)}
       </div>
-      <table id={srId} className="bds-sr">
-        <thead><tr><th scope="col" />{cols.map((c, j) => <th key={j} scope="col">{cl(c)}</th>)}</tr></thead>
-        <tbody>{rows.map((r, i) => <tr key={i}><th scope="row">{rl(r)}</th>{cols.map((_, j) => <td key={j}>{fmt(i, j)}</td>)}</tr>)}</tbody>
-      </table>
+      <div className="bds-sr">
+        <table id={srId}>
+          <thead><tr><th scope="col" />{cols.map((c, j) => <th key={j} scope="col">{cl(c)}</th>)}</tr></thead>
+          <tbody>{rows.map((r, i) => <tr key={i}><th scope="row">{rl(r)}</th>{cols.map((_, j) => <td key={j}>{fmt(i, j)}</td>)}</tr>)}</tbody>
+        </table>
+      </div>
       <div className="bds-heat__foot">
         <span className="bds-heat__tip" role="status">{hover && hover[1] >= 0 ? <><b>{rl(rows[hover[0]])} · {cl(cols[hover[1]])}</b> <span className={isMissing(values[hover[0]]?.[hover[1]]) ? MISSING_CLASS : "bds-mono"}>{fmt(hover[0], hover[1])}</span></> : "\u00a0"}</span>
         <span className="bds-heat__scale" aria-hidden="true"><small className="bds-mono">{valueFormatter(lo)}</small>{[1, 2, 3, 4, 5, 6].map((s) => <i key={s} data-step={s} />)}<small className="bds-mono">{valueFormatter(hi)}</small></span>

@@ -156,10 +156,17 @@ async function run() {
       await context.close();
     }
     // 실제 대시보드 템플릿(templates/dashboard/Dashboard.dc.html) 게이트.
-    // 커버리지: 라우트 7개 × 1280·390 전수 + 834에서는 대표 3개(monitoring·argb·settings)만.
+    // 커버리지: 라우트 7개 × 1280·390 전수 + 834에서는 대표 3개(overview·devices·settings)만.
     // 834는 1024 미만 드로어 경로를 390과 공유하므로 전수로 돌릴 이득이 적고 실행 시간만 늘어난다.
     // 폭당 문서 로드는 1회고 라우트 전환은 hash로 한다(App이 hashchange를 구독한다).
-    const TITLES = { monitoring: '모니터링', auth: '인증', argb: '조명', cooler: '쿨러', models: '모델', training: '학습', settings: '설정' };
+    // status는 공개 상태 페이지라 셸 없이 TopNav로 선다. 셸 제목 대신 data-screen 표식으로 확인한다.
+    const TITLES = { overview: '개요', nodes: '노드', devices: '장치', deploys: '배포', access: '접근', settings: '설정' };
+    const ROUTES = [...Object.keys(TITLES), 'status'];
+    const mounted = ([route, title]) => {
+      const screen = document.querySelector(`[data-screen="${route}"]`);
+      if (!screen || !screen.querySelector('.bds-pagehead h2')) return false;
+      return title ? document.querySelector('.bds-shell__top h1')?.textContent === title : !!document.querySelector('.bds-topnav');
+    };
     const dashContext = await browser.newContext({ viewport: { width: 1280, height: 900 }, reducedMotion: 'reduce' });
     const dash = await dashContext.newPage();
     dash.setDefaultTimeout(20000);
@@ -167,18 +174,19 @@ async function run() {
     dash.on('pageerror', e => dashErrors.push(`pageerror: ${e.message}`));
     dash.on('console', m => { if (m.type() === 'error') dashErrors.push(`console: ${m.text()}`); });
     const url = `http://127.0.0.1:${server.address().port}/templates/dashboard/Dashboard.dc.html`;
-    for (const [width, routes] of [[1280, Object.keys(TITLES)], [834, ['monitoring', 'argb', 'settings']], [390, Object.keys(TITLES)]]) {
+    for (const [width, routes] of [[1280, ROUTES], [834, ['overview', 'devices', 'settings']], [390, ROUTES]]) {
       await dash.setViewportSize({ width, height: 900 });
       await dash.goto(`${url}#${routes[0]}`);
       for (const route of routes) {
         await dash.evaluate(r => { window.location.hash = '#' + r; }, route);
         // 셸 상단바 제목 + 화면의 PageHeader가 함께 보이면 App과 해당 x-import 화면이 실제로 마운트된 것이다.
-        await dash.waitForFunction(t => document.querySelector('.bds-shell__top h1')?.textContent === t
-          && !!document.querySelector('.bds-shell__body .bds-pagehead h2'), TITLES[route]);
+        await dash.waitForFunction(mounted, [route, TITLES[route] ?? null]);
         assert.deepEqual(dashErrors, [], `${route} @${width}`);
         assert.equal(await dash.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), true, `가로 넘침 ${route} @${width}`);
       }
-      // 1024 이상은 고정 레일, 미만은 햄버거 → 드로어.
+      // 1024 이상은 고정 레일, 미만은 햄버거 → 드로어. 셸이 있는 화면에서만 잰다.
+      await dash.evaluate(() => { window.location.hash = '#overview'; });
+      await dash.waitForFunction(mounted, ['overview', TITLES.overview]);
       const rail = dash.locator('.bds-shell__side'), burger = dash.locator('.bds-shell__burger');
       assert.equal(await rail.isVisible(), width >= 1024, `레일 표시 @${width}`);
       assert.equal(await burger.isVisible(), width < 1024, `햄버거 표시 @${width}`);
@@ -196,10 +204,9 @@ async function run() {
     const touchContext = await browser.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, reducedMotion: 'reduce' });
     const touchPage = await touchContext.newPage();
     touchPage.setDefaultTimeout(20000);
-    for (const route of Object.keys(TITLES)) {
+    for (const route of ROUTES) {
       await touchPage.goto(`${url}#${route}`);
-      await touchPage.waitForFunction(t => document.querySelector('.bds-shell__top h1')?.textContent === t
-        && !!document.querySelector('.bds-shell__body .bds-pagehead h2'), TITLES[route]);
+      await touchPage.waitForFunction(mounted, [route, TITLES[route] ?? null]);
       const small = await touchPage.evaluate(() => {
         const root = getComputedStyle(document.documentElement);
         const floor = parseFloat(root.getPropertyValue('--h-touch'));

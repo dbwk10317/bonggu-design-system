@@ -10,7 +10,8 @@
 - 규칙을 새로 정하려면 `readme.md`에 적는다. 다른 파일에 적은 규칙은 효력이 없다.
 - 기계로 판별할 수 있는 규칙은 `tests/rule-regressions.cjs`에 검사를 함께 넣는다. 검사가 없는 규칙은 문서에만 있는 상태임을 알고 쓴다.
 - 두 곳이 어긋나면 `readme.md`가 기준이고 검사를 고친다.
-- 구현이 `readme.md`와 어긋나면 구현을 고친다. 주석이나 별도 문서로 예외를 만들지 않는다. 예외가 정말 필요하면 `readme.md`에 예외로 적는다.
+- 구현이 `readme.md`와 어긋나면 구현을 고친다. 주석이나 별도 문서로 예외를 만들지 않는다.
+- **예외를 만들지 않는다.** 규칙이 현실과 어긋나면 그 규칙에 단서를 붙이는 대신 분류를 다시 나눈다. "A는 X, 단 B는 예외"가 아니라 "A는 X, B는 Y"로 적는다. 예외는 늘어나면 서로 겹치고, 그때는 예외의 예외를 만드는 것 말고는 길이 없다.
 - 코드 주석은 규칙을 옮겨 적지 않는다. 왜 이렇게 썼는지만 한 줄로 남기고 규칙은 `readme.md`에 둔다.
 
 # 변경 원칙
@@ -41,11 +42,12 @@
 
 - `AGENTS.md` 규칙의 출처, 변경 원칙, 이 역할표.
 - `CLAUDE.md` Claude Code 실행 환경. 경로·셸·빌드·검증 명령만.
-- `SKILL.md` 스킬 진입점. `readme.md`를 가리키기만 한다.
+- `SKILL.md` 스킬 진입점. 프런트매터와 어디를 보라는 안내만 두고 규칙은 `readme.md`를 가리킨다.
 - `tests/README.md` 검증 실행법과 게이트가 덮는 범위.
 - `guidelines/*.html` 확정된 값을 눈으로 확인하는 카드. 값을 보여주고 규칙을 새로 쓰지 않는다.
+- `guidelines/index.html` 사람이 보는 가이드 페이지. 컴포넌트 목록과 카드·템플릿을 한곳에서 연다. 여기에도 규칙을 새로 쓰지 않고 `readme.md`를 가리킨다.
 - `components/<Name>.d.ts` 공개 타입 시그니처.
 - `components/<Name>.prompt.md` 그 컴포넌트의 사용 예시. 시스템 전체에 적용되는 규칙은 여기 적지 않는다.
-- `templates/dashboard/README.md` 템플릿 파일이 어떤 화면을 재조립한 것인지에 대한 목록.
+- `templates/dashboard/README.md` 템플릿의 파일이 어떤 화면인지에 대한 목록. 가상 제품 하나를 조립한 예시이며 제품 사양이 아니다.
 
 `_ds_bundle.js`, `_ds_manifest.json`, `_adherence.oxlintrc.json`은 생성물이다. 손으로 고치지 않고 출처(`components/**`, `tokens/*.css`)를 고친 뒤 `node build-bundle.mjs`를 다시 실행한다. adherence 설정에는 손으로 유지하는 항목이 섞여 있고, 첫 키 `x-generated`가 그 경계를 적어 둔다.

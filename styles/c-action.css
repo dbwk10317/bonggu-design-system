@@ -36,4 +36,6 @@
   .bds-table__exp,.bds-table__clear,.bds-table__sort,.bds-copy__btn,.bds-stepper-ctl__btn,
   .bds-color__swatch,.bds-color__chip,.bds-combo__x,.bds-check,
   .bds-crumb__more,.bds-tag__x,.bds-cal__d{min-width:var(--h-touch);min-height:var(--h-touch);flex:none}
+  /* 슬라이더는 가로로 늘어나야 하므로 높이만 올린다. */
+  .bds-slider input[type=range]{min-height:var(--h-touch)}
 }

@@ -214,11 +214,14 @@ function SrTable({ id, kind, props, fmt }) {
   else if (kind === "radial") { head = props.label != null ? ["값", "상태"] : ["값"]; rows = [[isMissing(props.value) ? MISSING_TEXT : fmt(Math.min(1, Math.max(0, props.value)))].concat(props.label != null ? [props.label] : [])]; }
   else if (kind === "histogram") { const b = histBins(props.samples, props.bins); head = ["구간", "표본"]; rows = b ? b.counts.map((c, i) => [`${fmt(b.lo + (i / b.n) * b.span)}~${fmt(b.lo + ((i + 1) / b.n) * b.span)}${props.unit ?? ""}`, `${c}건`]) : []; }
   else { const cols = kind === "radar" ? (props.axes ?? []) : (props.labels ?? []); head = ["계열"].concat(cols); rows = (props.series ?? []).map((s) => [s.label].concat(cols.map((_, i) => cell(fmt, s.values[i])))); }
+  // 표는 내용 폭을 따라 늘어나 width:1px을 무시한다. 숨김은 블록 래퍼가 맡아야 문서 가로 넘침이 나지 않는다.
   return (
-    <table id={id} className="bds-sr">
-      <thead><tr>{head.map((c, i) => <th key={i} scope="col">{c}</th>)}</tr></thead>
-      <tbody>{rows.map((r, i) => <tr key={i}>{r.map((c, j) => j === 0 ? <th key={j} scope="row">{c}</th> : <td key={j}>{c}</td>)}</tr>)}</tbody>
-    </table>
+    <div className="bds-sr">
+      <table id={id}>
+        <thead><tr>{head.map((c, i) => <th key={i} scope="col">{c}</th>)}</tr></thead>
+        <tbody>{rows.map((r, i) => <tr key={i}>{r.map((c, j) => j === 0 ? <th key={j} scope="row">{c}</th> : <td key={j}>{c}</td>)}</tr>)}</tbody>
+      </table>
+    </div>
   );
 }
 
