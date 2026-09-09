@@ -16,7 +16,7 @@ npm test
 기존 외부 의존성을 사용하는 경우 `DS_TEST_NODE_MODULES`에 node_modules 절대 경로를 설정하고 `node tests/run.cjs`를 실행할 수 있습니다. 설치된 Chrome/Edge로 검증하려면 `DS_TEST_BROWSER_EXECUTABLE`에 실행 파일 경로를 설정합니다. 스크린샷을 저장하려면 `DS_TEST_SCREENSHOTS`에 출력 폴더를 설정합니다. 로컬 파일 서버는 loopback에만 바인딩하고 테스트 종료 시 닫습니다.
 
 - consistency-regressions.cjs: CSS와 소스의 클래스 사용을 양방향으로 대조합니다. 소스가 붙이는 `bds-*` 클래스에 규칙이 없거나, `styles/`·`tokens/`에 있는 클래스를 아무 소비자도 붙이지 않으면 위반 목록을 모두 출력하고 실패합니다. `bds-btn--${variant}` 같은 동적 조합은 고정 접두사로 인정합니다.
-- manifest-token-regressions.cjs: 먼저 `token-parser.mjs`를 `fixtures/token-parser`의 독립 fixture와 손으로 적은 기대값으로 시험하고, 같은 파서로 `_ds_manifest.json`의 토큰 이름·값·scope·정의 파일을 `tokens/*.css` 선언과 대조합니다. 모든 토큰이 `:root` 계열 블록 안에 있는지도 평면 스캔과 교차 확인합니다.
+- manifest-token-regressions.cjs: 먼저 `token-parser.mjs`를 `fixtures/token-parser`의 독립 fixture와 손으로 적은 기대값으로 시험하고, 같은 파서로 `_ds_manifest.json`의 토큰 이름·값·scope·정의 파일을 `tokens/*.css` 선언과 대조합니다. 모든 토큰이 `:root` 계열 블록 안에 있는지도 평면 스캔과 교차 확인합니다. 같은 이름이 scope별로 있으면 별도 선언으로 셉니다(로그에 declarations·unique를 함께 찍습니다).
 - rule-regressions.cjs: `readme.md`의 규칙 중 기계로 판별할 수 있는 항목을 검사합니다. 현재 13종으로, 가시 텍스트 em-dash, inline style의 색·폰트 선언, CSS 클래스의 `bds-` 접두사, 토큰 별칭 정의, 본문 글자 크기 하한, Phosphor Bold 아이콘 이름, 미사용 토큰, 원색을 글자색으로 쓰는 자리, 장식 그라디언트, 차트 면 채움 alpha, 그룹 카드 누락, 가이드 페이지 누락, 템플릿 미사용 컴포넌트입니다. 뒤 3종은 `.d.ts`의 공개 선언에서 컴포넌트 목록을 읽어 그 컴포넌트를 눈으로 확인할 자리가 있는지 봅니다. 기준값은 `readme.md`에 있고 이 파일은 그 기준을 검사만 합니다. 판단이 필요한 카피 품질·색 조합·컴포넌트 선택은 검사하지 않습니다. 위반마다 파일·줄·권장 수정안을 출력합니다.
 - smoke-regressions.cjs: `_ds_manifest.json`에 실린 컴포넌트 전부를 소스에서 로드해 서버 렌더가 오류 없이, 그리고 경고 없이 끝나는지 확인합니다. 목록을 매니페스트에서 읽으므로 새 컴포넌트가 자동으로 포함됩니다.
 - data-regressions.cjs: 소수 눈금, 양음 누적 막대, 결측 표현, 가용성 공식. 실제 계산 함수와 React 서버 렌더링을 사용합니다.

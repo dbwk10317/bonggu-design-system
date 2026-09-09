@@ -43,7 +43,7 @@ python -m http.server 8080
 
 ## 도구 사용
 
-- 파일 탐색·검색은 Glob/Grep을 쓴다. `_ds_bundle.js`(236 KB)와 `STYLEGUIDE.html`(1.2 MB)은 통째로 읽지 않는다.
+- 파일 탐색·검색은 Glob/Grep을 쓴다. `_ds_bundle.js`(236 KB)는 통째로 읽지 않는다.
 - 커밋 메시지는 한국어로 쓰고 끝에 다음 줄을 넣는다.
 
 ```

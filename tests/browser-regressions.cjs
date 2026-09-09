@@ -4,6 +4,8 @@ const path = require('node:path');
 const http = require('node:http');
 const { createRequire } = require('node:module');
 const deps = process.env.DS_TEST_NODE_MODULES ? createRequire(path.join(path.resolve(process.env.DS_TEST_NODE_MODULES), '__browser-tests.cjs')) : require;
+// @babel/standalone 안의 debug가 로드 시 bare localStorage를 읽어 Node가 ExperimentalWarning을 내므로 Babel을 읽기 전에 불활성 스텁으로 가린다.
+try { Object.defineProperty(globalThis, 'localStorage', { value: { getItem: () => null }, configurable: true, writable: true }); } catch {}
 const { chromium } = deps('playwright');
 const root = path.resolve(__dirname, '..');
 const reactDir = path.dirname(deps.resolve('react/package.json'));

@@ -11,6 +11,8 @@ import { parseTokenBlocks, parseTokenKinds, stripComments } from "./token-parser
 const ROOT = dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1"));
 const NS = "Ds_d3ea90";
 const require = createRequire(import.meta.url);
+// @babel/standalone 안의 debug가 로드 시 bare localStorage를 읽어 Node가 ExperimentalWarning을 내므로 Babel을 읽기 전에 불활성 스텁으로 가린다.
+try { Object.defineProperty(globalThis, "localStorage", { value: { getItem: () => null }, configurable: true, writable: true }); } catch {}
 const Babel = require(process.env.BABEL_STANDALONE || "@babel/standalone");
 
 const walk = (d) => readdirSync(d).flatMap((f) => { const p = join(d, f); return statSync(p).isDirectory() ? walk(p) : [p]; });
@@ -261,4 +263,4 @@ const { ["x-generated"]: _previousBanner, ...cfgWithoutBanner } = cfg;
 const generatedCfg = { "x-generated": banner, ...cfgWithoutBanner };
 if (Object.keys(generatedCfg)[0] !== "x-generated" || generatedCfg["x-generated"] !== banner) throw new Error("생성물 배너가 최신 원천 문구로 기록되지 않음");
 writeFileSync(CFG, JSON.stringify(generatedCfg, null, 2));
-console.log(`adherence: ${tokens.length} tokens(@kind ${Object.keys(declaredKinds).length}), ${comps.length} components, ${propRules.length} prop rules`);
+console.log(`adherence: ${tokens.length} unique tokens (${manifestTokens.length} declarations across scopes), ${comps.length} components, ${propRules.length} prop rules`);
