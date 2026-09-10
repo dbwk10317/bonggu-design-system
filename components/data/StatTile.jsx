@@ -6,6 +6,7 @@ import { Sparkline } from "./Sparkline.jsx";
 import { StatusPill } from "../display/StatusPill.jsx";
 
 /* animate=true일 때만 카운트업. 기본은 꺼짐: 실시간 수치는 트랜지션 없이 즉시 바뀐다. 꺼지면 target을 그대로 돌려주는 no-op. */
+/** @param {number} target @param {boolean} enabled */
 function useCountUp(target, enabled) {
   const [v, setV] = useState(enabled ? 0 : target);
   const from = useRef(0);
@@ -13,7 +14,7 @@ function useCountUp(target, enabled) {
     if (!enabled || typeof target !== "number") return;
     const start = performance.now(), f = from.current, dur = 900;
     let raf;
-    const step = (t) => { const p = Math.min(1, (t - start) / dur), e = 1 - Math.pow(1 - p, 3); setV(f + (target - f) * e); if (p < 1) raf = requestAnimationFrame(step); else from.current = target; };
+    const step = (/** @type {number} */ t) => { const p = Math.min(1, (t - start) / dur), e = 1 - Math.pow(1 - p, 3); setV(f + (target - f) * e); if (p < 1) raf = requestAnimationFrame(step); else from.current = target; };
     raf = requestAnimationFrame(step);
     return () => cancelAnimationFrame(raf);
   }, [target, enabled]);

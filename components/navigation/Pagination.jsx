@@ -5,8 +5,9 @@ import { IconButton } from "../action/IconButton.jsx";
 /** 페이지 번호. page는 1부터. total은 총 페이지 수. info에 "1–20 / 184" 같은 범위를 준다.
  * @param {Parameters<typeof import("./Pagination.d.ts").Pagination>[0]} props */
 export function Pagination({ page = 1, total = 1, onChange, siblings = 1, info, size = "sm", className, ...rest }) {
+  /** @type {(number | string)[]} */
   const pages = [];
-  const push = (p) => pages.push(p);
+  const push = (/** @type {number | string} */ p) => pages.push(p);
   const lo = Math.max(2, page - siblings), hi = Math.min(total - 1, page + siblings);
   push(1); if (lo > 2) push("…"); for (let p = lo; p <= hi; p++) push(p); if (hi < total - 1) push("…"); if (total > 1) push(total);
   return (

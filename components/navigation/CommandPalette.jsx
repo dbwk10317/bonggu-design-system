@@ -5,14 +5,14 @@ import { Icon } from "../action/Icon.jsx";
 /** ⌘K 명령 팔레트. items: {id, label, icon?, group?, hint?, keywords?, onSelect}. open/onClose 제어형. inline이면 딤 없이 패널만(문서용).
  * @param {Parameters<typeof import("./CommandPalette.d.ts").CommandPalette>[0]} props */
 export function CommandPalette({ open = false, onClose, items = [], placeholder = "명령 또는 화면 검색", inline = false, className }) {
-  const [q, setQ] = useState(""), [idx, setIdx] = useState(0), input = useRef(null), opener = useRef(null);
+  const [q, setQ] = useState(""), [idx, setIdx] = useState(0), input = useRef(/** @type {HTMLInputElement | null} */ (null)), opener = useRef(/** @type {HTMLElement | null} */ (null));
   const list = useMemo(() => { const s = q.trim().toLowerCase(); return !s ? items : items.filter((it) => (it.label + " " + (it.keywords ?? "") + " " + (it.group ?? "")).toLowerCase().includes(s)); }, [q, items]);
   /* 열 때 포커스를 입력으로, 닫을 때 열기 전 요소로 되돌린다 */
   useEffect(() => { if (!open || inline) return; opener.current = document.activeElement; setQ(""); setIdx(0); setTimeout(() => input.current?.focus(), 0); return () => opener.current?.focus?.(); }, [open, inline]);
   useEffect(() => { setIdx(0); }, [q]);
   if (!open) return null;
-  const run = (it) => { if (!it) return; onClose?.(); it.onSelect?.(it); };
-  const onKey = (e) => {
+  const run = (/** @type {import("./CommandPalette.d.ts").CommandItem | undefined} */ it) => { if (!it) return; onClose?.(); it.onSelect?.(it); };
+  const onKey = (/** @type {import("react").KeyboardEvent<HTMLDivElement>} */ e) => {
     if (e.key === "ArrowDown") { e.preventDefault(); setIdx((i) => Math.min(list.length - 1, i + 1)); }
     else if (e.key === "ArrowUp") { e.preventDefault(); setIdx((i) => Math.max(0, i - 1)); }
     else if (e.key === "Enter") { e.preventDefault(); run(list[idx]); }

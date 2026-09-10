@@ -9,7 +9,7 @@ import { MISSING_CLASS, MISSING_TEXT, isMissing } from "../core/missing.js";
 export function BarList({ items = [], max, valueFormatter = (v) => v.toLocaleString("ko-KR"), thresholds, tone = 1, thick = false, fit = "flex", width, className, style, "aria-label": ariaLabel, ...rest }) {
   const nums = items.map((it) => it.value).filter((v) => !isMissing(v));
   const top = (max ?? (nums.length ? Math.max(...nums) : 1)) || 1;
-  const barColor = (v, it) => {
+  const barColor = (/** @type {number | null} */ v, /** @type {import("./BarList.d.ts").BarListItem} */ it) => {
     if (it.tone) return `var(--series-${it.tone})`;
     if (thresholds && !isMissing(v)) { if (v >= thresholds.crit) return "var(--crit)"; if (v >= thresholds.warn) return "var(--warn)"; }
     return `var(--series-${tone})`;

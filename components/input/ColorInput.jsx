@@ -10,7 +10,7 @@ export function ColorInput({ value, defaultValue = "#5CA8FF", presets = [], size
   const [inner, setInner] = useState(defaultValue);
   const [text, setText] = useState(null);
   const v = value ?? inner;
-  const set = (hex) => { const m = HEX.exec(hex.trim()); if (!m) return false; const out = `#${m[1].toUpperCase()}`; setInner(out); onChange?.(out); return true; };
+  const set = (/** @type {string} */ hex) => { const m = HEX.exec(hex.trim()); if (!m) return false; const out = `#${m[1].toUpperCase()}`; setInner(out); onChange?.(out); return true; };
   return (
     <div className={cx("bds-color", size === "sm" && "bds-color--sm", disabled && "bds-ctl--disabled", className)} style={frameStyle({ fit, width, style })}>
       <div className={cx("bds-ctl bds-color__ctl", size === "sm" && "bds-ctl--sm", (invalid ?? f?.invalid) && "bds-ctl--err")}>

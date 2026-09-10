@@ -9,15 +9,15 @@ export function CodeEditor({ value, defaultValue = "", onChange, onValidChange, 
   const f = useFieldContext();
   const [inner, setInner] = React.useState(defaultValue);
   const v = value ?? inner;
-  const ta = useRef(null), gutter = useRef(null);
+  const ta = useRef(/** @type {HTMLTextAreaElement | null} */ (null)), gutter = useRef(/** @type {HTMLPreElement | null} */ (null));
   const lines = useMemo(() => v.split("\n").length, [v]);
   const err = useMemo(() => {
     if (language !== "json" || !v.trim()) return null;
     try { const o = JSON.parse(v); onValidChange?.(o); return null; }
     catch (e) { onValidChange?.(null); const m = /position (\d+)/.exec(e.message); let line = null; if (m) { line = v.slice(0, Number(m[1])).split("\n").length; } return { line, message: e.message.replace(/^JSON\.parse: |^Unexpected token.*?in JSON at position \d+$/, (s) => s).replace("JSON.parse: ", "") }; }
   }, [v, language]);
-  const set = (s) => { setInner(s); onChange?.(s); };
-  const onKey = (e) => {
+  const set = (/** @type {string} */ s) => { setInner(s); onChange?.(s); };
+  const onKey = (/** @type {import("react").KeyboardEvent<HTMLTextAreaElement>} */ e) => {
     /* Tab은 들여쓰기, Shift+Tab은 가로채지 않아 키보드로 빠져나갈 수 있다 */
     if (e.key === "Tab" && !e.shiftKey && !readOnly) { e.preventDefault(); const t = e.currentTarget, s = t.selectionStart, en = t.selectionEnd; const next = v.slice(0, s) + "  " + v.slice(en); set(next); requestAnimationFrame(() => { t.selectionStart = t.selectionEnd = s + 2; }); }
   };

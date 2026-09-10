@@ -7,7 +7,7 @@ import { Icon } from "../action/Icon.jsx";
 export function Accordion({ items = [], defaultOpen = [], multiple = false, plain = false, className, ...rest }) {
   const [open, setOpen] = useState(new Set(defaultOpen));
   const uid = useId().replace(/:/g, "");
-  const toggle = (id) => setOpen((s) => { const n = new Set(multiple ? s : []); if (s.has(id)) n.delete(id); else n.add(id); return n; });
+  const toggle = (/** @type {string} */ id) => setOpen((s) => { const n = new Set(multiple ? s : []); if (s.has(id)) n.delete(id); else n.add(id); return n; });
   return (
     <div className={cx("bds-acc", plain && "bds-acc--plain", className)} {...rest}>
       {items.map((it) => { const on = open.has(it.id); return <div key={it.id} className="bds-acc__item">

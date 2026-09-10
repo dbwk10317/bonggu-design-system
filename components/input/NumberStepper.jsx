@@ -11,7 +11,7 @@ export function NumberStepper({ value, defaultValue = 0, min = -Infinity, max = 
   const v = value ?? inner;
   const [draft, setDraft] = React.useState(String(v));
   React.useEffect(() => { setDraft(String(v)); }, [v]);
-  const set = (n) => { const c = Math.min(max, Math.max(min, n)); setInner(c); setDraft(String(c)); if (c !== v) onChange?.(c); };
+  const set = (/** @type {number} */ n) => { const c = Math.min(max, Math.max(min, n)); setInner(c); setDraft(String(c)); if (c !== v) onChange?.(c); };
   const commit = () => { const n = draft.trim() === "" ? NaN : Number(draft); set(Number.isFinite(n) ? n : v); };
   const { onBlur, onKeyDown, ...inputProps } = rest;
   const dec = Number.isFinite(step) ? String(step).split(".")[1]?.length ?? 0 : 0;

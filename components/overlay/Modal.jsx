@@ -6,9 +6,9 @@ import { IconButton } from "../action/IconButton.jsx";
 /** 모달. 네이티브 <dialog>.showModal()로 포커스를 가둔다. Esc·딤·닫기 → onClose. 640 미만에서는 바텀시트. size: sm 360 · md 440 · lg 560 · xl 760.
  * @param {Parameters<typeof import("./Modal.d.ts").Modal>[0]} props */
 export function Modal({ open, onClose, title, description, actions, size = "md", closeButton = true, className, children, ...rest }) {
-  const panel = useRef(null), tid = useId();
+  const panel = useRef(/** @type {HTMLDialogElement | null} */ (null)), tid = useId();
   useModalDialog(panel, open);
-  const outside = (e) => { const r = e.currentTarget.getBoundingClientRect(); return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom; };
+  const outside = (/** @type {import("react").MouseEvent<HTMLDialogElement>} */ e) => { const r = e.currentTarget.getBoundingClientRect(); return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom; };
   if (!open) return null;
   return (
     <dialog ref={panel} aria-labelledby={title ? tid : undefined} tabIndex={-1} className={cx("bds-modal__panel", size !== "md" && `bds-modal--${size}`, className)}

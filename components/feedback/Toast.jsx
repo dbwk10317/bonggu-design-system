@@ -2,7 +2,11 @@ import React, { createContext, useCallback, useContext, useRef, useState } from 
 import { cx } from "../core/frame.js";
 import { Icon } from "../action/Icon.jsx";
 
-const ToastCtx = createContext(null);
+/** @type {import("react").Context<ReturnType<typeof import("./Toast.d.ts").useToast> | null>} */
+const ToastCtx = createContext(/** @type {any} */ (null));
+/** Provider 가 관리하는 큐 항목. 공개 계약은 ToastOptions 이고 id·leaving 은 여기서만 쓴다.
+ * @typedef {import("./Toast.d.ts").ToastOptions & { id: number, leaving?: boolean }} QueuedToast */
+/** @type {Record<string, string>} */
 const ICON = { info: "info", ok: "check-circle", warn: "warning", crit: "warning-octagon" };
 /* 퇴장 길이는 .bds-toast--leaving의 transition(--dur-base)과 같아야 한다. reduced-motion이면 애니메이션 없이 즉시 제거한다 */
 const EXIT_MS = 180;
@@ -11,19 +15,19 @@ const reducedMotion = () => typeof matchMedia === "function" && matchMedia("(pre
 /** 토스트 프로바이더. 앱 루트에 한 번. useToast().toast({message, tone?, action?, duration?})
  * @param {Parameters<typeof import("./Toast.d.ts").ToastProvider>[0]} props */
 export function ToastProvider({ children, max = 3 }) {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(/** @type {QueuedToast[]} */ ([]));
   const seq = useRef(0);
-  const drop = useCallback((id) => setItems((p) => p.filter((t) => t.id !== id)), []);
+  const drop = useCallback((/** @type {number} */ id) => setItems((p) => p.filter((t) => t.id !== id)), []);
   /* 닫기는 leaving 표시 → 퇴장 트랜지션 → 제거. 같은 토스트를 다시 닫아도 leaving은 그대로고 제거만 한 번 더 시도한다(없으면 무시) */
-  const dismiss = useCallback((id) => {
+  const dismiss = useCallback((/** @type {number} */ id) => {
     if (reducedMotion()) return drop(id);
     setItems((p) => p.map((t) => (t.id === id ? { ...t, leaving: true } : t)));
     setTimeout(() => drop(id), EXIT_MS);
   }, [drop]);
-  const toast = useCallback((t) => {
+  const toast = useCallback((/** @type {import("./Toast.d.ts").ToastOptions} */ t) => {
     const id = ++seq.current;
     setItems((p) => {
-      const next = [...p, { id, tone: "info", duration: 4000, ...t }];
+      const next = [...p, /** @type {QueuedToast} */ ({ id, tone: "info", duration: 4000, ...t })];
       /* 퇴장 중인 토스트는 자리를 비우는 중이므로 max에서 세지 않는다. 넘치는 만큼 오래된 것부터 즉시 뺀다 */
       let over = next.filter((x) => !x.leaving).length - max;
       return next.filter((x) => x.leaving || over-- <= 0);

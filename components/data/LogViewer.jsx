@@ -4,7 +4,7 @@ import { cx, frameStyle } from "../core/frame.js";
 /** 로그 뷰어. lines: string | {level,time,text}. follow=true면 새 줄에 따라 바닥으로 스크롤.
  * @param {Parameters<typeof import("./LogViewer.d.ts").LogViewer>[0]} props */
 export function LogViewer({ lines = [], follow = true, wrap = true, numbers = true, fit = "flex", width, height = 240, className, style, ...rest }) {
-  const ref = useRef(null);
+  const ref = useRef(/** @type {HTMLDivElement | null} */ (null));
   useEffect(() => { if (follow && ref.current) ref.current.scrollTop = ref.current.scrollHeight; }, [lines.length, follow]);
   return (
     <div ref={ref} className={cx("bds-log", !wrap && "bds-log--nowrap", className)} style={frameStyle({ fit, width, height, style })} role="log" aria-live={follow ? "polite" : "off"} {...rest}>

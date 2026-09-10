@@ -4,8 +4,8 @@ import { Icon } from "../action/Icon.jsx";
 import { IconButton } from "../action/IconButton.jsx";
 import { useFieldContext } from "./Field.jsx";
 
-const pad = (n) => String(n).padStart(2, "0");
-const iso = (d) => d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
+const pad = (/** @type {number} */ n) => String(n).padStart(2, "0");
+const iso = (/** @type {Date} */ d) => d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
 const DOW = ["일", "월", "화", "수", "목", "금", "토"];
 
 /** 단일 날짜 선택. value는 "YYYY-MM-DD". min/max 같은 형식. 기간은 DateRangePicker.
@@ -16,15 +16,15 @@ export function DatePicker({ value, onChange, min, max, placeholder = "날짜 �
   const sel = value ? new Date(value + "T00:00:00") : null;
   const [view, setView] = useState(() => { const d = sel ?? new Date(); return new Date(d.getFullYear(), d.getMonth(), 1); });
   useEffect(() => { const d = value ? new Date(value + "T00:00:00") : new Date(); if (!Number.isNaN(d.getTime())) setView(new Date(d.getFullYear(), d.getMonth(), 1)); }, [value]);
-  const root = useRef(null), trig = useRef(null);
+  const root = useRef(/** @type {HTMLDivElement | null} */ (null)), trig = useRef(/** @type {HTMLButtonElement | null} */ (null));
   /* 닫힐 때 포커스를 트리거 버튼으로 돌린다(달력 셀이 언마운트되면 포커스가 body로 떨어진다) */
   const close = () => { setOpen(false); trig.current?.focus(); };
-  useEffect(() => { if (!open) return; const on = (e) => { if (!root.current?.contains(e.target)) setOpen(false); }; const key = (e) => { if (e.key === "Escape") close(); }; document.addEventListener("mousedown", on); document.addEventListener("keydown", key); return () => { document.removeEventListener("mousedown", on); document.removeEventListener("keydown", key); }; }, [open]);
+  useEffect(() => { if (!open) return; const on = (/** @type {MouseEvent} */ e) => { if (!root.current?.contains(e.target)) setOpen(false); }; const key = (/** @type {KeyboardEvent} */ e) => { if (e.key === "Escape") close(); }; document.addEventListener("mousedown", on); document.addEventListener("keydown", key); return () => { document.removeEventListener("mousedown", on); document.removeEventListener("keydown", key); }; }, [open]);
   const first = new Date(view.getFullYear(), view.getMonth(), 1), start = new Date(first); start.setDate(1 - first.getDay());
   const cells = Array.from({ length: 42 }, (_, i) => { const d = new Date(start); d.setDate(start.getDate() + i); return d; });
   const weeks = Array.from({ length: 6 }, (_, r) => cells.slice(r * 7, r * 7 + 7));
   const today = iso(new Date());
-  const inRange = (d) => (!min || iso(d) >= min) && (!max || iso(d) <= max);
+  const inRange = (/** @type {Date} */ d) => (!min || iso(d) >= min) && (!max || iso(d) <= max);
   return (
     <div ref={root} className={cx("bds-date", className)} style={frameStyle({ fit, width, style })}>
       <button ref={trig} type="button" id={f?.id} aria-describedby={f?.describedBy} aria-haspopup="dialog" aria-expanded={open} disabled={disabled} className={cx("bds-ctl", size === "sm" && "bds-ctl--sm", f?.invalid && "bds-ctl--err", disabled && "bds-ctl--disabled")} style={{ width: "100%", textAlign: "left" }} onClick={() => { if (!open) { const d = sel ?? new Date(); setView(new Date(d.getFullYear(), d.getMonth(), 1)); } setOpen((o) => !o); }}>

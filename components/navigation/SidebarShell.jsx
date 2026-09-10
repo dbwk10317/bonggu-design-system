@@ -4,7 +4,8 @@ import { Icon } from "../action/Icon.jsx";
 import { IconButton } from "../action/IconButton.jsx";
 import { MascotMark } from "../brand/MascotMark.jsx";
 
-const CloseCtx = createContext(null);
+/** @type {import("react").Context<(() => void) | null>} */
+const CloseCtx = createContext(/** @type {any} */ (null));
 
 /** 대시보드 셸: 240px 사이드바 + 52px 상단바 + 본문 + 28px 상태바. 부모가 높이를 정한다(페이지는 100dvh).
  *  1024 미만: 사이드바가 오버레이 드로어(햄버거). 768 미만: 상태바 숨김. 본문은 컨테이너 쿼리 대상(container-name: body).
@@ -13,12 +14,12 @@ const CloseCtx = createContext(null);
 export function SidebarShell({ brand, nav, navLabel = "주 메뉴", footer, topbar, statusbar, className, children, ...rest }) {
   const [open, setOpen] = useState(false);
   const id = useId();
-  const burger = useRef(null), side = useRef(null);
+  const burger = useRef(/** @type {HTMLButtonElement | null} */ (null)), side = useRef(/** @type {HTMLElement | null} */ (null));
   useEffect(() => {
     if (!open) return;
     /* 드로어로 열리면 포커스를 안으로(닫기 버튼) 옮기고, 닫히면 햄버거로 돌린다 */
     side.current?.querySelector("button")?.focus();
-    const onKey = (e) => e.key === "Escape" && setOpen(false);
+    const onKey = (/** @type {KeyboardEvent} */ e) => e.key === "Escape" && setOpen(false);
     document.addEventListener("keydown", onKey);
     return () => { document.removeEventListener("keydown", onKey); burger.current?.focus(); };
   }, [open]);

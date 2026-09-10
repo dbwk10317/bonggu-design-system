@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"Ds_d3ea90","components":[{"name":"Button","sourcePath":"components/action/Button.jsx"},{"name":"Icon","sourcePath":"components/action/Icon.jsx"},{"name":"IconButton","sourcePath":"components/action/IconButton.jsx"},{"name":"MascotMark","sourcePath":"components/brand/MascotMark.jsx"},{"name":"BarList","sourcePath":"components/data/BarList.jsx"},{"name":"Chart","sourcePath":"components/data/Chart.jsx"},{"name":"DataTable","sourcePath":"components/data/DataTable.jsx"},{"name":"DescriptionList","sourcePath":"components/data/DescriptionList.jsx"},{"name":"DiffView","sourcePath":"components/data/DiffView.jsx"},{"name":"Gauge","sourcePath":"components/data/Gauge.jsx"},{"name":"Heatmap","sourcePath":"components/data/Heatmap.jsx"},{"name":"KeyValues","sourcePath":"components/data/KeyValues.jsx"},{"name":"Legend","sourcePath":"components/data/Legend.jsx"},{"name":"LogViewer","sourcePath":"components/data/LogViewer.jsx"},{"name":"Sparkline","sourcePath":"components/data/Sparkline.jsx"},{"name":"StatTile","sourcePath":"components/data/StatTile.jsx"},{"name":"Timeline","sourcePath":"components/data/Timeline.jsx"},{"name":"TrendDelta","sourcePath":"components/data/TrendDelta.jsx"},{"name":"UptimeBar","sourcePath":"components/data/UptimeBar.jsx"},{"name":"Accordion","sourcePath":"components/display/Accordion.jsx"},{"name":"Avatar","sourcePath":"components/display/Avatar.jsx"},{"name":"AvatarGroup","sourcePath":"components/display/Avatar.jsx"},{"name":"Badge","sourcePath":"components/display/Badge.jsx"},{"name":"Code","sourcePath":"components/display/Code.jsx"},{"name":"CodeBlock","sourcePath":"components/display/Code.jsx"},{"name":"Kbd","sourcePath":"components/display/Code.jsx"},{"name":"CopyField","sourcePath":"components/display/CopyField.jsx"},{"name":"StatusPill","sourcePath":"components/display/StatusPill.jsx"},{"name":"Tag","sourcePath":"components/display/Tag.jsx"},{"name":"AlertBanner","sourcePath":"components/feedback/AlertBanner.jsx"},{"name":"ConfirmDialog","sourcePath":"components/feedback/ConfirmDialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"ErrorState","sourcePath":"components/feedback/ErrorState.jsx"},{"name":"InlineMessage","sourcePath":"components/feedback/InlineMessage.jsx"},{"name":"LoadingOverlay","sourcePath":"components/feedback/LoadingOverlay.jsx"},{"name":"NotificationTrigger","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"NotificationDrawer","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"ProgressBar","sourcePath":"components/feedback/ProgressBar.jsx"},{"name":"Skeleton","sourcePath":"components/feedback/Skeleton.jsx"},{"name":"Spinner","sourcePath":"components/feedback/Spinner.jsx"},{"name":"Stepper","sourcePath":"components/feedback/Stepper.jsx"},{"name":"ToastProvider","sourcePath":"components/feedback/Toast.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Checkbox","sourcePath":"components/input/Checkbox.jsx"},{"name":"CodeEditor","sourcePath":"components/input/CodeEditor.jsx"},{"name":"ColorInput","sourcePath":"components/input/ColorInput.jsx"},{"name":"Combobox","sourcePath":"components/input/Combobox.jsx"},{"name":"DatePicker","sourcePath":"components/input/DatePicker.jsx"},{"name":"DateRangePicker","sourcePath":"components/input/DateRangePicker.jsx"},{"name":"Dropzone","sourcePath":"components/input/Dropzone.jsx"},{"name":"Field","sourcePath":"components/input/Field.jsx"},{"name":"FileUpload","sourcePath":"components/input/FileUpload.jsx"},{"name":"MultiSelect","sourcePath":"components/input/MultiSelect.jsx"},{"name":"NumberStepper","sourcePath":"components/input/NumberStepper.jsx"},{"name":"OTPInput","sourcePath":"components/input/OTPInput.jsx"},{"name":"PasswordField","sourcePath":"components/input/PasswordField.jsx"},{"name":"RadioGroup","sourcePath":"components/input/RadioGroup.jsx"},{"name":"SearchField","sourcePath":"components/input/SearchField.jsx"},{"name":"SegmentedControl","sourcePath":"components/input/SegmentedControl.jsx"},{"name":"Select","sourcePath":"components/input/Select.jsx"},{"name":"Slider","sourcePath":"components/input/Slider.jsx"},{"name":"Switch","sourcePath":"components/input/Switch.jsx"},{"name":"TextArea","sourcePath":"components/input/TextArea.jsx"},{"name":"TextField","sourcePath":"components/input/TextField.jsx"},{"name":"TimePicker","sourcePath":"components/input/TimePicker.jsx"},{"name":"AspectRatio","sourcePath":"components/layout/AspectRatio.jsx"},{"name":"CardHead","sourcePath":"components/layout/CardHead.jsx"},{"name":"Container","sourcePath":"components/layout/Container.jsx"},{"name":"Divider","sourcePath":"components/layout/Divider.jsx"},{"name":"Grid","sourcePath":"components/layout/Grid.jsx"},{"name":"GridItem","sourcePath":"components/layout/Grid.jsx"},{"name":"Inline","sourcePath":"components/layout/Inline.jsx"},{"name":"PageHeader","sourcePath":"components/layout/PageHeader.jsx"},{"name":"PageStack","sourcePath":"components/layout/PageStack.jsx"},{"name":"Panel","sourcePath":"components/layout/Panel.jsx"},{"name":"Spacer","sourcePath":"components/layout/Spacer.jsx"},{"name":"Stack","sourcePath":"components/layout/Stack.jsx"},{"name":"StatusBar","sourcePath":"components/layout/StatusBar.jsx"},{"name":"Toolbar","sourcePath":"components/layout/Toolbar.jsx"},{"name":"ToolbarGrow","sourcePath":"components/layout/Toolbar.jsx"},{"name":"Visible","sourcePath":"components/layout/Visible.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"CommandPalette","sourcePath":"components/navigation/CommandPalette.jsx"},{"name":"Link","sourcePath":"components/navigation/Link.jsx"},{"name":"Pagination","sourcePath":"components/navigation/Pagination.jsx"},{"name":"SidebarShell","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavItem","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavGroup","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"},{"name":"TopNav","sourcePath":"components/navigation/TopNav.jsx"},{"name":"Drawer","sourcePath":"components/overlay/Drawer.jsx"},{"name":"DropdownMenu","sourcePath":"components/overlay/DropdownMenu.jsx"},{"name":"FormModal","sourcePath":"components/overlay/FormModal.jsx"},{"name":"Modal","sourcePath":"components/overlay/Modal.jsx"},{"name":"Popover","sourcePath":"components/overlay/Popover.jsx"},{"name":"Tooltip","sourcePath":"components/overlay/Tooltip.jsx"}],"sourceHashes":{"components/action/Button.jsx":"09b7d91ea70d","components/action/Icon.jsx":"37cb27cf8630","components/action/IconButton.jsx":"8a6e2c96f973","components/brand/MascotMark.jsx":"7b83c6e0e778","components/core/frame.js":"7b923fcdece0","components/core/missing.js":"8b286e1a101a","components/core/useAnchoredPopover.js":"1da2cb72b95e","components/data/BarList.jsx":"0314f5476c15","components/data/Chart.jsx":"e232274299c3","components/data/DataTable.jsx":"711f1f05af3c","components/data/DescriptionList.jsx":"09f578c0508a","components/data/DiffView.jsx":"f64dd56b50e7","components/data/Gauge.jsx":"dadfb7a67f14","components/data/Heatmap.jsx":"f5b8b7fbaba0","components/data/KeyValues.jsx":"9a8c0448bf71","components/data/Legend.jsx":"d2c555347b87","components/data/LogViewer.jsx":"1e0e13b0d79f","components/data/Sparkline.jsx":"5ca499bc6a07","components/data/StatTile.jsx":"01b92eb8875e","components/data/Timeline.jsx":"3484620fcf1a","components/data/TrendDelta.jsx":"df77ede30cb1","components/data/UptimeBar.jsx":"8dbc08c8b484","components/data/chart-math.js":"8d99ceed4d4a","components/display/Accordion.jsx":"c737829b9307","components/display/Avatar.jsx":"595d01c56034","components/display/Badge.jsx":"ebdfaa3e5a79","components/display/Code.jsx":"db5fc2d41bf7","components/display/CopyField.jsx":"63b8d023c5ac","components/display/StatusPill.jsx":"2271178c5885","components/display/Tag.jsx":"0a8cf9b3a7da","components/feedback/AlertBanner.jsx":"35630891733b","components/feedback/ConfirmDialog.jsx":"6c268323b817","components/feedback/EmptyState.jsx":"0cc5195f8321","components/feedback/ErrorState.jsx":"d1fb9a97acb1","components/feedback/InlineMessage.jsx":"1a767995ef24","components/feedback/LoadingOverlay.jsx":"4d6098571f5a","components/feedback/NotificationDrawer.jsx":"496171c759e3","components/feedback/ProgressBar.jsx":"fcde9d6c0e1c","components/feedback/Skeleton.jsx":"d28497fc3046","components/feedback/Spinner.jsx":"14b0ba99fd1e","components/feedback/Stepper.jsx":"0fc01832126c","components/feedback/Toast.jsx":"0b4667b1afb5","components/input/Checkbox.jsx":"d2f66190fbb5","components/input/CodeEditor.jsx":"e01d91a2b947","components/input/ColorInput.jsx":"1d211ade5a34","components/input/Combobox.jsx":"ac843aec2ca4","components/input/DatePicker.jsx":"9d3ccf19aa70","components/input/DateRangePicker.jsx":"2c9c9501ff0e","components/input/Dropzone.jsx":"cb7e534803a9","components/input/Field.jsx":"db496f6146e4","components/input/FileUpload.jsx":"b01ef069bb39","components/input/MultiSelect.jsx":"8852812cc859","components/input/NumberStepper.jsx":"b8e4f176e252","components/input/OTPInput.jsx":"9c6aa79c65dd","components/input/PasswordField.jsx":"fc4e47660183","components/input/RadioGroup.jsx":"8f6614181191","components/input/SearchField.jsx":"bed00c25c7f9","components/input/SegmentedControl.jsx":"8c8a0061f981","components/input/Select.jsx":"23fa266f4ce8","components/input/Slider.jsx":"919c77f5b95b","components/input/Switch.jsx":"4987aa99a72b","components/input/TextArea.jsx":"c876e585198f","components/input/TextField.jsx":"7fc617fee4f9","components/input/TimePicker.jsx":"1f10c3f68d72","components/layout/AspectRatio.jsx":"e2ae6d037775","components/layout/CardHead.jsx":"1d17c88765ab","components/layout/Container.jsx":"f21e0d25115f","components/layout/Divider.jsx":"d569b3cd4069","components/layout/Grid.jsx":"762064e97502","components/layout/Inline.jsx":"723a2506c7e6","components/layout/PageHeader.jsx":"8062828d5bc9","components/layout/PageStack.jsx":"9703e7450025","components/layout/Panel.jsx":"5055dfd4e67a","components/layout/Spacer.jsx":"1fe8d631b4a5","components/layout/Stack.jsx":"48ff38945a39","components/layout/StatusBar.jsx":"b25654bc2c4d","components/layout/Toolbar.jsx":"7ab182321833","components/layout/Visible.jsx":"a121f0c10d26","components/navigation/Breadcrumb.jsx":"8003c996b8e5","components/navigation/CommandPalette.jsx":"193b71d3f442","components/navigation/Link.jsx":"5ef8228d7f2b","components/navigation/Pagination.jsx":"39f6e665c398","components/navigation/SidebarShell.jsx":"51eaf628a8fb","components/navigation/Tabs.jsx":"b4cc236325a6","components/navigation/TopNav.jsx":"b2de719cb8b9","components/overlay/Drawer.jsx":"3f9a95d2ef70","components/overlay/DropdownMenu.jsx":"a4db0c288528","components/overlay/FormModal.jsx":"3453da04e7de","components/overlay/Modal.jsx":"c1fc3ab30750","components/overlay/Popover.jsx":"e6adf33f0008","components/overlay/Tooltip.jsx":"799517ec2a79","components/overlay/useModalDialog.js":"62d1a38e1428","theme-toggle.js":"0c924eb893f3"},"inlinedExternals":[],"unexposedExports":[{"name":"cx","sourcePath":"components/core/frame.js"},{"name":"DASHES","sourcePath":"components/data/chart-math.js"},{"name":"estWidth","sourcePath":"components/data/chart-math.js"},{"name":"fmtKo","sourcePath":"components/data/chart-math.js"},{"name":"frameStyle","sourcePath":"components/core/frame.js"},{"name":"histBins","sourcePath":"components/data/chart-math.js"},{"name":"isMissing","sourcePath":"components/core/missing.js"},{"name":"MISSING_CLASS","sourcePath":"components/core/missing.js"},{"name":"MISSING_TEXT","sourcePath":"components/core/missing.js"},{"name":"niceTicks","sourcePath":"components/data/chart-math.js"},{"name":"NOTIFICATION_DRAWER_ID","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"numeric","sourcePath":"components/core/missing.js"},{"name":"passwordStrength","sourcePath":"components/input/PasswordField.jsx"},{"name":"pathLength","sourcePath":"components/data/chart-math.js"},{"name":"r1","sourcePath":"components/data/chart-math.js"},{"name":"runsOf","sourcePath":"components/data/chart-math.js"},{"name":"seriesDash","sourcePath":"components/data/chart-math.js"},{"name":"smoothPath","sourcePath":"components/data/chart-math.js"},{"name":"spaceToken","sourcePath":"components/core/frame.js"},{"name":"stackBars","sourcePath":"components/data/chart-math.js"},{"name":"toneInk","sourcePath":"components/data/chart-math.js"},{"name":"toneVar","sourcePath":"components/data/chart-math.js"},{"name":"useAnchoredPopover","sourcePath":"components/core/useAnchoredPopover.js"},{"name":"useFieldContext","sourcePath":"components/input/Field.jsx"},{"name":"useModalDialog","sourcePath":"components/overlay/useModalDialog.js"},{"name":"useToast","sourcePath":"components/feedback/Toast.jsx"}]} */
+/* @ds-bundle: {"format":4,"namespace":"Ds_d3ea90","components":[{"name":"Button","sourcePath":"components/action/Button.jsx"},{"name":"Icon","sourcePath":"components/action/Icon.jsx"},{"name":"IconButton","sourcePath":"components/action/IconButton.jsx"},{"name":"MascotMark","sourcePath":"components/brand/MascotMark.jsx"},{"name":"BarList","sourcePath":"components/data/BarList.jsx"},{"name":"Chart","sourcePath":"components/data/Chart.jsx"},{"name":"DataTable","sourcePath":"components/data/DataTable.jsx"},{"name":"DescriptionList","sourcePath":"components/data/DescriptionList.jsx"},{"name":"DiffView","sourcePath":"components/data/DiffView.jsx"},{"name":"Gauge","sourcePath":"components/data/Gauge.jsx"},{"name":"Heatmap","sourcePath":"components/data/Heatmap.jsx"},{"name":"KeyValues","sourcePath":"components/data/KeyValues.jsx"},{"name":"Legend","sourcePath":"components/data/Legend.jsx"},{"name":"LogViewer","sourcePath":"components/data/LogViewer.jsx"},{"name":"Sparkline","sourcePath":"components/data/Sparkline.jsx"},{"name":"StatTile","sourcePath":"components/data/StatTile.jsx"},{"name":"Timeline","sourcePath":"components/data/Timeline.jsx"},{"name":"TrendDelta","sourcePath":"components/data/TrendDelta.jsx"},{"name":"UptimeBar","sourcePath":"components/data/UptimeBar.jsx"},{"name":"Accordion","sourcePath":"components/display/Accordion.jsx"},{"name":"Avatar","sourcePath":"components/display/Avatar.jsx"},{"name":"AvatarGroup","sourcePath":"components/display/Avatar.jsx"},{"name":"Badge","sourcePath":"components/display/Badge.jsx"},{"name":"Code","sourcePath":"components/display/Code.jsx"},{"name":"CodeBlock","sourcePath":"components/display/Code.jsx"},{"name":"Kbd","sourcePath":"components/display/Code.jsx"},{"name":"CopyField","sourcePath":"components/display/CopyField.jsx"},{"name":"StatusPill","sourcePath":"components/display/StatusPill.jsx"},{"name":"Tag","sourcePath":"components/display/Tag.jsx"},{"name":"AlertBanner","sourcePath":"components/feedback/AlertBanner.jsx"},{"name":"ConfirmDialog","sourcePath":"components/feedback/ConfirmDialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"ErrorState","sourcePath":"components/feedback/ErrorState.jsx"},{"name":"InlineMessage","sourcePath":"components/feedback/InlineMessage.jsx"},{"name":"LoadingOverlay","sourcePath":"components/feedback/LoadingOverlay.jsx"},{"name":"NotificationTrigger","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"NotificationDrawer","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"ProgressBar","sourcePath":"components/feedback/ProgressBar.jsx"},{"name":"Skeleton","sourcePath":"components/feedback/Skeleton.jsx"},{"name":"Spinner","sourcePath":"components/feedback/Spinner.jsx"},{"name":"Stepper","sourcePath":"components/feedback/Stepper.jsx"},{"name":"ToastProvider","sourcePath":"components/feedback/Toast.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Checkbox","sourcePath":"components/input/Checkbox.jsx"},{"name":"CodeEditor","sourcePath":"components/input/CodeEditor.jsx"},{"name":"ColorInput","sourcePath":"components/input/ColorInput.jsx"},{"name":"Combobox","sourcePath":"components/input/Combobox.jsx"},{"name":"DatePicker","sourcePath":"components/input/DatePicker.jsx"},{"name":"DateRangePicker","sourcePath":"components/input/DateRangePicker.jsx"},{"name":"Dropzone","sourcePath":"components/input/Dropzone.jsx"},{"name":"Field","sourcePath":"components/input/Field.jsx"},{"name":"FileUpload","sourcePath":"components/input/FileUpload.jsx"},{"name":"MultiSelect","sourcePath":"components/input/MultiSelect.jsx"},{"name":"NumberStepper","sourcePath":"components/input/NumberStepper.jsx"},{"name":"OTPInput","sourcePath":"components/input/OTPInput.jsx"},{"name":"PasswordField","sourcePath":"components/input/PasswordField.jsx"},{"name":"RadioGroup","sourcePath":"components/input/RadioGroup.jsx"},{"name":"SearchField","sourcePath":"components/input/SearchField.jsx"},{"name":"SegmentedControl","sourcePath":"components/input/SegmentedControl.jsx"},{"name":"Select","sourcePath":"components/input/Select.jsx"},{"name":"Slider","sourcePath":"components/input/Slider.jsx"},{"name":"Switch","sourcePath":"components/input/Switch.jsx"},{"name":"TextArea","sourcePath":"components/input/TextArea.jsx"},{"name":"TextField","sourcePath":"components/input/TextField.jsx"},{"name":"TimePicker","sourcePath":"components/input/TimePicker.jsx"},{"name":"AspectRatio","sourcePath":"components/layout/AspectRatio.jsx"},{"name":"CardHead","sourcePath":"components/layout/CardHead.jsx"},{"name":"Container","sourcePath":"components/layout/Container.jsx"},{"name":"Divider","sourcePath":"components/layout/Divider.jsx"},{"name":"Grid","sourcePath":"components/layout/Grid.jsx"},{"name":"GridItem","sourcePath":"components/layout/Grid.jsx"},{"name":"Inline","sourcePath":"components/layout/Inline.jsx"},{"name":"PageHeader","sourcePath":"components/layout/PageHeader.jsx"},{"name":"PageStack","sourcePath":"components/layout/PageStack.jsx"},{"name":"Panel","sourcePath":"components/layout/Panel.jsx"},{"name":"Spacer","sourcePath":"components/layout/Spacer.jsx"},{"name":"Stack","sourcePath":"components/layout/Stack.jsx"},{"name":"StatusBar","sourcePath":"components/layout/StatusBar.jsx"},{"name":"Toolbar","sourcePath":"components/layout/Toolbar.jsx"},{"name":"ToolbarGrow","sourcePath":"components/layout/Toolbar.jsx"},{"name":"Visible","sourcePath":"components/layout/Visible.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"CommandPalette","sourcePath":"components/navigation/CommandPalette.jsx"},{"name":"Link","sourcePath":"components/navigation/Link.jsx"},{"name":"Pagination","sourcePath":"components/navigation/Pagination.jsx"},{"name":"SidebarShell","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavItem","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavGroup","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"},{"name":"TopNav","sourcePath":"components/navigation/TopNav.jsx"},{"name":"Drawer","sourcePath":"components/overlay/Drawer.jsx"},{"name":"DropdownMenu","sourcePath":"components/overlay/DropdownMenu.jsx"},{"name":"FormModal","sourcePath":"components/overlay/FormModal.jsx"},{"name":"Modal","sourcePath":"components/overlay/Modal.jsx"},{"name":"Popover","sourcePath":"components/overlay/Popover.jsx"},{"name":"Tooltip","sourcePath":"components/overlay/Tooltip.jsx"}],"sourceHashes":{"components/action/Button.jsx":"09b7d91ea70d","components/action/Icon.jsx":"37cb27cf8630","components/action/IconButton.jsx":"8a6e2c96f973","components/brand/MascotMark.jsx":"7b83c6e0e778","components/core/frame.js":"7b923fcdece0","components/core/missing.js":"8b286e1a101a","components/core/useAnchoredPopover.js":"13047423cac1","components/data/BarList.jsx":"4b25766d6a11","components/data/Chart.jsx":"88dc07ee4126","components/data/DataTable.jsx":"f2b0f9ec6f71","components/data/DescriptionList.jsx":"09f578c0508a","components/data/DiffView.jsx":"f64dd56b50e7","components/data/Gauge.jsx":"dadfb7a67f14","components/data/Heatmap.jsx":"f5b8b7fbaba0","components/data/KeyValues.jsx":"9a8c0448bf71","components/data/Legend.jsx":"83a44c5af125","components/data/LogViewer.jsx":"f15f94aee332","components/data/Sparkline.jsx":"d2785197f2c6","components/data/StatTile.jsx":"a18f8921d4aa","components/data/Timeline.jsx":"3484620fcf1a","components/data/TrendDelta.jsx":"df77ede30cb1","components/data/UptimeBar.jsx":"8dbc08c8b484","components/data/chart-math.js":"8d99ceed4d4a","components/display/Accordion.jsx":"fe63c08e4db6","components/display/Avatar.jsx":"380fbe3668b8","components/display/Badge.jsx":"ebdfaa3e5a79","components/display/Code.jsx":"db5fc2d41bf7","components/display/CopyField.jsx":"63b8d023c5ac","components/display/StatusPill.jsx":"2271178c5885","components/display/Tag.jsx":"0a8cf9b3a7da","components/feedback/AlertBanner.jsx":"35630891733b","components/feedback/ConfirmDialog.jsx":"6c268323b817","components/feedback/EmptyState.jsx":"0cc5195f8321","components/feedback/ErrorState.jsx":"d1fb9a97acb1","components/feedback/InlineMessage.jsx":"1a767995ef24","components/feedback/LoadingOverlay.jsx":"4d6098571f5a","components/feedback/NotificationDrawer.jsx":"496171c759e3","components/feedback/ProgressBar.jsx":"fcde9d6c0e1c","components/feedback/Skeleton.jsx":"d28497fc3046","components/feedback/Spinner.jsx":"14b0ba99fd1e","components/feedback/Stepper.jsx":"c26d48f4335e","components/feedback/Toast.jsx":"7c9c3387d536","components/input/Checkbox.jsx":"d2f66190fbb5","components/input/CodeEditor.jsx":"ccb2abd976b2","components/input/ColorInput.jsx":"a292601255e3","components/input/Combobox.jsx":"bdd34127fb7b","components/input/DatePicker.jsx":"5ddbb2997221","components/input/DateRangePicker.jsx":"f28fa6a2f71d","components/input/Dropzone.jsx":"0365b37de644","components/input/Field.jsx":"64574afd3fca","components/input/FileUpload.jsx":"8d66e5738ac1","components/input/MultiSelect.jsx":"dd7e572f32a1","components/input/NumberStepper.jsx":"a4f9d227933f","components/input/OTPInput.jsx":"1af8016f9e86","components/input/PasswordField.jsx":"fc4e47660183","components/input/RadioGroup.jsx":"8f6614181191","components/input/SearchField.jsx":"5bf4dce7e420","components/input/SegmentedControl.jsx":"4808a118f5a5","components/input/Select.jsx":"23fa266f4ce8","components/input/Slider.jsx":"919c77f5b95b","components/input/Switch.jsx":"4987aa99a72b","components/input/TextArea.jsx":"c876e585198f","components/input/TextField.jsx":"7fc617fee4f9","components/input/TimePicker.jsx":"a16f91005718","components/layout/AspectRatio.jsx":"e2ae6d037775","components/layout/CardHead.jsx":"1d17c88765ab","components/layout/Container.jsx":"f21e0d25115f","components/layout/Divider.jsx":"d569b3cd4069","components/layout/Grid.jsx":"762064e97502","components/layout/Inline.jsx":"723a2506c7e6","components/layout/PageHeader.jsx":"8062828d5bc9","components/layout/PageStack.jsx":"9703e7450025","components/layout/Panel.jsx":"5055dfd4e67a","components/layout/Spacer.jsx":"1fe8d631b4a5","components/layout/Stack.jsx":"48ff38945a39","components/layout/StatusBar.jsx":"b25654bc2c4d","components/layout/Toolbar.jsx":"7ab182321833","components/layout/Visible.jsx":"a121f0c10d26","components/navigation/Breadcrumb.jsx":"8003c996b8e5","components/navigation/CommandPalette.jsx":"b9515a5e4552","components/navigation/Link.jsx":"5ef8228d7f2b","components/navigation/Pagination.jsx":"e8b6db1b786b","components/navigation/SidebarShell.jsx":"d8d7d3d54b42","components/navigation/Tabs.jsx":"5d986f09ce35","components/navigation/TopNav.jsx":"b2de719cb8b9","components/overlay/Drawer.jsx":"db27a083c980","components/overlay/DropdownMenu.jsx":"3f75df42cd2d","components/overlay/FormModal.jsx":"3453da04e7de","components/overlay/Modal.jsx":"261b5641ed3e","components/overlay/Popover.jsx":"a25f10bd340b","components/overlay/Tooltip.jsx":"fe984a0919ec","components/overlay/useModalDialog.js":"62d1a38e1428","theme-toggle.js":"0c924eb893f3"},"inlinedExternals":[],"unexposedExports":[{"name":"cx","sourcePath":"components/core/frame.js"},{"name":"DASHES","sourcePath":"components/data/chart-math.js"},{"name":"estWidth","sourcePath":"components/data/chart-math.js"},{"name":"fmtKo","sourcePath":"components/data/chart-math.js"},{"name":"frameStyle","sourcePath":"components/core/frame.js"},{"name":"histBins","sourcePath":"components/data/chart-math.js"},{"name":"isMissing","sourcePath":"components/core/missing.js"},{"name":"MISSING_CLASS","sourcePath":"components/core/missing.js"},{"name":"MISSING_TEXT","sourcePath":"components/core/missing.js"},{"name":"niceTicks","sourcePath":"components/data/chart-math.js"},{"name":"NOTIFICATION_DRAWER_ID","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"numeric","sourcePath":"components/core/missing.js"},{"name":"passwordStrength","sourcePath":"components/input/PasswordField.jsx"},{"name":"pathLength","sourcePath":"components/data/chart-math.js"},{"name":"r1","sourcePath":"components/data/chart-math.js"},{"name":"runsOf","sourcePath":"components/data/chart-math.js"},{"name":"seriesDash","sourcePath":"components/data/chart-math.js"},{"name":"smoothPath","sourcePath":"components/data/chart-math.js"},{"name":"spaceToken","sourcePath":"components/core/frame.js"},{"name":"stackBars","sourcePath":"components/data/chart-math.js"},{"name":"toneInk","sourcePath":"components/data/chart-math.js"},{"name":"toneVar","sourcePath":"components/data/chart-math.js"},{"name":"useAnchoredPopover","sourcePath":"components/core/useAnchoredPopover.js"},{"name":"useFieldContext","sourcePath":"components/input/Field.jsx"},{"name":"useModalDialog","sourcePath":"components/overlay/useModalDialog.js"},{"name":"useToast","sourcePath":"components/feedback/Toast.jsx"}]} */
 
 (() => {
 
@@ -678,7 +678,7 @@ const useIsoLayoutEffect = typeof document === "undefined" ? useEffect : useLayo
 
 /** 비모달 메뉴의 배치 계약: DOM 소속은 유지하고 native popover로 clipping 밖 top layer에 표시한다.
  * fixed 좌표는 트리거·visual viewport에서 계산하고 스크롤/리사이즈 시 다시 맞춘다. */
-/** @param {{ open: boolean, anchorRef: { current: HTMLElement | null }, panelRef: { current: (HTMLElement & { showPopover(): void, hidePopover(): void }) | null }, align?: "start" | "end", onDismiss?: () => void }} options */
+/** @param {{ open: boolean, anchorRef: { current: HTMLElement | null }, panelRef: { current: HTMLElement | null }, align?: "start" | "end", onDismiss?: () => void }} options */
 function useAnchoredPopover({
   open,
   anchorRef,
@@ -771,7 +771,7 @@ function BarList({
 }) {
   const nums = items.map(it => it.value).filter(v => !isMissing(v));
   const top = (max ?? (nums.length ? Math.max(...nums) : 1)) || 1;
-  const barColor = (v, it) => {
+  const barColor = (/** @type {number | null} */v, /** @type {import("./BarList.d.ts").BarListItem} */it) => {
     if (it.tone) return `var(--series-${it.tone})`;
     if (thresholds && !isMissing(v)) {
       if (v >= thresholds.crit) return "var(--crit)";
@@ -1151,7 +1151,7 @@ function LogViewer({
   style,
   ...rest
 }) {
-  const ref = useRef(null);
+  const ref = useRef(/** @type {HTMLDivElement | null} */null);
   useEffect(() => {
     if (follow && ref.current) ref.current.scrollTop = ref.current.scrollHeight;
   }, [lines.length, follow]);
@@ -1490,7 +1490,7 @@ Object.assign(__ds_scope, { r1, toneVar, toneInk, fmtKo, niceTicks, stackBars, s
 try { (() => {
 const { cx, toneVar } = __ds_scope;
 /* 스와치 색: color가 있으면 그대로, tone이 시리즈 번호·의미 키·미터 톤이면 토큰, info/signal은 상태 토큰, 그 외 문자열은 CSS 색으로 본다. */
-const swatchColor = (it, i) => it.color ?? (typeof it.tone === "string" && !/^(rx|tx|used|reserved|free|ok|warn|crit)$/.test(it.tone) ? /^(info|signal)$/.test(it.tone) ? `var(--${it.tone})` : it.tone : toneVar(it.tone, i));
+const swatchColor = (/** @type {import("./Legend.d.ts").LegendItem} */it, /** @type {number} */i) => it.color ?? (typeof it.tone === "string" && !/^(rx|tx|used|reserved|free|ok|warn|crit)$/.test(it.tone) ? /^(info|signal)$/.test(it.tone) ? `var(--${it.tone})` : it.tone : toneVar(it.tone, i));
 
 /** 독립 범례. items: {label, color?(CSS 색), tone?(series 번호·의미 키), value?, dash?(선 패턴), shape?, hidden?}.
  *  shape="line"이면 선 스와치(dash 패턴 반영), square/dot은 네모·점. onToggle을 주면 클릭으로 시리즈 숨김. compact는 Chart 내장 범례용 작은 글자.
@@ -1707,12 +1707,12 @@ function Cartesian({
     ih = h - padT - padB;
   const step = n > 1 ? iw / (n - 1) : 0;
   const bandW = iw / n;
-  const x = i => r1(kind === "bar" ? padL + bandW * (i + 0.5) : n > 1 ? padL + i * step : padL + iw / 2);
-  const y = v => r1(padT + (1 - (v - lo) / (hi - lo || 1)) * ih);
+  const x = (/** @type {number} */i) => r1(kind === "bar" ? padL + bandW * (i + 0.5) : n > 1 ? padL + i * step : padL + iw / 2);
+  const y = (/** @type {number} */v) => r1(padT + (1 - (v - lo) / (hi - lo || 1)) * ih);
   const every = Math.max(1, Math.ceil(n / Math.max(2, Math.floor(iw / 58))));
-  const showX = i => xTicks !== "none" && (xTicks === "ends" ? i === 0 || i === n - 1 : i % every === 0 || i === n - 1);
+  const showX = (/** @type {number} */i) => xTicks !== "none" && (xTicks === "ends" ? i === 0 || i === n - 1 : i % every === 0 || i === n - 1);
   const groupW = Math.min(28, bandW * 0.62 / (stacked ? 1 : series.length));
-  const onMove = e => {
+  const onMove = (/** @type {import("react").MouseEvent<SVGSVGElement> & { touches?: TouchList }} */e) => {
     const r = e.currentTarget.getBoundingClientRect();
     const px = (e.clientX ?? e.touches?.[0]?.clientX) - r.left;
     const i = kind === "bar" ? Math.floor((px - padL) / bandW) : Math.round((px - padL) / (step || 1));
@@ -1982,7 +1982,7 @@ function Radial({
     cy0 = r + stroke / 2 + 2;
   const a0 = Math.PI * 7 / 6,
     a1 = -Math.PI / 6;
-  const pt = a => [r1(cx0 + Math.cos(a) * r), r1(cy0 - Math.sin(a) * r)];
+  const pt = (/** @type {number} */a) => (/** @type {Point} */[r1(cx0 + Math.cos(a) * r), r1(cy0 - Math.sin(a) * r)]);
   const [sx, sy] = pt(a0),
     [ex, ey] = pt(a1);
   const d = `M${sx} ${sy} A${r} ${r} 0 1 1 ${ex} ${ey}`;
@@ -2043,9 +2043,9 @@ function Radar({
   const cx0 = w / 2,
     cy0 = h / 2,
     R = Math.min(w, h) / 2 - 18;
-  const pt = (i, f) => {
+  const pt = (/** @type {number} */i, /** @type {number} */f) => {
     const a = -Math.PI / 2 + i * 2 * Math.PI / n;
-    return [r1(cx0 + Math.cos(a) * R * f), r1(cy0 + Math.sin(a) * R * f)];
+    return /** @type {Point} */[r1(cx0 + Math.cos(a) * R * f), r1(cy0 + Math.sin(a) * R * f)];
   };
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("svg", {
     viewBox: `0 0 ${w} ${h}`,
@@ -2150,7 +2150,7 @@ function Histogram({
   } = b;
   const max = Math.max(...counts);
   const sorted = [...xs].sort((p, q2) => p - q2);
-  const q = p => sorted[Math.min(sorted.length - 1, Math.floor(p * (sorted.length - 1)))];
+  const q = (/** @type {number} */p) => sorted[Math.min(sorted.length - 1, Math.floor(p * (sorted.length - 1)))];
   const padL = estWidth(String(max)),
     padR = 8,
     padT = 10,
@@ -2161,8 +2161,8 @@ function Histogram({
   const {
     ticks
   } = niceTicks(0, max, h < 140 ? 2 : 3);
-  const y = c => r1(padT + (1 - c / (ticks[ticks.length - 1] || 1)) * ih);
-  const xv = v => r1(padL + (v - lo) / span * iw);
+  const y = (/** @type {number} */c) => r1(padT + (1 - c / (ticks[ticks.length - 1] || 1)) * ih);
+  const xv = (/** @type {number} */v) => r1(padL + (v - lo) / span * iw);
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("svg", {
     viewBox: `0 0 ${w} ${h}`,
     width: w,
@@ -2321,7 +2321,7 @@ function Chart(rawProps) {
   } = props;
   const uid = useId().replace(/:/g, "");
   const srId = `${uid}-sr`;
-  const ref = useRef(null);
+  const ref = useRef(/** @type {HTMLDivElement | null} */null);
   const [hoverRaw, setHover] = useState(/** @type {number | null} */null);
   const h = height ?? DEFAULT_H[kind];
   const size = useSize(ref, fit === "fixed" ? Number(width) : undefined, Number(h));
@@ -2498,8 +2498,8 @@ function Sparkline({
   const lo = Math.min(...nums),
     hi = Math.max(...nums),
     span = hi - lo || 1;
-  const x = i => P + i * (W - 2 * P) / (clean.length - 1);
-  const y = v => P + (1 - (v - lo) / span) * (H - 2 * P);
+  const x = (/** @type {number} */i) => P + i * (W - 2 * P) / (clean.length - 1);
+  const y = (/** @type {number} */v) => P + (1 - (v - lo) / span) * (H - 2 * P);
   const runs = runsOf(clean, x, y);
   const color = toneVar(tone, 0);
   return /*#__PURE__*/React.createElement("svg", {
@@ -2559,7 +2559,7 @@ function Accordion({
 }) {
   const [open, setOpen] = useState(new Set(defaultOpen));
   const uid = useId().replace(/:/g, "");
-  const toggle = id => setOpen(s => {
+  const toggle = (/** @type {string} */id) => setOpen(s => {
     const n = new Set(multiple ? s : []);
     if (s.has(id)) n.delete(id);else n.add(id);
     return n;
@@ -2616,7 +2616,7 @@ const SZ = {
   lg: 40,
   xl: 56
 };
-const initials = n => {
+const initials = (/** @type {string | undefined} */n) => {
   if (!n) return "?";
   const s = n.trim();
   return /^[\uAC00-\uD7A3]/.test(s) ? s.slice(-2) : s.split(/\s+/).map(w => w[0]).join("").slice(0, 2).toUpperCase();
@@ -2873,6 +2873,7 @@ try { (() => {
 const { useEffect, useRef, useState } = React;
 const { cx, frameStyle, MISSING_CLASS, MISSING_TEXT, isMissing, Icon, Sparkline, StatusPill } = __ds_scope;
 /* animate=true일 때만 카운트업. 기본은 꺼짐: 실시간 수치는 트랜지션 없이 즉시 바뀐다. 꺼지면 target을 그대로 돌려주는 no-op. */
+/** @param {number} target @param {boolean} enabled */
 function useCountUp(target, enabled) {
   const [v, setV] = useState(enabled ? 0 : target);
   const from = useRef(0);
@@ -2882,7 +2883,7 @@ function useCountUp(target, enabled) {
       f = from.current,
       dur = 900;
     let raf;
-    const step = t => {
+    const step = (/** @type {number} */t) => {
       const p = Math.min(1, (t - start) / dur),
         e = 1 - Math.pow(1 - p, 3);
       setV(f + (target - f) * e);
@@ -3335,7 +3336,7 @@ function Stepper({
   className,
   style
 }) {
-  const st = (s, i) => s.status ?? (current == null ? "todo" : i < current ? "done" : i === current ? "current" : "todo");
+  const st = (/** @type {import("./Stepper.d.ts").StepperStep} */s, /** @type {number} */i) => s.status ?? (current == null ? "todo" : i < current ? "done" : i === current ? "current" : "todo");
   return /*#__PURE__*/React.createElement("ol", {
     className: cx("bds-stepper", `bds-stepper--${orientation}`, size === "sm" && "bds-stepper--sm", className),
     "aria-label": ariaLabel,
@@ -3382,7 +3383,11 @@ Object.assign(__ds_scope, { Stepper });
 try { (() => {
 const { createContext, useCallback, useContext, useRef, useState } = React;
 const { cx, Icon } = __ds_scope;
-const ToastCtx = /*#__PURE__*/createContext(null);
+/** @type {import("react").Context<ReturnType<typeof import("./Toast.d.ts").useToast> | null>} */
+const ToastCtx = /*#__PURE__*/createContext(/** @type {any} */null);
+/** Provider 가 관리하는 큐 항목. 공개 계약은 ToastOptions 이고 id·leaving 은 여기서만 쓴다.
+ * @typedef {import("./Toast.d.ts").ToastOptions & { id: number, leaving?: boolean }} QueuedToast */
+/** @type {Record<string, string>} */
 const ICON = {
   info: "info",
   ok: "check-circle",
@@ -3399,11 +3404,11 @@ function ToastProvider({
   children,
   max = 3
 }) {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(/** @type {QueuedToast[]} */[]);
   const seq = useRef(0);
-  const drop = useCallback(id => setItems(p => p.filter(t => t.id !== id)), []);
+  const drop = useCallback((/** @type {number} */id) => setItems(p => p.filter(t => t.id !== id)), []);
   /* 닫기는 leaving 표시 → 퇴장 트랜지션 → 제거. 같은 토스트를 다시 닫아도 leaving은 그대로고 제거만 한 번 더 시도한다(없으면 무시) */
-  const dismiss = useCallback(id => {
+  const dismiss = useCallback((/** @type {number} */id) => {
     if (reducedMotion()) return drop(id);
     setItems(p => p.map(t => t.id === id ? {
       ...t,
@@ -3411,15 +3416,15 @@ function ToastProvider({
     } : t));
     setTimeout(() => drop(id), EXIT_MS);
   }, [drop]);
-  const toast = useCallback(t => {
+  const toast = useCallback((/** @type {import("./Toast.d.ts").ToastOptions} */t) => {
     const id = ++seq.current;
     setItems(p => {
-      const next = [...p, {
+      const next = [...p, (/** @type {QueuedToast} */{
         id,
         tone: "info",
         duration: 4000,
         ...t
-      }];
+      })];
       /* 퇴장 중인 토스트는 자리를 비우는 중이므로 max에서 세지 않는다. 넘치는 만큼 오래된 것부터 즉시 뺀다 */
       let over = next.filter(x => !x.leaving).length - max;
       return next.filter(x => x.leaving || over-- <= 0);
@@ -3534,13 +3539,13 @@ const { Fragment, useId, useState } = React;
 const { cx, frameStyle, MISSING_CLASS, MISSING_TEXT, isMissing, Icon, Checkbox } = __ds_scope;
 const TABLE_DESKTOP_HIDE = "bds-table__d-hide";
 const TABLE_MOBILE_HIDE = "bds-table__m-hide";
-const hideCls = c => c.hideBelow === "desktop" ? TABLE_DESKTOP_HIDE : c.hideBelow === "tablet" || c.hideOnMobile ? TABLE_MOBILE_HIDE : undefined;
+const hideCls = (/** @type {import("./DataTable.d.ts").DataTableColumn<any>} */c) => c.hideBelow === "desktop" ? TABLE_DESKTOP_HIDE : c.hideBelow === "tablet" || c.hideOnMobile ? TABLE_MOBILE_HIDE : undefined;
 
 /* 셀 하나의 결측 판정.
    render 없는 열: row[key]가 값이므로 core/missing.js 규칙을 그대로 쓴다. null/undefined는 빈 칸이 아니라 "수집 안 됨"이다.
    render 있는 열: 반환은 ReactNode다. React 규칙대로 null은 "아무것도 그리지 않음"이므로 결측으로 보지 않는다
                    (예: 폐기된 토큰 행의 버튼 없음). 이미 문구로 포맷해 반환하는 사용처만 결측으로 인식한다. */
-const cellOf = (c, row, i) => {
+const cellOf = (/** @type {import("./DataTable.d.ts").DataTableColumn<any>} */c, /** @type {any} */row, /** @type {number} */i) => {
   const v = c.render ? c.render(row, i) : row[c.key];
   const na = c.render ? v === MISSING_TEXT : isMissing(v);
   return {
@@ -3586,12 +3591,12 @@ function DataTable({
   const selCount = keys.filter(k => sel.has(k)).length;
   const all = rows.length > 0 && selCount === rows.length;
   const colCount = columns.length + (selectable ? 1 : 0) + (expandable ? 1 : 0);
-  const toggle = (set, k) => {
+  const toggle = (/** @type {Iterable<any>} */set, /** @type {any} */k) => {
     const n = new Set(set);
     n.has(k) ? n.delete(k) : n.add(k);
     return [...n];
   };
-  const requestSort = key => onSortChange?.(sort?.key === key ? {
+  const requestSort = (/** @type {string} */key) => onSortChange?.(sort?.key === key ? {
     key,
     dir: sort.dir === "asc" ? "desc" : "asc"
   } : {
@@ -3726,9 +3731,9 @@ function Dropzone({
   style,
   ...rest
 }) {
-  const input = useRef(null);
+  const input = useRef(/** @type {HTMLInputElement | null} */null);
   const [over, setOver] = useState(false);
-  const emit = list => {
+  const emit = (/** @type {FileList | File[] | null | undefined} */list) => {
     const files = Array.from(list ?? []);
     if (files.length) onFiles?.(multiple ? files : files.slice(0, 1));
   };
@@ -3781,7 +3786,9 @@ Object.assign(__ds_scope, { Dropzone });
 try { (() => {
 const { createContext, useContext, useId } = React;
 const { cx, Icon } = __ds_scope;
-const FieldCtx = /*#__PURE__*/createContext(null);
+/** @typedef {{ id: string, describedBy?: string, invalid: boolean, required: boolean }} FieldCtxValue */
+/** @type {import("react").Context<FieldCtxValue | null>} */
+const FieldCtx = /*#__PURE__*/createContext(/** @type {any} */null);
 const useFieldContext = () => useContext(FieldCtx);
 
 /** 라벨·설명·오류를 입력에 연결하는 래퍼. 자식 입력은 useFieldContext()로 id·aria를 받는다.
@@ -3859,8 +3866,8 @@ function CodeEditor({
   const f = useFieldContext();
   const [inner, setInner] = React.useState(defaultValue);
   const v = value ?? inner;
-  const ta = useRef(null),
-    gutter = useRef(null);
+  const ta = useRef(/** @type {HTMLTextAreaElement | null} */null),
+    gutter = useRef(/** @type {HTMLPreElement | null} */null);
   const lines = useMemo(() => v.split("\n").length, [v]);
   const err = useMemo(() => {
     if (language !== "json" || !v.trim()) return null;
@@ -3881,11 +3888,11 @@ function CodeEditor({
       };
     }
   }, [v, language]);
-  const set = s => {
+  const set = (/** @type {string} */s) => {
     setInner(s);
     onChange?.(s);
   };
-  const onKey = e => {
+  const onKey = (/** @type {import("react").KeyboardEvent<HTMLTextAreaElement>} */e) => {
     /* Tab은 들여쓰기, Shift+Tab은 가로채지 않아 키보드로 빠져나갈 수 있다 */
     if (e.key === "Tab" && !e.shiftKey && !readOnly) {
       e.preventDefault();
@@ -3982,7 +3989,7 @@ function ColorInput({
   const [inner, setInner] = useState(defaultValue);
   const [text, setText] = useState(null);
   const v = value ?? inner;
-  const set = hex => {
+  const set = (/** @type {string} */hex) => {
     const m = HEX.exec(hex.trim());
     if (!m) return false;
     const out = `#${m[1].toUpperCase()}`;
@@ -4079,12 +4086,12 @@ function Combobox({
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState("");
   const [idx, setIdx] = useState(0);
-  const root = useRef(null);
+  const root = useRef(/** @type {HTMLDivElement | null} */null);
   const sel = options.find(o => o.value === value) ?? null;
   const list = q ? options.filter(o => `${o.label} ${o.detail ?? ""} ${o.value}`.toLowerCase().includes(q.toLowerCase())) : options;
   useEffect(() => {
     if (!open) return;
-    const on = e => {
+    const on = (/** @type {MouseEvent} */e) => {
       if (!root.current?.contains(e.target)) {
         setOpen(false);
         setQ("");
@@ -4102,7 +4109,7 @@ function Combobox({
     setOpen(false);
     setQ("");
   };
-  const onKey = e => {
+  const onKey = (/** @type {import("react").KeyboardEvent<HTMLElement>} */e) => {
     if (e.key === "ArrowDown") {
       e.preventDefault();
       setOpen(true);
@@ -4205,8 +4212,8 @@ Object.assign(__ds_scope, { Combobox });
 try { (() => {
 const { useEffect, useRef, useState } = React;
 const { cx, frameStyle, Icon, IconButton, useFieldContext } = __ds_scope;
-const pad = n => String(n).padStart(2, "0");
-const iso = d => d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
+const pad = (/** @type {number} */n) => String(n).padStart(2, "0");
+const iso = (/** @type {Date} */d) => d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
 const DOW = ["일", "월", "화", "수", "목", "금", "토"];
 
 /** 단일 날짜 선택. value는 "YYYY-MM-DD". min/max 같은 형식. 기간은 DateRangePicker.
@@ -4235,8 +4242,8 @@ function DatePicker({
     const d = value ? new Date(value + "T00:00:00") : new Date();
     if (!Number.isNaN(d.getTime())) setView(new Date(d.getFullYear(), d.getMonth(), 1));
   }, [value]);
-  const root = useRef(null),
-    trig = useRef(null);
+  const root = useRef(/** @type {HTMLDivElement | null} */null),
+    trig = useRef(/** @type {HTMLButtonElement | null} */null);
   /* 닫힐 때 포커스를 트리거 버튼으로 돌린다(달력 셀이 언마운트되면 포커스가 body로 떨어진다) */
   const close = () => {
     setOpen(false);
@@ -4244,10 +4251,10 @@ function DatePicker({
   };
   useEffect(() => {
     if (!open) return;
-    const on = e => {
+    const on = (/** @type {MouseEvent} */e) => {
       if (!root.current?.contains(e.target)) setOpen(false);
     };
-    const key = e => {
+    const key = (/** @type {KeyboardEvent} */e) => {
       if (e.key === "Escape") close();
     };
     document.addEventListener("mousedown", on);
@@ -4271,7 +4278,7 @@ function DatePicker({
     length: 6
   }, (_, r) => cells.slice(r * 7, r * 7 + 7));
   const today = iso(new Date());
-  const inRange = d => (!min || iso(d) >= min) && (!max || iso(d) <= max);
+  const inRange = (/** @type {Date} */d) => (!min || iso(d) >= min) && (!max || iso(d) <= max);
   return /*#__PURE__*/React.createElement("div", {
     ref: root,
     className: cx("bds-date", className),
@@ -4384,7 +4391,7 @@ const PRESETS = [{
   value: "7d",
   label: "7일"
 }];
-const fmtLocal = d => d ? new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 16) : "";
+const fmtLocal = (/** @type {Date | null | undefined} */d) => d ? new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 16) : "";
 /** 기간 선택: 빠른 프리셋(최근 N) + 직접 시작/끝. value {preset?:string, from?:Date, to?:Date}. 차트 기간용.
  * @param {Parameters<typeof import("./DateRangePicker.d.ts").DateRangePicker>[0]} props */
 function DateRangePicker({
@@ -4480,7 +4487,7 @@ Object.assign(__ds_scope, { DateRangePicker });
 try { (() => {
 const { useState } = React;
 const { cx, frameStyle, Icon, Dropzone, ProgressBar, Button } = __ds_scope;
-const fmtBytes = v => {
+const fmtBytes = (/** @type {number | null | undefined} */v) => {
   if (v == null) return "";
   const u = ["B", "KiB", "MiB", "GiB"];
   const e = Math.min(Math.floor(Math.log(v || 1) / Math.log(1024)), 3);
@@ -4610,15 +4617,15 @@ function MultiSelect({
   const [q, setQ] = useState(""),
     [open, setOpen] = useState(false),
     [idx, setIdx] = useState(0);
-  const root = useRef(null),
-    input = useRef(null);
+  const root = useRef(/** @type {HTMLDivElement | null} */null),
+    input = useRef(/** @type {HTMLInputElement | null} */null);
   const sel = new Set(value);
   const list = options.filter(o => !sel.has(o.value) && o.label.toLowerCase().includes(q.trim().toLowerCase()));
   const activeIdx = Math.min(idx, Math.max(0, list.length - 1));
   const full = max != null && value.length >= max;
   useEffect(() => {
     if (!open) return;
-    const on = e => {
+    const on = (/** @type {MouseEvent} */e) => {
       if (!root.current?.contains(e.target)) setOpen(false);
     };
     document.addEventListener("mousedown", on);
@@ -4633,7 +4640,7 @@ function MultiSelect({
     input.current?.focus();
   };
   const remove = v => onChange?.(value.filter(x => x !== v));
-  const onKey = e => {
+  const onKey = (/** @type {import("react").KeyboardEvent<HTMLElement>} */e) => {
     if (e.key === "Backspace" && !q && value.length) remove(value[value.length - 1]);else if (e.key === "ArrowDown") {
       e.preventDefault();
       setOpen(true);
@@ -4736,7 +4743,7 @@ function NumberStepper({
   React.useEffect(() => {
     setDraft(String(v));
   }, [v]);
-  const set = n => {
+  const set = (/** @type {number} */n) => {
     const c = Math.min(max, Math.max(min, n));
     setInner(c);
     setDraft(String(c));
@@ -4822,15 +4829,17 @@ function OTPInput({
   className
 }) {
   const f = useFieldContext();
-  const refs = useRef([]);
+  const refs = useRef(/** @type {(HTMLInputElement | null)[]} */[]);
   const chars = Array.from({
     length
   }, (_, i) => value[i] === " " ? "" : value[i] ?? "");
+  /** @param {string} next */
   const commit = next => {
     const v = next.slice(0, length).replace(/ +$/, "");
     onChange?.(v);
     if (v.length === length && !/\D/.test(v)) onComplete?.(v);
   };
+  /** @param {number} i @param {import("react").ChangeEvent<HTMLInputElement>} e */
   const onInput = (i, e) => {
     const d = e.target.value.replace(/\D/g, "");
     const arr = chars.slice();
@@ -4838,6 +4847,7 @@ function OTPInput({
     commit(arr.map(c => c || " ").join(""));
     if (d) refs.current[Math.min(length - 1, i + 1)]?.focus();
   };
+  /** @param {number} i @param {import("react").KeyboardEvent<HTMLInputElement>} e */
   const onKey = (i, e) => {
     if (e.key === "Backspace") {
       e.preventDefault();
@@ -4849,6 +4859,7 @@ function OTPInput({
       commit(arr.map(c => c || " ").join(""));
     } else if (e.key === "ArrowLeft" && i > 0) refs.current[i - 1]?.focus();else if (e.key === "ArrowRight" && i < length - 1) refs.current[i + 1]?.focus();
   };
+  /** @param {import("react").ClipboardEvent<HTMLInputElement>} e */
   const onPaste = e => {
     const d = (e.clipboardData.getData("text") || "").replace(/\D/g, "").slice(0, length);
     if (!d) return;
@@ -4953,10 +4964,10 @@ function SearchField({
   "aria-label": ariaLabel = "검색",
   ...rest
 }) {
-  const ref = useRef(null);
+  const ref = useRef(/** @type {HTMLInputElement | null} */null);
   useEffect(() => {
     if (!shortcut) return;
-    const onKey = e => {
+    const onKey = (/** @type {KeyboardEvent} */e) => {
       if (e.key === "/" && !/input|textarea|select/i.test(document.activeElement?.tagName ?? "")) {
         e.preventDefault();
         ref.current?.focus();
@@ -5024,7 +5035,7 @@ function SegmentedControl({
   "aria-label": ariaLabel,
   ...rest
 }) {
-  const root = useRef(null);
+  const root = useRef(/** @type {HTMLDivElement | null} */null);
   const [thumb, setThumb] = useState(null);
   useEffect(() => {
     const el = root.current?.querySelector('[aria-checked="true"]');
@@ -5367,7 +5378,7 @@ Object.assign(__ds_scope, { passwordStrength, PasswordField });
 // components/input/TimePicker.jsx
 try { (() => {
 const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
-const pad = n => String(n).padStart(2, "0");
+const pad = (/** @type {number} */n) => String(n).padStart(2, "0");
 /** 시:분 선택(24시간). value "HH:MM". step은 분 단위(기본 5).
  * @param {Parameters<typeof import("./TimePicker.d.ts").TimePicker>[0]} props */
 function TimePicker({
@@ -5383,7 +5394,7 @@ function TimePicker({
 }) {
   const f = useFieldContext();
   const [h, m] = value ? value.split(":").map(Number) : [null, null];
-  const set = (hh, mm) => onChange?.(pad(hh ?? 0) + ":" + pad(mm ?? 0));
+  const set = (/** @type {number} */hh, /** @type {number} */mm) => onChange?.(pad(hh ?? 0) + ":" + pad(mm ?? 0));
   const mins = Array.from({
     length: Math.floor(60 / step)
   }, (_, i) => i * step);
@@ -5900,8 +5911,8 @@ function CommandPalette({
 }) {
   const [q, setQ] = useState(""),
     [idx, setIdx] = useState(0),
-    input = useRef(null),
-    opener = useRef(null);
+    input = useRef(/** @type {HTMLInputElement | null} */null),
+    opener = useRef(/** @type {HTMLElement | null} */null);
   const list = useMemo(() => {
     const s = q.trim().toLowerCase();
     return !s ? items : items.filter(it => (it.label + " " + (it.keywords ?? "") + " " + (it.group ?? "")).toLowerCase().includes(s));
@@ -5919,12 +5930,12 @@ function CommandPalette({
     setIdx(0);
   }, [q]);
   if (!open) return null;
-  const run = it => {
+  const run = (/** @type {import("./CommandPalette.d.ts").CommandItem | undefined} */it) => {
     if (!it) return;
     onClose?.();
     it.onSelect?.(it);
   };
-  const onKey = e => {
+  const onKey = (/** @type {import("react").KeyboardEvent<HTMLDivElement>} */e) => {
     if (e.key === "ArrowDown") {
       e.preventDefault();
       setIdx(i => Math.min(list.length - 1, i + 1));
@@ -6048,8 +6059,9 @@ function Pagination({
   className,
   ...rest
 }) {
+  /** @type {(number | string)[]} */
   const pages = [];
-  const push = p => pages.push(p);
+  const push = (/** @type {number | string} */p) => pages.push(p);
   const lo = Math.max(2, page - siblings),
     hi = Math.min(total - 1, page + siblings);
   push(1);
@@ -6096,7 +6108,8 @@ Object.assign(__ds_scope, { Pagination });
 try { (() => {
 const { createContext, useContext, useEffect, useId, useRef, useState } = React;
 const { cx, Icon, IconButton, MascotMark } = __ds_scope;
-const CloseCtx = /*#__PURE__*/createContext(null);
+/** @type {import("react").Context<(() => void) | null>} */
+const CloseCtx = /*#__PURE__*/createContext(/** @type {any} */null);
 
 /** 대시보드 셸: 240px 사이드바 + 52px 상단바 + 본문 + 28px 상태바. 부모가 높이를 정한다(페이지는 100dvh).
  *  1024 미만: 사이드바가 오버레이 드로어(햄버거). 768 미만: 상태바 숨김. 본문은 컨테이너 쿼리 대상(container-name: body).
@@ -6115,13 +6128,13 @@ function SidebarShell({
 }) {
   const [open, setOpen] = useState(false);
   const id = useId();
-  const burger = useRef(null),
-    side = useRef(null);
+  const burger = useRef(/** @type {HTMLButtonElement | null} */null),
+    side = useRef(/** @type {HTMLElement | null} */null);
   useEffect(() => {
     if (!open) return;
     /* 드로어로 열리면 포커스를 안으로(닫기 버튼) 옮기고, 닫히면 햄버거로 돌린다 */
     side.current?.querySelector("button")?.focus();
-    const onKey = e => e.key === "Escape" && setOpen(false);
+    const onKey = (/** @type {KeyboardEvent} */e) => e.key === "Escape" && setOpen(false);
     document.addEventListener("keydown", onKey);
     return () => {
       document.removeEventListener("keydown", onKey);
@@ -6261,7 +6274,7 @@ function Tabs({
   "aria-label": ariaLabel,
   ...rest
 }) {
-  const root = useRef(null),
+  const root = useRef(/** @type {HTMLDivElement | null} */null),
     uid = useId().replace(/:/g, "");
   const [ink, setInk] = useState(null);
   useEffect(() => {
@@ -6276,7 +6289,7 @@ function Tabs({
     ro.observe(root.current);
     return () => ro.disconnect();
   }, [value, items.length]);
-  const move = e => {
+  const move = (/** @type {import("react").KeyboardEvent<HTMLElement>} */e) => {
     const i = items.findIndex(x => x.value === value),
       n = items.length;
     const j = e.key === "ArrowRight" ? (i + 1) % n : e.key === "ArrowLeft" ? (i - 1 + n) % n : e.key === "Home" ? 0 : e.key === "End" ? n - 1 : -1;
@@ -6372,8 +6385,8 @@ function DropdownMenu({
 }) {
   const [open, setOpen] = useState(false);
   const [idx, setIdx] = useState(-1);
-  const root = useRef(null),
-    panel = useRef(null),
+  const root = useRef(/** @type {HTMLDivElement | null} */null),
+    panel = useRef(/** @type {HTMLUListElement | null} */null),
     uid = useId().replace(/:/g, "");
   const enabled = items.map((it, i) => it !== "-" && !it.disabled ? i : -1).filter(i => i >= 0);
   useAnchoredPopover({
@@ -6391,10 +6404,10 @@ function DropdownMenu({
   };
   useEffect(() => {
     if (!open) return;
-    const on = e => {
+    const on = (/** @type {PointerEvent} */e) => {
       if (!root.current?.contains(e.target)) setOpen(false);
     };
-    const key = e => {
+    const key = (/** @type {KeyboardEvent} */e) => {
       if (e.key === "Escape") {
         e.preventDefault();
         e.stopPropagation();
@@ -6419,7 +6432,7 @@ function DropdownMenu({
       setOpen(true);
     }
   };
-  const onKey = e => {
+  const onKey = (/** @type {import("react").KeyboardEvent<HTMLElement>} */e) => {
     if (!open && (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ")) {
       e.preventDefault();
       setOpen(true);
@@ -6534,14 +6547,14 @@ function Popover({
       setInner(v);
       onOpenChange?.(v);
     };
-  const root = useRef(null),
+  const root = useRef(/** @type {HTMLDivElement | null} */null),
     id = useId().replace(/:/g, "");
   useEffect(() => {
     if (!open) return;
-    const on = e => {
+    const on = (/** @type {MouseEvent} */e) => {
       if (!root.current?.contains(e.target)) set(false);
     };
-    const key = e => {
+    const key = (/** @type {KeyboardEvent} */e) => {
       if (e.key === "Escape") {
         set(false);
         root.current?.firstElementChild?.focus?.();
@@ -6595,19 +6608,19 @@ function Tooltip({
 }) {
   const [open, setOpen] = useState(false);
   const id = useId().replace(/:/g, "");
-  const t = useRef(null);
+  const t = useRef(/** @type {ReturnType<typeof setTimeout> | null} */null);
   const show = () => {
-    clearTimeout(t.current);
+    clearTimeout(t.current ?? undefined);
     t.current = setTimeout(() => setOpen(true), delay);
   };
   const hide = () => {
-    clearTimeout(t.current);
+    clearTimeout(t.current ?? undefined);
     setOpen(false);
   };
-  useEffect(() => () => clearTimeout(t.current), []);
+  useEffect(() => () => clearTimeout(t.current ?? undefined), []);
   useEffect(() => {
     if (!open) return;
-    const onKey = e => {
+    const onKey = (/** @type {KeyboardEvent} */e) => {
       if (e.key === "Escape") hide();
     };
     document.addEventListener("keydown", onKey);
@@ -6702,10 +6715,10 @@ function Drawer({
   children,
   ...rest
 }) {
-  const panel = useRef(null),
+  const panel = useRef(/** @type {HTMLDialogElement | null} */null),
     tid = useId();
   useModalDialog(panel, open);
-  const outside = e => {
+  const outside = (/** @type {import("react").MouseEvent<HTMLDialogElement>} */e) => {
     const r = e.currentTarget.getBoundingClientRect();
     return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
   };
@@ -6855,10 +6868,10 @@ function Modal({
   children,
   ...rest
 }) {
-  const panel = useRef(null),
+  const panel = useRef(/** @type {HTMLDialogElement | null} */null),
     tid = useId();
   useModalDialog(panel, open);
-  const outside = e => {
+  const outside = (/** @type {import("react").MouseEvent<HTMLDialogElement>} */e) => {
     const r = e.currentTarget.getBoundingClientRect();
     return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
   };

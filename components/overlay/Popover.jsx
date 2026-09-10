@@ -6,8 +6,8 @@ import { cx } from "../core/frame.js";
 export function Popover({ trigger, title, side = "bottom", open: ctrl, onOpenChange, className, children }) {
   const [inner, setInner] = useState(false);
   const open = ctrl ?? inner, set = (v) => { setInner(v); onOpenChange?.(v); };
-  const root = useRef(null), id = useId().replace(/:/g, "");
-  useEffect(() => { if (!open) return; const on = (e) => { if (!root.current?.contains(e.target)) set(false); }; const key = (e) => { if (e.key === "Escape") { set(false); root.current?.firstElementChild?.focus?.(); } }; document.addEventListener("mousedown", on); document.addEventListener("keydown", key); return () => { document.removeEventListener("mousedown", on); document.removeEventListener("keydown", key); }; }, [open]);
+  const root = useRef(/** @type {HTMLDivElement | null} */ (null)), id = useId().replace(/:/g, "");
+  useEffect(() => { if (!open) return; const on = (/** @type {MouseEvent} */ e) => { if (!root.current?.contains(e.target)) set(false); }; const key = (/** @type {KeyboardEvent} */ e) => { if (e.key === "Escape") { set(false); root.current?.firstElementChild?.focus?.(); } }; document.addEventListener("mousedown", on); document.addEventListener("keydown", key); return () => { document.removeEventListener("mousedown", on); document.removeEventListener("keydown", key); }; }, [open]);
   const trig = cloneElement(trigger, { "aria-expanded": open, "aria-controls": id, "aria-haspopup": "dialog", onClick: (e) => { trigger.props.onClick?.(e); set(!open); } });
   return (
     <span ref={root} className={cx("bds-pop", className)}>

@@ -5,7 +5,7 @@ import { Dropzone } from "./Dropzone.jsx";
 import { ProgressBar } from "../feedback/ProgressBar.jsx";
 import { Button } from "../action/Button.jsx";
 
-const fmtBytes = (v) => { if (v == null) return ""; const u = ["B", "KiB", "MiB", "GiB"]; const e = Math.min(Math.floor(Math.log(v || 1) / Math.log(1024)), 3); const s = v / 1024 ** e; return `${s.toFixed(s >= 10 || e === 0 ? 0 : 1)} ${u[e]}`; };
+const fmtBytes = (/** @type {number | null | undefined} */ v) => { if (v == null) return ""; const u = ["B", "KiB", "MiB", "GiB"]; const e = Math.min(Math.floor(Math.log(v || 1) / Math.log(1024)), 3); const s = v / 1024 ** e; return `${s.toFixed(s >= 10 || e === 0 ? 0 : 1)} ${u[e]}`; };
 const STATUS = { queued: ["대기", "off"], uploading: ["업로드 중", "accent"], paused: ["일시정지", "warn"], verifying: ["서버 검증 중", "accent"], done: ["완료", "ok"], failed: ["실패", "crit"] };
 /** 청크 업로드 목록. Dropzone + 파일별 ProgressBar + 일시정지/재개/재시도/취소. 진행 상태는 부모가 items로 내려준다(업로드 로직은 컴포넌트 밖).
  * @param {Parameters<typeof import("./FileUpload.d.ts").FileUpload>[0]} props */

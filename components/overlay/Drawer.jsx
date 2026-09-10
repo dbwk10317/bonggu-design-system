@@ -6,9 +6,9 @@ import { IconButton } from "../action/IconButton.jsx";
 /** 오른쪽 사이드 패널. 네이티브 <dialog>.showModal()로 포커스를 가둔다. 목록을 보면서 상세를 볼 때(실행 상세·모델 상세). 확인이 필요한 결정은 Modal. size: sm 380 · md 480 · lg 640. 768 미만은 전체 폭.
  * @param {Parameters<typeof import("./Drawer.d.ts").Drawer>[0]} props */
 export function Drawer({ open, onClose, title, description, actions, size = "md", closeButton = true, className, children, ...rest }) {
-  const panel = useRef(null), tid = useId();
+  const panel = useRef(/** @type {HTMLDialogElement | null} */ (null)), tid = useId();
   useModalDialog(panel, open);
-  const outside = (e) => { const r = e.currentTarget.getBoundingClientRect(); return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom; };
+  const outside = (/** @type {import("react").MouseEvent<HTMLDialogElement>} */ e) => { const r = e.currentTarget.getBoundingClientRect(); return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom; };
   return (
     <div className={cx("bds-side", open && "bds-side--open", `bds-side--${size}`)}>
       <dialog ref={panel} aria-labelledby={title ? tid : undefined} tabIndex={-1} className={cx("bds-side__panel", className)}

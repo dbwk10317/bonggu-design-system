@@ -12,8 +12,8 @@ export function Sparkline({ values = [], tone = 1, area = true, className, ...re
   const nums = clean.filter((v) => v != null);
   if (nums.length < 2) return <svg className={cx("bds-spark", className)} viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" aria-hidden="true" />;
   const lo = Math.min(...nums), hi = Math.max(...nums), span = hi - lo || 1;
-  const x = (i) => P + (i * (W - 2 * P)) / (clean.length - 1);
-  const y = (v) => P + (1 - (v - lo) / span) * (H - 2 * P);
+  const x = (/** @type {number} */ i) => P + (i * (W - 2 * P)) / (clean.length - 1);
+  const y = (/** @type {number} */ v) => P + (1 - (v - lo) / span) * (H - 2 * P);
   const runs = runsOf(clean, x, y);
   const color = toneVar(tone, 0);
   return (

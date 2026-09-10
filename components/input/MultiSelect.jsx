@@ -9,16 +9,16 @@ import { useFieldContext } from "./Field.jsx";
 export function MultiSelect({ options = [], value = [], onChange, placeholder = "선택", max, fit = "flex", width, disabled, className, style }) {
   const f = useFieldContext(), uid = useId().replace(/:/g, "");
   const [q, setQ] = useState(""), [open, setOpen] = useState(false), [idx, setIdx] = useState(0);
-  const root = useRef(null), input = useRef(null);
+  const root = useRef(/** @type {HTMLDivElement | null} */ (null)), input = useRef(/** @type {HTMLInputElement | null} */ (null));
   const sel = new Set(value);
   const list = options.filter((o) => !sel.has(o.value) && o.label.toLowerCase().includes(q.trim().toLowerCase()));
   const activeIdx = Math.min(idx, Math.max(0, list.length - 1));
   const full = max != null && value.length >= max;
-  useEffect(() => { if (!open) return; const on = (e) => { if (!root.current?.contains(e.target)) setOpen(false); }; document.addEventListener("mousedown", on); return () => document.removeEventListener("mousedown", on); }, [open]);
+  useEffect(() => { if (!open) return; const on = (/** @type {MouseEvent} */ e) => { if (!root.current?.contains(e.target)) setOpen(false); }; document.addEventListener("mousedown", on); return () => document.removeEventListener("mousedown", on); }, [open]);
   useEffect(() => setIdx(0), [q, open]);
   const add = (v) => { if (full) return; onChange?.([...value, v]); setIdx(0); setQ(""); input.current?.focus(); };
   const remove = (v) => onChange?.(value.filter((x) => x !== v));
-  const onKey = (e) => {
+  const onKey = (/** @type {import("react").KeyboardEvent<HTMLElement>} */ e) => {
     if (e.key === "Backspace" && !q && value.length) remove(value[value.length - 1]);
     else if (e.key === "ArrowDown") { e.preventDefault(); setOpen(true); setIdx(Math.max(0, Math.min(list.length - 1, activeIdx + 1))); }
     else if (e.key === "ArrowUp") { e.preventDefault(); setIdx(Math.max(0, activeIdx - 1)); }

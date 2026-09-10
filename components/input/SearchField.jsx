@@ -5,10 +5,10 @@ import { Icon } from "../action/Icon.jsx";
 /** 검색 입력. `/` 단축키로 포커스, 값이 있으면 지우기 버튼. onSearch(value)는 Enter에 호출.
  * @param {Parameters<typeof import("./SearchField.d.ts").SearchField>[0]} props */
 export function SearchField({ value, onChange, onSearch, placeholder = "검색", shortcut = true, size = "md", fit = "flex", width, className, style, "aria-label": ariaLabel = "검색", ...rest }) {
-  const ref = useRef(null);
+  const ref = useRef(/** @type {HTMLInputElement | null} */ (null));
   useEffect(() => {
     if (!shortcut) return;
-    const onKey = (e) => { if (e.key === "/" && !/input|textarea|select/i.test(document.activeElement?.tagName ?? "")) { e.preventDefault(); ref.current?.focus(); } };
+    const onKey = (/** @type {KeyboardEvent} */ e) => { if (e.key === "/" && !/input|textarea|select/i.test(document.activeElement?.tagName ?? "")) { e.preventDefault(); ref.current?.focus(); } };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, [shortcut]);

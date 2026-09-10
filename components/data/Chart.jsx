@@ -89,12 +89,12 @@ function Cartesian({ kind, labels, series, fmt, uid, xTicks, w, h, thresholds = 
   const iw = w - padL - padR, ih = h - padT - padB;
   const step = n > 1 ? iw / (n - 1) : 0;
   const bandW = iw / n;
-  const x = (i) => r1(kind === "bar" ? padL + bandW * (i + 0.5) : n > 1 ? padL + i * step : padL + iw / 2);
-  const y = (v) => r1(padT + (1 - (v - lo) / (hi - lo || 1)) * ih);
+  const x = (/** @type {number} */ i) => r1(kind === "bar" ? padL + bandW * (i + 0.5) : n > 1 ? padL + i * step : padL + iw / 2);
+  const y = (/** @type {number} */ v) => r1(padT + (1 - (v - lo) / (hi - lo || 1)) * ih);
   const every = Math.max(1, Math.ceil(n / Math.max(2, Math.floor(iw / 58))));
-  const showX = (i) => xTicks !== "none" && (xTicks === "ends" ? i === 0 || i === n - 1 : i % every === 0 || i === n - 1);
+  const showX = (/** @type {number} */ i) => xTicks !== "none" && (xTicks === "ends" ? i === 0 || i === n - 1 : i % every === 0 || i === n - 1);
   const groupW = Math.min(28, bandW * 0.62 / (stacked ? 1 : series.length));
-  const onMove = (e) => { const r = e.currentTarget.getBoundingClientRect(); const px = ((e.clientX ?? e.touches?.[0]?.clientX) - r.left); const i = kind === "bar" ? Math.floor((px - padL) / bandW) : Math.round((px - padL) / (step || 1)); setHover(Math.max(0, Math.min(n - 1, i))); };
+  const onMove = (/** @type {import("react").MouseEvent<SVGSVGElement> & { touches?: TouchList }} */ e) => { const r = e.currentTarget.getBoundingClientRect(); const px = ((e.clientX ?? e.touches?.[0]?.clientX) - r.left); const i = kind === "bar" ? Math.floor((px - padL) / bandW) : Math.round((px - padL) / (step || 1)); setHover(Math.max(0, Math.min(n - 1, i))); };
   const rows = hover == null ? [] : series.map((s, si) => ({ color: toneVar(s.tone, si), name: s.label, value: cell(fmt, s.values[hover]) }));
   return (
     <>
@@ -165,7 +165,7 @@ function Radial({ value, label, tone, fmt, w, h, animate }) {
   // 240° 게이지. 높이 = 1.5r + stroke, 폭 = 2r + stroke 안에 들어오도록 r을 정한다.
   const r = Math.min(h / 1.6, w / 2.1) - 2, stroke = Math.max(6, r * 0.14), cx0 = w / 2, cy0 = r + stroke / 2 + 2;
   const a0 = Math.PI * 7 / 6, a1 = -Math.PI / 6;
-  const pt = (a) => [r1(cx0 + Math.cos(a) * r), r1(cy0 - Math.sin(a) * r)];
+  const pt = (/** @type {number} */ a) => /** @type {Point} */ ([r1(cx0 + Math.cos(a) * r), r1(cy0 - Math.sin(a) * r)]);
   const [sx, sy] = pt(a0), [ex, ey] = pt(a1);
   const d = `M${sx} ${sy} A${r} ${r} 0 1 1 ${ex} ${ey}`;
   const len = r * (a0 - a1);
@@ -187,7 +187,7 @@ function Radar({ axes, series, max, fmt, w, h, hover, setHover }) {
   const all = series.flatMap((s) => s.values).filter((v) => v != null);
   const top = (max ?? (all.length ? Math.max(...all) : 1)) || 1;
   const cx0 = w / 2, cy0 = h / 2, R = Math.min(w, h) / 2 - 18;
-  const pt = (i, f) => { const a = -Math.PI / 2 + (i * 2 * Math.PI) / n; return [r1(cx0 + Math.cos(a) * R * f), r1(cy0 + Math.sin(a) * R * f)]; };
+  const pt = (/** @type {number} */ i, /** @type {number} */ f) => { const a = -Math.PI / 2 + (i * 2 * Math.PI) / n; return /** @type {Point} */ ([r1(cx0 + Math.cos(a) * R * f), r1(cy0 + Math.sin(a) * R * f)]); };
   return (
     <>
       <svg viewBox={`0 0 ${w} ${h}`} width={w} height={h} className="bds-chart__svg" onMouseLeave={() => setHover(null)} aria-hidden="true">
@@ -220,12 +220,12 @@ function Histogram({ hist, fmt, w, h, tone, percentiles = [], unit, animate, hov
   const { xs, lo, span, n, counts } = b;
   const max = Math.max(...counts);
   const sorted = [...xs].sort((p, q2) => p - q2);
-  const q = (p) => sorted[Math.min(sorted.length - 1, Math.floor(p * (sorted.length - 1)))];
+  const q = (/** @type {number} */ p) => sorted[Math.min(sorted.length - 1, Math.floor(p * (sorted.length - 1)))];
   const padL = estWidth(String(max)), padR = 8, padT = 10, padB = 26, iw = w - padL - padR, ih = h - padT - padB;
   const bw = iw / n;
   const { ticks } = niceTicks(0, max, h < 140 ? 2 : 3);
-  const y = (c) => r1(padT + (1 - c / (ticks[ticks.length - 1] || 1)) * ih);
-  const xv = (v) => r1(padL + ((v - lo) / span) * iw);
+  const y = (/** @type {number} */ c) => r1(padT + (1 - c / (ticks[ticks.length - 1] || 1)) * ih);
+  const xv = (/** @type {number} */ v) => r1(padL + ((v - lo) / span) * iw);
   return (
     <>
       <svg viewBox={`0 0 ${w} ${h}`} width={w} height={h} className="bds-chart__svg" onMouseLeave={() => setHover(null)} aria-hidden="true">
@@ -276,7 +276,7 @@ export function Chart(rawProps) {
   const { kind = "line", fit = "flex", width, height, valueFormatter = fmtKo, emptyText = MISSING_TEXT, showLegend = true, live = false, animate = !live, className, style, "aria-label": ariaLabel } = props;
   const uid = useId().replace(/:/g, "");
   const srId = `${uid}-sr`;
-  const ref = useRef(null);
+  const ref = useRef(/** @type {HTMLDivElement | null} */ (null));
   const [hoverRaw, setHover] = useState(/** @type {number | null} */ (null));
   const h = height ?? DEFAULT_H[kind];
   const size = useSize(ref, fit === "fixed" ? Number(width) : undefined, Number(h));

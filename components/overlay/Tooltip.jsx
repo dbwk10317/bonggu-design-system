@@ -6,13 +6,13 @@ import { cx } from "../core/frame.js";
 export function Tooltip({ content, side = "top", delay = 300, children, className }) {
   const [open, setOpen] = useState(false);
   const id = useId().replace(/:/g, "");
-  const t = useRef(null);
-  const show = () => { clearTimeout(t.current); t.current = setTimeout(() => setOpen(true), delay); };
-  const hide = () => { clearTimeout(t.current); setOpen(false); };
-  useEffect(() => () => clearTimeout(t.current), []);
+  const t = useRef(/** @type {ReturnType<typeof setTimeout> | null} */ (null));
+  const show = () => { clearTimeout(t.current ?? undefined); t.current = setTimeout(() => setOpen(true), delay); };
+  const hide = () => { clearTimeout(t.current ?? undefined); setOpen(false); };
+  useEffect(() => () => clearTimeout(t.current ?? undefined), []);
   useEffect(() => {
     if (!open) return;
-    const onKey = (e) => { if (e.key === "Escape") hide(); };
+    const onKey = (/** @type {KeyboardEvent} */ e) => { if (e.key === "Escape") hide(); };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);

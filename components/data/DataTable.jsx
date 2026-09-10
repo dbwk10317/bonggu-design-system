@@ -6,13 +6,13 @@ import { Checkbox } from "../input/Checkbox.jsx";
 
 const TABLE_DESKTOP_HIDE = "bds-table__d-hide";
 const TABLE_MOBILE_HIDE = "bds-table__m-hide";
-const hideCls = (c) => (c.hideBelow === "desktop" ? TABLE_DESKTOP_HIDE : c.hideBelow === "tablet" || c.hideOnMobile ? TABLE_MOBILE_HIDE : undefined);
+const hideCls = (/** @type {import("./DataTable.d.ts").DataTableColumn<any>} */ c) => (c.hideBelow === "desktop" ? TABLE_DESKTOP_HIDE : c.hideBelow === "tablet" || c.hideOnMobile ? TABLE_MOBILE_HIDE : undefined);
 
 /* 셀 하나의 결측 판정.
    render 없는 열: row[key]가 값이므로 core/missing.js 규칙을 그대로 쓴다. null/undefined는 빈 칸이 아니라 "수집 안 됨"이다.
    render 있는 열: 반환은 ReactNode다. React 규칙대로 null은 "아무것도 그리지 않음"이므로 결측으로 보지 않는다
                    (예: 폐기된 토큰 행의 버튼 없음). 이미 문구로 포맷해 반환하는 사용처만 결측으로 인식한다. */
-const cellOf = (c, row, i) => {
+const cellOf = (/** @type {import("./DataTable.d.ts").DataTableColumn<any>} */ c, /** @type {any} */ row, /** @type {number} */ i) => {
   const v = c.render ? c.render(row, i) : row[c.key];
   const na = c.render ? v === MISSING_TEXT : isMissing(v);
   return { value: na ? MISSING_TEXT : v, na };
@@ -32,8 +32,8 @@ export function DataTable({ columns = [], rows = [], rowKey, rowLabel, sort, onS
   const selCount = keys.filter((k) => sel.has(k)).length;
   const all = rows.length > 0 && selCount === rows.length;
   const colCount = columns.length + (selectable ? 1 : 0) + (expandable ? 1 : 0);
-  const toggle = (set, k) => { const n = new Set(set); n.has(k) ? n.delete(k) : n.add(k); return [...n]; };
-  const requestSort = (key) => onSortChange?.(sort?.key === key ? { key, dir: sort.dir === "asc" ? "desc" : "asc" } : { key, dir: "asc" });
+  const toggle = (/** @type {Iterable<any>} */ set, /** @type {any} */ k) => { const n = new Set(set); n.has(k) ? n.delete(k) : n.add(k); return [...n]; };
+  const requestSort = (/** @type {string} */ key) => onSortChange?.(sort?.key === key ? { key, dir: sort.dir === "asc" ? "desc" : "asc" } : { key, dir: "asc" });
   return (
     <div className={cx("bds-table", className)} style={frameStyle({ fit, width, height, style })} {...rest}>
       {header && <div className="bds-table__hd"><h2 id={hid}>{header.title}</h2>{header.meta != null && <span>{header.meta}</span>}</div>}

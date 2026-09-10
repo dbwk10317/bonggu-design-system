@@ -5,9 +5,9 @@ import { Icon } from "../action/Icon.jsx";
 /** 파일 드롭존. 클릭/드롭/키보드로 파일을 받아 onFiles(File[])를 호출한다.
  * @param {Parameters<typeof import("./Dropzone.d.ts").Dropzone>[0]} props */
 export function Dropzone({ accept, multiple = false, onFiles, title = "파일을 끌어다 놓거나 클릭해서 선택", hint, icon = "upload-simple", fit = "flex", width, height, disabled, className, style, ...rest }) {
-  const input = useRef(null);
+  const input = useRef(/** @type {HTMLInputElement | null} */ (null));
   const [over, setOver] = useState(false);
-  const emit = (list) => { const files = Array.from(list ?? []); if (files.length) onFiles?.(multiple ? files : files.slice(0, 1)); };
+  const emit = (/** @type {FileList | File[] | null | undefined} */ list) => { const files = Array.from(list ?? []); if (files.length) onFiles?.(multiple ? files : files.slice(0, 1)); };
   return (
     <div role="button" tabIndex={disabled ? -1 : 0} aria-disabled={disabled || undefined}
       className={cx("bds-drop", over && "bds-drop--over", className)} style={frameStyle({ fit, width, height, style })}
