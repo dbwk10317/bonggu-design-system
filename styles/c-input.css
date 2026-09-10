@@ -23,7 +23,7 @@
   .bds-ctl--select select,.bds-ctl--select select::picker(select){appearance:base-select}
   .bds-ctl--select select::picker-icon{display:none}
   .bds-ctl--select select::picker(select){min-width:anchor-size(width);border:1px solid var(--line);border-radius:var(--radius-ctl);background:var(--panel);box-shadow:var(--elev-2);padding:4px;margin-top:4px;font-family:var(--font-ui)}
-  .bds-ctl--select option{display:flex;align-items:center;min-height:var(--h-ctl-sm);padding:0 10px;border-radius:4px;background:var(--panel);color:var(--ink);font-size:var(--fs-label)}
+  .bds-ctl--select option{display:flex;align-items:center;min-height:var(--h-ctl-sm);padding:0 10px;border-radius:var(--radius-xs);background:var(--panel);color:var(--ink);font-size:var(--fs-label)}
   .bds-ctl--select option::checkmark{display:none}
   .bds-ctl--select option:hover{background:var(--panel-2)}
   .bds-ctl--select option:checked{background:var(--signal-tint);color:var(--signal-ink);font-weight:var(--fw-medium)}
@@ -34,7 +34,7 @@
 .bds-ctl--select.bds-ctl--sm select{line-height:calc(var(--h-ctl-sm) - 2px)}
 .bds-check{display:inline-flex;align-items:center;gap:8px;font-size:var(--fs-label);cursor:pointer;min-height:24px;min-width:24px;user-select:none}
 .bds-check input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
-.bds-check__box{width:18px;height:18px;border:1.5px solid var(--line-input);border-radius:5px;background:var(--panel);display:grid;place-items:center;color:var(--signal-fg);transition:background var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out);flex:none}
+.bds-check__box{width:18px;height:18px;border:1.5px solid var(--line-input);border-radius:var(--radius-xs);background:var(--panel);display:grid;place-items:center;color:var(--signal-fg);transition:background var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out);flex:none}
 .bds-check__box .ph-bold{font-size:12px;opacity:0;transform:scale(.6);transition:all var(--dur-fast) var(--ease-out)}
 .bds-check input:checked+.bds-check__box,.bds-check input:indeterminate+.bds-check__box{background:var(--signal);border-color:var(--signal)}
 .bds-check input:checked+.bds-check__box .ph-bold,.bds-check input:indeterminate+.bds-check__box .ph-bold{opacity:1;transform:none}
@@ -52,9 +52,9 @@
 .bds-switch input:focus-visible+.bds-switch__track{outline:2px solid var(--focus-ring);outline-offset:2px}
 .bds-switch--disabled{opacity:.5;cursor:not-allowed}
 /* 지우기 같은 affix 버튼: 24px 최소 히트 영역 */
-button.bds-ctl__affix{min-width:24px;min-height:24px;justify-content:center;border:0;background:none;padding:0;cursor:pointer;border-radius:4px;margin-right:-4px}
+button.bds-ctl__affix{min-width:24px;min-height:24px;justify-content:center;border:0;background:none;padding:0;cursor:pointer;border-radius:var(--radius-xs);margin-right:-4px}
 button.bds-ctl__affix:hover{color:var(--ink)}
-.bds-search .bds-ctl__kbd{border:1px solid var(--line);border-radius:4px;padding:0 5px;font:500 11.5px/16px var(--font-ui);color:var(--ink-3)}
+.bds-search .bds-ctl__kbd{border:1px solid var(--line);border-radius:var(--radius-xs);padding:0 5px;font:500 11.5px/16px var(--font-ui);color:var(--ink-3)}
 .bds-drop{display:grid;place-items:center;gap:6px;padding:clamp(16px,2vw,28px);border:1.5px dashed var(--line-input);border-radius:var(--radius-panel);background:var(--canvas-sunken);color:var(--ink-3);text-align:center;cursor:pointer;transition:border-color var(--dur-fast) var(--ease-out),background var(--dur-fast) var(--ease-out)}
 .bds-drop:hover,.bds-drop--over{border-color:var(--signal);background:var(--signal-tint);color:var(--ink)}
 .bds-drop:active{background:color-mix(in oklch,var(--signal) 16%,transparent)}
@@ -65,11 +65,11 @@ button.bds-ctl__affix:hover{color:var(--ink)}
 .bds-seg{display:inline-flex;padding:3px;gap:2px;border:1px solid var(--line);border-radius:var(--radius-ctl);background:var(--canvas-sunken);position:relative;max-width:100%;overflow:clip}
 .bds-seg--flex{display:flex;width:100%}
 .bds-seg--flex .bds-seg__opt{flex:1}
-.bds-seg__opt{position:relative;padding:0 12px;height:calc(var(--h-ctl) - 8px);border:0;border-radius:4px;background:transparent;color:var(--ink-2);font-size:var(--fs-label);font-weight:var(--fw-medium);white-space:nowrap;transition:color var(--dur-fast) var(--ease-out);z-index:1}
+.bds-seg__opt{position:relative;padding:0 12px;height:calc(var(--h-ctl) - 8px);border:0;border-radius:calc(var(--radius-ctl) - 3px);background:transparent;color:var(--ink-2);font-size:var(--fs-label);font-weight:var(--fw-medium);white-space:nowrap;transition:color var(--dur-fast) var(--ease-out);z-index:1}
 .bds-seg--sm .bds-seg__opt{height:calc(var(--h-ctl-sm) - 8px);padding:0 9px;font-size:var(--fs-caption)}
 .bds-seg__opt[aria-checked="true"]{color:var(--ink);font-weight:var(--fw-medium)}
 .bds-seg__opt:hover:not([aria-checked="true"]){color:var(--ink)}
-.bds-seg__thumb{position:absolute;top:3px;bottom:3px;border-radius:4px;background:var(--panel-3);transition:left var(--dur-base) var(--ease-out),width var(--dur-base) var(--ease-out);z-index:0}
+.bds-seg__thumb{position:absolute;top:3px;bottom:3px;border-radius:calc(var(--radius-ctl) - 3px);background:var(--panel-3);transition:left var(--dur-base) var(--ease-out),width var(--dur-base) var(--ease-out);z-index:0}
 .bds-tabs{display:flex;gap:2px;border-bottom:1px solid var(--line);position:relative;overflow-x:auto;scrollbar-width:none;min-width:0}
 .bds-tabs::-webkit-scrollbar{display:none}
 .bds-tabs__tab{position:relative;padding:10px 12px;border:0;background:transparent;color:var(--ink-2);font-size:var(--fs-label);font-weight:var(--fw-medium);white-space:nowrap;display:inline-flex;align-items:center;gap:6px;min-height:var(--tabs-h);flex:none;transition:color var(--dur-fast) var(--ease-out)}

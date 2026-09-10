@@ -75,7 +75,7 @@
 .bds-diff__row:first-child{border-top:0}
 .bds-diff__f{color:var(--ink-2);overflow-wrap:anywhere}
 .bds-diff__vals{display:flex;gap:8px;flex-wrap:wrap;min-width:0}
-.bds-diff__vals del,.bds-diff__vals ins{text-decoration:none;padding:1px 6px;border-radius:4px;overflow-wrap:anywhere}
+.bds-diff__vals del,.bds-diff__vals ins{text-decoration:none;padding:1px 6px;border-radius:var(--radius-xs);overflow-wrap:anywhere}
 .bds-diff__vals del{background:var(--crit-tint);color:var(--crit-ink);text-decoration:line-through}
 .bds-diff__vals ins{background:var(--ok-tint);color:var(--ok-ink)}
 .bds-diff__empty{font-size:var(--fs-label);color:var(--ink-3)}
@@ -88,14 +88,14 @@
 .bds-copy__v{flex:1;min-width:0;font-size:var(--fs-label);color:var(--ink);margin:0}
 pre.bds-copy__v{white-space:pre;overflow-x:auto;line-height:var(--lh-body)}
 .bds-copy__act{display:flex;gap:2px;flex:none}
-.bds-copy__btn{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 8px;border:0;border-radius:4px;background:transparent;color:var(--ink-2);font-size:var(--fs-caption);font-weight:var(--fw-medium);transition:background var(--dur-fast) var(--ease-out),color var(--dur-fast)}
+.bds-copy__btn{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 8px;border:0;border-radius:var(--radius-xs);background:transparent;color:var(--ink-2);font-size:var(--fs-caption);font-weight:var(--fw-medium);transition:background var(--dur-fast) var(--ease-out),color var(--dur-fast)}
 .bds-copy__btn:hover{background:var(--panel-2);color:var(--ink)}
 .bds-copy__btn:active{background:var(--panel-3)}
 .bds-copy__btn--ok{color:var(--ok-ink)}
-.bds-code{font-size:.92em;padding:1px 5px;border-radius:4px;background:var(--panel-2);border:1px solid var(--hairline);color:var(--ink)}
+.bds-code{font-size:.92em;padding:1px 5px;border-radius:var(--radius-xs);background:var(--panel-2);border:1px solid var(--hairline);color:var(--ink)}
 .bds-codeblock{margin:0;padding:12px 14px;border:1px solid var(--line);border-radius:var(--radius-ctl);background:var(--canvas-sunken);font-size:var(--fs-label);line-height:var(--lh-body);overflow-x:auto;white-space:pre;color:var(--ink);position:relative}
 .bds-codeblock[data-lang]::before{content:attr(data-lang);position:absolute;top:6px;right:10px;font-size:var(--fs-caption);color:var(--ink-3);text-transform:uppercase;letter-spacing:var(--ls-caps)}
-.bds-kbd{display:inline-block;min-width:18px;padding:0 5px;border:1px solid var(--line-strong);border-bottom-width:2px;border-radius:4px;background:var(--panel);font:500 10.5px/16px var(--font-data);color:var(--ink-2);text-align:center;vertical-align:middle}
+.bds-kbd{display:inline-block;min-width:18px;padding:0 5px;border:1px solid var(--line-strong);border-bottom-width:2px;border-radius:var(--radius-xs);background:var(--panel);font:500 10.5px/16px var(--font-data);color:var(--ink-2);text-align:center;vertical-align:middle}
 /* ---- Slider ---- */
 .bds-slider{display:grid;gap:4px;min-width:0}
 .bds-slider__row{display:flex;align-items:center;gap:12px}
@@ -116,14 +116,14 @@ pre.bds-copy__v{white-space:pre;overflow-x:auto;line-height:var(--lh-body)}
 .bds-stepper-ctl{padding:0 4px;gap:2px}
 .bds-stepper-ctl input{text-align:center;width:3.5em;flex:1;appearance:textfield;-moz-appearance:textfield}
 .bds-stepper-ctl input::-webkit-outer-spin-button,.bds-stepper-ctl input::-webkit-inner-spin-button{appearance:none;margin:0}
-.bds-stepper-ctl__btn{width:24px;height:24px;border:0;border-radius:4px;background:transparent;color:var(--ink-2);display:grid;place-items:center;flex:none;transition:background var(--dur-fast) var(--ease-out)}
+.bds-stepper-ctl__btn{width:24px;height:24px;border:0;border-radius:var(--radius-xs);background:transparent;color:var(--ink-2);display:grid;place-items:center;flex:none;transition:background var(--dur-fast) var(--ease-out)}
 .bds-stepper-ctl__btn:hover:not(:disabled){background:var(--panel-2);color:var(--ink)}
 .bds-stepper-ctl__btn:not(:disabled):active{background:var(--panel-3)}.bds-stepper-ctl__btn:disabled{opacity:.35}
 .bds-stepper-ctl .bds-ctl__affix{padding-right:4px}
 /* ---- ColorInput ---- */
 .bds-color{display:grid;gap:8px;min-width:0}
 .bds-color__ctl{padding-left:6px}
-.bds-color__swatch{width:24px;height:24px;border-radius:5px;border:1px solid var(--line-strong);flex:none;position:relative;cursor:pointer;overflow:hidden;background:var(--swatch-color)}
+.bds-color__swatch{width:24px;height:24px;border-radius:var(--radius-xs);border:1px solid var(--line-strong);flex:none;position:relative;cursor:pointer;overflow:hidden;background:var(--swatch-color)}
 .bds-color__swatch input{position:absolute;inset:-4px;width:calc(100% + 8px);height:calc(100% + 8px);opacity:0;cursor:pointer}
 /* sm 컨트롤(28, compact 24)에 24px 스와치는 들어가지 않는다. 크기 modifier가 스와치도 함께 줄인다 */
 .bds-color--sm .bds-color__swatch{width:20px;height:20px}
@@ -135,7 +135,7 @@ pre.bds-copy__v{white-space:pre;overflow-x:auto;line-height:var(--lh-body)}
 /* ---- Combobox ---- */
 .bds-combo{position:relative;min-width:0}
 .bds-combo .bds-ctl{cursor:text}
-.bds-combo__x{border:0;background:transparent;color:var(--ink-3);width:24px;height:24px;border-radius:4px;display:grid;place-items:center;flex:none}
+.bds-combo__x{border:0;background:transparent;color:var(--ink-3);width:24px;height:24px;border-radius:var(--radius-xs);display:grid;place-items:center;flex:none}
 .bds-combo__x:hover{background:var(--panel-2);color:var(--ink)}
 .bds-combo__x:active{background:var(--panel-3)}
 .bds-combo__caret{transition:transform var(--dur-base) var(--ease-out)}.bds-combo--open .bds-combo__caret{transform:rotate(180deg)}

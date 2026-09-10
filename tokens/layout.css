@@ -1,6 +1,6 @@
 /* @token-kinds
    spacing: --sp-1, --sp-2, --sp-3, --sp-4, --sp-5, --sp-6, --sp-7, --sp-8, --sp-9, --sp-10, --grid-gap, --panel-pad, --page-pad, --kv-gap, --inline-gap, --h-ctl-sm, --h-ctl, --h-ctl-lg, --h-touch, --bp-sm, --bp-md, --bp-lg, --bp-xl, --cq-xs, --cq-sm, --cq-md, --cq-lg, --cq-xl, --safe-top, --safe-right, --safe-bottom, --safe-left, --rail-w, --bar-h, --tabs-h, --content-max, --content-narrow, --status-h
-   radius: --radius-ctl, --radius-panel, --radius-sheet, --radius-pill
+   radius: --radius-xs, --radius-ctl, --radius-panel, --radius-sheet, --radius-pill
    other: --ease-out, --ease-in-out, --dur-fast, --dur-base, --dur-slow, --dur-gauge, --z-sticky, --z-drawer, --z-modal, --z-toast, --z-tip
 */
 /* 간격·형태·모션·레이아웃 토큰.
@@ -9,7 +9,7 @@
 :root{
   --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:20px;--sp-6:24px;--sp-7:32px;--sp-8:40px;--sp-9:48px;--sp-10:64px;
   --grid-gap:20px;--panel-pad:20px;--page-pad:24px;--kv-gap:8px;--inline-gap:12px;
-  --radius-ctl:6px;--radius-panel:10px;--radius-sheet:14px;--radius-pill:999px;
+  --radius-xs:4px;--radius-ctl:6px;--radius-panel:10px;--radius-sheet:14px;--radius-pill:999px;
   --h-ctl-sm:28px;--h-ctl:32px;--h-ctl-lg:40px;--h-touch:44px;
   --bp-sm:640px;--bp-md:768px;--bp-lg:1024px;--bp-xl:1380px;
   --cq-xs:240px;--cq-sm:320px;--cq-md:480px;--cq-lg:640px;--cq-xl:900px;

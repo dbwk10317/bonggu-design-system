@@ -567,6 +567,29 @@ function pressStateViolations() {
   }
   return violations;
 }
+/* readme 모서리 절: 컨트롤은 토큰(--radius-xs/ctl/panel/sheet/pill)을 쓰고,
+   막대·잉크·격자 셀·구분선 같은 그래픽 마크만 도형 크기에 비례하는 값을 쓴다. */
+const GRAPHIC_MARKS = new Set([
+  '.bds-chart__tip-row i', '.bds-barlist__track', '.bds-barlist__fill', '.bds-barlist--thick .bds-barlist__track',
+  '.bds-heat__cell', '.bds-heat__scale i', '.bds-tabs__ink', '.bds-otp__sep', '.bds-pw__meter',
+  '.bds-legend__sw', '.bds-uptime__b', '.bds-pw__meter i',
+]);
+function radiusTokenViolations() {
+  const violations = [];
+  for (const file of walk('styles').filter((name) => name.endsWith('.css'))) {
+    const css = withoutComments(read(file));
+    for (const rule of cssRuleBodies(css)) {
+      if (!/border-radius\s*:\s*[0-9]/.test(rule.body)) continue;
+      const sel = rule.selector.split(',')[0].replace(/\s+/g, ' ').trim();
+      if (GRAPHIC_MARKS.has(sel)) continue;
+      const value = (rule.body.match(/border-radius\s*:\s*([^;}]+)/) ?? [])[1];
+      // 0 은 '모서리 없음'이라 토큰이 아니다. 50%·999px 은 원·알약으로 도형이 값을 정한다.
+      if (/^(0|50%|999px)$/.test((value ?? '').trim())) continue;
+      violations.push({ file, line: lineOf(css, rule.at), detail: `컨트롤 모서리를 리터럴로 적음(${(value ?? '').trim()}): ${sel}` });
+    }
+  }
+  return violations;
+}
 function componentVisualContractViolations() {
   const violations = [];
   const layoutFile = 'styles/c-layout.css';
@@ -644,6 +667,7 @@ const checks = [
   ['컴포넌트 시각 계약', componentVisualContractViolations(), 'StatusBar 서체 역할과 Select 선택값의 세로 정렬을 readme의 기준에 맞춥니다.'],
   ['데이터 그래픽 접근성', dataGraphicA11yViolations(), 'Chart·Heatmap은 시각·숨김 표·탐색 표면 셋을 함께 냅니다. 루트는 role="group", 탐색 표면은 role="application" + tabIndex=0, 현재 지점은 role="status"로 알립니다.'],
   ['호버·프레스 짝', pressStateViolations(), '호버는 --panel-2 한 단계, 프레스는 --panel-3 두 단계입니다. 눌러서 동작하는 표면은 둘을 짝으로 냅니다(터치 기기에는 호버가 없습니다).'],
+  ['모서리 토큰', radiusTokenViolations(), '컨트롤 모서리는 --radius-xs/ctl/panel/sheet/pill을 씁니다. 안쪽 상자는 바깥 − 패딩을 calc()로 적습니다. 리터럴은 그래픽 마크(막대·잉크·셀·구분선)에만 허용합니다.'],
   ['가이드 페이지 누락', guideIndexViolations(), 'guidelines/index.html의 목록과 목차에 그 컴포넌트·카드를 넣습니다.'],
   ['템플릿 미사용 컴포넌트', templateCoverageViolations(), 'templates/dashboard의 화면에서 그 컴포넌트를 실제로 씁니다.'],
 ];

@@ -6,7 +6,7 @@
 .bds-pill--pulse .bds-pill__dot{animation:bds-pulse-tone 1.8s var(--ease-out) infinite}
 .bds-tag{display:inline-flex;align-items:center;gap:4px;height:22px;padding:0 8px;border-radius:var(--radius-ctl);border:1px solid var(--line);background:var(--panel-2);color:var(--ink-2);font-size:var(--fs-caption);font-weight:var(--fw-medium);white-space:nowrap;flex:none}
 .bds-tag--accent{background:var(--signal-tint);border-color:transparent;color:var(--signal-ink)}
-.bds-tag__x{display:grid;place-items:center;width:16px;height:16px;min-width:24px;min-height:24px;margin:-4px -8px -4px -4px;border:0;border-radius:3px;background:transparent;color:inherit;padding:0}
+.bds-tag__x{display:grid;place-items:center;width:16px;height:16px;min-width:24px;min-height:24px;margin:-4px -8px -4px -4px;border:0;border-radius:var(--radius-xs);background:transparent;color:inherit;padding:0}
 .bds-tag__x:hover{background:var(--panel-2)}
 .bds-tag__x:active{background:var(--panel-3)}
 /* 톤별 색. 컴포넌트 스코프 변수 대신 명시 규칙(토큰은 :root에만) */
