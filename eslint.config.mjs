@@ -35,6 +35,9 @@ export default [
       parserOptions: { ecmaFeatures: { jsx: true } },
     },
     plugins: { react, "react-hooks": reactHooks, "jsx-a11y": jsxA11y },
+    // jsx-a11y 는 커스텀 컴포넌트 안을 보지 못한다. 어떤 DOM 요소로 그려지는지 알려 준다.
+    // 예: ConfirmDialog 의 <label><TextField/></label> 은 input 이 label 안에 있어 이미 연결돼 있다.
+    settings: { "jsx-a11y": { components: { TextField: "input", TextArea: "textarea", Checkbox: "input", Select: "select", Button: "button", IconButton: "button", Link: "a" } } },
     rules: {
       ...js.configs.recommended.rules,
       ...reactHooks.configs["recommended-latest"].rules,
@@ -45,6 +48,17 @@ export default [
       "react/jsx-uses-react": "error",
       // 게이트는 경고를 통과시킨다. 지킬 규칙이면 error 로 둔다.
       "react-hooks/exhaustive-deps": "error",
+    },
+  },
+  {
+    // combobox·listbox 패턴. WAI-ARIA 는 키보드를 입력 하나에 모으고(aria-activedescendant)
+    // 팝업 항목에는 두지 않는다. 항목에 키 핸들러를 달면 오히려 두 곳이 같은 키를 처리한다.
+    // 두 규칙은 "클릭 핸들러 옆에 키 핸들러가 있어야 한다"를 전제하므로 이 패턴과 맞지 않는다.
+    // 해당 위젯의 키보드 조작은 tests/browser-regressions.cjs 가 실제로 눌러 확인한다.
+    files: ["components/input/Combobox.jsx", "components/input/MultiSelect.jsx", "components/navigation/CommandPalette.jsx"],
+    rules: {
+      "jsx-a11y/click-events-have-key-events": "off",
+      "jsx-a11y/no-static-element-interactions": "off",
     },
   },
   {
