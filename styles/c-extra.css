@@ -4,7 +4,7 @@
 .bds-heat__grid{display:grid;grid-template-columns:auto repeat(var(--cols),minmax(var(--cell),1fr));gap:var(--gap);align-items:center;max-width:calc(var(--cols) * (var(--cell) * 1.6 + var(--gap)) + 3em)}
 .bds-heat__col,.bds-heat__row{font-family:var(--font-data);font-size:var(--fs-micro);color:var(--plot-axis-ink);letter-spacing:var(--ls-data);white-space:nowrap}
 .bds-heat__col{text-align:center;overflow:hidden}.bds-heat__row{padding-right:6px;text-align:right}
-.bds-heat__cell{display:block;aspect-ratio:1;border-radius:3px;background:var(--ramp-1);transition:transform var(--dur-fast) var(--ease-out),outline-color var(--dur-fast)}
+.bds-heat__cell{display:block;aspect-ratio:1;border-radius:3px;background:var(--ramp-1);transition:transform var(--dur-fast) var(--ease-out),outline-color var(--dur-fast) var(--ease-out)}
 .bds-heat__cell:hover,.bds-heat__cell--on{outline:2px solid var(--ink);outline-offset:-1px;z-index:1}
 .bds-heat__cell--na{background:transparent;border:1px dashed var(--line)}
 .bds-heat__cell[data-step="1"]{background:var(--ramp-1)}.bds-heat__cell[data-step="2"]{background:var(--ramp-2)}.bds-heat__cell[data-step="3"]{background:var(--ramp-3)}.bds-heat__cell[data-step="4"]{background:var(--ramp-4)}.bds-heat__cell[data-step="5"]{background:var(--ramp-5)}.bds-heat__cell[data-step="6"]{background:var(--ramp-6)}
@@ -88,7 +88,7 @@
 .bds-copy__v{flex:1;min-width:0;font-size:var(--fs-label);color:var(--ink);margin:0}
 pre.bds-copy__v{white-space:pre;overflow-x:auto;line-height:var(--lh-body)}
 .bds-copy__act{display:flex;gap:2px;flex:none}
-.bds-copy__btn{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 8px;border:0;border-radius:var(--radius-xs);background:transparent;color:var(--ink-2);font-size:var(--fs-caption);font-weight:var(--fw-medium);transition:background var(--dur-fast) var(--ease-out),color var(--dur-fast)}
+.bds-copy__btn{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 8px;border:0;border-radius:var(--radius-xs);background:transparent;color:var(--ink-2);font-size:var(--fs-caption);font-weight:var(--fw-medium);transition:background var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out)}
 .bds-copy__btn:hover{background:var(--panel-2);color:var(--ink)}
 .bds-copy__btn:active{background:var(--panel-3)}
 .bds-copy__btn--ok{color:var(--ok-ink)}
