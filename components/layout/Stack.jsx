@@ -5,6 +5,6 @@ const GAP = { 0: 0, 1: "var(--sp-1)", 2: "var(--sp-2)", 3: "var(--sp-3)", 4: "va
 export const spaceToken = (g) => (typeof g === "number" && GAP[g] !== undefined ? GAP[g] : g);
 
 /** 세로 스택. gap은 --sp 단계 번호(1~10) 또는 CSS 길이. align/justify는 flex 값. as로 태그 변경. */
-export function Stack({ gap = 3, align, justify, as: Tag = "div", className, style, children, ...rest }) {
+export function Stack({ gap = 4, align, justify, as: Tag = "div", className, style, children, ...rest }) {
   return <Tag className={cx("bds-vstack", className)} style={{ gap: spaceToken(gap), alignItems: align, justifyContent: justify, ...style }} {...rest}>{children}</Tag>;
 }

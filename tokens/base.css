@@ -18,7 +18,7 @@ table{border-collapse:collapse;border-spacing:0}
 /* 수치·코드·시각: 결측 문구("수집 안 됨")에는 붙이지 않는다 */
 .bds-mono{font-family:var(--font-data);font-variant-numeric:tabular-nums;letter-spacing:var(--ls-data)}
 .bds-ellipsis{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
-.bds-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.bds-sr{position:absolute;inset:0 auto auto 0;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
 @media (pointer:fine){
   *{scrollbar-width:thin;scrollbar-color:var(--scrollbar-thumb) transparent}
   ::-webkit-scrollbar{width:10px;height:10px}

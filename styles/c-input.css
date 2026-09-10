@@ -16,7 +16,7 @@
 .bds-ctl--area{align-items:stretch;padding:10px 12px;min-height:0}
 .bds-ctl--area textarea{resize:vertical;line-height:var(--lh-body);min-height:calc(var(--lh-body) * 3em)}
 .bds-ctl--select{position:relative;padding-right:32px;height:var(--h-ctl)}
-.bds-ctl--select select{appearance:none;cursor:pointer;height:100%;line-height:normal}
+.bds-ctl--select select{appearance:none;cursor:pointer;height:100%;line-height:calc(var(--h-ctl) - 2px)}
 .bds-ctl--select .bds-ctl__caret{position:absolute;right:10px;pointer-events:none;color:var(--ink-3)}
 /* 목록은 브라우저가 그린다. base-select를 지원하면 같은 토큰으로 다시 그리고, 아니면 네이티브 목록 그대로 둔다. */
 @supports (appearance: base-select) {
@@ -31,6 +31,7 @@
 }
 .bds-ctl--sm{min-height:var(--h-ctl-sm);font-size:var(--fs-caption);padding:0 10px}
 .bds-ctl--select.bds-ctl--sm{height:var(--h-ctl-sm)}
+.bds-ctl--select.bds-ctl--sm select{line-height:calc(var(--h-ctl-sm) - 2px)}
 .bds-check{display:inline-flex;align-items:center;gap:8px;font-size:var(--fs-label);cursor:pointer;min-height:24px;min-width:24px;user-select:none}
 .bds-check input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
 .bds-check__box{width:18px;height:18px;border:1.5px solid var(--line-input);border-radius:5px;background:var(--panel);display:grid;place-items:center;color:var(--signal-fg);transition:background var(--dur-fast) var(--ease-out),border-color var(--dur-fast) var(--ease-out);flex:none}

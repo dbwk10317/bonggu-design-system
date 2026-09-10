@@ -7,6 +7,7 @@ const TITLES = { overview: "개요", nodes: "노드", devices: "장치", deploys
 const SOURCES = { nodes: "edge-gateway", devices: "device-api", deploys: "artifact-cdn", access: "config-api", settings: "config-api" };
 const SCREEN = { overview: "OverviewScreen", nodes: "NodesScreen", devices: "DevicesScreen", deploys: "DeploysScreen", access: "AccessScreen", settings: "SettingsScreen", status: "StatusScreen" };
 const go = (id) => { window.location.hash = "#" + id; };
+const EMBEDDED = (() => { try { return window.self !== window.top; } catch { return true; } })();
 
 function App() {
   const [view, setView] = React.useState(() => window.location.hash.slice(1) || "overview");
@@ -32,7 +33,7 @@ function App() {
 
   const commands = [
     ...Object.entries(TITLES).map(([id, label]) => ({ id, label, group: "이동", icon: id === "status" ? "broadcast" : "arrow-right", hint: <span className="bds-mono">#{id}</span>, onSelect: () => { go(id); setPalette(false); } })),
-    { id: "theme", label: dark ? "라이트 테마로 바꾸기" : "다크 테마로 바꾸기", group: "표시", icon: dark ? "sun" : "moon", onSelect: () => { setDark((v) => !v); setPalette(false); } },
+    ...(!EMBEDDED ? [{ id: "theme", label: dark ? "라이트 테마로 바꾸기" : "다크 테마로 바꾸기", group: "표시", icon: dark ? "sun" : "moon", onSelect: () => { setDark((v) => !v); setPalette(false); } }] : []),
     { id: "readall", label: "알림 모두 읽음으로", group: "표시", icon: "bell", onSelect: () => { setAlarms((a) => a.map((x) => ({ ...x, read: true }))); setPalette(false); } },
   ];
 
@@ -42,10 +43,16 @@ function App() {
       nav={<>{nav("overview", "pulse")}{nav("nodes", "hard-drives", <Badge count={2} tone="warn" />)}<SidebarNavGroup label="운영" />{nav("devices", "devices")}{nav("deploys", "rocket-launch")}<SidebarNavGroup label="계정" />{nav("access", "users-three")}{nav("settings", "gear-six")}<SidebarNavGroup label="링크" />{nav("status", "broadcast")}<SidebarNavItem icon="chart-line-up" label="Grafana" href="https://grafana.example" target="_blank" /></>}
       footer={<span className="bds-mono">agent 2.14.0 · 봉구 인프라팀</span>}
       topbar={<><h1>{TITLES[view] ?? "없는 화면"}</h1><MascotMark face={live ? "smiling" : "neutral"} size={26} animated={false} /><StatusPill tone={live ? "warn" : "info"} pulse={live}>{live ? "노드 2대 수집 지연" : SOURCES[view] ?? "알 수 없는 화면"}</StatusPill><span className="bds-shell__spacer" />
-        <Tooltip content={<>명령 팔레트 <Kbd>Ctrl</Kbd> <Kbd>K</Kbd></>}><IconButton icon="magnifying-glass" variant="ghost" aria-label="명령 팔레트 열기" onClick={() => setPalette(true)} /></Tooltip>
-        <Tooltip content={dark ? "라이트 테마로" : "다크 테마로"}><IconButton icon={dark ? "sun" : "moon"} variant="ghost" aria-label={dark ? "라이트 테마로" : "다크 테마로"} onClick={() => setDark((v) => !v)} /></Tooltip>
-        <NotificationTrigger unreadCount={unread} open={notif} onToggle={() => setNotif((o) => !o)} /><Button variant="ghost" size="sm" icon="sign-out" className="kit-logout">로그아웃</Button></>}
-      statusbar={<StatusBar live={live ? { label: "실시간" } : undefined} items={live ? ["게이트웨이 연결됨", "노드 35 / 38 온라인"] : ["API 경유", `${SOURCES[view] ?? "gateway"} 경유 화면`]} right={live ? ["수집 주기 5s", clock] : [clock]} />}>
+        <Tooltip content={<>명령 팔레트 <Kbd>Ctrl</Kbd> <Kbd>K</Kbd></>}><IconButton icon="magnifying-glass" variant="ghost" aria-label="명령 팔레트 열기" className="kit-mobile-hide" onClick={() => setPalette(true)} /></Tooltip>
+        {!EMBEDDED && <Tooltip content={dark ? "라이트 테마로" : "다크 테마로"}><IconButton icon={dark ? "sun" : "moon"} variant="ghost" aria-label={dark ? "라이트 테마로" : "다크 테마로"} onClick={() => setDark((v) => !v)} /></Tooltip>}
+        <NotificationTrigger unreadCount={unread} open={notif} onToggle={() => setNotif((o) => !o)} /><Button variant="ghost" size="sm" icon="sign-out" className="kit-mobile-hide">로그아웃</Button></>}
+      statusbar={<StatusBar live={live ? { label: "실시간" } : undefined}
+        items={live
+          ? ["게이트웨이 연결됨", <>노드 <span className="bds-mono">35 / 38</span> 온라인</>]
+          : ["API 경유", <><span className="bds-mono">{SOURCES[view] ?? "gateway"}</span> 경유 화면</>]}
+        right={live
+          ? [<>수집 주기 <span className="bds-mono">5s</span></>, <span className="bds-mono">{clock}</span>]
+          : [<span className="bds-mono">{clock}</span>]} />}>
       {screen}
     </SidebarShell>
   );

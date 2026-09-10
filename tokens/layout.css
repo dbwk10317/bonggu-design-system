@@ -8,7 +8,7 @@
    컨테이너 5단(@container, 컴포넌트 접힘 기준): xs 240 · sm 320 · md 480 · lg 640 · xl 900. */
 :root{
   --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:20px;--sp-6:24px;--sp-7:32px;--sp-8:40px;--sp-9:48px;--sp-10:64px;
-  --grid-gap:14px;--panel-pad:16px;--page-pad:20px;--kv-gap:6px;--inline-gap:8px;
+  --grid-gap:20px;--panel-pad:20px;--page-pad:24px;--kv-gap:8px;--inline-gap:12px;
   --radius-ctl:6px;--radius-panel:10px;--radius-sheet:14px;--radius-pill:999px;
   --h-ctl-sm:28px;--h-ctl:32px;--h-ctl-lg:40px;--h-touch:44px;
   --bp-sm:640px;--bp-md:768px;--bp-lg:1024px;--bp-xl:1380px;
@@ -28,8 +28,8 @@
   --z-tip:70;
 }
 /* 모바일(<768): 여백 한 단계 축소 */
-@media (width < 768px){:root{--panel-pad:14px;--page-pad:16px;--grid-gap:12px}}
+@media (width < 768px){:root{--panel-pad:16px;--page-pad:20px;--grid-gap:16px}}
 /* 밀도: <html data-density="compact"> 표·운영 콘솔용. 글자 크기는 줄이지 않는다 */
-:root[data-density="compact"]{--panel-pad:12px;--grid-gap:10px;--kv-gap:4px;--inline-gap:6px;--h-ctl-sm:24px;--h-ctl:28px;--h-ctl-lg:36px}
+:root[data-density="compact"]{--panel-pad:12px;--grid-gap:10px;--page-pad:16px;--kv-gap:4px;--inline-gap:6px;--h-ctl-sm:24px;--h-ctl:28px;--h-ctl-lg:36px}
 /* 터치 기기: compact에서도 컨트롤 높이 36/44/48 유지. 밀도의 여백 설정은 그대로 적용 */
 @media (pointer:coarse){:root,:root[data-density="compact"]{--h-ctl-sm:36px;--h-ctl:44px;--h-ctl-lg:48px}}

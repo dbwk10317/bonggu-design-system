@@ -4,9 +4,8 @@
 .kit-app{height:100%}
 .kit-dim{color:var(--ink-3);font-size:var(--fs-caption)}
 
-/* 좁은 폭 상단바: 로그아웃 라벨과 장식용 마스코트를 접는다. 둘 다 고정 폭이면 버거+제목+아이콘 3개와
-   합쳐 390px에서 문서 가로 넘침이 난다. */
-@media (width < 768px){.kit-logout span{display:none}.bds-shell__top .bds-mark{display:none}.bds-shell__top .bds-pill{min-width:0;flex-shrink:1;overflow:hidden;text-overflow:ellipsis}}
+/* 넓어진 기본 간격에서도 모바일 상단바의 핵심 조작만 한 줄에 남긴다. */
+@media (width < 768px){.kit-mobile-hide,.bds-shell__top .bds-mark,.bds-shell__top .bds-pill{display:none}}
 
 /* 표 셀 안에서 상세를 여는 글자 버튼. 스케일보다 작게 그리는 조작 요소라 24px을 하한으로 받고
    터치 기기에서는 --h-touch까지 올린다(디자인 시스템의 조작 영역 규칙). */

@@ -7,7 +7,7 @@ const root = path.resolve(__dirname, '..');
 const SOURCE_EXTENSIONS = new Set(['.jsx', '.js', '.html']);
 const COMPONENT_SOURCE_DIRS = ['components', 'templates/dashboard'];
 const VISIBLE_SOURCE_DIRS = ['components', 'templates/dashboard', 'guidelines'];
-const CSS_DIRS = ['styles', 'tokens'];
+const CSS_DIRS = ['styles', 'tokens', 'guidelines'];
 
 function walk(relativeDir, out = []) {
   const absoluteDir = path.join(root, relativeDir);
@@ -465,6 +465,64 @@ function cardCoverageViolations() {
   return violations;
 }
 
+function guideCardStructureViolations() {
+  const violations = [];
+  const valueCards = walk('guidelines').filter((file) => file.endsWith('.html') && file !== GUIDE_INDEX);
+  const componentCards = walk('components').filter((file) => file.endsWith('.card.html'));
+  const shared = withoutComments(read('guidelines/card.css'));
+  if (!/\.bds-demo-page\s*>\s*#root\s*\{[^}]*display\s*:\s*grid[^}]*gap\s*:\s*var\(--sp-8\)/s.test(shared)) {
+    violations.push({ file: 'guidelines/card.css', line: 1, detail: 'React 마운트 루트의 데스크톱 섹션 간격이 --sp-8이 아님' });
+  }
+  if (!/@media\s*\(width\s*<\s*768px\)[\s\S]*?\.bds-demo-page\s*>\s*#root\s*\{[^}]*gap\s*:\s*var\(--sp-6\)/s.test(shared)) {
+    violations.push({ file: 'guidelines/card.css', line: 1, detail: 'React 마운트 루트의 모바일 섹션 간격이 --sp-6이 아님' });
+  }
+  for (const file of [...valueCards, ...componentCards]) {
+    const text = read(file);
+    const href = file.startsWith('components/') ? '../../guidelines/card.css' : './card.css';
+    if (!text.includes(href)) violations.push({ file, line: 1, detail: `공통 검수 카드 스타일(${href})을 쓰지 않음` });
+    if (!/class="bds-demo-page"/.test(text)) violations.push({ file, line: 1, detail: '검수 카드 body에 bds-demo-page가 없음' });
+  }
+  for (const file of componentCards) {
+    const text = read(file);
+    if (/bds-card-section-label|className="hd"/.test(text)) {
+      violations.push({ file, line: 1, detail: '컴포넌트 이름을 모은 독립 섹션 목록이 남아 있음' });
+    }
+    const labels = [...text.matchAll(/className="bds-demo-(?:label|caption)"[^>]*>([^<]*)/g)].map((match) => match[1]).join(' ');
+    const group = file.split('/')[1];
+    for (const { name } of declaredComponents().filter((component) => component.group === group)) {
+      if (!mentions(labels, name)) violations.push({ file, line: 1, detail: `${name} 이름이 해당 예제의 라벨에 없음` });
+    }
+  }
+  const theme = read('theme-toggle.js');
+  if (!theme.includes('window.self === window.top') || !/standalone\s*&&[^\n]*topLevel/.test(theme)) {
+    violations.push({ file: 'theme-toggle.js', line: 1, detail: '삽입된 카드에서 자체 테마 토글을 막지 않음' });
+  }
+  return violations;
+}
+
+function componentVisualContractViolations() {
+  const violations = [];
+  const layoutFile = 'styles/c-layout.css';
+  const layout = withoutComments(read(layoutFile));
+  const statusbar = cssRuleBodies(layout).find((rule) => rule.selector.trim() === '.bds-statusbar');
+  if (!statusbar || !/font-family\s*:\s*var\(--font-ui\)/.test(statusbar.body) || /var\(--font-data\)/.test(statusbar.body)) {
+    violations.push({ file: layoutFile, line: statusbar ? lineOf(layout, statusbar.at) : 1, detail: 'StatusBar 기본 서체가 UI 서체가 아님' });
+  }
+
+  const inputFile = 'styles/c-input.css';
+  const input = withoutComments(read(inputFile));
+  const rules = cssRuleBodies(input);
+  const select = rules.find((rule) => rule.selector.trim() === '.bds-ctl--select select');
+  const small = rules.find((rule) => rule.selector.trim() === '.bds-ctl--select.bds-ctl--sm select');
+  if (!select || !/line-height\s*:\s*calc\(var\(--h-ctl\)\s*-\s*2px\)/.test(select.body)) {
+    violations.push({ file: inputFile, line: select ? lineOf(input, select.at) : 1, detail: 'Select 선택값이 기본 컨트롤 높이에 맞춰 세로 정렬되지 않음' });
+  }
+  if (!small || !/line-height\s*:\s*calc\(var\(--h-ctl-sm\)\s*-\s*2px\)/.test(small.body)) {
+    violations.push({ file: inputFile, line: small ? lineOf(input, small.at) : 1, detail: '작은 Select 선택값이 작은 컨트롤 높이에 맞춰 세로 정렬되지 않음' });
+  }
+  return violations;
+}
+
 function guideIndexViolations() {
   if (!fs.existsSync(path.join(root, GUIDE_INDEX))) return [{ file: GUIDE_INDEX, line: 1, detail: '가이드 페이지가 없음' }];
   const text = read(GUIDE_INDEX);
@@ -515,6 +573,8 @@ const checks = [
   ['공개 API 목록 정합성', publicApiViolations(), 'readme Components 목록·개수·그룹과 공개 .d.ts 함수 선언, useToast 선언을 함께 맞춥니다.'],
   ['패키지 식별자·라이선스', packageIdentityViolations(), 'package.json·LICENSE·제3자 고지를 readme의 패키지 계약과 맞춥니다.'],
   ['그룹 카드 누락', cardCoverageViolations(), '그 컴포넌트를 자기 그룹의 *.card.html에 한 번 이상 그립니다.'],
+  ['가이드 카드 구조', guideCardStructureViolations(), '공통 검수 밀도를 쓰고 각 컴포넌트 이름을 해당 예제의 라벨에 둡니다. 삽입된 카드는 자체 테마 토글을 그리지 않습니다.'],
+  ['컴포넌트 시각 계약', componentVisualContractViolations(), 'StatusBar 서체 역할과 Select 선택값의 세로 정렬을 readme의 기준에 맞춥니다.'],
   ['가이드 페이지 누락', guideIndexViolations(), 'guidelines/index.html의 목록과 목차에 그 컴포넌트·카드를 넣습니다.'],
   ['템플릿 미사용 컴포넌트', templateCoverageViolations(), 'templates/dashboard의 화면에서 그 컴포넌트를 실제로 씁니다.'],
 ];

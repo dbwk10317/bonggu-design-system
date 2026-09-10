@@ -20,6 +20,8 @@ const localScripts = {
 // 코드에 박아 둔다. 게이트가 네트워크에 의존하면 안 되므로 응답 본문에서만 그 URL을 이 서버가 서브하는
 // 로컬 경로로 바꾸고, 로컬 파일(개발 빌드/다른 babel 버전)이 SRI 불일치로 막히지 않게 integrity 값을 비운다.
 const CDN_LOCAL = {
+  'https://unpkg.com/react@18.3.1/umd/react.development.js': '/test-react.js',
+  'https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js': '/test-react-dom.js',
   'https://unpkg.com/react@18.3.1/umd/react.production.min.js': '/test-react.js',
   'https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js': '/test-react-dom.js',
   'https://unpkg.com/@babel/standalone@7.29.0/babel.min.js': '/test-babel.js',
@@ -39,7 +41,7 @@ const server = http.createServer((req, res) => {
   if (!file.startsWith(root + path.sep) && !Object.values(localScripts).includes(file)) { res.writeHead(403); res.end(); return; }
   try {
     const type = file.endsWith('.css') ? 'text/css' : file.endsWith('.js') ? 'text/javascript' : file.endsWith('.html') ? 'text/html' : 'application/octet-stream';
-    const body = url === '/templates/dashboard/support.js' ? rewriteSupport(fs.readFileSync(file, 'utf8')) : fs.readFileSync(file);
+    const body = url === '/templates/dashboard/support.js' || file.endsWith('.html') ? rewriteSupport(fs.readFileSync(file, 'utf8')) : fs.readFileSync(file);
     res.setHeader('Content-Type', type); res.end(body);
   } catch { res.writeHead(404); res.end(); }
 });
@@ -142,18 +144,105 @@ async function run() {
     await page.getByRole('button', { name: '알림 열기', exact: true }).click(); await page.waitForSelector('dialog[open]');
     await page.keyboard.press('Escape'); await page.waitForFunction(() => !document.querySelector('dialog[open]'));
 
+    const guideGroups = ['action', 'brand', 'layout', 'navigation', 'input', 'data', 'display', 'overlay', 'feedback'];
+    const guideValues = ['colors-surface', 'colors-text', 'colors-accent', 'colors-status', 'colors-chart', 'colors-dark', 'type-ui', 'type-mono', 'type-korean', 'spacing-scale', 'spacing-radius', 'layout-breakpoints', 'motion'];
+    const guide = await browser.newPage({ viewport: { width: 1280, height: 900 }, reducedMotion: 'reduce' });
+    guide.setDefaultTimeout(20000);
+    const guideErrors = [];
+    guide.on('pageerror', e => guideErrors.push(`pageerror: ${e.message}`));
+    guide.on('console', m => { if (m.type() === 'error') guideErrors.push(`console: ${m.text()}`); });
+    for (const width of [1280, 390]) {
+      await guide.setViewportSize({ width, height: 900 });
+      for (const group of guideGroups) {
+        await guide.goto(`http://127.0.0.1:${server.address().port}/guidelines/index.html#${group}`);
+        const frame = guide.frameLocator('#gd-frame');
+        await frame.locator('#root > *').first().waitFor();
+        assert.equal(await guide.locator('bds-theme-toggle').count(), 1, `가이드 상단 테마 토글 ${group} @${width}`);
+        assert.equal(await frame.locator('bds-theme-toggle').count(), 0, `삽입 카드 중복 테마 토글 ${group} @${width}`);
+        assert.equal(await frame.locator('.bds-demo-label').count() > 0, true, `컴포넌트 라벨 ${group} @${width}`);
+        const sectionSpacing = await frame.locator('#root').evaluate((root) => {
+          const style = getComputedStyle(root);
+          const children = [...root.children].filter((element) => element.matches('.bds-demo-section,.bds-demo-grid-2,.bds-demo-grid-3,.bds-demo-row'));
+          return {
+            display: style.display,
+            expected: parseFloat(style.rowGap),
+            actual: children.slice(1).map((element, index) => element.getBoundingClientRect().top - children[index].getBoundingClientRect().bottom),
+          };
+        });
+        assert.equal(sectionSpacing.display, 'grid', `가이드 React 루트 배치 ${group} @${width}`);
+        assert.equal(sectionSpacing.actual.every((gap) => gap + .5 >= sectionSpacing.expected), true, `가이드 카드 위아래 간격 ${group} @${width}: ${JSON.stringify(sectionSpacing)}`);
+        if (group === 'navigation') {
+          const fontRoles = await frame.locator('.bds-statusbar').evaluate((bar) => {
+            const root = getComputedStyle(document.documentElement);
+            const clean = (value) => value.replace(/["']/g, '').split(',').map((family) => family.trim()).join(',');
+            return {
+              bar: clean(getComputedStyle(bar).fontFamily),
+              ui: clean(root.getPropertyValue('--font-ui')),
+              data: clean(root.getPropertyValue('--font-data')),
+              mono: [...bar.querySelectorAll('.bds-mono')].map((element) => clean(getComputedStyle(element).fontFamily)),
+            };
+          });
+          assert.equal(fontRoles.bar, fontRoles.ui, `StatusBar 한글 UI 서체 @${width}`);
+          assert.equal(fontRoles.mono.length > 0 && fontRoles.mono.every((family) => family === fontRoles.data), true, `StatusBar 수치 mono 서체 @${width}: ${JSON.stringify(fontRoles)}`);
+        }
+        const overflow = await frame.locator('body').evaluate(() => [...document.querySelectorAll('body *')]
+          .filter((element) => !element.closest('.bds-sr'))
+          .filter((element) => element.getBoundingClientRect().right > document.documentElement.clientWidth + 1)
+          .filter((element) => {
+            for (let parent = element.parentElement; parent && parent !== document.body; parent = parent.parentElement) {
+              if (getComputedStyle(parent).overflowX !== 'visible') return false;
+            }
+            return true;
+          })
+          .slice(0, 8)
+          .map((element) => `${element.tagName.toLowerCase()}.${element.className || ''}[${element.getAttribute('aria-label') || element.getAttribute('placeholder') || ''}] in .${element.parentElement?.className || ''}:${Math.round(element.getBoundingClientRect().right)}/${document.documentElement.clientWidth}`));
+        assert.deepEqual(overflow, [], `가이드 카드 가로 넘침 ${group} @${width}`);
+        const guideWidth = await frame.locator('body').evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth, offenders: [...document.querySelectorAll('body *')]
+          .filter((element) => !element.closest('.bds-sr') && element.getBoundingClientRect().right > document.documentElement.clientWidth + .1)
+          .slice(0, 8).map((element) => `${element.tagName.toLowerCase()}.${element.className || ''}:${element.getBoundingClientRect().right.toFixed(2)}`) }));
+        assert.equal(guideWidth.scroll <= guideWidth.client, true, `가이드 카드 문서 가로 스크롤 ${group} @${width}: ${JSON.stringify(guideWidth)}`);
+        if (process.env.DS_TEST_SCREENSHOTS && width === 1280 && ['layout', 'navigation', 'input', 'data'].includes(group)) {
+          fs.mkdirSync(process.env.DS_TEST_SCREENSHOTS, { recursive: true });
+          await frame.locator('body').screenshot({ path: path.join(process.env.DS_TEST_SCREENSHOTS, `guide-${group}-${width}.png`) });
+        }
+      }
+      for (const value of guideValues) {
+        await guide.goto(`http://127.0.0.1:${server.address().port}/guidelines/index.html#${value}`);
+        const frame = guide.frameLocator('#gd-frame');
+        await frame.locator('body.bds-demo-page > *').first().waitFor();
+        assert.equal(await guide.locator('bds-theme-toggle').count(), 1, `가이드 상단 테마 토글 ${value} @${width}`);
+        assert.equal(await frame.locator('bds-theme-toggle').count(), 0, `삽입 값 카드 중복 테마 토글 ${value} @${width}`);
+        const valueWidth = await frame.locator('body').evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
+        assert.equal(valueWidth.scroll <= valueWidth.client, true, `값 카드 문서 가로 스크롤 ${value} @${width}: ${JSON.stringify(valueWidth)}`);
+      }
+      await guide.goto(`http://127.0.0.1:${server.address().port}/guidelines/index.html#template`);
+      const template = guide.frameLocator('#gd-frame');
+      await template.locator('[data-screen="overview"]').waitFor();
+      assert.equal(await template.getByRole('button', { name: /(?:라이트|다크) 테마로/ }).count(), 0, `삽입 템플릿 중복 테마 토글 @${width}`);
+      const outerDark = await guide.locator('bds-theme-toggle button').getAttribute('aria-pressed') === 'true';
+      assert.equal(await template.locator('html').evaluate((html) => html.classList.contains('dark')), outerDark, `삽입 템플릿 테마 동기화 @${width}`);
+      if (process.env.DS_TEST_SCREENSHOTS && width === 1280) {
+        fs.mkdirSync(process.env.DS_TEST_SCREENSHOTS, { recursive: true });
+        await template.locator('body').screenshot({ path: path.join(process.env.DS_TEST_SCREENSHOTS, `guide-template-${width}.png`) });
+      }
+    }
+    assert.deepEqual(guideErrors, []);
+    await guide.close();
+
     for (const touch of [false, true]) {
       const context = await browser.newContext({ hasTouch: touch, reducedMotion: 'reduce' });
       const visual = await context.newPage(); visual.on('pageerror', e => errors.push(e.message));
-      for (const width of [1280, 834, 390]) for (const dark of [false, true]) {
+      for (const width of [1280, 834, 390]) for (const dark of [false, true]) for (const density of ['default', 'compact']) {
         await visual.setViewportSize({ width, height: 1000 }); await visual.goto(`http://127.0.0.1:${server.address().port}`);
-        await visual.evaluate(dark => { document.documentElement.classList.toggle('dark', dark); document.documentElement.dataset.density = 'compact'; demo('visuals'); }, dark);
+        await visual.evaluate(({ dark, density }) => { document.documentElement.classList.toggle('dark', dark); if (density === 'compact') document.documentElement.dataset.density = density; else delete document.documentElement.dataset.density; demo('visuals'); }, { dark, density });
         await visual.waitForSelector('[role=combobox]');
         assert.equal(await visual.locator('[role=combobox]').getAttribute('aria-required'), 'true');
-        assert.equal(await visual.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--h-ctl').trim()), touch ? '44px' : '28px');
+        assert.equal(await visual.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--h-ctl').trim()), touch ? '44px' : density === 'compact' ? '28px' : '32px');
+        const selectAlignment = await visual.locator('select').evaluate((select) => ({ clientHeight: select.clientHeight, lineHeight: parseFloat(getComputedStyle(select).lineHeight) }));
+        assert.equal(Math.abs(selectAlignment.clientHeight - selectAlignment.lineHeight) < 1, true, `Select 선택값 세로 중앙 ${density} ${touch ? 'touch' : 'pointer'} @${width}: ${JSON.stringify(selectAlignment)}`);
         assert.equal(await visual.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
         assert((await visual.locator('.bds-uptime__pct').innerText()).startsWith('100'));
-        if (process.env.DS_TEST_SCREENSHOTS) { fs.mkdirSync(process.env.DS_TEST_SCREENSHOTS, { recursive: true }); await visual.screenshot({ path: path.join(process.env.DS_TEST_SCREENSHOTS, `${width}-${dark ? 'dark' : 'light'}-${touch ? 'touch' : 'pointer'}.png`) }); }
+        if (process.env.DS_TEST_SCREENSHOTS && density === 'default') { fs.mkdirSync(process.env.DS_TEST_SCREENSHOTS, { recursive: true }); await visual.screenshot({ path: path.join(process.env.DS_TEST_SCREENSHOTS, `${width}-${dark ? 'dark' : 'light'}-${touch ? 'touch' : 'pointer'}.png`) }); }
       }
       await context.close();
     }
@@ -184,7 +273,13 @@ async function run() {
         // 셸 상단바 제목 + 화면의 PageHeader가 함께 보이면 App과 해당 x-import 화면이 실제로 마운트된 것이다.
         await dash.waitForFunction(mounted, [route, TITLES[route] ?? null]);
         assert.deepEqual(dashErrors, [], `${route} @${width}`);
-        assert.equal(await dash.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), true, `가로 넘침 ${route} @${width}`);
+        const dashOverflow = await dash.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth ? [] : [...document.querySelectorAll('body *')]
+          .filter((element) => !element.closest('.bds-sr'))
+          .filter((element) => element.getBoundingClientRect().right > document.documentElement.clientWidth + 1)
+          .slice(0, 8)
+          .map((element) => `${element.tagName.toLowerCase()}.${element.className || ''}:${Math.round(element.getBoundingClientRect().right)}/${document.documentElement.clientWidth}`));
+        assert.deepEqual(dashOverflow, [], `가로 넘침 ${route} @${width}`);
+        assert.equal(await dash.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), true, `문서 가로 스크롤 ${route} @${width}`);
       }
       // 1024 이상은 고정 레일, 미만은 햄버거 → 드로어. 셸이 있는 화면에서만 잰다.
       await dash.evaluate(() => { window.location.hash = '#overview'; });
@@ -245,7 +340,7 @@ async function run() {
     await touchContext.close();
 
     assert.deepEqual(errors, []);
-    console.log('PASS: overlay lifecycle, menu clipping/top layer/keyboard, input editing, 12 responsive/theme/pointer combinations, dashboard 17 route/width combinations, coarse pointer 조작 영역');
+    console.log('PASS: overlay lifecycle, menu clipping/top layer/keyboard, input editing, 46 guide page/width combinations, 24 responsive/theme/density/pointer combinations, dashboard 17 route/width combinations, coarse pointer 조작 영역');
   } finally { await browser.close(); }
 }
 run().catch(error => { console.error(error); process.exitCode = 1; }).finally(() => server.close());

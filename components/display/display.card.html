@@ -1,31 +1,30 @@
 <!-- @dsCard group="Components" viewport="1100x740" name="Display" subtitle="StatusPill · Tag · Badge · Avatar · AvatarGroup · Accordion · Code · CodeBlock · Kbd · CopyField" -->
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>Display</title><link rel="stylesheet" href="../../styles.css"><script src="../../theme-toggle.js" defer></script>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>Display</title><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../guidelines/card.css"><script src="../../theme-toggle.js" defer></script>
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 <script src="../../_ds_bundle.js"></script>
-<style>body{padding:24px;display:grid;gap:24px;align-content:start}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px;align-items:start}.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px}.lbl{font-size:12.5px;font-weight:500;color:var(--ink-3);margin-bottom:10px}.sec{display:grid;gap:10px;min-width:0}.hd{font-size:14px;color:var(--ink);font-weight:700;padding-top:8px;border-top:1px solid var(--line)}</style></head>
-<body><div id="root"></div>
+<style></style></head>
+<body class="bds-demo-page"><div id="root"></div>
 <script type="text/babel">
 const NS = window.Ds_d3ea90;
 
 const { StatusPill, Tag, Badge, Avatar, AvatarGroup, Accordion, Code, CodeBlock, Kbd, CopyField, IconButton, Button, KeyValues } = NS;
 function App(){ return <>
-  <div className="sec"><div className="lbl">StatusPill · 톤 6 · 크기 · outline (색+텍스트 병기)</div>
-    <div className="row"><StatusPill tone="ok" pulse>모든 서비스 정상</StatusPill><StatusPill tone="warn">일부 수집 지연</StatusPill><StatusPill tone="crit">연결 끊김</StatusPill><StatusPill tone="info">API 경유</StatusPill><StatusPill tone="off">수집 안 됨</StatusPill><StatusPill tone="accent">선택됨</StatusPill></div>
-    <div className="row"><StatusPill tone="ok" size="sm">CPU 24%</StatusPill><StatusPill tone="warn" size="sm">메모리 78%</StatusPill><StatusPill tone="crit" size="sm">nvme0n1 92%</StatusPill><StatusPill tone="ok" size="lg" outline>실행 중</StatusPill><StatusPill tone="crit" outline dot={false}>응답 없음</StatusPill></div></div>
-  <div className="two">
-    <div className="sec"><div className="lbl">Tag · Badge</div><div className="row"><Tag>ONNX</Tag><Tag icon="cpu">GPU 1</Tag><Tag accent>선택됨</Tag><Tag onRemove={()=>{}}>gpu</Tag><Tag onRemove={()=>{}}>embedding</Tag></div>
-      <div className="row"><Badge count={12} tone="crit"><IconButton icon="bell" aria-label="알림" /></Badge><Badge dot tone="accent"><Button size="sm" variant="secondary">업데이트</Button></Badge><Badge count={3} /><Badge count={140} tone="accent" /><Badge count={7} tone="warn" /><Badge count={0}><span className="bds-card-hint">count 0 → 배지 없음</span></Badge></div></div>
-    <div className="sec"><div className="lbl">Avatar · status · AvatarGroup</div><div className="row"><Avatar name="이지훈" size="xl" status="ok" /><Avatar name="박서연" size="lg" /><Avatar name="Kim Minsu" status="crit" /><Avatar name="ai-hub" square size="sm" /><Avatar name="Bonggu" size="xs" /><AvatarGroup users={[{name:"이지훈"},{name:"박서연"},{name:"Kim"},{name:"Lee"},{name:"Choi"}]} max={3} /></div></div>
+  <div className="bds-demo-section"><div className="bds-demo-label">StatusPill · 톤 6 · 크기 · outline (색+텍스트 병기)</div>
+    <div className="bds-demo-row"><StatusPill tone="ok" pulse>모든 서비스 정상</StatusPill><StatusPill tone="warn">일부 수집 지연</StatusPill><StatusPill tone="crit">연결 끊김</StatusPill><StatusPill tone="info">API 경유</StatusPill><StatusPill tone="off">수집 안 됨</StatusPill><StatusPill tone="accent">선택됨</StatusPill></div>
+    <div className="bds-demo-row"><StatusPill tone="ok" size="sm">CPU 24%</StatusPill><StatusPill tone="warn" size="sm">메모리 78%</StatusPill><StatusPill tone="crit" size="sm">nvme0n1 92%</StatusPill><StatusPill tone="ok" size="lg" outline>실행 중</StatusPill><StatusPill tone="crit" outline dot={false}>응답 없음</StatusPill></div></div>
+  <div className="bds-demo-grid-2">
+    <div className="bds-demo-section"><div className="bds-demo-label">Tag · 분류와 제거</div><div className="bds-demo-row"><Tag>ONNX</Tag><Tag icon="cpu">GPU 1</Tag><Tag accent>선택됨</Tag><Tag onRemove={()=>{}}>gpu</Tag><Tag onRemove={()=>{}}>embedding</Tag></div><div className="bds-demo-caption">Badge · 건수와 점</div><div className="bds-demo-row"><Badge count={12} tone="crit"><IconButton icon="bell" aria-label="알림" /></Badge><Badge dot tone="accent"><Button size="sm" variant="secondary">업데이트</Button></Badge><Badge count={3} /><Badge count={140} tone="accent" /><Badge count={7} tone="warn" /><Badge count={0}><span className="bds-card-hint">count 0 → 배지 없음</span></Badge></div></div>
+    <div className="bds-demo-section"><div className="bds-demo-label">Avatar · 크기와 상태</div><div className="bds-demo-row"><Avatar name="이지훈" size="xl" status="ok" /><Avatar name="박서연" size="lg" /><Avatar name="Kim Minsu" status="crit" /><Avatar name="ai-hub" square size="sm" /><Avatar name="Bonggu" size="xs" /></div><div className="bds-demo-caption">AvatarGroup</div><AvatarGroup users={[{name:"이지훈"},{name:"박서연"},{name:"Kim"},{name:"Lee"},{name:"Choi"}]} max={3} /></div>
   </div>
-  <div className="two">
-    <div className="sec"><div className="lbl">Accordion · defaultOpen · meta</div><Accordion defaultOpen={["net"]} items={[{id:"net",title:"네트워크",icon:"wifi-high",meta:"3개 설정",content:<KeyValues rows={[["인터페이스","enp129s0"],["MTU","1500"],["수집 주기","1s"]]} />},{id:"gpu",title:"GPU 예약",icon:"cpu",meta:"기본값",content:"lease 만료 15분, heartbeat 10초."},{id:"adv",title:"고급",content:"디버그 로그, 실험 기능."}]} /></div>
-    <div className="sec"><div className="lbl">Code · Kbd · CopyField (secret 마스킹 · multiline)</div><p className="bds-card-copy">모델 <Code>ko-embed-v3</Code>는 <Kbd>⌘</Kbd> <Kbd>K</Kbd>로 검색합니다.</p><CopyField label="발급된 토큰 (1회 표시)" secret value="bgt_9f2c1e7a4b8d3f60a1c5e2b7d4f8a9c0e3b6d1f2" /><CopyField label="식별자" value="run-0913-a" /></div>
+  <div className="bds-demo-grid-2">
+    <div className="bds-demo-section"><div className="bds-demo-label">Accordion · defaultOpen · meta</div><Accordion defaultOpen={["net"]} items={[{id:"net",title:"네트워크",icon:"wifi-high",meta:"3개 설정",content:<KeyValues rows={[["인터페이스","enp129s0"],["MTU","1500"],["수집 주기","1s"]]} />},{id:"gpu",title:"GPU 예약",icon:"cpu",meta:"기본값",content:"lease 만료 15분, heartbeat 10초."},{id:"adv",title:"고급",content:"디버그 로그, 실험 기능."}]} /></div>
+    <div className="bds-demo-section"><div className="bds-demo-label">Code · Kbd</div><p className="bds-card-copy">모델 <Code>ko-embed-v3</Code>는 <Kbd>⌘</Kbd> <Kbd>K</Kbd>로 검색합니다.</p></div>
   </div>
-  <div className="two">
-    <CopyField label="호출 예시" multiline value={'curl -X POST https://hub.example/v2/models/ko-embed-v3/infer \\\n  -H "Authorization: Bearer $TOKEN" \\\n  -d @input.json'} />
-    <div className="sec"><div className="lbl">CodeBlock · language 라벨</div><CodeBlock language="bash">{'docker compose -f hub.yml up -d ai-hub\n# 상태\ncurl -s https://hub.example/health | jq .status'}</CodeBlock></div>
+  <div className="bds-demo-grid-2">
+    <div className="bds-demo-section"><div className="bds-demo-label">CopyField · 마스킹과 여러 줄</div><CopyField label="발급된 토큰 (1회 표시)" secret value="bgt_9f2c1e7a4b8d3f60a1c5e2b7d4f8a9c0e3b6d1f2" /><CopyField label="식별자" value="run-0913-a" /><CopyField label="호출 예시" multiline value={'curl -X POST https://hub.example/v2/models/ko-embed-v3/infer \\\n  -H "Authorization: Bearer $TOKEN" \\\n  -d @input.json'} /></div>
+    <div className="bds-demo-section"><div className="bds-demo-label">CodeBlock · language 라벨</div><CodeBlock language="bash">{'docker compose -f hub.yml up -d ai-hub\n# 상태\ncurl -s https://hub.example/health | jq .status'}</CodeBlock></div>
   </div>
 </>; }
 ReactDOM.createRoot(document.getElementById("root")).render(<App/>);

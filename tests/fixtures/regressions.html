@@ -63,6 +63,7 @@ window.demo = (name) => {
     visuals() {
       return h('main', { style: { padding: 20 } },
         h(D.Field, { label: '모델', required: true, error: '선택이 필요합니다' }, h(D.Combobox, { options: [{ value: 'a', label: '모델 A' }], value: null, onChange() {} })),
+        h(D.Field, { label: '효과' }, h(D.Select, { defaultValue: 'breathing', options: [{ value: 'static', label: '고정' }, { value: 'breathing', label: '숨쉬기' }] })),
         h(D.Chart, { kind: 'radar', axes: ['CPU', 'RAM', 'GPU'], series: [{ label: '서버', values: [80, null, 60] }], max: 100, animate: false }),
         h(D.Chart, { kind: 'bar', labels: ['A', 'B'], series: [{ label: '유입', values: [100, 20] }, { label: '유출', values: [-90, -30] }], stacked: true, animate: false }),
         h(D.UptimeBar, { name: '가용성', segments: [{ status: 'ok' }, { status: 'warn' }] }));

@@ -1,43 +1,42 @@
 <!-- @dsCard group="Components" viewport="1100x740" name="Feedback" subtitle="AlertBanner · Toast · NotificationTrigger · NotificationDrawer · InlineMessage · ProgressBar · Stepper · Skeleton · Spinner · LoadingOverlay · EmptyState · ErrorState · ConfirmDialog" -->
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>Feedback</title><link rel="stylesheet" href="../../styles.css"><script src="../../theme-toggle.js" defer></script>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>Feedback</title><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../guidelines/card.css"><script src="../../theme-toggle.js" defer></script>
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 <script src="../../_ds_bundle.js"></script>
-<style>body{padding:24px;display:grid;gap:24px;align-content:start}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px;align-items:start}.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px}.lbl{font-size:12.5px;font-weight:500;color:var(--ink-3);margin-bottom:10px}.sec{display:grid;gap:10px;min-width:0}.hd{font-size:14px;color:var(--ink);font-weight:700;padding-top:8px;border-top:1px solid var(--line)}</style></head>
-<body><div id="root"></div>
+<style></style></head>
+<body class="bds-demo-page"><div id="root"></div>
 <script type="text/babel">
 const NS = window.Ds_d3ea90;
 
 const { AlertBanner, Toast, ToastProvider, NotificationTrigger, NotificationDrawer, InlineMessage, ProgressBar, Stepper, Skeleton, Spinner, LoadingOverlay, EmptyState, ErrorState, ConfirmDialog, Button, Panel, CardHead, KeyValues, Stack } = NS; const useToast = ToastProvider.useToast;
-function ToastDemo(){ const {toast}=useToast(); return <div className="row"><Button size="sm" onClick={()=>toast({message:"두 장치에 적용했습니다.",tone:"ok"})}>ok 토스트</Button><Button size="sm" onClick={()=>toast({message:"사진을 삭제했습니다.",action:"되돌리기"})}>액션 토스트</Button></div>; }
+function ToastDemo(){ const {toast}=useToast(); return <div className="bds-demo-row"><Button size="sm" onClick={()=>toast({message:"두 장치에 적용했습니다.",tone:"ok"})}>ok 토스트</Button><Button size="sm" onClick={()=>toast({message:"사진을 삭제했습니다.",action:"되돌리기"})}>액션 토스트</Button></div>; }
 function App(){ const [o,setO]=React.useState(false); const [notifications,setNotifications]=React.useState(false); return <ToastProvider><>
-  <div className="two">
-    <div className="sec"><div className="lbl">AlertBanner · 페이지 수준 · Toast · 일시 알림</div>
+  <div className="bds-demo-grid-2">
+    <div className="bds-demo-section"><div className="bds-demo-label">AlertBanner · 페이지 수준</div>
       <AlertBanner tone="info" title="등록 대기">2개 별도 실행 모델이 실측과 연결을 기다리고 있습니다.</AlertBanner>
       <AlertBanner tone="warn" title="조명 제어가 서버에서 구성되지 않았습니다.">MQTT 계정 설정 후 사용할 수 있습니다.</AlertBanner>
-      <AlertBanner tone="crit" title="AI 허브 상태를 불러오지 못했습니다." onClose={()=>{}}>서버 모니터링 수치는 그대로 갱신됩니다.</AlertBanner>
-      <Toast message="두 장치에 적용했습니다." tone="ok" onDismiss={()=>{}} /><ToastDemo/></div>
-    <div className="sec"><div className="lbl">NotificationTrigger + NotificationDrawer · 래치된 알림(읽음 처리 전까지 유지)</div><div className="row"><NotificationTrigger unreadCount={2} open={notifications} onToggle={()=>setNotifications(o=>!o)} /><Button onClick={()=>setNotifications(true)}>알림 열기</Button><NotificationDrawer open={notifications} onClose={()=>setNotifications(false)} onRead={()=>{}} onReadAll={()=>{}} items={[{id:"1",tone:"crit",title:"monitoring-api 응답 없음",description:"3회 연속 실패",time:"18:41",read:false},{id:"2",tone:"warn",title:"nvme0n1 사용률 91%",description:"주의 임계 90%",time:"18:12",read:false},{id:"3",tone:"info",title:"모니터링 수집 지연",description:"12초 지연",time:"17:58",read:true,resolved:true}]} /></div></div>
+      <AlertBanner tone="crit" title="AI 허브 상태를 불러오지 못했습니다." onClose={()=>{}}>서버 모니터링 수치는 그대로 갱신됩니다.</AlertBanner></div>
+    <div className="bds-demo-section"><div className="bds-demo-label">ToastProvider · Toast · 일시 알림</div><Toast message="두 장치에 적용했습니다." tone="ok" onDismiss={()=>{}} /><ToastDemo/></div>
+    <div className="bds-demo-section"><div className="bds-demo-label">NotificationTrigger + NotificationDrawer · 래치된 알림(읽음 처리 전까지 유지)</div><div className="bds-demo-row"><NotificationTrigger unreadCount={2} open={notifications} onToggle={()=>setNotifications(o=>!o)} /><Button onClick={()=>setNotifications(true)}>알림 열기</Button><NotificationDrawer open={notifications} onClose={()=>setNotifications(false)} onRead={()=>{}} onReadAll={()=>{}} items={[{id:"1",tone:"crit",title:"monitoring-api 응답 없음",description:"3회 연속 실패",time:"18:41",read:false},{id:"2",tone:"warn",title:"nvme0n1 사용률 91%",description:"주의 임계 90%",time:"18:12",read:false},{id:"3",tone:"info",title:"모니터링 수집 지연",description:"12초 지연",time:"17:58",read:true,resolved:true}]} /></div></div>
   </div>
-  <div className="g3">
-    <div className="sec"><div className="lbl">InlineMessage · 5톤</div><Stack gap={2}><InlineMessage>기본 안내 문구입니다.</InlineMessage><InlineMessage tone="ok">적용되었습니다. 데몬이 2초 안에 반영합니다.</InlineMessage><InlineMessage tone="warn">VRAM 여유가 1.2 GiB 이하입니다.</InlineMessage><InlineMessage tone="crit">저장하지 못했습니다. 다시 시도합니다.</InlineMessage><InlineMessage tone="info">이 값은 재시작 후 반영됩니다.</InlineMessage></Stack></div>
-    <div className="sec"><div className="lbl">ProgressBar · 결정형 / 비결정형 / 톤</div><Stack gap={3}><ProgressBar label="ocr-finetune.zip" value={0.44} detail={<>4/9 청크 · <span className="bds-mono">42 MiB/s</span></>} /><ProgressBar label="서버 검증 중" value={null} /><ProgressBar size="sm" tone="ok" label="완료" value={1} /><ProgressBar size="sm" tone="crit" label="실패 · 재시도 대기" value={0.31} /></Stack></div>
-    <div className="sec"><div className="lbl">Stepper · 세로 · status 직접 지정</div><Stepper size="sm" orientation="vertical" steps={[{label:"prepare",status:"done",detail:"12초"},{label:"train",status:"current",detail:"epoch 12/20"},{label:"eval",status:"error",detail:"OOM · batch 32"}]} /></div>
+  <div className="bds-demo-grid-3">
+    <div className="bds-demo-section"><div className="bds-demo-label">InlineMessage · 5톤</div><Stack gap={2}><InlineMessage>기본 안내 문구입니다.</InlineMessage><InlineMessage tone="ok">적용되었습니다. 데몬이 2초 안에 반영합니다.</InlineMessage><InlineMessage tone="warn">VRAM 여유가 1.2 GiB 이하입니다.</InlineMessage><InlineMessage tone="crit">저장하지 못했습니다. 다시 시도합니다.</InlineMessage><InlineMessage tone="info">이 값은 재시작 후 반영됩니다.</InlineMessage></Stack></div>
+    <div className="bds-demo-section"><div className="bds-demo-label">ProgressBar · 결정형 / 비결정형 / 톤</div><Stack gap={3}><ProgressBar label="ocr-finetune.zip" value={0.44} detail={<>4/9 청크 · <span className="bds-mono">42 MiB/s</span></>} /><ProgressBar label="서버 검증 중" value={null} /><ProgressBar size="sm" tone="ok" label="완료" value={1} /><ProgressBar size="sm" tone="crit" label="실패 · 재시도 대기" value={0.31} /></Stack></div>
+    <div className="bds-demo-section"><div className="bds-demo-label">Stepper · 세로 · status 직접 지정</div><Stepper size="sm" orientation="vertical" steps={[{label:"prepare",status:"done",detail:"12초"},{label:"train",status:"current",detail:"epoch 12/20"},{label:"eval",status:"error",detail:"OOM · batch 32"}]} /></div>
   </div>
-  <div className="sec"><div className="lbl">Stepper · 등록 단계(가로, 컨테이너 480px 미만이면 세로)</div><Stepper aria-label="등록 단계" current={3} steps={[{label:"업로드"},{label:"해시 검증"},{label:"계약 파싱"},{label:"GPU 검증",detail:"Triton load"},{label:"smoke 추론"},{label:"VRAM 측정"}]} /></div>
-  <div className="hd">상태 · Skeleton · Spinner · LoadingOverlay · EmptyState · ErrorState · ConfirmDialog</div>
-  <div className="g3">
-    <div className="sec"><div className="lbl">Skeleton · 첫 로딩</div><Stack gap={2}><Skeleton height={56} /><Skeleton lines={3} /><div className="row"><Skeleton variant="circle" height={36} /><Skeleton fit="fixed" width={160} height={14} /></div></Stack></div>
-    <div className="sec"><div className="lbl">Spinner</div><Stack gap={3}><Spinner label="불러오는 중" /><Spinner size={28} /><Spinner mascot size={40} label="모델을 준비하고 있습니다" /></Stack></div>
-    <div className="sec"><div className="lbl">LoadingOverlay · 내용 유지 + 덮개(재조회)</div><LoadingOverlay active label="다시 조회 중"><Panel><CardHead title="CPU" meta="Ryzen 9" metaMono /><KeyValues rows={[["온도","61.5°C"],["로드 (1m)","2.41"],["실행 중","수집 안 됨"]]} /></Panel></LoadingOverlay></div>
+  <div className="bds-demo-section"><div className="bds-demo-label">Stepper · 등록 단계(가로, 컨테이너 480px 미만이면 세로)</div><Stepper aria-label="등록 단계" current={3} steps={[{label:"업로드"},{label:"해시 검증"},{label:"계약 파싱"},{label:"GPU 검증",detail:"Triton load"},{label:"smoke 추론"},{label:"VRAM 측정"}]} /></div>
+  <div className="bds-demo-grid-3">
+    <div className="bds-demo-section"><div className="bds-demo-label">Skeleton · 첫 로딩</div><Stack gap={2}><Skeleton height={56} /><Skeleton lines={3} /><div className="bds-demo-row"><Skeleton variant="circle" height={36} /><Skeleton fit="fixed" width={160} height={14} /></div></Stack></div>
+    <div className="bds-demo-section"><div className="bds-demo-label">Spinner</div><Stack gap={3}><Spinner label="불러오는 중" /><Spinner size={28} /><Spinner mascot size={40} label="모델을 준비하고 있습니다" /></Stack></div>
+    <div className="bds-demo-section"><div className="bds-demo-label">LoadingOverlay · 내용 유지 + 덮개(재조회)</div><LoadingOverlay active label="다시 조회 중"><Panel><CardHead title="CPU" meta="Ryzen 9" metaMono /><KeyValues rows={[["온도","61.5°C"],["로드 (1m)","2.41"],["실행 중","수집 안 됨"]]} /></Panel></LoadingOverlay></div>
   </div>
-  <div className="g3">
-    <EmptyState title="아직 기록된 모델 요청이 없습니다." description="허브로 추론 요청이 오면 여기에 쌓입니다." />
-    <EmptyState tone="error" title="GPU 예약 회계를 읽지 못했습니다." description="허브가 VRAM 용량 정보를 내려주지 않았습니다." actions={<Button size="sm">다시 시도</Button>} />
-    <ErrorState description="monitoring-api가 응답하지 않습니다." code="HTTP 502 · req_8f2a" onRetry={()=>{}} />
+  <div className="bds-demo-grid-3">
+    <div className="bds-demo-section"><div className="bds-demo-label">EmptyState · 빈 결과</div><EmptyState title="아직 기록된 모델 요청이 없습니다." description="허브로 추론 요청이 오면 여기에 쌓입니다." /></div>
+    <div className="bds-demo-section"><div className="bds-demo-label">EmptyState · 일부 데이터 실패</div><EmptyState tone="error" title="GPU 예약 회계를 읽지 못했습니다." description="허브가 VRAM 용량 정보를 내려주지 않았습니다." actions={<Button size="sm">다시 시도</Button>} /></div>
+    <div className="bds-demo-section"><div className="bds-demo-label">ErrorState · 카드 실패</div><ErrorState description="monitoring-api가 응답하지 않습니다." code="HTTP 502 · req_8f2a" onRetry={()=>{}} /></div>
   </div>
-  <div className="sec"><div className="lbl">ConfirmDialog · danger + typeToConfirm</div><div className="row"><Button variant="danger" icon="trash" onClick={()=>setO(true)}>모델 삭제</Button><span className="bds-card-hint">클릭하면 확인 모달. crit 채움 버튼은 이 모달 안에서만.</span></div>
+  <div className="bds-demo-section"><div className="bds-demo-label">ConfirmDialog · danger + typeToConfirm</div><div className="bds-demo-row"><Button variant="danger" icon="trash" onClick={()=>setO(true)}>모델 삭제</Button><span className="bds-card-hint">클릭하면 확인 모달. crit 채움 버튼은 이 모달 안에서만.</span></div>
     <ConfirmDialog open={o} onClose={()=>setO(false)} onConfirm={()=>setO(false)} danger title="모델 삭제" message="ko-embed-v3와 revision 4개가 삭제됩니다. 되돌릴 수 없습니다." confirmLabel="삭제" typeToConfirm="ko-embed-v3" /></div>
 </></ToastProvider>; }
 ReactDOM.createRoot(document.getElementById("root")).render(<App/>);

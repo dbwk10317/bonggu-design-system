@@ -1,7 +1,7 @@
 import React from "react";
 import { cx } from "../core/frame.js";
 
-/** 하단 상태바(28px, mono). live는 실제로 실시간 갱신 중일 때만. 항상 참인 값(호스트·업타임·시계)만 둔다. */
+/** 셸 하단 상태바. */
 export function StatusBar({ live, items = [], right = [], className, ...rest }) {
   return (
     <div className={cx("bds-statusbar", className)} {...rest}>

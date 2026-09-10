@@ -1,11 +1,11 @@
 <!-- @dsCard group="Components" viewport="1100x740" name="Input" subtitle="Field · TextField · TextArea · Select · Checkbox · Switch · SearchField · SegmentedControl · Dropzone · Slider · NumberStepper · ColorInput · Combobox · DateRangePicker · CodeEditor · FileUpload · RadioGroup · DatePicker · TimePicker · MultiSelect · PasswordField · OTPInput" -->
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>Input</title><link rel="stylesheet" href="../../styles.css"><script src="../../theme-toggle.js" defer></script>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>Input</title><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../guidelines/card.css"><script src="../../theme-toggle.js" defer></script>
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 <script src="../../_ds_bundle.js"></script>
-<style>body{padding:24px;display:grid;gap:24px;align-content:start}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px;align-items:start}.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px}.lbl{font-size:12.5px;font-weight:500;color:var(--ink-3);margin-bottom:10px}.sec{display:grid;gap:10px;min-width:0}</style></head>
-<body><div id="root"></div>
+<style></style></head>
+<body class="bds-demo-page"><div id="root"></div>
 <script type="text/babel">
 const NS = window.Ds_d3ea90;
 const { Field, TextField, TextArea, Select, Checkbox, Switch, SearchField, SegmentedControl, Dropzone, Slider, NumberStepper, ColorInput, Combobox, DateRangePicker, CodeEditor, FileUpload, RadioGroup, DatePicker, TimePicker, MultiSelect, PasswordField, OTPInput, Inline } = NS;
@@ -14,21 +14,20 @@ const { Field, TextField, TextArea, Select, Checkbox, Switch, SearchField, Segme
 function Basic(){
   const [q,setQ]=React.useState(""); const [speed,setSpeed]=React.useState("medium"); const [sync,setSync]=React.useState(true);
   return <>
-  <div className="two">
-    <Field label="이메일" hint="로그인 ID로 쓰입니다" required><TextField type="email" icon="envelope" placeholder="name@example.com" /></Field>
-    <Field label="임계 온도" error="1~120 사이여야 합니다"><TextField mono suffix="°C" defaultValue="175" /></Field>
-    <Field label="효과"><Select defaultValue="breathing" options={[{value:"static",label:"고정"},{value:"breathing",label:"숨쉬기"},{value:"rainbow",label:"레인보우"}]} /></Field>
-    <SearchField value={q} onChange={setQ} placeholder="사용자 검색" />
+  <div className="bds-demo-grid-3">
+    <div className="bds-demo-section"><div className="bds-demo-label">Field · TextField</div><Field label="이메일" hint="로그인 ID로 쓰입니다" required><TextField type="email" icon="envelope" placeholder="name@example.com" /></Field><Field label="임계 온도" error="1~120 사이여야 합니다"><TextField mono suffix="°C" defaultValue="175" /></Field></div>
+    <div className="bds-demo-section"><div className="bds-demo-label">Field · Select</div><Field label="효과"><Select defaultValue="breathing" options={[{value:"static",label:"고정"},{value:"breathing",label:"숨쉬기"},{value:"rainbow",label:"레인보우"}]} /></Field></div>
+    <div className="bds-demo-section"><div className="bds-demo-label">SearchField</div><SearchField value={q} onChange={setQ} placeholder="사용자 검색" /></div>
   </div>
-  <div className="row" style={{gap:18}}>
-    <Checkbox defaultChecked>알림 받기</Checkbox><Checkbox indeterminate aria-label="일부 선택" /><Checkbox radio name="m" defaultChecked>빠르게</Checkbox><Checkbox radio name="m">느리게</Checkbox><Checkbox disabled>비활성</Checkbox>
-    <Switch checked={sync} onChange={e=>setSync(e.target.checked)}>같이 설정</Switch><Switch disabled>비활성</Switch>
+  <div className="bds-demo-grid-3">
+    <div className="bds-demo-section"><div className="bds-demo-label">Checkbox</div><div className="bds-demo-row"><Checkbox defaultChecked>알림 받기</Checkbox><Checkbox indeterminate aria-label="일부 선택" /><Checkbox radio name="m" defaultChecked>빠르게</Checkbox><Checkbox radio name="m">느리게</Checkbox><Checkbox disabled>비활성</Checkbox></div></div>
+    <div className="bds-demo-section"><div className="bds-demo-label">Switch</div><div className="bds-demo-row"><Switch checked={sync} onChange={e=>setSync(e.target.checked)}>같이 설정</Switch><Switch disabled>비활성</Switch></div></div>
+    <div className="bds-demo-section"><div className="bds-demo-label">SegmentedControl</div><SegmentedControl aria-label="속도" value={speed} onChange={setSpeed} options={[{value:"slow",label:"느리게"},{value:"medium",label:"보통"},{value:"fast",label:"빠르게"}]} /><SegmentedControl aria-label="밝기" size="sm" value="3" onChange={()=>{}} options={[1,2,3,4,5].map(n=>({value:String(n),label:n}))} /></div>
   </div>
-  <div className="row" style={{gap:18}}>
-    <SegmentedControl aria-label="속도" value={speed} onChange={setSpeed} options={[{value:"slow",label:"느리게"},{value:"medium",label:"보통"},{value:"fast",label:"빠르게"}]} />
-    <SegmentedControl aria-label="밝기" size="sm" value="3" onChange={()=>{}} options={[1,2,3,4,5].map(n=>({value:String(n),label:n}))} />
+  <div className="bds-demo-grid-2">
+    <div className="bds-demo-section"><div className="bds-demo-label">Field · TextArea</div><Field label="설명"><TextArea rows={2} placeholder="이 모델의 용도를 적어 주세요" /></Field></div>
+    <div className="bds-demo-section"><div className="bds-demo-label">Dropzone</div><Dropzone accept="image/*" onFiles={()=>{}} hint="JPG·PNG, 업로드 뒤 4:3으로 크롭" /></div>
   </div>
-  <div className="two"><Field label="설명"><TextArea rows={2} placeholder="이 모델의 용도를 적어 주세요" /></Field><Dropzone accept="image/*" onFiles={()=>{}} hint="JPG·PNG, 업로드 뒤 4:3으로 크롭" /></div>
 </>; }
 
 
@@ -37,46 +36,37 @@ const MODELS = [["ko-embed-v3","LocalAI"],["whisper-large","LocalAI"],["llama-3.
 function Advanced(){
   const [b,setB]=React.useState(3); const [ep,setEp]=React.useState(20); const [c,setC]=React.useState("#5CA8FF"); const [m,setM]=React.useState("ko-embed-v3"); const [r,setR]=React.useState({preset:"12h"}); const [cfg,setCfg]=React.useState('{\n  "epochs": 20,\n  "lr": 2e-5,\n  "batch_size": 16\n}'); const [bad,setBad]=React.useState('{\n  "epochs": 20,\n  "lr": 2e-5,\n}');
   return <>
-    <div className="two">
-      <Field label="밝기"><Slider min={1} max={5} value={b} onChange={setB} marks={[1,2,3,4,5]} /></Field>
-      <Field label="온도 임계" hint="70~95°C 권장"><Slider min={60} max={100} step={5} defaultValue={85} unit="°C" /></Field>
+    <div className="bds-demo-grid-2">
+      <div className="bds-demo-section"><div className="bds-demo-label">Field · Slider</div><Field label="밝기"><Slider min={1} max={5} value={b} onChange={setB} marks={[1,2,3,4,5]} /></Field><Field label="온도 임계" hint="70~95°C 권장"><Slider min={60} max={100} step={5} defaultValue={85} unit="°C" /></Field></div>
+      <div className="bds-demo-section"><div className="bds-demo-label">Field · NumberStepper</div><div className="bds-demo-row" style={{alignItems:"flex-end"}}><Field label="epochs"><NumberStepper min={1} max={200} value={ep} onChange={setEp} /></Field><Field label="갱신 주기"><NumberStepper size="sm" min={1} max={60} defaultValue={2} unit="초" /></Field><Field label="배치 (비활성)"><NumberStepper defaultValue={16} disabled /></Field></div></div>
     </div>
-    <div className="row" style={{gap:18,alignItems:"flex-end"}}>
-      <Field label="epochs"><NumberStepper min={1} max={200} value={ep} onChange={setEp} /></Field>
-      <Field label="갱신 주기"><NumberStepper size="sm" min={1} max={60} defaultValue={2} unit="초" /></Field>
-      <Field label="배치 (비활성)"><NumberStepper defaultValue={16} disabled /></Field>
-      <div><div className="lbl">DateRangePicker</div><DateRangePicker value={r} onChange={setR} /></div>
+    <div className="bds-demo-grid-3">
+      <div className="bds-demo-section"><div className="bds-demo-label">DateRangePicker</div><DateRangePicker value={r} onChange={setR} /></div>
+      <div className="bds-demo-section"><div className="bds-demo-label">Field · ColorInput</div><Field label="색 1"><ColorInput value={c} onChange={setC} presets={["#F0A35A","#5CA8FF","#46B36B","#B388FF","#F2554D","#22D3EE","#FFFFFF"]} /></Field></div>
+      <div className="bds-demo-section"><div className="bds-demo-label">Field · Combobox</div><Field label="그래프 모델" hint="타이핑으로 거르고 ↑↓ Enter"><Combobox value={m} onChange={setM} options={MODELS.map(([id,rt])=>({value:id,label:id,detail:rt}))} /></Field></div>
     </div>
-    <div className="two">
-      <Field label="색 1"><ColorInput value={c} onChange={setC} presets={["#F0A35A","#5CA8FF","#46B36B","#B388FF","#F2554D","#22D3EE","#FFFFFF"]} /></Field>
-      <Field label="그래프 모델" hint="타이핑으로 거르고 ↑↓ Enter"><Combobox value={m} onChange={setM} options={MODELS.map(([id,rt])=>({value:id,label:id,detail:rt}))} /></Field>
-    </div>
-    <div className="two">
-      <Field label="config JSON" hint="허용 필드: epochs, lr, batch_size, seed"><CodeEditor value={cfg} onChange={setCfg} rows={5} /></Field>
-      <Field label="run input JSON (오류 예)"><CodeEditor value={bad} onChange={setBad} rows={5} /></Field>
-    </div>
-    <FileUpload accept=".zip" onFiles={()=>{}} onPause={()=>{}} onResume={()=>{}} onRetry={()=>{}} onCancel={()=>{}} title="프로젝트 ZIP을 끌어다 놓거나 클릭" hint="ZIP · 최대 2 GiB · 페이지를 닫아도 서버 등록 상태는 보존됩니다"
-      items={[{id:"1",name:"ocr-finetune.zip",size:193e6,status:"uploading",progress:.44,chunk:4,chunks:9,rate:"42 MiB/s"},{id:"2",name:"asr-adapt-2026-09.zip",size:8.1e8,status:"verifying"},{id:"3",name:"ner-v1.zip",size:2.2e7,status:"paused",progress:.7,chunk:7,chunks:10},{id:"4",name:"old-bundle.zip",size:1.1e8,status:"failed",progress:.2,error:"SHA-256 불일치 · 3번 청크"},{id:"5",name:"ko-pairs.zip",size:4.4e8,status:"done"}]} />
+    <div className="bds-demo-section"><div className="bds-demo-label">Field · CodeEditor</div><div className="bds-demo-grid-2"><Field label="config JSON" hint="허용 필드: epochs, lr, batch_size, seed"><CodeEditor value={cfg} onChange={setCfg} rows={5} /></Field><Field label="run input JSON (오류 예)"><CodeEditor value={bad} onChange={setBad} rows={5} /></Field></div></div>
+    <div className="bds-demo-section"><div className="bds-demo-label">FileUpload</div><FileUpload accept=".zip" onFiles={()=>{}} onPause={()=>{}} onResume={()=>{}} onRetry={()=>{}} onCancel={()=>{}} title="프로젝트 ZIP을 끌어다 놓거나 클릭" hint="ZIP · 최대 2 GiB · 페이지를 닫아도 서버 등록 상태는 보존됩니다"
+      items={[{id:"1",name:"ocr-finetune.zip",size:193e6,status:"uploading",progress:.44,chunk:4,chunks:9,rate:"42 MiB/s"},{id:"2",name:"asr-adapt-2026-09.zip",size:8.1e8,status:"verifying"},{id:"3",name:"ner-v1.zip",size:2.2e7,status:"paused",progress:.7,chunk:7,chunks:10},{id:"4",name:"old-bundle.zip",size:1.1e8,status:"failed",progress:.2,error:"SHA-256 불일치 · 3번 청크"},{id:"5",name:"ko-pairs.zip",size:4.4e8,status:"done"}]} /></div>
   </>; }
 
 
 
 function More(){ const [pol,setPol]=React.useState("idle"); const [d,setD]=React.useState("2026-09-09"); const [t,setT]=React.useState("22:30"); const [roles,setRoles]=React.useState(["admin","ops"]); const [pw,setPw]=React.useState("Bong9u!pass"); const [code,setCode]=React.useState("4821"); return <>
-  <div className="two">
-    <div className="sec"><div className="lbl">RadioGroup · cards / row</div><RadioGroup label="종료 정책" value={pol} onChange={setPol} layout="cards" options={[{value:"idle",label:"유휴 시 종료",hint:"15분 요청 없으면 자동 종료"},{value:"keep",label:"항상 유지",hint:"VRAM을 계속 점유"},{value:"sched",label:"스케줄",hint:"지정 시각에 종료",disabled:true}]} /><RadioGroup label="색 모드" layout="row" value="static" options={[{value:"static",label:"고정"},{value:"breath",label:"호흡"},{value:"rainbow",label:"레인보우"}]} /></div>
-    <div className="sec"><div className="lbl">DatePicker · TimePicker · MultiSelect</div><Inline gap={3} align="end"><Field label="만료일"><DatePicker value={d} onChange={setD} min="2026-09-01" fit="fixed" width={180} /></Field><Field label="소등 시각"><TimePicker value={t} onChange={setT} step={15} /></Field></Inline><Field label="역할" hint="Backspace로 마지막 항목 제거"><MultiSelect value={roles} onChange={setRoles} options={[{value:"admin",label:"admin"},{value:"ops",label:"ops"},{value:"viewer",label:"viewer"},{value:"trainer",label:"trainer"},{value:"billing",label:"billing"}]} placeholder="역할 검색" /></Field></div>
+  <div className="bds-demo-grid-2">
+    <div className="bds-demo-section"><div className="bds-demo-label">RadioGroup · cards / row</div><RadioGroup label="종료 정책" value={pol} onChange={setPol} layout="cards" options={[{value:"idle",label:"유휴 시 종료",hint:"15분 요청 없으면 자동 종료"},{value:"keep",label:"항상 유지",hint:"VRAM을 계속 점유"},{value:"sched",label:"스케줄",hint:"지정 시각에 종료",disabled:true}]} /><RadioGroup label="색 모드" layout="row" value="static" options={[{value:"static",label:"고정"},{value:"breath",label:"호흡"},{value:"rainbow",label:"레인보우"}]} /></div>
+    <div className="bds-demo-section"><div className="bds-demo-label">DatePicker · TimePicker</div><Inline gap={3} align="end"><Field label="만료일"><DatePicker value={d} onChange={setD} min="2026-09-01" fit="fixed" width={180} /></Field><Field label="소등 시각"><TimePicker value={t} onChange={setT} step={15} /></Field></Inline></div>
   </div>
-  <div className="two">
-    <div className="sec"><div className="lbl">PasswordField · strength</div><Field label="새 비밀번호"><PasswordField value={pw} onChange={e=>setPw(e.target.value)} strength autoComplete="new-password" /></Field></div>
-    <div className="sec"><div className="lbl">OTPInput · 6자리 3-3</div><Field label="인증 코드" hint="인증 앱의 6자리 숫자"><OTPInput value={code} onChange={setCode} /></Field></div>
+  <div className="bds-demo-grid-2">
+    <div className="bds-demo-section"><div className="bds-demo-label">Field · MultiSelect</div><Field label="역할" hint="Backspace로 마지막 항목 제거"><MultiSelect value={roles} onChange={setRoles} options={[{value:"admin",label:"admin"},{value:"ops",label:"ops"},{value:"viewer",label:"viewer"},{value:"trainer",label:"trainer"},{value:"billing",label:"billing"}]} placeholder="역할 검색" /></Field></div>
+    <div className="bds-demo-section"><div className="bds-demo-label">PasswordField · strength</div><Field label="새 비밀번호"><PasswordField value={pw} onChange={e=>setPw(e.target.value)} strength autoComplete="new-password" /></Field></div>
+    <div className="bds-demo-section"><div className="bds-demo-label">OTPInput · 6자리 3-3</div><Field label="인증 코드" hint="인증 앱의 6자리 숫자"><OTPInput value={code} onChange={setCode} /></Field></div>
   </div>
 </>; }
 
 function App(){ return <>
   <Basic />
-  <div className="bds-card-section-label">확장 · Slider · NumberStepper · ColorInput · Combobox · DateRangePicker · CodeEditor · FileUpload</div>
   <Advanced />
-  <div className="bds-card-section-label">선택·날짜·인증 · RadioGroup · DatePicker · TimePicker · MultiSelect · PasswordField · OTPInput</div>
   <More />
 </>; }
 ReactDOM.createRoot(document.getElementById("root")).render(<App/>);

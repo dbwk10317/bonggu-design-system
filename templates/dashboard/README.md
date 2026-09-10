@@ -22,7 +22,7 @@ python -m http.server 8080
 
 ## 화면
 
-해시로 전환합니다(`#overview #nodes #devices #deploys #access #settings #status`). 상단바에서 다크·라이트를 바꾸고, `Ctrl`+`K`로 명령 팔레트를 엽니다.
+해시로 전환합니다(`#overview #nodes #devices #deploys #access #settings #status`). 독립 실행에서는 상단바에서 다크·라이트를 바꾸고, 가이드 안에서는 가이드 상단 토글을 따릅니다. `Ctrl`+`K`로 명령 팔레트를 엽니다.
 
 - `App.jsx` · 셸(SidebarShell) + 라우팅 + 명령 팔레트 + 알림 드로어 + 테마 전환
 - `OverviewScreen.jsx` · 함대 요약. StatTile, 12열 격자, Chart 7종 중 6종, Heatmap, UptimeBar, Timeline, 로딩·오류·빈 상태 카드

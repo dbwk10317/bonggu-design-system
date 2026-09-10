@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const root = path.resolve(__dirname, '..');
-const CSS_DIRS = ['styles', 'tokens'];
+const CSS_DIRS = ['styles', 'tokens', 'guidelines'];
 const CONSUMER_EXT = new Set(['.jsx', '.js', '.html']);
 
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
@@ -118,6 +118,7 @@ function classExpressions(text) {
 const consumers = [
   ...walk('components').filter((f) => CONSUMER_EXT.has(path.extname(f))),
   ...walk('templates').filter((f) => CONSUMER_EXT.has(path.extname(f))),
+  ...walk('guidelines').filter((f) => CONSUMER_EXT.has(path.extname(f))),
   'thumbnail.html',
 ];
 for (const file of consumers) {
