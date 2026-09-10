@@ -26,7 +26,12 @@ const cellOf = (/** @type {import("./DataTable.d.ts").DataTableColumn<any>} */ c
 export function DataTable({ columns = [], rows = [], rowKey, rowLabel, sort, onSortChange, selectable = false, selectedKeys = [], onSelectionChange, bulkActions, expandable, defaultExpandedKeys = [], header, empty = "표시할 항목이 없습니다.", fit = "flex", width, height, className, style, "aria-label": ariaLabel, ...rest }) {
   const [expanded, setExpanded] = useState(() => new Set(defaultExpandedKeys));
   const autoId = useId(), hid = header?.id ?? autoId;
+  /* 행의 신원은 위치가 아니라 값이다(readme 데이터 절). 정렬·필터로 위치가 바뀌면 같은 인덱스가
+     다른 레코드를 가리켜 선택이 엉뚱한 행에 붙는다. 신원 없이 선택·펼침을 켜면 알린다. */
   const keyOf = rowKey ?? ((/** @type {any} */ r, /** @type {number} */ i) => r.id ?? i);
+  if ((selectable || expandable) && !rowKey && rows.some((r) => /** @type {any} */ (r)?.id == null)) {
+    console.warn("DataTable: 선택·펼침에는 rowKey나 row.id로 행의 신원을 주어야 합니다. 위치는 정렬·필터에서 다른 행을 가리킵니다.");
+  }
   const keys = rows.map((r, i) => keyOf(r, i));
   const sel = new Set(selectedKeys);
   const selCount = keys.filter((k) => sel.has(k)).length;

@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useContext, useRef, useState } from "react";
+import React, { createContext, useCallback, useContext, useMemo, useRef, useState } from "react";
 import { cx } from "../core/frame.js";
 import { Icon } from "../action/Icon.jsx";
 
@@ -36,10 +36,13 @@ export function ToastProvider({ children, max = 3 }) {
     const d = t.duration ?? (t.action || t.tone === "crit" ? 0 : 4000); if (d > 0) setTimeout(() => dismiss(id), d);
     return id;
   }, [dismiss, max]);
+  /* toast·dismiss 는 이미 useCallback 으로 안정적이다. 인라인 객체만이 값을 흔들어,
+     토스트 하나당(등장·leaving·제거) useToast 소비자 전체가 세 번 다시 그려졌다. */
+  const api = useMemo(() => ({ toast, dismiss }), [toast, dismiss]);
   return (
-    <ToastCtx.Provider value={{ toast, dismiss }}>
+    <ToastCtx.Provider value={api}>
       {children}
-      <div className="bds-toasts" role="region" aria-label="알림 메시지">
+      <div className="bds-toasts" role="region" aria-label="알림 메시지" aria-live="polite" aria-atomic="false">
         {items.map((t) => <Toast key={t.id} {...t} onDismiss={() => dismiss(t.id)} />)}
       </div>
     </ToastCtx.Provider>

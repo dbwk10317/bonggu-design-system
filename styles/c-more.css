@@ -72,7 +72,7 @@ dialog.bds-cmdk__panel::backdrop{background:var(--scrim);animation:bds-fade var(
 .bds-link--quiet{color:var(--ink-2)}.bds-link--quiet:hover{color:var(--ink)}
 /* ---- Avatar · Badge · Accordion · Popover ---- */
 .bds-avatar{display:inline-grid;place-items:center;width:var(--av,32px);height:var(--av,32px);border-radius:50%;background:var(--panel-3);color:var(--ink-2);font-weight:var(--fw-medium);font-size:calc(var(--av,32px) * .38);overflow:visible;flex:none;position:relative;user-select:none}
-.bds-avatar__img{width:100%;height:100%;object-fit:cover;border-radius:inherit}
+.bds-avatar__img{width:100%;height:100%;object-fit:cover;border-radius:inherit;outline:1px solid var(--image-edge);outline-offset:-1px}
 .bds-avatar--square,.bds-avatar--square .bds-avatar__img{border-radius:var(--radius-ctl)}
 .bds-avatar__st{position:absolute;right:-1px;bottom:-1px;width:30%;height:30%;border-radius:50%;box-shadow:0 0 0 2px var(--panel);background:var(--neutral)}
 .bds-avatar__st--ok{background:var(--ok)}.bds-avatar__st--warn{background:var(--warn)}.bds-avatar__st--crit{background:var(--crit)}

@@ -1,5 +1,5 @@
 /* @token-kinds
-   color: --canvas, --canvas-sunken, --panel, --panel-2, --panel-3, --line, --line-strong, --hairline, --line-input, --scrim, --ink, --ink-2, --ink-3, --ink-muted, --ink-inverse, --on-warn, --signal, --signal-hover, --signal-active, --signal-tint, --signal-tint-line, --signal-ink, --signal-fg, --focus-ring, --ok, --ok-tint, --ok-ink, --warn, --warn-tint, --warn-ink, --crit, --crit-tint, --crit-ink, --info, --info-tint, --info-ink, --neutral, --neutral-tint, --neutral-ink, --meter-track, --meter-ok, --meter-warn, --meter-crit, --series-1, --series-2, --series-3, --series-4, --series-5, --series-6, --series-7, --series-8, --series-rx, --series-tx, --series-used, --series-reserved, --series-free, --ramp-1, --ramp-2, --ramp-3, --ramp-4, --ramp-5, --ramp-6, --plot-grid, --plot-axis, --plot-axis-ink, --mark-face, --mark-line, --mark-edge, --mark-ear, --scrollbar-thumb, --scrollbar-thumb-hover
+   color: --canvas, --canvas-sunken, --panel, --panel-2, --panel-3, --line, --line-strong, --hairline, --line-input, --scrim, --ink, --ink-2, --ink-3, --ink-muted, --ink-inverse, --on-warn, --signal, --signal-hover, --signal-active, --signal-tint, --signal-tint-line, --signal-ink, --signal-fg, --focus-ring, --ok, --ok-tint, --ok-ink, --warn, --warn-tint, --warn-ink, --crit, --crit-tint, --crit-ink, --info, --info-tint, --info-ink, --neutral, --neutral-tint, --neutral-ink, --meter-track, --meter-ok, --meter-warn, --meter-crit, --series-1, --series-2, --series-3, --series-4, --series-5, --series-6, --series-7, --series-8, --series-rx, --series-tx, --series-used, --series-reserved, --series-free, --ramp-1, --ramp-2, --ramp-3, --ramp-4, --ramp-5, --ramp-6, --plot-grid, --plot-axis, --plot-axis-ink, --mark-face, --mark-line, --mark-edge, --mark-ear, --image-edge, --scrollbar-thumb, --scrollbar-thumb-hover
    shadow: --elev-1, --elev-2, --elev-3
 */
 /* 봉구서버 스타일가이드 v1(2026-09) 색 토큰. 라이트 기본(:root), 다크는 :root.dark / [data-theme="dark"].
@@ -37,6 +37,8 @@
   --elev-1:0 1px 2px rgba(20,23,28,.06);--elev-2:0 4px 12px rgba(20,23,28,.08),0 1px 2px rgba(20,23,28,.05);--elev-3:0 16px 40px rgba(20,23,28,.14),0 2px 6px rgba(20,23,28,.06);
   /* 마스코트 마크(기존 시스템 이관): 얼굴은 양 테마 모두 밝게. 귀는 실제 강아지 봉구의 앰버(기존 @bonggu/ui --accent 값 그대로) — 시그널 파랑과 무관, UI 어디에도 재사용하지 않는다 */
   --mark-face:#ffffff;--mark-line:#15181d;--mark-edge:#c8cdd6;--mark-ear:#99581F;
+  /* 사진 가장자리. 틴트된 중립(--line)을 쓰면 아래 면 색을 받아 때처럼 보인다 */
+  --image-edge:oklch(0 0 0 / .1);
   --scrollbar-thumb:#c8cdd6;--scrollbar-thumb-hover:#a6adba;
 }
 :root.dark,:root[data-theme="dark"]{
@@ -60,5 +62,6 @@
   --plot-grid:#1d2129;--plot-axis:#3a414e;--plot-axis-ink:#848c9d;
   --elev-1:0 1px 2px rgba(0,0,0,.4);--elev-2:0 4px 12px rgba(0,0,0,.5);--elev-3:0 16px 40px rgba(0,0,0,.6);
   --mark-face:#eef0f4;--mark-line:#15181d;--mark-edge:rgba(0,0,0,.28);--mark-ear:#D08A4C;
+  --image-edge:oklch(1 0 0 / .1);
   --scrollbar-thumb:#3a414e;--scrollbar-thumb-hover:#555d6c;
 }
