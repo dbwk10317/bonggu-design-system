@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"Ds_d3ea90","components":[{"name":"Button","sourcePath":"components/action/Button.jsx"},{"name":"Icon","sourcePath":"components/action/Icon.jsx"},{"name":"IconButton","sourcePath":"components/action/IconButton.jsx"},{"name":"MascotMark","sourcePath":"components/brand/MascotMark.jsx"},{"name":"BarList","sourcePath":"components/data/BarList.jsx"},{"name":"Chart","sourcePath":"components/data/Chart.jsx"},{"name":"DataTable","sourcePath":"components/data/DataTable.jsx"},{"name":"DescriptionList","sourcePath":"components/data/DescriptionList.jsx"},{"name":"DiffView","sourcePath":"components/data/DiffView.jsx"},{"name":"Gauge","sourcePath":"components/data/Gauge.jsx"},{"name":"Heatmap","sourcePath":"components/data/Heatmap.jsx"},{"name":"KeyValues","sourcePath":"components/data/KeyValues.jsx"},{"name":"Legend","sourcePath":"components/data/Legend.jsx"},{"name":"LogViewer","sourcePath":"components/data/LogViewer.jsx"},{"name":"Sparkline","sourcePath":"components/data/Sparkline.jsx"},{"name":"StatTile","sourcePath":"components/data/StatTile.jsx"},{"name":"Timeline","sourcePath":"components/data/Timeline.jsx"},{"name":"TrendDelta","sourcePath":"components/data/TrendDelta.jsx"},{"name":"UptimeBar","sourcePath":"components/data/UptimeBar.jsx"},{"name":"Accordion","sourcePath":"components/display/Accordion.jsx"},{"name":"Avatar","sourcePath":"components/display/Avatar.jsx"},{"name":"AvatarGroup","sourcePath":"components/display/Avatar.jsx"},{"name":"Badge","sourcePath":"components/display/Badge.jsx"},{"name":"Code","sourcePath":"components/display/Code.jsx"},{"name":"CodeBlock","sourcePath":"components/display/Code.jsx"},{"name":"Kbd","sourcePath":"components/display/Code.jsx"},{"name":"CopyField","sourcePath":"components/display/CopyField.jsx"},{"name":"StatusPill","sourcePath":"components/display/StatusPill.jsx"},{"name":"Tag","sourcePath":"components/display/Tag.jsx"},{"name":"AlertBanner","sourcePath":"components/feedback/AlertBanner.jsx"},{"name":"ConfirmDialog","sourcePath":"components/feedback/ConfirmDialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"ErrorState","sourcePath":"components/feedback/ErrorState.jsx"},{"name":"InlineMessage","sourcePath":"components/feedback/InlineMessage.jsx"},{"name":"LoadingOverlay","sourcePath":"components/feedback/LoadingOverlay.jsx"},{"name":"NotificationTrigger","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"NotificationDrawer","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"ProgressBar","sourcePath":"components/feedback/ProgressBar.jsx"},{"name":"Skeleton","sourcePath":"components/feedback/Skeleton.jsx"},{"name":"Spinner","sourcePath":"components/feedback/Spinner.jsx"},{"name":"Stepper","sourcePath":"components/feedback/Stepper.jsx"},{"name":"ToastProvider","sourcePath":"components/feedback/Toast.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Checkbox","sourcePath":"components/input/Checkbox.jsx"},{"name":"CodeEditor","sourcePath":"components/input/CodeEditor.jsx"},{"name":"ColorInput","sourcePath":"components/input/ColorInput.jsx"},{"name":"Combobox","sourcePath":"components/input/Combobox.jsx"},{"name":"DatePicker","sourcePath":"components/input/DatePicker.jsx"},{"name":"DateRangePicker","sourcePath":"components/input/DateRangePicker.jsx"},{"name":"Dropzone","sourcePath":"components/input/Dropzone.jsx"},{"name":"Field","sourcePath":"components/input/Field.jsx"},{"name":"FileUpload","sourcePath":"components/input/FileUpload.jsx"},{"name":"MultiSelect","sourcePath":"components/input/MultiSelect.jsx"},{"name":"NumberStepper","sourcePath":"components/input/NumberStepper.jsx"},{"name":"OTPInput","sourcePath":"components/input/OTPInput.jsx"},{"name":"PasswordField","sourcePath":"components/input/PasswordField.jsx"},{"name":"RadioGroup","sourcePath":"components/input/RadioGroup.jsx"},{"name":"SearchField","sourcePath":"components/input/SearchField.jsx"},{"name":"SegmentedControl","sourcePath":"components/input/SegmentedControl.jsx"},{"name":"Select","sourcePath":"components/input/Select.jsx"},{"name":"Slider","sourcePath":"components/input/Slider.jsx"},{"name":"Switch","sourcePath":"components/input/Switch.jsx"},{"name":"TextArea","sourcePath":"components/input/TextArea.jsx"},{"name":"TextField","sourcePath":"components/input/TextField.jsx"},{"name":"TimePicker","sourcePath":"components/input/TimePicker.jsx"},{"name":"AspectRatio","sourcePath":"components/layout/AspectRatio.jsx"},{"name":"CardHead","sourcePath":"components/layout/CardHead.jsx"},{"name":"Container","sourcePath":"components/layout/Container.jsx"},{"name":"Divider","sourcePath":"components/layout/Divider.jsx"},{"name":"Grid","sourcePath":"components/layout/Grid.jsx"},{"name":"GridItem","sourcePath":"components/layout/Grid.jsx"},{"name":"Inline","sourcePath":"components/layout/Inline.jsx"},{"name":"PageHeader","sourcePath":"components/layout/PageHeader.jsx"},{"name":"PageStack","sourcePath":"components/layout/PageStack.jsx"},{"name":"Panel","sourcePath":"components/layout/Panel.jsx"},{"name":"Spacer","sourcePath":"components/layout/Spacer.jsx"},{"name":"Stack","sourcePath":"components/layout/Stack.jsx"},{"name":"StatusBar","sourcePath":"components/layout/StatusBar.jsx"},{"name":"Toolbar","sourcePath":"components/layout/Toolbar.jsx"},{"name":"ToolbarGrow","sourcePath":"components/layout/Toolbar.jsx"},{"name":"Visible","sourcePath":"components/layout/Visible.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"CommandPalette","sourcePath":"components/navigation/CommandPalette.jsx"},{"name":"Link","sourcePath":"components/navigation/Link.jsx"},{"name":"Pagination","sourcePath":"components/navigation/Pagination.jsx"},{"name":"SidebarShell","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavItem","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavGroup","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"},{"name":"TopNav","sourcePath":"components/navigation/TopNav.jsx"},{"name":"Drawer","sourcePath":"components/overlay/Drawer.jsx"},{"name":"DropdownMenu","sourcePath":"components/overlay/DropdownMenu.jsx"},{"name":"FormModal","sourcePath":"components/overlay/FormModal.jsx"},{"name":"Modal","sourcePath":"components/overlay/Modal.jsx"},{"name":"Popover","sourcePath":"components/overlay/Popover.jsx"},{"name":"Tooltip","sourcePath":"components/overlay/Tooltip.jsx"}],"sourceHashes":{"components/action/Button.jsx":"09b7d91ea70d","components/action/Icon.jsx":"37cb27cf8630","components/action/IconButton.jsx":"8a6e2c96f973","components/brand/MascotMark.jsx":"7b83c6e0e778","components/core/frame.js":"7b923fcdece0","components/core/missing.js":"4c80ded0edb9","components/core/useAnchoredPopover.js":"55233bc7319b","components/data/BarList.jsx":"0314f5476c15","components/data/Chart.jsx":"efb43d9cdda8","components/data/DataTable.jsx":"711f1f05af3c","components/data/DescriptionList.jsx":"09f578c0508a","components/data/DiffView.jsx":"f64dd56b50e7","components/data/Gauge.jsx":"dadfb7a67f14","components/data/Heatmap.jsx":"f7a16406ba8a","components/data/KeyValues.jsx":"9a8c0448bf71","components/data/Legend.jsx":"d2c555347b87","components/data/LogViewer.jsx":"1e0e13b0d79f","components/data/Sparkline.jsx":"5ca499bc6a07","components/data/StatTile.jsx":"01b92eb8875e","components/data/Timeline.jsx":"3484620fcf1a","components/data/TrendDelta.jsx":"df77ede30cb1","components/data/UptimeBar.jsx":"8dbc08c8b484","components/data/chart-math.js":"8d99ceed4d4a","components/display/Accordion.jsx":"c737829b9307","components/display/Avatar.jsx":"595d01c56034","components/display/Badge.jsx":"ebdfaa3e5a79","components/display/Code.jsx":"db5fc2d41bf7","components/display/CopyField.jsx":"63b8d023c5ac","components/display/StatusPill.jsx":"2271178c5885","components/display/Tag.jsx":"0a8cf9b3a7da","components/feedback/AlertBanner.jsx":"35630891733b","components/feedback/ConfirmDialog.jsx":"6c268323b817","components/feedback/EmptyState.jsx":"0cc5195f8321","components/feedback/ErrorState.jsx":"d1fb9a97acb1","components/feedback/InlineMessage.jsx":"1a767995ef24","components/feedback/LoadingOverlay.jsx":"4d6098571f5a","components/feedback/NotificationDrawer.jsx":"496171c759e3","components/feedback/ProgressBar.jsx":"fcde9d6c0e1c","components/feedback/Skeleton.jsx":"d28497fc3046","components/feedback/Spinner.jsx":"14b0ba99fd1e","components/feedback/Stepper.jsx":"0fc01832126c","components/feedback/Toast.jsx":"0b4667b1afb5","components/input/Checkbox.jsx":"d2f66190fbb5","components/input/CodeEditor.jsx":"e01d91a2b947","components/input/ColorInput.jsx":"1d211ade5a34","components/input/Combobox.jsx":"ac843aec2ca4","components/input/DatePicker.jsx":"9d3ccf19aa70","components/input/DateRangePicker.jsx":"2c9c9501ff0e","components/input/Dropzone.jsx":"cb7e534803a9","components/input/Field.jsx":"db496f6146e4","components/input/FileUpload.jsx":"b01ef069bb39","components/input/MultiSelect.jsx":"8852812cc859","components/input/NumberStepper.jsx":"b8e4f176e252","components/input/OTPInput.jsx":"9c6aa79c65dd","components/input/PasswordField.jsx":"fc4e47660183","components/input/RadioGroup.jsx":"8f6614181191","components/input/SearchField.jsx":"bed00c25c7f9","components/input/SegmentedControl.jsx":"8c8a0061f981","components/input/Select.jsx":"23fa266f4ce8","components/input/Slider.jsx":"919c77f5b95b","components/input/Switch.jsx":"4987aa99a72b","components/input/TextArea.jsx":"c876e585198f","components/input/TextField.jsx":"7fc617fee4f9","components/input/TimePicker.jsx":"1f10c3f68d72","components/layout/AspectRatio.jsx":"e2ae6d037775","components/layout/CardHead.jsx":"1d17c88765ab","components/layout/Container.jsx":"f21e0d25115f","components/layout/Divider.jsx":"d569b3cd4069","components/layout/Grid.jsx":"762064e97502","components/layout/Inline.jsx":"723a2506c7e6","components/layout/PageHeader.jsx":"8062828d5bc9","components/layout/PageStack.jsx":"9703e7450025","components/layout/Panel.jsx":"5055dfd4e67a","components/layout/Spacer.jsx":"1fe8d631b4a5","components/layout/Stack.jsx":"48ff38945a39","components/layout/StatusBar.jsx":"b25654bc2c4d","components/layout/Toolbar.jsx":"7ab182321833","components/layout/Visible.jsx":"a121f0c10d26","components/navigation/Breadcrumb.jsx":"8003c996b8e5","components/navigation/CommandPalette.jsx":"193b71d3f442","components/navigation/Link.jsx":"5ef8228d7f2b","components/navigation/Pagination.jsx":"39f6e665c398","components/navigation/SidebarShell.jsx":"51eaf628a8fb","components/navigation/Tabs.jsx":"b4cc236325a6","components/navigation/TopNav.jsx":"b2de719cb8b9","components/overlay/Drawer.jsx":"3f9a95d2ef70","components/overlay/DropdownMenu.jsx":"a4db0c288528","components/overlay/FormModal.jsx":"3453da04e7de","components/overlay/Modal.jsx":"c1fc3ab30750","components/overlay/Popover.jsx":"e6adf33f0008","components/overlay/Tooltip.jsx":"799517ec2a79","components/overlay/useModalDialog.js":"93e75b826452","theme-toggle.js":"0c924eb893f3"},"inlinedExternals":[],"unexposedExports":[{"name":"cx","sourcePath":"components/core/frame.js"},{"name":"DASHES","sourcePath":"components/data/chart-math.js"},{"name":"estWidth","sourcePath":"components/data/chart-math.js"},{"name":"fmtKo","sourcePath":"components/data/chart-math.js"},{"name":"frameStyle","sourcePath":"components/core/frame.js"},{"name":"histBins","sourcePath":"components/data/chart-math.js"},{"name":"isMissing","sourcePath":"components/core/missing.js"},{"name":"MISSING_CLASS","sourcePath":"components/core/missing.js"},{"name":"MISSING_TEXT","sourcePath":"components/core/missing.js"},{"name":"niceTicks","sourcePath":"components/data/chart-math.js"},{"name":"NOTIFICATION_DRAWER_ID","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"numeric","sourcePath":"components/core/missing.js"},{"name":"passwordStrength","sourcePath":"components/input/PasswordField.jsx"},{"name":"pathLength","sourcePath":"components/data/chart-math.js"},{"name":"r1","sourcePath":"components/data/chart-math.js"},{"name":"runsOf","sourcePath":"components/data/chart-math.js"},{"name":"seriesDash","sourcePath":"components/data/chart-math.js"},{"name":"smoothPath","sourcePath":"components/data/chart-math.js"},{"name":"spaceToken","sourcePath":"components/core/frame.js"},{"name":"stackBars","sourcePath":"components/data/chart-math.js"},{"name":"toneInk","sourcePath":"components/data/chart-math.js"},{"name":"toneVar","sourcePath":"components/data/chart-math.js"},{"name":"useAnchoredPopover","sourcePath":"components/core/useAnchoredPopover.js"},{"name":"useFieldContext","sourcePath":"components/input/Field.jsx"},{"name":"useModalDialog","sourcePath":"components/overlay/useModalDialog.js"},{"name":"useToast","sourcePath":"components/feedback/Toast.jsx"}]} */
+/* @ds-bundle: {"format":4,"namespace":"Ds_d3ea90","components":[{"name":"Button","sourcePath":"components/action/Button.jsx"},{"name":"Icon","sourcePath":"components/action/Icon.jsx"},{"name":"IconButton","sourcePath":"components/action/IconButton.jsx"},{"name":"MascotMark","sourcePath":"components/brand/MascotMark.jsx"},{"name":"BarList","sourcePath":"components/data/BarList.jsx"},{"name":"Chart","sourcePath":"components/data/Chart.jsx"},{"name":"DataTable","sourcePath":"components/data/DataTable.jsx"},{"name":"DescriptionList","sourcePath":"components/data/DescriptionList.jsx"},{"name":"DiffView","sourcePath":"components/data/DiffView.jsx"},{"name":"Gauge","sourcePath":"components/data/Gauge.jsx"},{"name":"Heatmap","sourcePath":"components/data/Heatmap.jsx"},{"name":"KeyValues","sourcePath":"components/data/KeyValues.jsx"},{"name":"Legend","sourcePath":"components/data/Legend.jsx"},{"name":"LogViewer","sourcePath":"components/data/LogViewer.jsx"},{"name":"Sparkline","sourcePath":"components/data/Sparkline.jsx"},{"name":"StatTile","sourcePath":"components/data/StatTile.jsx"},{"name":"Timeline","sourcePath":"components/data/Timeline.jsx"},{"name":"TrendDelta","sourcePath":"components/data/TrendDelta.jsx"},{"name":"UptimeBar","sourcePath":"components/data/UptimeBar.jsx"},{"name":"Accordion","sourcePath":"components/display/Accordion.jsx"},{"name":"Avatar","sourcePath":"components/display/Avatar.jsx"},{"name":"AvatarGroup","sourcePath":"components/display/Avatar.jsx"},{"name":"Badge","sourcePath":"components/display/Badge.jsx"},{"name":"Code","sourcePath":"components/display/Code.jsx"},{"name":"CodeBlock","sourcePath":"components/display/Code.jsx"},{"name":"Kbd","sourcePath":"components/display/Code.jsx"},{"name":"CopyField","sourcePath":"components/display/CopyField.jsx"},{"name":"StatusPill","sourcePath":"components/display/StatusPill.jsx"},{"name":"Tag","sourcePath":"components/display/Tag.jsx"},{"name":"AlertBanner","sourcePath":"components/feedback/AlertBanner.jsx"},{"name":"ConfirmDialog","sourcePath":"components/feedback/ConfirmDialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"ErrorState","sourcePath":"components/feedback/ErrorState.jsx"},{"name":"InlineMessage","sourcePath":"components/feedback/InlineMessage.jsx"},{"name":"LoadingOverlay","sourcePath":"components/feedback/LoadingOverlay.jsx"},{"name":"NotificationTrigger","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"NotificationDrawer","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"ProgressBar","sourcePath":"components/feedback/ProgressBar.jsx"},{"name":"Skeleton","sourcePath":"components/feedback/Skeleton.jsx"},{"name":"Spinner","sourcePath":"components/feedback/Spinner.jsx"},{"name":"Stepper","sourcePath":"components/feedback/Stepper.jsx"},{"name":"ToastProvider","sourcePath":"components/feedback/Toast.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Checkbox","sourcePath":"components/input/Checkbox.jsx"},{"name":"CodeEditor","sourcePath":"components/input/CodeEditor.jsx"},{"name":"ColorInput","sourcePath":"components/input/ColorInput.jsx"},{"name":"Combobox","sourcePath":"components/input/Combobox.jsx"},{"name":"DatePicker","sourcePath":"components/input/DatePicker.jsx"},{"name":"DateRangePicker","sourcePath":"components/input/DateRangePicker.jsx"},{"name":"Dropzone","sourcePath":"components/input/Dropzone.jsx"},{"name":"Field","sourcePath":"components/input/Field.jsx"},{"name":"FileUpload","sourcePath":"components/input/FileUpload.jsx"},{"name":"MultiSelect","sourcePath":"components/input/MultiSelect.jsx"},{"name":"NumberStepper","sourcePath":"components/input/NumberStepper.jsx"},{"name":"OTPInput","sourcePath":"components/input/OTPInput.jsx"},{"name":"PasswordField","sourcePath":"components/input/PasswordField.jsx"},{"name":"RadioGroup","sourcePath":"components/input/RadioGroup.jsx"},{"name":"SearchField","sourcePath":"components/input/SearchField.jsx"},{"name":"SegmentedControl","sourcePath":"components/input/SegmentedControl.jsx"},{"name":"Select","sourcePath":"components/input/Select.jsx"},{"name":"Slider","sourcePath":"components/input/Slider.jsx"},{"name":"Switch","sourcePath":"components/input/Switch.jsx"},{"name":"TextArea","sourcePath":"components/input/TextArea.jsx"},{"name":"TextField","sourcePath":"components/input/TextField.jsx"},{"name":"TimePicker","sourcePath":"components/input/TimePicker.jsx"},{"name":"AspectRatio","sourcePath":"components/layout/AspectRatio.jsx"},{"name":"CardHead","sourcePath":"components/layout/CardHead.jsx"},{"name":"Container","sourcePath":"components/layout/Container.jsx"},{"name":"Divider","sourcePath":"components/layout/Divider.jsx"},{"name":"Grid","sourcePath":"components/layout/Grid.jsx"},{"name":"GridItem","sourcePath":"components/layout/Grid.jsx"},{"name":"Inline","sourcePath":"components/layout/Inline.jsx"},{"name":"PageHeader","sourcePath":"components/layout/PageHeader.jsx"},{"name":"PageStack","sourcePath":"components/layout/PageStack.jsx"},{"name":"Panel","sourcePath":"components/layout/Panel.jsx"},{"name":"Spacer","sourcePath":"components/layout/Spacer.jsx"},{"name":"Stack","sourcePath":"components/layout/Stack.jsx"},{"name":"StatusBar","sourcePath":"components/layout/StatusBar.jsx"},{"name":"Toolbar","sourcePath":"components/layout/Toolbar.jsx"},{"name":"ToolbarGrow","sourcePath":"components/layout/Toolbar.jsx"},{"name":"Visible","sourcePath":"components/layout/Visible.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"CommandPalette","sourcePath":"components/navigation/CommandPalette.jsx"},{"name":"Link","sourcePath":"components/navigation/Link.jsx"},{"name":"Pagination","sourcePath":"components/navigation/Pagination.jsx"},{"name":"SidebarShell","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavItem","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavGroup","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"},{"name":"TopNav","sourcePath":"components/navigation/TopNav.jsx"},{"name":"Drawer","sourcePath":"components/overlay/Drawer.jsx"},{"name":"DropdownMenu","sourcePath":"components/overlay/DropdownMenu.jsx"},{"name":"FormModal","sourcePath":"components/overlay/FormModal.jsx"},{"name":"Modal","sourcePath":"components/overlay/Modal.jsx"},{"name":"Popover","sourcePath":"components/overlay/Popover.jsx"},{"name":"Tooltip","sourcePath":"components/overlay/Tooltip.jsx"}],"sourceHashes":{"components/action/Button.jsx":"09b7d91ea70d","components/action/Icon.jsx":"37cb27cf8630","components/action/IconButton.jsx":"8a6e2c96f973","components/brand/MascotMark.jsx":"7b83c6e0e778","components/core/frame.js":"7b923fcdece0","components/core/missing.js":"8b286e1a101a","components/core/useAnchoredPopover.js":"1da2cb72b95e","components/data/BarList.jsx":"0314f5476c15","components/data/Chart.jsx":"e232274299c3","components/data/DataTable.jsx":"711f1f05af3c","components/data/DescriptionList.jsx":"09f578c0508a","components/data/DiffView.jsx":"f64dd56b50e7","components/data/Gauge.jsx":"dadfb7a67f14","components/data/Heatmap.jsx":"f5b8b7fbaba0","components/data/KeyValues.jsx":"9a8c0448bf71","components/data/Legend.jsx":"d2c555347b87","components/data/LogViewer.jsx":"1e0e13b0d79f","components/data/Sparkline.jsx":"5ca499bc6a07","components/data/StatTile.jsx":"01b92eb8875e","components/data/Timeline.jsx":"3484620fcf1a","components/data/TrendDelta.jsx":"df77ede30cb1","components/data/UptimeBar.jsx":"8dbc08c8b484","components/data/chart-math.js":"8d99ceed4d4a","components/display/Accordion.jsx":"c737829b9307","components/display/Avatar.jsx":"595d01c56034","components/display/Badge.jsx":"ebdfaa3e5a79","components/display/Code.jsx":"db5fc2d41bf7","components/display/CopyField.jsx":"63b8d023c5ac","components/display/StatusPill.jsx":"2271178c5885","components/display/Tag.jsx":"0a8cf9b3a7da","components/feedback/AlertBanner.jsx":"35630891733b","components/feedback/ConfirmDialog.jsx":"6c268323b817","components/feedback/EmptyState.jsx":"0cc5195f8321","components/feedback/ErrorState.jsx":"d1fb9a97acb1","components/feedback/InlineMessage.jsx":"1a767995ef24","components/feedback/LoadingOverlay.jsx":"4d6098571f5a","components/feedback/NotificationDrawer.jsx":"496171c759e3","components/feedback/ProgressBar.jsx":"fcde9d6c0e1c","components/feedback/Skeleton.jsx":"d28497fc3046","components/feedback/Spinner.jsx":"14b0ba99fd1e","components/feedback/Stepper.jsx":"0fc01832126c","components/feedback/Toast.jsx":"0b4667b1afb5","components/input/Checkbox.jsx":"d2f66190fbb5","components/input/CodeEditor.jsx":"e01d91a2b947","components/input/ColorInput.jsx":"1d211ade5a34","components/input/Combobox.jsx":"ac843aec2ca4","components/input/DatePicker.jsx":"9d3ccf19aa70","components/input/DateRangePicker.jsx":"2c9c9501ff0e","components/input/Dropzone.jsx":"cb7e534803a9","components/input/Field.jsx":"db496f6146e4","components/input/FileUpload.jsx":"b01ef069bb39","components/input/MultiSelect.jsx":"8852812cc859","components/input/NumberStepper.jsx":"b8e4f176e252","components/input/OTPInput.jsx":"9c6aa79c65dd","components/input/PasswordField.jsx":"fc4e47660183","components/input/RadioGroup.jsx":"8f6614181191","components/input/SearchField.jsx":"bed00c25c7f9","components/input/SegmentedControl.jsx":"8c8a0061f981","components/input/Select.jsx":"23fa266f4ce8","components/input/Slider.jsx":"919c77f5b95b","components/input/Switch.jsx":"4987aa99a72b","components/input/TextArea.jsx":"c876e585198f","components/input/TextField.jsx":"7fc617fee4f9","components/input/TimePicker.jsx":"1f10c3f68d72","components/layout/AspectRatio.jsx":"e2ae6d037775","components/layout/CardHead.jsx":"1d17c88765ab","components/layout/Container.jsx":"f21e0d25115f","components/layout/Divider.jsx":"d569b3cd4069","components/layout/Grid.jsx":"762064e97502","components/layout/Inline.jsx":"723a2506c7e6","components/layout/PageHeader.jsx":"8062828d5bc9","components/layout/PageStack.jsx":"9703e7450025","components/layout/Panel.jsx":"5055dfd4e67a","components/layout/Spacer.jsx":"1fe8d631b4a5","components/layout/Stack.jsx":"48ff38945a39","components/layout/StatusBar.jsx":"b25654bc2c4d","components/layout/Toolbar.jsx":"7ab182321833","components/layout/Visible.jsx":"a121f0c10d26","components/navigation/Breadcrumb.jsx":"8003c996b8e5","components/navigation/CommandPalette.jsx":"193b71d3f442","components/navigation/Link.jsx":"5ef8228d7f2b","components/navigation/Pagination.jsx":"39f6e665c398","components/navigation/SidebarShell.jsx":"51eaf628a8fb","components/navigation/Tabs.jsx":"b4cc236325a6","components/navigation/TopNav.jsx":"b2de719cb8b9","components/overlay/Drawer.jsx":"3f9a95d2ef70","components/overlay/DropdownMenu.jsx":"a4db0c288528","components/overlay/FormModal.jsx":"3453da04e7de","components/overlay/Modal.jsx":"c1fc3ab30750","components/overlay/Popover.jsx":"e6adf33f0008","components/overlay/Tooltip.jsx":"799517ec2a79","components/overlay/useModalDialog.js":"62d1a38e1428","theme-toggle.js":"0c924eb893f3"},"inlinedExternals":[],"unexposedExports":[{"name":"cx","sourcePath":"components/core/frame.js"},{"name":"DASHES","sourcePath":"components/data/chart-math.js"},{"name":"estWidth","sourcePath":"components/data/chart-math.js"},{"name":"fmtKo","sourcePath":"components/data/chart-math.js"},{"name":"frameStyle","sourcePath":"components/core/frame.js"},{"name":"histBins","sourcePath":"components/data/chart-math.js"},{"name":"isMissing","sourcePath":"components/core/missing.js"},{"name":"MISSING_CLASS","sourcePath":"components/core/missing.js"},{"name":"MISSING_TEXT","sourcePath":"components/core/missing.js"},{"name":"niceTicks","sourcePath":"components/data/chart-math.js"},{"name":"NOTIFICATION_DRAWER_ID","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"numeric","sourcePath":"components/core/missing.js"},{"name":"passwordStrength","sourcePath":"components/input/PasswordField.jsx"},{"name":"pathLength","sourcePath":"components/data/chart-math.js"},{"name":"r1","sourcePath":"components/data/chart-math.js"},{"name":"runsOf","sourcePath":"components/data/chart-math.js"},{"name":"seriesDash","sourcePath":"components/data/chart-math.js"},{"name":"smoothPath","sourcePath":"components/data/chart-math.js"},{"name":"spaceToken","sourcePath":"components/core/frame.js"},{"name":"stackBars","sourcePath":"components/data/chart-math.js"},{"name":"toneInk","sourcePath":"components/data/chart-math.js"},{"name":"toneVar","sourcePath":"components/data/chart-math.js"},{"name":"useAnchoredPopover","sourcePath":"components/core/useAnchoredPopover.js"},{"name":"useFieldContext","sourcePath":"components/input/Field.jsx"},{"name":"useModalDialog","sourcePath":"components/overlay/useModalDialog.js"},{"name":"useToast","sourcePath":"components/feedback/Toast.jsx"}]} */
 
 (() => {
 
@@ -662,8 +662,10 @@ try { (() => {
 const MISSING_TEXT = "수집 안 됨";
 /** 표기 스타일 선언은 styles/c-data.css의 한 블록에만 있다. */
 const MISSING_CLASS = "bds-na";
+/** @param {unknown} v */
 const isMissing = v => v == null || v === MISSING_TEXT || typeof v === "number" && Number.isNaN(v);
 /** 계산에 들어갈 값의 경계. 유한한 수가 아니면 결측(null)으로 만든다. 0과 음수는 값이다. */
+/** @param {unknown} v @returns {number | null} */
 const numeric = v => typeof v === "number" && Number.isFinite(v) ? v : null;
 Object.assign(__ds_scope, { MISSING_TEXT, MISSING_CLASS, isMissing, numeric });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/core/missing.js", error: String((e && e.message) || e) }); }
@@ -676,6 +678,7 @@ const useIsoLayoutEffect = typeof document === "undefined" ? useEffect : useLayo
 
 /** 비모달 메뉴의 배치 계약: DOM 소속은 유지하고 native popover로 clipping 밖 top layer에 표시한다.
  * fixed 좌표는 트리거·visual viewport에서 계산하고 스크롤/리사이즈 시 다시 맞춘다. */
+/** @param {{ open: boolean, anchorRef: { current: HTMLElement | null }, panelRef: { current: (HTMLElement & { showPopover(): void, hidePopover(): void }) | null }, align?: "start" | "end", onDismiss?: () => void }} options */
 function useAnchoredPopover({
   open,
   anchorRef,
@@ -696,7 +699,7 @@ function useAnchoredPopover({
       if (panel.matches(":popover-open")) panel.hidePopover();
       dismissRef.current?.();
     };
-    const toggled = event => {
+    const toggled = (/** @type {ToggleEvent} */event) => {
       if (event.newState === "closed") dismissRef.current?.();
     };
     owner?.addEventListener("close", dismiss);
@@ -975,7 +978,7 @@ Object.assign(__ds_scope, { Gauge });
 // components/data/Heatmap.jsx
 try { (() => {
 const { useId, useState } = React;
-const { cx, frameStyle, MISSING_CLASS, MISSING_TEXT, isMissing } = __ds_scope;
+const { cx, frameStyle, MISSING_CLASS, MISSING_TEXT, isMissing, numeric } = __ds_scope;
 /** 시간×요일 같은 2차원 강도 격자. 색은 --ramp-1~6 순차 램프만 쓴다(상태색 금지). 값 null은 빈 칸(수집 안 됨).
  *  격자는 tabIndex=0: 화살표로 셀 이동, Home/End 행 양끝, Esc 해제. 마우스 hover와 같은 아래 줄 텍스트가 뜬다. 숨김 표(bds-sr)가 aria-describedby로 연결된다.
  * @param {Parameters<typeof import("./Heatmap.d.ts").Heatmap>[0]} props
@@ -995,23 +998,35 @@ function Heatmap({
   className,
   style
 }) {
-  const [hover, setHover] = useState(null);
+  const [hoverRaw, setHover] = useState(/** @type {[number, number] | null} */null);
+  /* 좌표는 rows·cols 길이에 의존한다. 스트림이 줄면 이전 좌표가 범위를 벗어나므로
+     읽는 자리마다 막지 않고 렌더에서 한 번 걸러 낸다. */
+  const hover = hoverRaw && hoverRaw[0] < rows.length && hoverRaw[1] < cols.length ? hoverRaw : null;
   const srId = useId();
-  const flat = values.flat().filter(v => !isMissing(v));
+  const flat = /** @type {number[]} */values.flat().filter(v => !isMissing(v));
   const lo = flat.length ? Math.min(...flat) : 0,
     hi = flat.length ? Math.max(...flat) : 1;
-  const step = v => isMissing(v) ? 0 : Math.min(6, 1 + Math.floor((v - lo) / (hi - lo || 1) * 5.999));
+  /** @param {number | null} v */
+  const step = v => {
+    const n = numeric(v);
+    return n == null ? 0 : Math.min(6, 1 + Math.floor((n - lo) / (hi - lo || 1) * 5.999));
+  };
   const every = Math.max(1, Math.ceil(cols.length / 12));
-  const rl = r => rowLabel ? rowLabel(r) : r,
-    cl = c => colLabel ? colLabel(c) : c;
-  const fmt = (i, j) => isMissing(values[i]?.[j]) ? MISSING_TEXT : valueFormatter(values[i][j]);
+  /** @param {import("react").ReactNode} r */
+  const rl = r => rowLabel ? rowLabel(r) : r;
+  /** @param {import("react").ReactNode} c */
+  const cl = c => colLabel ? colLabel(c) : c;
+  /** @param {number} i @param {number} j */
+  const fmt = (i, j) => isMissing(values[i]?.[j]) ? MISSING_TEXT : valueFormatter(/** @type {number} */values[i][j]);
+  /** @param {import("react").KeyboardEvent<HTMLDivElement>} e */
   const onKey = e => {
     if (!rows.length || !cols.length) return;
     const [i, j] = hover ?? [0, -1];
+    /** @type {[number, number] | null | undefined} */
     let next;
     if (e.key === "ArrowRight") next = [i, Math.min(cols.length - 1, j + 1)];else if (e.key === "ArrowLeft") next = [i, Math.max(0, j - 1)];else if (e.key === "ArrowDown") next = [Math.min(rows.length - 1, hover ? i + 1 : 0), Math.max(0, j)];else if (e.key === "ArrowUp") next = [Math.max(0, i - 1), Math.max(0, j)];else if (e.key === "Home") next = [i, 0];else if (e.key === "End") next = [i, cols.length - 1];else if (e.key === "Escape") next = null;else return;
     e.preventDefault();
-    setHover(next);
+    setHover(next ?? null);
   };
   return /*#__PURE__*/React.createElement("div", {
     role: "img",
@@ -2111,10 +2126,9 @@ function Radar({
 
 /* ---------- 히스토그램 ---------- */
 /** 원시 표본(samples)을 bins개 구간으로 나눠 막대로. 분위선(p50/p95)은 thresholds처럼 세로 점선으로. 구간 계산은 chart-math.histBins(SR 표와 공유). */
-/** @param {{ samples: (number | null)[], bins?: number, fmt: Fmt, w: number, h: number, tone?: ChartTone, percentiles?: number[], unit?: string, animate?: boolean, hover: number | null, setHover: (i: number | null) => void }} props */
+/** @param {{ hist: ReturnType<typeof histBins>, fmt: Fmt, w: number, h: number, tone?: ChartTone, percentiles?: number[], unit?: string, animate?: boolean, hover: number | null, setHover: (i: number | null) => void }} props */
 function Histogram({
-  samples,
-  bins,
+  hist,
   fmt,
   w,
   h,
@@ -2125,7 +2139,7 @@ function Histogram({
   hover,
   setHover
 }) {
-  const b = histBins(samples, bins);
+  const b = hist;
   if (!b || w < 40) return null;
   const {
     xs,
@@ -2226,11 +2240,12 @@ function Histogram({
 
 /* ---------- 스크린리더 표 ---------- */
 /** 시각 차트와 같은 데이터를 표로. 항상 렌더(bds-sr로 숨김)하고 루트가 aria-describedby로 가리킨다. */
-/** @param {{ id: string, kind: NonNullable<NormProps["kind"]>, props: NormProps, fmt: Fmt }} props */
+/** @param {{ id: string, kind: NonNullable<NormProps["kind"]>, props: NormProps, bins: ReturnType<typeof histBins>, fmt: Fmt }} props */
 function SrTable({
   id,
   kind,
   props,
+  bins,
   fmt
 }) {
   let head = [],
@@ -2242,7 +2257,7 @@ function SrTable({
     head = props.label != null ? ["값", "상태"] : ["값"];
     rows = [[isMissing(props.value) ? MISSING_TEXT : fmt(Math.min(1, Math.max(0, props.value)))].concat(props.label != null ? [props.label] : [])];
   } else if (kind === "histogram") {
-    const b = histBins(props.samples, props.bins);
+    const b = bins;
     head = ["구간", "표본"];
     rows = b ? b.counts.map((c, i) => [`${fmt(b.lo + i / b.n * b.span)}~${fmt(b.lo + (i + 1) / b.n * b.span)}${props.unit ?? ""}`, `${c}건`]) : [];
   } else {
@@ -2307,31 +2322,40 @@ function Chart(rawProps) {
   const uid = useId().replace(/:/g, "");
   const srId = `${uid}-sr`;
   const ref = useRef(null);
-  const [hover, setHover] = useState(null);
+  const [hoverRaw, setHover] = useState(/** @type {number | null} */null);
   const h = height ?? DEFAULT_H[kind];
   const size = useSize(ref, fit === "fixed" ? Number(width) : undefined, Number(h));
   const anim = useAnimateOnce(animate && !live);
   const w = fit === "fixed" && typeof width === "number" ? width : size.w;
   const lineKind = kind === "line" || kind === "area";
-  let body = null,
-    hasData = false,
-    legend = [],
-    count = 0;
+  /* 표본 구간은 렌더당 한 번만 계산해 Histogram·SrTable·count 가 같은 결과를 쓴다. */
+  const bins = kind === "histogram" ? histBins(props.samples, props.bins) : null;
+  const count = kind === "pie" ? (props.segments ?? []).length : kind === "histogram" ? bins ? bins.n : 0 : kind === "radar" ? (props.axes ?? []).length : kind === "radial" ? 0 : (props.labels ?? []).length;
+  /* hover 는 count 에 대한 인덱스다. 스트림이 줄면 이전 인덱스가 범위를 벗어나 툴팁과 커서가
+     플롯 밖에 남으므로, 읽는 자리마다 막지 않고 렌더에서 한 번 거른다. */
+  const hover = hoverRaw != null && hoverRaw < count ? hoverRaw : null;
+  /** @type {import("react").ReactNode} */
+  let body = null;
+  let hasData = false;
+  /** @type {Parameters<typeof Legend>[0]["items"]} */
+  let legend = [];
   if (showLegend) {
     if (kind === "pie") legend = (props.segments ?? []).map((sg, i) => ({
       color: toneVar(sg.tone, i),
       label: sg.label,
       value: cell(valueFormatter, sg.value == null ? null : Math.max(0, sg.value))
-    }));else if (kind !== "radial" && (props.series ?? []).length > 1) legend = props.series.map((sr, i) => ({
-      color: toneVar(sr.tone, i),
-      label: sr.label,
-      shape: lineKind ? "line" : "square",
-      dash: lineKind ? seriesDash(sr, i, props.series.length) : undefined
-    }));
+    }));else if (kind !== "radial") {
+      const list = props.series ?? [];
+      if (list.length > 1) legend = list.map((sr, i) => ({
+        color: toneVar(sr.tone, i),
+        label: sr.label,
+        shape: lineKind ? "line" : "square",
+        dash: lineKind ? seriesDash(sr, i, list.length) : undefined
+      }));
+    }
   }
   if (kind === "pie") {
-    hasData = (props.segments ?? []).some(s => s.value > 0);
-    count = (props.segments ?? []).length;
+    hasData = (props.segments ?? []).some(s => (s.value ?? 0) > 0);
     body = /*#__PURE__*/React.createElement(Pie, {
       segments: props.segments ?? [],
       fmt: valueFormatter,
@@ -2353,12 +2377,9 @@ function Chart(rawProps) {
       animate: animate && !live
     });
   } else if (kind === "histogram") {
-    const b = histBins(props.samples, props.bins);
-    hasData = !!b;
-    count = b ? b.n : 0;
+    hasData = !!bins;
     body = /*#__PURE__*/React.createElement(Histogram, {
-      samples: props.samples ?? [],
-      bins: props.bins,
+      hist: bins,
       tone: props.tone,
       percentiles: props.percentiles ?? [],
       unit: props.unit,
@@ -2370,8 +2391,8 @@ function Chart(rawProps) {
       setHover: setHover
     });
   } else if (kind === "radar") {
-    hasData = (props.axes ?? []).length >= 3 && (props.series ?? []).some(s => props.axes.some((_, i) => s.values[i] != null));
-    count = (props.axes ?? []).length;
+    const axes = props.axes ?? [];
+    hasData = axes.length >= 3 && (props.series ?? []).some(s => axes.some((_, i) => s.values[i] != null));
     body = /*#__PURE__*/React.createElement(Radar, {
       axes: props.axes ?? [],
       series: props.series ?? [],
@@ -2384,7 +2405,6 @@ function Chart(rawProps) {
     });
   } else {
     hasData = (props.labels ?? []).length > 0 && (props.series ?? []).some(s => s.values.some(v => v != null));
-    count = (props.labels ?? []).length;
     body = /*#__PURE__*/React.createElement(Cartesian, {
       kind: kind,
       labels: props.labels ?? [],
@@ -2402,12 +2422,14 @@ function Chart(rawProps) {
       setHover: setHover
     });
   }
+  /** @param {import("react").KeyboardEvent<HTMLDivElement>} e */
   const onKey = e => {
     if (!count) return;
+    /** @type {number | null | undefined} */
     let next;
     if (e.key === "ArrowRight") next = hover == null ? 0 : Math.min(count - 1, hover + 1);else if (e.key === "ArrowLeft") next = hover == null ? count - 1 : Math.max(0, hover - 1);else if (e.key === "Home") next = 0;else if (e.key === "End") next = count - 1;else if (e.key === "Escape") next = null;else return;
     e.preventDefault();
-    setHover(next);
+    setHover(next ?? null);
   };
   return /*#__PURE__*/React.createElement("div", {
     role: "img",
@@ -2438,6 +2460,7 @@ function Chart(rawProps) {
     id: srId,
     kind: kind,
     props: props,
+    bins: bins,
     fmt: valueFormatter
   }), hasData && legend.length > 0 && /*#__PURE__*/React.createElement(Legend, {
     items: legend,
@@ -6612,7 +6635,10 @@ Object.assign(__ds_scope, { Tooltip });
 try { (() => {
 const { useEffect } = React;
 // Share the body lock across nested dialogs, including dialogs closed out of order.
+/** @typedef {{ dialog: HTMLDialogElement, opener: HTMLElement | null }} DialogEntry */
+/** @type {WeakMap<Document, { entries: DialogEntry[], overflow: string }>} */
 const sessions = new WeakMap();
+/** @param {{ current: HTMLDialogElement | null }} panel @param {boolean} open */
 function useModalDialog(panel, open) {
   useEffect(() => {
     const dialog = panel.current;
@@ -6628,7 +6654,7 @@ function useModalDialog(panel, open) {
     }
     const entry = {
       dialog,
-      opener: doc.activeElement
+      opener: (/** @type {HTMLElement | null} */doc.activeElement)
     };
     state.entries.push(entry);
     doc.body.style.overflow = "hidden";
@@ -6642,7 +6668,8 @@ function useModalDialog(panel, open) {
         if (dialog.contains(item.opener)) item.opener = entry.opener;
       }
       // Native manual popovers are separate top-layer entries; end their child sessions first.
-      dialog.querySelectorAll('[popover]:popover-open').forEach(popover => popover.hidePopover());
+      /** @type {NodeListOf<HTMLElement>} */
+      dialog.querySelectorAll("[popover]:popover-open").forEach(popover => popover.hidePopover());
       if (dialog.open) dialog.close();
       const remaining = state.entries.at(-1)?.dialog;
       if (!remaining) {

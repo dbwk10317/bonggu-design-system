@@ -213,9 +213,9 @@ function Radar({ axes, series, max, fmt, w, h, hover, setHover }) {
 
 /* ---------- 히스토그램 ---------- */
 /** 원시 표본(samples)을 bins개 구간으로 나눠 막대로. 분위선(p50/p95)은 thresholds처럼 세로 점선으로. 구간 계산은 chart-math.histBins(SR 표와 공유). */
-/** @param {{ samples: (number | null)[], bins?: number, fmt: Fmt, w: number, h: number, tone?: ChartTone, percentiles?: number[], unit?: string, animate?: boolean, hover: number | null, setHover: (i: number | null) => void }} props */
-function Histogram({ samples, bins, fmt, w, h, tone, percentiles = [], unit, animate, hover, setHover }) {
-  const b = histBins(samples, bins);
+/** @param {{ hist: ReturnType<typeof histBins>, fmt: Fmt, w: number, h: number, tone?: ChartTone, percentiles?: number[], unit?: string, animate?: boolean, hover: number | null, setHover: (i: number | null) => void }} props */
+function Histogram({ hist, fmt, w, h, tone, percentiles = [], unit, animate, hover, setHover }) {
+  const b = hist;
   if (!b || w < 40) return null;
   const { xs, lo, span, n, counts } = b;
   const max = Math.max(...counts);
@@ -241,12 +241,12 @@ function Histogram({ samples, bins, fmt, w, h, tone, percentiles = [], unit, ani
 
 /* ---------- 스크린리더 표 ---------- */
 /** 시각 차트와 같은 데이터를 표로. 항상 렌더(bds-sr로 숨김)하고 루트가 aria-describedby로 가리킨다. */
-/** @param {{ id: string, kind: NonNullable<NormProps["kind"]>, props: NormProps, fmt: Fmt }} props */
-function SrTable({ id, kind, props, fmt }) {
+/** @param {{ id: string, kind: NonNullable<NormProps["kind"]>, props: NormProps, bins: ReturnType<typeof histBins>, fmt: Fmt }} props */
+function SrTable({ id, kind, props, bins, fmt }) {
   let head = [], rows = [];
   if (kind === "pie") { head = ["항목", "값"]; rows = (props.segments ?? []).map((sg) => [sg.label, cell(fmt, sg.value == null ? null : Math.max(0, sg.value))]); }
   else if (kind === "radial") { head = props.label != null ? ["값", "상태"] : ["값"]; rows = [[isMissing(props.value) ? MISSING_TEXT : fmt(Math.min(1, Math.max(0, props.value)))].concat(props.label != null ? [props.label] : [])]; }
-  else if (kind === "histogram") { const b = histBins(props.samples, props.bins); head = ["구간", "표본"]; rows = b ? b.counts.map((c, i) => [`${fmt(b.lo + (i / b.n) * b.span)}~${fmt(b.lo + ((i + 1) / b.n) * b.span)}${props.unit ?? ""}`, `${c}건`]) : []; }
+  else if (kind === "histogram") { const b = bins; head = ["구간", "표본"]; rows = b ? b.counts.map((c, i) => [`${fmt(b.lo + (i / b.n) * b.span)}~${fmt(b.lo + ((i + 1) / b.n) * b.span)}${props.unit ?? ""}`, `${c}건`]) : []; }
   else { const cols = kind === "radar" ? (props.axes ?? []) : (props.labels ?? []); head = ["계열"].concat(cols); rows = (props.series ?? []).map((s) => [s.label].concat(cols.map((_, i) => cell(fmt, s.values[i])))); }
   // 표는 내용 폭을 따라 늘어나 width:1px을 무시한다. 숨김은 블록 래퍼가 맡아야 문서 가로 넘침이 나지 않는다.
   return (
@@ -277,24 +277,40 @@ export function Chart(rawProps) {
   const uid = useId().replace(/:/g, "");
   const srId = `${uid}-sr`;
   const ref = useRef(null);
-  const [hover, setHover] = useState(null);
+  const [hoverRaw, setHover] = useState(/** @type {number | null} */ (null));
   const h = height ?? DEFAULT_H[kind];
   const size = useSize(ref, fit === "fixed" ? Number(width) : undefined, Number(h));
   const anim = useAnimateOnce(animate && !live);
   const w = fit === "fixed" && typeof width === "number" ? width : size.w;
   const lineKind = kind === "line" || kind === "area";
-  let body = null, hasData = false, legend = [], count = 0;
+  /* 표본 구간은 렌더당 한 번만 계산해 Histogram·SrTable·count 가 같은 결과를 쓴다. */
+  const bins = kind === "histogram" ? histBins(props.samples, props.bins) : null;
+  const count = kind === "pie" ? (props.segments ?? []).length
+    : kind === "histogram" ? (bins ? bins.n : 0)
+    : kind === "radar" ? (props.axes ?? []).length
+    : kind === "radial" ? 0
+    : (props.labels ?? []).length;
+  /* hover 는 count 에 대한 인덱스다. 스트림이 줄면 이전 인덱스가 범위를 벗어나 툴팁과 커서가
+     플롯 밖에 남으므로, 읽는 자리마다 막지 않고 렌더에서 한 번 거른다. */
+  const hover = hoverRaw != null && hoverRaw < count ? hoverRaw : null;
+  /** @type {import("react").ReactNode} */
+  let body = null;
+  let hasData = false;
+  /** @type {Parameters<typeof Legend>[0]["items"]} */
+  let legend = [];
   if (showLegend) {
     if (kind === "pie") legend = (props.segments ?? []).map((sg, i) => ({ color: toneVar(sg.tone, i), label: sg.label, value: cell(valueFormatter, sg.value == null ? null : Math.max(0, sg.value)) }));
-    else if (kind !== "radial" && (props.series ?? []).length > 1) legend = props.series.map((sr, i) => ({ color: toneVar(sr.tone, i), label: sr.label, shape: lineKind ? "line" : "square", dash: lineKind ? seriesDash(sr, i, props.series.length) : undefined }));
+    else if (kind !== "radial") { const list = props.series ?? []; if (list.length > 1) legend = list.map((sr, i) => ({ color: toneVar(sr.tone, i), label: sr.label, shape: lineKind ? "line" : "square", dash: lineKind ? seriesDash(sr, i, list.length) : undefined })); }
   }
-  if (kind === "pie") { hasData = (props.segments ?? []).some((s) => s.value > 0); count = (props.segments ?? []).length; body = <Pie segments={props.segments ?? []} fmt={valueFormatter} caption={props.caption} w={w} h={h} hover={hover} setHover={setHover} />; }
+  if (kind === "pie") { hasData = (props.segments ?? []).some((s) => (s.value ?? 0) > 0); body = <Pie segments={props.segments ?? []} fmt={valueFormatter} caption={props.caption} w={w} h={h} hover={hover} setHover={setHover} />; }
   else if (kind === "radial") { hasData = props.value != null; body = <Radial value={props.value ?? 0} label={props.label} tone={props.tone} fmt={valueFormatter} w={w} h={h} animate={animate && !live} />; }
-  else if (kind === "histogram") { const b = histBins(props.samples, props.bins); hasData = !!b; count = b ? b.n : 0; body = <Histogram samples={props.samples ?? []} bins={props.bins} tone={props.tone} percentiles={props.percentiles ?? []} unit={props.unit} fmt={valueFormatter} w={w} h={h} animate={anim} hover={hover} setHover={setHover} />; }
-  else if (kind === "radar") { hasData = (props.axes ?? []).length >= 3 && (props.series ?? []).some((s) => props.axes.some((_, i) => s.values[i] != null)); count = (props.axes ?? []).length; body = <Radar axes={props.axes ?? []} series={props.series ?? []} max={props.max} fmt={valueFormatter} w={w} h={h} hover={hover} setHover={setHover} />; }
-  else { hasData = (props.labels ?? []).length > 0 && (props.series ?? []).some((s) => s.values.some((v) => v != null)); count = (props.labels ?? []).length; body = <Cartesian kind={kind} labels={props.labels ?? []} series={props.series ?? []} fmt={valueFormatter} uid={uid} xTicks={props.xTicks ?? "auto"} w={w} h={h} thresholds={props.thresholds} stacked={props.stacked} yMin={props.yMin} yMax={props.yMax} hover={hover} setHover={setHover} />; }
+  else if (kind === "histogram") { hasData = !!bins; body = <Histogram hist={bins} tone={props.tone} percentiles={props.percentiles ?? []} unit={props.unit} fmt={valueFormatter} w={w} h={h} animate={anim} hover={hover} setHover={setHover} />; }
+  else if (kind === "radar") { const axes = props.axes ?? []; hasData = axes.length >= 3 && (props.series ?? []).some((s) => axes.some((_, i) => s.values[i] != null)); body = <Radar axes={props.axes ?? []} series={props.series ?? []} max={props.max} fmt={valueFormatter} w={w} h={h} hover={hover} setHover={setHover} />; }
+  else { hasData = (props.labels ?? []).length > 0 && (props.series ?? []).some((s) => s.values.some((v) => v != null)); body = <Cartesian kind={kind} labels={props.labels ?? []} series={props.series ?? []} fmt={valueFormatter} uid={uid} xTicks={props.xTicks ?? "auto"} w={w} h={h} thresholds={props.thresholds} stacked={props.stacked} yMin={props.yMin} yMax={props.yMax} hover={hover} setHover={setHover} />; }
+  /** @param {import("react").KeyboardEvent<HTMLDivElement>} e */
   const onKey = (e) => {
     if (!count) return;
+    /** @type {number | null | undefined} */
     let next;
     if (e.key === "ArrowRight") next = hover == null ? 0 : Math.min(count - 1, hover + 1);
     else if (e.key === "ArrowLeft") next = hover == null ? count - 1 : Math.max(0, hover - 1);
@@ -302,12 +318,12 @@ export function Chart(rawProps) {
     else if (e.key === "End") next = count - 1;
     else if (e.key === "Escape") next = null;
     else return;
-    e.preventDefault(); setHover(next);
+    e.preventDefault(); setHover(next ?? null);
   };
   return (
     <div role="img" aria-label={ariaLabel ?? "차트"} aria-describedby={srId} className={cx("bds-chart", `bds-chart--${kind}`, anim && "bds-chart--animate", className)} style={frameStyle({ fit, width, style })}>
       {hasData ? <div ref={ref} className="bds-chart__stage" style={{ height: h }} tabIndex={0} onKeyDown={onKey} onBlur={() => setHover(null)}>{w > 0 && body}</div> : <div id={srId} className="bds-chart__empty" style={{ height: h }}>{emptyText}</div>}
-      {hasData && <SrTable id={srId} kind={kind} props={props} fmt={valueFormatter} />}
+      {hasData && <SrTable id={srId} kind={kind} props={props} bins={bins} fmt={valueFormatter} />}
       {hasData && legend.length > 0 && <Legend items={legend} compact />}
     </div>
   );

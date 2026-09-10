@@ -1,7 +1,10 @@
 import { useEffect } from "react";
 
 // Share the body lock across nested dialogs, including dialogs closed out of order.
+/** @typedef {{ dialog: HTMLDialogElement, opener: HTMLElement | null }} DialogEntry */
+/** @type {WeakMap<Document, { entries: DialogEntry[], overflow: string }>} */
 const sessions = new WeakMap();
+/** @param {{ current: HTMLDialogElement | null }} panel @param {boolean} open */
 export function useModalDialog(panel, open) {
   useEffect(() => {
     const dialog = panel.current;
@@ -12,7 +15,7 @@ export function useModalDialog(panel, open) {
       state = { entries: [], overflow: doc.body.style.overflow };
       sessions.set(doc, state);
     }
-    const entry = { dialog, opener: doc.activeElement };
+    const entry = { dialog, opener: /** @type {HTMLElement | null} */ (doc.activeElement) };
     state.entries.push(entry);
     doc.body.style.overflow = "hidden";
     if (!dialog.open) dialog.showModal();
@@ -25,7 +28,7 @@ export function useModalDialog(panel, open) {
         if (dialog.contains(item.opener)) item.opener = entry.opener;
       }
       // Native manual popovers are separate top-layer entries; end their child sessions first.
-      dialog.querySelectorAll('[popover]:popover-open').forEach((popover) => popover.hidePopover());
+      /** @type {NodeListOf<HTMLElement>} */ (dialog.querySelectorAll("[popover]:popover-open")).forEach((popover) => popover.hidePopover());
       if (dialog.open) dialog.close();
       const remaining = state.entries.at(-1)?.dialog;
       if (!remaining) {

@@ -5,6 +5,7 @@ const useIsoLayoutEffect = typeof document === "undefined" ? useEffect : useLayo
 
 /** 비모달 메뉴의 배치 계약: DOM 소속은 유지하고 native popover로 clipping 밖 top layer에 표시한다.
  * fixed 좌표는 트리거·visual viewport에서 계산하고 스크롤/리사이즈 시 다시 맞춘다. */
+/** @param {{ open: boolean, anchorRef: { current: HTMLElement | null }, panelRef: { current: (HTMLElement & { showPopover(): void, hidePopover(): void }) | null }, align?: "start" | "end", onDismiss?: () => void }} options */
 export function useAnchoredPopover({ open, anchorRef, panelRef, align = "end", onDismiss }) {
   const dismissRef = useRef(onDismiss);
   dismissRef.current = onDismiss;
@@ -15,7 +16,7 @@ export function useAnchoredPopover({ open, anchorRef, panelRef, align = "end", o
     // A manual popover is a child interaction session, never longer-lived than its owning dialog.
     const owner = anchor.closest('dialog');
     const dismiss = () => { if (panel.matches(":popover-open")) panel.hidePopover(); dismissRef.current?.(); };
-    const toggled = (event) => { if (event.newState === "closed") dismissRef.current?.(); };
+    const toggled = (/** @type {ToggleEvent} */ event) => { if (event.newState === "closed") dismissRef.current?.(); };
     owner?.addEventListener("close", dismiss);
     panel.addEventListener("toggle", toggled);
     const place = () => {

@@ -1,23 +1,33 @@
 import React, { useId, useState } from "react";
 import { cx, frameStyle } from "../core/frame.js";
-import { MISSING_CLASS, MISSING_TEXT, isMissing } from "../core/missing.js";
+import { MISSING_CLASS, MISSING_TEXT, isMissing, numeric } from "../core/missing.js";
 
 /** 시간×요일 같은 2차원 강도 격자. 색은 --ramp-1~6 순차 램프만 쓴다(상태색 금지). 값 null은 빈 칸(수집 안 됨).
  *  격자는 tabIndex=0: 화살표로 셀 이동, Home/End 행 양끝, Esc 해제. 마우스 hover와 같은 아래 줄 텍스트가 뜬다. 숨김 표(bds-sr)가 aria-describedby로 연결된다.
  * @param {Parameters<typeof import("./Heatmap.d.ts").Heatmap>[0]} props
  */
 export function Heatmap({ rows = [], cols = [], values = [], valueFormatter = (v) => String(v), rowLabel, colLabel, cell = 14, gap = 2, fit = "flex", width, "aria-label": ariaLabel, className, style }) {
-  const [hover, setHover] = useState(null);
+  const [hoverRaw, setHover] = useState(/** @type {[number, number] | null} */ (null));
+  /* 좌표는 rows·cols 길이에 의존한다. 스트림이 줄면 이전 좌표가 범위를 벗어나므로
+     읽는 자리마다 막지 않고 렌더에서 한 번 걸러 낸다. */
+  const hover = hoverRaw && hoverRaw[0] < rows.length && hoverRaw[1] < cols.length ? hoverRaw : null;
   const srId = useId();
-  const flat = values.flat().filter((v) => !isMissing(v));
+  const flat = /** @type {number[]} */ (values.flat().filter((v) => !isMissing(v)));
   const lo = flat.length ? Math.min(...flat) : 0, hi = flat.length ? Math.max(...flat) : 1;
-  const step = (v) => (isMissing(v) ? 0 : Math.min(6, 1 + Math.floor(((v - lo) / (hi - lo || 1)) * 5.999)));
+  /** @param {number | null} v */
+  const step = (v) => { const n = numeric(v); return n == null ? 0 : Math.min(6, 1 + Math.floor(((n - lo) / (hi - lo || 1)) * 5.999)); };
   const every = Math.max(1, Math.ceil(cols.length / 12));
-  const rl = (r) => (rowLabel ? rowLabel(r) : r), cl = (c) => (colLabel ? colLabel(c) : c);
-  const fmt = (i, j) => (isMissing(values[i]?.[j]) ? MISSING_TEXT : valueFormatter(values[i][j]));
+  /** @param {import("react").ReactNode} r */
+  const rl = (r) => (rowLabel ? rowLabel(r) : r);
+  /** @param {import("react").ReactNode} c */
+  const cl = (c) => (colLabel ? colLabel(c) : c);
+  /** @param {number} i @param {number} j */
+  const fmt = (i, j) => (isMissing(values[i]?.[j]) ? MISSING_TEXT : valueFormatter(/** @type {number} */ (values[i][j])));
+  /** @param {import("react").KeyboardEvent<HTMLDivElement>} e */
   const onKey = (e) => {
     if (!rows.length || !cols.length) return;
     const [i, j] = hover ?? [0, -1];
+    /** @type {[number, number] | null | undefined} */
     let next;
     if (e.key === "ArrowRight") next = [i, Math.min(cols.length - 1, j + 1)];
     else if (e.key === "ArrowLeft") next = [i, Math.max(0, j - 1)];
@@ -27,7 +37,7 @@ export function Heatmap({ rows = [], cols = [], values = [], valueFormatter = (v
     else if (e.key === "End") next = [i, cols.length - 1];
     else if (e.key === "Escape") next = null;
     else return;
-    e.preventDefault(); setHover(next);
+    e.preventDefault(); setHover(next ?? null);
   };
   return (
     <div role="img" aria-label={ariaLabel} aria-describedby={srId} className={cx("bds-heat", className)} style={frameStyle({ fit, width, style: { "--cell": `${cell}px`, "--gap": `${gap}px`, "--cols": cols.length, ...style } })}>
