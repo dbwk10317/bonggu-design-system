@@ -2,7 +2,7 @@ import React from "react";
 import { cx } from "../core/frame.js";
 
 const SZ = { xs: 20, sm: 24, md: 32, lg: 40, xl: 56 };
-const initials = (n) => { if (!n) return "?"; const s = n.trim(); return /^[가-힣]/.test(s) ? s.slice(-2) : s.split(/\s+/).map((w) => w[0]).join("").slice(0, 2).toUpperCase(); };
+const initials = (n) => { if (!n) return "?"; const s = n.trim(); return /^[\uAC00-\uD7A3]/.test(s) ? s.slice(-2) : s.split(/\s+/).map((w) => w[0]).join("").slice(0, 2).toUpperCase(); };
 const STATUS = { ok: "정상", warn: "주의", crit: "위험", off: "오프라인" };
 
 /** 사용자·서비스 아바타. src 없으면 이름 이니셜(한글은 뒤 두 글자). status로 온라인 점(접근 가능한 이름에 텍스트로 병기). */
