@@ -29,6 +29,7 @@ dialog.bds-modal__panel::backdrop{background:var(--scrim);animation:bds-fade var
 .bds-drawer__list{overflow:auto;flex:1;padding:6px}
 .bds-notif{display:grid;grid-template-columns:auto minmax(0,1fr);gap:2px 10px;width:100%;padding:10px 12px;border:0;border-radius:var(--radius-ctl);background:transparent;text-align:left;color:var(--ink);transition:background var(--dur-fast) var(--ease-out)}
 .bds-notif:hover{background:var(--panel-2)}
+.bds-notif:active{background:var(--panel-3)}
 .bds-notif__dot{width:8px;height:8px;border-radius:50%;background:var(--neutral);margin-top:6px;grid-row:1/span 2}
 .bds-notif__t{font-size:var(--fs-label);font-weight:var(--fw-medium)}
 .bds-notif__d{font-size:var(--fs-caption);color:var(--ink-3);line-height:var(--lh-snug)}

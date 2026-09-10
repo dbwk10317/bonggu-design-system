@@ -27,9 +27,11 @@
 .bds-crumb [aria-current]{color:var(--ink);font-weight:var(--fw-medium)}
 .bds-crumb__sep{color:var(--ink-muted)}
 .bds-crumb__more{border:0;background:transparent;color:var(--ink-3);padding:0 4px;min-height:24px;min-width:24px;border-radius:4px;display:inline-grid;place-items:center}.bds-crumb__more:hover{background:var(--panel-2);color:var(--ink)}
+.bds-crumb__more:active{background:var(--panel-3)}
 .bds-pager{display:flex;align-items:center;gap:4px;flex-wrap:wrap;min-width:0}
 .bds-pager__pg{min-width:var(--h-ctl-sm);height:var(--h-ctl-sm);padding:0 6px;border:1px solid transparent;border-radius:var(--radius-ctl);background:transparent;color:var(--ink-2);font-family:var(--font-data);font-size:var(--fs-label);font-variant-numeric:tabular-nums}
 .bds-pager__pg:hover:not(:disabled){background:var(--panel-2);color:var(--ink)}
+.bds-pager__pg:not(:disabled):active{background:var(--panel-3)}
 .bds-pager__pg:disabled{opacity:.4;cursor:not-allowed}
 .bds-pager__pg[aria-current="page"]{background:var(--signal-tint);color:var(--signal-ink);font-weight:var(--fw-bold)}
 .bds-pager__gap{color:var(--ink-muted);padding:0 2px;font-family:var(--font-data)}
@@ -41,6 +43,7 @@
 .bds-topnav__links::-webkit-scrollbar{display:none}
 .bds-topnav__link{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 10px;border-radius:var(--radius-ctl);color:var(--ink-2);font-size:var(--fs-label);font-weight:var(--fw-medium);white-space:nowrap;text-decoration:none;border:0;background:transparent}
 .bds-topnav__link:hover{background:var(--panel-2);color:var(--ink);text-decoration:none}
+.bds-topnav__link:active{background:var(--panel-3)}
 .bds-topnav__link[aria-current="page"]{background:var(--signal-tint);color:var(--signal-ink)}
 .bds-topnav__end{display:flex;align-items:center;gap:var(--inline-gap);margin-left:auto;flex:none}
 /* 팔레트 본체는 네이티브 <dialog>다. 위치·스크림·top layer를 UA가 맡는다. inline은 문서용 래퍼다. */
@@ -85,6 +88,7 @@ dialog.bds-cmdk__panel::backdrop{background:var(--scrim);animation:bds-fade var(
 .bds-acc__item+.bds-acc__item{border-top:1px solid var(--line)}
 .bds-acc__hd{display:flex;align-items:center;gap:10px;width:100%;padding:12px 14px;border:0;background:transparent;color:var(--ink);font-size:var(--fs-subheading);font-weight:var(--fw-medium);text-align:left;min-height:var(--h-touch)}
 .bds-acc__hd:hover{background:var(--panel-2)}
+.bds-acc__hd:active{background:var(--panel-3)}
 .bds-acc__chev{margin-left:auto;color:var(--ink-3);transition:transform var(--dur-base) var(--ease-out)}
 .bds-acc__hd[aria-expanded="true"] .bds-acc__chev{transform:rotate(180deg)}
 .bds-acc__meta{color:var(--ink-3);font-size:var(--fs-caption);font-weight:var(--fw-regular);margin-left:auto}
@@ -105,6 +109,7 @@ dialog.bds-cmdk__panel::backdrop{background:var(--scrim);animation:bds-fade var(
 .bds-radiogrp__hint{font-size:var(--fs-caption);color:var(--ink-3);margin-left:26px;line-height:var(--lh-snug)}
 .bds-radiocard{display:grid;grid-template-columns:auto minmax(0,1fr);gap:0 10px;align-items:start;padding:10px 12px;border:1px solid var(--line);border-radius:var(--radius-panel);cursor:pointer;background:var(--panel);transition:border-color var(--dur-fast) var(--ease-out)}
 .bds-radiocard:hover{border-color:var(--line-strong)}
+.bds-radiocard:active{background:var(--panel-3)}
 .bds-radiocard:has(input:checked){border-color:var(--signal);box-shadow:0 0 0 1px var(--signal)}
 .bds-radiocard .bds-check{grid-row:1/span 2;min-height:0;margin-top:1px}
 .bds-radiocard b{font-size:var(--fs-label);font-weight:var(--fw-medium);color:var(--ink)}.bds-radiocard small{font-size:var(--fs-caption);color:var(--ink-3);line-height:var(--lh-snug)}
@@ -117,6 +122,7 @@ dialog.bds-cmdk__panel::backdrop{background:var(--scrim);animation:bds-fade var(
 .bds-cal__dow{font-size:var(--fs-caption);color:var(--ink-3);padding:4px 0}
 .bds-cal__d{height:32px;border:0;border-radius:var(--radius-ctl);background:transparent;color:var(--ink);font-family:var(--font-data);font-size:var(--fs-label);font-variant-numeric:tabular-nums}
 .bds-cal__d:hover:not(:disabled){background:var(--panel-2)}
+.bds-cal__d:not(:disabled):active{background:var(--panel-3)}
 .bds-cal__d--out{color:var(--ink-muted)}.bds-cal__d--today{box-shadow:inset 0 0 0 1px var(--line-strong)}
 .bds-cal__d[aria-selected="true"]{background:var(--signal);color:var(--signal-fg)}
 .bds-cal__d:disabled{opacity:.35;cursor:not-allowed}
@@ -137,6 +143,7 @@ dialog.bds-cmdk__panel::backdrop{background:var(--scrim);animation:bds-fade var(
 .bds-pw__meter[data-level="1"] i:nth-child(-n+1){background:var(--crit)}.bds-pw__meter[data-level="2"] i:nth-child(-n+2){background:var(--warn)}.bds-pw__meter[data-level="3"] i:nth-child(-n+3){background:var(--ok)}.bds-pw__meter[data-level="4"] i{background:var(--ok)}
 .bds-pw__lv{font-size:var(--fs-caption);color:var(--ink-3)}
 .bds-pw__eye{border:0;background:transparent;color:var(--ink-3);padding:0;display:inline-grid;place-items:center;width:24px;height:24px;border-radius:4px;margin-right:-6px}.bds-pw__eye:hover{color:var(--ink);background:var(--panel-2)}
+.bds-pw__eye:active{background:var(--panel-3)}
 /* ---- InlineMessage · LoadingOverlay · ConfirmDialog · ErrorState ---- */
 .bds-msg{display:flex;gap:6px;align-items:flex-start;font-size:var(--fs-caption);line-height:var(--lh-snug);color:var(--ink-2)}
 .bds-msg .bds-icon{margin-top:1px;flex:none}

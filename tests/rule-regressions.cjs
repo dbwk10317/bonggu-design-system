@@ -539,6 +539,34 @@ function dataGraphicA11yViolations() {
   }
   return violations;
 }
+/* readme 상호작용 절: 호버는 한 단계(--panel-2), 프레스는 두 단계(--panel-3).
+   눌러서 동작하는 표면은 둘을 짝으로 낸다. 짝이 없으면 터치 기기에서 아무 반응이 없다. */
+const HIGHLIGHT_ONLY = new Map([
+  ['.bds-table tbody tr td', '표 행은 강조만 한다. 선택은 행 안의 체크박스가 받는다'],
+  ['.bds-log__line', '로그 줄은 강조만 한다'],
+  ['.bds-ctl--select option', '네이티브 select 항목이라 :active를 신뢰할 수 없다'],
+]);
+function pressStateViolations() {
+  const violations = [];
+  for (const file of walk('styles').filter((name) => name.endsWith('.css'))) {
+    const css = withoutComments(read(file));
+    const rules = cssRuleBodies(css);
+    const norm = (sel) => sel.split(',')[0].replace(/:hover|:active/g, '').replace(/\s+/g, ' ').trim();
+    const actives = new Set(rules.filter((rule) => rule.selector.includes(':active')).map((rule) => norm(rule.selector)));
+    for (const rule of rules) {
+      const sel = rule.selector.trim();
+      if (!sel.includes(':hover') || !/(^|[;{\s])background\s*:/.test(rule.body)) continue;
+      if (/var\(--panel-3\)/.test(rule.body)) {
+        violations.push({ file, line: lineOf(css, rule.at), detail: `호버가 두 단계(--panel-3)까지 감: ${sel}` });
+      }
+      const base = norm(sel);
+      if (HIGHLIGHT_ONLY.has(base)) continue;
+      const paired = actives.has(base);
+      if (!paired) violations.push({ file, line: lineOf(css, rule.at), detail: `호버만 있고 프레스가 없음: ${base}` });
+    }
+  }
+  return violations;
+}
 function componentVisualContractViolations() {
   const violations = [];
   const layoutFile = 'styles/c-layout.css';
@@ -615,6 +643,7 @@ const checks = [
   ['가이드 카드 구조', guideCardStructureViolations(), '공통 검수 밀도를 쓰고 각 컴포넌트 이름을 해당 예제의 라벨에 둡니다. 삽입된 카드는 자체 테마 토글을 그리지 않습니다.'],
   ['컴포넌트 시각 계약', componentVisualContractViolations(), 'StatusBar 서체 역할과 Select 선택값의 세로 정렬을 readme의 기준에 맞춥니다.'],
   ['데이터 그래픽 접근성', dataGraphicA11yViolations(), 'Chart·Heatmap은 시각·숨김 표·탐색 표면 셋을 함께 냅니다. 루트는 role="group", 탐색 표면은 role="application" + tabIndex=0, 현재 지점은 role="status"로 알립니다.'],
+  ['호버·프레스 짝', pressStateViolations(), '호버는 --panel-2 한 단계, 프레스는 --panel-3 두 단계입니다. 눌러서 동작하는 표면은 둘을 짝으로 냅니다(터치 기기에는 호버가 없습니다).'],
   ['가이드 페이지 누락', guideIndexViolations(), 'guidelines/index.html의 목록과 목차에 그 컴포넌트·카드를 넣습니다.'],
   ['템플릿 미사용 컴포넌트', templateCoverageViolations(), 'templates/dashboard의 화면에서 그 컴포넌트를 실제로 씁니다.'],
 ];

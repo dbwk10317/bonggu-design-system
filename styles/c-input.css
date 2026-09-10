@@ -57,6 +57,7 @@ button.bds-ctl__affix:hover{color:var(--ink)}
 .bds-search .bds-ctl__kbd{border:1px solid var(--line);border-radius:4px;padding:0 5px;font:500 11.5px/16px var(--font-ui);color:var(--ink-3)}
 .bds-drop{display:grid;place-items:center;gap:6px;padding:clamp(16px,2vw,28px);border:1.5px dashed var(--line-input);border-radius:var(--radius-panel);background:var(--canvas-sunken);color:var(--ink-3);text-align:center;cursor:pointer;transition:border-color var(--dur-fast) var(--ease-out),background var(--dur-fast) var(--ease-out)}
 .bds-drop:hover,.bds-drop--over{border-color:var(--signal);background:var(--signal-tint);color:var(--ink)}
+.bds-drop:active{background:color-mix(in oklch,var(--signal) 16%,transparent)}
 .bds-drop b{color:var(--ink);font-size:var(--fs-label)}
 .bds-drop small{font-size:var(--fs-caption)}
 .bds-drop .bds-icon{font-size:22px;color:var(--signal-ink)}

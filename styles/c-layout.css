@@ -8,6 +8,7 @@
 .bds-shell__nav{display:flex;flex-direction:column;gap:2px;padding:12px 10px;overflow-y:auto;flex:1}
 .bds-shell__item{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:var(--radius-ctl);border:0;background:transparent;color:var(--ink-2);font-size:var(--fs-label);font-weight:var(--fw-medium);text-align:left;text-decoration:none;transition:background var(--dur-fast) var(--ease-out),color var(--dur-fast) var(--ease-out);min-height:36px}
 .bds-shell__item:hover{background:var(--panel-2);color:var(--ink);text-decoration:none}
+.bds-shell__item:active{background:var(--panel-3)}
 .bds-shell__item--on{background:var(--signal-tint);color:var(--signal-ink);font-weight:var(--fw-medium)}
 .bds-shell__item .bds-icon{font-size:16px;color:inherit}
 .bds-shell__item__badge{margin-left:auto}
@@ -49,6 +50,7 @@
 button.bds-panel{font:inherit;color:inherit;text-align:left;width:100%;align-items:stretch}
 .bds-panel--interactive{cursor:pointer;transition:border-color var(--dur-fast) var(--ease-out),background var(--dur-fast) var(--ease-out)}
 .bds-panel--interactive:hover{border-color:var(--line-strong);background:var(--panel-2)}
+.bds-panel--interactive:active{background:var(--panel-3)}
 .bds-panel--selected{border-color:var(--signal);box-shadow:0 0 0 1px var(--signal)}
 .bds-panel--enter{animation:bds-fade-up var(--dur-slow) var(--ease-out) both}
 .bds-panel__cap{font-size:var(--fs-caption);font-weight:var(--fw-medium);letter-spacing:var(--ls-caps);text-transform:uppercase;color:var(--ink-3)}
