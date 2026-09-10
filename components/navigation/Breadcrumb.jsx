@@ -5,6 +5,9 @@ import { Icon } from "../action/Icon.jsx";
  * @param {Parameters<typeof import("./Breadcrumb.d.ts").Breadcrumb>[0]} props */
 export function Breadcrumb({ items = [], maxItems = 4, className, ...rest }) {
   const [all, setAll] = useState(false);
+  /* 펼침은 그 경로에만 의미가 있다. 경로가 바뀌면 접힌 상태로 돌아간다. */
+  const [prevItems, setPrevItems] = useState(items);
+  if (prevItems !== items) { setPrevItems(items); if (all) setAll(false); }
   const collapse = !all && items.length > maxItems;
   /** @type {(import("./Breadcrumb.d.ts").BreadcrumbItem | "…")[]} */
   const shown = collapse ? [items[0], "…", ...items.slice(items.length - (maxItems - 2))] : items;

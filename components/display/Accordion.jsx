@@ -5,7 +5,7 @@ import { Icon } from "../action/Icon.jsx";
 /** 접이식 섹션. items: {id, title, meta?, content}. multiple이면 여러 개 동시 펼침. plain은 테두리 없음(설정 패널 안).
  * @param {Parameters<typeof import("./Accordion.d.ts").Accordion>[0]} props */
 export function Accordion({ items = [], defaultOpen = [], multiple = false, plain = false, className, ...rest }) {
-  const [open, setOpen] = useState(new Set(defaultOpen));
+  const [open, setOpen] = useState(() => new Set(defaultOpen));
   const uid = useId().replace(/:/g, "");
   const toggle = (/** @type {string} */ id) => setOpen((s) => { const n = new Set(multiple ? s : []); if (s.has(id)) n.delete(id); else n.add(id); return n; });
   return (

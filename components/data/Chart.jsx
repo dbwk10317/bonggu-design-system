@@ -43,6 +43,10 @@ function useSize(ref, fixedW, fixedH) {
 /** @param {boolean} enabled */
 function useAnimateOnce(enabled) {
   const [on, setOn] = useState(enabled);
+  /* enabled 가 다시 켜지면 한 번 더 무장한다. 켜기만 하고 되돌리지 않으면 live 를 껐을 때
+     진입 모션이 영영 돌지 않는다. */
+  const [prevEnabled, setPrevEnabled] = useState(enabled);
+  if (prevEnabled !== enabled) { setPrevEnabled(enabled); setOn(enabled); }
   useEffect(() => { if (!enabled) return; const t = setTimeout(() => setOn(false), 1100); return () => clearTimeout(t); }, [enabled]);
   return on;
 }
