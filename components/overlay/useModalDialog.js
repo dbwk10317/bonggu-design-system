@@ -40,6 +40,10 @@ export function useModalDialog(panel, open, onClose) {
     dialog.addEventListener("mousedown", onDown);
     return () => {
       dialog.removeEventListener("mousedown", onDown);
+      /* 닫는 동안 이미 다이얼로그 밖의 실제 요소로 포커스가 옮겨졌다면 그쪽이 의도한 자리다.
+         opener 로 되돌리면 명령이 보낸 포커스를 덮는다. body 는 "아무 데도 없음"이라 되돌린다. */
+      const moved = doc.activeElement;
+      const escaped = moved != null && moved !== doc.body && !dialog.contains(moved);
       const top = state.entries.at(-1) === entry;
       state.entries = state.entries.filter((item) => item !== entry);
       for (const item of state.entries) {
@@ -53,7 +57,10 @@ export function useModalDialog(panel, open, onClose) {
         state.body.style.overflow = state.overflow;
         sessions.delete(doc);
       }
-      if (top && entry.opener?.isConnected && (!remaining || remaining.contains(entry.opener))) entry.opener.focus?.();
+      /* dialog.close() 는 브라우저가 스스로 opener 로 포커스를 되돌린다. 명령이 이미 다른 곳으로
+         보냈다면 그 자리가 의도한 곳이므로 닫은 뒤 다시 돌려준다. */
+      if (escaped) /** @type {HTMLElement} */ (moved).focus?.();
+      else if (top && entry.opener?.isConnected && (!remaining || remaining.contains(entry.opener))) entry.opener.focus?.();
       if (remaining && !remaining.contains(doc.activeElement)) remaining.focus();
     };
   }, [open, panel]);

@@ -5,9 +5,18 @@ import { cx } from "../core/frame.js";
  * @param {Parameters<typeof import("./Popover.d.ts").Popover>[0]} props */
 export function Popover({ trigger, title, side = "bottom", open: ctrl, onOpenChange, className, children }) {
   const [inner, setInner] = useState(false);
-  const open = ctrl ?? inner, set = (/** @type {boolean} */ v) => { setInner(v); onOpenChange?.(v); };
+  const open = ctrl ?? inner;
+  /* 통지 콜백은 매 렌더 새 함수다. 이펙트 의존성에 넣으면 리스너를 매번 다시 건다. */
+  const notify = useRef(onOpenChange);
+  useEffect(() => { notify.current = onOpenChange; });
+  const set = (/** @type {boolean} */ v) => { setInner(v); onOpenChange?.(v); };
   const root = useRef(/** @type {HTMLDivElement | null} */ (null)), id = useId().replace(/:/g, "");
-  useEffect(() => { if (!open) return; const on = (/** @type {MouseEvent} */ e) => { if (!root.current?.contains(/** @type {Node} */ (e.target))) set(false); }; const key = (/** @type {KeyboardEvent} */ e) => { if (e.key === "Escape") { set(false); /** @type {HTMLElement | null | undefined} */ (root.current?.firstElementChild)?.focus?.(); } }; document.addEventListener("mousedown", on); document.addEventListener("keydown", key); return () => { document.removeEventListener("mousedown", on); document.removeEventListener("keydown", key); }; }, [open]);
+  useEffect(() => {
+    if (!open) return;
+    /* 닫기는 이펙트 안에서 만든다. 바깥 set 을 쓰면 매 렌더 새 함수라 리스너를 다시 걸게 된다. */
+    const close = () => { setInner(false); notify.current?.(false); };
+    const on = (/** @type {MouseEvent} */ e) => { if (!root.current?.contains(/** @type {Node} */ (e.target))) close(); };
+    const key = (/** @type {KeyboardEvent} */ e) => { if (e.key === "Escape") { close(); /** @type {HTMLElement | null | undefined} */ (root.current?.firstElementChild)?.focus?.(); } }; document.addEventListener("mousedown", on); document.addEventListener("keydown", key); return () => { document.removeEventListener("mousedown", on); document.removeEventListener("keydown", key); }; }, [open]);
   const trig = cloneElement(trigger, { "aria-expanded": open, "aria-controls": id, "aria-haspopup": "dialog", onClick: (/** @type {import("react").MouseEvent<HTMLElement>} */ e) => { trigger.props.onClick?.(e); set(!open); } });
   return (
     <span ref={root} className={cx("bds-pop", className)}>

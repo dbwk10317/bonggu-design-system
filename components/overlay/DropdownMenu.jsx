@@ -15,7 +15,10 @@ export function DropdownMenu({ items = [], trigger, align = "end", size = "sm", 
   /* 닫힐 때 포커스를 트리거로 돌린다(메뉴 항목이 언마운트되면 포커스가 body로 떨어진다) */
   const close = () => { if (panel.current?.matches(":popover-open")) panel.current.hidePopover(); setOpen(false); /** @type {HTMLElement | null | undefined} */ (root.current?.querySelector("[aria-haspopup]"))?.focus(); };
   useEffect(() => { if (!open) return; const on = (/** @type {PointerEvent} */ e) => { if (!root.current?.contains(/** @type {Node} */ (e.target))) setOpen(false); }; const key = (/** @type {KeyboardEvent} */ e) => { if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); close(); } }; document.addEventListener("pointerdown", on); document.addEventListener("keydown", key); return () => { document.removeEventListener("pointerdown", on); document.removeEventListener("keydown", key); }; }, [open]);
-  useEffect(() => { if (!open) return; const active = enabled.includes(idx) ? idx : enabled[0]; if (active !== undefined) /** @type {HTMLElement | null | undefined} */ (panel.current?.querySelector(`[data-menu-index="${active}"]`))?.focus(); }, [idx, open, items]);
+  /* 포커스를 옮기는 계기는 열림과 활성 인덱스뿐이다. items 를 의존성에 두면 인라인 배열이라
+     부모가 다시 그릴 때마다 포커스가 활성 항목으로 되돌아가 사용자가 옮긴 포커스를 뺏는다. */
+  const active = enabled.includes(idx) ? idx : enabled[0];
+  useEffect(() => { if (!open) return; if (active !== undefined) /** @type {HTMLElement | null | undefined} */ (panel.current?.querySelector(`[data-menu-index="${active}"]`))?.focus(); }, [active, open]);
   const toggleOpen = () => { if (open) close(); else { setIdx(enabled[0] ?? -1); setOpen(true); } };
   const onKey = (/** @type {import("react").KeyboardEvent<HTMLElement>} */ e) => {
     if (!open && (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ")) { e.preventDefault(); setOpen(true); setIdx(enabled[0] ?? -1); return; }

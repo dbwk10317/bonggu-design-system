@@ -107,6 +107,32 @@ async function run() {
     await page.getByRole('menuitem', { name: '복사', exact: true }).click(); await poll(() => window.picked, ['copy']);
     await page.getByRole('button', { name: '더 보기' }).press('ArrowDown'); await page.keyboard.press('Tab');
     await poll(() => document.activeElement.id, 'after-menu');
+    /* 명령 팔레트: 네이티브 dialog 세션이라 포커스가 갇히고 Esc·배경으로 닫힌다.
+       열어 보지 않으면 열림 경로의 훅이 한 번도 돌지 않아 어떤 게이트도 이 화면을 보지 못한다. */
+    await fresh('palette');
+    await page.locator('#open-palette').click();
+    await page.waitForFunction(() => document.querySelector('dialog.bds-cmdk__panel')?.matches(':modal'));
+    assert.equal(await page.locator('[role=option]').count(), 3, '팔레트 항목 수');
+    assert.equal(await page.evaluate(() => document.activeElement?.getAttribute('role')), 'combobox', '열면 검색 입력에 포커스');
+    await page.keyboard.type('재시작');
+    await poll(() => document.querySelectorAll('[role=option]').length, 1);
+    await page.keyboard.press('Enter'); await poll(() => window.ran, ['restart']);
+    await page.waitForFunction(() => !document.querySelector('dialog.bds-cmdk__panel'));
+    await poll(() => document.activeElement.id, 'open-palette');
+    /* 명령이 포커스를 옮기면 닫힘 정리가 그것을 덮지 않는다. */
+    await page.locator('#open-palette').click();
+    await page.waitForFunction(() => document.querySelector('dialog.bds-cmdk__panel')?.matches(':modal'));
+    await page.keyboard.type('이동');
+    await poll(() => document.querySelectorAll('[role=option]').length, 1);
+    await page.keyboard.press('Enter');
+    await page.waitForFunction(() => !document.querySelector('dialog.bds-cmdk__panel'));
+    await poll(() => document.activeElement.id, 'jump-target');
+    /* Esc 로 닫기 */
+    await page.locator('#open-palette').click();
+    await page.waitForFunction(() => document.querySelector('dialog.bds-cmdk__panel')?.matches(':modal'));
+    await page.keyboard.press('Escape');
+    await page.waitForFunction(() => !document.querySelector('dialog.bds-cmdk__panel'));
+    console.log('PASS command palette: modal session, focus, filter, run, focus restore');
     await fresh('menuModal'); await page.getByRole('button', { name: '더 보기' }).click(); await page.getByRole('menuitem', { name: '복사' }).focus();
     await page.keyboard.press('Escape'); await page.waitForFunction(() => !document.querySelector('[role=menu]'));
     assert.equal(await page.locator('dialog[open]').count(), 1); await page.keyboard.press('Escape'); await page.waitForFunction(() => !document.querySelector('dialog[open]'));

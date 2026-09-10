@@ -31,6 +31,18 @@ window.demo = (name) => {
         h('button', { onClick: () => setDrawer(true) }, '상세 열기')),
         h(D.Drawer, { open: drawer, onClose: () => setDrawer(false), title: '상세 드로어' }));
     },
+    palette() {
+      const [open, setOpen] = React.useState(false);
+      window.setPaletteOpen = setOpen; if (!window.ran) window.ran = [];
+      return h('div', { style: { padding: 8 } },
+        h('button', { id: 'open-palette', onClick: () => setOpen(true) }, '명령 열기'),
+        h('button', { id: 'after-palette' }, '다음 동작'),
+        h('input', { id: 'jump-target', 'aria-label': '이동 대상' }),
+        h(D.CommandPalette, { open, onClose: () => setOpen(false), items: [
+          { id: 'mon', label: '모니터링', group: '화면', onSelect: () => ran.push('mon') },
+          { id: 'restart', label: 'ai-hub 재시작', group: '동작', onSelect: () => ran.push('restart') },
+          { id: 'jump', label: '입력으로 이동', group: '동작', onSelect: () => document.getElementById('jump-target').focus() }] }));
+    },
     menu() {
       window.picked = [];
       return h('div', { style: { padding: 8 } },

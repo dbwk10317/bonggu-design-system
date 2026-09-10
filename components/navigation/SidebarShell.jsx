@@ -17,11 +17,14 @@ export function SidebarShell({ brand, nav, navLabel = "주 메뉴", footer, topb
   const burger = useRef(/** @type {HTMLButtonElement | null} */ (null)), side = useRef(/** @type {HTMLElement | null} */ (null));
   useEffect(() => {
     if (!open) return;
-    /* 드로어로 열리면 포커스를 안으로(닫기 버튼) 옮기고, 닫히면 햄버거로 돌린다 */
+    /* 드로어로 열리면 포커스를 안으로(닫기 버튼) 옮기고, 닫히면 햄버거로 돌린다.
+       정리 시점의 burger.current 는 이미 다른 노드일 수 있어 지금 노드를 담아 둔다.
+       레일로 넓어지면 햄버거가 숨으므로, 보이지 않으면 되돌리지 않는다(포커스가 body 로 떨어진다). */
+    const trigger = burger.current;
     side.current?.querySelector("button")?.focus();
     const onKey = (/** @type {KeyboardEvent} */ e) => e.key === "Escape" && setOpen(false);
     document.addEventListener("keydown", onKey);
-    return () => { document.removeEventListener("keydown", onKey); burger.current?.focus(); };
+    return () => { document.removeEventListener("keydown", onKey); if (trigger?.isConnected && trigger.offsetParent !== null) trigger.focus(); };
   }, [open]);
   return (
     <div className={cx("bds-shell", open && "bds-shell--open", className)} {...rest}>

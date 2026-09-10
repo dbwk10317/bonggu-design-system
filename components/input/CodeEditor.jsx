@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import { cx, frameStyle } from "../core/frame.js";
 import { Icon } from "../action/Icon.jsx";
 import { useFieldContext } from "./Field.jsx";
@@ -11,11 +11,17 @@ export function CodeEditor({ value, defaultValue = "", onChange, onValidChange, 
   const v = value ?? inner;
   const ta = useRef(/** @type {HTMLTextAreaElement | null} */ (null)), gutter = useRef(/** @type {HTMLPreElement | null} */ (null));
   const lines = useMemo(() => v.split("\n").length, [v]);
-  const err = useMemo(() => {
-    if (language !== "json" || !v.trim()) return null;
-    try { const o = JSON.parse(v); onValidChange?.(o); return null; }
-    catch (e) { onValidChange?.(null); const msg = e instanceof Error ? e.message : String(e); const m = /position (\d+)/.exec(msg); let line = null; if (m) { line = v.slice(0, Number(m[1])).split("\n").length; } return { line, message: msg.replace(/^JSON\.parse: |^Unexpected token.*?in JSON at position \d+$/, (/** @type {string} */ s) => s).replace("JSON.parse: ", "") }; }
+  /* 파싱은 렌더에서, 통지는 커밋 뒤에. checked 는 "이번 입력이 검사 대상이었나"다. */
+  const parsed = useMemo(() => {
+    if (language !== "json" || !v.trim()) return { checked: false, value: null, err: null };
+    try { return { checked: true, value: JSON.parse(v), err: null }; }
+    catch (e) { const msg = e instanceof Error ? e.message : String(e); const m = /position (\d+)/.exec(msg); let line = null; if (m) { line = v.slice(0, Number(m[1])).split("\n").length; } return { checked: true, value: null, err: { line, message: msg.replace(/^JSON\.parse: |^Unexpected token.*?in JSON at position \d+$/, (/** @type {string} */ s) => s).replace("JSON.parse: ", "") } }; }
   }, [v, language]);
+  const err = parsed.err;
+  /* 통지 콜백은 매 렌더 새 함수인 경우가 많다. 의존성에 넣으면 값이 그대로인데도 다시 통지한다. */
+  const notifyValid = useRef(onValidChange);
+  useEffect(() => { notifyValid.current = onValidChange; });
+  useEffect(() => { if (parsed.checked) notifyValid.current?.(parsed.value); }, [parsed]);
   const set = (/** @type {string} */ s) => { setInner(s); onChange?.(s); };
   const onKey = (/** @type {import("react").KeyboardEvent<HTMLTextAreaElement>} */ e) => {
     /* Tab은 들여쓰기, Shift+Tab은 가로채지 않아 키보드로 빠져나갈 수 있다 */

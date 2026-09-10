@@ -155,7 +155,12 @@ for (const p of walk(join(ROOT, "components")).filter((p) => p.endsWith(".d.ts")
     }
     aliases[m[1]] = src.slice(m.index + m[0].length, i - 1).trim();
   }
+  // 공개 컴포넌트 선언은 두 가지다: 평범한 함수와, forwardRef 컴포넌트의 const 선언.
+  // 둘 다 잡지 않으면 그 컴포넌트의 prop 규칙이 adherence 설정에서 통째로 빠진다.
   for (const m of src.matchAll(/^export declare function ([A-Z]\w*)(?:<[^>\n]+>)?\s*\(\s*props:\s*([^\)\n]+)\)/gm)) {
+    comps.push(m[1]); functions.push({ name: m[1], type: m[2].trim() });
+  }
+  for (const m of src.matchAll(/^export declare const ([A-Z]\w*)\s*:\s*ForwardRefExoticComponent<\s*([A-Za-z_$][\w$]*)\s*&/gm)) {
     comps.push(m[1]); functions.push({ name: m[1], type: m[2].trim() });
   }
 }
