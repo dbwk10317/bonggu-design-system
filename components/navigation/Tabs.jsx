@@ -9,7 +9,7 @@ export function Tabs({ items = [], value, onChange, panelId, className, "aria-la
   const [ink, setInk] = useState(/** @type {{ left: number, width: number } | null} */ (null));
   useEffect(() => {
     const el = /** @type {HTMLElement | null} */ (root.current?.querySelector('[aria-selected="true"]'));
-    if (!el) return;
+    if (!el) { setInk(null); return; }
     const measure = () => setInk({ left: el.offsetLeft, width: el.offsetWidth });
     measure();
     const ro = new ResizeObserver(measure); if (root.current) ro.observe(root.current);

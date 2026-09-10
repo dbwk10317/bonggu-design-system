@@ -21,10 +21,17 @@ export function Combobox({ options = [], value, onChange, placeholder = "검색 
   if (prevCue !== cue) { setPrevCue(cue); setIdx(0); }
   const pick = (/** @type {import("./Combobox.d.ts").ComboOption | null | undefined} */ o) => { if (o?.disabled) return; onChange?.(o ? o.value : null, o ?? null); setOpen(false); setQ(""); };
   const onKey = (/** @type {import("react").KeyboardEvent<HTMLElement>} */ e) => {
-    if (e.key === "ArrowDown") { e.preventDefault(); setOpen(true); setIdx((i) => Math.min(list.length - 1, i + 1)); }
-    else if (e.key === "ArrowUp") { e.preventDefault(); setIdx((i) => Math.max(0, i - 1)); }
+    /* 비활성 항목은 pick 이 거부하므로 강조도 지나친다. 멈추면 Enter 가 아무 일도 하지 않는다. */
+    const step = (/** @type {number} */ from, /** @type {number} */ dir) => {
+      for (let i = from + dir; i >= 0 && i < list.length; i += dir) if (!list[i].disabled) return i;
+      return from;
+    };
+    if (e.key === "ArrowDown") { e.preventDefault(); setOpen(true); setIdx((i) => step(i, 1)); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); setIdx((i) => step(i, -1)); }
     else if (e.key === "Enter") { if (open && list[idx]) { e.preventDefault(); pick(list[idx]); } else setOpen(true); }
     else if (e.key === "Escape") { setOpen(false); setQ(""); }
+    /* Tab 은 가로채지 않는다. 다만 포커스가 나가면 목록도 닫아야 aria-expanded 가 거짓말하지 않는다. */
+    else if (e.key === "Tab") { setOpen(false); setQ(""); }
   };
   return (
     <div ref={root} className={cx("bds-combo", open && "bds-combo--open", className)} style={frameStyle({ fit, width, style })}>

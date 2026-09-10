@@ -48,10 +48,11 @@ export default [
       "react/jsx-uses-react": "error",
       // 게이트는 경고를 통과시킨다. 지킬 규칙이면 error 로 둔다.
       "react-hooks/exhaustive-deps": "error",
-      // readme.md 접근성 절: 그림으로 그리는 데이터의 탐색 표면은 role="application" + tabIndex=0 이다.
-      // 역할이 없으면 스크린리더 브라우즈 모드가 화살표를 먼저 가져가 탐색이 동작하지 않는다.
-      // jsx-a11y 는 application 을 구조 역할로 분류하므로 문서화된 이 조합만 허용한다.
-      "jsx-a11y/no-noninteractive-tabindex": ["error", { tags: [], roles: ["tabpanel", "application"] }],
+      // readme.md 접근성 절이 초점을 받아야 한다고 정한 역할만 허용한다.
+      // application: 그림으로 그리는 데이터의 탐색 표면(역할이 없으면 브라우즈 모드가 화살표를 가져간다).
+      // region·log: 잘리는 스크롤 영역(마우스 없이는 잘린 내용에 닿을 방법이 없다).
+      // jsx-a11y 는 셋 다 구조 역할로 분류하므로 문서화된 이 조합만 연다.
+      "jsx-a11y/no-noninteractive-tabindex": ["error", { tags: [], roles: ["tabpanel", "application", "region", "log"] }],
     },
   },
   {

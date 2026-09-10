@@ -33,6 +33,9 @@ export function DataTable({ columns = [], rows = [], rowKey, rowLabel, sort, onS
     console.warn("DataTable: 선택·펼침에는 rowKey나 row.id로 행의 신원을 주어야 합니다. 위치는 정렬·필터에서 다른 행을 가리킵니다.");
   }
   const keys = rows.map((r, i) => keyOf(r, i));
+  /* 펼침은 지금 있는 행에만 의미가 있다. 정리하지 않으면 목록이 길게 도는 동안 계속 쌓이고,
+     신원이 재사용되면 엉뚱한 행이 펼쳐진 채로 나타난다. 읽는 자리에서 한 번 거른다. */
+  const openKeys = expandable ? keys.filter((k) => expanded.has(k)) : [];
   const sel = new Set(selectedKeys);
   const selCount = keys.filter((k) => sel.has(k)).length;
   const all = rows.length > 0 && selCount === rows.length;
@@ -44,7 +47,7 @@ export function DataTable({ columns = [], rows = [], rowKey, rowLabel, sort, onS
       {header && <div className="bds-table__hd"><h2 id={hid}>{header.title}</h2>{header.meta != null && <span>{header.meta}</span>}</div>}
       <div className="bds-table__wrap" style={height ? { overflow: "auto", minHeight: 0 } : undefined}>
         {selectable && selCount > 0 && <div className="bds-table__bulk"><b>{selCount}개 선택됨</b>{bulkActions}<button type="button" className="bds-table__clear" onClick={() => onSelectionChange?.([])}>선택 해제</button></div>}
-        <div className="bds-table__scroll">
+        <div className="bds-table__scroll" tabIndex={0} role="region" aria-label={ariaLabel ?? "표"}>
           <table aria-label={ariaLabel} aria-labelledby={!ariaLabel && header ? hid : undefined}>
             <thead><tr>
               {selectable && <th scope="col" className="bds-table__check"><Checkbox aria-label="전체 선택" checked={all} indeterminate={selCount > 0 && !all} onChange={() => onSelectionChange?.(all ? [] : keys)} /></th>}
@@ -60,7 +63,7 @@ export function DataTable({ columns = [], rows = [], rowKey, rowLabel, sort, onS
             <tbody>
               {rows.length === 0 && <tr><td colSpan={colCount} className="bds-table__empty">{empty}</td></tr>}
               {rows.map((row, i) => {
-                const k = keys[i], isSel = sel.has(k), open = expandable ? expanded.has(k) : false, name = rowLabel ? rowLabel(row) : String(k);
+                const k = keys[i], isSel = sel.has(k), open = openKeys.includes(k), name = rowLabel ? rowLabel(row) : String(k);
                 return (
                   <Fragment key={k}>
                     <tr className={cx(isSel && "bds-table__sel")}>

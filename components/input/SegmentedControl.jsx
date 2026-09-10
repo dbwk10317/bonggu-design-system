@@ -19,8 +19,20 @@ export function SegmentedControl({ options = [], value, onChange, size = "md", f
       {thumb && <span className="bds-seg__thumb" style={thumb} aria-hidden="true" />}
       {options.map((o) => (
         <button key={o.value} type="button" role="radio" aria-checked={o.value === value} className="bds-seg__opt" disabled={o.disabled}
+          tabIndex={o.value === (value ?? options.find((x) => !x.disabled)?.value) ? 0 : -1}
           onClick={() => onChange?.(o.value)}
-          onKeyDown={(e) => { const i = options.findIndex((x) => x.value === value); if (e.key === "ArrowRight") onChange?.(options[(i + 1) % options.length].value); if (e.key === "ArrowLeft") onChange?.(options[(i - 1 + options.length) % options.length].value); }}>
+          onKeyDown={(e) => {
+            const dir = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+            if (!dir) return;
+            /* 화살표는 페이지를 스크롤시키지 않는다. 선택과 포커스를 함께 옮겨야 낭독이 따라온다. */
+            e.preventDefault();
+            const i = options.findIndex((x) => x.value === value);
+            const next = options[(i + dir + options.length) % options.length];
+            onChange?.(next.value);
+            /** @type {HTMLElement | null | undefined} */
+            (e.currentTarget.parentElement?.querySelector(`[data-seg-value="${next.value}"]`))?.focus();
+          }}
+          data-seg-value={o.value}>
           {o.label}
         </button>
       ))}

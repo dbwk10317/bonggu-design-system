@@ -30,6 +30,19 @@ export function DatePicker({ value, onChange, min, max, placeholder = "날짜 �
   const cells = Array.from({ length: 42 }, (_, i) => { const d = new Date(start); d.setDate(start.getDate() + i); return d; });
   const weeks = Array.from({ length: 6 }, (_, r) => cells.slice(r * 7, r * 7 + 7));
   const today = iso(new Date());
+  /* 그리드는 탭 스톱 하나에 화살표 이동이다(readme 접근성 절). 포커스가 셀에 있으므로 핸들러도 셀에 둔다. */
+  const onCellKey = (/** @type {import("react").KeyboardEvent<HTMLButtonElement>} */ e) => {
+    const step = /** @type {Record<string, number>} */ ({ ArrowRight: 1, ArrowLeft: -1, ArrowDown: 7, ArrowUp: -7 })[e.key];
+    const edge = e.key === "Home" ? "first" : e.key === "End" ? "last" : null;
+    if (step === undefined && !edge) return;
+    e.preventDefault();
+    const grid = e.currentTarget.closest("[role=grid]");
+    if (!grid) return;
+    const cells = [.../** @type {NodeListOf<HTMLElement>} */ (grid.querySelectorAll("[role=gridcell]:not([disabled])"))];
+    const at = cells.indexOf(e.currentTarget);
+    const to = edge === "first" ? 0 : edge === "last" ? cells.length - 1 : Math.min(cells.length - 1, Math.max(0, at + step));
+    cells[to]?.focus();
+  };
   const inRange = (/** @type {Date} */ d) => (!min || iso(d) >= min) && (!max || iso(d) <= max);
   return (
     <div ref={root} className={cx("bds-date", className)} style={frameStyle({ fit, width, style })}>
@@ -43,7 +56,7 @@ export function DatePicker({ value, onChange, min, max, placeholder = "날짜 �
         <div className="bds-cal__grid" role="grid">
           <div role="row" style={{ display: "contents" }}>{DOW.map((d) => <span key={d} className="bds-cal__dow" role="columnheader">{d}</span>)}</div>
           {weeks.map((wk, r) => <div key={r} role="row" style={{ display: "contents" }}>
-            {wk.map((d) => { const s = iso(d); return <button key={s} type="button" role="gridcell" className={cx("bds-cal__d", d.getMonth() !== view.getMonth() && "bds-cal__d--out", s === today && "bds-cal__d--today")} aria-selected={s === value} disabled={!inRange(d)} onClick={() => { onChange?.(s); close(); }}>{d.getDate()}</button>; })}
+            {wk.map((d) => { const s = iso(d); return <button key={s} type="button" role="gridcell" className={cx("bds-cal__d", d.getMonth() !== view.getMonth() && "bds-cal__d--out", s === today && "bds-cal__d--today")} aria-selected={s === value} aria-current={s === today ? "date" : undefined} tabIndex={s === (value ?? today) ? 0 : -1} onKeyDown={onCellKey} disabled={!inRange(d)} onClick={() => { onChange?.(s); close(); }}>{d.getDate()}</button>; })}
           </div>)}
         </div>
       </div>}
