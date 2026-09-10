@@ -4,7 +4,17 @@
   const standalone = /theme-toggle\.js(\?|$)/.test(document.currentScript?.src || "");
   const autoMount = document.currentScript?.dataset.mount !== "false";
   const topLevel = (() => { try { return window.self === window.top; } catch { return false; } })();
-  const apply = (t) => { document.documentElement.classList.toggle("dark", t === "dark"); document.querySelectorAll("bds-theme-toggle").forEach((el) => el.render && el.render()); };
+  /* 테마 전환 처방은 readme.md의 색 절을 따른다. 트랜지션을 끄지 않으면 스냅이 아니라 번짐이 된다. */
+  const apply = (t) => {
+    const root = document.documentElement;
+    const stop = document.createElement("style");
+    stop.textContent = "*,*::before,*::after{transition:none!important}";
+    document.head.appendChild(stop);
+    root.classList.toggle("dark", t === "dark");
+    void root.offsetWidth;
+    requestAnimationFrame(() => stop.remove());
+    document.querySelectorAll("bds-theme-toggle").forEach((el) => el.render && el.render());
+  };
   const get = () => { try { return localStorage.getItem(KEY) || "light"; } catch { return "light"; } };
   apply(get());
   window.addEventListener("storage", (e) => { if (e.key === KEY) apply(get()); });

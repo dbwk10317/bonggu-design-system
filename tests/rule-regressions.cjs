@@ -590,6 +590,28 @@ function radiusTokenViolations() {
   }
   return violations;
 }
+/* readme 색 절: 테마를 바꿀 때 트랜지션을 끈다. 끄지 않으면 색·배경·선·그림자에 걸린
+   트랜지션이 한꺼번에 발화해 스냅이 아니라 번짐이 된다.
+   readme 색 절: 컴포넌트가 만드는 DOM id 는 useId 로 만든다. 리터럴 id 는 한 화면에
+   그 컴포넌트가 둘 있으면 aria-controls·aria-activedescendant·htmlFor 가 서로를 가리킨다. */
+function themeAndIdViolations() {
+  const violations = [];
+  const toggleFile = 'theme-toggle.js';
+  const toggle = read(toggleFile);
+  const suppresses = /transition\s*:\s*none\s*!important/.test(toggle);
+  const reflows = /offsetWidth|getBoundingClientRect/.test(toggle);
+  const restores = /requestAnimationFrame/.test(toggle);
+  if (!suppresses || !reflows || !restores) {
+    violations.push({ file: toggleFile, line: 1, detail: '테마 전환에서 트랜지션 끄기·리플로우·다음 프레임 복원 중 빠진 것이 있음' });
+  }
+  for (const file of walk('components').filter((name) => name.endsWith('.jsx'))) {
+    const src = read(file);
+    for (const m of src.matchAll(/\sid="([^"$]+)"/g)) {
+      violations.push({ file, line: lineOf(src, m.index), detail: `DOM id 를 리터럴로 적음(${m[1]}). useId 로 만듭니다` });
+    }
+  }
+  return violations;
+}
 function componentVisualContractViolations() {
   const violations = [];
   const layoutFile = 'styles/c-layout.css';
@@ -668,6 +690,7 @@ const checks = [
   ['데이터 그래픽 접근성', dataGraphicA11yViolations(), 'Chart·Heatmap은 시각·숨김 표·탐색 표면 셋을 함께 냅니다. 루트는 role="group", 탐색 표면은 role="application" + tabIndex=0, 현재 지점은 role="status"로 알립니다.'],
   ['호버·프레스 짝', pressStateViolations(), '호버는 --panel-2 한 단계, 프레스는 --panel-3 두 단계입니다. 눌러서 동작하는 표면은 둘을 짝으로 냅니다(터치 기기에는 호버가 없습니다).'],
   ['모서리 토큰', radiusTokenViolations(), '컨트롤 모서리는 --radius-xs/ctl/panel/sheet/pill을 씁니다. 안쪽 상자는 바깥 − 패딩을 calc()로 적습니다. 리터럴은 그래픽 마크(막대·잉크·셀·구분선)에만 허용합니다.'],
+  ['테마 전환·DOM id', themeAndIdViolations(), '테마 토글은 트랜지션을 끄고 리플로우 뒤 다음 프레임에 되돌립니다. 컴포넌트의 DOM id 는 useId 로 만듭니다.'],
   ['가이드 페이지 누락', guideIndexViolations(), 'guidelines/index.html의 목록과 목차에 그 컴포넌트·카드를 넣습니다.'],
   ['템플릿 미사용 컴포넌트', templateCoverageViolations(), 'templates/dashboard의 화면에서 그 컴포넌트를 실제로 씁니다.'],
 ];
