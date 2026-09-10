@@ -7,6 +7,7 @@ import { Icon } from "../action/Icon.jsx";
 export function Breadcrumb({ items = [], maxItems = 4, className, ...rest }) {
   const [all, setAll] = useState(false);
   const collapse = !all && items.length > maxItems;
+  /** @type {(import("./Breadcrumb.d.ts").BreadcrumbItem | "…")[]} */
   const shown = collapse ? [items[0], "…", ...items.slice(items.length - (maxItems - 2))] : items;
   return (
     <nav aria-label="경로" className={className} {...rest}>

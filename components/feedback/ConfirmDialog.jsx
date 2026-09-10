@@ -10,6 +10,7 @@ export function ConfirmDialog({ open, onClose, onConfirm, title, message, confir
   return <ConfirmSession key={typeToConfirm ?? ""} {...{ onClose, onConfirm, title, message, confirmLabel, cancelLabel, danger, typeToConfirm, busy, size }} />;
 }
 
+/** @param {Omit<Parameters<typeof import("./ConfirmDialog.d.ts").ConfirmDialog>[0], "open">} props */
 function ConfirmSession({ onClose, onConfirm, title, message, confirmLabel, cancelLabel, danger, typeToConfirm, busy, size }) {
   const [typed, setTyped] = useState("");
   const ok = !typeToConfirm || typed === typeToConfirm;

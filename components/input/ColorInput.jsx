@@ -8,7 +8,7 @@ const HEX = /^#?([0-9a-f]{6})$/i;
 export function ColorInput({ value, defaultValue = "#5CA8FF", presets = [], size = "md", fit = "flex", width, disabled, invalid, onChange, className, style, "aria-label": ariaLabel }) {
   const f = useFieldContext();
   const [inner, setInner] = useState(defaultValue);
-  const [text, setText] = useState(null);
+  const [text, setText] = useState(/** @type {string | null} */ (null));
   const v = value ?? inner;
   const set = (/** @type {string} */ hex) => { const m = HEX.exec(hex.trim()); if (!m) return false; const out = `#${m[1].toUpperCase()}`; setInner(out); onChange?.(out); return true; };
   return (

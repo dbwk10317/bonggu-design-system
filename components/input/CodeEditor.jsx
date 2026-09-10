@@ -14,7 +14,7 @@ export function CodeEditor({ value, defaultValue = "", onChange, onValidChange, 
   const err = useMemo(() => {
     if (language !== "json" || !v.trim()) return null;
     try { const o = JSON.parse(v); onValidChange?.(o); return null; }
-    catch (e) { onValidChange?.(null); const m = /position (\d+)/.exec(e.message); let line = null; if (m) { line = v.slice(0, Number(m[1])).split("\n").length; } return { line, message: e.message.replace(/^JSON\.parse: |^Unexpected token.*?in JSON at position \d+$/, (s) => s).replace("JSON.parse: ", "") }; }
+    catch (e) { onValidChange?.(null); const msg = e instanceof Error ? e.message : String(e); const m = /position (\d+)/.exec(msg); let line = null; if (m) { line = v.slice(0, Number(m[1])).split("\n").length; } return { line, message: msg.replace(/^JSON\.parse: |^Unexpected token.*?in JSON at position \d+$/, (/** @type {string} */ s) => s).replace("JSON.parse: ", "") }; }
   }, [v, language]);
   const set = (/** @type {string} */ s) => { setInner(s); onChange?.(s); };
   const onKey = (/** @type {import("react").KeyboardEvent<HTMLTextAreaElement>} */ e) => {

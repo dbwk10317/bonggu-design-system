@@ -14,9 +14,9 @@ export function Combobox({ options = [], value, onChange, placeholder = "검색 
   const root = useRef(/** @type {HTMLDivElement | null} */ (null));
   const sel = options.find((o) => o.value === value) ?? null;
   const list = q ? options.filter((o) => `${o.label} ${o.detail ?? ""} ${o.value}`.toLowerCase().includes(q.toLowerCase())) : options;
-  useEffect(() => { if (!open) return; const on = (/** @type {MouseEvent} */ e) => { if (!root.current?.contains(e.target)) { setOpen(false); setQ(""); } }; document.addEventListener("mousedown", on); return () => document.removeEventListener("mousedown", on); }, [open]);
+  useEffect(() => { if (!open) return; const on = (/** @type {MouseEvent} */ e) => { if (!root.current?.contains(/** @type {Node} */ (e.target))) { setOpen(false); setQ(""); } }; document.addEventListener("mousedown", on); return () => document.removeEventListener("mousedown", on); }, [open]);
   useEffect(() => { setIdx(0); }, [q, open]);
-  const pick = (o) => { if (o?.disabled) return; onChange?.(o ? o.value : null, o); setOpen(false); setQ(""); };
+  const pick = (/** @type {import("./Combobox.d.ts").ComboOption | null | undefined} */ o) => { if (o?.disabled) return; onChange?.(o ? o.value : null, o ?? null); setOpen(false); setQ(""); };
   const onKey = (/** @type {import("react").KeyboardEvent<HTMLElement>} */ e) => {
     if (e.key === "ArrowDown") { e.preventDefault(); setOpen(true); setIdx((i) => Math.min(list.length - 1, i + 1)); }
     else if (e.key === "ArrowUp") { e.preventDefault(); setIdx((i) => Math.max(0, i - 1)); }

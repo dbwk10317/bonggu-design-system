@@ -14,7 +14,7 @@ export function Pagination({ page = 1, total = 1, onChange, siblings = 1, info, 
     <nav aria-label="페이지" className={cx("bds-pager", className)} {...rest}>
       <IconButton icon="caret-left" size={size} variant="ghost" aria-label="이전 페이지" disabled={page <= 1} onClick={() => onChange?.(page - 1)} />
       {pages.map((p, i) => p === "…" ? <span key={"g" + i} className="bds-pager__gap" aria-hidden="true">…</span>
-        : <button key={p} type="button" className="bds-pager__pg" aria-current={p === page ? "page" : undefined} onClick={() => onChange?.(p)}>{p}</button>)}
+        : <button key={p} type="button" className="bds-pager__pg" aria-current={p === page ? "page" : undefined} onClick={() => onChange?.(Number(p))}>{p}</button>)}
       <IconButton icon="caret-right" size={size} variant="ghost" aria-label="다음 페이지" disabled={page >= total} onClick={() => onChange?.(page + 1)} />
       {info && <span className="bds-pager__info">{info}</span>}
     </nav>

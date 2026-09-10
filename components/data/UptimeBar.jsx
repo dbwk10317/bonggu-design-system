@@ -14,7 +14,7 @@ export function UptimeBar({ name, segments = [], start, end, height = 28, uptime
   const na = isMissing(raw), pct = na ? null : raw;
   return (
     <div className={cx("bds-uptime", className)} style={{ "--uh": height + "px" }} {...rest}>
-      {(name || pct != null) && <div className="bds-uptime__hd">{name && <b>{name}</b>}<span className={cx("bds-uptime__pct", na && MISSING_CLASS)}>{na ? MISSING_TEXT : pct.toFixed(pct >= 99.95 ? 3 : 2) + "%"}</span></div>}
+      {(name || pct != null) && <div className="bds-uptime__hd">{name && <b>{name}</b>}<span className={cx("bds-uptime__pct", na && MISSING_CLASS)}>{na || pct == null ? MISSING_TEXT : pct.toFixed(pct >= 99.95 ? 3 : 2) + "%"}</span></div>}
       <div className="bds-uptime__bars" role="img" aria-label={(name ? name + " " : "") + segments.length + "칸 가용성"}>
         {segments.map((s, i) => <span key={i} className={cx("bds-uptime__b", "bds-uptime__b--" + (s.status ?? "off"))} title={s.label ?? ({ ok: "정상", warn: "일부 지연", crit: "장애", off: MISSING_TEXT }[s.status ?? "off"])} />)}
       </div>

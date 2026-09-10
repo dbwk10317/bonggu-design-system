@@ -8,7 +8,7 @@ export function CommandPalette({ open = false, onClose, items = [], placeholder 
   const [q, setQ] = useState(""), [idx, setIdx] = useState(0), input = useRef(/** @type {HTMLInputElement | null} */ (null)), opener = useRef(/** @type {HTMLElement | null} */ (null));
   const list = useMemo(() => { const s = q.trim().toLowerCase(); return !s ? items : items.filter((it) => (it.label + " " + (it.keywords ?? "") + " " + (it.group ?? "")).toLowerCase().includes(s)); }, [q, items]);
   /* 열 때 포커스를 입력으로, 닫을 때 열기 전 요소로 되돌린다 */
-  useEffect(() => { if (!open || inline) return; opener.current = document.activeElement; setQ(""); setIdx(0); setTimeout(() => input.current?.focus(), 0); return () => opener.current?.focus?.(); }, [open, inline]);
+  useEffect(() => { if (!open || inline) return; opener.current = /** @type {HTMLElement | null} */ (document.activeElement); setQ(""); setIdx(0); setTimeout(() => input.current?.focus(), 0); return () => opener.current?.focus?.(); }, [open, inline]);
   useEffect(() => { setIdx(0); }, [q]);
   if (!open) return null;
   const run = (/** @type {import("./CommandPalette.d.ts").CommandItem | undefined} */ it) => { if (!it) return; onClose?.(); it.onSelect?.(it); };
@@ -18,7 +18,8 @@ export function CommandPalette({ open = false, onClose, items = [], placeholder 
     else if (e.key === "Enter") { e.preventDefault(); run(list[idx]); }
     else if (e.key === "Escape") onClose?.();
   };
-  let lastGroup = null;
+  /** @type {string | undefined} */
+  let lastGroup = undefined;
   return (
     <div className={cx("bds-cmdk", inline && "bds-cmdk--inline", className)} onMouseDown={(e) => { if (e.target === e.currentTarget) onClose?.(); }}>
       <div role="dialog" aria-label="명령 팔레트" className="bds-cmdk__panel" onKeyDown={onKey}>

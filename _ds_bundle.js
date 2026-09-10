@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"Ds_d3ea90","components":[{"name":"Button","sourcePath":"components/action/Button.jsx"},{"name":"Icon","sourcePath":"components/action/Icon.jsx"},{"name":"IconButton","sourcePath":"components/action/IconButton.jsx"},{"name":"MascotMark","sourcePath":"components/brand/MascotMark.jsx"},{"name":"BarList","sourcePath":"components/data/BarList.jsx"},{"name":"Chart","sourcePath":"components/data/Chart.jsx"},{"name":"DataTable","sourcePath":"components/data/DataTable.jsx"},{"name":"DescriptionList","sourcePath":"components/data/DescriptionList.jsx"},{"name":"DiffView","sourcePath":"components/data/DiffView.jsx"},{"name":"Gauge","sourcePath":"components/data/Gauge.jsx"},{"name":"Heatmap","sourcePath":"components/data/Heatmap.jsx"},{"name":"KeyValues","sourcePath":"components/data/KeyValues.jsx"},{"name":"Legend","sourcePath":"components/data/Legend.jsx"},{"name":"LogViewer","sourcePath":"components/data/LogViewer.jsx"},{"name":"Sparkline","sourcePath":"components/data/Sparkline.jsx"},{"name":"StatTile","sourcePath":"components/data/StatTile.jsx"},{"name":"Timeline","sourcePath":"components/data/Timeline.jsx"},{"name":"TrendDelta","sourcePath":"components/data/TrendDelta.jsx"},{"name":"UptimeBar","sourcePath":"components/data/UptimeBar.jsx"},{"name":"Accordion","sourcePath":"components/display/Accordion.jsx"},{"name":"Avatar","sourcePath":"components/display/Avatar.jsx"},{"name":"AvatarGroup","sourcePath":"components/display/Avatar.jsx"},{"name":"Badge","sourcePath":"components/display/Badge.jsx"},{"name":"Code","sourcePath":"components/display/Code.jsx"},{"name":"CodeBlock","sourcePath":"components/display/Code.jsx"},{"name":"Kbd","sourcePath":"components/display/Code.jsx"},{"name":"CopyField","sourcePath":"components/display/CopyField.jsx"},{"name":"StatusPill","sourcePath":"components/display/StatusPill.jsx"},{"name":"Tag","sourcePath":"components/display/Tag.jsx"},{"name":"AlertBanner","sourcePath":"components/feedback/AlertBanner.jsx"},{"name":"ConfirmDialog","sourcePath":"components/feedback/ConfirmDialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"ErrorState","sourcePath":"components/feedback/ErrorState.jsx"},{"name":"InlineMessage","sourcePath":"components/feedback/InlineMessage.jsx"},{"name":"LoadingOverlay","sourcePath":"components/feedback/LoadingOverlay.jsx"},{"name":"NotificationTrigger","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"NotificationDrawer","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"ProgressBar","sourcePath":"components/feedback/ProgressBar.jsx"},{"name":"Skeleton","sourcePath":"components/feedback/Skeleton.jsx"},{"name":"Spinner","sourcePath":"components/feedback/Spinner.jsx"},{"name":"Stepper","sourcePath":"components/feedback/Stepper.jsx"},{"name":"ToastProvider","sourcePath":"components/feedback/Toast.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Checkbox","sourcePath":"components/input/Checkbox.jsx"},{"name":"CodeEditor","sourcePath":"components/input/CodeEditor.jsx"},{"name":"ColorInput","sourcePath":"components/input/ColorInput.jsx"},{"name":"Combobox","sourcePath":"components/input/Combobox.jsx"},{"name":"DatePicker","sourcePath":"components/input/DatePicker.jsx"},{"name":"DateRangePicker","sourcePath":"components/input/DateRangePicker.jsx"},{"name":"Dropzone","sourcePath":"components/input/Dropzone.jsx"},{"name":"Field","sourcePath":"components/input/Field.jsx"},{"name":"FileUpload","sourcePath":"components/input/FileUpload.jsx"},{"name":"MultiSelect","sourcePath":"components/input/MultiSelect.jsx"},{"name":"NumberStepper","sourcePath":"components/input/NumberStepper.jsx"},{"name":"OTPInput","sourcePath":"components/input/OTPInput.jsx"},{"name":"PasswordField","sourcePath":"components/input/PasswordField.jsx"},{"name":"RadioGroup","sourcePath":"components/input/RadioGroup.jsx"},{"name":"SearchField","sourcePath":"components/input/SearchField.jsx"},{"name":"SegmentedControl","sourcePath":"components/input/SegmentedControl.jsx"},{"name":"Select","sourcePath":"components/input/Select.jsx"},{"name":"Slider","sourcePath":"components/input/Slider.jsx"},{"name":"Switch","sourcePath":"components/input/Switch.jsx"},{"name":"TextArea","sourcePath":"components/input/TextArea.jsx"},{"name":"TextField","sourcePath":"components/input/TextField.jsx"},{"name":"TimePicker","sourcePath":"components/input/TimePicker.jsx"},{"name":"AspectRatio","sourcePath":"components/layout/AspectRatio.jsx"},{"name":"CardHead","sourcePath":"components/layout/CardHead.jsx"},{"name":"Container","sourcePath":"components/layout/Container.jsx"},{"name":"Divider","sourcePath":"components/layout/Divider.jsx"},{"name":"Grid","sourcePath":"components/layout/Grid.jsx"},{"name":"GridItem","sourcePath":"components/layout/Grid.jsx"},{"name":"Inline","sourcePath":"components/layout/Inline.jsx"},{"name":"PageHeader","sourcePath":"components/layout/PageHeader.jsx"},{"name":"PageStack","sourcePath":"components/layout/PageStack.jsx"},{"name":"Panel","sourcePath":"components/layout/Panel.jsx"},{"name":"Spacer","sourcePath":"components/layout/Spacer.jsx"},{"name":"Stack","sourcePath":"components/layout/Stack.jsx"},{"name":"StatusBar","sourcePath":"components/layout/StatusBar.jsx"},{"name":"Toolbar","sourcePath":"components/layout/Toolbar.jsx"},{"name":"ToolbarGrow","sourcePath":"components/layout/Toolbar.jsx"},{"name":"Visible","sourcePath":"components/layout/Visible.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"CommandPalette","sourcePath":"components/navigation/CommandPalette.jsx"},{"name":"Link","sourcePath":"components/navigation/Link.jsx"},{"name":"Pagination","sourcePath":"components/navigation/Pagination.jsx"},{"name":"SidebarShell","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavItem","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavGroup","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"},{"name":"TopNav","sourcePath":"components/navigation/TopNav.jsx"},{"name":"Drawer","sourcePath":"components/overlay/Drawer.jsx"},{"name":"DropdownMenu","sourcePath":"components/overlay/DropdownMenu.jsx"},{"name":"FormModal","sourcePath":"components/overlay/FormModal.jsx"},{"name":"Modal","sourcePath":"components/overlay/Modal.jsx"},{"name":"Popover","sourcePath":"components/overlay/Popover.jsx"},{"name":"Tooltip","sourcePath":"components/overlay/Tooltip.jsx"}],"sourceHashes":{"components/action/Button.jsx":"09b7d91ea70d","components/action/Icon.jsx":"37cb27cf8630","components/action/IconButton.jsx":"8a6e2c96f973","components/brand/MascotMark.jsx":"7b83c6e0e778","components/core/frame.js":"7b923fcdece0","components/core/missing.js":"8b286e1a101a","components/core/useAnchoredPopover.js":"13047423cac1","components/data/BarList.jsx":"4b25766d6a11","components/data/Chart.jsx":"88dc07ee4126","components/data/DataTable.jsx":"f2b0f9ec6f71","components/data/DescriptionList.jsx":"09f578c0508a","components/data/DiffView.jsx":"f64dd56b50e7","components/data/Gauge.jsx":"dadfb7a67f14","components/data/Heatmap.jsx":"f5b8b7fbaba0","components/data/KeyValues.jsx":"9a8c0448bf71","components/data/Legend.jsx":"83a44c5af125","components/data/LogViewer.jsx":"f15f94aee332","components/data/Sparkline.jsx":"d2785197f2c6","components/data/StatTile.jsx":"a18f8921d4aa","components/data/Timeline.jsx":"3484620fcf1a","components/data/TrendDelta.jsx":"df77ede30cb1","components/data/UptimeBar.jsx":"8dbc08c8b484","components/data/chart-math.js":"8d99ceed4d4a","components/display/Accordion.jsx":"fe63c08e4db6","components/display/Avatar.jsx":"380fbe3668b8","components/display/Badge.jsx":"ebdfaa3e5a79","components/display/Code.jsx":"db5fc2d41bf7","components/display/CopyField.jsx":"63b8d023c5ac","components/display/StatusPill.jsx":"2271178c5885","components/display/Tag.jsx":"0a8cf9b3a7da","components/feedback/AlertBanner.jsx":"35630891733b","components/feedback/ConfirmDialog.jsx":"6c268323b817","components/feedback/EmptyState.jsx":"0cc5195f8321","components/feedback/ErrorState.jsx":"d1fb9a97acb1","components/feedback/InlineMessage.jsx":"1a767995ef24","components/feedback/LoadingOverlay.jsx":"4d6098571f5a","components/feedback/NotificationDrawer.jsx":"496171c759e3","components/feedback/ProgressBar.jsx":"fcde9d6c0e1c","components/feedback/Skeleton.jsx":"d28497fc3046","components/feedback/Spinner.jsx":"14b0ba99fd1e","components/feedback/Stepper.jsx":"c26d48f4335e","components/feedback/Toast.jsx":"7c9c3387d536","components/input/Checkbox.jsx":"d2f66190fbb5","components/input/CodeEditor.jsx":"ccb2abd976b2","components/input/ColorInput.jsx":"a292601255e3","components/input/Combobox.jsx":"bdd34127fb7b","components/input/DatePicker.jsx":"5ddbb2997221","components/input/DateRangePicker.jsx":"f28fa6a2f71d","components/input/Dropzone.jsx":"0365b37de644","components/input/Field.jsx":"64574afd3fca","components/input/FileUpload.jsx":"8d66e5738ac1","components/input/MultiSelect.jsx":"dd7e572f32a1","components/input/NumberStepper.jsx":"a4f9d227933f","components/input/OTPInput.jsx":"1af8016f9e86","components/input/PasswordField.jsx":"fc4e47660183","components/input/RadioGroup.jsx":"8f6614181191","components/input/SearchField.jsx":"5bf4dce7e420","components/input/SegmentedControl.jsx":"4808a118f5a5","components/input/Select.jsx":"23fa266f4ce8","components/input/Slider.jsx":"919c77f5b95b","components/input/Switch.jsx":"4987aa99a72b","components/input/TextArea.jsx":"c876e585198f","components/input/TextField.jsx":"7fc617fee4f9","components/input/TimePicker.jsx":"a16f91005718","components/layout/AspectRatio.jsx":"e2ae6d037775","components/layout/CardHead.jsx":"1d17c88765ab","components/layout/Container.jsx":"f21e0d25115f","components/layout/Divider.jsx":"d569b3cd4069","components/layout/Grid.jsx":"762064e97502","components/layout/Inline.jsx":"723a2506c7e6","components/layout/PageHeader.jsx":"8062828d5bc9","components/layout/PageStack.jsx":"9703e7450025","components/layout/Panel.jsx":"5055dfd4e67a","components/layout/Spacer.jsx":"1fe8d631b4a5","components/layout/Stack.jsx":"48ff38945a39","components/layout/StatusBar.jsx":"b25654bc2c4d","components/layout/Toolbar.jsx":"7ab182321833","components/layout/Visible.jsx":"a121f0c10d26","components/navigation/Breadcrumb.jsx":"8003c996b8e5","components/navigation/CommandPalette.jsx":"b9515a5e4552","components/navigation/Link.jsx":"5ef8228d7f2b","components/navigation/Pagination.jsx":"e8b6db1b786b","components/navigation/SidebarShell.jsx":"d8d7d3d54b42","components/navigation/Tabs.jsx":"5d986f09ce35","components/navigation/TopNav.jsx":"b2de719cb8b9","components/overlay/Drawer.jsx":"db27a083c980","components/overlay/DropdownMenu.jsx":"3f75df42cd2d","components/overlay/FormModal.jsx":"3453da04e7de","components/overlay/Modal.jsx":"261b5641ed3e","components/overlay/Popover.jsx":"a25f10bd340b","components/overlay/Tooltip.jsx":"fe984a0919ec","components/overlay/useModalDialog.js":"62d1a38e1428","theme-toggle.js":"0c924eb893f3"},"inlinedExternals":[],"unexposedExports":[{"name":"cx","sourcePath":"components/core/frame.js"},{"name":"DASHES","sourcePath":"components/data/chart-math.js"},{"name":"estWidth","sourcePath":"components/data/chart-math.js"},{"name":"fmtKo","sourcePath":"components/data/chart-math.js"},{"name":"frameStyle","sourcePath":"components/core/frame.js"},{"name":"histBins","sourcePath":"components/data/chart-math.js"},{"name":"isMissing","sourcePath":"components/core/missing.js"},{"name":"MISSING_CLASS","sourcePath":"components/core/missing.js"},{"name":"MISSING_TEXT","sourcePath":"components/core/missing.js"},{"name":"niceTicks","sourcePath":"components/data/chart-math.js"},{"name":"NOTIFICATION_DRAWER_ID","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"numeric","sourcePath":"components/core/missing.js"},{"name":"passwordStrength","sourcePath":"components/input/PasswordField.jsx"},{"name":"pathLength","sourcePath":"components/data/chart-math.js"},{"name":"r1","sourcePath":"components/data/chart-math.js"},{"name":"runsOf","sourcePath":"components/data/chart-math.js"},{"name":"seriesDash","sourcePath":"components/data/chart-math.js"},{"name":"smoothPath","sourcePath":"components/data/chart-math.js"},{"name":"spaceToken","sourcePath":"components/core/frame.js"},{"name":"stackBars","sourcePath":"components/data/chart-math.js"},{"name":"toneInk","sourcePath":"components/data/chart-math.js"},{"name":"toneVar","sourcePath":"components/data/chart-math.js"},{"name":"useAnchoredPopover","sourcePath":"components/core/useAnchoredPopover.js"},{"name":"useFieldContext","sourcePath":"components/input/Field.jsx"},{"name":"useModalDialog","sourcePath":"components/overlay/useModalDialog.js"},{"name":"useToast","sourcePath":"components/feedback/Toast.jsx"}]} */
+/* @ds-bundle: {"format":4,"namespace":"Ds_d3ea90","components":[{"name":"Button","sourcePath":"components/action/Button.jsx"},{"name":"Icon","sourcePath":"components/action/Icon.jsx"},{"name":"IconButton","sourcePath":"components/action/IconButton.jsx"},{"name":"MascotMark","sourcePath":"components/brand/MascotMark.jsx"},{"name":"BarList","sourcePath":"components/data/BarList.jsx"},{"name":"Chart","sourcePath":"components/data/Chart.jsx"},{"name":"DataTable","sourcePath":"components/data/DataTable.jsx"},{"name":"DescriptionList","sourcePath":"components/data/DescriptionList.jsx"},{"name":"DiffView","sourcePath":"components/data/DiffView.jsx"},{"name":"Gauge","sourcePath":"components/data/Gauge.jsx"},{"name":"Heatmap","sourcePath":"components/data/Heatmap.jsx"},{"name":"KeyValues","sourcePath":"components/data/KeyValues.jsx"},{"name":"Legend","sourcePath":"components/data/Legend.jsx"},{"name":"LogViewer","sourcePath":"components/data/LogViewer.jsx"},{"name":"Sparkline","sourcePath":"components/data/Sparkline.jsx"},{"name":"StatTile","sourcePath":"components/data/StatTile.jsx"},{"name":"Timeline","sourcePath":"components/data/Timeline.jsx"},{"name":"TrendDelta","sourcePath":"components/data/TrendDelta.jsx"},{"name":"UptimeBar","sourcePath":"components/data/UptimeBar.jsx"},{"name":"Accordion","sourcePath":"components/display/Accordion.jsx"},{"name":"Avatar","sourcePath":"components/display/Avatar.jsx"},{"name":"AvatarGroup","sourcePath":"components/display/Avatar.jsx"},{"name":"Badge","sourcePath":"components/display/Badge.jsx"},{"name":"Code","sourcePath":"components/display/Code.jsx"},{"name":"CodeBlock","sourcePath":"components/display/Code.jsx"},{"name":"Kbd","sourcePath":"components/display/Code.jsx"},{"name":"CopyField","sourcePath":"components/display/CopyField.jsx"},{"name":"StatusPill","sourcePath":"components/display/StatusPill.jsx"},{"name":"Tag","sourcePath":"components/display/Tag.jsx"},{"name":"AlertBanner","sourcePath":"components/feedback/AlertBanner.jsx"},{"name":"ConfirmDialog","sourcePath":"components/feedback/ConfirmDialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"ErrorState","sourcePath":"components/feedback/ErrorState.jsx"},{"name":"InlineMessage","sourcePath":"components/feedback/InlineMessage.jsx"},{"name":"LoadingOverlay","sourcePath":"components/feedback/LoadingOverlay.jsx"},{"name":"NotificationTrigger","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"NotificationDrawer","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"ProgressBar","sourcePath":"components/feedback/ProgressBar.jsx"},{"name":"Skeleton","sourcePath":"components/feedback/Skeleton.jsx"},{"name":"Spinner","sourcePath":"components/feedback/Spinner.jsx"},{"name":"Stepper","sourcePath":"components/feedback/Stepper.jsx"},{"name":"ToastProvider","sourcePath":"components/feedback/Toast.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Checkbox","sourcePath":"components/input/Checkbox.jsx"},{"name":"CodeEditor","sourcePath":"components/input/CodeEditor.jsx"},{"name":"ColorInput","sourcePath":"components/input/ColorInput.jsx"},{"name":"Combobox","sourcePath":"components/input/Combobox.jsx"},{"name":"DatePicker","sourcePath":"components/input/DatePicker.jsx"},{"name":"DateRangePicker","sourcePath":"components/input/DateRangePicker.jsx"},{"name":"Dropzone","sourcePath":"components/input/Dropzone.jsx"},{"name":"Field","sourcePath":"components/input/Field.jsx"},{"name":"FileUpload","sourcePath":"components/input/FileUpload.jsx"},{"name":"MultiSelect","sourcePath":"components/input/MultiSelect.jsx"},{"name":"NumberStepper","sourcePath":"components/input/NumberStepper.jsx"},{"name":"OTPInput","sourcePath":"components/input/OTPInput.jsx"},{"name":"PasswordField","sourcePath":"components/input/PasswordField.jsx"},{"name":"RadioGroup","sourcePath":"components/input/RadioGroup.jsx"},{"name":"SearchField","sourcePath":"components/input/SearchField.jsx"},{"name":"SegmentedControl","sourcePath":"components/input/SegmentedControl.jsx"},{"name":"Select","sourcePath":"components/input/Select.jsx"},{"name":"Slider","sourcePath":"components/input/Slider.jsx"},{"name":"Switch","sourcePath":"components/input/Switch.jsx"},{"name":"TextArea","sourcePath":"components/input/TextArea.jsx"},{"name":"TextField","sourcePath":"components/input/TextField.jsx"},{"name":"TimePicker","sourcePath":"components/input/TimePicker.jsx"},{"name":"AspectRatio","sourcePath":"components/layout/AspectRatio.jsx"},{"name":"CardHead","sourcePath":"components/layout/CardHead.jsx"},{"name":"Container","sourcePath":"components/layout/Container.jsx"},{"name":"Divider","sourcePath":"components/layout/Divider.jsx"},{"name":"Grid","sourcePath":"components/layout/Grid.jsx"},{"name":"GridItem","sourcePath":"components/layout/Grid.jsx"},{"name":"Inline","sourcePath":"components/layout/Inline.jsx"},{"name":"PageHeader","sourcePath":"components/layout/PageHeader.jsx"},{"name":"PageStack","sourcePath":"components/layout/PageStack.jsx"},{"name":"Panel","sourcePath":"components/layout/Panel.jsx"},{"name":"Spacer","sourcePath":"components/layout/Spacer.jsx"},{"name":"Stack","sourcePath":"components/layout/Stack.jsx"},{"name":"StatusBar","sourcePath":"components/layout/StatusBar.jsx"},{"name":"Toolbar","sourcePath":"components/layout/Toolbar.jsx"},{"name":"ToolbarGrow","sourcePath":"components/layout/Toolbar.jsx"},{"name":"Visible","sourcePath":"components/layout/Visible.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"CommandPalette","sourcePath":"components/navigation/CommandPalette.jsx"},{"name":"Link","sourcePath":"components/navigation/Link.jsx"},{"name":"Pagination","sourcePath":"components/navigation/Pagination.jsx"},{"name":"SidebarShell","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavItem","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavGroup","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"},{"name":"TopNav","sourcePath":"components/navigation/TopNav.jsx"},{"name":"Drawer","sourcePath":"components/overlay/Drawer.jsx"},{"name":"DropdownMenu","sourcePath":"components/overlay/DropdownMenu.jsx"},{"name":"FormModal","sourcePath":"components/overlay/FormModal.jsx"},{"name":"Modal","sourcePath":"components/overlay/Modal.jsx"},{"name":"Popover","sourcePath":"components/overlay/Popover.jsx"},{"name":"Tooltip","sourcePath":"components/overlay/Tooltip.jsx"}],"sourceHashes":{"components/action/Button.jsx":"09b7d91ea70d","components/action/Icon.jsx":"37cb27cf8630","components/action/IconButton.jsx":"e970a1310f2a","components/brand/MascotMark.jsx":"2f60684fafc0","components/core/frame.js":"7b923fcdece0","components/core/missing.js":"8b286e1a101a","components/core/useAnchoredPopover.js":"13047423cac1","components/data/BarList.jsx":"646c276541f5","components/data/Chart.jsx":"681db7f01473","components/data/DataTable.jsx":"ac80548515b4","components/data/DescriptionList.jsx":"09f578c0508a","components/data/DiffView.jsx":"f64dd56b50e7","components/data/Gauge.jsx":"d2e79030df47","components/data/Heatmap.jsx":"f5b8b7fbaba0","components/data/KeyValues.jsx":"9a8c0448bf71","components/data/Legend.jsx":"83a44c5af125","components/data/LogViewer.jsx":"f15f94aee332","components/data/Sparkline.jsx":"d2785197f2c6","components/data/StatTile.jsx":"714de829eb34","components/data/Timeline.jsx":"2824e3cef968","components/data/TrendDelta.jsx":"1ec79033f08b","components/data/UptimeBar.jsx":"cf53edb4f5b1","components/data/chart-math.js":"8d99ceed4d4a","components/display/Accordion.jsx":"fe63c08e4db6","components/display/Avatar.jsx":"380fbe3668b8","components/display/Badge.jsx":"6610ff331d97","components/display/Code.jsx":"db5fc2d41bf7","components/display/CopyField.jsx":"63b8d023c5ac","components/display/StatusPill.jsx":"2271178c5885","components/display/Tag.jsx":"0a8cf9b3a7da","components/feedback/AlertBanner.jsx":"35630891733b","components/feedback/ConfirmDialog.jsx":"d8b49f2a5ed2","components/feedback/EmptyState.jsx":"0cc5195f8321","components/feedback/ErrorState.jsx":"d1fb9a97acb1","components/feedback/InlineMessage.jsx":"1a767995ef24","components/feedback/LoadingOverlay.jsx":"4d6098571f5a","components/feedback/NotificationDrawer.jsx":"496171c759e3","components/feedback/ProgressBar.jsx":"fcde9d6c0e1c","components/feedback/Skeleton.jsx":"d28497fc3046","components/feedback/Spinner.jsx":"14b0ba99fd1e","components/feedback/Stepper.jsx":"c492c029e953","components/feedback/Toast.jsx":"7c9c3387d536","components/input/Checkbox.jsx":"707e1b57dba1","components/input/CodeEditor.jsx":"ee2c3e757cad","components/input/ColorInput.jsx":"d365cfbb804e","components/input/Combobox.jsx":"6d572a901e04","components/input/DatePicker.jsx":"bf27243f4825","components/input/DateRangePicker.jsx":"b3dfc1fe41f8","components/input/Dropzone.jsx":"0365b37de644","components/input/Field.jsx":"64574afd3fca","components/input/FileUpload.jsx":"f526b5959036","components/input/MultiSelect.jsx":"83837b9ad5ec","components/input/NumberStepper.jsx":"a4f9d227933f","components/input/OTPInput.jsx":"1af8016f9e86","components/input/PasswordField.jsx":"fc4e47660183","components/input/RadioGroup.jsx":"8f6614181191","components/input/SearchField.jsx":"5bf4dce7e420","components/input/SegmentedControl.jsx":"ac18382a3563","components/input/Select.jsx":"23fa266f4ce8","components/input/Slider.jsx":"919c77f5b95b","components/input/Switch.jsx":"4987aa99a72b","components/input/TextArea.jsx":"c876e585198f","components/input/TextField.jsx":"7fc617fee4f9","components/input/TimePicker.jsx":"7767fc39ad04","components/layout/AspectRatio.jsx":"e2ae6d037775","components/layout/CardHead.jsx":"1d17c88765ab","components/layout/Container.jsx":"f21e0d25115f","components/layout/Divider.jsx":"d569b3cd4069","components/layout/Grid.jsx":"762064e97502","components/layout/Inline.jsx":"723a2506c7e6","components/layout/PageHeader.jsx":"8062828d5bc9","components/layout/PageStack.jsx":"9703e7450025","components/layout/Panel.jsx":"5055dfd4e67a","components/layout/Spacer.jsx":"1fe8d631b4a5","components/layout/Stack.jsx":"48ff38945a39","components/layout/StatusBar.jsx":"b25654bc2c4d","components/layout/Toolbar.jsx":"7ab182321833","components/layout/Visible.jsx":"a121f0c10d26","components/navigation/Breadcrumb.jsx":"0858ed548d0b","components/navigation/CommandPalette.jsx":"3cb74c9fb336","components/navigation/Link.jsx":"5ef8228d7f2b","components/navigation/Pagination.jsx":"36e3aee2f6d1","components/navigation/SidebarShell.jsx":"d8d7d3d54b42","components/navigation/Tabs.jsx":"beadfb871a96","components/navigation/TopNav.jsx":"b2de719cb8b9","components/overlay/Drawer.jsx":"db27a083c980","components/overlay/DropdownMenu.jsx":"9059f868ee9f","components/overlay/FormModal.jsx":"3453da04e7de","components/overlay/Modal.jsx":"261b5641ed3e","components/overlay/Popover.jsx":"33ae32b79290","components/overlay/Tooltip.jsx":"fe984a0919ec","components/overlay/useModalDialog.js":"62d1a38e1428","theme-toggle.js":"0c924eb893f3"},"inlinedExternals":[],"unexposedExports":[{"name":"cx","sourcePath":"components/core/frame.js"},{"name":"DASHES","sourcePath":"components/data/chart-math.js"},{"name":"estWidth","sourcePath":"components/data/chart-math.js"},{"name":"fmtKo","sourcePath":"components/data/chart-math.js"},{"name":"frameStyle","sourcePath":"components/core/frame.js"},{"name":"histBins","sourcePath":"components/data/chart-math.js"},{"name":"isMissing","sourcePath":"components/core/missing.js"},{"name":"MISSING_CLASS","sourcePath":"components/core/missing.js"},{"name":"MISSING_TEXT","sourcePath":"components/core/missing.js"},{"name":"niceTicks","sourcePath":"components/data/chart-math.js"},{"name":"NOTIFICATION_DRAWER_ID","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"numeric","sourcePath":"components/core/missing.js"},{"name":"passwordStrength","sourcePath":"components/input/PasswordField.jsx"},{"name":"pathLength","sourcePath":"components/data/chart-math.js"},{"name":"r1","sourcePath":"components/data/chart-math.js"},{"name":"runsOf","sourcePath":"components/data/chart-math.js"},{"name":"seriesDash","sourcePath":"components/data/chart-math.js"},{"name":"smoothPath","sourcePath":"components/data/chart-math.js"},{"name":"spaceToken","sourcePath":"components/core/frame.js"},{"name":"stackBars","sourcePath":"components/data/chart-math.js"},{"name":"toneInk","sourcePath":"components/data/chart-math.js"},{"name":"toneVar","sourcePath":"components/data/chart-math.js"},{"name":"useAnchoredPopover","sourcePath":"components/core/useAnchoredPopover.js"},{"name":"useFieldContext","sourcePath":"components/input/Field.jsx"},{"name":"useModalDialog","sourcePath":"components/overlay/useModalDialog.js"},{"name":"useToast","sourcePath":"components/feedback/Toast.jsx"}]} */
 
 (() => {
 
@@ -158,7 +158,7 @@ const { cx, Icon } = __ds_scope;
 /** 아이콘 전용 버튼. aria-label 필수. badge(숫자)가 0보다 크면 우상단 카운트가 붙고 접근 가능한 이름에 "N건"이 더해진다. */
 const IconButton = /*#__PURE__*/forwardRef(
 /**
- * @param {Parameters<typeof import("./IconButton.d.ts").IconButton>[0]} props
+ * @param {import("./IconButton.d.ts").IconButtonProps} props
  * @param {import("react").ForwardedRef<HTMLButtonElement>} ref
  */
 function IconButton({
@@ -204,6 +204,8 @@ const SIZES = Object.freeze({
   xl: 96,
   xxl: 128
 });
+
+/** @param {{ face: string, tiny?: boolean, animated?: boolean }} props */
 function Face({
   face,
   tiny,
@@ -617,7 +619,7 @@ function MascotMark({
   'aria-label': ariaLabel,
   ...rest
 }) {
-  const requested = typeof size === 'string' ? SIZES[size.toLowerCase()] : size;
+  const requested = typeof size === 'string' ? SIZES[(/** @type {keyof typeof SIZES} */size.toLowerCase())] : size;
   const dimension = Number.isFinite(requested) && requested > 0 ? requested : SIZES.md;
   return h('svg', {
     ...rest,
@@ -750,7 +752,7 @@ Object.assign(__ds_scope, { useAnchoredPopover });
 
 // components/data/BarList.jsx
 try { (() => {
-const { cx, frameStyle, MISSING_CLASS, MISSING_TEXT, isMissing } = __ds_scope;
+const { cx, frameStyle, MISSING_CLASS, MISSING_TEXT, isMissing, numeric } = __ds_scope;
 /** 이름·값·막대 목록(디스크별 사용량, GPU 예약). max 생략 시 항목 최대값. thresholds로 warn/crit 색 전환.
  *  결측 값(null·undefined·NaN)은 막대 0 + "수집 안 됨" 문구로 그린다.
  * @param {Parameters<typeof import("./BarList.d.ts").BarList>[0]} props
@@ -769,13 +771,14 @@ function BarList({
   "aria-label": ariaLabel,
   ...rest
 }) {
-  const nums = items.map(it => it.value).filter(v => !isMissing(v));
-  const top = (max ?? (nums.length ? Math.max(...nums) : 1)) || 1;
+  const nums = /** @type {number[]} */items.map(it => numeric(it.value)).filter(v => v != null);
+  const top = max ?? (nums.length ? Math.max(...nums) : 1) ?? 1;
   const barColor = (/** @type {number | null} */v, /** @type {import("./BarList.d.ts").BarListItem} */it) => {
     if (it.tone) return `var(--series-${it.tone})`;
-    if (thresholds && !isMissing(v)) {
-      if (v >= thresholds.crit) return "var(--crit)";
-      if (v >= thresholds.warn) return "var(--warn)";
+    const n = numeric(v);
+    if (thresholds && n != null) {
+      if (n >= thresholds.crit) return "var(--crit)";
+      if (n >= thresholds.warn) return "var(--warn)";
     }
     return `var(--series-${tone})`;
   };
@@ -791,7 +794,7 @@ function BarList({
     ...rest
   }, items.map((it, i) => {
     const na = isMissing(it.value);
-    const pct = na ? 0 : Math.min(100, Math.max(0, it.value / top * 100));
+    const pct = na ? 0 : Math.min(100, Math.max(0, (it.value ?? 0) / top * 100));
     return /*#__PURE__*/React.createElement("div", {
       key: it.key ?? i,
       className: "bds-barlist__row",
@@ -800,7 +803,7 @@ function BarList({
       className: "bds-barlist__n bds-ellipsis"
     }, it.name), /*#__PURE__*/React.createElement("span", {
       className: cx("bds-barlist__v", na && MISSING_CLASS)
-    }, na ? MISSING_TEXT : valueFormatter(it.value)), /*#__PURE__*/React.createElement("div", {
+    }, na ? MISSING_TEXT : valueFormatter(it.value ?? 0)), /*#__PURE__*/React.createElement("div", {
       className: "bds-barlist__track",
       "aria-hidden": "true"
     }, /*#__PURE__*/React.createElement("div", {
@@ -891,7 +894,7 @@ Object.assign(__ds_scope, { DiffView });
 
 // components/data/Gauge.jsx
 try { (() => {
-const { cx, frameStyle, MISSING_TEXT, isMissing } = __ds_scope;
+const { cx, frameStyle, MISSING_TEXT, isMissing, numeric } = __ds_scope;
 /** 반원 게이지. value 0~1(또는 max 기준). 임계 70/90으로 톤 자동(ok·warn·crit). 결측이면 "수집 안 됨".
  *  결측 문구의 표기는 SVG text라 색이 fill이다. 공통 .bds-na 대신 tone off 규칙(.bds-gauge--off .bds-gauge__v)이 담당한다.
  * @param {Parameters<typeof import("./Gauge.d.ts").Gauge>[0]} props
@@ -915,7 +918,8 @@ function Gauge({
   style,
   ...rest
 }) {
-  const r = isMissing(value) ? null : Math.max(0, Math.min(1, value / max));
+  const n = numeric(value);
+  const r = n == null ? null : Math.max(0, Math.min(1, n / max));
   const t = tone ?? (r == null ? "off" : r >= thresholds.crit ? "crit" : r >= thresholds.warn ? "warn" : "ok");
   const W = 120,
     H = 70,
@@ -925,7 +929,7 @@ function Gauge({
     sw = 10;
   const len = Math.PI * R;
   const d = "M " + (cx0 - R) + " " + cy + " A " + R + " " + R + " 0 0 1 " + (cx0 + R) + " " + cy;
-  const txt = r == null ? MISSING_TEXT : valueFormatter ? valueFormatter(value) : Math.round(r * 100) + "%";
+  const txt = r == null || n == null ? MISSING_TEXT : valueFormatter ? valueFormatter(n) : Math.round(r * 100) + "%";
   return /*#__PURE__*/React.createElement("div", {
     className: cx("bds-gauge", "bds-gauge--" + t, className),
     style: frameStyle({
@@ -937,7 +941,7 @@ function Gauge({
     role: "meter",
     "aria-valuemin": 0,
     "aria-valuemax": max,
-    "aria-valuenow": r == null ? undefined : value,
+    "aria-valuenow": r == null ? undefined : n ?? undefined,
     "aria-valuetext": txt + (label ? " " + label : ""),
     ...rest
   }, /*#__PURE__*/React.createElement("svg", {
@@ -1192,6 +1196,7 @@ Object.assign(__ds_scope, { LogViewer });
 // components/data/Timeline.jsx
 try { (() => {
 const { cx, frameStyle, Icon } = __ds_scope;
+/** @type {Record<string, string>} */
 const TONE = {
   ok: "정상",
   warn: "주의",
@@ -1232,7 +1237,7 @@ function Timeline({
     className: "bds-tl__body"
   }, /*#__PURE__*/React.createElement("span", {
     className: "bds-tl__t"
-  }, TONE[it.tone] && /*#__PURE__*/React.createElement("span", {
+  }, it.tone && TONE[it.tone] && /*#__PURE__*/React.createElement("span", {
     className: "bds-sr"
   }, TONE[it.tone], ", "), it.title), it.detail && /*#__PURE__*/React.createElement("span", {
     className: "bds-tl__d"
@@ -1243,7 +1248,7 @@ Object.assign(__ds_scope, { Timeline });
 
 // components/data/TrendDelta.jsx
 try { (() => {
-const { cx, MISSING_CLASS, MISSING_TEXT, isMissing, Icon } = __ds_scope;
+const { cx, MISSING_CLASS, MISSING_TEXT, isMissing, numeric, Icon } = __ds_scope;
 /** 증감 표시. value는 변화량(숫자) 또는 비율(percent). inverse면 증가가 나쁜 지표(응답시간·오류). 항상 화살표+숫자, 색 단독 금지.
  *  결측이면 화살표 없이 "수집 안 됨"을 mono 없이 표시한다.
  * @param {Parameters<typeof import("./TrendDelta.d.ts").TrendDelta>[0]} props
@@ -1261,8 +1266,9 @@ function TrendDelta({
     className: cx("bds-delta", "bds-delta--flat", MISSING_CLASS, className),
     ...rest
   }, MISSING_TEXT);
-  const dir = value > 0 ? "up" : value < 0 ? "down" : "flat";
-  const txt = (value > 0 ? "+" : "") + (percent ? (value * 100).toFixed(precision) + "%" : Number(value).toLocaleString("ko-KR", {
+  const n = numeric(value) ?? 0;
+  const dir = n > 0 ? "up" : n < 0 ? "down" : "flat";
+  const txt = (n > 0 ? "+" : "") + (percent ? (n * 100).toFixed(precision) + "%" : n.toLocaleString("ko-KR", {
     maximumFractionDigits: precision
   }));
   return /*#__PURE__*/React.createElement("span", {
@@ -1310,7 +1316,7 @@ function UptimeBar({
     className: "bds-uptime__hd"
   }, name && /*#__PURE__*/React.createElement("b", null, name), /*#__PURE__*/React.createElement("span", {
     className: cx("bds-uptime__pct", na && MISSING_CLASS)
-  }, na ? MISSING_TEXT : pct.toFixed(pct >= 99.95 ? 3 : 2) + "%")), /*#__PURE__*/React.createElement("div", {
+  }, na || pct == null ? MISSING_TEXT : pct.toFixed(pct >= 99.95 ? 3 : 2) + "%")), /*#__PURE__*/React.createElement("div", {
     className: "bds-uptime__bars",
     role: "img",
     "aria-label": (name ? name + " " : "") + segments.length + "칸 가용성"
@@ -1643,7 +1649,10 @@ function Tip({
   }, r.value))));
 }
 /** @param {Fmt} fmt @param {number | null | undefined} v */
-const cell = (fmt, v) => isMissing(v) ? MISSING_TEXT : fmt(v);
+const cell = (fmt, v) => {
+  const n = numeric(v);
+  return n == null ? MISSING_TEXT : fmt(n);
+};
 
 /* 데이터가 기하 계산에 닿기 전 단 한 곳의 경계. 여기서 결측은 모두 null이 되므로 아래 계산은 값이 null인지만 본다.
    이 경계가 없으면 NaN 하나가 축 범위를 통해 차트 전체의 좌표를 무효로 만든다. */
@@ -1665,7 +1674,9 @@ function normalize(props) {
   if ("value" in props) out.value = numeric(props.value);
   if (props.samples) out.samples = props.samples.map(numeric);
   if (props.thresholds) out.thresholds = props.thresholds.filter(t => numeric(t.value) != null);
-  for (const key of ["max", "yMin", "yMax"]) if (props[key] != null) out[key] = numeric(props[key]);
+  if (props.max != null) out.max = numeric(props.max) ?? undefined;
+  if (props.yMin != null) out.yMin = numeric(props.yMin) ?? undefined;
+  if (props.yMax != null) out.yMax = numeric(props.yMax) ?? undefined;
   return out;
 }
 
@@ -1712,9 +1723,9 @@ function Cartesian({
   const every = Math.max(1, Math.ceil(n / Math.max(2, Math.floor(iw / 58))));
   const showX = (/** @type {number} */i) => xTicks !== "none" && (xTicks === "ends" ? i === 0 || i === n - 1 : i % every === 0 || i === n - 1);
   const groupW = Math.min(28, bandW * 0.62 / (stacked ? 1 : series.length));
-  const onMove = (/** @type {import("react").MouseEvent<SVGSVGElement> & { touches?: TouchList }} */e) => {
+  const onMove = (/** @type {import("react").MouseEvent<SVGSVGElement> | import("react").TouchEvent<SVGSVGElement>} */e) => {
     const r = e.currentTarget.getBoundingClientRect();
-    const px = (e.clientX ?? e.touches?.[0]?.clientX) - r.left;
+    const px = ("clientX" in e ? e.clientX : e.touches[0]?.clientX ?? 0) - r.left;
     const i = kind === "bar" ? Math.floor((px - padL) / bandW) : Math.round((px - padL) / (step || 1));
     setHover(Math.max(0, Math.min(n - 1, i)));
   };
@@ -1896,7 +1907,7 @@ function Pie({
 }) {
   // 결측 세그먼트는 null로 남긴다. 0으로 바꾸면 수집 실패가 "0"으로 보인다.
   const vals = segments.map(s => s.value == null ? null : Math.max(0, s.value)),
-    sum = vals.reduce((a, b) => a + (b ?? 0), 0);
+    sum = vals.reduce((/** @type {number} */a, b) => a + (b ?? 0), 0);
   if (!sum || w < 40) return null;
   const R = Math.min(w, h) / 2 - 4,
     stroke = Math.max(10, R * 0.34),
@@ -1905,17 +1916,18 @@ function Pie({
     cx0 = w / 2,
     cy0 = h / 2;
   let acc = 0;
-  const arcs = vals.map((v, i) => {
-    if (v == null) return null;
+  const arcs = vals.flatMap((v, i) => {
+    if (v == null) return [];
     const a = {
       i,
       dash: v / sum * C,
       off: -(acc / sum) * C
     };
     acc += v;
-    return a;
-  }).filter(a => a && a.dash > 0);
+    return a.dash > 0 ? [a] : [];
+  });
   const act = hover != null ? segments[hover] : null;
+  const hoverVal = hover != null ? vals[hover] : null;
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("svg", {
     viewBox: `0 0 ${w} ${h}`,
     width: w,
@@ -1953,8 +1965,8 @@ function Pie({
       "--center-size": `${Math.max(14, Math.round(R * 0.42))}px`
     }
   }, /*#__PURE__*/React.createElement("b", {
-    className: cx(act && isMissing(vals[hover]) && MISSING_CLASS)
-  }, act ? cell(fmt, vals[hover]) : fmt(sum)), /*#__PURE__*/React.createElement("small", null, act ? act.label : caption)));
+    className: cx(act && isMissing(hoverVal) && MISSING_CLASS)
+  }, act ? cell(fmt, hoverVal) : fmt(sum)), /*#__PURE__*/React.createElement("small", null, act ? act.label : caption)));
 }
 
 /* ---------- 방사 게이지 ---------- */
@@ -2071,7 +2083,7 @@ function Radar({
     // 닫힌 면은 모든 축이 수집된 경우에만 그린다. 결측 축 양옆을 건너 연결하지 않는다.
     if (points.every(Boolean)) return /*#__PURE__*/React.createElement("polygon", {
       key: si,
-      points: points.map(p => p.join(",")).join(" "),
+      points: /** @type {Point[]} */points.map(p => p.join(",")).join(" "),
       fill: color,
       fillOpacity: ".2",
       stroke: color,
@@ -2248,14 +2260,17 @@ function SrTable({
   bins,
   fmt
 }) {
-  let head = [],
-    rows = [];
+  /** @type {import("react").ReactNode[]} */
+  let head = [];
+  /** @type {import("react").ReactNode[][]} */
+  let rows = [];
   if (kind === "pie") {
     head = ["항목", "값"];
     rows = (props.segments ?? []).map(sg => [sg.label, cell(fmt, sg.value == null ? null : Math.max(0, sg.value))]);
   } else if (kind === "radial") {
     head = props.label != null ? ["값", "상태"] : ["값"];
-    rows = [[isMissing(props.value) ? MISSING_TEXT : fmt(Math.min(1, Math.max(0, props.value)))].concat(props.label != null ? [props.label] : [])];
+    const rv = numeric(props.value) == null ? MISSING_TEXT : fmt(Math.min(1, Math.max(0, /** @type {number} */props.value)));
+    rows = [props.label != null ? [rv, props.label] : [rv]];
   } else if (kind === "histogram") {
     const b = bins;
     head = ["구간", "표본"];
@@ -2711,7 +2726,7 @@ function Badge({
   ...rest
 }) {
   if (!dot && (count == null || count === 0) && children) return children;
-  const label = dot ? null : count > max ? max + "+" : count;
+  const label = dot ? null : (count ?? 0) > max ? max + "+" : count;
   const b = /*#__PURE__*/React.createElement("span", {
     className: cx("bds-badge", tone !== "neutral" && "bds-badge--" + tone, dot && "bds-badge--dot", className),
     "aria-label": ariaLabel ?? (dot ? "새 항목" : count + "건"),
@@ -2882,6 +2897,7 @@ function useCountUp(target, enabled) {
     const start = performance.now(),
       f = from.current,
       dur = 900;
+    /** @type {number | undefined} */
     let raf;
     const step = (/** @type {number} */t) => {
       const p = Math.min(1, (t - start) / dur),
@@ -2890,7 +2906,9 @@ function useCountUp(target, enabled) {
       if (p < 1) raf = requestAnimationFrame(step);else from.current = target;
     };
     raf = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(raf);
+    return () => {
+      if (raf != null) cancelAnimationFrame(raf);
+    };
   }, [target, enabled]);
   return enabled ? v : target;
 }
@@ -3319,6 +3337,7 @@ Object.assign(__ds_scope, { LoadingOverlay });
 // components/feedback/Stepper.jsx
 try { (() => {
 const { cx, frameStyle, Icon } = __ds_scope;
+/** @type {Record<string, string>} */
 const SR = {
   done: "완료",
   error: "오류"
@@ -3336,7 +3355,7 @@ function Stepper({
   className,
   style
 }) {
-  const st = (/** @type {import("./Stepper.d.ts").StepperStep} */s, /** @type {number} */i) => s.status ?? (current == null ? "todo" : i < current ? "done" : i === current ? "current" : "todo");
+  const st = (/** @type {import("./Stepper.d.ts").StepItem} */s, /** @type {number} */i) => s.status ?? (current == null ? "todo" : i < current ? "done" : i === current ? "current" : "todo");
   return /*#__PURE__*/React.createElement("ol", {
     className: cx("bds-stepper", `bds-stepper--${orientation}`, size === "sm" && "bds-stepper--sm", className),
     "aria-label": ariaLabel,
@@ -3502,7 +3521,7 @@ const { cx, Icon } = __ds_scope;
 /** 체크박스. children이 라벨. 라벨 없이 쓰면 aria-label 필수(표 선택 열). indeterminate는 ref로 세팅. */
 const Checkbox = /*#__PURE__*/forwardRef(
 /**
- * @param {Parameters<typeof import("./Checkbox.d.ts").Checkbox>[0]} props
+ * @param {import("./Checkbox.d.ts").CheckboxProps} props
  * @param {import("react").ForwardedRef<HTMLInputElement>} ref
  */
 function Checkbox({
@@ -3585,7 +3604,7 @@ function DataTable({
   const [expanded, setExpanded] = useState(() => new Set(defaultExpandedKeys));
   const autoId = useId(),
     hid = header?.id ?? autoId;
-  const keyOf = rowKey ?? ((r, i) => r.id ?? i);
+  const keyOf = rowKey ?? ((/** @type {any} */r, /** @type {number} */i) => r.id ?? i);
   const keys = rows.map((r, i) => keyOf(r, i));
   const sel = new Set(selectedKeys);
   const selCount = keys.filter(k => sel.has(k)).length;
@@ -3877,14 +3896,15 @@ function CodeEditor({
       return null;
     } catch (e) {
       onValidChange?.(null);
-      const m = /position (\d+)/.exec(e.message);
+      const msg = e instanceof Error ? e.message : String(e);
+      const m = /position (\d+)/.exec(msg);
       let line = null;
       if (m) {
         line = v.slice(0, Number(m[1])).split("\n").length;
       }
       return {
         line,
-        message: e.message.replace(/^JSON\.parse: |^Unexpected token.*?in JSON at position \d+$/, s => s).replace("JSON.parse: ", "")
+        message: msg.replace(/^JSON\.parse: |^Unexpected token.*?in JSON at position \d+$/, (/** @type {string} */s) => s).replace("JSON.parse: ", "")
       };
     }
   }, [v, language]);
@@ -3987,7 +4007,7 @@ function ColorInput({
 }) {
   const f = useFieldContext();
   const [inner, setInner] = useState(defaultValue);
-  const [text, setText] = useState(null);
+  const [text, setText] = useState(/** @type {string | null} */null);
   const v = value ?? inner;
   const set = (/** @type {string} */hex) => {
     const m = HEX.exec(hex.trim());
@@ -4092,7 +4112,7 @@ function Combobox({
   useEffect(() => {
     if (!open) return;
     const on = (/** @type {MouseEvent} */e) => {
-      if (!root.current?.contains(e.target)) {
+      if (!root.current?.contains(/** @type {Node} */e.target)) {
         setOpen(false);
         setQ("");
       }
@@ -4103,9 +4123,9 @@ function Combobox({
   useEffect(() => {
     setIdx(0);
   }, [q, open]);
-  const pick = o => {
+  const pick = (/** @type {import("./Combobox.d.ts").ComboOption | null | undefined} */o) => {
     if (o?.disabled) return;
-    onChange?.(o ? o.value : null, o);
+    onChange?.(o ? o.value : null, o ?? null);
     setOpen(false);
     setQ("");
   };
@@ -4252,7 +4272,7 @@ function DatePicker({
   useEffect(() => {
     if (!open) return;
     const on = (/** @type {MouseEvent} */e) => {
-      if (!root.current?.contains(e.target)) setOpen(false);
+      if (!root.current?.contains(/** @type {Node} */e.target)) setOpen(false);
     };
     const key = (/** @type {KeyboardEvent} */e) => {
       if (e.key === "Escape") close();
@@ -4411,7 +4431,7 @@ function DateRangePicker({
 }) {
   const f = useFieldContext();
   const custom = !value.preset;
-  const set = next => onChange?.(next);
+  const set = (/** @type {import("./DateRangePicker.d.ts").DateRange} */next) => onChange?.(next);
   return /*#__PURE__*/React.createElement("div", {
     className: cx("bds-range", disabled && "bds-ctl--disabled", className),
     role: "group",
@@ -4556,7 +4576,7 @@ function FileUpload({
       className: "bds-upload__meta bds-mono"
     }, fmtBytes(it.size), it.chunks ? ` · ${it.chunk ?? 0}/${it.chunks} 청크` : "", it.rate ? ` · ${it.rate}` : "")), /*#__PURE__*/React.createElement(ProgressBar, {
       size: "sm",
-      tone: tone === "accent" ? "accent" : tone,
+      tone: (/** @type {"accent" | "ok" | "warn" | "crit"} */tone),
       value: it.status === "verifying" ? null : it.status === "done" ? 1 : it.progress ?? 0,
       showValue: det,
       label: /*#__PURE__*/React.createElement("span", {
@@ -4626,20 +4646,20 @@ function MultiSelect({
   useEffect(() => {
     if (!open) return;
     const on = (/** @type {MouseEvent} */e) => {
-      if (!root.current?.contains(e.target)) setOpen(false);
+      if (!root.current?.contains(/** @type {Node} */e.target)) setOpen(false);
     };
     document.addEventListener("mousedown", on);
     return () => document.removeEventListener("mousedown", on);
   }, [open]);
   useEffect(() => setIdx(0), [q, open]);
-  const add = v => {
+  const add = (/** @type {string} */v) => {
     if (full) return;
     onChange?.([...value, v]);
     setIdx(0);
     setQ("");
     input.current?.focus();
   };
-  const remove = v => onChange?.(value.filter(x => x !== v));
+  const remove = (/** @type {string} */v) => onChange?.(value.filter(x => x !== v));
   const onKey = (/** @type {import("react").KeyboardEvent<HTMLElement>} */e) => {
     if (e.key === "Backspace" && !q && value.length) remove(value[value.length - 1]);else if (e.key === "ArrowDown") {
       e.preventDefault();
@@ -5036,9 +5056,9 @@ function SegmentedControl({
   ...rest
 }) {
   const root = useRef(/** @type {HTMLDivElement | null} */null);
-  const [thumb, setThumb] = useState(null);
+  const [thumb, setThumb] = useState(/** @type {{ left: number, width: number } | null} */null);
   useEffect(() => {
-    const el = root.current?.querySelector('[aria-checked="true"]');
+    const el = /** @type {HTMLElement | null} */root.current?.querySelector('[aria-checked="true"]');
     if (!el || !root.current) {
       setThumb(null);
       return;
@@ -5394,7 +5414,7 @@ function TimePicker({
 }) {
   const f = useFieldContext();
   const [h, m] = value ? value.split(":").map(Number) : [null, null];
-  const set = (/** @type {number} */hh, /** @type {number} */mm) => onChange?.(pad(hh ?? 0) + ":" + pad(mm ?? 0));
+  const set = (/** @type {number | null} */hh, /** @type {number | null} */mm) => onChange?.(pad(hh ?? 0) + ":" + pad(mm ?? 0));
   const mins = Array.from({
     length: Math.floor(60 / step)
   }, (_, i) => i * step);
@@ -5854,6 +5874,7 @@ function Breadcrumb({
 }) {
   const [all, setAll] = useState(false);
   const collapse = !all && items.length > maxItems;
+  /** @type {(import("./Breadcrumb.d.ts").BreadcrumbItem | "…")[]} */
   const shown = collapse ? [items[0], "…", ...items.slice(items.length - (maxItems - 2))] : items;
   return /*#__PURE__*/React.createElement("nav", {
     "aria-label": "경로",
@@ -5920,7 +5941,7 @@ function CommandPalette({
   /* 열 때 포커스를 입력으로, 닫을 때 열기 전 요소로 되돌린다 */
   useEffect(() => {
     if (!open || inline) return;
-    opener.current = document.activeElement;
+    opener.current = /** @type {HTMLElement | null} */document.activeElement;
     setQ("");
     setIdx(0);
     setTimeout(() => input.current?.focus(), 0);
@@ -5947,7 +5968,8 @@ function CommandPalette({
       run(list[idx]);
     } else if (e.key === "Escape") onClose?.();
   };
-  let lastGroup = null;
+  /** @type {string | undefined} */
+  let lastGroup = undefined;
   return /*#__PURE__*/React.createElement("div", {
     className: cx("bds-cmdk", inline && "bds-cmdk--inline", className),
     onMouseDown: e => {
@@ -6089,7 +6111,7 @@ function Pagination({
     type: "button",
     className: "bds-pager__pg",
     "aria-current": p === page ? "page" : undefined,
-    onClick: () => onChange?.(p)
+    onClick: () => onChange?.(Number(p))
   }, p)), /*#__PURE__*/React.createElement(IconButton, {
     icon: "caret-right",
     size: size,
@@ -6276,9 +6298,9 @@ function Tabs({
 }) {
   const root = useRef(/** @type {HTMLDivElement | null} */null),
     uid = useId().replace(/:/g, "");
-  const [ink, setInk] = useState(null);
+  const [ink, setInk] = useState(/** @type {{ left: number, width: number } | null} */null);
   useEffect(() => {
-    const el = root.current?.querySelector('[aria-selected="true"]');
+    const el = /** @type {HTMLElement | null} */root.current?.querySelector('[aria-selected="true"]');
     if (!el) return;
     const measure = () => setInk({
       left: el.offsetLeft,
@@ -6286,7 +6308,7 @@ function Tabs({
     });
     measure();
     const ro = new ResizeObserver(measure);
-    ro.observe(root.current);
+    if (root.current) ro.observe(root.current);
     return () => ro.disconnect();
   }, [value, items.length]);
   const move = (/** @type {import("react").KeyboardEvent<HTMLElement>} */e) => {
@@ -6399,13 +6421,13 @@ function DropdownMenu({
   /* 닫힐 때 포커스를 트리거로 돌린다(메뉴 항목이 언마운트되면 포커스가 body로 떨어진다) */
   const close = () => {
     if (panel.current?.matches(":popover-open")) panel.current.hidePopover();
-    setOpen(false);
+    setOpen(false); /** @type {HTMLElement | null | undefined} */
     root.current?.querySelector("[aria-haspopup]")?.focus();
   };
   useEffect(() => {
     if (!open) return;
     const on = (/** @type {PointerEvent} */e) => {
-      if (!root.current?.contains(e.target)) setOpen(false);
+      if (!root.current?.contains(/** @type {Node} */e.target)) setOpen(false);
     };
     const key = (/** @type {KeyboardEvent} */e) => {
       if (e.key === "Escape") {
@@ -6424,7 +6446,7 @@ function DropdownMenu({
   useEffect(() => {
     if (!open) return;
     const active = enabled.includes(idx) ? idx : enabled[0];
-    if (active !== undefined) panel.current?.querySelector(`[data-menu-index="${active}"]`)?.focus();
+    if (active !== undefined) /** @type {HTMLElement | null | undefined} */panel.current?.querySelector(`[data-menu-index="${active}"]`)?.focus();
   }, [idx, open, items]);
   const toggleOpen = () => {
     if (open) close();else {
@@ -6460,7 +6482,7 @@ function DropdownMenu({
       setIdx(enabled[enabled.length - 1]);
     }
   };
-  const pick = it => {
+  const pick = (/** @type {import("./DropdownMenu.d.ts").MenuItem} */it) => {
     if (it.disabled) return;
     close();
     it.onSelect?.();
@@ -6469,11 +6491,11 @@ function DropdownMenu({
     "aria-haspopup": "menu",
     "aria-expanded": open,
     "aria-controls": `${uid}-menu`,
-    onClick: e => {
+    onClick: (/** @type {import("react").MouseEvent<HTMLElement>} */e) => {
       trigger.props.onClick?.(e);
       if (!e.defaultPrevented) toggleOpen();
     },
-    onKeyDown: e => {
+    onKeyDown: (/** @type {import("react").KeyboardEvent<HTMLElement>} */e) => {
       trigger.props.onKeyDown?.(e);
       if (!e.defaultPrevented) onKey(e);
     }
@@ -6543,7 +6565,7 @@ function Popover({
 }) {
   const [inner, setInner] = useState(false);
   const open = ctrl ?? inner,
-    set = v => {
+    set = (/** @type {boolean} */v) => {
       setInner(v);
       onOpenChange?.(v);
     };
@@ -6552,11 +6574,11 @@ function Popover({
   useEffect(() => {
     if (!open) return;
     const on = (/** @type {MouseEvent} */e) => {
-      if (!root.current?.contains(e.target)) set(false);
+      if (!root.current?.contains(/** @type {Node} */e.target)) set(false);
     };
     const key = (/** @type {KeyboardEvent} */e) => {
       if (e.key === "Escape") {
-        set(false);
+        set(false); /** @type {HTMLElement | null | undefined} */
         root.current?.firstElementChild?.focus?.();
       }
     };
@@ -6571,7 +6593,7 @@ function Popover({
     "aria-expanded": open,
     "aria-controls": id,
     "aria-haspopup": "dialog",
-    onClick: e => {
+    onClick: (/** @type {import("react").MouseEvent<HTMLElement>} */e) => {
       trigger.props.onClick?.(e);
       set(!open);
     }
@@ -6944,6 +6966,8 @@ function ConfirmDialog({
     size
   });
 }
+
+/** @param {Omit<Parameters<typeof import("./ConfirmDialog.d.ts").ConfirmDialog>[0], "open">} props */
 function ConfirmSession({
   onClose,
   onConfirm,

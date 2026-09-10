@@ -10,7 +10,7 @@ const fmtLocal = (/** @type {Date | null | undefined} */ d) => d ? new Date(d.ge
 export function DateRangePicker({ value = { preset: "12h" }, onChange, presets = PRESETS, allowCustom = true, size = "md", fit = "auto", width, disabled, className, style, "aria-label": ariaLabel = "기간" }) {
   const f = useFieldContext();
   const custom = !value.preset;
-  const set = (next) => onChange?.(next);
+  const set = (/** @type {import("./DateRangePicker.d.ts").DateRange} */ next) => onChange?.(next);
   return (
     <div className={cx("bds-range", disabled && "bds-ctl--disabled", className)} role="group" aria-label={ariaLabel} style={frameStyle({ fit, width, style })}>
       <div className={cx("bds-seg", size === "sm" && "bds-seg--sm")} role="radiogroup" aria-label="최근">

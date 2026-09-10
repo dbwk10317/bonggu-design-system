@@ -4,6 +4,7 @@ import { cx } from "../core/frame.js";
 const h = React.createElement;
 const SIZES = Object.freeze({ xxs:16, xs:24, sm:32, md:48, lg:64, xl:96, xxl:128 });
 
+/** @param {{ face: string, tiny?: boolean, animated?: boolean }} props */
 function Face({face, tiny, animated}) {
   switch(face) {
     case 'neutral': return tiny ? h('g', null, h('g', {className:animated ? 'bds-mark__eye' : undefined}, h('circle', {"cx":"12.5","cy":"15.1","r":"1.65","fill":"var(--mark-line)"})), h('g', {className:animated ? 'bds-mark__eye' : undefined}, h('circle', {"cx":"23.4","cy":"15.1","r":"1.65","fill":"var(--mark-line)"})), h('path', {"d":"M15.9 18.5Q18 17.8 20.1 18.5Q21.3 19.4 18 21.5Q14.7 19.4 15.9 18.5Z","fill":"var(--mark-line)"}),h('path', {"d":"M18 21.1V22 M18 22l-1.5 1 M18 22l1.5 1","fill":"none","stroke":"var(--mark-line)","strokeWidth":"1.35","strokeLinecap":"round","strokeLinejoin":"round"})) : h('g', null, h('g', {className:animated ? 'bds-mark__eye' : undefined}, h('circle', {"cx":"12.5","cy":"15.1","r":"1.65","fill":"var(--mark-line)"}),h('circle', {"cx":"12","cy":"14.4","r":".42","fill":"var(--mark-face)"})), h('g', {className:animated ? 'bds-mark__eye' : undefined}, h('circle', {"cx":"23.4","cy":"15.1","r":"1.65","fill":"var(--mark-line)"}),h('circle', {"cx":"22.9","cy":"14.1","r":".42","fill":"var(--mark-face)"})), h('path', {"d":"M15.9 18.5Q18 17.8 20.1 18.5Q21.3 19.4 18 21.5Q14.7 19.4 15.9 18.5Z","fill":"var(--mark-line)"}),h('path', {"d":"M18 21.1V22 M18 22l-1.5 1 M18 22l1.5 1","fill":"none","stroke":"var(--mark-line)","strokeWidth":"1.05","strokeLinecap":"round","strokeLinejoin":"round"}));
@@ -22,7 +23,7 @@ function Face({face, tiny, animated}) {
 /** 봉구 심볼. 색은 마스코트 토큰, 크기는 7단계 또는 기존 px 값을 사용합니다.
  * @param {Parameters<typeof import("./MascotMark.d.ts").MascotMark>[0]} props */
 export function MascotMark({ face='neutral', size='md', animated=true, className, 'aria-label':ariaLabel, ...rest }) {
-  const requested = typeof size === 'string' ? SIZES[size.toLowerCase()] : size;
+  const requested = typeof size === 'string' ? SIZES[/** @type {keyof typeof SIZES} */ (size.toLowerCase())] : size;
   const dimension = Number.isFinite(requested) && requested > 0 ? requested : SIZES.md;
   return h('svg', { ...rest, width:dimension, height:dimension, viewBox:'0 0 36 36',
     'aria-hidden':ariaLabel ? undefined : true, 'aria-label':ariaLabel, role:ariaLabel ? 'img' : undefined,

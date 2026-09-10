@@ -20,7 +20,7 @@ export function FileUpload({ items = [], accept, multiple = true, onFiles, onPau
               <Icon name={it.status === "done" ? "check-circle" : it.status === "failed" ? "warning-circle" : "file-zip"} size={18} className="bds-upload__ic" />
               <div className="bds-upload__main">
                 <div className="bds-upload__hd"><b className="bds-ellipsis">{it.name}</b><span className="bds-upload__meta bds-mono">{fmtBytes(it.size)}{it.chunks ? ` · ${it.chunk ?? 0}/${it.chunks} 청크` : ""}{it.rate ? ` · ${it.rate}` : ""}</span></div>
-                <ProgressBar size="sm" tone={tone === "accent" ? "accent" : tone} value={it.status === "verifying" ? null : it.status === "done" ? 1 : it.progress ?? 0} showValue={det} label={<span className={cx("bds-upload__st", `bds-upload__st--${tone}`)}>{it.error ?? label}</span>} />
+                <ProgressBar size="sm" tone={/** @type {"accent" | "ok" | "warn" | "crit"} */ (tone)} value={it.status === "verifying" ? null : it.status === "done" ? 1 : it.progress ?? 0} showValue={det} label={<span className={cx("bds-upload__st", `bds-upload__st--${tone}`)}>{it.error ?? label}</span>} />
               </div>
               <div className="bds-upload__act">
                 {it.status === "uploading" && onPause && <Button size="sm" variant="ghost" icon="pause" aria-label="일시정지" onClick={() => onPause(it.id)} />}

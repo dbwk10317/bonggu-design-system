@@ -57,7 +57,7 @@ function Tip({ x, w, title, rows }) {
   );
 }
 /** @param {Fmt} fmt @param {number | null | undefined} v */
-const cell = (fmt, v) => (isMissing(v) ? MISSING_TEXT : fmt(v));
+const cell = (fmt, v) => { const n = numeric(v); return n == null ? MISSING_TEXT : fmt(n); };
 
 /* 데이터가 기하 계산에 닿기 전 단 한 곳의 경계. 여기서 결측은 모두 null이 되므로 아래 계산은 값이 null인지만 본다.
    이 경계가 없으면 NaN 하나가 축 범위를 통해 차트 전체의 좌표를 무효로 만든다. */
@@ -71,7 +71,9 @@ function normalize(props) {
   if ("value" in props) out.value = numeric(props.value);
   if (props.samples) out.samples = props.samples.map(numeric);
   if (props.thresholds) out.thresholds = props.thresholds.filter((t) => numeric(t.value) != null);
-  for (const key of ["max", "yMin", "yMax"]) if (props[key] != null) out[key] = numeric(props[key]);
+  if (props.max != null) out.max = numeric(props.max) ?? undefined;
+  if (props.yMin != null) out.yMin = numeric(props.yMin) ?? undefined;
+  if (props.yMax != null) out.yMax = numeric(props.yMax) ?? undefined;
   return out;
 }
 
@@ -94,7 +96,7 @@ function Cartesian({ kind, labels, series, fmt, uid, xTicks, w, h, thresholds = 
   const every = Math.max(1, Math.ceil(n / Math.max(2, Math.floor(iw / 58))));
   const showX = (/** @type {number} */ i) => xTicks !== "none" && (xTicks === "ends" ? i === 0 || i === n - 1 : i % every === 0 || i === n - 1);
   const groupW = Math.min(28, bandW * 0.62 / (stacked ? 1 : series.length));
-  const onMove = (/** @type {import("react").MouseEvent<SVGSVGElement> & { touches?: TouchList }} */ e) => { const r = e.currentTarget.getBoundingClientRect(); const px = ((e.clientX ?? e.touches?.[0]?.clientX) - r.left); const i = kind === "bar" ? Math.floor((px - padL) / bandW) : Math.round((px - padL) / (step || 1)); setHover(Math.max(0, Math.min(n - 1, i))); };
+  const onMove = (/** @type {import("react").MouseEvent<SVGSVGElement> | import("react").TouchEvent<SVGSVGElement>} */ e) => { const r = e.currentTarget.getBoundingClientRect(); const px = ("clientX" in e ? e.clientX : e.touches[0]?.clientX ?? 0) - r.left; const i = kind === "bar" ? Math.floor((px - padL) / bandW) : Math.round((px - padL) / (step || 1)); setHover(Math.max(0, Math.min(n - 1, i))); };
   const rows = hover == null ? [] : series.map((s, si) => ({ color: toneVar(s.tone, si), name: s.label, value: cell(fmt, s.values[hover]) }));
   return (
     <>
@@ -136,12 +138,13 @@ function Cartesian({ kind, labels, series, fmt, uid, xTicks, w, h, thresholds = 
 /** @param {{ segments: NormSegment[], fmt: Fmt, caption?: import("react").ReactNode, w: number, h: number, hover: number | null, setHover: (i: number | null) => void }} props */
 function Pie({ segments, fmt, caption, w, h, hover, setHover }) {
   // 결측 세그먼트는 null로 남긴다. 0으로 바꾸면 수집 실패가 "0"으로 보인다.
-  const vals = segments.map((s) => (s.value == null ? null : Math.max(0, s.value))), sum = vals.reduce((a, b) => a + (b ?? 0), 0);
+  const vals = segments.map((s) => (s.value == null ? null : Math.max(0, s.value))), sum = vals.reduce((/** @type {number} */ a, b) => a + (b ?? 0), 0);
   if (!sum || w < 40) return null;
   const R = Math.min(w, h) / 2 - 4, stroke = Math.max(10, R * 0.34), r = R - stroke / 2, C = 2 * Math.PI * r, cx0 = w / 2, cy0 = h / 2;
   let acc = 0;
-  const arcs = vals.map((v, i) => { if (v == null) return null; const a = { i, dash: (v / sum) * C, off: -(acc / sum) * C }; acc += v; return a; }).filter((a) => a && a.dash > 0);
+  const arcs = vals.flatMap((v, i) => { if (v == null) return []; const a = { i, dash: (v / sum) * C, off: -(acc / sum) * C }; acc += v; return a.dash > 0 ? [a] : []; });
   const act = hover != null ? segments[hover] : null;
+  const hoverVal = hover != null ? vals[hover] : null;
   return (
     <>
       <svg viewBox={`0 0 ${w} ${h}`} width={w} height={h} className="bds-chart__svg" onMouseLeave={() => setHover(null)} aria-hidden="true">
@@ -149,7 +152,7 @@ function Pie({ segments, fmt, caption, w, h, hover, setHover }) {
         {arcs.map((a) => <circle key={a.i} className="bds-chart__pieseg" cx={cx0} cy={cy0} r={r} fill="none" strokeWidth={hover === a.i ? stroke + 4 : stroke} stroke={toneVar(segments[a.i].tone, a.i)} strokeDasharray={`${Math.max(0, a.dash - 2).toFixed(2)} ${C.toFixed(2)}`} strokeDashoffset={a.off.toFixed(2)} transform={`rotate(-90 ${cx0} ${cy0})`} opacity={hover == null || hover === a.i ? 1 : 0.4} onMouseEnter={() => setHover(a.i)} style={{ transition: "stroke-width var(--dur-fast) var(--ease-out), opacity var(--dur-fast)" }} />)}
       </svg>
       <div className="bds-chart__center" style={{ "--center-size": `${Math.max(14, Math.round(R * 0.42))}px` }}>
-        <b className={cx(act && isMissing(vals[hover]) && MISSING_CLASS)}>{act ? cell(fmt, vals[hover]) : fmt(sum)}</b><small>{act ? act.label : caption}</small>
+        <b className={cx(act && isMissing(hoverVal) && MISSING_CLASS)}>{act ? cell(fmt, hoverVal) : fmt(sum)}</b><small>{act ? act.label : caption}</small>
       </div>
     </>
   );
@@ -197,7 +200,7 @@ function Radar({ axes, series, max, fmt, w, h, hover, setHover }) {
           const points = axes.map((_, i) => s.values[i] == null ? null : pt(i, Math.max(0, s.values[i] / top)));
           const color = toneVar(s.tone, si);
           // 닫힌 면은 모든 축이 수집된 경우에만 그린다. 결측 축 양옆을 건너 연결하지 않는다.
-          if (points.every(Boolean)) return <polygon key={si} points={points.map((p) => p.join(",")).join(" ")} fill={color} fillOpacity=".2" stroke={color} strokeWidth="2" strokeLinejoin="round" />;
+          if (points.every(Boolean)) return <polygon key={si} points={/** @type {Point[]} */ (points).map((p) => p.join(",")).join(" ")} fill={color} fillOpacity=".2" stroke={color} strokeWidth="2" strokeLinejoin="round" />;
           return <g key={si}>{points.map((p, i) => {
             const next = points[(i + 1) % n];
             return p && next ? <line key={i} x1={p[0]} y1={p[1]} x2={next[0]} y2={next[1]} stroke={color} strokeWidth="2" /> : null;
@@ -243,9 +246,12 @@ function Histogram({ hist, fmt, w, h, tone, percentiles = [], unit, animate, hov
 /** 시각 차트와 같은 데이터를 표로. 항상 렌더(bds-sr로 숨김)하고 루트가 aria-describedby로 가리킨다. */
 /** @param {{ id: string, kind: NonNullable<NormProps["kind"]>, props: NormProps, bins: ReturnType<typeof histBins>, fmt: Fmt }} props */
 function SrTable({ id, kind, props, bins, fmt }) {
-  let head = [], rows = [];
+  /** @type {import("react").ReactNode[]} */
+  let head = [];
+  /** @type {import("react").ReactNode[][]} */
+  let rows = [];
   if (kind === "pie") { head = ["항목", "값"]; rows = (props.segments ?? []).map((sg) => [sg.label, cell(fmt, sg.value == null ? null : Math.max(0, sg.value))]); }
-  else if (kind === "radial") { head = props.label != null ? ["값", "상태"] : ["값"]; rows = [[isMissing(props.value) ? MISSING_TEXT : fmt(Math.min(1, Math.max(0, props.value)))].concat(props.label != null ? [props.label] : [])]; }
+  else if (kind === "radial") { head = props.label != null ? ["값", "상태"] : ["값"]; const rv = numeric(props.value) == null ? MISSING_TEXT : fmt(Math.min(1, Math.max(0, /** @type {number} */ (props.value)))); rows = [props.label != null ? [rv, props.label] : [rv]]; }
   else if (kind === "histogram") { const b = bins; head = ["구간", "표본"]; rows = b ? b.counts.map((c, i) => [`${fmt(b.lo + (i / b.n) * b.span)}~${fmt(b.lo + ((i + 1) / b.n) * b.span)}${props.unit ?? ""}`, `${c}건`]) : []; }
   else { const cols = kind === "radar" ? (props.axes ?? []) : (props.labels ?? []); head = ["계열"].concat(cols); rows = (props.series ?? []).map((s) => [s.label].concat(cols.map((_, i) => cell(fmt, s.values[i])))); }
   // 표는 내용 폭을 따라 늘어나 width:1px을 무시한다. 숨김은 블록 래퍼가 맡아야 문서 가로 넘침이 나지 않는다.

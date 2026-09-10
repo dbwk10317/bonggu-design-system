@@ -9,7 +9,7 @@ const pad = (/** @type {number} */ n) => String(n).padStart(2, "0");
 export function TimePicker({ value = "", onChange, step = 5, size = "md", fit = "auto", width, disabled, className, style }) {
   const f = useFieldContext();
   const [h, m] = value ? value.split(":").map(Number) : [null, null];
-  const set = (/** @type {number} */ hh, /** @type {number} */ mm) => onChange?.(pad(hh ?? 0) + ":" + pad(mm ?? 0));
+  const set = (/** @type {number | null} */ hh, /** @type {number | null} */ mm) => onChange?.(pad(hh ?? 0) + ":" + pad(mm ?? 0));
   const mins = Array.from({ length: Math.floor(60 / step) }, (_, i) => i * step);
   return (
     <div className={cx("bds-ctl", "bds-time", size === "sm" && "bds-ctl--sm", f?.invalid && "bds-ctl--err", disabled && "bds-ctl--disabled", className)} style={frameStyle({ fit, width, style })}>

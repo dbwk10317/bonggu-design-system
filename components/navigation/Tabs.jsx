@@ -6,13 +6,13 @@ import { Icon } from "../action/Icon.jsx";
  * @param {Parameters<typeof import("./Tabs.d.ts").Tabs>[0]} props */
 export function Tabs({ items = [], value, onChange, panelId, className, "aria-label": ariaLabel, ...rest }) {
   const root = useRef(/** @type {HTMLDivElement | null} */ (null)), uid = useId().replace(/:/g, "");
-  const [ink, setInk] = useState(null);
+  const [ink, setInk] = useState(/** @type {{ left: number, width: number } | null} */ (null));
   useEffect(() => {
-    const el = root.current?.querySelector('[aria-selected="true"]');
+    const el = /** @type {HTMLElement | null} */ (root.current?.querySelector('[aria-selected="true"]'));
     if (!el) return;
     const measure = () => setInk({ left: el.offsetLeft, width: el.offsetWidth });
     measure();
-    const ro = new ResizeObserver(measure); ro.observe(root.current);
+    const ro = new ResizeObserver(measure); if (root.current) ro.observe(root.current);
     return () => ro.disconnect();
   }, [value, items.length]);
   const move = (/** @type {import("react").KeyboardEvent<HTMLElement>} */ e) => {

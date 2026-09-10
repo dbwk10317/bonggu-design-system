@@ -97,10 +97,6 @@
         "message": "<Chart> fit must be one of 'flex' | 'fixed'."
       },
       {
-        "selector": "JSXOpeningElement[name.name='Checkbox'] > JSXAttribute > JSXIdentifier[name=/^(?:type)$/]",
-        "message": "<Checkbox> removes that prop from its base type. Not accepted: type."
-      },
-      {
         "selector": "JSXOpeningElement[name.name='CodeEditor'] > JSXAttribute[name.name='language'] > Literal[value!=/^(?:json|yaml|text)$/]",
         "message": "<CodeEditor> language must be one of 'json' | 'yaml' | 'text'."
       },
@@ -231,14 +227,6 @@
       {
         "selector": "JSXOpeningElement[name.name='Heatmap'] > JSXAttribute[name.name='fit'] > Literal[value!=/^(?:flex|fixed)$/]",
         "message": "<Heatmap> fit must be one of 'flex' | 'fixed'."
-      },
-      {
-        "selector": "JSXOpeningElement[name.name='IconButton'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:sm|md|lg)$/]",
-        "message": "<IconButton> size must be one of 'sm' | 'md' | 'lg'."
-      },
-      {
-        "selector": "JSXOpeningElement[name.name='IconButton'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:outline|ghost|danger)$/]",
-        "message": "<IconButton> variant must be one of 'outline' | 'ghost' | 'danger'."
       },
       {
         "selector": "JSXOpeningElement[name.name='Inline'] > JSXAttribute[name.name='align'] > Literal[value!=/^(?:start|center|end|baseline|stretch)$/]",
@@ -551,9 +539,6 @@
       "Chart": {
         "replaces": []
       },
-      "Checkbox": {
-        "replaces": []
-      },
       "Code": {
         "replaces": []
       },
@@ -636,9 +621,6 @@
         "replaces": []
       },
       "Icon": {
-        "replaces": []
-      },
-      "IconButton": {
         "replaces": []
       },
       "Inline": {

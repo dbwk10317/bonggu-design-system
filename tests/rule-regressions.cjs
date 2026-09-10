@@ -378,7 +378,9 @@ function declaredComponents() {
   const found = [];
   for (const file of walk('components').filter((candidate) => candidate.endsWith('.d.ts'))) {
     const group = file.split('/')[1];
-    for (const match of read(file).matchAll(/export declare function ([A-Z]\w*)/g)) found.push({ name: match[1], group, file });
+    // forwardRef 컴포넌트는 const + ForwardRefExoticComponent 로 선언된다. 둘 다 공개 컴포넌트다.
+    const decl = /export declare (?:function ([A-Z]\w*)|const ([A-Z]\w*)\s*:\s*ForwardRefExoticComponent)/g;
+    for (const match of read(file).matchAll(decl)) found.push({ name: match[1] ?? match[2], group, file });
   }
   return found;
 }

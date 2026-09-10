@@ -13,10 +13,11 @@ function useCountUp(target, enabled) {
   useEffect(() => {
     if (!enabled || typeof target !== "number") return;
     const start = performance.now(), f = from.current, dur = 900;
+    /** @type {number | undefined} */
     let raf;
     const step = (/** @type {number} */ t) => { const p = Math.min(1, (t - start) / dur), e = 1 - Math.pow(1 - p, 3); setV(f + (target - f) * e); if (p < 1) raf = requestAnimationFrame(step); else from.current = target; };
     raf = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(raf);
+    return () => { if (raf != null) cancelAnimationFrame(raf); };
   }, [target, enabled]);
   return enabled ? v : target;
 }

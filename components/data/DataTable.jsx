@@ -26,7 +26,7 @@ const cellOf = (/** @type {import("./DataTable.d.ts").DataTableColumn<any>} */ c
 export function DataTable({ columns = [], rows = [], rowKey, rowLabel, sort, onSortChange, selectable = false, selectedKeys = [], onSelectionChange, bulkActions, expandable, defaultExpandedKeys = [], header, empty = "표시할 항목이 없습니다.", fit = "flex", width, height, className, style, "aria-label": ariaLabel, ...rest }) {
   const [expanded, setExpanded] = useState(() => new Set(defaultExpandedKeys));
   const autoId = useId(), hid = header?.id ?? autoId;
-  const keyOf = rowKey ?? ((r, i) => r.id ?? i);
+  const keyOf = rowKey ?? ((/** @type {any} */ r, /** @type {number} */ i) => r.id ?? i);
   const keys = rows.map((r, i) => keyOf(r, i));
   const sel = new Set(selectedKeys);
   const selCount = keys.filter((k) => sel.has(k)).length;

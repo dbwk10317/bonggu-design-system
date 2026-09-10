@@ -5,9 +5,9 @@ import { cx, frameStyle } from "../core/frame.js";
  * @param {Parameters<typeof import("./SegmentedControl.d.ts").SegmentedControl>[0]} props */
 export function SegmentedControl({ options = [], value, onChange, size = "md", fit = "auto", width, className, style, "aria-label": ariaLabel, ...rest }) {
   const root = useRef(/** @type {HTMLDivElement | null} */ (null));
-  const [thumb, setThumb] = useState(null);
+  const [thumb, setThumb] = useState(/** @type {{ left: number, width: number } | null} */ (null));
   useEffect(() => {
-    const el = root.current?.querySelector('[aria-checked="true"]');
+    const el = /** @type {HTMLElement | null} */ (root.current?.querySelector('[aria-checked="true"]'));
     if (!el || !root.current) { setThumb(null); return; }
     const measure = () => setThumb({ left: el.offsetLeft, width: el.offsetWidth });
     measure();

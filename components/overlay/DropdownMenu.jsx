@@ -13,9 +13,9 @@ export function DropdownMenu({ items = [], trigger, align = "end", size = "sm", 
   const enabled = items.map((it, i) => (it !== "-" && !it.disabled ? i : -1)).filter((i) => i >= 0);
   useAnchoredPopover({ open, anchorRef: root, panelRef: panel, align, onDismiss: () => setOpen(false) });
   /* 닫힐 때 포커스를 트리거로 돌린다(메뉴 항목이 언마운트되면 포커스가 body로 떨어진다) */
-  const close = () => { if (panel.current?.matches(":popover-open")) panel.current.hidePopover(); setOpen(false); root.current?.querySelector("[aria-haspopup]")?.focus(); };
-  useEffect(() => { if (!open) return; const on = (/** @type {PointerEvent} */ e) => { if (!root.current?.contains(e.target)) setOpen(false); }; const key = (/** @type {KeyboardEvent} */ e) => { if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); close(); } }; document.addEventListener("pointerdown", on); document.addEventListener("keydown", key); return () => { document.removeEventListener("pointerdown", on); document.removeEventListener("keydown", key); }; }, [open]);
-  useEffect(() => { if (!open) return; const active = enabled.includes(idx) ? idx : enabled[0]; if (active !== undefined) panel.current?.querySelector(`[data-menu-index="${active}"]`)?.focus(); }, [idx, open, items]);
+  const close = () => { if (panel.current?.matches(":popover-open")) panel.current.hidePopover(); setOpen(false); /** @type {HTMLElement | null | undefined} */ (root.current?.querySelector("[aria-haspopup]"))?.focus(); };
+  useEffect(() => { if (!open) return; const on = (/** @type {PointerEvent} */ e) => { if (!root.current?.contains(/** @type {Node} */ (e.target))) setOpen(false); }; const key = (/** @type {KeyboardEvent} */ e) => { if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); close(); } }; document.addEventListener("pointerdown", on); document.addEventListener("keydown", key); return () => { document.removeEventListener("pointerdown", on); document.removeEventListener("keydown", key); }; }, [open]);
+  useEffect(() => { if (!open) return; const active = enabled.includes(idx) ? idx : enabled[0]; if (active !== undefined) /** @type {HTMLElement | null | undefined} */ (panel.current?.querySelector(`[data-menu-index="${active}"]`))?.focus(); }, [idx, open, items]);
   const toggleOpen = () => { if (open) close(); else { setIdx(enabled[0] ?? -1); setOpen(true); } };
   const onKey = (/** @type {import("react").KeyboardEvent<HTMLElement>} */ e) => {
     if (!open && (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ")) { e.preventDefault(); setOpen(true); setIdx(enabled[0] ?? -1); return; }
@@ -28,8 +28,8 @@ export function DropdownMenu({ items = [], trigger, align = "end", size = "sm", 
     else if (e.key === "Home") { e.preventDefault(); setIdx(enabled[0]); }
     else if (e.key === "End") { e.preventDefault(); setIdx(enabled[enabled.length - 1]); }
   };
-  const pick = (it) => { if (it.disabled) return; close(); it.onSelect?.(); };
-  const trig = trigger ? React.cloneElement(trigger, { "aria-haspopup": "menu", "aria-expanded": open, "aria-controls": `${uid}-menu`, onClick: (e) => { trigger.props.onClick?.(e); if (!e.defaultPrevented) toggleOpen(); }, onKeyDown: (e) => { trigger.props.onKeyDown?.(e); if (!e.defaultPrevented) onKey(e); } }) : <IconButton icon="dots-three" size={size} variant="ghost" aria-label={ariaLabel} aria-haspopup="menu" aria-expanded={open} aria-controls={`${uid}-menu`} onClick={toggleOpen} onKeyDown={onKey} />;
+  const pick = (/** @type {import("./DropdownMenu.d.ts").MenuItem} */ it) => { if (it.disabled) return; close(); it.onSelect?.(); };
+  const trig = trigger ? React.cloneElement(trigger, { "aria-haspopup": "menu", "aria-expanded": open, "aria-controls": `${uid}-menu`, onClick: (/** @type {import("react").MouseEvent<HTMLElement>} */ e) => { trigger.props.onClick?.(e); if (!e.defaultPrevented) toggleOpen(); }, onKeyDown: (/** @type {import("react").KeyboardEvent<HTMLElement>} */ e) => { trigger.props.onKeyDown?.(e); if (!e.defaultPrevented) onKey(e); } }) : <IconButton icon="dots-three" size={size} variant="ghost" aria-label={ariaLabel} aria-haspopup="menu" aria-expanded={open} aria-controls={`${uid}-menu`} onClick={toggleOpen} onKeyDown={onKey} />;
   return (
     <span ref={root} className={cx("bds-menu", className)}>
       {trig}

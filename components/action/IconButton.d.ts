@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes, ReactNode } from "react";
+import type { ButtonHTMLAttributes, ForwardRefExoticComponent, ReactNode, RefAttributes } from "react";
 /** 아이콘 전용 버튼. aria-label 필수. */
 export interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   "aria-label": string;
@@ -10,4 +10,4 @@ export interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>
   badge?: number;
   children?: ReactNode;
 }
-export declare function IconButton(props: IconButtonProps): JSX.Element;
+export declare const IconButton: ForwardRefExoticComponent<IconButtonProps & RefAttributes<HTMLButtonElement>>;

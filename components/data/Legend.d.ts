@@ -4,7 +4,7 @@ export interface LegendItem {
   /** 스와치 CSS 색. 주면 tone보다 우선 */
   color?: string;
   /** 시리즈 번호 1~8, 의미 키 rx·tx·used·reserved·free·ok·warn·crit, info·signal, 그 외 문자열은 CSS 색 */
-  tone?: number | string;
+  tone?: import("./Chart.d.ts").ChartTone;
   value?: ReactNode;
   /** shape="line"일 때 선 패턴(stroke-dasharray) */
   dash?: string;

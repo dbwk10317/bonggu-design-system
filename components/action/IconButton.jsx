@@ -5,7 +5,7 @@ import { Icon } from "./Icon.jsx";
 /** 아이콘 전용 버튼. aria-label 필수. badge(숫자)가 0보다 크면 우상단 카운트가 붙고 접근 가능한 이름에 "N건"이 더해진다. */
 export const IconButton = forwardRef(
   /**
-   * @param {Parameters<typeof import("./IconButton.d.ts").IconButton>[0]} props
+   * @param {import("./IconButton.d.ts").IconButtonProps} props
    * @param {import("react").ForwardedRef<HTMLButtonElement>} ref
    */
   function IconButton({ icon, size = "md", variant = "outline", badge = 0, className, children, type = "button", ...rest }, ref) {
