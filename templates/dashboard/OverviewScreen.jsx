@@ -13,7 +13,7 @@ function OverviewScreen() {
 
   return (
     <PageStack aria-label="함대 개요">
-      <PageHeader title="개요" description="전국 14개 지점에 설치한 엣지 노드 38대의 상태를 한 화면에서 봅니다. 값은 5초마다 갱신됩니다."
+      <PageHeader title="개요" description="전국 14개 지점에 설치한 엣지 노드 38대의 상태를 5초마다 갱신해 한 화면에서 봅니다."
         actions={<>
           <Visible above="lg"><Button variant="secondary" size="sm" icon="download">보고서 내려받기</Button></Visible>
           <Popover title="이 화면을 읽는 법" trigger={<IconButton icon="question" variant="ghost" size="sm" aria-label="개요 화면 설명" />}>
@@ -25,7 +25,7 @@ function OverviewScreen() {
         </>} />
 
       <AlertBanner tone="warn" title="수집 지연 2건">
-        <b>edge-seoul-03</b> 메모리 88%로 표본을 건너뛰고 있습니다. · <b>edge-busan-02</b> 응답이 340 ms까지 늘었습니다. 자세한 내용은 <Link href="#nodes">노드 화면</Link>에서 봅니다.
+        <b className="bds-mono">edge-seoul-03</b> 메모리 88%로 표본을 건너뛰고 있습니다. · <b className="bds-mono">edge-busan-02</b> 응답이 340 ms까지 늘었습니다. 자세한 내용은 <Link href="#nodes">노드 화면</Link>에서 봅니다.
       </AlertBanner>
 
       <div className="bds-metric-grid">
@@ -141,8 +141,8 @@ function OverviewScreen() {
         <Panel enter>
           <CardHead title="전력 사용량" meta="지점 합계" />
           {failed
-            ? <ErrorState title="전력 데이터를 불러오지 못했습니다" description="계량기 API가 504를 돌려주었습니다. 다시 시도하면 마지막 집계부터 채웁니다." code="GW-504 · req_8f21c0" onRetry={() => setFailed(false)} retryLabel="다시 시도" />
-            : <EmptyState plain face="curious" title="집계 구간이 아직 없습니다" description="계량기가 정시마다 값을 올립니다. 다음 정시에 첫 구간이 채워집니다." />}
+            ? <ErrorState title="전력 데이터를 불러오지 못했습니다" description="계량기 API가 504를 돌려주었고, 다시 시도하면 마지막 집계부터 채웁니다." code="GW-504 · req_8f21c0" onRetry={() => setFailed(false)} retryLabel="다시 시도" />
+            : <EmptyState plain face="curious" title="집계 구간이 아직 없습니다" description="계량기가 정시마다 값을 올려 다음 정시에 첫 구간이 채워집니다." />}
         </Panel>
       </Grid>
 

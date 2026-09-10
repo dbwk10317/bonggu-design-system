@@ -28,15 +28,15 @@ function DeploysScreen() {
 
   const steps = [
     { label: "아티팩트 확인", detail: "서명과 해시 대조", status: "done" },
-    { label: "카나리 2대", detail: "edge-seoul-01 · edge-gyeonggi-01", status: "done" },
-    { label: "배치 3/6", detail: "edge-seoul-03에서 멈춤", status: "error" },
+    { label: "카나리 2대", detail: <span className="bds-mono">edge-seoul-01 · edge-gyeonggi-01</span>, status: "done" },
+    { label: "배치 3/6", detail: <><span className="bds-mono">edge-seoul-03</span>에서 멈춤</>, status: "error" },
     { label: "남은 배치", detail: "노드 14대", status: "todo" },
     { label: "정리", detail: "이전 버전 회수", status: "todo" },
   ];
 
   return (
     <PageStack aria-label="배포">
-      <PageHeader title="배포" description="에이전트와 장치 프로파일을 배치 단위로 내려보냅니다. 오류가 나면 롤아웃은 자동으로 멈춥니다."
+      <PageHeader title="배포" description="에이전트와 장치 프로파일을 배치 단위로 내려보내고, 오류가 나면 롤아웃을 자동으로 멈춥니다."
         actions={<>
           <Tooltip content="배포 문서를 새 탭에서 엽니다"><IconButton icon="question" variant="ghost" aria-label="배포 문서" /></Tooltip>
           <Button variant="secondary" icon="calendar" onClick={() => setPlan(true)}>배포 예약</Button>
@@ -44,14 +44,14 @@ function DeploysScreen() {
         </>} />
 
       <AlertBanner tone="crit" title="롤아웃이 멈춰 있습니다" onClose={() => {}}>
-        <b>edge-seoul-03</b> verify 단계에서 메모리 부족으로 실패했습니다. <Code>pause_on_error</Code>가 켜져 있어 남은 배치는 대기 중입니다.
+        <b className="bds-mono">edge-seoul-03</b> verify 단계에서 메모리 부족으로 실패했습니다. <Code>pause_on_error</Code>가 켜져 있어 남은 배치는 대기 중입니다.
       </AlertBanner>
 
       <div className="bds-metric-grid">
         <StatTile icon="rocket-launch" label="반영된 노드" value={24} unit="대" detail={<>전체 {nodes.length + 26}대 중</>} tone={2} />
         <StatTile icon="hourglass" label="대기 배치" value={3} unit="개" pill={{ tone: "warn", text: "멈춤" }} />
-        <StatTile icon="warning" label="실패" value={1} unit="대" pill={{ tone: "crit", text: "확인 필요" }} detail={<Tag>edge-seoul-03</Tag>} tone={5} />
-        <StatTile icon="clock" label="경과" value="12분" detail={<>시작 <span className="bds-mono">18:30</span></>} />
+        <StatTile icon="warning" label="실패" value={1} unit="대" pill={{ tone: "crit", text: "확인 필요" }} detail={<Tag className="bds-mono">edge-seoul-03</Tag>} tone={5} />
+        <StatTile icon="clock" label="경과" value={12} unit="분" detail={<>시작 <span className="bds-mono">18:30</span></>} />
       </div>
 
       <Panel>

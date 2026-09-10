@@ -41,8 +41,8 @@ function App() {
   const shell = (
     <SidebarShell brand={{ name: "봉구 엣지 콘솔", sub: "edge.bonggu.me" }}
       nav={<>{nav("overview", "pulse")}{nav("nodes", "hard-drives", <Badge count={2} tone="warn" />)}<SidebarNavGroup label="운영" />{nav("devices", "devices")}{nav("deploys", "rocket-launch")}<SidebarNavGroup label="계정" />{nav("access", "users-three")}{nav("settings", "gear-six")}<SidebarNavGroup label="링크" />{nav("status", "broadcast")}<SidebarNavItem icon="chart-line-up" label="Grafana" href="https://grafana.example" target="_blank" /></>}
-      footer={<span className="bds-mono">agent 2.14.0 · 봉구 인프라팀</span>}
-      topbar={<><h1>{TITLES[view] ?? "없는 화면"}</h1><MascotMark face={live ? "smiling" : "neutral"} size={26} animated={false} /><StatusPill tone={live ? "warn" : "info"} pulse={live}>{live ? "노드 2대 수집 지연" : SOURCES[view] ?? "알 수 없는 화면"}</StatusPill><span className="bds-shell__spacer" />
+      footer={<><span className="bds-mono">agent 2.14.0</span> · 봉구 인프라팀</>}
+      topbar={<><h1>{TITLES[view] ?? "없는 화면"}</h1><MascotMark face={live ? "worried" : "neutral"} size={26} animated={false} /><StatusPill tone={live ? "warn" : "info"} pulse={live}>{live ? "노드 2대 수집 지연" : SOURCES[view] ?? "알 수 없는 화면"}</StatusPill><span className="bds-shell__spacer" />
         <Tooltip content={<>명령 팔레트 <Kbd>Ctrl</Kbd> <Kbd>K</Kbd></>}><IconButton icon="magnifying-glass" variant="ghost" aria-label="명령 팔레트 열기" className="kit-mobile-hide" onClick={() => setPalette(true)} /></Tooltip>
         {!EMBEDDED && <Tooltip content={dark ? "라이트 테마로" : "다크 테마로"}><IconButton icon={dark ? "sun" : "moon"} variant="ghost" aria-label={dark ? "라이트 테마로" : "다크 테마로"} onClick={() => setDark((v) => !v)} /></Tooltip>}
         <NotificationTrigger unreadCount={unread} open={notif} onToggle={() => setNotif((o) => !o)} /><Button variant="ghost" size="sm" icon="sign-out" className="kit-mobile-hide">로그아웃</Button></>}

@@ -46,6 +46,16 @@ function templateCssFiles() {
   return walk('templates').filter((file) => file.endsWith('.css'));
 }
 
+// 가이드 카드와 컴포넌트 카드는 값 규칙을 .css가 아니라 <style> 블록에 담는다.
+// .css만 읽으면 그 표면이 통째로 값 검사 밖에 남는다.
+function htmlStyleSources() {
+  return [...CSS_DIRS, 'components', 'templates']
+    .flatMap((dir) => walk(dir))
+    .filter((file) => file.endsWith('.html'))
+    .map((file) => [file, [...read(file).matchAll(/<style[^>]*>([\s\S]*?)<\/style>/gi)].map((m) => m[1]).join(String.fromCharCode(10))])
+    .filter(([, css]) => css.trim());
+}
+
 function tokenAliasViolations() {
   const violations = [];
   for (const file of cssFiles().filter((candidate) => candidate.startsWith('tokens/'))) {
@@ -206,8 +216,9 @@ function textSizeViolations() {
       variables.set(match[1], Number(match[2]));
     }
   }
-  for (const file of cssFiles().concat(templateCssFiles())) {
-    const text = withoutComments(read(file));
+  const sources = cssFiles().concat(templateCssFiles()).map((file) => [file, read(file)]).concat(htmlStyleSources());
+  for (const [file, raw] of sources) {
+    const text = withoutComments(raw);
     for (const rule of cssRuleBodies(text)) {
       // Shorthand `font:` can carry the family, so inspect the whole declaration
       // block instead of requiring a separate `font-family:` property.

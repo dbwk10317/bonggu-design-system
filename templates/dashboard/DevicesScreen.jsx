@@ -44,7 +44,7 @@ function DevicesScreen() {
 
   return (
     <PageStack aria-label="장치 제어">
-      <PageHeader title="장치" description="노드에 연결된 주변 장치의 운영 모드와 일정을 원격으로 바꿉니다. 적용하면 게이트웨이가 해당 지점 노드에 즉시 내려보냅니다."
+      <PageHeader title="장치" description="노드에 연결된 주변 장치의 운영 모드와 일정을 원격으로 바꾸면 게이트웨이가 해당 지점 노드에 즉시 내려보냅니다."
         actions={<><MascotMark face="smiling" animated={false} /><StatusPill tone="ok">게이트웨이 온라인</StatusPill></>} />
 
       <Grid cols={2}>
@@ -57,7 +57,7 @@ function DevicesScreen() {
                 <Chart kind="radial" fit="fixed" width={116} height={88} aria-label={`${d.label} 온도`} value={d.temp} label="장치 온도" tone={d.tone === "warn" ? "warn" : "ok"} valueFormatter={() => d.tempText} />
                 <KeyValues rows={[["모델", d.model], ["펌웨어", d.fw], ["운영 시간", `${onAt}~${offAt}`]]} />
               </div>
-              <div className="kit-dim bds-mono">{MODES.find((m) => m.value === mode)?.label} · 밝기 {bright} · 갱신 {refresh}초</div>
+              <div className="kit-dim">{MODES.find((m) => m.value === mode)?.label} · 밝기 <span className="bds-mono">{bright}</span> · 갱신 <span className="bds-mono">{refresh}</span>초</div>
             </Panel>
           );
         })}

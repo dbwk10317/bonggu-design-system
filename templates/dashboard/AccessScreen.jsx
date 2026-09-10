@@ -54,7 +54,7 @@ function AccessScreen() {
                 { key: "roleText", header: "역할", render: (r) => <Tag accent={r.role === "owner"}>{r.roleText}</Tag> },
                 { key: "regions", header: "담당 지역", hideBelow: "tablet", render: (r) => (r.regions.length ? <Inline gap={1}>{r.regions.map((g) => <Tag key={g}>{g}</Tag>)}</Inline> : <span className="kit-dim">지정 없음</span>) },
                 { key: "mfa", header: "2단계", render: (r) => <StatusPill size="sm" tone={r.mfa ? "ok" : "warn"}>{r.mfa ? "사용 중" : "꺼짐"}</StatusPill> },
-                { key: "last", header: "마지막 접속", align: "num", hideBelow: "desktop", render: (r) => r.last ?? "접속 없음" },
+                { key: "last", header: "마지막 접속", hideBelow: "desktop", render: (r) => (r.last ? <span className="bds-mono">{r.last}</span> : "접속 없음") },
                 { key: "menu", header: "", width: 44, render: (r) => <DropdownMenu aria-label={`${r.name} 계정 동작`} align="end" items={[
                   { label: "역할 바꾸기", icon: "note-pencil" },
                   { label: "2단계 인증 재설정", icon: "shield-check", onSelect: () => setOtp(r) },

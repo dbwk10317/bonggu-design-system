@@ -108,7 +108,7 @@ function SettingsScreen() {
                     { term: "데이터베이스", detail: "PostgreSQL 16.3", mono: true },
                     { term: "빌드", detail: "2026-09-05 · a41c9e2", mono: true },
                   ]} />
-                  <KeyValues lined rows={[["연결된 노드", "38"], ["보관 중인 표본", "1.4억"], ["디스크 사용", "412 GiB"], ["마지막 백업", null]]} />
+                  <KeyValues lined rows={[["연결된 노드", "38대"], ["보관 중인 표본", "1.4억"], ["디스크 사용", "412 GiB"], ["마지막 백업", null]]} />
                   <p className="kit-dim">설정 파일 경로는 <Code>/etc/bonggu/console.toml</Code>입니다.</p>
                 </Stack>
               ) },

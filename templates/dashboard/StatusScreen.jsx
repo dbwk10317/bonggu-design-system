@@ -18,7 +18,7 @@ function StatusScreen({ onBack }) {
         end={<><StatusPill tone={degraded ? "warn" : "ok"} pulse>{degraded ? "일부 지연" : "모든 서비스 정상"}</StatusPill><Button size="sm" variant="ghost" icon="arrow-left" onClick={onBack}>콘솔로</Button></>} />
       <Container pad>
         <Stack gap={5}>
-          <PageHeader title="서비스 상태" description="봉구 엣지가 제공하는 서비스의 현재 상태와 지난 90일 가용성입니다. 값은 5분마다 갱신됩니다."
+          <PageHeader title="서비스 상태" description="봉구 엣지가 제공하는 서비스의 현재 상태와 지난 90일 가용성을 5분마다 갱신해 보여 줍니다."
             actions={<MascotMark face={degraded ? "worried" : "smiling"} size="sm" />} />
 
           {degraded && <AlertBanner tone="warn" title="수집 파이프라인 지연">지표가 최대 3분까지 늦게 반영되고 있습니다. 서비스 사용에는 영향이 없습니다.</AlertBanner>}

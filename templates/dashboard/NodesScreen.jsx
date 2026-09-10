@@ -96,7 +96,7 @@ function NodesScreen() {
 
       <LoadingOverlay active={busy} label="노드 목록을 다시 읽는 중">
         <DataTable aria-label="노드" rowKey={(r) => r.id} rows={shown} sort={sort} onSortChange={(s) => setSort(s)}
-          header={{ title: "설치 노드", meta: <span className="bds-mono">5초 전 갱신</span> }}
+          header={{ title: "설치 노드", meta: <><span className="bds-mono">5</span>초 전 갱신</> }}
           selectable selectedKeys={selected} onSelectionChange={setSelected}
           bulkActions={<><Button size="sm" variant="secondary" icon="arrow-clockwise" onClick={() => toast({ message: `${selected.length}대 재시작을 요청했습니다.`, tone: "info" })}>재시작</Button><Button size="sm" variant="danger" icon="plugs" onClick={() => setIsolate(shown.find((n) => n.id === selected[0]))}>격리</Button></>}
           empty={<EmptyState face="curious" title="조건에 맞는 노드가 없습니다" description="검색어를 지우거나 상태 필터를 다시 켜면 전체 목록으로 돌아갑니다." actions={<Button size="sm" onClick={() => { setQ(""); setRegion(""); setStates(["online", "degraded", "offline"]); }}>필터 초기화</Button>} />}
@@ -130,7 +130,7 @@ function NodesScreen() {
         <Pagination page={page} total={pages} onChange={setPage} info={`${(page - 1) * PAGE + 1}–${Math.min(page * PAGE, filtered.length)} / ${filtered.length}`} />
       </Inline>
 
-      <Drawer open={!!detail} onClose={() => setDetail(null)} size="lg" title={detail?.site} description={detail && `${detail.id} · ${detail.model}`}
+      <Drawer open={!!detail} onClose={() => setDetail(null)} size="lg" title={detail?.site} description={detail && <span className="bds-mono">{detail.id} · {detail.model}</span>}
         actions={<><Button variant="secondary" onClick={() => toast({ message: "설정을 다시 읽었습니다.", tone: "ok" })}>설정 다시 읽기</Button><Button variant="primary" onClick={() => { toast({ message: `${detail.id} 재시작을 요청했습니다.`, tone: "info" }); setDetail(null); }}>재시작</Button></>}>
         {detail && <NodeDetail node={detail} />}
       </Drawer>
