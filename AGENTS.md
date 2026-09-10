@@ -44,6 +44,9 @@
 - `CLAUDE.md` Claude Code 실행 환경. 경로·셸·빌드·검증 명령만.
 - `SKILL.md` 스킬 진입점. 프런트매터와 어디를 보라는 안내만 두고 규칙은 `readme.md`를 가리킨다.
 - `tests/README.md` 검증 실행법과 게이트가 덮는 범위.
+- `tsconfig.json` 타입 검사 설정. `components/**`를 strict + checkJs로 본다. 배포물을 만들지 않는다.
+- `eslint.config.mjs` 린트 설정. React 사용 규칙(react-hooks)과 정적 접근성(jsx-a11y)을 본다. 디자인 규칙은 여기 적지 않고 `readme.md`를 따른다.
+- `types-dom.d.ts` 이 시스템이 쓰는 DOM·React 타입 보강(인라인 CSS 커스텀 속성, popover 속성). 검사 전용이고 배포물에 들어가지 않는다.
 - `guidelines/*.html` 확정된 값을 눈으로 확인하는 카드. 값을 보여주고 규칙을 새로 쓰지 않는다.
 - `guidelines/index.html` 사람이 보는 가이드 페이지. 컴포넌트 목록과 카드·템플릿을 한곳에서 연다. 여기에도 규칙을 새로 쓰지 않고 `readme.md`를 가리킨다.
 - `components/<Name>.d.ts` 공개 타입 시그니처.

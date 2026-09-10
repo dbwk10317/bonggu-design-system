@@ -10,10 +10,16 @@ npx playwright install chromium
 npm test
 ```
 
-`npm test`는 소스로 번들을 다시 생성한 뒤 클래스 정합성, 규칙, 독립 패키지 소비, 전체 컴포넌트 렌더, 데이터 계산, React 입력 상태, 오버레이 렌더링, 실제 브라우저 통합 검증을 순서대로 실행합니다. 실패하면 즉시 중단합니다. 생성된 `_ds_bundle.js`와 `_ds_manifest.json` 변경은 소스와 함께 검토합니다.
+`package-regressions.cjs`는 소비 fixture를 `npm install --offline`으로 깝니다. npm 캐시에 React와 그 타입의 의존성 트리가 없으면 `ENOTCACHED`로 실패하므로, 캐시가 빈 환경에서는 `npm ci`를 온라인으로 한 번 돌린 뒤에 검증합니다.
+
+검사만 따로 돌리려면 `npm run typecheck`, `npm run lint`를 씁니다.
+
+`npm test`는 소스로 번들을 다시 생성한 뒤 타입 검사, 린트, 클래스 정합성, 규칙, 독립 패키지 소비, 전체 컴포넌트 렌더, 데이터 계산, React 입력 상태, 오버레이 렌더링, 실제 브라우저 통합 검증을 순서대로 실행합니다. 실패하면 즉시 중단합니다. 생성된 `_ds_bundle.js`와 `_ds_manifest.json` 변경은 소스와 함께 검토합니다.
 
 기존 외부 의존성을 사용하는 경우 `DS_TEST_NODE_MODULES`에 node_modules 절대 경로를 설정하고 `node tests/run.cjs`를 실행할 수 있습니다. 설치된 Chrome/Edge로 검증하려면 `DS_TEST_BROWSER_EXECUTABLE`에 실행 파일 경로를 설정합니다. 스크린샷을 저장하려면 `DS_TEST_SCREENSHOTS`에 출력 폴더를 설정합니다. 로컬 파일 서버는 loopback에만 바인딩하고 테스트 종료 시 닫습니다.
 
+- tsc: `tsconfig.json`으로 `components/**`를 strict + checkJs 검사합니다. 구현이 형제 `.d.ts`에 `@param`으로 묶여 있으므로 공개 타입 계약과 구현이 어긋나면 여기서 실패합니다. 배포물은 만들지 않습니다(noEmit).
+- eslint: `eslint.config.mjs`로 `components/**`와 `templates/**`를 검사합니다. react-hooks와 jsx-a11y가 본체입니다. 판단이 필요한 접근성(초점 순서, 키보드 조작 흐름, 실제 낭독)은 정적 검사로 가려지지 않으며 browser-regressions.cjs와 아래 게이트 범위를 함께 봅니다.
 - consistency-regressions.cjs: CSS와 소스의 클래스 사용을 양방향으로 대조합니다. 소스가 붙이는 `bds-*` 클래스에 규칙이 없거나, `styles/`·`tokens/`·`guidelines/`에 있는 클래스를 아무 소비자도 붙이지 않으면 위반 목록을 모두 출력하고 실패합니다. `bds-btn--${variant}` 같은 동적 조합은 고정 접두사로 인정합니다.
 - manifest-token-regressions.cjs: 먼저 `token-parser.mjs`를 `fixtures/token-parser`의 독립 fixture와 손으로 적은 기대값으로 시험하고, 같은 파서로 `_ds_manifest.json`의 토큰 이름·값·scope·정의 파일을 `tokens/*.css` 선언과 대조합니다. 모든 토큰이 `:root` 계열 블록 안에 있는지도 평면 스캔과 교차 확인합니다. 같은 이름이 scope별로 있으면 별도 선언으로 셉니다(로그에 declarations·unique를 함께 찍습니다).
 - rule-regressions.cjs: `readme.md`의 규칙 중 기계로 판별할 수 있는 항목을 검사합니다. 현재 18종으로, 가시 텍스트 em-dash, inline style의 색·폰트 선언, CSS 클래스의 `bds-` 접두사, 토큰 별칭 정의, 본문 글자 크기 하한, Phosphor Bold 아이콘 이름, 미사용 토큰, 원색을 글자색으로 쓰는 자리, 장식 그라디언트, 차트 면 채움 alpha, 공개 API 목록 정합성, 패키지 식별자·라이선스, 그룹 카드 누락, 가이드 카드 구조, 컴포넌트 시각 계약, 가이드 페이지 누락, 템플릿 미사용 컴포넌트입니다. 공개 API 검사는 README Components의 개수·그룹·이름을 `.d.ts`의 공개 컴포넌트 함수 및 `useToast` 선언과 대조합니다. 가이드 카드 구조 검사는 공통 검수 밀도, React 마운트 루트의 섹션 간격, 예제와 컴포넌트 라벨의 대응, 삽입 카드의 중복 테마 토글 방지를 확인합니다. 컴포넌트 시각 계약은 StatusBar의 서체 역할과 Select 선택값의 세로 정렬을 확인합니다. 데이터 그래픽 접근성 검사는 Chart·Heatmap이 시각·숨김 표·탐색 표면 셋을 함께 내는지, 루트가 role="group"인지, 탐색 표면이 role="application" + tabIndex=0인지, 현재 지점을 role="status"로 알리는지를 봅니다. 마지막 컴포넌트 커버리지 검사는 같은 `.d.ts` 선언에서 컴포넌트 목록을 읽어 그 컴포넌트를 눈으로 확인할 자리가 있는지 봅니다. 기준값은 `readme.md`에 있고 이 파일은 그 기준을 검사만 합니다. 판단이 필요한 카피 품질·색 조합·컴포넌트 선택은 검사하지 않습니다. 위반마다 파일·줄·권장 수정안을 출력합니다.
