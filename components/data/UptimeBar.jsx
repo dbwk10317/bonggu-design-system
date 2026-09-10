@@ -2,6 +2,9 @@ import React from "react";
 import { cx } from "../core/frame.js";
 import { MISSING_CLASS, MISSING_TEXT, isMissing } from "../core/missing.js";
 
+/* 세그먼트마다 배열을 새로 만들면 상태 페이지에서 막대 하나에 수십 번 버려진다. */
+const TONES = ["ok", "warn", "crit"];
+
 /** 가용성 막대(일/시간 단위 90칸). segments: {status: ok|warn|crit|off, label?}. 비율은 ok+warn 기준으로 계산해 텍스트로 병기.
  *  칸의 off는 상태 넷 중 하나(그 구간이 수집되지 않음)이고 문구는 같은 MISSING_TEXT를 쓴다.
  *  다만 칸의 표기는 텍스트가 아니라 track 색이므로 .bds-na를 붙이지 않는다. 헤더 비율만 결측 문구로 표시한다.
@@ -9,7 +12,7 @@ import { MISSING_CLASS, MISSING_TEXT, isMissing } from "../core/missing.js";
  * @param {Parameters<typeof import("./UptimeBar.d.ts").UptimeBar>[0]} props
  */
 export function UptimeBar({ name, segments = [], start, end, height = 28, uptime, className, ...rest }) {
-  const known = segments.filter((s) => ["ok", "warn", "crit"].includes(s.status));
+  const known = segments.filter((s) => TONES.includes(s.status));
   const raw = uptime ?? (known.length ? (known.filter((s) => s.status === "ok" || s.status === "warn").length / known.length) * 100 : null);
   const na = isMissing(raw), pct = na ? null : raw;
   return (

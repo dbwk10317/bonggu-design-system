@@ -14,7 +14,7 @@ export function FileUpload({ items = [], accept, multiple = true, onFiles, onPau
     <div className={cx("bds-upload", className)} style={frameStyle({ fit, width, style })}>
       <Dropzone accept={accept} multiple={multiple} onFiles={onFiles} title={title} hint={hint} icon="file-arrow-up" />
       {items.length > 0 && (
-        <ul className="bds-upload__list">
+        <ul className="bds-upload__list" role="status" aria-live="polite">
           {items.map((it) => { const [label, tone] = STATUS[it.status] ?? STATUS.queued; const det = it.status === "uploading" || it.status === "paused"; return (
             <li key={it.id} className={cx("bds-upload__item", `bds-upload__item--${it.status}`)}>
               <Icon name={it.status === "done" ? "check-circle" : it.status === "failed" ? "warning-circle" : "file-zip"} size={18} className="bds-upload__ic" />

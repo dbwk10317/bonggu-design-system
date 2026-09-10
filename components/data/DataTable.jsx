@@ -36,6 +36,8 @@ export function DataTable({ columns = [], rows = [], rowKey, rowLabel, sort, onS
   /* 펼침은 지금 있는 행에만 의미가 있다. 정리하지 않으면 목록이 길게 도는 동안 계속 쌓이고,
      신원이 재사용되면 엉뚱한 행이 펼쳐진 채로 나타난다. 읽는 자리에서 한 번 거른다. */
   const openKeys = expandable ? keys.filter((k) => expanded.has(k)) : [];
+  /* 숨김 클래스와 수치 정렬은 열만 보고 정해진다. 행마다 다시 구하면 행×열 번 돈다. */
+  const colCls = columns.map((c) => cx(c.align === "num" && "bds-table__num", hideCls(c)));
   const sel = new Set(selectedKeys);
   const selCount = keys.filter((k) => sel.has(k)).length;
   const all = rows.length > 0 && selCount === rows.length;
@@ -69,7 +71,7 @@ export function DataTable({ columns = [], rows = [], rowKey, rowLabel, sort, onS
                     <tr className={cx(isSel && "bds-table__sel")}>
                       {selectable && <td className="bds-table__check"><Checkbox aria-label={`${name} 선택`} checked={isSel} onChange={() => onSelectionChange?.(toggle(selectedKeys, k))} /></td>}
                       {expandable && <td className="bds-table__check"><button type="button" className="bds-table__exp" aria-expanded={open} aria-label={`${name} 행 펼치기`} onClick={() => setExpanded((p) => new Set(toggle(p, k)))}><Icon name="caret-right" size={12} /></button></td>}
-                      {columns.map((c) => { const { value, na } = cellOf(c, row, i); return <td key={c.key} className={cx(c.align === "num" && "bds-table__num", na && MISSING_CLASS, hideCls(c))}>{value}</td>; })}
+                      {columns.map((c, ci) => { const { value, na } = cellOf(c, row, i); return <td key={c.key} className={cx(colCls[ci], na && MISSING_CLASS)}>{value}</td>; })}
                     </tr>
                     {expandable && open && <tr className="bds-table__exprow"><td colSpan={colCount}>{expandable(row)}</td></tr>}
                   </Fragment>

@@ -10,14 +10,17 @@ import { StatusPill } from "../display/StatusPill.jsx";
 function useCountUp(target, enabled) {
   const [v, setV] = useState(enabled ? 0 : target);
   const from = useRef(0);
+  /* 지금 화면에 보이는 값. 중간에 끊기면 이 값이 다음 tween 의 시작점이다. */
+  const shown = useRef(0);
   useEffect(() => {
     if (!enabled || typeof target !== "number") return;
     const start = performance.now(), f = from.current, dur = 900;
     /** @type {number | undefined} */
     let raf;
-    const step = (/** @type {number} */ t) => { const p = Math.min(1, (t - start) / dur), e = 1 - Math.pow(1 - p, 3); setV(f + (target - f) * e); if (p < 1) raf = requestAnimationFrame(step); else from.current = target; };
+    const step = (/** @type {number} */ t) => { const p = Math.min(1, (t - start) / dur), e = 1 - Math.pow(1 - p, 3); shown.current = f + (target - f) * e; setV(shown.current); if (p < 1) raf = requestAnimationFrame(step); else from.current = target; };
     raf = requestAnimationFrame(step);
-    return () => { if (raf != null) cancelAnimationFrame(raf); };
+    /* 끊겼으면 0이 아니라 보이던 값에서 이어야 숫자가 뒤로 튀지 않는다. */
+    return () => { if (raf != null) { cancelAnimationFrame(raf); from.current = shown.current; } };
   }, [target, enabled]);
   return enabled ? v : target;
 }
