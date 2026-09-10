@@ -10,4 +10,4 @@ export interface DropdownMenuProps {
   "aria-label"?: string;
   className?: string;
 }
-export declare function DropdownMenu(props: DropdownMenuProps): JSX.Element;
+export declare function DropdownMenu(props: DropdownMenuProps): ReactNode;

@@ -3,4 +3,4 @@ import type { InputHTMLAttributes, ReactNode } from "react";
 export interface SwitchProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {
   children?: ReactNode;
 }
-export declare function Switch(props: SwitchProps): JSX.Element;
+export declare function Switch(props: SwitchProps): ReactNode;

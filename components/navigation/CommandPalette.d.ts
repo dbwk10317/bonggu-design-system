@@ -9,4 +9,4 @@ export interface CommandPaletteProps {
   inline?: boolean;
   className?: string;
 }
-export declare function CommandPalette(props: CommandPaletteProps): JSX.Element;
+export declare function CommandPalette(props: CommandPaletteProps): ReactNode;

@@ -15,4 +15,4 @@ export interface GaugeProps extends HTMLAttributes<HTMLDivElement> {
   width?: number | string;
   height?: number | string;
 }
-export declare function Gauge(props: GaugeProps): JSX.Element;
+export declare function Gauge(props: GaugeProps): ReactNode;

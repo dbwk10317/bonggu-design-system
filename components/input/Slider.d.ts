@@ -14,4 +14,4 @@ export interface SliderProps extends Omit<InputHTMLAttributes<HTMLInputElement>,
   width?: number | string;
   onChange?: (value: number, event: React.ChangeEvent<HTMLInputElement>) => void;
 }
-export declare function Slider(props: SliderProps): JSX.Element;
+export declare function Slider(props: SliderProps): ReactNode;

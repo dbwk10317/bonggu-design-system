@@ -10,4 +10,4 @@ export interface DiffViewProps extends Omit<HTMLAttributes<HTMLDivElement>, "chi
   width?: number | string;
   "aria-label"?: string;
 }
-export declare function DiffView(props: DiffViewProps): JSX.Element;
+export declare function DiffView(props: DiffViewProps): ReactNode;

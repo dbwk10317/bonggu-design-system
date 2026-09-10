@@ -1,4 +1,4 @@
-import type { HTMLAttributes } from "react";
+import type { HTMLAttributes, ReactNode } from "react";
 export interface SegmentedOption { value: string; label: React.ReactNode; disabled?: boolean }
 /** 2~5개 상호배타 선택. */
 export interface SegmentedControlProps extends Omit<HTMLAttributes<HTMLDivElement>, "onChange"> {
@@ -11,4 +11,4 @@ export interface SegmentedControlProps extends Omit<HTMLAttributes<HTMLDivElemen
   width?: number | string;
   "aria-label": string;
 }
-export declare function SegmentedControl(props: SegmentedControlProps): JSX.Element;
+export declare function SegmentedControl(props: SegmentedControlProps): ReactNode;

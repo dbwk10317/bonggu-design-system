@@ -11,4 +11,4 @@ export interface InlineProps extends HTMLAttributes<HTMLElement> {
   as?: ElementType;
   children?: ReactNode;
 }
-export declare function Inline(props: InlineProps): JSX.Element;
+export declare function Inline(props: InlineProps): ReactNode;

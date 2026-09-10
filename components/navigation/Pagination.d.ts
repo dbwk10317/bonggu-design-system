@@ -11,4 +11,4 @@ export interface PaginationProps extends Omit<HTMLAttributes<HTMLElement>, "onCh
   info?: ReactNode;
   size?: "sm" | "md";
 }
-export declare function Pagination(props: PaginationProps): JSX.Element;
+export declare function Pagination(props: PaginationProps): ReactNode;

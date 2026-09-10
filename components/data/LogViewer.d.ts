@@ -1,4 +1,4 @@
-import type { HTMLAttributes } from "react";
+import type { HTMLAttributes, ReactNode } from "react";
 export interface LogLine { level?: "info" | "warn" | "error" | "debug" | "ok"; time?: string; text: string }
 export interface LogViewerProps extends HTMLAttributes<HTMLDivElement> {
   lines: (string | LogLine)[];
@@ -12,4 +12,4 @@ export interface LogViewerProps extends HTMLAttributes<HTMLDivElement> {
   /** 기본 240 */
   height?: number | string;
 }
-export declare function LogViewer(props: LogViewerProps): JSX.Element;
+export declare function LogViewer(props: LogViewerProps): ReactNode;

@@ -6,4 +6,4 @@ export interface TagProps extends HTMLAttributes<HTMLSpanElement> {
   onRemove?: () => void;
   children: ReactNode;
 }
-export declare function Tag(props: TagProps): JSX.Element;
+export declare function Tag(props: TagProps): ReactNode;

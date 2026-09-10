@@ -7,4 +7,4 @@ export interface AccordionProps extends HTMLAttributes<HTMLDivElement> {
   /** 테두리 없음(Panel 안) */
   plain?: boolean;
 }
-export declare function Accordion(props: AccordionProps): JSX.Element;
+export declare function Accordion(props: AccordionProps): ReactNode;

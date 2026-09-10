@@ -14,4 +14,4 @@ export interface FormModalProps {
   error?: ReactNode;
   children: ReactNode;
 }
-export declare function FormModal(props: FormModalProps): JSX.Element | null;
+export declare function FormModal(props: FormModalProps): ReactNode;

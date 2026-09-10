@@ -11,4 +11,4 @@ export interface UptimeBarProps extends HTMLAttributes<HTMLDivElement> {
   /** 직접 계산한 가용성(%)로 덮어씀 */
   uptime?: number;
 }
-export declare function UptimeBar(props: UptimeBarProps): JSX.Element;
+export declare function UptimeBar(props: UptimeBarProps): ReactNode;

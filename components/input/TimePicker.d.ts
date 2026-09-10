@@ -12,4 +12,4 @@ export interface TimePickerProps {
   className?: string;
   style?: any;
 }
-export declare function TimePicker(props: TimePickerProps): JSX.Element;
+export declare function TimePicker(props: TimePickerProps): ReactNode;

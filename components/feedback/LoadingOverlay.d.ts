@@ -7,4 +7,4 @@ export interface LoadingOverlayProps {
   className?: string;
   children?: ReactNode;
 }
-export declare function LoadingOverlay(props: LoadingOverlayProps): JSX.Element;
+export declare function LoadingOverlay(props: LoadingOverlayProps): ReactNode;

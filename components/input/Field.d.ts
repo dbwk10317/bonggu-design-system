@@ -10,5 +10,5 @@ export interface FieldProps extends HTMLAttributes<HTMLDivElement> {
   id?: string;
   children: ReactNode;
 }
-export declare function Field(props: FieldProps): JSX.Element;
+export declare function Field(props: FieldProps): ReactNode;
 export declare function useFieldContext(): { id: string; describedBy?: string; invalid: boolean; required: boolean } | null;

@@ -9,5 +9,5 @@ export interface AvatarProps extends HTMLAttributes<HTMLSpanElement> {
   status?: "ok" | "warn" | "crit" | "off";
 }
 export interface AvatarGroupProps { users: AvatarProps[]; max?: number; size?: AvatarProps["size"]; className?: string; }
-export declare function AvatarGroup(props: AvatarGroupProps): JSX.Element;
-export declare function Avatar(props: AvatarProps): JSX.Element;
+export declare function AvatarGroup(props: AvatarGroupProps): ReactNode;
+export declare function Avatar(props: AvatarProps): ReactNode;

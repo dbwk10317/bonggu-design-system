@@ -9,4 +9,4 @@ export interface StackProps extends HTMLAttributes<HTMLElement> {
   as?: ElementType;
   children?: ReactNode;
 }
-export declare function Stack(props: StackProps): JSX.Element;
+export declare function Stack(props: StackProps): ReactNode;

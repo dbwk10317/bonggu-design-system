@@ -12,4 +12,4 @@ export interface DropzoneProps extends Omit<HTMLAttributes<HTMLDivElement>, "tit
   height?: number | string;
   disabled?: boolean;
 }
-export declare function Dropzone(props: DropzoneProps): JSX.Element;
+export declare function Dropzone(props: DropzoneProps): ReactNode;

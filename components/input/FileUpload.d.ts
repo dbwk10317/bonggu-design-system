@@ -16,4 +16,4 @@ export interface FileUploadProps extends Omit<HTMLAttributes<HTMLDivElement>, "t
   fit?: "flex" | "fixed";
   width?: number | string;
 }
-export declare function FileUpload(props: FileUploadProps): JSX.Element;
+export declare function FileUpload(props: FileUploadProps): ReactNode;

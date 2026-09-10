@@ -15,4 +15,4 @@ export interface HeatmapProps extends Omit<HTMLAttributes<HTMLDivElement>, "chil
   width?: number | string;
   "aria-label"?: string;
 }
-export declare function Heatmap(props: HeatmapProps): JSX.Element;
+export declare function Heatmap(props: HeatmapProps): ReactNode;

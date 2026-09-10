@@ -8,4 +8,4 @@ export interface TooltipProps {
   children: ReactElement;
   className?: string;
 }
-export declare function Tooltip(props: TooltipProps): JSX.Element;
+export declare function Tooltip(props: TooltipProps): ReactNode;

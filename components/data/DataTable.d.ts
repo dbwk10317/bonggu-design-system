@@ -35,4 +35,4 @@ export interface DataTableProps<T = any> extends Omit<HTMLAttributes<HTMLDivElem
   /** fixed일 때 표 영역 높이(내부 스크롤) */
   height?: number | string;
 }
-export declare function DataTable<T = any>(props: DataTableProps<T>): JSX.Element;
+export declare function DataTable<T = any>(props: DataTableProps<T>): ReactNode;

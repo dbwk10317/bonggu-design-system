@@ -51,4 +51,4 @@ export type ChartProps = CartesianChartProps | PieChartProps | RadialChartProps 
 /**
  * 단일 차트 컴포넌트. kind로 표현이 바뀌고 크롬(격자·축·범례·툴팁)은 공유한다.
  */
-export declare function Chart(props: ChartProps): JSX.Element;
+export declare function Chart(props: ChartProps): ReactNode;

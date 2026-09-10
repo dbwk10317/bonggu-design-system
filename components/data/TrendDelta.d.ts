@@ -10,4 +10,4 @@ export interface TrendDeltaProps extends HTMLAttributes<HTMLSpanElement> {
   label?: ReactNode;
   precision?: number;
 }
-export declare function TrendDelta(props: TrendDeltaProps): JSX.Element;
+export declare function TrendDelta(props: TrendDeltaProps): ReactNode;

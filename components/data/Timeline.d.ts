@@ -8,4 +8,4 @@ export interface TimelineProps extends Omit<HTMLAttributes<HTMLOListElement>, "c
   width?: number | string;
   "aria-label"?: string;
 }
-export declare function Timeline(props: TimelineProps): JSX.Element;
+export declare function Timeline(props: TimelineProps): ReactNode;

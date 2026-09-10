@@ -1,4 +1,4 @@
-import type { InputHTMLAttributes } from "react";
+import type { InputHTMLAttributes, ReactNode } from "react";
 /** 숫자 입력 + 증감 버튼. epochs, batch_size, 갱신 초 같은 작은 정수·소수. */
 export interface NumberStepperProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "defaultValue" | "onChange" | "size" | "width"> {
   value?: number;
@@ -12,4 +12,4 @@ export interface NumberStepperProps extends Omit<InputHTMLAttributes<HTMLInputEl
   /** blur·Enter·증감 버튼에서 확정된 숫자만 전달. 입력 중 빈칸/범위 밖 값은 편집 상태로 유지한다. */
   onChange?: (value: number) => void;
 }
-export declare function NumberStepper(props: NumberStepperProps): JSX.Element;
+export declare function NumberStepper(props: NumberStepperProps): ReactNode;

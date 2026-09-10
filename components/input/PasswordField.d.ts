@@ -10,4 +10,4 @@ export interface PasswordFieldProps extends Omit<InputHTMLAttributes<HTMLInputEl
   width?: number | string;
 }
 export declare function passwordStrength(s: string): 0 | 1 | 2 | 3 | 4;
-export declare function PasswordField(props: PasswordFieldProps): JSX.Element;
+export declare function PasswordField(props: PasswordFieldProps): ReactNode;

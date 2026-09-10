@@ -4,4 +4,4 @@ export interface InlineMessageProps extends HTMLAttributes<HTMLDivElement> {
   icon?: string;
   children?: ReactNode;
 }
-export declare function InlineMessage(props: InlineMessageProps): JSX.Element;
+export declare function InlineMessage(props: InlineMessageProps): ReactNode;

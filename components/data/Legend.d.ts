@@ -22,4 +22,4 @@ export interface LegendProps extends HTMLAttributes<HTMLUListElement> {
   /** 주면 클릭 토글 가능 */
   onToggle?: (index: number, item: LegendItem) => void;
 }
-export declare function Legend(props: LegendProps): JSX.Element;
+export declare function Legend(props: LegendProps): ReactNode;

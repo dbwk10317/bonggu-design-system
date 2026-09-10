@@ -17,4 +17,4 @@ export interface ComboboxProps extends Omit<HTMLAttributes<HTMLDivElement>, "onC
   clearable?: boolean;
   "aria-label"?: string;
 }
-export declare function Combobox(props: ComboboxProps): JSX.Element;
+export declare function Combobox(props: ComboboxProps): ReactNode;

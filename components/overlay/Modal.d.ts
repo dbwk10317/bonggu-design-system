@@ -13,4 +13,4 @@ export interface ModalProps extends Omit<HTMLAttributes<HTMLDialogElement>, "tit
   closeButton?: boolean;
   children?: ReactNode;
 }
-export declare function Modal(props: ModalProps): JSX.Element | null;
+export declare function Modal(props: ModalProps): ReactNode;

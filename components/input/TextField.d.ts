@@ -16,4 +16,4 @@ export interface TextFieldProps extends Omit<InputHTMLAttributes<HTMLInputElemen
   mono?: boolean;
   invalid?: boolean;
 }
-export declare function TextField(props: TextFieldProps): JSX.Element;
+export declare function TextField(props: TextFieldProps): ReactNode;

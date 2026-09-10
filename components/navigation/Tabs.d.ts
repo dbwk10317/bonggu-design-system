@@ -9,4 +9,4 @@ export interface TabsProps extends Omit<HTMLAttributes<HTMLDivElement>, "onChang
   panelId?: (value: string) => string;
   "aria-label"?: string;
 }
-export declare function Tabs(props: TabsProps): JSX.Element;
+export declare function Tabs(props: TabsProps): ReactNode;

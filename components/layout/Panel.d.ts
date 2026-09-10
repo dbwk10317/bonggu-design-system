@@ -17,4 +17,4 @@ export interface PanelProps extends HTMLAttributes<HTMLElement> {
   height?: number | string;
   children?: ReactNode;
 }
-export declare function Panel(props: PanelProps): JSX.Element;
+export declare function Panel(props: PanelProps): ReactNode;

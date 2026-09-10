@@ -15,4 +15,4 @@ export interface ConfirmDialogProps {
   busy?: boolean;
   size?: "sm" | "md";
 }
-export declare function ConfirmDialog(props: ConfirmDialogProps): JSX.Element | null;
+export declare function ConfirmDialog(props: ConfirmDialogProps): ReactNode;

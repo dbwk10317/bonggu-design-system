@@ -8,4 +8,4 @@ export interface VisibleProps {
   className?: string;
   children?: ReactNode;
 }
-export declare function Visible(props: VisibleProps): JSX.Element;
+export declare function Visible(props: VisibleProps): ReactNode;

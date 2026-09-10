@@ -5,4 +5,4 @@ export interface AspectRatioProps extends HTMLAttributes<HTMLDivElement> {
   ratio?: string | number;
   children?: ReactNode;
 }
-export declare function AspectRatio(props: AspectRatioProps): JSX.Element;
+export declare function AspectRatio(props: AspectRatioProps): ReactNode;

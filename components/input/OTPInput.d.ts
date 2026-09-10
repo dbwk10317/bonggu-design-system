@@ -11,4 +11,4 @@ export interface OTPInputProps {
   disabled?: boolean;
   className?: string;
 }
-export declare function OTPInput(props: OTPInputProps): JSX.Element;
+export declare function OTPInput(props: OTPInputProps): ReactNode;

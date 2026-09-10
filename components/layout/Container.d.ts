@@ -7,4 +7,4 @@ export interface ContainerProps extends HTMLAttributes<HTMLDivElement> {
   pad?: boolean;
   children?: ReactNode;
 }
-export declare function Container(props: ContainerProps): JSX.Element;
+export declare function Container(props: ContainerProps): ReactNode;

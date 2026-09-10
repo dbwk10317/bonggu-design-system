@@ -9,4 +9,4 @@ export interface RadioGroupProps extends Omit<HTMLAttributes<HTMLFieldSetElement
   layout?: "column" | "row" | "cards";
   disabled?: boolean;
 }
-export declare function RadioGroup(props: RadioGroupProps): JSX.Element;
+export declare function RadioGroup(props: RadioGroupProps): ReactNode;

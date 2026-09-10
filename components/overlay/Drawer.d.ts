@@ -11,4 +11,4 @@ export interface DrawerProps extends Omit<HTMLAttributes<HTMLDialogElement>, "ti
   closeButton?: boolean;
   children?: ReactNode;
 }
-export declare function Drawer(props: DrawerProps): JSX.Element;
+export declare function Drawer(props: DrawerProps): ReactNode;

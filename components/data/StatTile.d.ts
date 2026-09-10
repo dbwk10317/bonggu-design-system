@@ -30,4 +30,4 @@ export interface StatTileProps extends HTMLAttributes<HTMLDivElement> {
   fit?: "flex" | "fixed";
   width?: number | string;
 }
-export declare function StatTile(props: StatTileProps): JSX.Element;
+export declare function StatTile(props: StatTileProps): ReactNode;

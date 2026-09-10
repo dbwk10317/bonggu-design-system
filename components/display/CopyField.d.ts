@@ -12,4 +12,4 @@ export interface CopyFieldProps extends Omit<HTMLAttributes<HTMLDivElement>, "ch
   fit?: "flex" | "fixed";
   width?: number | string;
 }
-export declare function CopyField(props: CopyFieldProps): JSX.Element;
+export declare function CopyField(props: CopyFieldProps): ReactNode;

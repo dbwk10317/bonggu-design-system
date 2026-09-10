@@ -1,4 +1,4 @@
-import type { SelectHTMLAttributes } from "react";
+import type { ReactNode, SelectHTMLAttributes } from "react";
 export interface SelectOption { value: string; label: string; disabled?: boolean }
 export interface SelectProps extends Omit<SelectHTMLAttributes<HTMLSelectElement>, "size"> {
   options: SelectOption[];
@@ -10,4 +10,4 @@ export interface SelectProps extends Omit<SelectHTMLAttributes<HTMLSelectElement
   width?: number | string;
   invalid?: boolean;
 }
-export declare function Select(props: SelectProps): JSX.Element;
+export declare function Select(props: SelectProps): ReactNode;

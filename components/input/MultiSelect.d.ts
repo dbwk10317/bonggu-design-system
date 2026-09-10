@@ -12,4 +12,4 @@ export interface MultiSelectProps {
   className?: string;
   style?: any;
 }
-export declare function MultiSelect(props: MultiSelectProps): JSX.Element;
+export declare function MultiSelect(props: MultiSelectProps): ReactNode;

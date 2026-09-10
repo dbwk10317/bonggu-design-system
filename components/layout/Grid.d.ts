@@ -9,7 +9,7 @@ export interface GridProps extends HTMLAttributes<HTMLDivElement> {
   columns?: number;
   children?: ReactNode;
 }
-export declare function Grid(props: GridProps): JSX.Element;
+export declare function Grid(props: GridProps): ReactNode;
 export interface GridItemProps extends HTMLAttributes<HTMLDivElement> {
   /** 격자 컨테이너 ≥900px에서의 칸 수 */
   span?: number;
@@ -19,4 +19,4 @@ export interface GridItemProps extends HTMLAttributes<HTMLDivElement> {
   spanSm?: number;
   children?: ReactNode;
 }
-export declare function GridItem(props: GridItemProps): JSX.Element;
+export declare function GridItem(props: GridItemProps): ReactNode;

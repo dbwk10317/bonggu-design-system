@@ -1,4 +1,4 @@
-import type { InputHTMLAttributes } from "react";
+import type { InputHTMLAttributes, ReactNode } from "react";
 export interface SearchFieldProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "onChange" | "value" | "size"> {
   value: string;
   onChange: (value: string, event?: React.SyntheticEvent) => void;
@@ -12,4 +12,4 @@ export interface SearchFieldProps extends Omit<InputHTMLAttributes<HTMLInputElem
   fit?: "flex" | "fixed" | "auto";
   width?: number | string;
 }
-export declare function SearchField(props: SearchFieldProps): JSX.Element;
+export declare function SearchField(props: SearchFieldProps): ReactNode;

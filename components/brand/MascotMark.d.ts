@@ -1,4 +1,4 @@
-import type { SVGProps } from "react";
+import type { ReactNode, SVGProps } from "react";
 export type MascotFace = "neutral" | "curious" | "surprised" | "smiling" | "crying" | "worried" | "sleepy" | "excited" | "blank";
 export type MascotSize = "xxs" | "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
 /**
@@ -12,4 +12,4 @@ export interface MascotMarkProps extends Omit<SVGProps<SVGSVGElement>, "children
   animated?: boolean;
   "aria-label"?: string;
 }
-export declare function MascotMark(props: MascotMarkProps): JSX.Element;
+export declare function MascotMark(props: MascotMarkProps): ReactNode;

@@ -12,4 +12,4 @@ export interface StepperProps extends Omit<HTMLAttributes<HTMLOListElement>, "ch
   width?: number | string;
   "aria-label"?: string;
 }
-export declare function Stepper(props: StepperProps): JSX.Element;
+export declare function Stepper(props: StepperProps): ReactNode;

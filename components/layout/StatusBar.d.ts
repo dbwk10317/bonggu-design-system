@@ -6,4 +6,4 @@ export interface StatusBarProps extends HTMLAttributes<HTMLDivElement> {
   /** 오른쪽 메타 항목 */
   right?: ReactNode[];
 }
-export declare function StatusBar(props: StatusBarProps): JSX.Element;
+export declare function StatusBar(props: StatusBarProps): ReactNode;

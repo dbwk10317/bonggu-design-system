@@ -7,4 +7,4 @@ export interface TopNavProps extends HTMLAttributes<HTMLElement> {
   end?: ReactNode;
   sticky?: boolean;
 }
-export declare function TopNav(props: TopNavProps): JSX.Element;
+export declare function TopNav(props: TopNavProps): ReactNode;

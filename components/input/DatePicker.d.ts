@@ -13,4 +13,4 @@ export interface DatePickerProps {
   className?: string;
   style?: any;
 }
-export declare function DatePicker(props: DatePickerProps): JSX.Element;
+export declare function DatePicker(props: DatePickerProps): ReactNode;

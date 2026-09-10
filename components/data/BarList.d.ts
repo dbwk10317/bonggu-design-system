@@ -1,4 +1,4 @@
-import type { HTMLAttributes } from "react";
+import type { HTMLAttributes, ReactNode } from "react";
 export interface BarListItem { key?: string; name: React.ReactNode; /** null·undefined·NaN이면 막대 0 + "수집 안 됨" */ value: number | null; tone?: 1 | 2 | 3 | 4 | 5 | 6 }
 export interface BarListProps extends HTMLAttributes<HTMLDivElement> {
   items: BarListItem[];
@@ -13,4 +13,4 @@ export interface BarListProps extends HTMLAttributes<HTMLDivElement> {
   fit?: "flex" | "fixed";
   width?: number | string;
 }
-export declare function BarList(props: BarListProps): JSX.Element;
+export declare function BarList(props: BarListProps): ReactNode;

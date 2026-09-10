@@ -14,7 +14,7 @@ export interface SidebarShellProps extends HTMLAttributes<HTMLDivElement> {
   statusbar?: ReactNode;
   children?: ReactNode;
 }
-export declare function SidebarShell(props: SidebarShellProps): JSX.Element;
+export declare function SidebarShell(props: SidebarShellProps): ReactNode;
 export interface SidebarNavItemProps { icon?: string; label: ReactNode; href?: string; target?: string; active?: boolean; badge?: ReactNode; onClick?: () => void }
-export declare function SidebarNavItem(props: SidebarNavItemProps): JSX.Element;
-export declare function SidebarNavGroup(props: { label: ReactNode }): JSX.Element;
+export declare function SidebarNavItem(props: SidebarNavItemProps): ReactNode;
+export declare function SidebarNavGroup(props: { label: ReactNode }): ReactNode;

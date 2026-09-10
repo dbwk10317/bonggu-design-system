@@ -9,4 +9,4 @@ export interface PopoverProps {
   className?: string;
   children?: ReactNode;
 }
-export declare function Popover(props: PopoverProps): JSX.Element;
+export declare function Popover(props: PopoverProps): ReactNode;

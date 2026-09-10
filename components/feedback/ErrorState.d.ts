@@ -9,4 +9,4 @@ export interface ErrorStateProps extends Omit<HTMLAttributes<HTMLDivElement>, "t
   actions?: ReactNode;
   mascot?: boolean;
 }
-export declare function ErrorState(props: ErrorStateProps): JSX.Element;
+export declare function ErrorState(props: ErrorStateProps): ReactNode;

@@ -14,4 +14,4 @@ export interface ProgressBarProps extends Omit<HTMLAttributes<HTMLDivElement>, "
   width?: number | string;
   "aria-label"?: string;
 }
-export declare function ProgressBar(props: ProgressBarProps): JSX.Element;
+export declare function ProgressBar(props: ProgressBarProps): ReactNode;

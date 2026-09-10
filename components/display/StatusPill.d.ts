@@ -12,4 +12,4 @@ export interface StatusPillProps extends HTMLAttributes<HTMLSpanElement> {
   outline?: boolean;
   children: ReactNode;
 }
-export declare function StatusPill(props: StatusPillProps): JSX.Element;
+export declare function StatusPill(props: StatusPillProps): ReactNode;
