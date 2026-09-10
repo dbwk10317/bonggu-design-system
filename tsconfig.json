@@ -1,0 +1,16 @@
+{
+  "//": "components/** 의 JSDoc 타입 검사 전용. 배포물을 만들지 않는다(noEmit). 소비자가 받는 .d.ts 는 tests/package-regressions.cjs 가 실제 tarball 을 깔아 따로 검사한다.",
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["components/**/*.js", "components/**/*.jsx", "types-dom.d.ts"]
+}
