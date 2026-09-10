@@ -463,6 +463,7 @@ function packageIdentityViolations() {
 }
 
 const mentions = (text, name) => new RegExp(`\\b${name}\\b`).test(text);
+const renders = (text, name) => new RegExp('<' + name + '(?=[\\s/>])').test(text);
 const GUIDE_INDEX = 'guidelines/index.html';
 
 function cardCoverageViolations() {
@@ -660,10 +661,11 @@ function guideIndexViolations() {
 }
 
 function templateCoverageViolations() {
-  const source = sourceFiles(['templates/dashboard'], new Set(['.jsx', '.js'])).map(read).join('\n');
+  // .js(목 데이터·생성물)에는 JSX가 없다. 화면 파일만 본다.
+  const source = sourceFiles(['templates/dashboard'], new Set(['.jsx'])).map(read).join('\n');
   return declaredComponents()
     // Toast는 ToastProvider가 렌더한다. 화면이 직접 마운트하지 않는 유일한 컴포넌트다.
-    .filter(({ name }) => name !== 'Toast' && !mentions(source, name))
+    .filter(({ name }) => name !== 'Toast' && !renders(source, name))
     .map(({ name, file }) => ({ file: 'templates/dashboard', line: 1, detail: `${name}을 템플릿이 쓰지 않음 (${file})` }));
 }
 

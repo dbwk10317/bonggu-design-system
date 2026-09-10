@@ -58,8 +58,6 @@ export function ToastProvider({ children, max = 3 }) {
   );
 }
 export function useToast() { const c = useContext(ToastCtx); if (!c) throw new Error("useToast는 ToastProvider 안에서만 쓸 수 있습니다."); return c; }
-/* 번들 네임스페이스에는 대문자 export만 노출되므로 정적 HTML에서는 ToastProvider.useToast()로 접근한다. */
-ToastProvider.useToast = useToast;
 
 /** 토스트 한 장. 보통 Provider가 그린다. leaving은 Provider가 퇴장 중에 세운다.
  * @param {Parameters<typeof import("./Toast.d.ts").Toast>[0]} props */

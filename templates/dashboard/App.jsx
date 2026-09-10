@@ -1,10 +1,12 @@
 (() => {
 /* 화면 모듈은 window에 등록된다(x-import 로더는 ESM import를 지원하지 않는다). 렌더 시점에 읽어 로드 순서에 의존하지 않는다. */
+/** @param {{ name: ScreenName } & Record<string, unknown>} props */
 const Screen = ({ name, ...p }) => { const C = window[name]; return C ? <C {...p} /> : null; };
 const { SidebarShell, SidebarNavItem, SidebarNavGroup, StatusBar, StatusPill, MascotMark, NotificationTrigger, NotificationDrawer, ToastProvider, IconButton, Button, Badge, Tooltip, Kbd, CommandPalette, PageStack, PageHeader, EmptyState } = window.DS;
 
 const TITLES = { overview: "개요", nodes: "노드", devices: "장치", deploys: "배포", access: "접근", settings: "설정", status: "상태 페이지" };
 const SOURCES = { nodes: "edge-gateway", devices: "device-api", deploys: "artifact-cdn", access: "config-api", settings: "config-api" };
+/** @type {Record<string, ScreenName>} */
 const SCREEN = { overview: "OverviewScreen", nodes: "NodesScreen", devices: "DevicesScreen", deploys: "DeploysScreen", access: "AccessScreen", settings: "SettingsScreen", status: "StatusScreen" };
 const go = (id) => { window.location.hash = "#" + id; };
 const EMBEDDED = (() => { try { return window.self !== window.top; } catch { return true; } })();
@@ -31,10 +33,11 @@ function App() {
     ? <Screen name={SCREEN[view]} />
     : <PageStack><PageHeader title="없는 화면" description="주소의 해시가 이 콘솔이 아는 화면과 맞지 않습니다." /><EmptyState face="curious" title="화면을 찾지 못했습니다" description="왼쪽 메뉴에서 화면을 고르거나 명령 팔레트를 엽니다." actions={<Button onClick={() => go("overview")}>개요로</Button>} /></PageStack>;
 
+  // 팔레트가 선택과 동시에 스스로 닫고, 명령은 닫힌 뒤 실행된다. 명령이 직접 닫을 필요가 없다.
   const commands = [
-    ...Object.entries(TITLES).map(([id, label]) => ({ id, label, group: "이동", icon: id === "status" ? "broadcast" : "arrow-right", hint: <span className="bds-mono">#{id}</span>, onSelect: () => { go(id); setPalette(false); } })),
-    ...(!EMBEDDED ? [{ id: "theme", label: dark ? "라이트 테마로 바꾸기" : "다크 테마로 바꾸기", group: "표시", icon: dark ? "sun" : "moon", onSelect: () => { setDark((v) => !v); setPalette(false); } }] : []),
-    { id: "readall", label: "알림 모두 읽음으로", group: "표시", icon: "bell", onSelect: () => { setAlarms((a) => a.map((x) => ({ ...x, read: true }))); setPalette(false); } },
+    ...Object.entries(TITLES).map(([id, label]) => ({ id, label, group: "이동", icon: id === "status" ? "broadcast" : "arrow-right", hint: <span className="bds-mono">#{id}</span>, onSelect: () => go(id) })),
+    ...(!EMBEDDED ? [{ id: "theme", label: dark ? "라이트 테마로 바꾸기" : "다크 테마로 바꾸기", group: "표시", icon: dark ? "sun" : "moon", onSelect: () => setDark((v) => !v) }] : []),
+    { id: "readall", label: "알림 모두 읽음으로", group: "표시", icon: "bell", onSelect: () => setAlarms((a) => a.map((x) => ({ ...x, read: true }))) },
   ];
 
   const nav = (id, icon, badge) => <SidebarNavItem key={id} icon={icon} label={TITLES[id]} href={`#${id}`} active={view === id} badge={badge} />;

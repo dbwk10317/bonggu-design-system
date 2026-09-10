@@ -1,6 +1,5 @@
 (() => {
-const { PageStack, PageHeader, Panel, Stack, Inline, Spacer, Toolbar, ToolbarGrow, SearchField, Select, MultiSelect, DateRangePicker, DataTable, DropdownMenu, Pagination, Drawer, Breadcrumb, Tabs, DescriptionList, KeyValues, Chart, LogViewer, CopyField, Code, Sparkline, StatusPill, Tag, Badge, Avatar, AvatarGroup, Button, IconButton, Tooltip, InlineMessage, LoadingOverlay, ConfirmDialog, EmptyState, ToastProvider } = window.DS;
-const useToast = ToastProvider.useToast;
+const { PageStack, PageHeader, Panel, Stack, Inline, Spacer, Toolbar, ToolbarGrow, SearchField, Select, MultiSelect, DateRangePicker, DataTable, DropdownMenu, Pagination, Drawer, Breadcrumb, Tabs, DescriptionList, KeyValues, Chart, LogViewer, CopyField, Code, Sparkline, StatusPill, Tag, Badge, Avatar, AvatarGroup, Button, IconButton, Tooltip, InlineMessage, LoadingOverlay, ConfirmDialog, EmptyState, useToast } = window.DS;
 const { nodes, ticks, logs, fmt } = window.KIT;
 
 const TONE = { online: ["ok", "정상"], degraded: ["warn", "수집 지연"], offline: ["crit", "연결 끊김"] };
@@ -50,14 +49,14 @@ function NodesScreen() {
   const { toast } = useToast();
   const [q, setQ] = React.useState("");
   const [region, setRegion] = React.useState("");
-  const [states, setStates] = React.useState(["online", "degraded", "offline"]);
-  const [range, setRange] = React.useState({ preset: "24h" });
-  const [sort, setSort] = React.useState({ key: "id", dir: "asc" });
-  const [selected, setSelected] = React.useState([]);
+  const [states, setStates] = React.useState(/** @type {string[]} */ (["online", "degraded", "offline"]));
+  const [range, setRange] = React.useState(/** @type {import("../../components/input/DateRangePicker.d.ts").DateRange} */ ({ preset: "24h" }));
+  const [sort, setSort] = React.useState(/** @type {import("../../components/data/DataTable.d.ts").DataTableSort} */ ({ key: "id", dir: "asc" }));
+  const [selected, setSelected] = React.useState(/** @type {import("react").Key[]} */ ([]));
   const [page, setPage] = React.useState(1);
   const [busy, setBusy] = React.useState(false);
-  const [detail, setDetail] = React.useState(null);
-  const [isolate, setIsolate] = React.useState(null);
+  const [detail, setDetail] = React.useState(/** @type {typeof nodes[number] | null} */ (null));
+  const [isolate, setIsolate] = React.useState(/** @type {typeof nodes[number] | null} */ (null));
 
   const filtered = nodes
     .filter((n) => states.includes(n.status))
@@ -67,13 +66,13 @@ function NodesScreen() {
   const pages = Math.max(1, Math.ceil(filtered.length / PAGE));
   const shown = filtered.slice((page - 1) * PAGE, page * PAGE);
   const refresh = () => { setBusy(true); setTimeout(() => { setBusy(false); toast({ message: "노드 목록을 다시 읽었습니다.", tone: "ok" }); }, 900); };
-  const rowMenu = (n) => [
+  const rowMenu = /** @type {(n: typeof nodes[number]) => ("-" | import("../../components/overlay/DropdownMenu.d.ts").MenuItem)[]} */ ((n) => [
     { label: "상세 열기", icon: "arrow-right", onSelect: () => setDetail(n) },
     { label: "에이전트 재시작", icon: "arrow-clockwise", onSelect: () => toast({ message: `${n.id} 재시작을 요청했습니다.`, tone: "info" }) },
     { label: "설정 다시 읽기", icon: "arrows-clockwise", onSelect: () => toast({ message: `${n.id} 설정을 다시 읽었습니다.`, tone: "ok" }) },
     "-",
     { label: "격리", icon: "plugs", danger: true, onSelect: () => setIsolate(n) },
-  ];
+  ]);
 
   return (
     <PageStack aria-label="노드 목록">

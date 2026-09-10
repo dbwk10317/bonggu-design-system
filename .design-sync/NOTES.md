@@ -53,10 +53,6 @@ npm run sync:ds
 
 ## 알려진 경고 (Known render warns) — 새 경고가 아니다
 
-- `[FONT_MISSING] "Apple SD Gothic Neo"` — 브랜드 폰트가 아니라 폴백이다. 근거:
-  `--font-ui: "Spoqa Han Sans Neo", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif`
-  (`dist/tokens/typography.css`) — 배포되는 Spoqa **다음** 자리라 실제로 렌더될 일이 없다.
-  배포할 woff2가 없고 배포해서도 안 된다. 스택 순서가 바뀌면 이 판단도 다시 봐야 한다.
 - `[RENDER_THIN]` / `[RENDER_BLANK]`가 미리보기 미작성 컴포넌트에서 나는 것은 실패가 아니라 기본 카드다.
 
 ## 환경 (Windows)

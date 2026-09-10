@@ -119,8 +119,9 @@ window.KIT = {
 window.KitNoop = window.KitNoop || (() => null);
 /* 번들이 비동기로 로드되므로 화면 모듈은 window.Ds_d3ea90를 직접 읽지 않고 이 프록시를 구조분해한다.
    각 키는 렌더 시점에 실제 컴포넌트로 위임하는 얇은 래퍼라 로드 순서에 의존하지 않는다. */
-window.DS = new Proxy({}, { get(_, name) {
-  if (name === "ToastProvider") { const P = (props) => { const C = window.Ds_d3ea90?.ToastProvider; return C ? window.React.createElement(C, props) : null; }; P.useToast = (...a) => window.Ds_d3ea90.ToastProvider.useToast(...a); return P; }
+window.DS = /** @type {typeof window.DS} */ (new Proxy({}, { get(_, name) {
+  // 훅은 호출하는 쪽의 렌더 안에서 실제 훅을 그대로 불러야 한다. 컴포넌트 래퍼로 감싸면 안 된다.
+  if (/^use[A-Z]/.test(String(name))) return (...a) => window.Ds_d3ea90?.[name](...a);
   const W = (props) => { const C = window.Ds_d3ea90?.[name]; return C ? window.React.createElement(C, props) : null; };
   W.displayName = String(name); return W;
-} });
+} }));

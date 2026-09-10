@@ -12,6 +12,8 @@ const order = [
   'build-bundle.mjs',
   // 타입과 린트가 먼저다. 소스가 성립하지 않으면 나머지 검사 결과는 읽을 필요가 없다.
   [path.join(nodeModules, 'typescript', 'bin', 'tsc'), '--project', path.join(root, 'tsconfig.json')],
+  // 템플릿도 공개 API를 쓴다. prop 이름이 바뀌면 조용히 깨지고 렌더 검사는 마운트만 보므로 여기서 잡는다.
+  [path.join(nodeModules, 'typescript', 'bin', 'tsc'), '--project', path.join(root, 'tsconfig.templates.json')],
   [path.join(nodeModules, 'eslint', 'bin', 'eslint.js'), root],
   'tests/manifest-token-regressions.cjs',
   'tests/consistency-regressions.cjs',

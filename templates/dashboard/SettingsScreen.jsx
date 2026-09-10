@@ -1,6 +1,5 @@
 (() => {
-const { PageStack, PageHeader, Container, Panel, CardHead, Grid, Stack, Inline, Spacer, Divider, Accordion, Field, TextField, TextArea, Select, SegmentedControl, Switch, Checkbox, NumberStepper, TimePicker, CopyField, DataTable, DescriptionList, KeyValues, StatusPill, Tag, Code, Button, Tooltip, Modal, FormModal, ConfirmDialog, AlertBanner, InlineMessage, EmptyState, ToastProvider } = window.DS;
-const useToast = ToastProvider.useToast;
+const { PageStack, PageHeader, Container, Panel, CardHead, Grid, Stack, Inline, Spacer, Divider, Accordion, Field, TextField, TextArea, Select, SegmentedControl, Switch, Checkbox, NumberStepper, TimePicker, CopyField, DataTable, DescriptionList, KeyValues, StatusPill, Tag, Code, Button, Tooltip, Modal, FormModal, ConfirmDialog, AlertBanner, InlineMessage, EmptyState, useToast } = window.DS;
 
 const TOKENS = [
   { id: "t1", name: "grafana-scraper", scope: "읽기", created: "2026-06-02", used: "2026-09-09 18:40", state: "활성" },
@@ -17,8 +16,8 @@ function SettingsScreen() {
   const [autoResume, setAutoResume] = React.useState(true);
   const [notifyTone, setNotifyTone] = React.useState("warn");
   const [issue, setIssue] = React.useState(false);
-  const [issued, setIssued] = React.useState(null);
-  const [revoke, setRevoke] = React.useState(null);
+  const [issued, setIssued] = React.useState(/** @type {string | null} */ (null));
+  const [revoke, setRevoke] = React.useState(/** @type {typeof TOKENS[number] | null} */ (null));
   const [wipe, setWipe] = React.useState(false);
 
   React.useEffect(() => {
@@ -152,7 +151,7 @@ function SettingsScreen() {
 
       <ConfirmDialog open={!!revoke} danger confirmLabel="폐기" title="토큰을 폐기합니다"
         message={revoke && <>폐기하면 <Code>{revoke.name}</Code>을 쓰는 자동화가 즉시 401을 받습니다.</>}
-        onClose={() => setRevoke(null)} onConfirm={() => { toast({ message: `${revoke.name} 토큰을 폐기했습니다.`, tone: "warn" }); setRevoke(null); }} />
+        onClose={() => setRevoke(null)} onConfirm={() => { toast({ message: `${revoke?.name} 토큰을 폐기했습니다.`, tone: "warn" }); setRevoke(null); }} />
 
       <ConfirmDialog open={wipe} danger confirmLabel="삭제" typeToConfirm="기록 삭제" title="수집 기록을 모두 지웁니다"
         message="지난 30일치 지표와 로그가 사라집니다. 백업에서 되살릴 수 없습니다."

@@ -1,6 +1,5 @@
 (() => {
-const { PageStack, PageHeader, Panel, Grid, Stack, Inline, Spacer, Divider, AspectRatio, Field, TextField, Select, SegmentedControl, RadioGroup, Switch, Checkbox, Slider, NumberStepper, ColorInput, TimePicker, Dropzone, Chart, KeyValues, StatusPill, Tag, MascotMark, Button, IconButton, Tooltip, Modal, InlineMessage, EmptyState, ToastProvider } = window.DS;
-const useToast = ToastProvider.useToast;
+const { PageStack, PageHeader, Panel, Grid, Stack, Inline, Spacer, Divider, AspectRatio, Field, TextField, Select, SegmentedControl, RadioGroup, Switch, Checkbox, Slider, NumberStepper, ColorInput, TimePicker, Dropzone, Chart, KeyValues, StatusPill, Tag, MascotMark, Button, IconButton, Tooltip, Modal, InlineMessage, EmptyState, useToast } = window.DS;
 
 const IDLE = [{ value: "on", label: "항상 켜기" }, { value: "sleep", label: "자동 절전" }, { value: "schedule", label: "일정 따름" }, { value: "off", label: "끄기" }];
 const LABEL_COLORS = ["#F0A35A", "#5CA8FF", "#46B36B", "#B388FF", "#F2554D", "#22D3EE"];
@@ -10,6 +9,7 @@ const MODES = [
   { value: "unattended", label: "무인", hint: "직원 호출 없이 결제까지 스스로 끝냅니다." },
   { value: "stopped", label: "정지", hint: "전원을 내립니다. 복구는 현장에서만 됩니다.", disabled: true },
 ];
+/** @type {{ id: string, label: string, dev: string, model: string, fw: string, tone: import("../../components/display/StatusPill.d.ts").Tone, text: string, temp: number, tempText: string, note?: string }[]} */
 const DEVICES = [
   { id: "kiosk", label: "안내 단말", dev: "kiosk-0", model: "BG-KIOSK-2", fw: "1.8.4", tone: "ok", text: "정상", temp: 0.42, tempText: "42.0°C" },
   { id: "reader", label: "결제 리더기", dev: "reader-0", model: "BG-PAY-1", fw: "1.6.0", tone: "warn", text: "응답 지연", temp: 0.58, tempText: "58.0°C" },
@@ -29,8 +29,8 @@ function DevicesScreen() {
   const [holiday, setHoliday] = React.useState(true);
   const [zone, setZone] = React.useState("store");
   const [busy, setBusy] = React.useState(false);
-  const [err, setErr] = React.useState(null);
-  const [photos, setPhotos] = React.useState([]);
+  const [err, setErr] = React.useState(/** @type {{ title: string, detail: string } | null} */ (null));
+  const [photos, setPhotos] = React.useState(/** @type {string[]} */ ([]));
   const picked = DEVICES.find((d) => d.id === target) ?? DEVICES[0];
 
   const apply = () => {

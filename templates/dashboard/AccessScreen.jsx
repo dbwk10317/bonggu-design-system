@@ -1,6 +1,5 @@
 (() => {
-const { PageStack, PageHeader, Panel, Grid, Stack, Inline, Tabs, Toolbar, ToolbarGrow, SearchField, Select, MultiSelect, DatePicker, Field, TextField, PasswordField, OTPInput, Checkbox, DataTable, DescriptionList, Avatar, AvatarGroup, StatusPill, Tag, Button, IconButton, Tooltip, DropdownMenu, FormModal, Modal, ConfirmDialog, EmptyState, InlineMessage, AlertBanner, ToastProvider } = window.DS;
-const useToast = ToastProvider.useToast;
+const { PageStack, PageHeader, Panel, Grid, Stack, Inline, Tabs, Toolbar, ToolbarGrow, SearchField, Select, MultiSelect, DatePicker, Field, TextField, PasswordField, OTPInput, Checkbox, DataTable, DescriptionList, Avatar, AvatarGroup, StatusPill, Tag, Button, IconButton, Tooltip, DropdownMenu, FormModal, Modal, ConfirmDialog, EmptyState, InlineMessage, AlertBanner, useToast } = window.DS;
 const { operators } = window.KIT;
 
 const ROLES = [{ value: "owner", label: "소유자" }, { value: "operator", label: "운영자" }, { value: "viewer", label: "조회자" }];
@@ -18,9 +17,9 @@ function AccessScreen() {
   const [q, setQ] = React.useState("");
   const [role, setRole] = React.useState("");
   const [invite, setInvite] = React.useState(false);
-  const [otp, setOtp] = React.useState(null);
+  const [otp, setOtp] = React.useState(/** @type {typeof operators[number] | null} */ (null));
   const [code, setCode] = React.useState("");
-  const [remove, setRemove] = React.useState(null);
+  const [remove, setRemove] = React.useState(/** @type {typeof operators[number] | null} */ (null));
   const [regions, setRegions] = React.useState(["서울"]);
   const [expires, setExpires] = React.useState("2026-12-31");
 
@@ -114,7 +113,7 @@ function AccessScreen() {
         description={otp && `${otp.name}의 인증 앱을 초기화하려면 소유자 인증 코드가 필요합니다.`}
         actions={<><Button variant="secondary" onClick={() => { setOtp(null); setCode(""); }}>취소</Button><Button variant="primary" disabled={code.replace(/\s/g, "").length < 6} onClick={() => { toast({ message: `${otp.name}의 2단계 인증을 초기화했습니다.`, tone: "ok" }); setOtp(null); setCode(""); }}>재설정</Button></>}>
         <Stack gap={3} align="center">
-          <OTPInput length={6} value={code} onChange={setCode} onComplete={() => {}} />
+          <OTPInput length={6} value={code} onChange={setCode} />
           <p className="kit-dim">소유자 계정의 인증 앱에 뜬 6자리를 넣습니다.</p>
         </Stack>
       </Modal>

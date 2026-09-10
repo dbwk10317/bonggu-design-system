@@ -52,12 +52,18 @@ const block = (p) => {
   return `// ${p}\ntry { (() => {\n${[...pro, code].join("\n")}${tail}\n})(); } catch (e) { __ds_ns.__errors.push({ path: "${p}", error: String((e && e.message) || e) }); }\n`;
 };
 
-const exposed = (n) => /^[A-Z]/.test(n) && !/^[A-Z0-9_]+$/.test(n); // 컴포넌트 이름만 노출. SCREAMING_CASE 상수·소문자 훅은 __ds_scope에만
-const components = [], unexposed = [];
-for (const p of files) for (const n of info[p].exports) (exposed(n) ? components : unexposed).push({ name: n, sourcePath: p });
+const exposed = (n) => /^[A-Z]/.test(n) && !/^[A-Z0-9_]+$/.test(n); // 컴포넌트 이름. SCREAMING_CASE 상수는 __ds_scope에만
+// 공개 훅도 네임스페이스에 올린다. 올리지 않으면 script 번들 소비자가 훅을 부를 방법이 없어
+// 컴포넌트에 손으로 붙이는 곁가지 API(ToastProvider.useToast 같은)가 생긴다. components 목록에는 넣지 않는다.
+// 모듈 사이에서만 쓰는 내부 훅까지 올리면 공개 표면이 넓어지므로, public-entry.js가 내보내는 것만 본다.
+const PUBLIC = new Set([...readFileSync(join(ROOT, "public-entry.js"), "utf8").matchAll(/^export {([^}]*)}/gm)]
+  .flatMap((m) => m[1].split(",").map((s) => s.trim().split(/s+ass+/).pop())));
+const isHook = (n) => /^use[A-Z]/.test(n) && PUBLIC.has(n);
+const components = [], hooks = [], unexposed = [];
+for (const p of files) for (const n of info[p].exports) (exposed(n) ? components : isHook(n) ? hooks : unexposed).push({ name: n, sourcePath: p });
 unexposed.sort((a, b) => a.name.localeCompare(b.name));
 const sourceHashes = Object.fromEntries(files.map((p) => [p, createHash("sha256").update(readFileSync(join(ROOT, p))).digest("hex").slice(0, 12)]));
-const header = { format: 4, namespace: NS, components, sourceHashes, inlinedExternals: [], unexposedExports: unexposed };
+const header = { format: 4, namespace: NS, components, sourceHashes, inlinedExternals: [], unexposedExports: unexposed, hooks };
 
 // React(UMD 전역)가 번들보다 늦게 로드되는 페이지(템플릿 로더)를 위해, React가 없으면 window.React 대입 시점까지 평가를 미룬다.
 const out = [
@@ -65,7 +71,7 @@ const out = [
   `const __ds_ns = (window.${NS} = window.${NS} || {});`, "", "const __ds_scope = {};", "", "(__ds_ns.__errors = __ds_ns.__errors || []);", "",
   "const __ds_run = () => {", "",
   ...order.map(block),
-  ...components.map((c) => `__ds_ns.${c.name} = __ds_scope.${c.name};\n`),
+  ...[...components, ...hooks].map((c) => `__ds_ns.${c.name} = __ds_scope.${c.name};\n`),
   "};", "",
   "if (window.React) __ds_run();",
   'else { let r; Object.defineProperty(window, "React", { configurable: true, get: () => r, set: (v) => { r = v; Object.defineProperty(window, "React", { value: v, writable: true, configurable: true, enumerable: true }); __ds_run(); } }); }',
@@ -75,8 +81,8 @@ writeFileSync(join(ROOT, "_ds_bundle.js"), out);
 
 const mp = join(ROOT, "_ds_manifest.json");
 const man = JSON.parse(readFileSync(mp, "utf8"));
-man.components = components; man.unexposedExports = unexposed;
-console.log(`bundle: ${order.length} files, ${components.length} components, ${unexposed.length} unexposed, ${(out.length / 1024).toFixed(0)} KB`);
+man.components = components; man.hooks = hooks; man.unexposedExports = unexposed;
+console.log(`bundle: ${order.length} files, ${components.length} components, ${hooks.length} hooks, ${unexposed.length} unexposed, ${(out.length / 1024).toFixed(0)} KB`);
 
 // ── adherence 설정 ─────────────────────────────────────────────────────────
 // _adherence.oxlintrc.json에서 출처가 있는 부분만 다시 만든다.

@@ -307,6 +307,14 @@ async function run() {
         assert.deepEqual(dashOverflow, [], `가로 넘침 ${route} @${width}`);
         assert.equal(await dash.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), true, `문서 가로 스크롤 ${route} @${width}`);
       }
+      // 화면 모듈은 훅을 window.DS 프록시로 받는다. 마운트만 보는 검사로는 그 위임이 끊겨도 통과하므로
+      // 실제로 토스트를 띄우는 동작을 한 번 시킨다. 폭마다 반복할 이유는 없어 1280에서만 잰다.
+      if (width === 1280) {
+        await dash.evaluate(() => { window.location.hash = '#devices'; });
+        await dash.waitForFunction(mounted, ['devices', TITLES.devices]);
+        await dash.getByRole('button', { name: '적용', exact: true }).click();
+        await dash.getByRole('status').filter({ hasText: '두 장치에 적용했습니다.' }).waitFor();
+      }
       // 1024 이상은 고정 레일, 미만은 햄버거 → 드로어. 셸이 있는 화면에서만 잰다.
       await dash.evaluate(() => { window.location.hash = '#overview'; });
       await dash.waitForFunction(mounted, ['overview', TITLES.overview]);

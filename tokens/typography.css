@@ -4,7 +4,7 @@
 /* 스타일가이드 타이포. UI·본문 Spoqa Han Sans Neo, 수치·코드·식별자 JetBrains Mono. 두 서체 역할을 바꾸지 않는다.
    한글 자간 0(음수 금지), keep-all, 본문 14 이하로 내리지 않는다. 11.5 미만은 mono 단위·타임스탬프만. */
 :root{
-  --font-ui:"Spoqa Han Sans Neo","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --font-ui:"Spoqa Han Sans Neo","Malgun Gothic",system-ui,sans-serif;
   --font-data:"JetBrains Mono","SF Mono",Menlo,Consolas,monospace;
   --fs-display:28px;--fs-title:20px;--fs-heading:16px;--fs-subheading:14.5px;--fs-body:14px;--fs-label:12.5px;--fs-caption:11.5px;--fs-micro:10.5px;
   --fs-metric:24px;

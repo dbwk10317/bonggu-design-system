@@ -9,7 +9,7 @@
 <script type="text/babel">
 const NS = window.Ds_d3ea90;
 
-const { AlertBanner, Toast, ToastProvider, NotificationTrigger, NotificationDrawer, InlineMessage, ProgressBar, Stepper, Skeleton, Spinner, LoadingOverlay, EmptyState, ErrorState, ConfirmDialog, Button, Panel, CardHead, KeyValues, Stack } = NS; const useToast = ToastProvider.useToast;
+const { AlertBanner, Toast, ToastProvider, NotificationTrigger, NotificationDrawer, InlineMessage, ProgressBar, Stepper, Skeleton, Spinner, LoadingOverlay, EmptyState, ErrorState, ConfirmDialog, Button, Panel, CardHead, KeyValues, Stack, useToast } = NS;
 function ToastDemo(){ const {toast}=useToast(); return <div className="bds-demo-row"><Button size="sm" onClick={()=>toast({message:"두 장치에 적용했습니다.",tone:"ok"})}>ok 토스트</Button><Button size="sm" onClick={()=>toast({message:"사진을 삭제했습니다.",action:"되돌리기"})}>액션 토스트</Button></div>; }
 function App(){ const [o,setO]=React.useState(false); const [notifications,setNotifications]=React.useState(false); return <ToastProvider><>
   <div className="bds-demo-grid-2">

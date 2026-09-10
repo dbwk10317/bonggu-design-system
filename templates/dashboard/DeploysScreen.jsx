@@ -1,8 +1,8 @@
 (() => {
-const { PageStack, PageHeader, Panel, CardHead, Grid, Stack, Inline, Spacer, Divider, Field, TextField, TextArea, Select, Checkbox, Combobox, DatePicker, CodeEditor, FileUpload, Stepper, ProgressBar, LogViewer, DiffView, DataTable, StatTile, Timeline, CodeBlock, Code, StatusPill, Tag, Button, IconButton, Tooltip, DropdownMenu, FormModal, ConfirmDialog, AlertBanner, InlineMessage, ToastProvider } = window.DS;
-const useToast = ToastProvider.useToast;
+const { PageStack, PageHeader, Panel, CardHead, Grid, Stack, Inline, Spacer, Divider, Field, TextField, TextArea, Select, Checkbox, Combobox, DatePicker, CodeEditor, FileUpload, Stepper, ProgressBar, LogViewer, DiffView, DataTable, StatTile, Timeline, CodeBlock, Code, StatusPill, Tag, Button, IconButton, Tooltip, DropdownMenu, FormModal, ConfirmDialog, AlertBanner, InlineMessage, useToast } = window.DS;
 const { releases, manifest, diff, logs, nodes } = window.KIT;
 
+/** @type {{ id: string, version: string, when: string, batches: string, nodes: number, result: string, tone: import("../../components/display/StatusPill.d.ts").Tone }[]} */
 const HISTORY = [
   { id: "r-118", version: "2.14.0", when: "2026-09-09 18:20", batches: "6/6", nodes: 26, result: "완료", tone: "ok" },
   { id: "r-117", version: "2.13.2", when: "2026-09-02 10:05", batches: "6/6", nodes: 38, result: "완료", tone: "ok" },
@@ -19,13 +19,14 @@ function DeploysScreen() {
   const [plan, setPlan] = React.useState(false);
   const [rollback, setRollback] = React.useState(false);
   const [when, setWhen] = React.useState("2026-09-10");
-  const [uploads, setUploads] = React.useState([
+  const [uploads, setUploads] = React.useState(/** @type {import("../../components/input/FileUpload.d.ts").UploadItem[]} */ ([
     { id: "f1", name: "bonggu-edge-agent-2.15.0-rc1.tar.zst", size: 148000000, status: "uploading", progress: 0.62, chunk: 19, chunks: 31, rate: "42 MiB/s" },
     { id: "f2", name: "device-profiles-2026-09.zip", size: 24000000, status: "done", progress: 1 },
     { id: "f3", name: "edge-agent-debug.sym", size: 9800000, status: "failed", error: "저장소가 407을 돌려주었습니다" },
-  ]);
+  ]));
   const patch = (id, over) => setUploads((u) => u.map((f) => (f.id === id ? { ...f, ...over } : f)));
 
+  /** @type {import("../../components/feedback/Stepper.d.ts").StepItem[]} */
   const steps = [
     { label: "아티팩트 확인", detail: "서명과 해시 대조", status: "done" },
     { label: "카나리 2대", detail: <span className="bds-mono">edge-seoul-01 · edge-gyeonggi-01</span>, status: "done" },
@@ -95,7 +96,7 @@ function DeploysScreen() {
       <Panel>
         <CardHead title="아티팩트 업로드" meta="청크 8 MiB" />
         <FileUpload items={uploads} multiple accept=".zip,.tar.zst,.sym" title="아티팩트를 끌어다 놓습니다" hint="저장소에 올린 뒤 서명을 대조합니다"
-          onFiles={(files) => setUploads((u) => [...u, ...files.map((f, i) => ({ id: `n${u.length + i}`, name: f.name, size: f.size, status: "queued" }))])}
+          onFiles={(files) => setUploads((u) => [...u, ...files.map((f, i) => /** @type {import("../../components/input/FileUpload.d.ts").UploadItem} */ ({ id: `n${u.length + i}`, name: f.name, size: f.size, status: "queued" }))])}
           onPause={(id) => patch(id, { status: "paused" })} onResume={(id) => patch(id, { status: "uploading" })}
           onRetry={(id) => patch(id, { status: "uploading", progress: 0, error: undefined })} onCancel={(id) => setUploads((u) => u.filter((f) => f.id !== id))} />
       </Panel>

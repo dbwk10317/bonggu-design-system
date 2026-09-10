@@ -120,7 +120,7 @@
 - `assets/` · mascot-neutral.svg, favicon.svg
 - `guidelines/` · `index.html`(컴포넌트 96개 목록 + 카드·템플릿을 검수 폭별로 열어 보는 가이드 페이지), 검수 카드 공통 레이아웃 `card.css`, 색·타이포·간격·반응형·모션 스펙 카드 13장
 - `theme-toggle.js` · 문서 테마 동기화. 가이드 상단 바 또는 독립 카드 우상단의 라이트/다크 토글을 사용한다. 제품에서는 `:root.dark` 클래스만 토글한다
-- `components/` · 9그룹, `components/<group>/<Name>.jsx` + `.d.ts` + `.prompt.md`(사용법), 그룹별 카드(`*.card.html`). 스타일은 `styles/c-*.css`의 `bds-*` 클래스와 토큰만. 번들 네임스페이스는 `window.Ds_d3ea90`(훅은 대문자 export만 노출되므로 `ToastProvider.useToast()`로 접근).
+- `components/` · 9그룹, `components/<group>/<Name>.jsx` + `.d.ts` + `.prompt.md`(사용법), 그룹별 카드(`*.card.html`). 스타일은 `styles/c-*.css`의 `bds-*` 클래스와 토큰만. 번들 네임스페이스는 `window.Ds_d3ea90`이고, 공개 진입점이 내보내는 것은 컴포넌트든 훅이든 그대로 올라간다(`Ds_d3ea90.useToast`). 내부 훅은 올리지 않는다.
 - `templates/dashboard/` · 조립 예시. 가상 제품 "봉구 엣지 콘솔"을 이 시스템의 컴포넌트만으로 만든 클릭 가능한 대시보드(`Dashboard.dc.html`; 개요·노드·장치·배포·접근·설정 6화면 + 공개 상태 페이지, 라이트 기본 + 다크 토글). 소비 프로젝트는 `ds-base.js` 한 줄만 고쳐 쓴다.
 - `build-bundle.mjs` · `_ds_bundle.js`·`_ds_manifest.json` 빌드. 컴포넌트 소스를 고치면 `node build-bundle.mjs`로 다시 만든다(`@babel/standalone` 필요, 없으면 `BABEL_STANDALONE=<경로>`)
 - `token-parser.mjs` · `tokens/*.css`를 읽는 유일한 파서. 빌드와 검사가 같이 쓰고, 파서 자체는 `tests/fixtures/token-parser`가 검증한다
@@ -141,7 +141,7 @@
 ### 공개 API·버전·배포 계약
 
 - **패키지 식별자·라이선스**: 패키지명은 `@dbwk10317/bonggu-design-system`이고 저장소는 `https://github.com/dbwk10317/bonggu-design-system`이다. 프로젝트 코드는 `Copyright (c) 2026 dbwk10317`의 MIT License로 배포한다. 포함된 Spoqa Han Sans Neo·JetBrains Mono·Phosphor Icons는 `THIRD_PARTY_NOTICES.md`와 `licenses/`에 적힌 각 원래 라이선스를 유지한다.
-- **공개 JS·타입 표면**: 위 Components 목록의 96개 컴포넌트와 `useToast`, 그리고 각 공개 컴포넌트·훅의 `.d.ts`가 내보내는 관련 `type`·`interface`가 공개 API다. `components/core/`, `components/data/chart-math.js`, `theme-toggle.js`, `useFieldContext`, `passwordStrength`는 내부 구현이며 공개 진입점에서 내보내지 않는다. 기존 `window.Ds_d3ea90` 번들의 대문자 필터는 npm 공개 API의 정본이 아니다.
+- **공개 JS·타입 표면**: 위 Components 목록의 96개 컴포넌트와 `useToast`, 그리고 각 공개 컴포넌트·훅의 `.d.ts`가 내보내는 관련 `type`·`interface`가 공개 API다. `components/core/`, `components/data/chart-math.js`, `theme-toggle.js`, `useFieldContext`, `passwordStrength`는 내부 구현이며 공개 진입점에서 내보내지 않는다. 번들 네임스페이스는 공개 진입점을 그대로 따르지만, 정본은 `public-entry.js`다.
 - **SemVer 경계**: 1.0.0 이후 patch는 공개 계약을 유지하는 수정, minor는 기존 사용법을 유지하는 선택적 API 추가, major는 공개 컴포넌트·훅·타입·토큰·경로의 삭제·개명, 필수 prop·기본 동작·이벤트 시점의 비호환 변경, 지원 환경 축소다. 기본 크기·간격·타이포가 기존 레이아웃을 깨뜨리는 변경도 major다. 폐기 예정 API는 대체 방법을 먼저 알리고 major에서 제거하며, 토큰 이름은 호환 별칭을 만들지 않고 major 이관표로 안내한다.
 - **스타일 범위**: `styles.css`는 토큰, 폰트, 아이콘, 컴포넌트 스타일과 `tokens/base.css`를 함께 불러오는 단일 full-app 진입점이다. 명시적으로 import한 앱 전체의 `body`·제목·링크 등 전역 요소에 base/reset이 적용된다. 현재 일부 컴포넌트만 격리해 도입하는 scoped CSS 진입점은 없으며, 이 전역 영향을 받지 않는다고 가정하지 않는다.
 - **테마·밀도**: 라이트가 기본이고 다크는 `:root.dark` 또는 `[data-theme="dark"]`, compact 밀도는 `<html data-density="compact">`로 선택한다. `theme-toggle.js`는 문서 카드 전용 자동 실행 스크립트라 공개 npm 진입점에 포함하지 않는다. 컴포넌트의 브라우저 API 접근은 effect 또는 이벤트 시점에만 일어나며 모듈 import 자체가 DOM·`localStorage`·테마를 바꾸지 않는다.
