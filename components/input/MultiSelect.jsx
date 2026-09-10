@@ -15,7 +15,10 @@ export function MultiSelect({ options = [], value = [], onChange, placeholder = 
   const activeIdx = Math.min(idx, Math.max(0, list.length - 1));
   const full = max != null && value.length >= max;
   useEffect(() => { if (!open) return; const on = (/** @type {MouseEvent} */ e) => { if (!root.current?.contains(/** @type {Node} */ (e.target))) setOpen(false); }; document.addEventListener("mousedown", on); return () => document.removeEventListener("mousedown", on); }, [open]);
-  useEffect(() => setIdx(0), [q, open]);
+  /* 검색어나 열림이 바뀌면 강조를 첫 항목으로. */
+  const cue = q + "\u0000" + open;
+  const [prevCue, setPrevCue] = useState(cue);
+  if (prevCue !== cue) { setPrevCue(cue); setIdx(0); }
   const add = (/** @type {string} */ v) => { if (full) return; onChange?.([...value, v]); setIdx(0); setQ(""); input.current?.focus(); };
   const remove = (/** @type {string} */ v) => onChange?.(value.filter((x) => x !== v));
   const onKey = (/** @type {import("react").KeyboardEvent<HTMLElement>} */ e) => {

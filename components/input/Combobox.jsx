@@ -15,7 +15,10 @@ export function Combobox({ options = [], value, onChange, placeholder = "검색 
   const sel = options.find((o) => o.value === value) ?? null;
   const list = q ? options.filter((o) => `${o.label} ${o.detail ?? ""} ${o.value}`.toLowerCase().includes(q.toLowerCase())) : options;
   useEffect(() => { if (!open) return; const on = (/** @type {MouseEvent} */ e) => { if (!root.current?.contains(/** @type {Node} */ (e.target))) { setOpen(false); setQ(""); } }; document.addEventListener("mousedown", on); return () => document.removeEventListener("mousedown", on); }, [open]);
-  useEffect(() => { setIdx(0); }, [q, open]);
+  /* 검색어나 열림이 바뀌면 강조를 첫 항목으로. 렌더 중 조정이라 옛 강조가 한 프레임 보이지 않는다. */
+  const cue = q + "\u0000" + open;
+  const [prevCue, setPrevCue] = useState(cue);
+  if (prevCue !== cue) { setPrevCue(cue); setIdx(0); }
   const pick = (/** @type {import("./Combobox.d.ts").ComboOption | null | undefined} */ o) => { if (o?.disabled) return; onChange?.(o ? o.value : null, o ?? null); setOpen(false); setQ(""); };
   const onKey = (/** @type {import("react").KeyboardEvent<HTMLElement>} */ e) => {
     if (e.key === "ArrowDown") { e.preventDefault(); setOpen(true); setIdx((i) => Math.min(list.length - 1, i + 1)); }

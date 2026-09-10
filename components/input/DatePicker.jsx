@@ -15,7 +15,13 @@ export function DatePicker({ value, onChange, min, max, placeholder = "날짜 �
   const [open, setOpen] = useState(false);
   const sel = value ? new Date(value + "T00:00:00") : null;
   const [view, setView] = useState(() => { const d = sel ?? new Date(); return new Date(d.getFullYear(), d.getMonth(), 1); });
-  useEffect(() => { const d = value ? new Date(value + "T00:00:00") : new Date(); if (!Number.isNaN(d.getTime())) setView(new Date(d.getFullYear(), d.getMonth(), 1)); }, [value]);
+  /* 값이 바뀌면 그 달로 옮긴다. 사용자가 넘겨 둔 달은 값이 그대로면 유지된다. */
+  const [prevValue, setPrevValue] = useState(value);
+  if (prevValue !== value) {
+    setPrevValue(value);
+    const d = value ? new Date(value + "T00:00:00") : new Date();
+    if (!Number.isNaN(d.getTime())) setView(new Date(d.getFullYear(), d.getMonth(), 1));
+  }
   const root = useRef(/** @type {HTMLDivElement | null} */ (null)), trig = useRef(/** @type {HTMLButtonElement | null} */ (null));
   /* 닫힐 때 포커스를 트리거 버튼으로 돌린다(달력 셀이 언마운트되면 포커스가 body로 떨어진다) */
   const close = () => { setOpen(false); trig.current?.focus(); };

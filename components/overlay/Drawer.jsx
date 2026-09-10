@@ -7,12 +7,11 @@ import { IconButton } from "../action/IconButton.jsx";
  * @param {Parameters<typeof import("./Drawer.d.ts").Drawer>[0]} props */
 export function Drawer({ open, onClose, title, description, actions, size = "md", closeButton = true, className, children, ...rest }) {
   const panel = useRef(/** @type {HTMLDialogElement | null} */ (null)), tid = useId();
-  useModalDialog(panel, open);
-  const outside = (/** @type {import("react").MouseEvent<HTMLDialogElement>} */ e) => { const r = e.currentTarget.getBoundingClientRect(); return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom; };
+  useModalDialog(panel, open, onClose);
   return (
     <div className={cx("bds-side", open && "bds-side--open", `bds-side--${size}`)}>
       <dialog ref={panel} aria-labelledby={title ? tid : undefined} tabIndex={-1} className={cx("bds-side__panel", className)}
-        onCancel={(e) => { e.preventDefault(); onClose?.(); }} onMouseDown={(e) => { if (e.target === e.currentTarget && outside(e)) onClose?.(); }} {...rest}>
+        onCancel={(e) => { e.preventDefault(); onClose?.(); }} {...rest}>
         {(title || closeButton) && <header className="bds-side__hd"><div className="bds-side__ttl">{title && <h2 id={tid}>{title}</h2>}{description && <p>{description}</p>}</div>{closeButton && <IconButton icon="x" size="sm" variant="ghost" aria-label="닫기" onClick={onClose} />}</header>}
         <div className="bds-side__body">{children}</div>
         {actions && <footer className="bds-side__ft">{actions}</footer>}

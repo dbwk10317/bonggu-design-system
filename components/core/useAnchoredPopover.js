@@ -8,7 +8,7 @@ const useIsoLayoutEffect = typeof document === "undefined" ? useEffect : useLayo
 /** @param {{ open: boolean, anchorRef: { current: HTMLElement | null }, panelRef: { current: HTMLElement | null }, align?: "start" | "end", onDismiss?: () => void }} options */
 export function useAnchoredPopover({ open, anchorRef, panelRef, align = "end", onDismiss }) {
   const dismissRef = useRef(onDismiss);
-  dismissRef.current = onDismiss;
+  useEffect(() => { dismissRef.current = onDismiss; });
   useIsoLayoutEffect(() => {
     const panel = panelRef.current, anchor = anchorRef.current;
     if (!open || !panel || !anchor) return;

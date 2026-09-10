@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { cx, frameStyle } from "../core/frame.js";
 import { Icon } from "../action/Icon.jsx";
 import { Dropzone } from "./Dropzone.jsx";

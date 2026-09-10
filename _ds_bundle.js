@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"Ds_d3ea90","components":[{"name":"Button","sourcePath":"components/action/Button.jsx"},{"name":"Icon","sourcePath":"components/action/Icon.jsx"},{"name":"IconButton","sourcePath":"components/action/IconButton.jsx"},{"name":"MascotMark","sourcePath":"components/brand/MascotMark.jsx"},{"name":"BarList","sourcePath":"components/data/BarList.jsx"},{"name":"Chart","sourcePath":"components/data/Chart.jsx"},{"name":"DataTable","sourcePath":"components/data/DataTable.jsx"},{"name":"DescriptionList","sourcePath":"components/data/DescriptionList.jsx"},{"name":"DiffView","sourcePath":"components/data/DiffView.jsx"},{"name":"Gauge","sourcePath":"components/data/Gauge.jsx"},{"name":"Heatmap","sourcePath":"components/data/Heatmap.jsx"},{"name":"KeyValues","sourcePath":"components/data/KeyValues.jsx"},{"name":"Legend","sourcePath":"components/data/Legend.jsx"},{"name":"LogViewer","sourcePath":"components/data/LogViewer.jsx"},{"name":"Sparkline","sourcePath":"components/data/Sparkline.jsx"},{"name":"StatTile","sourcePath":"components/data/StatTile.jsx"},{"name":"Timeline","sourcePath":"components/data/Timeline.jsx"},{"name":"TrendDelta","sourcePath":"components/data/TrendDelta.jsx"},{"name":"UptimeBar","sourcePath":"components/data/UptimeBar.jsx"},{"name":"Accordion","sourcePath":"components/display/Accordion.jsx"},{"name":"Avatar","sourcePath":"components/display/Avatar.jsx"},{"name":"AvatarGroup","sourcePath":"components/display/Avatar.jsx"},{"name":"Badge","sourcePath":"components/display/Badge.jsx"},{"name":"Code","sourcePath":"components/display/Code.jsx"},{"name":"CodeBlock","sourcePath":"components/display/Code.jsx"},{"name":"Kbd","sourcePath":"components/display/Code.jsx"},{"name":"CopyField","sourcePath":"components/display/CopyField.jsx"},{"name":"StatusPill","sourcePath":"components/display/StatusPill.jsx"},{"name":"Tag","sourcePath":"components/display/Tag.jsx"},{"name":"AlertBanner","sourcePath":"components/feedback/AlertBanner.jsx"},{"name":"ConfirmDialog","sourcePath":"components/feedback/ConfirmDialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"ErrorState","sourcePath":"components/feedback/ErrorState.jsx"},{"name":"InlineMessage","sourcePath":"components/feedback/InlineMessage.jsx"},{"name":"LoadingOverlay","sourcePath":"components/feedback/LoadingOverlay.jsx"},{"name":"NotificationTrigger","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"NotificationDrawer","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"ProgressBar","sourcePath":"components/feedback/ProgressBar.jsx"},{"name":"Skeleton","sourcePath":"components/feedback/Skeleton.jsx"},{"name":"Spinner","sourcePath":"components/feedback/Spinner.jsx"},{"name":"Stepper","sourcePath":"components/feedback/Stepper.jsx"},{"name":"ToastProvider","sourcePath":"components/feedback/Toast.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Checkbox","sourcePath":"components/input/Checkbox.jsx"},{"name":"CodeEditor","sourcePath":"components/input/CodeEditor.jsx"},{"name":"ColorInput","sourcePath":"components/input/ColorInput.jsx"},{"name":"Combobox","sourcePath":"components/input/Combobox.jsx"},{"name":"DatePicker","sourcePath":"components/input/DatePicker.jsx"},{"name":"DateRangePicker","sourcePath":"components/input/DateRangePicker.jsx"},{"name":"Dropzone","sourcePath":"components/input/Dropzone.jsx"},{"name":"Field","sourcePath":"components/input/Field.jsx"},{"name":"FileUpload","sourcePath":"components/input/FileUpload.jsx"},{"name":"MultiSelect","sourcePath":"components/input/MultiSelect.jsx"},{"name":"NumberStepper","sourcePath":"components/input/NumberStepper.jsx"},{"name":"OTPInput","sourcePath":"components/input/OTPInput.jsx"},{"name":"PasswordField","sourcePath":"components/input/PasswordField.jsx"},{"name":"RadioGroup","sourcePath":"components/input/RadioGroup.jsx"},{"name":"SearchField","sourcePath":"components/input/SearchField.jsx"},{"name":"SegmentedControl","sourcePath":"components/input/SegmentedControl.jsx"},{"name":"Select","sourcePath":"components/input/Select.jsx"},{"name":"Slider","sourcePath":"components/input/Slider.jsx"},{"name":"Switch","sourcePath":"components/input/Switch.jsx"},{"name":"TextArea","sourcePath":"components/input/TextArea.jsx"},{"name":"TextField","sourcePath":"components/input/TextField.jsx"},{"name":"TimePicker","sourcePath":"components/input/TimePicker.jsx"},{"name":"AspectRatio","sourcePath":"components/layout/AspectRatio.jsx"},{"name":"CardHead","sourcePath":"components/layout/CardHead.jsx"},{"name":"Container","sourcePath":"components/layout/Container.jsx"},{"name":"Divider","sourcePath":"components/layout/Divider.jsx"},{"name":"Grid","sourcePath":"components/layout/Grid.jsx"},{"name":"GridItem","sourcePath":"components/layout/Grid.jsx"},{"name":"Inline","sourcePath":"components/layout/Inline.jsx"},{"name":"PageHeader","sourcePath":"components/layout/PageHeader.jsx"},{"name":"PageStack","sourcePath":"components/layout/PageStack.jsx"},{"name":"Panel","sourcePath":"components/layout/Panel.jsx"},{"name":"Spacer","sourcePath":"components/layout/Spacer.jsx"},{"name":"Stack","sourcePath":"components/layout/Stack.jsx"},{"name":"StatusBar","sourcePath":"components/layout/StatusBar.jsx"},{"name":"Toolbar","sourcePath":"components/layout/Toolbar.jsx"},{"name":"ToolbarGrow","sourcePath":"components/layout/Toolbar.jsx"},{"name":"Visible","sourcePath":"components/layout/Visible.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"CommandPalette","sourcePath":"components/navigation/CommandPalette.jsx"},{"name":"Link","sourcePath":"components/navigation/Link.jsx"},{"name":"Pagination","sourcePath":"components/navigation/Pagination.jsx"},{"name":"SidebarShell","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavItem","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavGroup","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"},{"name":"TopNav","sourcePath":"components/navigation/TopNav.jsx"},{"name":"Drawer","sourcePath":"components/overlay/Drawer.jsx"},{"name":"DropdownMenu","sourcePath":"components/overlay/DropdownMenu.jsx"},{"name":"FormModal","sourcePath":"components/overlay/FormModal.jsx"},{"name":"Modal","sourcePath":"components/overlay/Modal.jsx"},{"name":"Popover","sourcePath":"components/overlay/Popover.jsx"},{"name":"Tooltip","sourcePath":"components/overlay/Tooltip.jsx"}],"sourceHashes":{"components/action/Button.jsx":"09b7d91ea70d","components/action/Icon.jsx":"37cb27cf8630","components/action/IconButton.jsx":"e970a1310f2a","components/brand/MascotMark.jsx":"2f60684fafc0","components/core/frame.js":"7b923fcdece0","components/core/missing.js":"8b286e1a101a","components/core/useAnchoredPopover.js":"13047423cac1","components/data/BarList.jsx":"646c276541f5","components/data/Chart.jsx":"681db7f01473","components/data/DataTable.jsx":"ac80548515b4","components/data/DescriptionList.jsx":"09f578c0508a","components/data/DiffView.jsx":"f64dd56b50e7","components/data/Gauge.jsx":"d2e79030df47","components/data/Heatmap.jsx":"f5b8b7fbaba0","components/data/KeyValues.jsx":"9a8c0448bf71","components/data/Legend.jsx":"83a44c5af125","components/data/LogViewer.jsx":"f15f94aee332","components/data/Sparkline.jsx":"d2785197f2c6","components/data/StatTile.jsx":"714de829eb34","components/data/Timeline.jsx":"2824e3cef968","components/data/TrendDelta.jsx":"1ec79033f08b","components/data/UptimeBar.jsx":"cf53edb4f5b1","components/data/chart-math.js":"8d99ceed4d4a","components/display/Accordion.jsx":"fe63c08e4db6","components/display/Avatar.jsx":"380fbe3668b8","components/display/Badge.jsx":"6610ff331d97","components/display/Code.jsx":"db5fc2d41bf7","components/display/CopyField.jsx":"63b8d023c5ac","components/display/StatusPill.jsx":"2271178c5885","components/display/Tag.jsx":"0a8cf9b3a7da","components/feedback/AlertBanner.jsx":"35630891733b","components/feedback/ConfirmDialog.jsx":"d8b49f2a5ed2","components/feedback/EmptyState.jsx":"0cc5195f8321","components/feedback/ErrorState.jsx":"d1fb9a97acb1","components/feedback/InlineMessage.jsx":"1a767995ef24","components/feedback/LoadingOverlay.jsx":"4d6098571f5a","components/feedback/NotificationDrawer.jsx":"496171c759e3","components/feedback/ProgressBar.jsx":"fcde9d6c0e1c","components/feedback/Skeleton.jsx":"d28497fc3046","components/feedback/Spinner.jsx":"14b0ba99fd1e","components/feedback/Stepper.jsx":"c492c029e953","components/feedback/Toast.jsx":"7c9c3387d536","components/input/Checkbox.jsx":"707e1b57dba1","components/input/CodeEditor.jsx":"ee2c3e757cad","components/input/ColorInput.jsx":"d365cfbb804e","components/input/Combobox.jsx":"6d572a901e04","components/input/DatePicker.jsx":"bf27243f4825","components/input/DateRangePicker.jsx":"b3dfc1fe41f8","components/input/Dropzone.jsx":"0365b37de644","components/input/Field.jsx":"64574afd3fca","components/input/FileUpload.jsx":"f526b5959036","components/input/MultiSelect.jsx":"83837b9ad5ec","components/input/NumberStepper.jsx":"a4f9d227933f","components/input/OTPInput.jsx":"1af8016f9e86","components/input/PasswordField.jsx":"fc4e47660183","components/input/RadioGroup.jsx":"8f6614181191","components/input/SearchField.jsx":"5bf4dce7e420","components/input/SegmentedControl.jsx":"ac18382a3563","components/input/Select.jsx":"23fa266f4ce8","components/input/Slider.jsx":"919c77f5b95b","components/input/Switch.jsx":"4987aa99a72b","components/input/TextArea.jsx":"c876e585198f","components/input/TextField.jsx":"7fc617fee4f9","components/input/TimePicker.jsx":"7767fc39ad04","components/layout/AspectRatio.jsx":"e2ae6d037775","components/layout/CardHead.jsx":"1d17c88765ab","components/layout/Container.jsx":"f21e0d25115f","components/layout/Divider.jsx":"d569b3cd4069","components/layout/Grid.jsx":"762064e97502","components/layout/Inline.jsx":"723a2506c7e6","components/layout/PageHeader.jsx":"8062828d5bc9","components/layout/PageStack.jsx":"9703e7450025","components/layout/Panel.jsx":"5055dfd4e67a","components/layout/Spacer.jsx":"1fe8d631b4a5","components/layout/Stack.jsx":"48ff38945a39","components/layout/StatusBar.jsx":"b25654bc2c4d","components/layout/Toolbar.jsx":"7ab182321833","components/layout/Visible.jsx":"a121f0c10d26","components/navigation/Breadcrumb.jsx":"0858ed548d0b","components/navigation/CommandPalette.jsx":"3cb74c9fb336","components/navigation/Link.jsx":"5ef8228d7f2b","components/navigation/Pagination.jsx":"36e3aee2f6d1","components/navigation/SidebarShell.jsx":"d8d7d3d54b42","components/navigation/Tabs.jsx":"beadfb871a96","components/navigation/TopNav.jsx":"b2de719cb8b9","components/overlay/Drawer.jsx":"db27a083c980","components/overlay/DropdownMenu.jsx":"9059f868ee9f","components/overlay/FormModal.jsx":"3453da04e7de","components/overlay/Modal.jsx":"261b5641ed3e","components/overlay/Popover.jsx":"33ae32b79290","components/overlay/Tooltip.jsx":"fe984a0919ec","components/overlay/useModalDialog.js":"62d1a38e1428","theme-toggle.js":"0c924eb893f3"},"inlinedExternals":[],"unexposedExports":[{"name":"cx","sourcePath":"components/core/frame.js"},{"name":"DASHES","sourcePath":"components/data/chart-math.js"},{"name":"estWidth","sourcePath":"components/data/chart-math.js"},{"name":"fmtKo","sourcePath":"components/data/chart-math.js"},{"name":"frameStyle","sourcePath":"components/core/frame.js"},{"name":"histBins","sourcePath":"components/data/chart-math.js"},{"name":"isMissing","sourcePath":"components/core/missing.js"},{"name":"MISSING_CLASS","sourcePath":"components/core/missing.js"},{"name":"MISSING_TEXT","sourcePath":"components/core/missing.js"},{"name":"niceTicks","sourcePath":"components/data/chart-math.js"},{"name":"NOTIFICATION_DRAWER_ID","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"numeric","sourcePath":"components/core/missing.js"},{"name":"passwordStrength","sourcePath":"components/input/PasswordField.jsx"},{"name":"pathLength","sourcePath":"components/data/chart-math.js"},{"name":"r1","sourcePath":"components/data/chart-math.js"},{"name":"runsOf","sourcePath":"components/data/chart-math.js"},{"name":"seriesDash","sourcePath":"components/data/chart-math.js"},{"name":"smoothPath","sourcePath":"components/data/chart-math.js"},{"name":"spaceToken","sourcePath":"components/core/frame.js"},{"name":"stackBars","sourcePath":"components/data/chart-math.js"},{"name":"toneInk","sourcePath":"components/data/chart-math.js"},{"name":"toneVar","sourcePath":"components/data/chart-math.js"},{"name":"useAnchoredPopover","sourcePath":"components/core/useAnchoredPopover.js"},{"name":"useFieldContext","sourcePath":"components/input/Field.jsx"},{"name":"useModalDialog","sourcePath":"components/overlay/useModalDialog.js"},{"name":"useToast","sourcePath":"components/feedback/Toast.jsx"}]} */
+/* @ds-bundle: {"format":4,"namespace":"Ds_d3ea90","components":[{"name":"Button","sourcePath":"components/action/Button.jsx"},{"name":"Icon","sourcePath":"components/action/Icon.jsx"},{"name":"IconButton","sourcePath":"components/action/IconButton.jsx"},{"name":"MascotMark","sourcePath":"components/brand/MascotMark.jsx"},{"name":"BarList","sourcePath":"components/data/BarList.jsx"},{"name":"Chart","sourcePath":"components/data/Chart.jsx"},{"name":"DataTable","sourcePath":"components/data/DataTable.jsx"},{"name":"DescriptionList","sourcePath":"components/data/DescriptionList.jsx"},{"name":"DiffView","sourcePath":"components/data/DiffView.jsx"},{"name":"Gauge","sourcePath":"components/data/Gauge.jsx"},{"name":"Heatmap","sourcePath":"components/data/Heatmap.jsx"},{"name":"KeyValues","sourcePath":"components/data/KeyValues.jsx"},{"name":"Legend","sourcePath":"components/data/Legend.jsx"},{"name":"LogViewer","sourcePath":"components/data/LogViewer.jsx"},{"name":"Sparkline","sourcePath":"components/data/Sparkline.jsx"},{"name":"StatTile","sourcePath":"components/data/StatTile.jsx"},{"name":"Timeline","sourcePath":"components/data/Timeline.jsx"},{"name":"TrendDelta","sourcePath":"components/data/TrendDelta.jsx"},{"name":"UptimeBar","sourcePath":"components/data/UptimeBar.jsx"},{"name":"Accordion","sourcePath":"components/display/Accordion.jsx"},{"name":"Avatar","sourcePath":"components/display/Avatar.jsx"},{"name":"AvatarGroup","sourcePath":"components/display/Avatar.jsx"},{"name":"Badge","sourcePath":"components/display/Badge.jsx"},{"name":"Code","sourcePath":"components/display/Code.jsx"},{"name":"CodeBlock","sourcePath":"components/display/Code.jsx"},{"name":"Kbd","sourcePath":"components/display/Code.jsx"},{"name":"CopyField","sourcePath":"components/display/CopyField.jsx"},{"name":"StatusPill","sourcePath":"components/display/StatusPill.jsx"},{"name":"Tag","sourcePath":"components/display/Tag.jsx"},{"name":"AlertBanner","sourcePath":"components/feedback/AlertBanner.jsx"},{"name":"ConfirmDialog","sourcePath":"components/feedback/ConfirmDialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"ErrorState","sourcePath":"components/feedback/ErrorState.jsx"},{"name":"InlineMessage","sourcePath":"components/feedback/InlineMessage.jsx"},{"name":"LoadingOverlay","sourcePath":"components/feedback/LoadingOverlay.jsx"},{"name":"NotificationTrigger","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"NotificationDrawer","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"ProgressBar","sourcePath":"components/feedback/ProgressBar.jsx"},{"name":"Skeleton","sourcePath":"components/feedback/Skeleton.jsx"},{"name":"Spinner","sourcePath":"components/feedback/Spinner.jsx"},{"name":"Stepper","sourcePath":"components/feedback/Stepper.jsx"},{"name":"ToastProvider","sourcePath":"components/feedback/Toast.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Checkbox","sourcePath":"components/input/Checkbox.jsx"},{"name":"CodeEditor","sourcePath":"components/input/CodeEditor.jsx"},{"name":"ColorInput","sourcePath":"components/input/ColorInput.jsx"},{"name":"Combobox","sourcePath":"components/input/Combobox.jsx"},{"name":"DatePicker","sourcePath":"components/input/DatePicker.jsx"},{"name":"DateRangePicker","sourcePath":"components/input/DateRangePicker.jsx"},{"name":"Dropzone","sourcePath":"components/input/Dropzone.jsx"},{"name":"Field","sourcePath":"components/input/Field.jsx"},{"name":"FileUpload","sourcePath":"components/input/FileUpload.jsx"},{"name":"MultiSelect","sourcePath":"components/input/MultiSelect.jsx"},{"name":"NumberStepper","sourcePath":"components/input/NumberStepper.jsx"},{"name":"OTPInput","sourcePath":"components/input/OTPInput.jsx"},{"name":"PasswordField","sourcePath":"components/input/PasswordField.jsx"},{"name":"RadioGroup","sourcePath":"components/input/RadioGroup.jsx"},{"name":"SearchField","sourcePath":"components/input/SearchField.jsx"},{"name":"SegmentedControl","sourcePath":"components/input/SegmentedControl.jsx"},{"name":"Select","sourcePath":"components/input/Select.jsx"},{"name":"Slider","sourcePath":"components/input/Slider.jsx"},{"name":"Switch","sourcePath":"components/input/Switch.jsx"},{"name":"TextArea","sourcePath":"components/input/TextArea.jsx"},{"name":"TextField","sourcePath":"components/input/TextField.jsx"},{"name":"TimePicker","sourcePath":"components/input/TimePicker.jsx"},{"name":"AspectRatio","sourcePath":"components/layout/AspectRatio.jsx"},{"name":"CardHead","sourcePath":"components/layout/CardHead.jsx"},{"name":"Container","sourcePath":"components/layout/Container.jsx"},{"name":"Divider","sourcePath":"components/layout/Divider.jsx"},{"name":"Grid","sourcePath":"components/layout/Grid.jsx"},{"name":"GridItem","sourcePath":"components/layout/Grid.jsx"},{"name":"Inline","sourcePath":"components/layout/Inline.jsx"},{"name":"PageHeader","sourcePath":"components/layout/PageHeader.jsx"},{"name":"PageStack","sourcePath":"components/layout/PageStack.jsx"},{"name":"Panel","sourcePath":"components/layout/Panel.jsx"},{"name":"Spacer","sourcePath":"components/layout/Spacer.jsx"},{"name":"Stack","sourcePath":"components/layout/Stack.jsx"},{"name":"StatusBar","sourcePath":"components/layout/StatusBar.jsx"},{"name":"Toolbar","sourcePath":"components/layout/Toolbar.jsx"},{"name":"ToolbarGrow","sourcePath":"components/layout/Toolbar.jsx"},{"name":"Visible","sourcePath":"components/layout/Visible.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"CommandPalette","sourcePath":"components/navigation/CommandPalette.jsx"},{"name":"Link","sourcePath":"components/navigation/Link.jsx"},{"name":"Pagination","sourcePath":"components/navigation/Pagination.jsx"},{"name":"SidebarShell","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavItem","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavGroup","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"},{"name":"TopNav","sourcePath":"components/navigation/TopNav.jsx"},{"name":"Drawer","sourcePath":"components/overlay/Drawer.jsx"},{"name":"DropdownMenu","sourcePath":"components/overlay/DropdownMenu.jsx"},{"name":"FormModal","sourcePath":"components/overlay/FormModal.jsx"},{"name":"Modal","sourcePath":"components/overlay/Modal.jsx"},{"name":"Popover","sourcePath":"components/overlay/Popover.jsx"},{"name":"Tooltip","sourcePath":"components/overlay/Tooltip.jsx"}],"sourceHashes":{"components/action/Button.jsx":"09b7d91ea70d","components/action/Icon.jsx":"37cb27cf8630","components/action/IconButton.jsx":"e970a1310f2a","components/brand/MascotMark.jsx":"2f60684fafc0","components/core/frame.js":"7b923fcdece0","components/core/missing.js":"8b286e1a101a","components/core/useAnchoredPopover.js":"903924e84e70","components/data/BarList.jsx":"646c276541f5","components/data/Chart.jsx":"667dfe6255bf","components/data/DataTable.jsx":"ac80548515b4","components/data/DescriptionList.jsx":"09f578c0508a","components/data/DiffView.jsx":"f64dd56b50e7","components/data/Gauge.jsx":"1c2bc9d780fa","components/data/Heatmap.jsx":"f5b8b7fbaba0","components/data/KeyValues.jsx":"9a8c0448bf71","components/data/Legend.jsx":"83a44c5af125","components/data/LogViewer.jsx":"f15f94aee332","components/data/Sparkline.jsx":"d2785197f2c6","components/data/StatTile.jsx":"714de829eb34","components/data/Timeline.jsx":"2824e3cef968","components/data/TrendDelta.jsx":"1ec79033f08b","components/data/UptimeBar.jsx":"cf53edb4f5b1","components/data/chart-math.js":"8d99ceed4d4a","components/display/Accordion.jsx":"fe63c08e4db6","components/display/Avatar.jsx":"380fbe3668b8","components/display/Badge.jsx":"6610ff331d97","components/display/Code.jsx":"db5fc2d41bf7","components/display/CopyField.jsx":"63b8d023c5ac","components/display/StatusPill.jsx":"2271178c5885","components/display/Tag.jsx":"0a8cf9b3a7da","components/feedback/AlertBanner.jsx":"35630891733b","components/feedback/ConfirmDialog.jsx":"9041bb26983b","components/feedback/EmptyState.jsx":"0cc5195f8321","components/feedback/ErrorState.jsx":"d1fb9a97acb1","components/feedback/InlineMessage.jsx":"1a767995ef24","components/feedback/LoadingOverlay.jsx":"4d6098571f5a","components/feedback/NotificationDrawer.jsx":"496171c759e3","components/feedback/ProgressBar.jsx":"fcde9d6c0e1c","components/feedback/Skeleton.jsx":"d28497fc3046","components/feedback/Spinner.jsx":"14b0ba99fd1e","components/feedback/Stepper.jsx":"c492c029e953","components/feedback/Toast.jsx":"7c9c3387d536","components/input/Checkbox.jsx":"707e1b57dba1","components/input/CodeEditor.jsx":"ee2c3e757cad","components/input/ColorInput.jsx":"d365cfbb804e","components/input/Combobox.jsx":"f2b6319bd3d7","components/input/DatePicker.jsx":"aeddcdbd03fc","components/input/DateRangePicker.jsx":"b3dfc1fe41f8","components/input/Dropzone.jsx":"0365b37de644","components/input/Field.jsx":"64574afd3fca","components/input/FileUpload.jsx":"cb69c42a2af4","components/input/MultiSelect.jsx":"87e8d6802130","components/input/NumberStepper.jsx":"0c11bb260af2","components/input/OTPInput.jsx":"1af8016f9e86","components/input/PasswordField.jsx":"7cbcfbd654ef","components/input/RadioGroup.jsx":"8f6614181191","components/input/SearchField.jsx":"5bf4dce7e420","components/input/SegmentedControl.jsx":"ac18382a3563","components/input/Select.jsx":"23fa266f4ce8","components/input/Slider.jsx":"919c77f5b95b","components/input/Switch.jsx":"4987aa99a72b","components/input/TextArea.jsx":"c876e585198f","components/input/TextField.jsx":"7fc617fee4f9","components/input/TimePicker.jsx":"7767fc39ad04","components/layout/AspectRatio.jsx":"e2ae6d037775","components/layout/CardHead.jsx":"1d17c88765ab","components/layout/Container.jsx":"f21e0d25115f","components/layout/Divider.jsx":"d569b3cd4069","components/layout/Grid.jsx":"762064e97502","components/layout/Inline.jsx":"723a2506c7e6","components/layout/PageHeader.jsx":"8062828d5bc9","components/layout/PageStack.jsx":"9703e7450025","components/layout/Panel.jsx":"5055dfd4e67a","components/layout/Spacer.jsx":"1fe8d631b4a5","components/layout/Stack.jsx":"48ff38945a39","components/layout/StatusBar.jsx":"b25654bc2c4d","components/layout/Toolbar.jsx":"7ab182321833","components/layout/Visible.jsx":"a121f0c10d26","components/navigation/Breadcrumb.jsx":"4e6a2689a365","components/navigation/CommandPalette.jsx":"7931d99b9d00","components/navigation/Link.jsx":"5ef8228d7f2b","components/navigation/Pagination.jsx":"36e3aee2f6d1","components/navigation/SidebarShell.jsx":"d8d7d3d54b42","components/navigation/Tabs.jsx":"beadfb871a96","components/navigation/TopNav.jsx":"b2de719cb8b9","components/overlay/Drawer.jsx":"cdec158736c2","components/overlay/DropdownMenu.jsx":"9059f868ee9f","components/overlay/FormModal.jsx":"3453da04e7de","components/overlay/Modal.jsx":"d9fd521c0749","components/overlay/Popover.jsx":"33ae32b79290","components/overlay/Tooltip.jsx":"fe984a0919ec","components/overlay/useModalDialog.js":"4acffd2eaa3a","theme-toggle.js":"0c924eb893f3"},"inlinedExternals":[],"unexposedExports":[{"name":"cx","sourcePath":"components/core/frame.js"},{"name":"DASHES","sourcePath":"components/data/chart-math.js"},{"name":"estWidth","sourcePath":"components/data/chart-math.js"},{"name":"fmtKo","sourcePath":"components/data/chart-math.js"},{"name":"frameStyle","sourcePath":"components/core/frame.js"},{"name":"histBins","sourcePath":"components/data/chart-math.js"},{"name":"isMissing","sourcePath":"components/core/missing.js"},{"name":"MISSING_CLASS","sourcePath":"components/core/missing.js"},{"name":"MISSING_TEXT","sourcePath":"components/core/missing.js"},{"name":"niceTicks","sourcePath":"components/data/chart-math.js"},{"name":"NOTIFICATION_DRAWER_ID","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"numeric","sourcePath":"components/core/missing.js"},{"name":"passwordStrength","sourcePath":"components/input/PasswordField.jsx"},{"name":"pathLength","sourcePath":"components/data/chart-math.js"},{"name":"r1","sourcePath":"components/data/chart-math.js"},{"name":"runsOf","sourcePath":"components/data/chart-math.js"},{"name":"seriesDash","sourcePath":"components/data/chart-math.js"},{"name":"smoothPath","sourcePath":"components/data/chart-math.js"},{"name":"spaceToken","sourcePath":"components/core/frame.js"},{"name":"stackBars","sourcePath":"components/data/chart-math.js"},{"name":"toneInk","sourcePath":"components/data/chart-math.js"},{"name":"toneVar","sourcePath":"components/data/chart-math.js"},{"name":"useAnchoredPopover","sourcePath":"components/core/useAnchoredPopover.js"},{"name":"useFieldContext","sourcePath":"components/input/Field.jsx"},{"name":"useModalDialog","sourcePath":"components/overlay/useModalDialog.js"},{"name":"useToast","sourcePath":"components/feedback/Toast.jsx"}]} */
 
 (() => {
 
@@ -689,7 +689,9 @@ function useAnchoredPopover({
   onDismiss
 }) {
   const dismissRef = useRef(onDismiss);
-  dismissRef.current = onDismiss;
+  useEffect(() => {
+    dismissRef.current = onDismiss;
+  });
   useIsoLayoutEffect(() => {
     const panel = panelRef.current,
       anchor = anchorRef.current;
@@ -894,7 +896,7 @@ Object.assign(__ds_scope, { DiffView });
 
 // components/data/Gauge.jsx
 try { (() => {
-const { cx, frameStyle, MISSING_TEXT, isMissing, numeric } = __ds_scope;
+const { cx, frameStyle, MISSING_TEXT, numeric } = __ds_scope;
 /** 반원 게이지. value 0~1(또는 max 기준). 임계 70/90으로 톤 자동(ok·warn·crit). 결측이면 "수집 안 됨".
  *  결측 문구의 표기는 SVG text라 색이 fill이다. 공통 .bds-na 대신 tone off 규칙(.bds-gauge--off .bds-gauge__v)이 담당한다.
  * @param {Parameters<typeof import("./Gauge.d.ts").Gauge>[0]} props
@@ -1915,17 +1917,20 @@ function Pie({
     C = 2 * Math.PI * r,
     cx0 = w / 2,
     cy0 = h / 2;
+  /** @type {{ i: number, dash: number, off: number }[]} */
+  const arcs = [];
   let acc = 0;
-  const arcs = vals.flatMap((v, i) => {
-    if (v == null) return [];
-    const a = {
+  for (let i = 0; i < vals.length; i++) {
+    const v = vals[i];
+    if (v == null) continue;
+    const dash = v / sum * C;
+    if (dash > 0) arcs.push({
       i,
-      dash: v / sum * C,
+      dash,
       off: -(acc / sum) * C
-    };
+    });
     acc += v;
-    return a.dash > 0 ? [a] : [];
-  });
+  }
   const act = hover != null ? segments[hover] : null;
   const hoverVal = hover != null ? vals[hover] : null;
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("svg", {
@@ -2317,9 +2322,12 @@ const DEFAULT_H = {
  * @param {Parameters<typeof import("./Chart.d.ts").Chart>[0]} rawProps
  */
 function Chart(rawProps) {
-  const last = useRef(rawProps);
-  if (!rawProps.paused) last.current = rawProps;
-  const props = normalize(rawProps.paused ? last.current : rawProps);
+  /* paused 는 "지금 보이는 것을 그대로 두라"는 요청이라 상태다. 얼리는 순간의 props 를 담아 두고
+     푸는 순간 버린다. 렌더 중 ref 를 고치면 버려진 렌더의 props 가 스냅샷으로 남을 수 있다. */
+  const [frozen, setFrozen] = useState(/** @type {typeof rawProps | null} */null);
+  if (rawProps.paused && frozen === null) setFrozen(rawProps);
+  if (!rawProps.paused && frozen !== null) setFrozen(null);
+  const props = normalize(frozen ?? rawProps);
   const {
     kind = "line",
     fit = "flex",
@@ -4120,9 +4128,13 @@ function Combobox({
     document.addEventListener("mousedown", on);
     return () => document.removeEventListener("mousedown", on);
   }, [open]);
-  useEffect(() => {
+  /* 검색어나 열림이 바뀌면 강조를 첫 항목으로. 렌더 중 조정이라 옛 강조가 한 프레임 보이지 않는다. */
+  const cue = q + "\u0000" + open;
+  const [prevCue, setPrevCue] = useState(cue);
+  if (prevCue !== cue) {
+    setPrevCue(cue);
     setIdx(0);
-  }, [q, open]);
+  }
   const pick = (/** @type {import("./Combobox.d.ts").ComboOption | null | undefined} */o) => {
     if (o?.disabled) return;
     onChange?.(o ? o.value : null, o ?? null);
@@ -4258,10 +4270,13 @@ function DatePicker({
     const d = sel ?? new Date();
     return new Date(d.getFullYear(), d.getMonth(), 1);
   });
-  useEffect(() => {
+  /* 값이 바뀌면 그 달로 옮긴다. 사용자가 넘겨 둔 달은 값이 그대로면 유지된다. */
+  const [prevValue, setPrevValue] = useState(value);
+  if (prevValue !== value) {
+    setPrevValue(value);
     const d = value ? new Date(value + "T00:00:00") : new Date();
     if (!Number.isNaN(d.getTime())) setView(new Date(d.getFullYear(), d.getMonth(), 1));
-  }, [value]);
+  }
   const root = useRef(/** @type {HTMLDivElement | null} */null),
     trig = useRef(/** @type {HTMLButtonElement | null} */null);
   /* 닫힐 때 포커스를 트리거 버튼으로 돌린다(달력 셀이 언마운트되면 포커스가 body로 떨어진다) */
@@ -4505,7 +4520,6 @@ Object.assign(__ds_scope, { DateRangePicker });
 
 // components/input/FileUpload.jsx
 try { (() => {
-const { useState } = React;
 const { cx, frameStyle, Icon, Dropzone, ProgressBar, Button } = __ds_scope;
 const fmtBytes = (/** @type {number | null | undefined} */v) => {
   if (v == null) return "";
@@ -4651,7 +4665,13 @@ function MultiSelect({
     document.addEventListener("mousedown", on);
     return () => document.removeEventListener("mousedown", on);
   }, [open]);
-  useEffect(() => setIdx(0), [q, open]);
+  /* 검색어나 열림이 바뀌면 강조를 첫 항목으로. */
+  const cue = q + "\u0000" + open;
+  const [prevCue, setPrevCue] = useState(cue);
+  if (prevCue !== cue) {
+    setPrevCue(cue);
+    setIdx(0);
+  }
   const add = (/** @type {string} */v) => {
     if (full) return;
     onChange?.([...value, v]);
@@ -4760,9 +4780,13 @@ function NumberStepper({
   const [inner, setInner] = React.useState(defaultValue);
   const v = value ?? inner;
   const [draft, setDraft] = React.useState(String(v));
-  React.useEffect(() => {
+  /* 확정 값이 바뀌면 편집 중 문자열을 맞춘다. 이펙트로 하면 부모가 값을 거부했을 때
+     v 가 그대로라 이펙트가 돌지 않고 입력창이 계속 어긋난 값을 보인다. */
+  const [prevV, setPrevV] = React.useState(v);
+  if (prevV !== v) {
+    setPrevV(v);
     setDraft(String(v));
-  }, [v]);
+  }
   const set = (/** @type {number} */n) => {
     const c = Math.min(max, Math.max(min, n));
     setInner(c);
@@ -5341,7 +5365,7 @@ Object.assign(__ds_scope, { TextField });
 // components/input/PasswordField.jsx
 try { (() => {
 const { useState } = React;
-const { cx, Icon, TextField } = __ds_scope;
+const { Icon, TextField } = __ds_scope;
 const LV = ["", "약함", "보통", "좋음", "강함"];
 const passwordStrength = (s = "") => {
   if (!s) return 0;
@@ -5863,7 +5887,7 @@ Object.assign(__ds_scope, { Visible });
 // components/navigation/Breadcrumb.jsx
 try { (() => {
 const { useState } = React;
-const { cx, Icon } = __ds_scope;
+const { Icon } = __ds_scope;
 /** 경로 표시. items: {label, href?}. 마지막은 현재 페이지. maxItems 초과 시 중간을 "…"로 접는다.
  * @param {Parameters<typeof import("./Breadcrumb.d.ts").Breadcrumb>[0]} props */
 function Breadcrumb({
@@ -5947,9 +5971,12 @@ function CommandPalette({
     setTimeout(() => input.current?.focus(), 0);
     return () => opener.current?.focus?.();
   }, [open, inline]);
-  useEffect(() => {
+  /* 검색어가 바뀌면 강조를 첫 항목으로. */
+  const [prevQ, setPrevQ] = useState(q);
+  if (prevQ !== q) {
+    setPrevQ(q);
     setIdx(0);
-  }, [q]);
+  }
   if (!open) return null;
   const run = (/** @type {import("./CommandPalette.d.ts").CommandItem | undefined} */it) => {
     if (!it) return;
@@ -5968,8 +5995,6 @@ function CommandPalette({
       run(list[idx]);
     } else if (e.key === "Escape") onClose?.();
   };
-  /** @type {string | undefined} */
-  let lastGroup = undefined;
   return /*#__PURE__*/React.createElement("div", {
     className: cx("bds-cmdk", inline && "bds-cmdk--inline", className),
     onMouseDown: e => {
@@ -6004,8 +6029,7 @@ function CommandPalette({
   }, list.length === 0 && /*#__PURE__*/React.createElement("li", {
     className: "bds-cmdk__empty"
   }, "일치하는 항목이 없습니다"), list.map((it, i) => {
-    const g = it.group !== lastGroup ? it.group : null;
-    lastGroup = it.group;
+    const g = it.group && it.group !== list[i - 1]?.group ? it.group : null;
     return /*#__PURE__*/React.createElement(React.Fragment, {
       key: it.id
     }, g && /*#__PURE__*/React.createElement("li", {
@@ -6668,13 +6692,25 @@ Object.assign(__ds_scope, { Tooltip });
 
 // components/overlay/useModalDialog.js
 try { (() => {
-const { useEffect } = React;
+const { useEffect, useRef } = React;
 // Share the body lock across nested dialogs, including dialogs closed out of order.
 /** @typedef {{ dialog: HTMLDialogElement, opener: HTMLElement | null }} DialogEntry */
-/** @type {WeakMap<Document, { entries: DialogEntry[], overflow: string }>} */
+/** 세션은 자기가 잠근 body 를 들고 있는다. 여는 시점과 닫는 시점의 document 를 따로 읽지 않는다.
+ * @type {WeakMap<Document, { entries: DialogEntry[], body: HTMLElement, overflow: string }>} */
 const sessions = new WeakMap();
-/** @param {{ current: HTMLDialogElement | null }} panel @param {boolean} open */
-function useModalDialog(panel, open) {
+
+/** 네이티브 dialog 의 개방 세션. 스크롤 잠금·포커스 복원·중첩 정리와 배경 클릭 해제를 함께 소유한다.
+ * 배경 해제를 여기 두는 이유: dialog 의 배경은 ::backdrop 이라 별도 요소가 없고, 패널 바깥 좌표
+ * 판정이 Modal·Drawer 에 똑같이 필요했다. JSX 에 핸들러를 두면 두 곳에 같은 코드가 생긴다.
+ * @param {{ current: HTMLDialogElement | null }} panel
+ * @param {boolean} open
+ * @param {(() => void) | undefined} [onClose] 배경을 눌렀을 때. 생략하면 배경 클릭으로 닫지 않는다.
+ */
+function useModalDialog(panel, open, onClose) {
+  const closeRef = useRef(onClose);
+  useEffect(() => {
+    closeRef.current = onClose;
+  });
   useEffect(() => {
     const dialog = panel.current;
     if (!open || !dialog) return;
@@ -6683,6 +6719,7 @@ function useModalDialog(panel, open) {
     if (!state) {
       state = {
         entries: [],
+        body: doc.body,
         overflow: doc.body.style.overflow
       };
       sessions.set(doc, state);
@@ -6692,11 +6729,19 @@ function useModalDialog(panel, open) {
       opener: (/** @type {HTMLElement | null} */doc.activeElement)
     };
     state.entries.push(entry);
-    doc.body.style.overflow = "hidden";
+    state.body.style.overflow = "hidden";
     if (!dialog.open) dialog.showModal();
     // showModal performs native autofocus; retain it and use the panel only as fallback.
     if (!dialog.contains(doc.activeElement)) dialog.focus();
+    /* 배경 판정은 mousedown 으로 한다. click 은 패널 안에서 시작해 밖에서 끝난 드래그도 잡는다. */
+    const onDown = (/** @type {MouseEvent} */e) => {
+      if (e.target !== dialog) return;
+      const r = dialog.getBoundingClientRect();
+      if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) closeRef.current?.();
+    };
+    dialog.addEventListener("mousedown", onDown);
     return () => {
+      dialog.removeEventListener("mousedown", onDown);
       const top = state.entries.at(-1) === entry;
       state.entries = state.entries.filter(item => item !== entry);
       for (const item of state.entries) {
@@ -6708,7 +6753,7 @@ function useModalDialog(panel, open) {
       if (dialog.open) dialog.close();
       const remaining = state.entries.at(-1)?.dialog;
       if (!remaining) {
-        doc.body.style.overflow = state.overflow;
+        state.body.style.overflow = state.overflow;
         sessions.delete(doc);
       }
       if (top && entry.opener?.isConnected && (!remaining || remaining.contains(entry.opener))) entry.opener.focus?.();
@@ -6739,11 +6784,7 @@ function Drawer({
 }) {
   const panel = useRef(/** @type {HTMLDialogElement | null} */null),
     tid = useId();
-  useModalDialog(panel, open);
-  const outside = (/** @type {import("react").MouseEvent<HTMLDialogElement>} */e) => {
-    const r = e.currentTarget.getBoundingClientRect();
-    return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
-  };
+  useModalDialog(panel, open, onClose);
   return /*#__PURE__*/React.createElement("div", {
     className: cx("bds-side", open && "bds-side--open", `bds-side--${size}`)
   }, /*#__PURE__*/React.createElement("dialog", {
@@ -6754,9 +6795,6 @@ function Drawer({
     onCancel: e => {
       e.preventDefault();
       onClose?.();
-    },
-    onMouseDown: e => {
-      if (e.target === e.currentTarget && outside(e)) onClose?.();
     },
     ...rest
   }, (title || closeButton) && /*#__PURE__*/React.createElement("header", {
@@ -6892,11 +6930,7 @@ function Modal({
 }) {
   const panel = useRef(/** @type {HTMLDialogElement | null} */null),
     tid = useId();
-  useModalDialog(panel, open);
-  const outside = (/** @type {import("react").MouseEvent<HTMLDialogElement>} */e) => {
-    const r = e.currentTarget.getBoundingClientRect();
-    return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
-  };
+  useModalDialog(panel, open, onClose);
   if (!open) return null;
   return /*#__PURE__*/React.createElement("dialog", {
     ref: panel,
@@ -6906,9 +6940,6 @@ function Modal({
     onCancel: e => {
       e.preventDefault();
       onClose?.();
-    },
-    onMouseDown: e => {
-      if (e.target === e.currentTarget && outside(e)) onClose?.();
     },
     ...rest
   }, (title || closeButton) && /*#__PURE__*/React.createElement("div", {
@@ -7009,8 +7040,7 @@ function ConfirmSession({
     mono: true,
     value: typed,
     disabled: busy,
-    onChange: e => setTyped(e.target.value),
-    autoFocus: true
+    onChange: e => setTyped(e.target.value)
   })));
 }
 Object.assign(__ds_scope, { ConfirmDialog });

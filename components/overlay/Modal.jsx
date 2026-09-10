@@ -7,12 +7,11 @@ import { IconButton } from "../action/IconButton.jsx";
  * @param {Parameters<typeof import("./Modal.d.ts").Modal>[0]} props */
 export function Modal({ open, onClose, title, description, actions, size = "md", closeButton = true, className, children, ...rest }) {
   const panel = useRef(/** @type {HTMLDialogElement | null} */ (null)), tid = useId();
-  useModalDialog(panel, open);
-  const outside = (/** @type {import("react").MouseEvent<HTMLDialogElement>} */ e) => { const r = e.currentTarget.getBoundingClientRect(); return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom; };
+  useModalDialog(panel, open, onClose);
   if (!open) return null;
   return (
     <dialog ref={panel} aria-labelledby={title ? tid : undefined} tabIndex={-1} className={cx("bds-modal__panel", size !== "md" && `bds-modal--${size}`, className)}
-      onCancel={(e) => { e.preventDefault(); onClose?.(); }} onMouseDown={(e) => { if (e.target === e.currentTarget && outside(e)) onClose?.(); }} {...rest}>
+      onCancel={(e) => { e.preventDefault(); onClose?.(); }} {...rest}>
       {(title || closeButton) && <div className="bds-modal__hd">{title && <h2 id={tid}>{title}</h2>}{closeButton && <IconButton icon="x" size="sm" variant="ghost" aria-label="닫기" onClick={onClose} />}</div>}
       {description && <p className="bds-modal__desc">{description}</p>}
       {children && <div className="bds-modal__body">{children}</div>}

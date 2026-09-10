@@ -10,7 +10,10 @@ export function NumberStepper({ value, defaultValue = 0, min = -Infinity, max = 
   const [inner, setInner] = React.useState(defaultValue);
   const v = value ?? inner;
   const [draft, setDraft] = React.useState(String(v));
-  React.useEffect(() => { setDraft(String(v)); }, [v]);
+  /* 확정 값이 바뀌면 편집 중 문자열을 맞춘다. 이펙트로 하면 부모가 값을 거부했을 때
+     v 가 그대로라 이펙트가 돌지 않고 입력창이 계속 어긋난 값을 보인다. */
+  const [prevV, setPrevV] = React.useState(v);
+  if (prevV !== v) { setPrevV(v); setDraft(String(v)); }
   const set = (/** @type {number} */ n) => { const c = Math.min(max, Math.max(min, n)); setInner(c); setDraft(String(c)); if (c !== v) onChange?.(c); };
   const commit = () => { const n = draft.trim() === "" ? NaN : Number(draft); set(Number.isFinite(n) ? n : v); };
   const { onBlur, onKeyDown, ...inputProps } = rest;

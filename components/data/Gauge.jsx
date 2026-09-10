@@ -1,6 +1,6 @@
 import React from "react";
 import { cx, frameStyle } from "../core/frame.js";
-import { MISSING_TEXT, isMissing, numeric } from "../core/missing.js";
+import { MISSING_TEXT, numeric } from "../core/missing.js";
 
 /** 반원 게이지. value 0~1(또는 max 기준). 임계 70/90으로 톤 자동(ok·warn·crit). 결측이면 "수집 안 됨".
  *  결측 문구의 표기는 SVG text라 색이 fill이다. 공통 .bds-na 대신 tone off 규칙(.bds-gauge--off .bds-gauge__v)이 담당한다.

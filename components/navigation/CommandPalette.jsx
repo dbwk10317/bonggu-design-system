@@ -9,7 +9,9 @@ export function CommandPalette({ open = false, onClose, items = [], placeholder 
   const list = useMemo(() => { const s = q.trim().toLowerCase(); return !s ? items : items.filter((it) => (it.label + " " + (it.keywords ?? "") + " " + (it.group ?? "")).toLowerCase().includes(s)); }, [q, items]);
   /* 열 때 포커스를 입력으로, 닫을 때 열기 전 요소로 되돌린다 */
   useEffect(() => { if (!open || inline) return; opener.current = /** @type {HTMLElement | null} */ (document.activeElement); setQ(""); setIdx(0); setTimeout(() => input.current?.focus(), 0); return () => opener.current?.focus?.(); }, [open, inline]);
-  useEffect(() => { setIdx(0); }, [q]);
+  /* 검색어가 바뀌면 강조를 첫 항목으로. */
+  const [prevQ, setPrevQ] = useState(q);
+  if (prevQ !== q) { setPrevQ(q); setIdx(0); }
   if (!open) return null;
   const run = (/** @type {import("./CommandPalette.d.ts").CommandItem | undefined} */ it) => { if (!it) return; onClose?.(); it.onSelect?.(it); };
   const onKey = (/** @type {import("react").KeyboardEvent<HTMLDivElement>} */ e) => {
@@ -18,15 +20,13 @@ export function CommandPalette({ open = false, onClose, items = [], placeholder 
     else if (e.key === "Enter") { e.preventDefault(); run(list[idx]); }
     else if (e.key === "Escape") onClose?.();
   };
-  /** @type {string | undefined} */
-  let lastGroup = undefined;
   return (
     <div className={cx("bds-cmdk", inline && "bds-cmdk--inline", className)} onMouseDown={(e) => { if (e.target === e.currentTarget) onClose?.(); }}>
       <div role="dialog" aria-label="명령 팔레트" className="bds-cmdk__panel" onKeyDown={onKey}>
         <div className="bds-cmdk__in"><Icon name="magnifying-glass" size={16} /><input ref={input} value={q} onChange={(e) => setQ(e.target.value)} placeholder={placeholder} aria-label={placeholder} role="combobox" aria-expanded="true" aria-controls="bds-cmdk-list" aria-activedescendant={list[idx] ? "bds-cmdk-" + list[idx].id : undefined} /><kbd className="bds-kbd">Esc</kbd></div>
         <ul id="bds-cmdk-list" role="listbox" className="bds-cmdk__list">
           {list.length === 0 && <li className="bds-cmdk__empty">일치하는 항목이 없습니다</li>}
-          {list.map((it, i) => { const g = it.group !== lastGroup ? it.group : null; lastGroup = it.group; return <React.Fragment key={it.id}>
+          {list.map((it, i) => { const g = it.group && it.group !== list[i - 1]?.group ? it.group : null; return <React.Fragment key={it.id}>
             {g && <li className="bds-cmdk__grp" role="presentation">{g}</li>}
             <li role="option" id={"bds-cmdk-" + it.id} aria-selected={i === idx}><button type="button" className="bds-cmdk__item" tabIndex={-1} onMouseEnter={() => setIdx(i)} onClick={() => run(it)}>{it.icon && <Icon name={it.icon} size={16} />}<span className="bds-ellipsis">{it.label}</span>{it.hint && <small>{it.hint}</small>}</button></li>
           </React.Fragment>; })}

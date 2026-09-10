@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { cx } from "../core/frame.js";
 import { Icon } from "../action/Icon.jsx";
 
 /** 경로 표시. items: {label, href?}. 마지막은 현재 페이지. maxItems 초과 시 중간을 "…"로 접는다.

@@ -141,8 +141,16 @@ function Pie({ segments, fmt, caption, w, h, hover, setHover }) {
   const vals = segments.map((s) => (s.value == null ? null : Math.max(0, s.value))), sum = vals.reduce((/** @type {number} */ a, b) => a + (b ?? 0), 0);
   if (!sum || w < 40) return null;
   const R = Math.min(w, h) / 2 - 4, stroke = Math.max(10, R * 0.34), r = R - stroke / 2, C = 2 * Math.PI * r, cx0 = w / 2, cy0 = h / 2;
+  /** @type {{ i: number, dash: number, off: number }[]} */
+  const arcs = [];
   let acc = 0;
-  const arcs = vals.flatMap((v, i) => { if (v == null) return []; const a = { i, dash: (v / sum) * C, off: -(acc / sum) * C }; acc += v; return a.dash > 0 ? [a] : []; });
+  for (let i = 0; i < vals.length; i++) {
+    const v = vals[i];
+    if (v == null) continue;
+    const dash = (v / sum) * C;
+    if (dash > 0) arcs.push({ i, dash, off: -(acc / sum) * C });
+    acc += v;
+  }
   const act = hover != null ? segments[hover] : null;
   const hoverVal = hover != null ? vals[hover] : null;
   return (
@@ -276,9 +284,12 @@ const DEFAULT_H = { line: 200, area: 200, bar: 200, pie: 180, radial: 110, radar
  * @param {Parameters<typeof import("./Chart.d.ts").Chart>[0]} rawProps
  */
 export function Chart(rawProps) {
-  const last = useRef(rawProps);
-  if (!rawProps.paused) last.current = rawProps;
-  const props = normalize(rawProps.paused ? last.current : rawProps);
+  /* paused 는 "지금 보이는 것을 그대로 두라"는 요청이라 상태다. 얼리는 순간의 props 를 담아 두고
+     푸는 순간 버린다. 렌더 중 ref 를 고치면 버려진 렌더의 props 가 스냅샷으로 남을 수 있다. */
+  const [frozen, setFrozen] = useState(/** @type {typeof rawProps | null} */ (null));
+  if (rawProps.paused && frozen === null) setFrozen(rawProps);
+  if (!rawProps.paused && frozen !== null) setFrozen(null);
+  const props = normalize(frozen ?? rawProps);
   const { kind = "line", fit = "flex", width, height, valueFormatter = fmtKo, emptyText = MISSING_TEXT, showLegend = true, live = false, animate = !live, className, style, "aria-label": ariaLabel } = props;
   const uid = useId().replace(/:/g, "");
   const srId = `${uid}-sr`;
