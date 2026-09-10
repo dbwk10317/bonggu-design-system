@@ -3,7 +3,8 @@ import { cx, frameStyle } from "../core/frame.js";
 import { Icon } from "../action/Icon.jsx";
 
 const SR = { done: "완료", error: "오류" };
-/** 단계 표시(등록 9단계, 학습 stage). steps: {label, detail?, status?: done|current|error|todo}. current 인덱스를 주면 status를 자동 채운다. done·error는 스크린리더용 텍스트를 함께 읽는다. */
+/** 단계 표시(등록 9단계, 학습 stage). steps: {label, detail?, status?: done|current|error|todo}. current 인덱스를 주면 status를 자동 채운다. done·error는 스크린리더용 텍스트를 함께 읽는다.
+ * @param {Parameters<typeof import("./Stepper.d.ts").Stepper>[0]} props */
 export function Stepper({ steps = [], current, orientation = "horizontal", size = "md", fit = "flex", width, "aria-label": ariaLabel, className, style }) {
   const st = (s, i) => s.status ?? (current == null ? "todo" : i < current ? "done" : i === current ? "current" : "todo");
   return (

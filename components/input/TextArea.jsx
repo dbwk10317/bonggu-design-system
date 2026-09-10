@@ -2,7 +2,8 @@ import React from "react";
 import { cx, frameStyle } from "../core/frame.js";
 import { useFieldContext } from "./Field.jsx";
 
-/** 여러 줄 입력. rows로 초기 높이, 세로로만 리사이즈. */
+/** 여러 줄 입력. rows로 초기 높이, 세로로만 리사이즈.
+ * @param {Parameters<typeof import("./TextArea.d.ts").TextArea>[0]} props */
 export function TextArea({ rows = 3, fit = "flex", width, mono = false, invalid, disabled, className, style, ...rest }) {
   const f = useFieldContext();
   return (

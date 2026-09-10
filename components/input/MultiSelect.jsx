@@ -4,7 +4,8 @@ import { Icon } from "../action/Icon.jsx";
 import { Tag } from "../display/Tag.jsx";
 import { useFieldContext } from "./Field.jsx";
 
-/** 여러 개 선택(태그 입력). options: {value,label}. value는 배열. 입력으로 필터, Backspace로 마지막 제거. */
+/** 여러 개 선택(태그 입력). options: {value,label}. value는 배열. 입력으로 필터, Backspace로 마지막 제거.
+ * @param {Parameters<typeof import("./MultiSelect.d.ts").MultiSelect>[0]} props */
 export function MultiSelect({ options = [], value = [], onChange, placeholder = "선택", max, fit = "flex", width, disabled, className, style }) {
   const f = useFieldContext(), uid = useId().replace(/:/g, "");
   const [q, setQ] = useState(""), [open, setOpen] = useState(false), [idx, setIdx] = useState(0);

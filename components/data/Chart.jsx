@@ -4,7 +4,31 @@ import { MISSING_CLASS, MISSING_TEXT, isMissing, numeric } from "../core/missing
 import { r1, toneVar, toneInk, fmtKo, niceTicks, stackBars, smoothPath, runsOf, pathLength, estWidth, seriesDash, histBins } from "./chart-math.js";
 import { Legend } from "./Legend.jsx";
 
+/** @typedef {import("../core/frame.js").DSStyle} DSStyle */
+/** @typedef {import("./Chart.d.ts").ChartTone} ChartTone */
+/** @typedef {import("./Chart.d.ts").ChartSeries} ChartSeries */
+/** @typedef {import("./Chart.d.ts").ChartThreshold} ChartThreshold */
+/** @typedef {(v: number) => string} Fmt */
+/** @typedef {[number, number]} Point */
+/** 결측이 null로 바뀐 세그먼트. 0으로 바꾸면 수집 실패가 "0"으로 보이므로 null을 유지한다.
+ * @typedef {Omit<import("./Chart.d.ts").ChartSegment, "value"> & { value: number | null }} NormSegment */
+/** normalize를 지난 뒤의 내부 표현. 공개 계약은 Chart.d.ts의 ChartProps 유니온이고,
+ * 여기서는 kind에 따라 쓰이는 필드만 채워진 평면 형태로 다룬다.
+ * @typedef {{
+ *   kind?: "line" | "area" | "bar" | "pie" | "radial" | "radar" | "histogram",
+ *   labels?: string[], series?: ChartSeries[], segments?: NormSegment[],
+ *   samples?: (number | null)[], bins?: number, axes?: string[],
+ *   value?: number | null, label?: import("react").ReactNode, tone?: ChartTone,
+ *   thresholds?: ChartThreshold[], stacked?: boolean, yMin?: number, yMax?: number,
+ *   max?: number, unit?: string, percentiles?: number[], caption?: import("react").ReactNode,
+ *   xTicks?: "auto" | "ends" | "none", fit?: "flex" | "fixed", width?: number | string, height?: number,
+ *   valueFormatter?: Fmt, emptyText?: string, showLegend?: boolean,
+ *   animate?: boolean, live?: boolean, paused?: boolean, className?: string,
+ *   style?: DSStyle, "aria-label"?: string
+ * }} NormProps */
+
 /* ---------- 공용 크롬 ---------- */
+/** @param {{ current: HTMLElement | null }} ref @param {number} [fixedW] @param {number} [fixedH] */
 function useSize(ref, fixedW, fixedH) {
   const [size, setSize] = useState({ w: fixedW ?? 0, h: fixedH ?? 0 });
   useEffect(() => {
@@ -16,11 +40,13 @@ function useSize(ref, fixedW, fixedH) {
   }, [ref]);
   return size;
 }
+/** @param {boolean} enabled */
 function useAnimateOnce(enabled) {
   const [on, setOn] = useState(enabled);
   useEffect(() => { if (!enabled) return; const t = setTimeout(() => setOn(false), 1100); return () => clearTimeout(t); }, [enabled]);
   return on;
 }
+/** @param {{ x: number, w: number, title?: import("react").ReactNode, rows: { color: string, name: import("react").ReactNode, value: import("react").ReactNode }[] }} props */
 function Tip({ x, w, title, rows }) {
   const flip = x > w * 0.6;
   return (
@@ -30,10 +56,12 @@ function Tip({ x, w, title, rows }) {
     </div>
   );
 }
+/** @param {Fmt} fmt @param {number | null | undefined} v */
 const cell = (fmt, v) => (isMissing(v) ? MISSING_TEXT : fmt(v));
 
 /* 데이터가 기하 계산에 닿기 전 단 한 곳의 경계. 여기서 결측은 모두 null이 되므로 아래 계산은 값이 null인지만 본다.
    이 경계가 없으면 NaN 하나가 축 범위를 통해 차트 전체의 좌표를 무효로 만든다. */
+/** @param {NormProps} props @returns {NormProps} */
 function normalize(props) {
   const series = props.series?.map((s) => ({ ...s, values: (s.values ?? []).map(numeric) }));
   const segments = props.segments?.map((sg) => ({ ...sg, value: numeric(sg.value) }));
@@ -49,6 +77,7 @@ function normalize(props) {
 
 /* ---------- 직교(line·area·bar) ---------- */
 /** hover/setHover는 Chart가 갖는다(마우스·키보드가 같은 인덱스를 움직여 같은 Tip을 띄운다). */
+/** @param {{ kind: "line" | "area" | "bar", labels: string[], series: ChartSeries[], fmt: Fmt, uid: string, xTicks?: "auto" | "ends" | "none", w: number, h: number, thresholds?: ChartThreshold[], stacked?: boolean, yMin?: number, yMax?: number, hover: number | null, setHover: (i: number | null) => void }} props */
 function Cartesian({ kind, labels, series, fmt, uid, xTicks, w, h, thresholds = [], stacked, yMin, yMax, hover, setHover }) {
   const n = labels.length;
   const stack = stacked && kind === "bar" ? stackBars(series, n) : null;
@@ -104,6 +133,7 @@ function Cartesian({ kind, labels, series, fmt, uid, xTicks, w, h, thresholds = 
 }
 
 /* ---------- 도넛 ---------- */
+/** @param {{ segments: NormSegment[], fmt: Fmt, caption?: import("react").ReactNode, w: number, h: number, hover: number | null, setHover: (i: number | null) => void }} props */
 function Pie({ segments, fmt, caption, w, h, hover, setHover }) {
   // 결측 세그먼트는 null로 남긴다. 0으로 바꾸면 수집 실패가 "0"으로 보인다.
   const vals = segments.map((s) => (s.value == null ? null : Math.max(0, s.value))), sum = vals.reduce((a, b) => a + (b ?? 0), 0);
@@ -126,6 +156,7 @@ function Pie({ segments, fmt, caption, w, h, hover, setHover }) {
 }
 
 /* ---------- 방사 게이지 ---------- */
+/** @param {{ value: number, label?: import("react").ReactNode, tone?: ChartTone, fmt: Fmt, w: number, h: number, animate?: boolean }} props */
 function Radial({ value, label, tone, fmt, w, h, animate }) {
   const [shown, setShown] = useState(animate ? 0 : value);
   useEffect(() => { const t = requestAnimationFrame(() => setShown(value)); return () => cancelAnimationFrame(t); }, [value]);
@@ -150,6 +181,7 @@ function Radial({ value, label, tone, fmt, w, h, animate }) {
 }
 
 /* ---------- 레이더 ---------- */
+/** @param {{ axes: string[], series: ChartSeries[], max?: number, fmt: Fmt, w: number, h: number, hover: number | null, setHover: (i: number | null) => void }} props */
 function Radar({ axes, series, max, fmt, w, h, hover, setHover }) {
   const n = axes.length; if (n < 3 || w < 40) return null;
   const all = series.flatMap((s) => s.values).filter((v) => v != null);
@@ -181,6 +213,7 @@ function Radar({ axes, series, max, fmt, w, h, hover, setHover }) {
 
 /* ---------- 히스토그램 ---------- */
 /** 원시 표본(samples)을 bins개 구간으로 나눠 막대로. 분위선(p50/p95)은 thresholds처럼 세로 점선으로. 구간 계산은 chart-math.histBins(SR 표와 공유). */
+/** @param {{ samples: (number | null)[], bins?: number, fmt: Fmt, w: number, h: number, tone?: ChartTone, percentiles?: number[], unit?: string, animate?: boolean, hover: number | null, setHover: (i: number | null) => void }} props */
 function Histogram({ samples, bins, fmt, w, h, tone, percentiles = [], unit, animate, hover, setHover }) {
   const b = histBins(samples, bins);
   if (!b || w < 40) return null;
@@ -208,6 +241,7 @@ function Histogram({ samples, bins, fmt, w, h, tone, percentiles = [], unit, ani
 
 /* ---------- 스크린리더 표 ---------- */
 /** 시각 차트와 같은 데이터를 표로. 항상 렌더(bds-sr로 숨김)하고 루트가 aria-describedby로 가리킨다. */
+/** @param {{ id: string, kind: NonNullable<NormProps["kind"]>, props: NormProps, fmt: Fmt }} props */
 function SrTable({ id, kind, props, fmt }) {
   let head = [], rows = [];
   if (kind === "pie") { head = ["항목", "값"]; rows = (props.segments ?? []).map((sg) => [sg.label, cell(fmt, sg.value == null ? null : Math.max(0, sg.value))]); }
@@ -232,7 +266,9 @@ const DEFAULT_H = { line: 200, area: 200, bar: 200, pie: 180, radial: 110, radar
  *  fit="flex"(기본)면 부모 폭을 채우고 height(px)만 정한다. fit="fixed"면 width·height 그대로.
  *  색은 --series-1~8만, 상태 의미는 라벨 텍스트가 전한다. 진입 시 1회 그리기 모션(live면 끔).
  *  paused=true면 마지막으로 받은 props 스냅샷을 그대로 그린다(스트림이 흘러도 화면은 멈춤).
- *  stage는 tabIndex=0: ←/→ 로 인덱스 이동, Home/End 양끝, Esc 해제. 숨김 표(bds-sr)가 aria-describedby로 연결된다. */
+ *  stage는 tabIndex=0: ←/→ 로 인덱스 이동, Home/End 양끝, Esc 해제. 숨김 표(bds-sr)가 aria-describedby로 연결된다.
+ * @param {Parameters<typeof import("./Chart.d.ts").Chart>[0]} rawProps
+ */
 export function Chart(rawProps) {
   const last = useRef(rawProps);
   if (!rawProps.paused) last.current = rawProps;

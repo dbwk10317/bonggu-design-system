@@ -8,13 +8,15 @@ import { EmptyState } from "../feedback/EmptyState.jsx";
 export const NOTIFICATION_DRAWER_ID = "bds-notification-drawer";
 const TONE_LABEL = { info: "정보", warn: "주의", crit: "위험", ok: "정상" };
 
-/** 상단바 종 버튼. 읽지 않은 수가 배지로. */
+/** 상단바 종 버튼. 읽지 않은 수가 배지로.
+ * @param {Parameters<typeof import("./NotificationDrawer.d.ts").NotificationTrigger>[0]} props */
 export function NotificationTrigger({ unreadCount = 0, open, onToggle, controls = NOTIFICATION_DRAWER_ID, ...rest }) {
   // 읽지 않은 수를 이름에 넣는 것은 badge를 그리는 IconButton의 몫이다. 여기서 숫자를 적으면 두 번 읽힌다.
   return <IconButton icon="bell" badge={unreadCount} aria-label="알림" aria-expanded={open} aria-controls={controls} onClick={onToggle} {...rest} />;
 }
 
-/** 오른쪽 알림 드로어(380px, 모바일 전폭). 항목을 누르면 onRead(id). */
+/** 오른쪽 알림 드로어(380px, 모바일 전폭). 항목을 누르면 onRead(id).
+ * @param {Parameters<typeof import("./NotificationDrawer.d.ts").NotificationDrawer>[0]} props */
 export function NotificationDrawer({ open, onClose, items = [], onRead, onReadAll, id = NOTIFICATION_DRAWER_ID, className }) {
   const unread = items.filter((i) => !i.read).length;
   return (

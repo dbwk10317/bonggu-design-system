@@ -2,7 +2,8 @@ import React from "react";
 import { cx } from "../core/frame.js";
 import { IconButton } from "../action/IconButton.jsx";
 
-/** 페이지 번호. page는 1부터. total은 총 페이지 수. info에 "1–20 / 184" 같은 범위를 준다. */
+/** 페이지 번호. page는 1부터. total은 총 페이지 수. info에 "1–20 / 184" 같은 범위를 준다.
+ * @param {Parameters<typeof import("./Pagination.d.ts").Pagination>[0]} props */
 export function Pagination({ page = 1, total = 1, onChange, siblings = 1, info, size = "sm", className, ...rest }) {
   const pages = [];
   const push = (p) => pages.push(p);

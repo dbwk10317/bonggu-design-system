@@ -1,7 +1,8 @@
 import React, { cloneElement, useEffect, useId, useRef, useState } from "react";
 import { cx } from "../core/frame.js";
 
-/** 클릭으로 여는 설명·미니 폼 패널. Tooltip과 달리 상호작용 요소를 넣을 수 있다. trigger 하나를 감싼다. */
+/** 클릭으로 여는 설명·미니 폼 패널. Tooltip과 달리 상호작용 요소를 넣을 수 있다. trigger 하나를 감싼다.
+ * @param {Parameters<typeof import("./Popover.d.ts").Popover>[0]} props */
 export function Popover({ trigger, title, side = "bottom", open: ctrl, onOpenChange, className, children }) {
   const [inner, setInner] = useState(false);
   const open = ctrl ?? inner, set = (v) => { setInner(v); onOpenChange?.(v); };

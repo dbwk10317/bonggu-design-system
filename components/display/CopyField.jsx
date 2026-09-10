@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { cx, frameStyle } from "../core/frame.js";
 import { Icon } from "../action/Icon.jsx";
 
-/** 복사 전용 값(토큰·식별자·curl). 읽기 전용 mono + 복사 버튼. multiline이면 <pre>. secret이면 마스킹 + 보기 토글. */
+/** 복사 전용 값(토큰·식별자·curl). 읽기 전용 mono + 복사 버튼. multiline이면 <pre>. secret이면 마스킹 + 보기 토글.
+ * @param {Parameters<typeof import("./CopyField.d.ts").CopyField>[0]} props */
 export function CopyField({ value, label, multiline = false, secret = false, copyLabel = "복사", copiedLabel = "복사됨", onCopy, fit = "flex", width, className, style }) {
   const [copied, setCopied] = useState(false);
   const [shown, setShown] = useState(!secret);

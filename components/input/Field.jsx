@@ -5,7 +5,8 @@ import { Icon } from "../action/Icon.jsx";
 const FieldCtx = createContext(null);
 export const useFieldContext = () => useContext(FieldCtx);
 
-/** 라벨·설명·오류를 입력에 연결하는 래퍼. 자식 입력은 useFieldContext()로 id·aria를 받는다. */
+/** 라벨·설명·오류를 입력에 연결하는 래퍼. 자식 입력은 useFieldContext()로 id·aria를 받는다.
+ * @param {Parameters<typeof import("./Field.d.ts").Field>[0]} props */
 export function Field({ label, hint, error, required = false, id, className, children, ...rest }) {
   const auto = useId();
   const inputId = id ?? `f-${auto}`;

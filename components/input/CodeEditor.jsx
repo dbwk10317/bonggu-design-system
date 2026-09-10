@@ -3,7 +3,8 @@ import { cx, frameStyle } from "../core/frame.js";
 import { Icon } from "../action/Icon.jsx";
 import { useFieldContext } from "./Field.jsx";
 
-/** JSON/코드 입력. 줄번호 + mono + Tab 들여쓰기. language="json"이면 파싱해 오류 위치를 아래에 표시하고 onValidChange(obj|null)를 부른다. */
+/** JSON/코드 입력. 줄번호 + mono + Tab 들여쓰기. language="json"이면 파싱해 오류 위치를 아래에 표시하고 onValidChange(obj|null)를 부른다.
+ * @param {Parameters<typeof import("./CodeEditor.d.ts").CodeEditor>[0]} props */
 export function CodeEditor({ value, defaultValue = "", onChange, onValidChange, language = "json", rows = 8, lineNumbers = true, readOnly, placeholder, fit = "flex", width, height, disabled, className, style, "aria-label": ariaLabel }) {
   const f = useFieldContext();
   const [inner, setInner] = React.useState(defaultValue);

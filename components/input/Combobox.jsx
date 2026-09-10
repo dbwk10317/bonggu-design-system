@@ -3,7 +3,8 @@ import { cx, frameStyle } from "../core/frame.js";
 import { Icon } from "../action/Icon.jsx";
 import { useFieldContext } from "./Field.jsx";
 
-/** 검색 가능한 선택. options {value,label,detail?,disabled?}. 타이핑으로 거르고 ↑↓ Enter Esc. 선택지 6개 이상이면 Select 대신 이것. */
+/** 검색 가능한 선택. options {value,label,detail?,disabled?}. 타이핑으로 거르고 ↑↓ Enter Esc. 선택지 6개 이상이면 Select 대신 이것.
+ * @param {Parameters<typeof import("./Combobox.d.ts").Combobox>[0]} props */
 export function Combobox({ options = [], value, onChange, placeholder = "검색 또는 선택", emptyText = "일치하는 항목이 없습니다", size = "md", fit = "flex", width, disabled, invalid, required, clearable = true, className, style, "aria-label": ariaLabel }) {
   const f = useFieldContext();
   const uid = useId().replace(/:/g, "");

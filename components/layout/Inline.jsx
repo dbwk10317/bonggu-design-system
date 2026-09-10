@@ -1,8 +1,8 @@
 import React from "react";
-import { cx } from "../core/frame.js";
-import { spaceToken } from "./Stack.jsx";
+import { cx, spaceToken } from "../core/frame.js";
 
-/** 가로 나열(버튼·칩·메타). 기본 wrap. gap을 주지 않으면 밀도별 --inline-gap을 쓴다. */
+/** 가로 나열(버튼·칩·메타). 기본 wrap. gap을 주지 않으면 밀도별 --inline-gap을 쓴다.
+ * @param {Parameters<typeof import("./Inline.d.ts").Inline>[0]} props */
 export function Inline({ gap, align = "center", justify, wrap = true, as: Tag = "div", className, style, children, ...rest }) {
   return <Tag className={cx("bds-inline", !wrap && "bds-inline--nowrap", className)} style={{ gap: spaceToken(gap), alignItems: align, justifyContent: justify, ...style }} {...rest}>{children}</Tag>;
 }

@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"Ds_d3ea90","components":[{"name":"Button","sourcePath":"components/action/Button.jsx"},{"name":"Icon","sourcePath":"components/action/Icon.jsx"},{"name":"IconButton","sourcePath":"components/action/IconButton.jsx"},{"name":"MascotMark","sourcePath":"components/brand/MascotMark.jsx"},{"name":"BarList","sourcePath":"components/data/BarList.jsx"},{"name":"Chart","sourcePath":"components/data/Chart.jsx"},{"name":"DataTable","sourcePath":"components/data/DataTable.jsx"},{"name":"DescriptionList","sourcePath":"components/data/DescriptionList.jsx"},{"name":"DiffView","sourcePath":"components/data/DiffView.jsx"},{"name":"Gauge","sourcePath":"components/data/Gauge.jsx"},{"name":"Heatmap","sourcePath":"components/data/Heatmap.jsx"},{"name":"KeyValues","sourcePath":"components/data/KeyValues.jsx"},{"name":"Legend","sourcePath":"components/data/Legend.jsx"},{"name":"LogViewer","sourcePath":"components/data/LogViewer.jsx"},{"name":"Sparkline","sourcePath":"components/data/Sparkline.jsx"},{"name":"StatTile","sourcePath":"components/data/StatTile.jsx"},{"name":"Timeline","sourcePath":"components/data/Timeline.jsx"},{"name":"TrendDelta","sourcePath":"components/data/TrendDelta.jsx"},{"name":"UptimeBar","sourcePath":"components/data/UptimeBar.jsx"},{"name":"Accordion","sourcePath":"components/display/Accordion.jsx"},{"name":"Avatar","sourcePath":"components/display/Avatar.jsx"},{"name":"AvatarGroup","sourcePath":"components/display/Avatar.jsx"},{"name":"Badge","sourcePath":"components/display/Badge.jsx"},{"name":"Code","sourcePath":"components/display/Code.jsx"},{"name":"CodeBlock","sourcePath":"components/display/Code.jsx"},{"name":"Kbd","sourcePath":"components/display/Code.jsx"},{"name":"CopyField","sourcePath":"components/display/CopyField.jsx"},{"name":"StatusPill","sourcePath":"components/display/StatusPill.jsx"},{"name":"Tag","sourcePath":"components/display/Tag.jsx"},{"name":"AlertBanner","sourcePath":"components/feedback/AlertBanner.jsx"},{"name":"ConfirmDialog","sourcePath":"components/feedback/ConfirmDialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"ErrorState","sourcePath":"components/feedback/ErrorState.jsx"},{"name":"InlineMessage","sourcePath":"components/feedback/InlineMessage.jsx"},{"name":"LoadingOverlay","sourcePath":"components/feedback/LoadingOverlay.jsx"},{"name":"NotificationTrigger","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"NotificationDrawer","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"ProgressBar","sourcePath":"components/feedback/ProgressBar.jsx"},{"name":"Skeleton","sourcePath":"components/feedback/Skeleton.jsx"},{"name":"Spinner","sourcePath":"components/feedback/Spinner.jsx"},{"name":"Stepper","sourcePath":"components/feedback/Stepper.jsx"},{"name":"ToastProvider","sourcePath":"components/feedback/Toast.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Checkbox","sourcePath":"components/input/Checkbox.jsx"},{"name":"CodeEditor","sourcePath":"components/input/CodeEditor.jsx"},{"name":"ColorInput","sourcePath":"components/input/ColorInput.jsx"},{"name":"Combobox","sourcePath":"components/input/Combobox.jsx"},{"name":"DatePicker","sourcePath":"components/input/DatePicker.jsx"},{"name":"DateRangePicker","sourcePath":"components/input/DateRangePicker.jsx"},{"name":"Dropzone","sourcePath":"components/input/Dropzone.jsx"},{"name":"Field","sourcePath":"components/input/Field.jsx"},{"name":"FileUpload","sourcePath":"components/input/FileUpload.jsx"},{"name":"MultiSelect","sourcePath":"components/input/MultiSelect.jsx"},{"name":"NumberStepper","sourcePath":"components/input/NumberStepper.jsx"},{"name":"OTPInput","sourcePath":"components/input/OTPInput.jsx"},{"name":"PasswordField","sourcePath":"components/input/PasswordField.jsx"},{"name":"RadioGroup","sourcePath":"components/input/RadioGroup.jsx"},{"name":"SearchField","sourcePath":"components/input/SearchField.jsx"},{"name":"SegmentedControl","sourcePath":"components/input/SegmentedControl.jsx"},{"name":"Select","sourcePath":"components/input/Select.jsx"},{"name":"Slider","sourcePath":"components/input/Slider.jsx"},{"name":"Switch","sourcePath":"components/input/Switch.jsx"},{"name":"TextArea","sourcePath":"components/input/TextArea.jsx"},{"name":"TextField","sourcePath":"components/input/TextField.jsx"},{"name":"TimePicker","sourcePath":"components/input/TimePicker.jsx"},{"name":"AspectRatio","sourcePath":"components/layout/AspectRatio.jsx"},{"name":"CardHead","sourcePath":"components/layout/CardHead.jsx"},{"name":"Container","sourcePath":"components/layout/Container.jsx"},{"name":"Divider","sourcePath":"components/layout/Divider.jsx"},{"name":"Grid","sourcePath":"components/layout/Grid.jsx"},{"name":"GridItem","sourcePath":"components/layout/Grid.jsx"},{"name":"Inline","sourcePath":"components/layout/Inline.jsx"},{"name":"PageHeader","sourcePath":"components/layout/PageHeader.jsx"},{"name":"PageStack","sourcePath":"components/layout/PageStack.jsx"},{"name":"Panel","sourcePath":"components/layout/Panel.jsx"},{"name":"Spacer","sourcePath":"components/layout/Spacer.jsx"},{"name":"Stack","sourcePath":"components/layout/Stack.jsx"},{"name":"StatusBar","sourcePath":"components/layout/StatusBar.jsx"},{"name":"Toolbar","sourcePath":"components/layout/Toolbar.jsx"},{"name":"ToolbarGrow","sourcePath":"components/layout/Toolbar.jsx"},{"name":"Visible","sourcePath":"components/layout/Visible.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"CommandPalette","sourcePath":"components/navigation/CommandPalette.jsx"},{"name":"Link","sourcePath":"components/navigation/Link.jsx"},{"name":"Pagination","sourcePath":"components/navigation/Pagination.jsx"},{"name":"SidebarShell","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavItem","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavGroup","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"},{"name":"TopNav","sourcePath":"components/navigation/TopNav.jsx"},{"name":"Drawer","sourcePath":"components/overlay/Drawer.jsx"},{"name":"DropdownMenu","sourcePath":"components/overlay/DropdownMenu.jsx"},{"name":"FormModal","sourcePath":"components/overlay/FormModal.jsx"},{"name":"Modal","sourcePath":"components/overlay/Modal.jsx"},{"name":"Popover","sourcePath":"components/overlay/Popover.jsx"},{"name":"Tooltip","sourcePath":"components/overlay/Tooltip.jsx"}],"sourceHashes":{"components/action/Button.jsx":"5a7e8ba0583c","components/action/Icon.jsx":"aeb9bddad130","components/action/IconButton.jsx":"573fc7e3ae35","components/brand/MascotMark.jsx":"c49125fa6915","components/core/frame.js":"f7f85baee1dd","components/core/missing.js":"4c80ded0edb9","components/core/useAnchoredPopover.js":"55233bc7319b","components/data/BarList.jsx":"8913a0c14387","components/data/Chart.jsx":"b90357cd7409","components/data/DataTable.jsx":"4089f434a1bd","components/data/DescriptionList.jsx":"7c1079ff291d","components/data/DiffView.jsx":"74e826b1d761","components/data/Gauge.jsx":"9ca49df1f81b","components/data/Heatmap.jsx":"2d91c70b42c5","components/data/KeyValues.jsx":"c8a13cd87b57","components/data/Legend.jsx":"c988950ca520","components/data/LogViewer.jsx":"8da3439ff861","components/data/Sparkline.jsx":"18c2625e9dad","components/data/StatTile.jsx":"a2420479fd25","components/data/Timeline.jsx":"ea2c65867b69","components/data/TrendDelta.jsx":"f38fb93a803d","components/data/UptimeBar.jsx":"5e9445225b84","components/data/chart-math.js":"6a0ef3cc2f87","components/display/Accordion.jsx":"baf5673b0f70","components/display/Avatar.jsx":"bfde3bbd988d","components/display/Badge.jsx":"fd5590b21bf0","components/display/Code.jsx":"6cca3294c4f0","components/display/CopyField.jsx":"a797dab55521","components/display/StatusPill.jsx":"800e424e54da","components/display/Tag.jsx":"bbb650669637","components/feedback/AlertBanner.jsx":"fe7a9a92ad74","components/feedback/ConfirmDialog.jsx":"002f00827bf2","components/feedback/EmptyState.jsx":"c085e4de100c","components/feedback/ErrorState.jsx":"8d1e78ea3ec6","components/feedback/InlineMessage.jsx":"34b5488f8fc8","components/feedback/LoadingOverlay.jsx":"fc8d6b336c10","components/feedback/NotificationDrawer.jsx":"42bd8991941c","components/feedback/ProgressBar.jsx":"4594effb9937","components/feedback/Skeleton.jsx":"b800adab501e","components/feedback/Spinner.jsx":"019571ef40dd","components/feedback/Stepper.jsx":"84ad89b06daa","components/feedback/Toast.jsx":"9485ec025d8d","components/input/Checkbox.jsx":"12f5be84c0f7","components/input/CodeEditor.jsx":"29c81ec0eb1f","components/input/ColorInput.jsx":"f6a77692f2ee","components/input/Combobox.jsx":"0394e8812604","components/input/DatePicker.jsx":"642c34270df6","components/input/DateRangePicker.jsx":"2f3983ee6eb4","components/input/Dropzone.jsx":"c229fb1f6334","components/input/Field.jsx":"bb93dca9a5f5","components/input/FileUpload.jsx":"f6e9805d7420","components/input/MultiSelect.jsx":"50f44249ca86","components/input/NumberStepper.jsx":"b009f9710845","components/input/OTPInput.jsx":"878c99b0a06a","components/input/PasswordField.jsx":"a2ccb84f97c8","components/input/RadioGroup.jsx":"120f32c9b8f9","components/input/SearchField.jsx":"c53af994c91f","components/input/SegmentedControl.jsx":"0e432e439927","components/input/Select.jsx":"3b7ac799ef82","components/input/Slider.jsx":"a5ab6da0f3a8","components/input/Switch.jsx":"0d2bdc54c1a0","components/input/TextArea.jsx":"9b271074f1bd","components/input/TextField.jsx":"7d7ce7382207","components/input/TimePicker.jsx":"e5fd1756b8ab","components/layout/AspectRatio.jsx":"ec1ca745e3a9","components/layout/CardHead.jsx":"b7eee3ef5171","components/layout/Container.jsx":"93a51bc77f3e","components/layout/Divider.jsx":"2724b2da47dc","components/layout/Grid.jsx":"bd697fa55feb","components/layout/Inline.jsx":"2e36ca7bbc22","components/layout/PageHeader.jsx":"feb6eecf36c5","components/layout/PageStack.jsx":"0d38c92f565d","components/layout/Panel.jsx":"0b58644bd1d6","components/layout/Spacer.jsx":"d30932b51b97","components/layout/Stack.jsx":"2073deb635aa","components/layout/StatusBar.jsx":"f550cd2a60e7","components/layout/Toolbar.jsx":"a8f7fc524838","components/layout/Visible.jsx":"cfc947d272ed","components/navigation/Breadcrumb.jsx":"9b22abe659d3","components/navigation/CommandPalette.jsx":"9894e7d054d1","components/navigation/Link.jsx":"f16424582ea3","components/navigation/Pagination.jsx":"c3306480e75a","components/navigation/SidebarShell.jsx":"83694c638890","components/navigation/Tabs.jsx":"da326c5325db","components/navigation/TopNav.jsx":"a8218730e10d","components/overlay/Drawer.jsx":"b19e167b4b9e","components/overlay/DropdownMenu.jsx":"00be91bfb368","components/overlay/FormModal.jsx":"08cca2965ccc","components/overlay/Modal.jsx":"5bcf3781cd1d","components/overlay/Popover.jsx":"88176ab514f6","components/overlay/Tooltip.jsx":"55de6eeb8093","components/overlay/useModalDialog.js":"93e75b826452","theme-toggle.js":"0c924eb893f3"},"inlinedExternals":[],"unexposedExports":[{"name":"cx","sourcePath":"components/core/frame.js"},{"name":"DASHES","sourcePath":"components/data/chart-math.js"},{"name":"estWidth","sourcePath":"components/data/chart-math.js"},{"name":"fmtKo","sourcePath":"components/data/chart-math.js"},{"name":"frameStyle","sourcePath":"components/core/frame.js"},{"name":"histBins","sourcePath":"components/data/chart-math.js"},{"name":"isMissing","sourcePath":"components/core/missing.js"},{"name":"MISSING_CLASS","sourcePath":"components/core/missing.js"},{"name":"MISSING_TEXT","sourcePath":"components/core/missing.js"},{"name":"niceTicks","sourcePath":"components/data/chart-math.js"},{"name":"NOTIFICATION_DRAWER_ID","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"numeric","sourcePath":"components/core/missing.js"},{"name":"passwordStrength","sourcePath":"components/input/PasswordField.jsx"},{"name":"pathLength","sourcePath":"components/data/chart-math.js"},{"name":"r1","sourcePath":"components/data/chart-math.js"},{"name":"runsOf","sourcePath":"components/data/chart-math.js"},{"name":"seriesDash","sourcePath":"components/data/chart-math.js"},{"name":"smoothPath","sourcePath":"components/data/chart-math.js"},{"name":"spaceToken","sourcePath":"components/layout/Stack.jsx"},{"name":"stackBars","sourcePath":"components/data/chart-math.js"},{"name":"toneInk","sourcePath":"components/data/chart-math.js"},{"name":"toneVar","sourcePath":"components/data/chart-math.js"},{"name":"useAnchoredPopover","sourcePath":"components/core/useAnchoredPopover.js"},{"name":"useFieldContext","sourcePath":"components/input/Field.jsx"},{"name":"useModalDialog","sourcePath":"components/overlay/useModalDialog.js"},{"name":"useToast","sourcePath":"components/feedback/Toast.jsx"}]} */
+/* @ds-bundle: {"format":4,"namespace":"Ds_d3ea90","components":[{"name":"Button","sourcePath":"components/action/Button.jsx"},{"name":"Icon","sourcePath":"components/action/Icon.jsx"},{"name":"IconButton","sourcePath":"components/action/IconButton.jsx"},{"name":"MascotMark","sourcePath":"components/brand/MascotMark.jsx"},{"name":"BarList","sourcePath":"components/data/BarList.jsx"},{"name":"Chart","sourcePath":"components/data/Chart.jsx"},{"name":"DataTable","sourcePath":"components/data/DataTable.jsx"},{"name":"DescriptionList","sourcePath":"components/data/DescriptionList.jsx"},{"name":"DiffView","sourcePath":"components/data/DiffView.jsx"},{"name":"Gauge","sourcePath":"components/data/Gauge.jsx"},{"name":"Heatmap","sourcePath":"components/data/Heatmap.jsx"},{"name":"KeyValues","sourcePath":"components/data/KeyValues.jsx"},{"name":"Legend","sourcePath":"components/data/Legend.jsx"},{"name":"LogViewer","sourcePath":"components/data/LogViewer.jsx"},{"name":"Sparkline","sourcePath":"components/data/Sparkline.jsx"},{"name":"StatTile","sourcePath":"components/data/StatTile.jsx"},{"name":"Timeline","sourcePath":"components/data/Timeline.jsx"},{"name":"TrendDelta","sourcePath":"components/data/TrendDelta.jsx"},{"name":"UptimeBar","sourcePath":"components/data/UptimeBar.jsx"},{"name":"Accordion","sourcePath":"components/display/Accordion.jsx"},{"name":"Avatar","sourcePath":"components/display/Avatar.jsx"},{"name":"AvatarGroup","sourcePath":"components/display/Avatar.jsx"},{"name":"Badge","sourcePath":"components/display/Badge.jsx"},{"name":"Code","sourcePath":"components/display/Code.jsx"},{"name":"CodeBlock","sourcePath":"components/display/Code.jsx"},{"name":"Kbd","sourcePath":"components/display/Code.jsx"},{"name":"CopyField","sourcePath":"components/display/CopyField.jsx"},{"name":"StatusPill","sourcePath":"components/display/StatusPill.jsx"},{"name":"Tag","sourcePath":"components/display/Tag.jsx"},{"name":"AlertBanner","sourcePath":"components/feedback/AlertBanner.jsx"},{"name":"ConfirmDialog","sourcePath":"components/feedback/ConfirmDialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"ErrorState","sourcePath":"components/feedback/ErrorState.jsx"},{"name":"InlineMessage","sourcePath":"components/feedback/InlineMessage.jsx"},{"name":"LoadingOverlay","sourcePath":"components/feedback/LoadingOverlay.jsx"},{"name":"NotificationTrigger","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"NotificationDrawer","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"ProgressBar","sourcePath":"components/feedback/ProgressBar.jsx"},{"name":"Skeleton","sourcePath":"components/feedback/Skeleton.jsx"},{"name":"Spinner","sourcePath":"components/feedback/Spinner.jsx"},{"name":"Stepper","sourcePath":"components/feedback/Stepper.jsx"},{"name":"ToastProvider","sourcePath":"components/feedback/Toast.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Checkbox","sourcePath":"components/input/Checkbox.jsx"},{"name":"CodeEditor","sourcePath":"components/input/CodeEditor.jsx"},{"name":"ColorInput","sourcePath":"components/input/ColorInput.jsx"},{"name":"Combobox","sourcePath":"components/input/Combobox.jsx"},{"name":"DatePicker","sourcePath":"components/input/DatePicker.jsx"},{"name":"DateRangePicker","sourcePath":"components/input/DateRangePicker.jsx"},{"name":"Dropzone","sourcePath":"components/input/Dropzone.jsx"},{"name":"Field","sourcePath":"components/input/Field.jsx"},{"name":"FileUpload","sourcePath":"components/input/FileUpload.jsx"},{"name":"MultiSelect","sourcePath":"components/input/MultiSelect.jsx"},{"name":"NumberStepper","sourcePath":"components/input/NumberStepper.jsx"},{"name":"OTPInput","sourcePath":"components/input/OTPInput.jsx"},{"name":"PasswordField","sourcePath":"components/input/PasswordField.jsx"},{"name":"RadioGroup","sourcePath":"components/input/RadioGroup.jsx"},{"name":"SearchField","sourcePath":"components/input/SearchField.jsx"},{"name":"SegmentedControl","sourcePath":"components/input/SegmentedControl.jsx"},{"name":"Select","sourcePath":"components/input/Select.jsx"},{"name":"Slider","sourcePath":"components/input/Slider.jsx"},{"name":"Switch","sourcePath":"components/input/Switch.jsx"},{"name":"TextArea","sourcePath":"components/input/TextArea.jsx"},{"name":"TextField","sourcePath":"components/input/TextField.jsx"},{"name":"TimePicker","sourcePath":"components/input/TimePicker.jsx"},{"name":"AspectRatio","sourcePath":"components/layout/AspectRatio.jsx"},{"name":"CardHead","sourcePath":"components/layout/CardHead.jsx"},{"name":"Container","sourcePath":"components/layout/Container.jsx"},{"name":"Divider","sourcePath":"components/layout/Divider.jsx"},{"name":"Grid","sourcePath":"components/layout/Grid.jsx"},{"name":"GridItem","sourcePath":"components/layout/Grid.jsx"},{"name":"Inline","sourcePath":"components/layout/Inline.jsx"},{"name":"PageHeader","sourcePath":"components/layout/PageHeader.jsx"},{"name":"PageStack","sourcePath":"components/layout/PageStack.jsx"},{"name":"Panel","sourcePath":"components/layout/Panel.jsx"},{"name":"Spacer","sourcePath":"components/layout/Spacer.jsx"},{"name":"Stack","sourcePath":"components/layout/Stack.jsx"},{"name":"StatusBar","sourcePath":"components/layout/StatusBar.jsx"},{"name":"Toolbar","sourcePath":"components/layout/Toolbar.jsx"},{"name":"ToolbarGrow","sourcePath":"components/layout/Toolbar.jsx"},{"name":"Visible","sourcePath":"components/layout/Visible.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"CommandPalette","sourcePath":"components/navigation/CommandPalette.jsx"},{"name":"Link","sourcePath":"components/navigation/Link.jsx"},{"name":"Pagination","sourcePath":"components/navigation/Pagination.jsx"},{"name":"SidebarShell","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavItem","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavGroup","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"},{"name":"TopNav","sourcePath":"components/navigation/TopNav.jsx"},{"name":"Drawer","sourcePath":"components/overlay/Drawer.jsx"},{"name":"DropdownMenu","sourcePath":"components/overlay/DropdownMenu.jsx"},{"name":"FormModal","sourcePath":"components/overlay/FormModal.jsx"},{"name":"Modal","sourcePath":"components/overlay/Modal.jsx"},{"name":"Popover","sourcePath":"components/overlay/Popover.jsx"},{"name":"Tooltip","sourcePath":"components/overlay/Tooltip.jsx"}],"sourceHashes":{"components/action/Button.jsx":"09b7d91ea70d","components/action/Icon.jsx":"37cb27cf8630","components/action/IconButton.jsx":"8a6e2c96f973","components/brand/MascotMark.jsx":"7b83c6e0e778","components/core/frame.js":"7b923fcdece0","components/core/missing.js":"4c80ded0edb9","components/core/useAnchoredPopover.js":"55233bc7319b","components/data/BarList.jsx":"0314f5476c15","components/data/Chart.jsx":"efb43d9cdda8","components/data/DataTable.jsx":"711f1f05af3c","components/data/DescriptionList.jsx":"09f578c0508a","components/data/DiffView.jsx":"f64dd56b50e7","components/data/Gauge.jsx":"dadfb7a67f14","components/data/Heatmap.jsx":"f7a16406ba8a","components/data/KeyValues.jsx":"9a8c0448bf71","components/data/Legend.jsx":"d2c555347b87","components/data/LogViewer.jsx":"1e0e13b0d79f","components/data/Sparkline.jsx":"5ca499bc6a07","components/data/StatTile.jsx":"01b92eb8875e","components/data/Timeline.jsx":"3484620fcf1a","components/data/TrendDelta.jsx":"df77ede30cb1","components/data/UptimeBar.jsx":"8dbc08c8b484","components/data/chart-math.js":"8d99ceed4d4a","components/display/Accordion.jsx":"c737829b9307","components/display/Avatar.jsx":"595d01c56034","components/display/Badge.jsx":"ebdfaa3e5a79","components/display/Code.jsx":"db5fc2d41bf7","components/display/CopyField.jsx":"63b8d023c5ac","components/display/StatusPill.jsx":"2271178c5885","components/display/Tag.jsx":"0a8cf9b3a7da","components/feedback/AlertBanner.jsx":"35630891733b","components/feedback/ConfirmDialog.jsx":"6c268323b817","components/feedback/EmptyState.jsx":"0cc5195f8321","components/feedback/ErrorState.jsx":"d1fb9a97acb1","components/feedback/InlineMessage.jsx":"1a767995ef24","components/feedback/LoadingOverlay.jsx":"4d6098571f5a","components/feedback/NotificationDrawer.jsx":"496171c759e3","components/feedback/ProgressBar.jsx":"fcde9d6c0e1c","components/feedback/Skeleton.jsx":"d28497fc3046","components/feedback/Spinner.jsx":"14b0ba99fd1e","components/feedback/Stepper.jsx":"0fc01832126c","components/feedback/Toast.jsx":"0b4667b1afb5","components/input/Checkbox.jsx":"d2f66190fbb5","components/input/CodeEditor.jsx":"e01d91a2b947","components/input/ColorInput.jsx":"1d211ade5a34","components/input/Combobox.jsx":"ac843aec2ca4","components/input/DatePicker.jsx":"9d3ccf19aa70","components/input/DateRangePicker.jsx":"2c9c9501ff0e","components/input/Dropzone.jsx":"cb7e534803a9","components/input/Field.jsx":"db496f6146e4","components/input/FileUpload.jsx":"b01ef069bb39","components/input/MultiSelect.jsx":"8852812cc859","components/input/NumberStepper.jsx":"b8e4f176e252","components/input/OTPInput.jsx":"9c6aa79c65dd","components/input/PasswordField.jsx":"fc4e47660183","components/input/RadioGroup.jsx":"8f6614181191","components/input/SearchField.jsx":"bed00c25c7f9","components/input/SegmentedControl.jsx":"8c8a0061f981","components/input/Select.jsx":"23fa266f4ce8","components/input/Slider.jsx":"919c77f5b95b","components/input/Switch.jsx":"4987aa99a72b","components/input/TextArea.jsx":"c876e585198f","components/input/TextField.jsx":"7fc617fee4f9","components/input/TimePicker.jsx":"1f10c3f68d72","components/layout/AspectRatio.jsx":"e2ae6d037775","components/layout/CardHead.jsx":"1d17c88765ab","components/layout/Container.jsx":"f21e0d25115f","components/layout/Divider.jsx":"d569b3cd4069","components/layout/Grid.jsx":"762064e97502","components/layout/Inline.jsx":"723a2506c7e6","components/layout/PageHeader.jsx":"8062828d5bc9","components/layout/PageStack.jsx":"9703e7450025","components/layout/Panel.jsx":"5055dfd4e67a","components/layout/Spacer.jsx":"1fe8d631b4a5","components/layout/Stack.jsx":"48ff38945a39","components/layout/StatusBar.jsx":"b25654bc2c4d","components/layout/Toolbar.jsx":"7ab182321833","components/layout/Visible.jsx":"a121f0c10d26","components/navigation/Breadcrumb.jsx":"8003c996b8e5","components/navigation/CommandPalette.jsx":"193b71d3f442","components/navigation/Link.jsx":"5ef8228d7f2b","components/navigation/Pagination.jsx":"39f6e665c398","components/navigation/SidebarShell.jsx":"51eaf628a8fb","components/navigation/Tabs.jsx":"b4cc236325a6","components/navigation/TopNav.jsx":"b2de719cb8b9","components/overlay/Drawer.jsx":"3f9a95d2ef70","components/overlay/DropdownMenu.jsx":"a4db0c288528","components/overlay/FormModal.jsx":"3453da04e7de","components/overlay/Modal.jsx":"c1fc3ab30750","components/overlay/Popover.jsx":"e6adf33f0008","components/overlay/Tooltip.jsx":"799517ec2a79","components/overlay/useModalDialog.js":"93e75b826452","theme-toggle.js":"0c924eb893f3"},"inlinedExternals":[],"unexposedExports":[{"name":"cx","sourcePath":"components/core/frame.js"},{"name":"DASHES","sourcePath":"components/data/chart-math.js"},{"name":"estWidth","sourcePath":"components/data/chart-math.js"},{"name":"fmtKo","sourcePath":"components/data/chart-math.js"},{"name":"frameStyle","sourcePath":"components/core/frame.js"},{"name":"histBins","sourcePath":"components/data/chart-math.js"},{"name":"isMissing","sourcePath":"components/core/missing.js"},{"name":"MISSING_CLASS","sourcePath":"components/core/missing.js"},{"name":"MISSING_TEXT","sourcePath":"components/core/missing.js"},{"name":"niceTicks","sourcePath":"components/data/chart-math.js"},{"name":"NOTIFICATION_DRAWER_ID","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"numeric","sourcePath":"components/core/missing.js"},{"name":"passwordStrength","sourcePath":"components/input/PasswordField.jsx"},{"name":"pathLength","sourcePath":"components/data/chart-math.js"},{"name":"r1","sourcePath":"components/data/chart-math.js"},{"name":"runsOf","sourcePath":"components/data/chart-math.js"},{"name":"seriesDash","sourcePath":"components/data/chart-math.js"},{"name":"smoothPath","sourcePath":"components/data/chart-math.js"},{"name":"spaceToken","sourcePath":"components/core/frame.js"},{"name":"stackBars","sourcePath":"components/data/chart-math.js"},{"name":"toneInk","sourcePath":"components/data/chart-math.js"},{"name":"toneVar","sourcePath":"components/data/chart-math.js"},{"name":"useAnchoredPopover","sourcePath":"components/core/useAnchoredPopover.js"},{"name":"useFieldContext","sourcePath":"components/input/Field.jsx"},{"name":"useModalDialog","sourcePath":"components/overlay/useModalDialog.js"},{"name":"useToast","sourcePath":"components/feedback/Toast.jsx"}]} */
 
 (() => {
 
@@ -16,6 +16,16 @@ try { (() => {
    fit="flex"  (기본) 부모 폭을 채우고 높이는 내용/비율로 정한다. min-width:0으로 격자에서 찌그러지지 않는다.
    fit="fixed" width/height(px 또는 CSS 길이)를 그대로 쓴다. 내용은 그 상자 안에서 스크롤·축소된다.
    fit="auto"  내용 크기(버튼·pill 같은 컨트롤 기본). */
+
+/** 이 시스템은 토큰 값을 인라인 커스텀 속성으로 넘긴다. React의 CSSProperties는 `--*` 키를 받지 않아 여기서 함께 선언한다.
+ * @typedef {import("react").CSSProperties & Partial<Record<`--${string}`, string | number>>} DSStyle */
+/** @typedef {"flex" | "fixed" | "auto"} Fit */
+/** @typedef {number | string} Length */
+
+/**
+ * @param {{ fit?: Fit, width?: Length, height?: Length, minHeight?: Length, style?: DSStyle }} [props]
+ * @returns {DSStyle}
+ */
 function frameStyle({
   fit = "flex",
   width,
@@ -23,7 +33,9 @@ function frameStyle({
   minHeight,
   style
 } = {}) {
+  /** @param {Length | undefined} v */
   const len = v => typeof v === "number" ? `${v}px` : v;
+  /** @type {DSStyle} */
   const out = {
     minWidth: 0
   };
@@ -44,15 +56,37 @@ function frameStyle({
     ...style
   };
 }
+
+/** @param {...(string | false | null | undefined)} a */
 const cx = (...a) => a.filter(Boolean).join(" ");
-Object.assign(__ds_scope, { frameStyle, cx });
+
+/* 간격 계약: gap·size는 --sp 단계 번호(0~10) 또는 CSS 길이 그대로. Stack·Inline·Spacer가 공유한다. */
+/** @type {Record<number, string | number>} */
+const GAP = {
+  0: 0,
+  1: "var(--sp-1)",
+  2: "var(--sp-2)",
+  3: "var(--sp-3)",
+  4: "var(--sp-4)",
+  5: "var(--sp-5)",
+  6: "var(--sp-6)",
+  7: "var(--sp-7)",
+  8: "var(--sp-8)",
+  9: "var(--sp-9)",
+  10: "var(--sp-10)"
+};
+/** @param {number | string | undefined} g */
+const spaceToken = g => typeof g === "number" && GAP[g] !== undefined ? GAP[g] : g;
+Object.assign(__ds_scope, { frameStyle, cx, spaceToken });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/core/frame.js", error: String((e && e.message) || e) }); }
 
 // components/action/Icon.jsx
 try { (() => {
 const { cx } = __ds_scope;
 /** Phosphor Bold 아이콘. name은 Phosphor 아이콘 이름(kebab-case, 예: "bell", "gear-six").
- *  리액트 프로젝트에서는 @phosphor-icons/react의 동일 아이콘을 weight="bold"로 쓴다. 장식 아이콘은 aria-hidden. */
+ *  리액트 프로젝트에서는 @phosphor-icons/react의 동일 아이콘을 weight="bold"로 쓴다. 장식 아이콘은 aria-hidden.
+ * @param {Parameters<typeof import("./Icon.d.ts").Icon>[0]} props
+ */
 function Icon({
   name,
   size = 16,
@@ -79,7 +113,8 @@ Object.assign(__ds_scope, { Icon });
 // components/action/Button.jsx
 try { (() => {
 const { cx, frameStyle, Icon } = __ds_scope;
-/** 버튼. variant는 의미(primary/secondary/ghost/danger), size는 밀도, fit="flex"면 부모 폭을 채운다. */
+/** 버튼. variant는 의미(primary/secondary/ghost/danger), size는 밀도, fit="flex"면 부모 폭을 채운다.
+ * @param {Parameters<typeof import("./Button.d.ts").Button>[0]} props */
 function Button({
   variant = "secondary",
   size = "md",
@@ -121,7 +156,12 @@ try { (() => {
 const { forwardRef } = React;
 const { cx, Icon } = __ds_scope;
 /** 아이콘 전용 버튼. aria-label 필수. badge(숫자)가 0보다 크면 우상단 카운트가 붙고 접근 가능한 이름에 "N건"이 더해진다. */
-const IconButton = /*#__PURE__*/forwardRef(function IconButton({
+const IconButton = /*#__PURE__*/forwardRef(
+/**
+ * @param {Parameters<typeof import("./IconButton.d.ts").IconButton>[0]} props
+ * @param {import("react").ForwardedRef<HTMLButtonElement>} ref
+ */
+function IconButton({
   icon,
   size = "md",
   variant = "outline",
@@ -567,7 +607,8 @@ function Face({
   }
 }
 
-/** 봉구 심볼. 색은 마스코트 토큰, 크기는 7단계 또는 기존 px 값을 사용합니다. */
+/** 봉구 심볼. 색은 마스코트 토큰, 크기는 7단계 또는 기존 px 값을 사용합니다.
+ * @param {Parameters<typeof import("./MascotMark.d.ts").MascotMark>[0]} props */
 function MascotMark({
   face = 'neutral',
   size = 'md',
@@ -708,7 +749,9 @@ Object.assign(__ds_scope, { useAnchoredPopover });
 try { (() => {
 const { cx, frameStyle, MISSING_CLASS, MISSING_TEXT, isMissing } = __ds_scope;
 /** 이름·값·막대 목록(디스크별 사용량, GPU 예약). max 생략 시 항목 최대값. thresholds로 warn/crit 색 전환.
- *  결측 값(null·undefined·NaN)은 막대 0 + "수집 안 됨" 문구로 그린다. */
+ *  결측 값(null·undefined·NaN)은 막대 0 + "수집 안 됨" 문구로 그린다.
+ * @param {Parameters<typeof import("./BarList.d.ts").BarList>[0]} props
+ */
 function BarList({
   items = [],
   max,
@@ -773,7 +816,8 @@ Object.assign(__ds_scope, { BarList });
 // components/data/DescriptionList.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** 설명 목록(dl). 긴 값·문장이 있을 때 KeyValues 대신. 좁으면 한 열로 접힌다. */
+/** 설명 목록(dl). 긴 값·문장이 있을 때 KeyValues 대신. 좁으면 한 열로 접힌다.
+ * @param {Parameters<typeof import("./DescriptionList.d.ts").DescriptionList>[0]} props */
 function DescriptionList({
   items = [],
   className,
@@ -794,7 +838,8 @@ Object.assign(__ds_scope, { DescriptionList });
 // components/data/DiffView.jsx
 try { (() => {
 const { cx, frameStyle } = __ds_scope;
-/** 필드 단위 변경 비교(Revision diff). changes: {field, from, to, kind?: changed|added|removed}. 값은 mono. */
+/** 필드 단위 변경 비교(Revision diff). changes: {field, from, to, kind?: changed|added|removed}. 값은 mono.
+ * @param {Parameters<typeof import("./DiffView.d.ts").DiffView>[0]} props */
 function DiffView({
   changes = [],
   from,
@@ -845,7 +890,9 @@ Object.assign(__ds_scope, { DiffView });
 try { (() => {
 const { cx, frameStyle, MISSING_TEXT, isMissing } = __ds_scope;
 /** 반원 게이지. value 0~1(또는 max 기준). 임계 70/90으로 톤 자동(ok·warn·crit). 결측이면 "수집 안 됨".
- *  결측 문구의 표기는 SVG text라 색이 fill이다. 공통 .bds-na 대신 tone off 규칙(.bds-gauge--off .bds-gauge__v)이 담당한다. */
+ *  결측 문구의 표기는 SVG text라 색이 fill이다. 공통 .bds-na 대신 tone off 규칙(.bds-gauge--off .bds-gauge__v)이 담당한다.
+ * @param {Parameters<typeof import("./Gauge.d.ts").Gauge>[0]} props
+ */
 function Gauge({
   value,
   max = 1,
@@ -930,7 +977,9 @@ try { (() => {
 const { useId, useState } = React;
 const { cx, frameStyle, MISSING_CLASS, MISSING_TEXT, isMissing } = __ds_scope;
 /** 시간×요일 같은 2차원 강도 격자. 색은 --ramp-1~6 순차 램프만 쓴다(상태색 금지). 값 null은 빈 칸(수집 안 됨).
- *  격자는 tabIndex=0: 화살표로 셀 이동, Home/End 행 양끝, Esc 해제. 마우스 hover와 같은 아래 줄 텍스트가 뜬다. 숨김 표(bds-sr)가 aria-describedby로 연결된다. */
+ *  격자는 tabIndex=0: 화살표로 셀 이동, Home/End 행 양끝, Esc 해제. 마우스 hover와 같은 아래 줄 텍스트가 뜬다. 숨김 표(bds-sr)가 aria-describedby로 연결된다.
+ * @param {Parameters<typeof import("./Heatmap.d.ts").Heatmap>[0]} props
+ */
 function Heatmap({
   rows = [],
   cols = [],
@@ -1040,7 +1089,8 @@ Object.assign(__ds_scope, { Heatmap });
 // components/data/KeyValues.jsx
 try { (() => {
 const { cx, MISSING_CLASS, MISSING_TEXT, isMissing } = __ds_scope;
-/** 키·값 행 목록. rows: [key, value][] 또는 {k,v,mono?}[]. 수치 값은 mono, 결측 값은 "수집 안 됨"으로 그리고 mono를 벗는다. */
+/** 키·값 행 목록. rows: [key, value][] 또는 {k,v,mono?}[]. 수치 값은 mono, 결측 값은 "수집 안 됨"으로 그리고 mono를 벗는다.
+ * @param {Parameters<typeof import("./KeyValues.d.ts").KeyValues>[0]} props */
 function KeyValues({
   rows = [],
   lined = false,
@@ -1072,7 +1122,8 @@ Object.assign(__ds_scope, { KeyValues });
 try { (() => {
 const { useEffect, useRef } = React;
 const { cx, frameStyle } = __ds_scope;
-/** 로그 뷰어. lines: string | {level,time,text}. follow=true면 새 줄에 따라 바닥으로 스크롤. */
+/** 로그 뷰어. lines: string | {level,time,text}. follow=true면 새 줄에 따라 바닥으로 스크롤.
+ * @param {Parameters<typeof import("./LogViewer.d.ts").LogViewer>[0]} props */
 function LogViewer({
   lines = [],
   follow = true,
@@ -1132,7 +1183,8 @@ const TONE = {
   crit: "위험",
   info: "정보"
 };
-/** 시간순 이벤트 목록(운영 변화, lease 상태 전이). items: {time, title, detail?, tone?, icon?}. 최신이 위. tone은 점 색 + 스크린리더 텍스트. */
+/** 시간순 이벤트 목록(운영 변화, lease 상태 전이). items: {time, title, detail?, tone?, icon?}. 최신이 위. tone은 점 색 + 스크린리더 텍스트.
+ * @param {Parameters<typeof import("./Timeline.d.ts").Timeline>[0]} props */
 function Timeline({
   items = [],
   dense = false,
@@ -1178,7 +1230,9 @@ Object.assign(__ds_scope, { Timeline });
 try { (() => {
 const { cx, MISSING_CLASS, MISSING_TEXT, isMissing, Icon } = __ds_scope;
 /** 증감 표시. value는 변화량(숫자) 또는 비율(percent). inverse면 증가가 나쁜 지표(응답시간·오류). 항상 화살표+숫자, 색 단독 금지.
- *  결측이면 화살표 없이 "수집 안 됨"을 mono 없이 표시한다. */
+ *  결측이면 화살표 없이 "수집 안 됨"을 mono 없이 표시한다.
+ * @param {Parameters<typeof import("./TrendDelta.d.ts").TrendDelta>[0]} props
+ */
 function TrendDelta({
   value,
   percent = false,
@@ -1214,7 +1268,9 @@ const { cx, MISSING_CLASS, MISSING_TEXT, isMissing } = __ds_scope;
 /** 가용성 막대(일/시간 단위 90칸). segments: {status: ok|warn|crit|off, label?}. 비율은 ok+warn 기준으로 계산해 텍스트로 병기.
  *  칸의 off는 상태 넷 중 하나(그 구간이 수집되지 않음)이고 문구는 같은 MISSING_TEXT를 쓴다.
  *  다만 칸의 표기는 텍스트가 아니라 track 색이므로 .bds-na를 붙이지 않는다. 헤더 비율만 결측 문구로 표시한다.
- *  좁은 컨테이너에서는 칸 간격과 최소폭을 줄여 모든 구간을 내부 폭에 맞춘다. */
+ *  좁은 컨테이너에서는 칸 간격과 최소폭을 줄여 모든 구간을 내부 폭에 맞춘다.
+ * @param {Parameters<typeof import("./UptimeBar.d.ts").UptimeBar>[0]} props
+ */
 function UptimeBar({
   name,
   segments = [],
@@ -1263,20 +1319,32 @@ Object.assign(__ds_scope, { UptimeBar });
 try { (() => {
 const { numeric } = __ds_scope;
 /* 차트 공용 계산. 렌더와 분리해 테스트·재사용 가능하게 둔다.
-   내보내는 함수는 어떤 입력에도 유한한 결과나 null만 낸다. 결측 판정은 core/missing.js의 numeric 하나를 쓴다. */
+   내보내는 함수는 어떤 입력에도 유한한 결과나 null만 낸다. 결측 판정은 core/missing.js의 numeric 하나를 쓴다.
+   타입은 공개 Chart.d.ts의 것을 그대로 쓴다. 같은 모양을 여기 다시 적지 않는다. */
+/** @typedef {import("./Chart.d.ts").ChartTone} ChartTone */
+/** @typedef {import("./Chart.d.ts").ChartSeries} ChartSeries */
+/** @typedef {[number, number]} Point 픽셀 좌표 */
+
+/** @param {number} n */
 const r1 = n => Math.round(n * 10) / 10;
 /* 범주형 8색. tone에 문자열("rx","tx","used","reserved","free")을 주면 의미 고정 쌍을 쓴다. */
+/** @type {Record<string, 1>} */
 const METER = {
   ok: 1,
   warn: 1,
   crit: 1
 };
-const toneVar = (tone, i) => typeof tone === "string" ? METER[tone] ? `var(--meter-${tone})` : `var(--series-${tone})` : `var(--series-${tone ?? i % 8 + 1})`;
+/** @param {ChartTone | undefined} tone @param {number} [i] */
+const toneVar = (tone, i) => typeof tone === "string" ? METER[tone] ? `var(--meter-${tone})` : `var(--series-${tone})` : `var(--series-${tone ?? (i ?? 0) % 8 + 1})`;
 /* 미터 톤이면 값 텍스트도 같은 상태 잉크로 */
+/** @param {ChartTone | undefined} tone */
 const toneInk = tone => typeof tone === "string" && METER[tone] ? `var(--${tone}-ink)` : undefined;
+/** @param {number} v */
 const fmtKo = v => Math.abs(v) >= 1000 ? Math.round(v).toLocaleString("ko-KR") : Number.isInteger(v) ? String(v) : v.toFixed(1);
 
-/** 보기 좋은 축 눈금: 데이터 범위를 1·2·5×10^n 간격으로 나눈다. */
+/** 보기 좋은 축 눈금: 데이터 범위를 1·2·5×10^n 간격으로 나눈다.
+ * @param {number} lo @param {number} hi @param {number} [count]
+ * @returns {{ ticks: number[], lo: number, hi: number }} */
 function niceTicks(lo, hi, count = 4) {
   if (lo === hi) {
     const pad = Math.abs(lo) * 0.2 || 1;
@@ -1301,7 +1369,9 @@ function niceTicks(lo, hi, count = 4) {
   };
 }
 
-/** 누적 막대: 양수와 음수를 각각 0에서 쌓는다. null은 구간을 만들거나 합계에 기여하지 않는다. */
+/** 누적 막대: 양수와 음수를 각각 0에서 쌓는다. null은 구간을 만들거나 합계에 기여하지 않는다.
+ * @param {ChartSeries[]} series @param {number} count
+ * @returns {{ bands: ({ start: number, end: number } | null)[][], lo: number, hi: number }} */
 function stackBars(series, count) {
   const positive = Array(count).fill(0),
     negative = Array(count).fill(0);
@@ -1325,7 +1395,8 @@ function stackBars(series, count) {
   };
 }
 
-/** Catmull-Rom → 베지어. 두 점이면 직선. */
+/** Catmull-Rom → 베지어. 두 점이면 직선.
+ * @param {Point[]} pts @param {number} [tension] */
 function smoothPath(pts, tension = 0.18) {
   if (pts.length < 3) return pts.map(([x, y], i) => `${i ? "L" : "M"}${x} ${y}`).join(" ");
   let d = `M${pts[0][0]} ${pts[0][1]}`;
@@ -1339,9 +1410,13 @@ function smoothPath(pts, tension = 0.18) {
   return d;
 }
 
-/** 결측 구간에서 끊은 점 배열들. */
+/** 결측 구간에서 끊은 점 배열들.
+ * @param {(number | null)[]} values @param {(i: number) => number} x @param {(v: number) => number} y
+ * @returns {Point[][]} */
 function runsOf(values, x, y) {
+  /** @type {Point[][]} */
   const runs = [];
+  /** @type {Point[]} */
   let run = [];
   values.forEach((raw, i) => {
     const v = numeric(raw);
@@ -1353,22 +1428,28 @@ function runsOf(values, x, y) {
   if (run.length) runs.push(run);
   return runs;
 }
+
+/** @param {Point[]} pts */
 function pathLength(pts) {
   let l = 0;
   for (let i = 1; i < pts.length; i++) l += Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]);
   return l * 1.15;
 }
 
-/** 텍스트 폭 추정(mono 10.5px ≈ 6.4px/char). y축 여백 계산용. */
+/** 텍스트 폭 추정(mono 10.5px ≈ 6.4px/char). y축 여백 계산용.
+ * @param {unknown} s */
 const estWidth = s => String(s).length * 6.4 + 10;
 
 /** 3계열 이상이면 선 스타일을 실선·대시·점·대시점 순으로 돌린다. series.dash로 명시(문자열=그 패턴, false=실선). */
 const DASHES = ["", "6 4", "2 4", "8 3 2 3"];
+/** @param {ChartSeries} s @param {number} i @param {number} count */
 const seriesDash = (s, i, count) => s.dash === false ? undefined : typeof s.dash === "string" ? s.dash || undefined : count >= 3 ? DASHES[i % DASHES.length] || undefined : undefined;
 
-/** 히스토그램 구간. 표본 2개 미만이면 null. n은 bins 또는 √n(6~30). */
+/** 히스토그램 구간. 표본 2개 미만이면 null. n은 bins 또는 √n(6~30).
+ * @param {(number | null)[] | undefined} samples @param {number} [bins]
+ * @returns {{ xs: number[], lo: number, hi: number, span: number, n: number, counts: number[] } | null} */
 function histBins(samples, bins) {
-  const xs = (samples ?? []).map(numeric).filter(v => v != null);
+  const xs = /** @type {number[]} */(samples ?? []).map(numeric).filter(v => v != null);
   if (xs.length < 2) return null;
   const lo = Math.min(...xs),
     hi = Math.max(...xs),
@@ -1397,7 +1478,9 @@ const { cx, toneVar } = __ds_scope;
 const swatchColor = (it, i) => it.color ?? (typeof it.tone === "string" && !/^(rx|tx|used|reserved|free|ok|warn|crit)$/.test(it.tone) ? /^(info|signal)$/.test(it.tone) ? `var(--${it.tone})` : it.tone : toneVar(it.tone, i));
 
 /** 독립 범례. items: {label, color?(CSS 색), tone?(series 번호·의미 키), value?, dash?(선 패턴), shape?, hidden?}.
- *  shape="line"이면 선 스와치(dash 패턴 반영), square/dot은 네모·점. onToggle을 주면 클릭으로 시리즈 숨김. compact는 Chart 내장 범례용 작은 글자. */
+ *  shape="line"이면 선 스와치(dash 패턴 반영), square/dot은 네모·점. onToggle을 주면 클릭으로 시리즈 숨김. compact는 Chart 내장 범례용 작은 글자.
+ * @param {Parameters<typeof import("./Legend.d.ts").Legend>[0]} props
+ */
 function Legend({
   items = [],
   shape = "square",
@@ -1455,7 +1538,31 @@ Object.assign(__ds_scope, { Legend });
 try { (() => {
 const { useEffect, useId, useRef, useState } = React;
 const { cx, frameStyle, MISSING_CLASS, MISSING_TEXT, isMissing, numeric, r1, toneVar, toneInk, fmtKo, niceTicks, stackBars, smoothPath, runsOf, pathLength, estWidth, seriesDash, histBins, Legend } = __ds_scope;
+/** @typedef {import("../core/frame.js").DSStyle} DSStyle */
+/** @typedef {import("./Chart.d.ts").ChartTone} ChartTone */
+/** @typedef {import("./Chart.d.ts").ChartSeries} ChartSeries */
+/** @typedef {import("./Chart.d.ts").ChartThreshold} ChartThreshold */
+/** @typedef {(v: number) => string} Fmt */
+/** @typedef {[number, number]} Point */
+/** 결측이 null로 바뀐 세그먼트. 0으로 바꾸면 수집 실패가 "0"으로 보이므로 null을 유지한다.
+ * @typedef {Omit<import("./Chart.d.ts").ChartSegment, "value"> & { value: number | null }} NormSegment */
+/** normalize를 지난 뒤의 내부 표현. 공개 계약은 Chart.d.ts의 ChartProps 유니온이고,
+ * 여기서는 kind에 따라 쓰이는 필드만 채워진 평면 형태로 다룬다.
+ * @typedef {{
+ *   kind?: "line" | "area" | "bar" | "pie" | "radial" | "radar" | "histogram",
+ *   labels?: string[], series?: ChartSeries[], segments?: NormSegment[],
+ *   samples?: (number | null)[], bins?: number, axes?: string[],
+ *   value?: number | null, label?: import("react").ReactNode, tone?: ChartTone,
+ *   thresholds?: ChartThreshold[], stacked?: boolean, yMin?: number, yMax?: number,
+ *   max?: number, unit?: string, percentiles?: number[], caption?: import("react").ReactNode,
+ *   xTicks?: "auto" | "ends" | "none", fit?: "flex" | "fixed", width?: number | string, height?: number,
+ *   valueFormatter?: Fmt, emptyText?: string, showLegend?: boolean,
+ *   animate?: boolean, live?: boolean, paused?: boolean, className?: string,
+ *   style?: DSStyle, "aria-label"?: string
+ * }} NormProps */
+
 /* ---------- 공용 크롬 ---------- */
+/** @param {{ current: HTMLElement | null }} ref @param {number} [fixedW] @param {number} [fixedH] */
 function useSize(ref, fixedW, fixedH) {
   const [size, setSize] = useState({
     w: fixedW ?? 0,
@@ -1482,6 +1589,7 @@ function useSize(ref, fixedW, fixedH) {
   }, [ref]);
   return size;
 }
+/** @param {boolean} enabled */
 function useAnimateOnce(enabled) {
   const [on, setOn] = useState(enabled);
   useEffect(() => {
@@ -1491,6 +1599,7 @@ function useAnimateOnce(enabled) {
   }, [enabled]);
   return on;
 }
+/** @param {{ x: number, w: number, title?: import("react").ReactNode, rows: { color: string, name: import("react").ReactNode, value: import("react").ReactNode }[] }} props */
 function Tip({
   x,
   w,
@@ -1518,10 +1627,12 @@ function Tip({
     className: cx("bds-chart__tip-v", isMissing(r.value) && MISSING_CLASS)
   }, r.value))));
 }
+/** @param {Fmt} fmt @param {number | null | undefined} v */
 const cell = (fmt, v) => isMissing(v) ? MISSING_TEXT : fmt(v);
 
 /* 데이터가 기하 계산에 닿기 전 단 한 곳의 경계. 여기서 결측은 모두 null이 되므로 아래 계산은 값이 null인지만 본다.
    이 경계가 없으면 NaN 하나가 축 범위를 통해 차트 전체의 좌표를 무효로 만든다. */
+/** @param {NormProps} props @returns {NormProps} */
 function normalize(props) {
   const series = props.series?.map(s => ({
     ...s,
@@ -1545,6 +1656,7 @@ function normalize(props) {
 
 /* ---------- 직교(line·area·bar) ---------- */
 /** hover/setHover는 Chart가 갖는다(마우스·키보드가 같은 인덱스를 움직여 같은 Tip을 띄운다). */
+/** @param {{ kind: "line" | "area" | "bar", labels: string[], series: ChartSeries[], fmt: Fmt, uid: string, xTicks?: "auto" | "ends" | "none", w: number, h: number, thresholds?: ChartThreshold[], stacked?: boolean, yMin?: number, yMax?: number, hover: number | null, setHover: (i: number | null) => void }} props */
 function Cartesian({
   kind,
   labels,
@@ -1757,6 +1869,7 @@ function Cartesian({
 }
 
 /* ---------- 도넛 ---------- */
+/** @param {{ segments: NormSegment[], fmt: Fmt, caption?: import("react").ReactNode, w: number, h: number, hover: number | null, setHover: (i: number | null) => void }} props */
 function Pie({
   segments,
   fmt,
@@ -1830,6 +1943,7 @@ function Pie({
 }
 
 /* ---------- 방사 게이지 ---------- */
+/** @param {{ value: number, label?: import("react").ReactNode, tone?: ChartTone, fmt: Fmt, w: number, h: number, animate?: boolean }} props */
 function Radial({
   value,
   label,
@@ -1896,6 +2010,7 @@ function Radial({
 }
 
 /* ---------- 레이더 ---------- */
+/** @param {{ axes: string[], series: ChartSeries[], max?: number, fmt: Fmt, w: number, h: number, hover: number | null, setHover: (i: number | null) => void }} props */
 function Radar({
   axes,
   series,
@@ -1996,6 +2111,7 @@ function Radar({
 
 /* ---------- 히스토그램 ---------- */
 /** 원시 표본(samples)을 bins개 구간으로 나눠 막대로. 분위선(p50/p95)은 thresholds처럼 세로 점선으로. 구간 계산은 chart-math.histBins(SR 표와 공유). */
+/** @param {{ samples: (number | null)[], bins?: number, fmt: Fmt, w: number, h: number, tone?: ChartTone, percentiles?: number[], unit?: string, animate?: boolean, hover: number | null, setHover: (i: number | null) => void }} props */
 function Histogram({
   samples,
   bins,
@@ -2110,6 +2226,7 @@ function Histogram({
 
 /* ---------- 스크린리더 표 ---------- */
 /** 시각 차트와 같은 데이터를 표로. 항상 렌더(bds-sr로 숨김)하고 루트가 aria-describedby로 가리킨다. */
+/** @param {{ id: string, kind: NonNullable<NormProps["kind"]>, props: NormProps, fmt: Fmt }} props */
 function SrTable({
   id,
   kind,
@@ -2166,7 +2283,9 @@ const DEFAULT_H = {
  *  fit="flex"(기본)면 부모 폭을 채우고 height(px)만 정한다. fit="fixed"면 width·height 그대로.
  *  색은 --series-1~8만, 상태 의미는 라벨 텍스트가 전한다. 진입 시 1회 그리기 모션(live면 끔).
  *  paused=true면 마지막으로 받은 props 스냅샷을 그대로 그린다(스트림이 흘러도 화면은 멈춤).
- *  stage는 tabIndex=0: ←/→ 로 인덱스 이동, Home/End 양끝, Esc 해제. 숨김 표(bds-sr)가 aria-describedby로 연결된다. */
+ *  stage는 tabIndex=0: ←/→ 로 인덱스 이동, Home/End 양끝, Esc 해제. 숨김 표(bds-sr)가 aria-describedby로 연결된다.
+ * @param {Parameters<typeof import("./Chart.d.ts").Chart>[0]} rawProps
+ */
 function Chart(rawProps) {
   const last = useRef(rawProps);
   if (!rawProps.paused) last.current = rawProps;
@@ -2332,7 +2451,8 @@ Object.assign(__ds_scope, { Chart });
 try { (() => {
 const { useId } = React;
 const { cx, numeric, runsOf, toneVar } = __ds_scope;
-/** 미니 추세선. 부모 크기를 채운다(fit은 부모가 정한다). 결측 구간은 끊는다. 축·범례 없음. */
+/** 미니 추세선. 부모 크기를 채운다(fit은 부모가 정한다). 결측 구간은 끊는다. 축·범례 없음.
+ * @param {Parameters<typeof import("./Sparkline.d.ts").Sparkline>[0]} props */
 function Sparkline({
   values = [],
   tone = 1,
@@ -2404,7 +2524,8 @@ Object.assign(__ds_scope, { Sparkline });
 try { (() => {
 const { useId, useState } = React;
 const { cx, Icon } = __ds_scope;
-/** 접이식 섹션. items: {id, title, meta?, content}. multiple이면 여러 개 동시 펼침. plain은 테두리 없음(설정 패널 안). */
+/** 접이식 섹션. items: {id, title, meta?, content}. multiple이면 여러 개 동시 펼침. plain은 테두리 없음(설정 패널 안).
+ * @param {Parameters<typeof import("./Accordion.d.ts").Accordion>[0]} props */
 function Accordion({
   items = [],
   defaultOpen = [],
@@ -2484,7 +2605,8 @@ const STATUS = {
   off: "오프라인"
 };
 
-/** 사용자·서비스 아바타. src 없으면 이름 이니셜(한글은 뒤 두 글자). status로 온라인 점(접근 가능한 이름에 텍스트로 병기). */
+/** 사용자·서비스 아바타. src 없으면 이름 이니셜(한글은 뒤 두 글자). status로 온라인 점(접근 가능한 이름에 텍스트로 병기).
+ * @param {Parameters<typeof import("./Avatar.d.ts").Avatar>[0]} props */
 function Avatar({
   name,
   src,
@@ -2519,7 +2641,8 @@ function Avatar({
   }));
 }
 
-/** 겹친 아바타 묶음. max 초과는 +N. */
+/** 겹친 아바타 묶음. max 초과는 +N.
+ * @param {Parameters<typeof import("./Avatar.d.ts").AvatarGroup>[0]} props */
 function AvatarGroup({
   users = [],
   max = 4,
@@ -2552,7 +2675,8 @@ Object.assign(__ds_scope, { Avatar, AvatarGroup });
 // components/display/Badge.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** 숫자 카운트 배지. children으로 감싸면 오른쪽 위에 붙는다. max 초과는 "99+". dot은 숫자 없는 점. */
+/** 숫자 카운트 배지. children으로 감싸면 오른쪽 위에 붙는다. max 초과는 "99+". dot은 숫자 없는 점.
+ * @param {Parameters<typeof import("./Badge.d.ts").Badge>[0]} props */
 function Badge({
   count,
   max = 99,
@@ -2580,7 +2704,8 @@ Object.assign(__ds_scope, { Badge });
 // components/display/Code.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** 인라인 코드 조각. 식별자·경로·명령 한 토막. */
+/** 인라인 코드 조각. 식별자·경로·명령 한 토막.
+ * @param {Parameters<typeof import("./Code.d.ts").Code>[0]} props */
 function Code({
   children,
   className,
@@ -2591,7 +2716,8 @@ function Code({
     ...rest
   }, children);
 }
-/** 코드 블록. 여러 줄 명령·JSON. 가로 스크롤, 줄바꿈 안 함. */
+/** 코드 블록. 여러 줄 명령·JSON. 가로 스크롤, 줄바꿈 안 함.
+ * @param {Parameters<typeof import("./Code.d.ts").CodeBlock>[0]} props */
 function CodeBlock({
   children,
   language,
@@ -2604,7 +2730,8 @@ function CodeBlock({
     ...rest
   }, /*#__PURE__*/React.createElement("code", null, children));
 }
-/** 키보드 키. */
+/** 키보드 키.
+ * @param {Parameters<typeof import("./Code.d.ts").Kbd>[0]} props */
 function Kbd({
   children,
   className,
@@ -2622,7 +2749,8 @@ Object.assign(__ds_scope, { Code, CodeBlock, Kbd });
 try { (() => {
 const { useState } = React;
 const { cx, frameStyle, Icon } = __ds_scope;
-/** 복사 전용 값(토큰·식별자·curl). 읽기 전용 mono + 복사 버튼. multiline이면 <pre>. secret이면 마스킹 + 보기 토글. */
+/** 복사 전용 값(토큰·식별자·curl). 읽기 전용 mono + 복사 버튼. multiline이면 <pre>. secret이면 마스킹 + 보기 토글.
+ * @param {Parameters<typeof import("./CopyField.d.ts").CopyField>[0]} props */
 function CopyField({
   value,
   label,
@@ -2694,7 +2822,8 @@ Object.assign(__ds_scope, { CopyField });
 // components/display/StatusPill.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** 상태 pill. tone은 ok/warn/crit/info/off/accent. 색 단독 금지: children 텍스트 필수. pulse는 실시간일 때만. */
+/** 상태 pill. tone은 ok/warn/crit/info/off/accent. 색 단독 금지: children 텍스트 필수. pulse는 실시간일 때만.
+ * @param {Parameters<typeof import("./StatusPill.d.ts").StatusPill>[0]} props */
 function StatusPill({
   tone = "off",
   size = "md",
@@ -2744,7 +2873,8 @@ function useCountUp(target, enabled) {
 
 /** 큰 수치 하나. value가 숫자면 mono(ko-KR 천 단위), 문자열이면 그대로, 결측이면 "수집 안 됨"(mono·단위 없음).
  *  기본은 즉시 갱신, animate={true}일 때만 진입 카운트업. delta는 증감, spark는 최근 추세. */
-/** detail: 수치 아래 보조 줄(모델 이름·마지막 heartbeat 등). pill: {tone,text} 상태 pill(라벨 옆). icon: 라벨 앞 Phosphor 아이콘. */
+/** detail: 수치 아래 보조 줄(모델 이름·마지막 heartbeat 등). pill: {tone,text} 상태 pill(라벨 옆). icon: 라벨 앞 Phosphor 아이콘.
+ * @param {Parameters<typeof import("./StatTile.d.ts").StatTile>[0]} props */
 function StatTile({
   label,
   value,
@@ -2813,7 +2943,8 @@ Object.assign(__ds_scope, { StatTile });
 // components/display/Tag.jsx
 try { (() => {
 const { cx, Icon } = __ds_scope;
-/** 태그. 분류·선택 표시. accent는 "선택됨" 같은 강조 하나에만. onRemove가 있으면 x 버튼. */
+/** 태그. 분류·선택 표시. accent는 "선택됨" 같은 강조 하나에만. onRemove가 있으면 x 버튼.
+ * @param {Parameters<typeof import("./Tag.d.ts").Tag>[0]} props */
 function Tag({
   accent = false,
   icon,
@@ -2850,7 +2981,8 @@ const ICON = {
   warn: "warning",
   crit: "warning-octagon"
 };
-/** 인라인 알림 배너. 페이지·섹션 단위 상태(수집 실패, 미구성). 토스트가 아니라 남아 있어야 하는 알림. warn·crit은 role="alert", 그 외는 role="status". */
+/** 인라인 알림 배너. 페이지·섹션 단위 상태(수집 실패, 미구성). 토스트가 아니라 남아 있어야 하는 알림. warn·crit은 role="alert", 그 외는 role="status".
+ * @param {Parameters<typeof import("./AlertBanner.d.ts").AlertBanner>[0]} props */
 function AlertBanner({
   tone = "info",
   title,
@@ -2884,7 +3016,8 @@ Object.assign(__ds_scope, { AlertBanner });
 // components/feedback/EmptyState.jsx
 try { (() => {
 const { cx, MascotMark } = __ds_scope;
-/** 빈 상태. 봉구 표정으로 톤을 전한다(기본 curious, 오류는 worried). actions에 다음 행동 버튼. */
+/** 빈 상태. 봉구 표정으로 톤을 전한다(기본 curious, 오류는 worried). actions에 다음 행동 버튼.
+ * @param {Parameters<typeof import("./EmptyState.d.ts").EmptyState>[0]} props */
 function EmptyState({
   title,
   description,
@@ -2916,7 +3049,8 @@ Object.assign(__ds_scope, { EmptyState });
 // components/feedback/ErrorState.jsx
 try { (() => {
 const { cx, MascotMark, Button } = __ds_scope;
-/** 영역 실패 상태(ErrorBoundary fallback·요청 실패). 마스코트 crying + 제목 + 원인 + 다시 시도. 빈 결과는 EmptyState. */
+/** 영역 실패 상태(ErrorBoundary fallback·요청 실패). 마스코트 crying + 제목 + 원인 + 다시 시도. 빈 결과는 EmptyState.
+ * @param {Parameters<typeof import("./ErrorState.d.ts").ErrorState>[0]} props */
 function ErrorState({
   title = "불러오지 못했습니다",
   description,
@@ -2964,7 +3098,8 @@ const ICON = {
   info: "info",
   neutral: "info"
 };
-/** 필드 아래·카드 안 한 줄 메시지. 페이지 수준은 AlertBanner, 일시 알림은 Toast. */
+/** 필드 아래·카드 안 한 줄 메시지. 페이지 수준은 AlertBanner, 일시 알림은 Toast.
+ * @param {Parameters<typeof import("./InlineMessage.d.ts").InlineMessage>[0]} props */
 function InlineMessage({
   tone = "neutral",
   icon,
@@ -2988,7 +3123,8 @@ Object.assign(__ds_scope, { InlineMessage });
 try { (() => {
 const { useId } = React;
 const { cx, frameStyle } = __ds_scope;
-/** 선형 진행 바. value 0~1이면 결정형, null이면 비결정형(흐르는 띠). tone: accent(기본)·ok·warn·crit. */
+/** 선형 진행 바. value 0~1이면 결정형, null이면 비결정형(흐르는 띠). tone: accent(기본)·ok·warn·crit.
+ * @param {Parameters<typeof import("./ProgressBar.d.ts").ProgressBar>[0]} props */
 function ProgressBar({
   value,
   label,
@@ -3043,7 +3179,8 @@ Object.assign(__ds_scope, { ProgressBar });
 // components/feedback/Skeleton.jsx
 try { (() => {
 const { cx, frameStyle } = __ds_scope;
-/** 스켈레톤. variant: block | text | circle. fit="flex"면 폭을 채우고 height만, fixed면 width·height. */
+/** 스켈레톤. variant: block | text | circle. fit="flex"면 폭을 채우고 height만, fixed면 width·height.
+ * @param {Parameters<typeof import("./Skeleton.d.ts").Skeleton>[0]} props */
 function Skeleton({
   variant = "block",
   fit = "flex",
@@ -3085,7 +3222,8 @@ Object.assign(__ds_scope, { Skeleton });
 // components/feedback/Spinner.jsx
 try { (() => {
 const { cx, MascotMark } = __ds_scope;
-/** 스피너. size px. label이 있으면 옆에 텍스트(권장). mascot=true면 봉구 얼굴이 돈다(md 이상). */
+/** 스피너. size px. label이 있으면 옆에 텍스트(권장). mascot=true면 봉구 얼굴이 돈다(md 이상).
+ * @param {Parameters<typeof import("./Spinner.d.ts").Spinner>[0]} props */
 function Spinner({
   size = 18,
   label,
@@ -3126,7 +3264,8 @@ Object.assign(__ds_scope, { Spinner });
 // components/feedback/LoadingOverlay.jsx
 try { (() => {
 const { cx, Spinner } = __ds_scope;
-/** 영역 위 로딩 덮개. children이 있으면 그 영역을 감싸고 active일 때 덮는다. fixed는 전체 화면(라우트 전환·긴 저장). */
+/** 영역 위 로딩 덮개. children이 있으면 그 영역을 감싸고 active일 때 덮는다. fixed는 전체 화면(라우트 전환·긴 저장).
+ * @param {Parameters<typeof import("./LoadingOverlay.d.ts").LoadingOverlay>[0]} props */
 function LoadingOverlay({
   active = true,
   label = "불러오는 중",
@@ -3160,7 +3299,8 @@ const SR = {
   done: "완료",
   error: "오류"
 };
-/** 단계 표시(등록 9단계, 학습 stage). steps: {label, detail?, status?: done|current|error|todo}. current 인덱스를 주면 status를 자동 채운다. done·error는 스크린리더용 텍스트를 함께 읽는다. */
+/** 단계 표시(등록 9단계, 학습 stage). steps: {label, detail?, status?: done|current|error|todo}. current 인덱스를 주면 status를 자동 채운다. done·error는 스크린리더용 텍스트를 함께 읽는다.
+ * @param {Parameters<typeof import("./Stepper.d.ts").Stepper>[0]} props */
 function Stepper({
   steps = [],
   current,
@@ -3230,7 +3370,8 @@ const ICON = {
 const EXIT_MS = 180;
 const reducedMotion = () => typeof matchMedia === "function" && matchMedia("(prefers-reduced-motion:reduce)").matches;
 
-/** 토스트 프로바이더. 앱 루트에 한 번. useToast().toast({message, tone?, action?, duration?}) */
+/** 토스트 프로바이더. 앱 루트에 한 번. useToast().toast({message, tone?, action?, duration?})
+ * @param {Parameters<typeof import("./Toast.d.ts").ToastProvider>[0]} props */
 function ToastProvider({
   children,
   max = 3
@@ -3288,7 +3429,8 @@ function useToast() {
 /* 번들 네임스페이스에는 대문자 export만 노출되므로 정적 HTML에서는 ToastProvider.useToast()로 접근한다. */
 ToastProvider.useToast = useToast;
 
-/** 토스트 한 장. 보통 Provider가 그린다. leaving은 Provider가 퇴장 중에 세운다. */
+/** 토스트 한 장. 보통 Provider가 그린다. leaving은 Provider가 퇴장 중에 세운다.
+ * @param {Parameters<typeof import("./Toast.d.ts").Toast>[0]} props */
 function Toast({
   message,
   tone = "info",
@@ -3330,7 +3472,12 @@ try { (() => {
 const { forwardRef } = React;
 const { cx, Icon } = __ds_scope;
 /** 체크박스. children이 라벨. 라벨 없이 쓰면 aria-label 필수(표 선택 열). indeterminate는 ref로 세팅. */
-const Checkbox = /*#__PURE__*/forwardRef(function Checkbox({
+const Checkbox = /*#__PURE__*/forwardRef(
+/**
+ * @param {Parameters<typeof import("./Checkbox.d.ts").Checkbox>[0]} props
+ * @param {import("react").ForwardedRef<HTMLInputElement>} ref
+ */
+function Checkbox({
   children,
   radio = false,
   disabled,
@@ -3381,7 +3528,9 @@ const cellOf = (c, row, i) => {
 
 /** 데이터 표. 컨테이너 폭 기준으로 열을 숨기고(hideBelow), 숨긴 정보는 expandable로 펼쳐 본다.
  *  정렬은 표시만 하고 실제 정렬은 소비자가 rows에 반영한다.
- *  결측: render 없는 열의 null·undefined·NaN은 "수집 안 됨"으로 표시한다(빈 칸으로 감추지 않는다). */
+ *  결측: render 없는 열의 null·undefined·NaN은 "수집 안 됨"으로 표시한다(빈 칸으로 감추지 않는다).
+ * @param {Parameters<typeof import("./DataTable.d.ts").DataTable>[0]} props
+ */
 function DataTable({
   columns = [],
   rows = [],
@@ -3537,7 +3686,8 @@ Object.assign(__ds_scope, { DataTable });
 try { (() => {
 const { useRef, useState } = React;
 const { cx, frameStyle, Icon } = __ds_scope;
-/** 파일 드롭존. 클릭/드롭/키보드로 파일을 받아 onFiles(File[])를 호출한다. */
+/** 파일 드롭존. 클릭/드롭/키보드로 파일을 받아 onFiles(File[])를 호출한다.
+ * @param {Parameters<typeof import("./Dropzone.d.ts").Dropzone>[0]} props */
 function Dropzone({
   accept,
   multiple = false,
@@ -3611,7 +3761,8 @@ const { cx, Icon } = __ds_scope;
 const FieldCtx = /*#__PURE__*/createContext(null);
 const useFieldContext = () => useContext(FieldCtx);
 
-/** 라벨·설명·오류를 입력에 연결하는 래퍼. 자식 입력은 useFieldContext()로 id·aria를 받는다. */
+/** 라벨·설명·오류를 입력에 연결하는 래퍼. 자식 입력은 useFieldContext()로 id·aria를 받는다.
+ * @param {Parameters<typeof import("./Field.d.ts").Field>[0]} props */
 function Field({
   label,
   hint,
@@ -3662,7 +3813,8 @@ Object.assign(__ds_scope, { useFieldContext, Field });
 try { (() => {
 const { useMemo, useRef } = React;
 const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
-/** JSON/코드 입력. 줄번호 + mono + Tab 들여쓰기. language="json"이면 파싱해 오류 위치를 아래에 표시하고 onValidChange(obj|null)를 부른다. */
+/** JSON/코드 입력. 줄번호 + mono + Tab 들여쓰기. language="json"이면 파싱해 오류 위치를 아래에 표시하고 onValidChange(obj|null)를 부른다.
+ * @param {Parameters<typeof import("./CodeEditor.d.ts").CodeEditor>[0]} props */
 function CodeEditor({
   value,
   defaultValue = "",
@@ -3787,7 +3939,8 @@ try { (() => {
 const { useState } = React;
 const { cx, frameStyle, useFieldContext } = __ds_scope;
 const HEX = /^#?([0-9a-f]{6})$/i;
-/** 색 선택: 스와치(네이티브 picker) + hex 입력 + 프리셋 칩. 값은 #RRGGBB. 조명(ARGB) 색 지정용 · UI 토큰 색이 아니다. */
+/** 색 선택: 스와치(네이티브 picker) + hex 입력 + 프리셋 칩. 값은 #RRGGBB. 조명(ARGB) 색 지정용 · UI 토큰 색이 아니다.
+ * @param {Parameters<typeof import("./ColorInput.d.ts").ColorInput>[0]} props */
 function ColorInput({
   value,
   defaultValue = "#5CA8FF",
@@ -3879,7 +4032,8 @@ Object.assign(__ds_scope, { ColorInput });
 try { (() => {
 const { useEffect, useId, useRef, useState } = React;
 const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
-/** 검색 가능한 선택. options {value,label,detail?,disabled?}. 타이핑으로 거르고 ↑↓ Enter Esc. 선택지 6개 이상이면 Select 대신 이것. */
+/** 검색 가능한 선택. options {value,label,detail?,disabled?}. 타이핑으로 거르고 ↑↓ Enter Esc. 선택지 6개 이상이면 Select 대신 이것.
+ * @param {Parameters<typeof import("./Combobox.d.ts").Combobox>[0]} props */
 function Combobox({
   options = [],
   value,
@@ -4032,7 +4186,8 @@ const pad = n => String(n).padStart(2, "0");
 const iso = d => d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
 const DOW = ["일", "월", "화", "수", "목", "금", "토"];
 
-/** 단일 날짜 선택. value는 "YYYY-MM-DD". min/max 같은 형식. 기간은 DateRangePicker. */
+/** 단일 날짜 선택. value는 "YYYY-MM-DD". min/max 같은 형식. 기간은 DateRangePicker.
+ * @param {Parameters<typeof import("./DatePicker.d.ts").DatePicker>[0]} props */
 function DatePicker({
   value,
   onChange,
@@ -4207,7 +4362,8 @@ const PRESETS = [{
   label: "7일"
 }];
 const fmtLocal = d => d ? new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 16) : "";
-/** 기간 선택: 빠른 프리셋(최근 N) + 직접 시작/끝. value {preset?:string, from?:Date, to?:Date}. 차트 기간용. */
+/** 기간 선택: 빠른 프리셋(최근 N) + 직접 시작/끝. value {preset?:string, from?:Date, to?:Date}. 차트 기간용.
+ * @param {Parameters<typeof import("./DateRangePicker.d.ts").DateRangePicker>[0]} props */
 function DateRangePicker({
   value = {
     preset: "12h"
@@ -4316,7 +4472,8 @@ const STATUS = {
   done: ["완료", "ok"],
   failed: ["실패", "crit"]
 };
-/** 청크 업로드 목록. Dropzone + 파일별 ProgressBar + 일시정지/재개/재시도/취소. 진행 상태는 부모가 items로 내려준다(업로드 로직은 컴포넌트 밖). */
+/** 청크 업로드 목록. Dropzone + 파일별 ProgressBar + 일시정지/재개/재시도/취소. 진행 상태는 부모가 items로 내려준다(업로드 로직은 컴포넌트 밖).
+ * @param {Parameters<typeof import("./FileUpload.d.ts").FileUpload>[0]} props */
 function FileUpload({
   items = [],
   accept,
@@ -4411,7 +4568,8 @@ Object.assign(__ds_scope, { FileUpload });
 try { (() => {
 const { useEffect, useId, useRef, useState } = React;
 const { cx, frameStyle, Icon, Tag, useFieldContext } = __ds_scope;
-/** 여러 개 선택(태그 입력). options: {value,label}. value는 배열. 입력으로 필터, Backspace로 마지막 제거. */
+/** 여러 개 선택(태그 입력). options: {value,label}. value는 배열. 입력으로 필터, Backspace로 마지막 제거.
+ * @param {Parameters<typeof import("./MultiSelect.d.ts").MultiSelect>[0]} props */
 function MultiSelect({
   options = [],
   value = [],
@@ -4529,7 +4687,8 @@ Object.assign(__ds_scope, { MultiSelect });
 // components/input/NumberStepper.jsx
 try { (() => {
 const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
-/** 숫자 입력 + −/+ 버튼. 값은 mono. min/max에서 버튼 비활성. */
+/** 숫자 입력 + −/+ 버튼. 값은 mono. min/max에서 버튼 비활성.
+ * @param {Parameters<typeof import("./NumberStepper.d.ts").NumberStepper>[0]} props */
 function NumberStepper({
   value,
   defaultValue = 0,
@@ -4627,7 +4786,8 @@ Object.assign(__ds_scope, { NumberStepper });
 try { (() => {
 const { useRef } = React;
 const { cx, useFieldContext } = __ds_scope;
-/** 인증 코드(OTP) 입력. length 자리 숫자, 붙여넣기 지원, 다 채우면 onComplete. */
+/** 인증 코드(OTP) 입력. length 자리 숫자, 붙여넣기 지원, 다 채우면 onComplete.
+ * @param {Parameters<typeof import("./OTPInput.d.ts").OTPInput>[0]} props */
 function OTPInput({
   length = 6,
   value = "",
@@ -4705,7 +4865,8 @@ Object.assign(__ds_scope, { OTPInput });
 try { (() => {
 const { useId } = React;
 const { cx, Checkbox } = __ds_scope;
-/** 라디오 묶음. options: {value, label, hint?, disabled?}. layout: column(기본) · row · cards(설명 있는 선택지). */
+/** 라디오 묶음. options: {value, label, hint?, disabled?}. layout: column(기본) · row · cards(설명 있는 선택지).
+ * @param {Parameters<typeof import("./RadioGroup.d.ts").RadioGroup>[0]} props */
 function RadioGroup({
   name,
   value,
@@ -4753,7 +4914,8 @@ Object.assign(__ds_scope, { RadioGroup });
 try { (() => {
 const { useEffect, useRef } = React;
 const { cx, frameStyle, Icon } = __ds_scope;
-/** 검색 입력. `/` 단축키로 포커스, 값이 있으면 지우기 버튼. onSearch(value)는 Enter에 호출. */
+/** 검색 입력. `/` 단축키로 포커스, 값이 있으면 지우기 버튼. onSearch(value)는 Enter에 호출.
+ * @param {Parameters<typeof import("./SearchField.d.ts").SearchField>[0]} props */
 function SearchField({
   value,
   onChange,
@@ -4825,7 +4987,8 @@ Object.assign(__ds_scope, { SearchField });
 try { (() => {
 const { useEffect, useRef, useState } = React;
 const { cx, frameStyle } = __ds_scope;
-/** 2~5개 상호배타 선택. 선택 thumb가 미끄러진다. fit="flex"면 옵션이 폭을 균등 분할. */
+/** 2~5개 상호배타 선택. 선택 thumb가 미끄러진다. fit="flex"면 옵션이 폭을 균등 분할.
+ * @param {Parameters<typeof import("./SegmentedControl.d.ts").SegmentedControl>[0]} props */
 function SegmentedControl({
   options = [],
   value,
@@ -4891,7 +5054,8 @@ Object.assign(__ds_scope, { SegmentedControl });
 // components/input/Select.jsx
 try { (() => {
 const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
-/** 네이티브 select를 토큰으로 감싼 선택 입력. options: {value,label,disabled}[]. */
+/** 네이티브 select를 토큰으로 감싼 선택 입력. options: {value,label,disabled}[].
+ * @param {Parameters<typeof import("./Select.d.ts").Select>[0]} props */
 function Select({
   options = [],
   placeholder,
@@ -4937,7 +5101,8 @@ Object.assign(__ds_scope, { Select });
 // components/input/Slider.jsx
 try { (() => {
 const { cx, frameStyle, useFieldContext } = __ds_scope;
-/** 범위 슬라이더. 네이티브 range를 토큰으로. marks면 눈금 라벨, showValue면 오른쪽에 현재 값(mono). */
+/** 범위 슬라이더. 네이티브 range를 토큰으로. marks면 눈금 라벨, showValue면 오른쪽에 현재 값(mono).
+ * @param {Parameters<typeof import("./Slider.d.ts").Slider>[0]} props */
 function Slider({
   value,
   defaultValue,
@@ -5010,7 +5175,8 @@ Object.assign(__ds_scope, { Slider });
 // components/input/Switch.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** 켬/끔 스위치. 즉시 반영되는 설정에만 쓴다(저장 버튼이 따로 있으면 Checkbox). */
+/** 켬/끔 스위치. 즉시 반영되는 설정에만 쓴다(저장 버튼이 따로 있으면 Checkbox).
+ * @param {Parameters<typeof import("./Switch.d.ts").Switch>[0]} props */
 function Switch({
   children,
   disabled,
@@ -5035,7 +5201,8 @@ Object.assign(__ds_scope, { Switch });
 // components/input/TextArea.jsx
 try { (() => {
 const { cx, frameStyle, useFieldContext } = __ds_scope;
-/** 여러 줄 입력. rows로 초기 높이, 세로로만 리사이즈. */
+/** 여러 줄 입력. rows로 초기 높이, 세로로만 리사이즈.
+ * @param {Parameters<typeof import("./TextArea.d.ts").TextArea>[0]} props */
 function TextArea({
   rows = 3,
   fit = "flex",
@@ -5071,7 +5238,8 @@ Object.assign(__ds_scope, { TextArea });
 // components/input/TextField.jsx
 try { (() => {
 const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
-/** 한 줄 텍스트 입력. Field 안에서 라벨을 받는다. prefix/suffix에 단위·아이콘. */
+/** 한 줄 텍스트 입력. Field 안에서 라벨을 받는다. prefix/suffix에 단위·아이콘.
+ * @param {Parameters<typeof import("./TextField.d.ts").TextField>[0]} props */
 function TextField({
   size = "md",
   fit = "flex",
@@ -5131,7 +5299,8 @@ const passwordStrength = (s = "") => {
   return Math.min(4, Math.max(1, n));
 };
 
-/** 비밀번호 입력. 보기 토글 + (선택) 강도 미터. strength는 텍스트로도 병기한다. */
+/** 비밀번호 입력. 보기 토글 + (선택) 강도 미터. strength는 텍스트로도 병기한다.
+ * @param {Parameters<typeof import("./PasswordField.d.ts").PasswordField>[0]} props */
 function PasswordField({
   value,
   onChange,
@@ -5176,7 +5345,8 @@ Object.assign(__ds_scope, { passwordStrength, PasswordField });
 try { (() => {
 const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
 const pad = n => String(n).padStart(2, "0");
-/** 시:분 선택(24시간). value "HH:MM". step은 분 단위(기본 5). */
+/** 시:분 선택(24시간). value "HH:MM". step은 분 단위(기본 5).
+ * @param {Parameters<typeof import("./TimePicker.d.ts").TimePicker>[0]} props */
 function TimePicker({
   value = "",
   onChange,
@@ -5241,7 +5411,8 @@ Object.assign(__ds_scope, { TimePicker });
 // components/layout/AspectRatio.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** 비율 상자. 이미지·프리뷰(LCD 4:3)·iframe. ratio는 "16/9" 같은 문자열 또는 숫자. */
+/** 비율 상자. 이미지·프리뷰(LCD 4:3)·iframe. ratio는 "16/9" 같은 문자열 또는 숫자.
+ * @param {Parameters<typeof import("./AspectRatio.d.ts").AspectRatio>[0]} props */
 function AspectRatio({
   ratio = "16/9",
   className,
@@ -5264,7 +5435,8 @@ Object.assign(__ds_scope, { AspectRatio });
 // components/layout/CardHead.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** 카드 제목 줄: 제목(왼쪽) + 메타(오른쪽, 모델명·인터페이스 같은 고정 정보). */
+/** 카드 제목 줄: 제목(왼쪽) + 메타(오른쪽, 모델명·인터페이스 같은 고정 정보).
+ * @param {Parameters<typeof import("./CardHead.d.ts").CardHead>[0]} props */
 function CardHead({
   title,
   meta,
@@ -5288,7 +5460,8 @@ Object.assign(__ds_scope, { CardHead });
 // components/layout/Container.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** 최대 폭 중앙 정렬 컨테이너. 기본 --content-max 1440, narrow는 760(설정·폼 페이지). pad는 좌우 --page-pad. */
+/** 최대 폭 중앙 정렬 컨테이너. 기본 --content-max 1440, narrow는 760(설정·폼 페이지). pad는 좌우 --page-pad.
+ * @param {Parameters<typeof import("./Container.d.ts").Container>[0]} props */
 function Container({
   narrow = false,
   pad = false,
@@ -5307,7 +5480,8 @@ Object.assign(__ds_scope, { Container });
 // components/layout/Divider.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** 구분선. label을 주면 가운데 글자, vertical은 Inline 안에서 세로선. */
+/** 구분선. label을 주면 가운데 글자, vertical은 Inline 안에서 세로선.
+ * @param {Parameters<typeof import("./Divider.d.ts").Divider>[0]} props */
 function Divider({
   vertical = false,
   label,
@@ -5332,7 +5506,9 @@ Object.assign(__ds_scope, { Divider });
 try { (() => {
 const { cx } = __ds_scope;
 /** 반응형 카드 격자. cols는 '이상적' 열 수이고 minmax(auto-fit)로 폭에 따라 저절로 줄어든다. min으로 카드 최소 폭을 직접 줄 수도 있다.
- *  columns={12}를 주면 고정 열 격자가 되고 자식 GridItem의 span으로 2/3+1/3 같은 비대칭 배치를 만든다(컨테이너 폭 기준 접힘). */
+ *  columns={12}를 주면 고정 열 격자가 되고 자식 GridItem의 span으로 2/3+1/3 같은 비대칭 배치를 만든다(컨테이너 폭 기준 접힘).
+ * @param {Parameters<typeof import("./Grid.d.ts").Grid>[0]} props
+ */
 function Grid({
   cols = 3,
   min,
@@ -5360,7 +5536,8 @@ function Grid({
   }, children);
 }
 
-/** Grid columns 모드의 칸. span(≥900) · spanMd(<900) · spanSm(<640), 480 미만은 항상 전폭. */
+/** Grid columns 모드의 칸. span(≥900) · spanMd(<900) · spanSm(<640), 480 미만은 항상 전폭.
+ * @param {Parameters<typeof import("./Grid.d.ts").GridItem>[0]} props */
 function GridItem({
   span = 12,
   spanMd,
@@ -5384,10 +5561,41 @@ function GridItem({
 Object.assign(__ds_scope, { Grid, GridItem });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/layout/Grid.jsx", error: String((e && e.message) || e) }); }
 
+// components/layout/Inline.jsx
+try { (() => {
+const { cx, spaceToken } = __ds_scope;
+/** 가로 나열(버튼·칩·메타). 기본 wrap. gap을 주지 않으면 밀도별 --inline-gap을 쓴다.
+ * @param {Parameters<typeof import("./Inline.d.ts").Inline>[0]} props */
+function Inline({
+  gap,
+  align = "center",
+  justify,
+  wrap = true,
+  as: Tag = "div",
+  className,
+  style,
+  children,
+  ...rest
+}) {
+  return /*#__PURE__*/React.createElement(Tag, {
+    className: cx("bds-inline", !wrap && "bds-inline--nowrap", className),
+    style: {
+      gap: spaceToken(gap),
+      alignItems: align,
+      justifyContent: justify,
+      ...style
+    },
+    ...rest
+  }, children);
+}
+Object.assign(__ds_scope, { Inline });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/layout/Inline.jsx", error: String((e && e.message) || e) }); }
+
 // components/layout/PageHeader.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** 페이지 제목 + 한 문장 설명 + 오른쪽 액션. 좁으면 액션이 아래로 감싼다. */
+/** 페이지 제목 + 한 문장 설명 + 오른쪽 액션. 좁으면 액션이 아래로 감싼다.
+ * @param {Parameters<typeof import("./PageHeader.d.ts").PageHeader>[0]} props */
 function PageHeader({
   title,
   description,
@@ -5410,7 +5618,8 @@ Object.assign(__ds_scope, { PageHeader });
 // components/layout/PageStack.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** 페이지 본문 섹션 묶음. 섹션 간격은 --grid-gap(뷰포트에 따라 흐른다). 셸 본문의 직계 자식은 항상 이것. */
+/** 페이지 본문 섹션 묶음. 섹션 간격은 --grid-gap(뷰포트에 따라 흐른다). 셸 본문의 직계 자식은 항상 이것.
+ * @param {Parameters<typeof import("./PageStack.d.ts").PageStack>[0]} props */
 function PageStack({
   gap = "md",
   className,
@@ -5428,7 +5637,8 @@ Object.assign(__ds_scope, { PageStack });
 // components/layout/Panel.jsx
 try { (() => {
 const { cx, frameStyle } = __ds_scope;
-/** 카드/패널. 층 구분은 보더, 그림자는 최소. caption은 상단 소문자 캡션. interactive면 호버 상승, selected면 악센트 링. */
+/** 카드/패널. 층 구분은 보더, 그림자는 최소. caption은 상단 소문자 캡션. interactive면 호버 상승, selected면 악센트 링.
+ * @param {Parameters<typeof import("./Panel.d.ts").Panel>[0]} props */
 function Panel({
   caption,
   padding = "md",
@@ -5461,82 +5671,11 @@ function Panel({
 Object.assign(__ds_scope, { Panel });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/layout/Panel.jsx", error: String((e && e.message) || e) }); }
 
-// components/layout/Stack.jsx
-try { (() => {
-const { cx } = __ds_scope;
-const GAP = {
-  0: 0,
-  1: "var(--sp-1)",
-  2: "var(--sp-2)",
-  3: "var(--sp-3)",
-  4: "var(--sp-4)",
-  5: "var(--sp-5)",
-  6: "var(--sp-6)",
-  7: "var(--sp-7)",
-  8: "var(--sp-8)",
-  9: "var(--sp-9)",
-  10: "var(--sp-10)"
-};
-const spaceToken = g => typeof g === "number" && GAP[g] !== undefined ? GAP[g] : g;
-
-/** 세로 스택. gap은 --sp 단계 번호(1~10) 또는 CSS 길이. align/justify는 flex 값. as로 태그 변경. */
-function Stack({
-  gap = 4,
-  align,
-  justify,
-  as: Tag = "div",
-  className,
-  style,
-  children,
-  ...rest
-}) {
-  return /*#__PURE__*/React.createElement(Tag, {
-    className: cx("bds-vstack", className),
-    style: {
-      gap: spaceToken(gap),
-      alignItems: align,
-      justifyContent: justify,
-      ...style
-    },
-    ...rest
-  }, children);
-}
-Object.assign(__ds_scope, { spaceToken, Stack });
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/layout/Stack.jsx", error: String((e && e.message) || e) }); }
-
-// components/layout/Inline.jsx
-try { (() => {
-const { cx, spaceToken } = __ds_scope;
-/** 가로 나열(버튼·칩·메타). 기본 wrap. gap을 주지 않으면 밀도별 --inline-gap을 쓴다. */
-function Inline({
-  gap,
-  align = "center",
-  justify,
-  wrap = true,
-  as: Tag = "div",
-  className,
-  style,
-  children,
-  ...rest
-}) {
-  return /*#__PURE__*/React.createElement(Tag, {
-    className: cx("bds-inline", !wrap && "bds-inline--nowrap", className),
-    style: {
-      gap: spaceToken(gap),
-      alignItems: align,
-      justifyContent: justify,
-      ...style
-    },
-    ...rest
-  }, children);
-}
-Object.assign(__ds_scope, { Inline });
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/layout/Inline.jsx", error: String((e && e.message) || e) }); }
-
 // components/layout/Spacer.jsx
 try { (() => {
 const { cx, spaceToken } = __ds_scope;
-/** flex 빈 공간. size를 주면 고정 간격(세로 스택 안). */
+/** flex 빈 공간. size를 주면 고정 간격(세로 스택 안).
+ * @param {Parameters<typeof import("./Spacer.d.ts").Spacer>[0]} props */
 function Spacer({
   size,
   className,
@@ -5558,10 +5697,40 @@ function Spacer({
 Object.assign(__ds_scope, { Spacer });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/layout/Spacer.jsx", error: String((e && e.message) || e) }); }
 
+// components/layout/Stack.jsx
+try { (() => {
+const { cx, spaceToken } = __ds_scope;
+/** 세로 스택. gap은 --sp 단계 번호(1~10) 또는 CSS 길이. align/justify는 flex 값. as로 태그 변경.
+ * @param {Parameters<typeof import("./Stack.d.ts").Stack>[0]} props */
+function Stack({
+  gap = 4,
+  align,
+  justify,
+  as: Tag = "div",
+  className,
+  style,
+  children,
+  ...rest
+}) {
+  return /*#__PURE__*/React.createElement(Tag, {
+    className: cx("bds-vstack", className),
+    style: {
+      gap: spaceToken(gap),
+      alignItems: align,
+      justifyContent: justify,
+      ...style
+    },
+    ...rest
+  }, children);
+}
+Object.assign(__ds_scope, { Stack });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/layout/Stack.jsx", error: String((e && e.message) || e) }); }
+
 // components/layout/StatusBar.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** 셸 하단 상태바. */
+/** 셸 하단 상태바.
+ * @param {Parameters<typeof import("./StatusBar.d.ts").StatusBar>[0]} props */
 function StatusBar({
   live,
   items = [],
@@ -5592,7 +5761,8 @@ Object.assign(__ds_scope, { StatusBar });
 // components/layout/Toolbar.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** 표 위 도구 줄: 검색(늘어남) + 필터 + 오른쪽 끝 액션. 좁으면 줄바꿈. role="toolbar"는 화살표 이동을 약속하므로 붙이지 않는다(Tab으로 컨트롤 사이를 이동). */
+/** 표 위 도구 줄: 검색(늘어남) + 필터 + 오른쪽 끝 액션. 좁으면 줄바꿈. role="toolbar"는 화살표 이동을 약속하므로 붙이지 않는다(Tab으로 컨트롤 사이를 이동).
+ * @param {Parameters<typeof import("./Toolbar.d.ts").Toolbar>[0]} props */
 function Toolbar({
   children,
   end,
@@ -5606,7 +5776,8 @@ function Toolbar({
     className: "bds-toolbar__end"
   }, end));
 }
-/** Toolbar 안에서 늘어나는 슬롯(검색 필드 등). */
+/** Toolbar 안에서 늘어나는 슬롯(검색 필드 등).
+ * @param {Parameters<typeof import("./Toolbar.d.ts").ToolbarGrow>[0]} props */
 function ToolbarGrow({
   children
 }) {
@@ -5620,7 +5791,8 @@ Object.assign(__ds_scope, { Toolbar, ToolbarGrow });
 // components/layout/Visible.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** 뷰포트 단계별 표시. above="md"는 768 이상에서만, below="md"는 768 미만에서만. 레이아웃 박스를 만들지 않는다(display:contents). */
+/** 뷰포트 단계별 표시. above="md"는 768 이상에서만, below="md"는 768 미만에서만. 레이아웃 박스를 만들지 않는다(display:contents).
+ * @param {Parameters<typeof import("./Visible.d.ts").Visible>[0]} props */
 function Visible({
   above,
   below,
@@ -5638,7 +5810,8 @@ Object.assign(__ds_scope, { Visible });
 try { (() => {
 const { useState } = React;
 const { cx, Icon } = __ds_scope;
-/** 경로 표시. items: {label, href?}. 마지막은 현재 페이지. maxItems 초과 시 중간을 "…"로 접는다. */
+/** 경로 표시. items: {label, href?}. 마지막은 현재 페이지. maxItems 초과 시 중간을 "…"로 접는다.
+ * @param {Parameters<typeof import("./Breadcrumb.d.ts").Breadcrumb>[0]} props */
 function Breadcrumb({
   items = [],
   maxItems = 4,
@@ -5692,7 +5865,8 @@ Object.assign(__ds_scope, { Breadcrumb });
 try { (() => {
 const { useEffect, useMemo, useRef, useState } = React;
 const { cx, Icon } = __ds_scope;
-/** ⌘K 명령 팔레트. items: {id, label, icon?, group?, hint?, keywords?, onSelect}. open/onClose 제어형. inline이면 딤 없이 패널만(문서용). */
+/** ⌘K 명령 팔레트. items: {id, label, icon?, group?, hint?, keywords?, onSelect}. open/onClose 제어형. inline이면 딤 없이 패널만(문서용).
+ * @param {Parameters<typeof import("./CommandPalette.d.ts").CommandPalette>[0]} props */
 function CommandPalette({
   open = false,
   onClose,
@@ -5811,7 +5985,8 @@ Object.assign(__ds_scope, { CommandPalette });
 // components/navigation/Link.jsx
 try { (() => {
 const { cx, Icon } = __ds_scope;
-/** 텍스트 링크. 외부 링크는 external로 아이콘·rel 자동. quiet는 본문색. */
+/** 텍스트 링크. 외부 링크는 external로 아이콘·rel 자동. quiet는 본문색.
+ * @param {Parameters<typeof import("./Link.d.ts").Link>[0]} props */
 function Link({
   href,
   external = false,
@@ -5838,7 +6013,8 @@ Object.assign(__ds_scope, { Link });
 // components/navigation/Pagination.jsx
 try { (() => {
 const { cx, IconButton } = __ds_scope;
-/** 페이지 번호. page는 1부터. total은 총 페이지 수. info에 "1–20 / 184" 같은 범위를 준다. */
+/** 페이지 번호. page는 1부터. total은 총 페이지 수. info에 "1–20 / 184" 같은 범위를 준다.
+ * @param {Parameters<typeof import("./Pagination.d.ts").Pagination>[0]} props */
 function Pagination({
   page = 1,
   total = 1,
@@ -5900,7 +6076,9 @@ const { cx, Icon, IconButton, MascotMark } = __ds_scope;
 const CloseCtx = /*#__PURE__*/createContext(null);
 
 /** 대시보드 셸: 240px 사이드바 + 52px 상단바 + 본문 + 28px 상태바. 부모가 높이를 정한다(페이지는 100dvh).
- *  1024 미만: 사이드바가 오버레이 드로어(햄버거). 768 미만: 상태바 숨김. 본문은 컨테이너 쿼리 대상(container-name: body). */
+ *  1024 미만: 사이드바가 오버레이 드로어(햄버거). 768 미만: 상태바 숨김. 본문은 컨테이너 쿼리 대상(container-name: body).
+ * @param {Parameters<typeof import("./SidebarShell.d.ts").SidebarShell>[0]} props
+ */
 function SidebarShell({
   brand,
   nav,
@@ -5984,7 +6162,8 @@ function SidebarShell({
   }, statusbar)));
 }
 
-/** 사이드바 항목. href가 있으면 a, 없으면 button. 드로어 안에서 고르면 드로어가 닫힌다. */
+/** 사이드바 항목. href가 있으면 a, 없으면 button. 드로어 안에서 고르면 드로어가 닫힌다.
+ * @param {Parameters<typeof import("./SidebarShell.d.ts").SidebarNavItem>[0]} props */
 function SidebarNavItem({
   icon,
   label,
@@ -6032,7 +6211,8 @@ function SidebarNavItem({
   }, inner);
 }
 
-/** 사이드바 섹션 라벨. */
+/** 사이드바 섹션 라벨.
+ * @param {Parameters<typeof import("./SidebarShell.d.ts").SidebarNavGroup>[0]} props */
 function SidebarNavGroup({
   label
 }) {
@@ -6047,7 +6227,8 @@ Object.assign(__ds_scope, { SidebarShell, SidebarNavItem, SidebarNavGroup });
 try { (() => {
 const { useEffect, useId, useRef, useState } = React;
 const { cx, Icon } = __ds_scope;
-/** 탭. items: {value,label,count?,icon?}[]. 선택 탭만 Tab 순서에 들고 화살표·Home·End로 옮긴다. panelId(value)를 주면 aria-controls를 붙인다. 잉크바가 선택 탭 아래로 미끄러진다. 넘치면 가로 스크롤. */
+/** 탭. items: {value,label,count?,icon?}[]. 선택 탭만 Tab 순서에 들고 화살표·Home·End로 옮긴다. panelId(value)를 주면 aria-controls를 붙인다. 잉크바가 선택 탭 아래로 미끄러진다. 넘치면 가로 스크롤.
+ * @param {Parameters<typeof import("./Tabs.d.ts").Tabs>[0]} props */
 function Tabs({
   items = [],
   value,
@@ -6115,7 +6296,8 @@ Object.assign(__ds_scope, { Tabs });
 // components/navigation/TopNav.jsx
 try { (() => {
 const { cx, Icon, MascotMark } = __ds_scope;
-/** 사이드바 없는 제품의 상단 내비. brand + links(가로 스크롤) + end. 화면 5개 이하일 때 SidebarShell 대신. */
+/** 사이드바 없는 제품의 상단 내비. brand + links(가로 스크롤) + end. 화면 5개 이하일 때 SidebarShell 대신.
+ * @param {Parameters<typeof import("./TopNav.d.ts").TopNav>[0]} props */
 function TopNav({
   brand,
   links = [],
@@ -6155,7 +6337,8 @@ Object.assign(__ds_scope, { TopNav });
 try { (() => {
 const { useEffect, useId, useRef, useState } = React;
 const { cx, useAnchoredPopover, Icon, IconButton } = __ds_scope;
-/** "…" 메뉴. items: {label, icon?, onSelect, danger?, disabled?} | "-"(구분선). trigger를 안 주면 점 세 개 IconButton. */
+/** "…" 메뉴. items: {label, icon?, onSelect, danger?, disabled?} | "-"(구분선). trigger를 안 주면 점 세 개 IconButton.
+ * @param {Parameters<typeof import("./DropdownMenu.d.ts").DropdownMenu>[0]} props */
 function DropdownMenu({
   items = [],
   trigger,
@@ -6311,7 +6494,8 @@ Object.assign(__ds_scope, { DropdownMenu });
 try { (() => {
 const { cloneElement, useEffect, useId, useRef, useState } = React;
 const { cx } = __ds_scope;
-/** 클릭으로 여는 설명·미니 폼 패널. Tooltip과 달리 상호작용 요소를 넣을 수 있다. trigger 하나를 감싼다. */
+/** 클릭으로 여는 설명·미니 폼 패널. Tooltip과 달리 상호작용 요소를 넣을 수 있다. trigger 하나를 감싼다.
+ * @param {Parameters<typeof import("./Popover.d.ts").Popover>[0]} props */
 function Popover({
   trigger,
   title,
@@ -6377,7 +6561,8 @@ Object.assign(__ds_scope, { Popover });
 try { (() => {
 const { cloneElement, useEffect, useId, useRef, useState } = React;
 const { cx } = __ds_scope;
-/** 범용 툴팁. 자식 하나를 감싸 hover/focus에 content를 보인다. Esc·blur·mouseleave로 닫힌다. 잘린 텍스트·아이콘 버튼 설명용. 상호작용 요소는 넣지 않는다. */
+/** 범용 툴팁. 자식 하나를 감싸 hover/focus에 content를 보인다. Esc·blur·mouseleave로 닫힌다. 잘린 텍스트·아이콘 버튼 설명용. 상호작용 요소는 넣지 않는다.
+ * @param {Parameters<typeof import("./Tooltip.d.ts").Tooltip>[0]} props */
 function Tooltip({
   content,
   side = "top",
@@ -6476,7 +6661,8 @@ Object.assign(__ds_scope, { useModalDialog });
 try { (() => {
 const { useId, useRef } = React;
 const { useModalDialog, cx, IconButton } = __ds_scope;
-/** 오른쪽 사이드 패널. 네이티브 <dialog>.showModal()로 포커스를 가둔다. 목록을 보면서 상세를 볼 때(실행 상세·모델 상세). 확인이 필요한 결정은 Modal. size: sm 380 · md 480 · lg 640. 768 미만은 전체 폭. */
+/** 오른쪽 사이드 패널. 네이티브 <dialog>.showModal()로 포커스를 가둔다. 목록을 보면서 상세를 볼 때(실행 상세·모델 상세). 확인이 필요한 결정은 Modal. size: sm 380 · md 480 · lg 640. 768 미만은 전체 폭.
+ * @param {Parameters<typeof import("./Drawer.d.ts").Drawer>[0]} props */
 function Drawer({
   open,
   onClose,
@@ -6543,7 +6729,8 @@ const TONE_LABEL = {
   ok: "정상"
 };
 
-/** 상단바 종 버튼. 읽지 않은 수가 배지로. */
+/** 상단바 종 버튼. 읽지 않은 수가 배지로.
+ * @param {Parameters<typeof import("./NotificationDrawer.d.ts").NotificationTrigger>[0]} props */
 function NotificationTrigger({
   unreadCount = 0,
   open,
@@ -6563,7 +6750,8 @@ function NotificationTrigger({
   });
 }
 
-/** 오른쪽 알림 드로어(380px, 모바일 전폭). 항목을 누르면 onRead(id). */
+/** 오른쪽 알림 드로어(380px, 모바일 전폭). 항목을 누르면 onRead(id).
+ * @param {Parameters<typeof import("./NotificationDrawer.d.ts").NotificationDrawer>[0]} props */
 function NotificationDrawer({
   open,
   onClose,
@@ -6626,7 +6814,8 @@ Object.assign(__ds_scope, { NOTIFICATION_DRAWER_ID, NotificationTrigger, Notific
 try { (() => {
 const { useId, useRef } = React;
 const { useModalDialog, cx, IconButton } = __ds_scope;
-/** 모달. 네이티브 <dialog>.showModal()로 포커스를 가둔다. Esc·딤·닫기 → onClose. 640 미만에서는 바텀시트. size: sm 360 · md 440 · lg 560 · xl 760. */
+/** 모달. 네이티브 <dialog>.showModal()로 포커스를 가둔다. Esc·딤·닫기 → onClose. 640 미만에서는 바텀시트. size: sm 360 · md 440 · lg 560 · xl 760.
+ * @param {Parameters<typeof import("./Modal.d.ts").Modal>[0]} props */
 function Modal({
   open,
   onClose,
@@ -6685,7 +6874,8 @@ Object.assign(__ds_scope, { Modal });
 try { (() => {
 const { useState } = React;
 const { Modal, Button, TextField } = __ds_scope;
-/** 확인 모달. danger면 확인 버튼 crit 채움. typeToConfirm에 이름을 주면 그대로 입력해야 확인이 활성화된다. */
+/** 확인 모달. danger면 확인 버튼 crit 채움. typeToConfirm에 이름을 주면 그대로 입력해야 확인이 활성화된다.
+ * @param {Parameters<typeof import("./ConfirmDialog.d.ts").ConfirmDialog>[0]} props */
 function ConfirmDialog({
   open,
   onClose,
@@ -6766,7 +6956,8 @@ Object.assign(__ds_scope, { ConfirmDialog });
 try { (() => {
 const { useId } = React;
 const { Modal, Button } = __ds_scope;
-/** 폼 모달. Enter 제출, 제출 버튼 라벨은 동사. busy 중 취소도 막는다. */
+/** 폼 모달. Enter 제출, 제출 버튼 라벨은 동사. busy 중 취소도 막는다.
+ * @param {Parameters<typeof import("./FormModal.d.ts").FormModal>[0]} props */
 function FormModal({
   open,
   onClose,

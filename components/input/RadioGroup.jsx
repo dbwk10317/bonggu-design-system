@@ -2,7 +2,8 @@ import React, { useId } from "react";
 import { cx } from "../core/frame.js";
 import { Checkbox } from "./Checkbox.jsx";
 
-/** 라디오 묶음. options: {value, label, hint?, disabled?}. layout: column(기본) · row · cards(설명 있는 선택지). */
+/** 라디오 묶음. options: {value, label, hint?, disabled?}. layout: column(기본) · row · cards(설명 있는 선택지).
+ * @param {Parameters<typeof import("./RadioGroup.d.ts").RadioGroup>[0]} props */
 export function RadioGroup({ name, value, onChange, options = [], label, layout = "column", disabled, className, ...rest }) {
   const uid = useId().replace(/:/g, ""), nm = name ?? "rg-" + uid;
   return (

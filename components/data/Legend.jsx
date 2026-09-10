@@ -6,7 +6,9 @@ import { toneVar } from "./chart-math.js";
 const swatchColor = (it, i) => it.color ?? (typeof it.tone === "string" && !/^(rx|tx|used|reserved|free|ok|warn|crit)$/.test(it.tone) ? (/^(info|signal)$/.test(it.tone) ? `var(--${it.tone})` : it.tone) : toneVar(it.tone, i));
 
 /** 독립 범례. items: {label, color?(CSS 색), tone?(series 번호·의미 키), value?, dash?(선 패턴), shape?, hidden?}.
- *  shape="line"이면 선 스와치(dash 패턴 반영), square/dot은 네모·점. onToggle을 주면 클릭으로 시리즈 숨김. compact는 Chart 내장 범례용 작은 글자. */
+ *  shape="line"이면 선 스와치(dash 패턴 반영), square/dot은 네모·점. onToggle을 주면 클릭으로 시리즈 숨김. compact는 Chart 내장 범례용 작은 글자.
+ * @param {Parameters<typeof import("./Legend.d.ts").Legend>[0]} props
+ */
 export function Legend({ items = [], shape = "square", vertical = false, compact = false, onToggle, className, ...rest }) {
   const Tag = onToggle ? "button" : "span";
   return (

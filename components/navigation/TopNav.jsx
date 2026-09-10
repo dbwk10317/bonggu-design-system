@@ -3,7 +3,8 @@ import { cx } from "../core/frame.js";
 import { Icon } from "../action/Icon.jsx";
 import { MascotMark } from "../brand/MascotMark.jsx";
 
-/** 사이드바 없는 제품의 상단 내비. brand + links(가로 스크롤) + end. 화면 5개 이하일 때 SidebarShell 대신. */
+/** 사이드바 없는 제품의 상단 내비. brand + links(가로 스크롤) + end. 화면 5개 이하일 때 SidebarShell 대신.
+ * @param {Parameters<typeof import("./TopNav.d.ts").TopNav>[0]} props */
 export function TopNav({ brand, links = [], end, sticky = true, className, ...rest }) {
   return (
     <header className={cx("bds-topnav", sticky && "bds-topnav--sticky", className)} {...rest}>

@@ -2,7 +2,8 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { cx } from "../core/frame.js";
 import { Icon } from "../action/Icon.jsx";
 
-/** ⌘K 명령 팔레트. items: {id, label, icon?, group?, hint?, keywords?, onSelect}. open/onClose 제어형. inline이면 딤 없이 패널만(문서용). */
+/** ⌘K 명령 팔레트. items: {id, label, icon?, group?, hint?, keywords?, onSelect}. open/onClose 제어형. inline이면 딤 없이 패널만(문서용).
+ * @param {Parameters<typeof import("./CommandPalette.d.ts").CommandPalette>[0]} props */
 export function CommandPalette({ open = false, onClose, items = [], placeholder = "명령 또는 화면 검색", inline = false, className }) {
   const [q, setQ] = useState(""), [idx, setIdx] = useState(0), input = useRef(null), opener = useRef(null);
   const list = useMemo(() => { const s = q.trim().toLowerCase(); return !s ? items : items.filter((it) => (it.label + " " + (it.keywords ?? "") + " " + (it.group ?? "")).toLowerCase().includes(s)); }, [q, items]);

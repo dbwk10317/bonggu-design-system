@@ -2,7 +2,8 @@ import React from "react";
 import { cx, frameStyle } from "../core/frame.js";
 import { useFieldContext } from "./Field.jsx";
 
-/** 범위 슬라이더. 네이티브 range를 토큰으로. marks면 눈금 라벨, showValue면 오른쪽에 현재 값(mono). */
+/** 범위 슬라이더. 네이티브 range를 토큰으로. marks면 눈금 라벨, showValue면 오른쪽에 현재 값(mono).
+ * @param {Parameters<typeof import("./Slider.d.ts").Slider>[0]} props */
 export function Slider({ value, defaultValue, min = 0, max = 100, step = 1, marks, showValue = true, valueFormatter = (v) => String(v), unit, size = "md", fit = "flex", width, disabled, onChange, className, style, ...rest }) {
   const f = useFieldContext();
   const [inner, setInner] = React.useState(defaultValue ?? min);

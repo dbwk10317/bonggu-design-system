@@ -2,7 +2,8 @@ import React, { useId } from "react";
 import { Modal } from "./Modal.jsx";
 import { Button } from "../action/Button.jsx";
 
-/** 폼 모달. Enter 제출, 제출 버튼 라벨은 동사. busy 중 취소도 막는다. */
+/** 폼 모달. Enter 제출, 제출 버튼 라벨은 동사. busy 중 취소도 막는다.
+ * @param {Parameters<typeof import("./FormModal.d.ts").FormModal>[0]} props */
 export function FormModal({ open, onClose, onSubmit, title, description, submitLabel = "저장", cancelLabel = "취소", busy = false, danger = false, size = "md", error, children }) {
   const formId = useId();
   return (

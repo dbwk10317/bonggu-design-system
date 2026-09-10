@@ -3,7 +3,8 @@ import { useModalDialog } from "./useModalDialog.js";
 import { cx } from "../core/frame.js";
 import { IconButton } from "../action/IconButton.jsx";
 
-/** 모달. 네이티브 <dialog>.showModal()로 포커스를 가둔다. Esc·딤·닫기 → onClose. 640 미만에서는 바텀시트. size: sm 360 · md 440 · lg 560 · xl 760. */
+/** 모달. 네이티브 <dialog>.showModal()로 포커스를 가둔다. Esc·딤·닫기 → onClose. 640 미만에서는 바텀시트. size: sm 360 · md 440 · lg 560 · xl 760.
+ * @param {Parameters<typeof import("./Modal.d.ts").Modal>[0]} props */
 export function Modal({ open, onClose, title, description, actions, size = "md", closeButton = true, className, children, ...rest }) {
   const panel = useRef(null), tid = useId();
   useModalDialog(panel, open);

@@ -2,7 +2,8 @@ import React, { useRef, useState } from "react";
 import { cx, frameStyle } from "../core/frame.js";
 import { Icon } from "../action/Icon.jsx";
 
-/** 파일 드롭존. 클릭/드롭/키보드로 파일을 받아 onFiles(File[])를 호출한다. */
+/** 파일 드롭존. 클릭/드롭/키보드로 파일을 받아 onFiles(File[])를 호출한다.
+ * @param {Parameters<typeof import("./Dropzone.d.ts").Dropzone>[0]} props */
 export function Dropzone({ accept, multiple = false, onFiles, title = "파일을 끌어다 놓거나 클릭해서 선택", hint, icon = "upload-simple", fit = "flex", width, height, disabled, className, style, ...rest }) {
   const input = useRef(null);
   const [over, setOver] = useState(false);

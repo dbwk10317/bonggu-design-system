@@ -4,7 +4,8 @@ import { useAnchoredPopover } from "../core/useAnchoredPopover.js";
 import { Icon } from "../action/Icon.jsx";
 import { IconButton } from "../action/IconButton.jsx";
 
-/** "…" 메뉴. items: {label, icon?, onSelect, danger?, disabled?} | "-"(구분선). trigger를 안 주면 점 세 개 IconButton. */
+/** "…" 메뉴. items: {label, icon?, onSelect, danger?, disabled?} | "-"(구분선). trigger를 안 주면 점 세 개 IconButton.
+ * @param {Parameters<typeof import("./DropdownMenu.d.ts").DropdownMenu>[0]} props */
 export function DropdownMenu({ items = [], trigger, align = "end", size = "sm", "aria-label": ariaLabel = "더 보기", className }) {
   const [open, setOpen] = useState(false);
   const [idx, setIdx] = useState(-1);

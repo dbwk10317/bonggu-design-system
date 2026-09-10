@@ -2,7 +2,8 @@ import React, { useEffect, useId, useRef, useState } from "react";
 import { cx } from "../core/frame.js";
 import { Icon } from "../action/Icon.jsx";
 
-/** 탭. items: {value,label,count?,icon?}[]. 선택 탭만 Tab 순서에 들고 화살표·Home·End로 옮긴다. panelId(value)를 주면 aria-controls를 붙인다. 잉크바가 선택 탭 아래로 미끄러진다. 넘치면 가로 스크롤. */
+/** 탭. items: {value,label,count?,icon?}[]. 선택 탭만 Tab 순서에 들고 화살표·Home·End로 옮긴다. panelId(value)를 주면 aria-controls를 붙인다. 잉크바가 선택 탭 아래로 미끄러진다. 넘치면 가로 스크롤.
+ * @param {Parameters<typeof import("./Tabs.d.ts").Tabs>[0]} props */
 export function Tabs({ items = [], value, onChange, panelId, className, "aria-label": ariaLabel, ...rest }) {
   const root = useRef(null), uid = useId().replace(/:/g, "");
   const [ink, setInk] = useState(null);

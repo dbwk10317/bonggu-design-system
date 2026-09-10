@@ -8,7 +8,8 @@ const ICON = { info: "info", ok: "check-circle", warn: "warning", crit: "warning
 const EXIT_MS = 180;
 const reducedMotion = () => typeof matchMedia === "function" && matchMedia("(prefers-reduced-motion:reduce)").matches;
 
-/** 토스트 프로바이더. 앱 루트에 한 번. useToast().toast({message, tone?, action?, duration?}) */
+/** 토스트 프로바이더. 앱 루트에 한 번. useToast().toast({message, tone?, action?, duration?})
+ * @param {Parameters<typeof import("./Toast.d.ts").ToastProvider>[0]} props */
 export function ToastProvider({ children, max = 3 }) {
   const [items, setItems] = useState([]);
   const seq = useRef(0);
@@ -44,7 +45,8 @@ export function useToast() { const c = useContext(ToastCtx); if (!c) throw new E
 /* 번들 네임스페이스에는 대문자 export만 노출되므로 정적 HTML에서는 ToastProvider.useToast()로 접근한다. */
 ToastProvider.useToast = useToast;
 
-/** 토스트 한 장. 보통 Provider가 그린다. leaving은 Provider가 퇴장 중에 세운다. */
+/** 토스트 한 장. 보통 Provider가 그린다. leaving은 Provider가 퇴장 중에 세운다.
+ * @param {Parameters<typeof import("./Toast.d.ts").Toast>[0]} props */
 export function Toast({ message, tone = "info", action, onAction, onDismiss, leaving, className }) {
   return (
     <div role={tone === "crit" ? "alert" : "status"} className={cx("bds-toast", `bds-tone--${tone}`, leaving && "bds-toast--leaving", className)}>

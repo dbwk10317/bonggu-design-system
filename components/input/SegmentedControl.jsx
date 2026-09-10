@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { cx, frameStyle } from "../core/frame.js";
 
-/** 2~5개 상호배타 선택. 선택 thumb가 미끄러진다. fit="flex"면 옵션이 폭을 균등 분할. */
+/** 2~5개 상호배타 선택. 선택 thumb가 미끄러진다. fit="flex"면 옵션이 폭을 균등 분할.
+ * @param {Parameters<typeof import("./SegmentedControl.d.ts").SegmentedControl>[0]} props */
 export function SegmentedControl({ options = [], value, onChange, size = "md", fit = "auto", width, className, style, "aria-label": ariaLabel, ...rest }) {
   const root = useRef(null);
   const [thumb, setThumb] = useState(null);

@@ -3,7 +3,9 @@ import { cx, frameStyle } from "../core/frame.js";
 import { MISSING_CLASS, MISSING_TEXT, isMissing } from "../core/missing.js";
 
 /** 시간×요일 같은 2차원 강도 격자. 색은 --ramp-1~6 순차 램프만 쓴다(상태색 금지). 값 null은 빈 칸(수집 안 됨).
- *  격자는 tabIndex=0: 화살표로 셀 이동, Home/End 행 양끝, Esc 해제. 마우스 hover와 같은 아래 줄 텍스트가 뜬다. 숨김 표(bds-sr)가 aria-describedby로 연결된다. */
+ *  격자는 tabIndex=0: 화살표로 셀 이동, Home/End 행 양끝, Esc 해제. 마우스 hover와 같은 아래 줄 텍스트가 뜬다. 숨김 표(bds-sr)가 aria-describedby로 연결된다.
+ * @param {Parameters<typeof import("./Heatmap.d.ts").Heatmap>[0]} props
+ */
 export function Heatmap({ rows = [], cols = [], values = [], valueFormatter = (v) => String(v), rowLabel, colLabel, cell = 14, gap = 2, fit = "flex", width, "aria-label": ariaLabel, className, style }) {
   const [hover, setHover] = useState(null);
   const srId = useId();

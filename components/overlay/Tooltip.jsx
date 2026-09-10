@@ -1,7 +1,8 @@
 import React, { cloneElement, useEffect, useId, useRef, useState } from "react";
 import { cx } from "../core/frame.js";
 
-/** 범용 툴팁. 자식 하나를 감싸 hover/focus에 content를 보인다. Esc·blur·mouseleave로 닫힌다. 잘린 텍스트·아이콘 버튼 설명용. 상호작용 요소는 넣지 않는다. */
+/** 범용 툴팁. 자식 하나를 감싸 hover/focus에 content를 보인다. Esc·blur·mouseleave로 닫힌다. 잘린 텍스트·아이콘 버튼 설명용. 상호작용 요소는 넣지 않는다.
+ * @param {Parameters<typeof import("./Tooltip.d.ts").Tooltip>[0]} props */
 export function Tooltip({ content, side = "top", delay = 300, children, className }) {
   const [open, setOpen] = useState(false);
   const id = useId().replace(/:/g, "");

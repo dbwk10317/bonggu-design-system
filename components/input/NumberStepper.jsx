@@ -3,7 +3,8 @@ import { cx, frameStyle } from "../core/frame.js";
 import { Icon } from "../action/Icon.jsx";
 import { useFieldContext } from "./Field.jsx";
 
-/** 숫자 입력 + −/+ 버튼. 값은 mono. min/max에서 버튼 비활성. */
+/** 숫자 입력 + −/+ 버튼. 값은 mono. min/max에서 버튼 비활성.
+ * @param {Parameters<typeof import("./NumberStepper.d.ts").NumberStepper>[0]} props */
 export function NumberStepper({ value, defaultValue = 0, min = -Infinity, max = Infinity, step = 1, unit, size = "md", fit = "auto", width = 140, disabled, invalid, onChange, className, style, ...rest }) {
   const f = useFieldContext();
   const [inner, setInner] = React.useState(defaultValue);

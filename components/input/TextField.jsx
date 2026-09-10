@@ -3,7 +3,8 @@ import { cx, frameStyle } from "../core/frame.js";
 import { Icon } from "../action/Icon.jsx";
 import { useFieldContext } from "./Field.jsx";
 
-/** 한 줄 텍스트 입력. Field 안에서 라벨을 받는다. prefix/suffix에 단위·아이콘. */
+/** 한 줄 텍스트 입력. Field 안에서 라벨을 받는다. prefix/suffix에 단위·아이콘.
+ * @param {Parameters<typeof import("./TextField.d.ts").TextField>[0]} props */
 export function TextField({ size = "md", fit = "flex", width, prefix, suffix, icon, mono = false, invalid, disabled, className, style, ...rest }) {
   const f = useFieldContext();
   return (

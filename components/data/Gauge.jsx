@@ -3,7 +3,9 @@ import { cx, frameStyle } from "../core/frame.js";
 import { MISSING_TEXT, isMissing } from "../core/missing.js";
 
 /** 반원 게이지. value 0~1(또는 max 기준). 임계 70/90으로 톤 자동(ok·warn·crit). 결측이면 "수집 안 됨".
- *  결측 문구의 표기는 SVG text라 색이 fill이다. 공통 .bds-na 대신 tone off 규칙(.bds-gauge--off .bds-gauge__v)이 담당한다. */
+ *  결측 문구의 표기는 SVG text라 색이 fill이다. 공통 .bds-na 대신 tone off 규칙(.bds-gauge--off .bds-gauge__v)이 담당한다.
+ * @param {Parameters<typeof import("./Gauge.d.ts").Gauge>[0]} props
+ */
 export function Gauge({ value, max = 1, label, unit, valueFormatter, thresholds = { warn: 0.7, crit: 0.9 }, tone, ticks = false, fit = "flex", width, height, className, style, ...rest }) {
   const r = isMissing(value) ? null : Math.max(0, Math.min(1, value / max));
   const t = tone ?? (r == null ? "off" : r >= thresholds.crit ? "crit" : r >= thresholds.warn ? "warn" : "ok");

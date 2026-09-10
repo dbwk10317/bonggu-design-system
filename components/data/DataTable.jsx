@@ -20,7 +20,9 @@ const cellOf = (c, row, i) => {
 
 /** 데이터 표. 컨테이너 폭 기준으로 열을 숨기고(hideBelow), 숨긴 정보는 expandable로 펼쳐 본다.
  *  정렬은 표시만 하고 실제 정렬은 소비자가 rows에 반영한다.
- *  결측: render 없는 열의 null·undefined·NaN은 "수집 안 됨"으로 표시한다(빈 칸으로 감추지 않는다). */
+ *  결측: render 없는 열의 null·undefined·NaN은 "수집 안 됨"으로 표시한다(빈 칸으로 감추지 않는다).
+ * @param {Parameters<typeof import("./DataTable.d.ts").DataTable>[0]} props
+ */
 export function DataTable({ columns = [], rows = [], rowKey, rowLabel, sort, onSortChange, selectable = false, selectedKeys = [], onSelectionChange, bulkActions, expandable, defaultExpandedKeys = [], header, empty = "표시할 항목이 없습니다.", fit = "flex", width, height, className, style, "aria-label": ariaLabel, ...rest }) {
   const [expanded, setExpanded] = useState(() => new Set(defaultExpandedKeys));
   const autoId = useId(), hid = header?.id ?? autoId;

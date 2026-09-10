@@ -2,7 +2,8 @@ import React from "react";
 import { cx } from "../core/frame.js";
 import { MascotMark } from "../brand/MascotMark.jsx";
 
-/** 스피너. size px. label이 있으면 옆에 텍스트(권장). mascot=true면 봉구 얼굴이 돈다(md 이상). */
+/** 스피너. size px. label이 있으면 옆에 텍스트(권장). mascot=true면 봉구 얼굴이 돈다(md 이상).
+ * @param {Parameters<typeof import("./Spinner.d.ts").Spinner>[0]} props */
 export function Spinner({ size = 18, label, mascot = false, className, ...rest }) {
   const el = mascot ? <span className="bds-spinner bds-spinner--mascot" style={{ width: size, height: size }} aria-hidden="true"><MascotMark face="blank" size={size} animated={false} /></span>
     : <span className={cx("bds-spinner", className)} style={{ width: size, height: size }} aria-hidden="true" />;

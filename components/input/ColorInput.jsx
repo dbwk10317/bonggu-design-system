@@ -3,7 +3,8 @@ import { cx, frameStyle } from "../core/frame.js";
 import { useFieldContext } from "./Field.jsx";
 
 const HEX = /^#?([0-9a-f]{6})$/i;
-/** 색 선택: 스와치(네이티브 picker) + hex 입력 + 프리셋 칩. 값은 #RRGGBB. 조명(ARGB) 색 지정용 · UI 토큰 색이 아니다. */
+/** 색 선택: 스와치(네이티브 picker) + hex 입력 + 프리셋 칩. 값은 #RRGGBB. 조명(ARGB) 색 지정용 · UI 토큰 색이 아니다.
+ * @param {Parameters<typeof import("./ColorInput.d.ts").ColorInput>[0]} props */
 export function ColorInput({ value, defaultValue = "#5CA8FF", presets = [], size = "md", fit = "flex", width, disabled, invalid, onChange, className, style, "aria-label": ariaLabel }) {
   const f = useFieldContext();
   const [inner, setInner] = useState(defaultValue);

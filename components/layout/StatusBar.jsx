@@ -1,7 +1,8 @@
 import React from "react";
 import { cx } from "../core/frame.js";
 
-/** 셸 하단 상태바. */
+/** 셸 하단 상태바.
+ * @param {Parameters<typeof import("./StatusBar.d.ts").StatusBar>[0]} props */
 export function StatusBar({ live, items = [], right = [], className, ...rest }) {
   return (
     <div className={cx("bds-statusbar", className)} {...rest}>

@@ -19,7 +19,8 @@ function Face({face, tiny, animated}) {
   }
 }
 
-/** 봉구 심볼. 색은 마스코트 토큰, 크기는 7단계 또는 기존 px 값을 사용합니다. */
+/** 봉구 심볼. 색은 마스코트 토큰, 크기는 7단계 또는 기존 px 값을 사용합니다.
+ * @param {Parameters<typeof import("./MascotMark.d.ts").MascotMark>[0]} props */
 export function MascotMark({ face='neutral', size='md', animated=true, className, 'aria-label':ariaLabel, ...rest }) {
   const requested = typeof size === 'string' ? SIZES[size.toLowerCase()] : size;
   const dimension = Number.isFinite(requested) && requested > 0 ? requested : SIZES.md;

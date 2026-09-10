@@ -3,7 +3,8 @@ import { Modal } from "../overlay/Modal.jsx";
 import { Button } from "../action/Button.jsx";
 import { TextField } from "../input/TextField.jsx";
 
-/** 확인 모달. danger면 확인 버튼 crit 채움. typeToConfirm에 이름을 주면 그대로 입력해야 확인이 활성화된다. */
+/** 확인 모달. danger면 확인 버튼 crit 채움. typeToConfirm에 이름을 주면 그대로 입력해야 확인이 활성화된다.
+ * @param {Parameters<typeof import("./ConfirmDialog.d.ts").ConfirmDialog>[0]} props */
 export function ConfirmDialog({ open, onClose, onConfirm, title, message, confirmLabel = "확인", cancelLabel = "취소", danger = false, typeToConfirm, busy = false, size = "sm" }) {
   if (!open) return null;
   return <ConfirmSession key={typeToConfirm ?? ""} {...{ onClose, onConfirm, title, message, confirmLabel, cancelLabel, danger, typeToConfirm, busy, size }} />;

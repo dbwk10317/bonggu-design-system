@@ -5,7 +5,8 @@ import { useFieldContext } from "./Field.jsx";
 
 const PRESETS = [{ value: "1h", label: "1시간" }, { value: "6h", label: "6시간" }, { value: "12h", label: "12시간" }, { value: "24h", label: "24시간" }, { value: "7d", label: "7일" }];
 const fmtLocal = (d) => d ? new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 16) : "";
-/** 기간 선택: 빠른 프리셋(최근 N) + 직접 시작/끝. value {preset?:string, from?:Date, to?:Date}. 차트 기간용. */
+/** 기간 선택: 빠른 프리셋(최근 N) + 직접 시작/끝. value {preset?:string, from?:Date, to?:Date}. 차트 기간용.
+ * @param {Parameters<typeof import("./DateRangePicker.d.ts").DateRangePicker>[0]} props */
 export function DateRangePicker({ value = { preset: "12h" }, onChange, presets = PRESETS, allowCustom = true, size = "md", fit = "auto", width, disabled, className, style, "aria-label": ariaLabel = "기간" }) {
   const f = useFieldContext();
   const custom = !value.preset;

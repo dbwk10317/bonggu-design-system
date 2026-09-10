@@ -8,7 +8,8 @@ const pad = (n) => String(n).padStart(2, "0");
 const iso = (d) => d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
 const DOW = ["일", "월", "화", "수", "목", "금", "토"];
 
-/** 단일 날짜 선택. value는 "YYYY-MM-DD". min/max 같은 형식. 기간은 DateRangePicker. */
+/** 단일 날짜 선택. value는 "YYYY-MM-DD". min/max 같은 형식. 기간은 DateRangePicker.
+ * @param {Parameters<typeof import("./DatePicker.d.ts").DatePicker>[0]} props */
 export function DatePicker({ value, onChange, min, max, placeholder = "날짜 선택", size = "md", fit = "flex", width, disabled, className, style }) {
   const f = useFieldContext();
   const [open, setOpen] = useState(false);

@@ -7,7 +7,9 @@ import { MascotMark } from "../brand/MascotMark.jsx";
 const CloseCtx = createContext(null);
 
 /** 대시보드 셸: 240px 사이드바 + 52px 상단바 + 본문 + 28px 상태바. 부모가 높이를 정한다(페이지는 100dvh).
- *  1024 미만: 사이드바가 오버레이 드로어(햄버거). 768 미만: 상태바 숨김. 본문은 컨테이너 쿼리 대상(container-name: body). */
+ *  1024 미만: 사이드바가 오버레이 드로어(햄버거). 768 미만: 상태바 숨김. 본문은 컨테이너 쿼리 대상(container-name: body).
+ * @param {Parameters<typeof import("./SidebarShell.d.ts").SidebarShell>[0]} props
+ */
 export function SidebarShell({ brand, nav, navLabel = "주 메뉴", footer, topbar, statusbar, className, children, ...rest }) {
   const [open, setOpen] = useState(false);
   const id = useId();
@@ -44,7 +46,8 @@ export function SidebarShell({ brand, nav, navLabel = "주 메뉴", footer, topb
   );
 }
 
-/** 사이드바 항목. href가 있으면 a, 없으면 button. 드로어 안에서 고르면 드로어가 닫힌다. */
+/** 사이드바 항목. href가 있으면 a, 없으면 button. 드로어 안에서 고르면 드로어가 닫힌다.
+ * @param {Parameters<typeof import("./SidebarShell.d.ts").SidebarNavItem>[0]} props */
 export function SidebarNavItem({ icon, label, href, target, active = false, badge, onClick }) {
   const close = useContext(CloseCtx);
   const cls = cx("bds-shell__item", active && "bds-shell__item--on");
@@ -54,5 +57,6 @@ export function SidebarNavItem({ icon, label, href, target, active = false, badg
     : <button type="button" className={cls} aria-current={active ? "page" : undefined} onClick={handle}>{inner}</button>;
 }
 
-/** 사이드바 섹션 라벨. */
+/** 사이드바 섹션 라벨.
+ * @param {Parameters<typeof import("./SidebarShell.d.ts").SidebarNavGroup>[0]} props */
 export function SidebarNavGroup({ label }) { return <div className="bds-shell__grp">{label}</div>; }

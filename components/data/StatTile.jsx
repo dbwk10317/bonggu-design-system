@@ -22,7 +22,8 @@ function useCountUp(target, enabled) {
 
 /** 큰 수치 하나. value가 숫자면 mono(ko-KR 천 단위), 문자열이면 그대로, 결측이면 "수집 안 됨"(mono·단위 없음).
  *  기본은 즉시 갱신, animate={true}일 때만 진입 카운트업. delta는 증감, spark는 최근 추세. */
-/** detail: 수치 아래 보조 줄(모델 이름·마지막 heartbeat 등). pill: {tone,text} 상태 pill(라벨 옆). icon: 라벨 앞 Phosphor 아이콘. */
+/** detail: 수치 아래 보조 줄(모델 이름·마지막 heartbeat 등). pill: {tone,text} 상태 pill(라벨 옆). icon: 라벨 앞 Phosphor 아이콘.
+ * @param {Parameters<typeof import("./StatTile.d.ts").StatTile>[0]} props */
 export function StatTile({ label, value, unit, digits = 0, delta, deltaLabel, spark, detail, pill, icon, tone = 1, flat = false, animate = false, fit = "flex", width, className, style, ...rest }) {
   const na = isMissing(value);
   const numeric = !na && typeof value === "number";

@@ -4,7 +4,8 @@ import { Icon } from "../action/Icon.jsx";
 import { useFieldContext } from "./Field.jsx";
 
 const pad = (n) => String(n).padStart(2, "0");
-/** 시:분 선택(24시간). value "HH:MM". step은 분 단위(기본 5). */
+/** 시:분 선택(24시간). value "HH:MM". step은 분 단위(기본 5).
+ * @param {Parameters<typeof import("./TimePicker.d.ts").TimePicker>[0]} props */
 export function TimePicker({ value = "", onChange, step = 5, size = "md", fit = "auto", width, disabled, className, style }) {
   const f = useFieldContext();
   const [h, m] = value ? value.split(":").map(Number) : [null, null];

@@ -2,7 +2,8 @@ import React, { useRef } from "react";
 import { cx } from "../core/frame.js";
 import { useFieldContext } from "./Field.jsx";
 
-/** 인증 코드(OTP) 입력. length 자리 숫자, 붙여넣기 지원, 다 채우면 onComplete. */
+/** 인증 코드(OTP) 입력. length 자리 숫자, 붙여넣기 지원, 다 채우면 onComplete.
+ * @param {Parameters<typeof import("./OTPInput.d.ts").OTPInput>[0]} props */
 export function OTPInput({ length = 6, value = "", onChange, onComplete, group = 3, invalid, disabled, className }) {
   const f = useFieldContext();
   const refs = useRef([]);
