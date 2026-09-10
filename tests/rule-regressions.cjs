@@ -513,6 +513,32 @@ function guideCardStructureViolations() {
   return violations;
 }
 
+/* readme 접근성 절: 그림으로 그리는 데이터는 시각·숨김 표·탐색 표면 셋을 함께 낸다.
+   루트에 role="img"를 두면 후손이 접근성 트리에서 잘려 숨김 표와 탐색 표면이 함께 사라진다. */
+function dataGraphicA11yViolations() {
+  const violations = [];
+  for (const file of ['components/data/Chart.jsx', 'components/data/Heatmap.jsx']) {
+    const src = read(file);
+    if (/role="img"/.test(src)) {
+      violations.push({ file, line: lineOf(src, src.indexOf('role="img"')), detail: '루트가 role="img"라 숨김 표와 탐색 표면이 접근성 트리에서 잘림' });
+    }
+    if (!/role="group"/.test(src)) {
+      violations.push({ file, line: 1, detail: '세 요소를 감싸는 루트에 role="group"이 없음' });
+    }
+    const surface = /role="application"[^>]*tabIndex=\{0\}|tabIndex=\{0\}[^>]*role="application"/.test(src);
+    if (!surface) violations.push({ file, line: 1, detail: '탐색 표면에 role="application" + tabIndex=0 조합이 없음' });
+    if (/tabIndex=\{0\}/.test(src) && !surface) {
+      violations.push({ file, line: lineOf(src, src.indexOf('tabIndex={0}')), detail: 'tabIndex만 있고 역할이 없어 브라우즈 모드가 화살표를 가져감' });
+    }
+    if (!/role="status"/.test(src)) {
+      violations.push({ file, line: 1, detail: '현재 지점을 알리는 role="status" 라이브 영역이 없음' });
+    }
+    if (!/className="bds-sr"|className={"bds-sr"}/.test(src)) {
+      violations.push({ file, line: 1, detail: '같은 데이터를 담은 숨김 표(bds-sr)가 없음' });
+    }
+  }
+  return violations;
+}
 function componentVisualContractViolations() {
   const violations = [];
   const layoutFile = 'styles/c-layout.css';
@@ -588,6 +614,7 @@ const checks = [
   ['그룹 카드 누락', cardCoverageViolations(), '그 컴포넌트를 자기 그룹의 *.card.html에 한 번 이상 그립니다.'],
   ['가이드 카드 구조', guideCardStructureViolations(), '공통 검수 밀도를 쓰고 각 컴포넌트 이름을 해당 예제의 라벨에 둡니다. 삽입된 카드는 자체 테마 토글을 그리지 않습니다.'],
   ['컴포넌트 시각 계약', componentVisualContractViolations(), 'StatusBar 서체 역할과 Select 선택값의 세로 정렬을 readme의 기준에 맞춥니다.'],
+  ['데이터 그래픽 접근성', dataGraphicA11yViolations(), 'Chart·Heatmap은 시각·숨김 표·탐색 표면 셋을 함께 냅니다. 루트는 role="group", 탐색 표면은 role="application" + tabIndex=0, 현재 지점은 role="status"로 알립니다.'],
   ['가이드 페이지 누락', guideIndexViolations(), 'guidelines/index.html의 목록과 목차에 그 컴포넌트·카드를 넣습니다.'],
   ['템플릿 미사용 컴포넌트', templateCoverageViolations(), 'templates/dashboard의 화면에서 그 컴포넌트를 실제로 씁니다.'],
 ];

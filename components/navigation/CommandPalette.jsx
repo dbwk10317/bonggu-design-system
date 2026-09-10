@@ -47,7 +47,7 @@ function CommandSession({ onClose, items = [], placeholder = "명령 또는 화�
 
   const body = (
     <>
-      <div className="bds-cmdk__in"><Icon name="magnifying-glass" size={16} /><input value={q} onChange={(e) => setQ(e.target.value)} placeholder={placeholder} aria-label={placeholder} role="combobox" aria-expanded="true" aria-controls={`${uid}-list`} aria-activedescendant={list[active] ? `${uid}-opt-${active}` : undefined} /><kbd className="bds-kbd">Esc</kbd></div>
+      <div className="bds-cmdk__in"><Icon name="magnifying-glass" size={16} /><input value={q} onKeyDown={onKey} onChange={(e) => setQ(e.target.value)} placeholder={placeholder} aria-label={placeholder} role="combobox" aria-expanded="true" aria-controls={`${uid}-list`} aria-activedescendant={list[active] ? `${uid}-opt-${active}` : undefined} /><kbd className="bds-kbd">Esc</kbd></div>
       <ul id={`${uid}-list`} role="listbox" aria-label={placeholder} className="bds-cmdk__list">
         {list.length === 0 && <li className="bds-cmdk__empty">일치하는 항목이 없습니다</li>}
         {list.map((it, i) => { const g = it.group && it.group !== list[i - 1]?.group ? it.group : null; return <React.Fragment key={it.id}>
@@ -61,10 +61,10 @@ function CommandSession({ onClose, items = [], placeholder = "명령 또는 화�
     </>
   );
 
-  if (inline) return <div className={cx("bds-cmdk bds-cmdk--inline", className)}><div className="bds-cmdk__panel" onKeyDown={onKey}>{body}</div></div>;
+  if (inline) return <div className={cx("bds-cmdk bds-cmdk--inline", className)}><div className="bds-cmdk__panel">{body}</div></div>;
   return (
     <dialog ref={panel} aria-label="명령 팔레트" className={cx("bds-cmdk__panel", className)}
-      onCancel={(e) => { e.preventDefault(); onClose?.(); }} onKeyDown={onKey}>
+      onCancel={(e) => { e.preventDefault(); onClose?.(); }}>
       {body}
     </dialog>
   );

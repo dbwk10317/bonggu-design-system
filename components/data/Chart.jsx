@@ -50,7 +50,7 @@ function useAnimateOnce(enabled) {
 function Tip({ x, w, title, rows }) {
   const flip = x > w * 0.6;
   return (
-    <div className={cx("bds-chart__tip", flip && "bds-chart__tip--flip")} style={{ left: x }}>
+    <div aria-hidden="true" className={cx("bds-chart__tip", flip && "bds-chart__tip--flip")} style={{ left: x }}>
       {title != null && <div className="bds-chart__tip-t">{title}</div>}
       {rows.map((r, i) => <div key={i} className="bds-chart__tip-row"><i style={{ "--series-color": r.color }} /><span className="bds-chart__tip-n bds-ellipsis">{r.name}</span><span className={cx("bds-chart__tip-v", isMissing(r.value) && MISSING_CLASS)}>{r.value}</span></div>)}
     </div>
@@ -324,6 +324,12 @@ export function Chart(rawProps) {
   else if (kind === "histogram") { hasData = !!bins; body = <Histogram hist={bins} tone={props.tone} percentiles={props.percentiles ?? []} unit={props.unit} fmt={valueFormatter} w={w} h={h} animate={anim} hover={hover} setHover={setHover} />; }
   else if (kind === "radar") { const axes = props.axes ?? []; hasData = axes.length >= 3 && (props.series ?? []).some((s) => axes.some((_, i) => s.values[i] != null)); body = <Radar axes={props.axes ?? []} series={props.series ?? []} max={props.max} fmt={valueFormatter} w={w} h={h} hover={hover} setHover={setHover} />; }
   else { hasData = (props.labels ?? []).length > 0 && (props.series ?? []).some((s) => s.values.some((v) => v != null)); body = <Cartesian kind={kind} labels={props.labels ?? []} series={props.series ?? []} fmt={valueFormatter} uid={uid} xTicks={props.xTicks ?? "auto"} w={w} h={h} thresholds={props.thresholds} stacked={props.stacked} yMin={props.yMin} yMax={props.yMax} hover={hover} setHover={setHover} />; }
+  /* 화살표로 옮긴 지점의 읽을거리. 시각 Tip 과 같은 내용을 글로 낸다. */
+  const readout = hover == null ? "" : [
+    kind === "pie" ? props.segments?.[hover]?.label : kind === "radar" ? props.axes?.[hover] : props.labels?.[hover],
+    ...(props.series ?? []).map((s) => `${s.label} ${cell(valueFormatter, s.values[hover])}`),
+    kind === "pie" ? cell(valueFormatter, props.segments?.[hover]?.value) : null,
+  ].filter(Boolean).join(", ");
   /** @param {import("react").KeyboardEvent<HTMLDivElement>} e */
   const onKey = (e) => {
     if (!count) return;
@@ -338,8 +344,9 @@ export function Chart(rawProps) {
     e.preventDefault(); setHover(next ?? null);
   };
   return (
-    <div role="img" aria-label={ariaLabel ?? "차트"} aria-describedby={srId} className={cx("bds-chart", `bds-chart--${kind}`, anim && "bds-chart--animate", className)} style={frameStyle({ fit, width, style })}>
-      {hasData ? <div ref={ref} className="bds-chart__stage" style={{ height: h }} tabIndex={0} onKeyDown={onKey} onBlur={() => setHover(null)}>{w > 0 && body}</div> : <div id={srId} className="bds-chart__empty" style={{ height: h }}>{emptyText}</div>}
+    <div role="group" aria-label={ariaLabel ?? "차트"} className={cx("bds-chart", `bds-chart--${kind}`, anim && "bds-chart--animate", className)} style={frameStyle({ fit, width, style })}>
+      {hasData ? <div ref={ref} className="bds-chart__stage" style={{ height: h }} role="application" tabIndex={0} aria-label={`${ariaLabel ?? "차트"} 탐색`} aria-describedby={`${srId} ${srId}-now`} onKeyDown={onKey} onBlur={() => setHover(null)}>{w > 0 && body}</div> : <div id={srId} className="bds-chart__empty" style={{ height: h }}>{emptyText}</div>}
+      {hasData && <p id={`${srId}-now`} className="bds-sr" role="status">{readout}</p>}
       {hasData && <SrTable id={srId} kind={kind} props={props} bins={bins} fmt={valueFormatter} />}
       {hasData && legend.length > 0 && <Legend items={legend} compact />}
     </div>

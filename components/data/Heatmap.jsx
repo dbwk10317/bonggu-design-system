@@ -40,8 +40,8 @@ export function Heatmap({ rows = [], cols = [], values = [], valueFormatter = (v
     e.preventDefault(); setHover(next ?? null);
   };
   return (
-    <div role="img" aria-label={ariaLabel} aria-describedby={srId} className={cx("bds-heat", className)} style={frameStyle({ fit, width, style: { "--cell": `${cell}px`, "--gap": `${gap}px`, "--cols": cols.length, ...style } })}>
-      <div className="bds-heat__grid" tabIndex={0} onKeyDown={onKey} onBlur={() => setHover(null)}>
+    <div role="group" aria-label={ariaLabel} className={cx("bds-heat", className)} style={frameStyle({ fit, width, style: { "--cell": `${cell}px`, "--gap": `${gap}px`, "--cols": cols.length, ...style } })}>
+      <div className="bds-heat__grid" role="application" tabIndex={0} aria-label={`${ariaLabel ?? "격자"} 탐색`} aria-describedby={`${srId} ${srId}-now`} onKeyDown={onKey} onBlur={() => setHover(null)}>
         <span />
         {cols.map((c, j) => <span key={j} className="bds-heat__col">{j % every === 0 ? cl(c) : ""}</span>)}
         {rows.map((r, i) => <React.Fragment key={i}>
@@ -56,7 +56,7 @@ export function Heatmap({ rows = [], cols = [], values = [], valueFormatter = (v
         </table>
       </div>
       <div className="bds-heat__foot">
-        <span className="bds-heat__tip" role="status">{hover && hover[1] >= 0 ? <><b>{rl(rows[hover[0]])} · {cl(cols[hover[1]])}</b> <span className={isMissing(values[hover[0]]?.[hover[1]]) ? MISSING_CLASS : "bds-mono"}>{fmt(hover[0], hover[1])}</span></> : "\u00a0"}</span>
+        <span id={`${srId}-now`} className="bds-heat__tip" role="status">{hover && hover[1] >= 0 ? <><b>{rl(rows[hover[0]])} · {cl(cols[hover[1]])}</b> <span className={isMissing(values[hover[0]]?.[hover[1]]) ? MISSING_CLASS : "bds-mono"}>{fmt(hover[0], hover[1])}</span></> : "\u00a0"}</span>
         <span className="bds-heat__scale" aria-hidden="true"><small className="bds-mono">{valueFormatter(lo)}</small>{[1, 2, 3, 4, 5, 6].map((s) => <i key={s} data-step={s} />)}<small className="bds-mono">{valueFormatter(hi)}</small></span>
       </div>
     </div>

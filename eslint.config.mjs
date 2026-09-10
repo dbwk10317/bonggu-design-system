@@ -48,7 +48,19 @@ export default [
       "react/jsx-uses-react": "error",
       // 게이트는 경고를 통과시킨다. 지킬 규칙이면 error 로 둔다.
       "react-hooks/exhaustive-deps": "error",
+      // readme.md 접근성 절: 그림으로 그리는 데이터의 탐색 표면은 role="application" + tabIndex=0 이다.
+      // 역할이 없으면 스크린리더 브라우즈 모드가 화살표를 먼저 가져가 탐색이 동작하지 않는다.
+      // jsx-a11y 는 application 을 구조 역할로 분류하므로 문서화된 이 조합만 허용한다.
+      "jsx-a11y/no-noninteractive-tabindex": ["error", { tags: [], roles: ["tabpanel", "application"] }],
     },
+  },
+  {
+    // 그림으로 그리는 데이터의 탐색 표면. readme.md 접근성 절이 role="application" + tabIndex=0 +
+    // role="status" 읽을거리를 규정한다. no-noninteractive-element-interactions 는 역할별 허용을
+    // 표현할 수단이 없어(handlers 만 받는다) 이 두 파일에서만 끈다. 규칙 자체는 readme 에 있고
+    // tests/rule-regressions.cjs 가 세 요소가 모두 있는지 검사한다.
+    files: ["components/data/Chart.jsx", "components/data/Heatmap.jsx"],
+    rules: { "jsx-a11y/no-noninteractive-element-interactions": "off" },
   },
   {
     // combobox·listbox 패턴. WAI-ARIA 는 키보드를 입력 하나에 모으고(aria-activedescendant)
