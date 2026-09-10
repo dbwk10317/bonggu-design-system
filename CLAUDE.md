@@ -25,8 +25,28 @@ DS_TEST_BROWSER_EXECUTABLE="C:\Program Files\Google\Chrome\Application\chrome.ex
 ```
 
 - `tests/run.cjs`가 번들을 먼저 다시 만들므로, 검증까지 돌릴 때 `build-bundle.mjs`를 따로 실행할 필요는 없다.
-- Playwright 번들 Chromium이 설치돼 있지 않다. 설치된 Chrome을 `DS_TEST_BROWSER_EXECUTABLE`로 지정하거나 `npx playwright install chromium`을 먼저 실행한다.
+- Playwright 번들 Chromium(chromium-1243)이 `~/AppData/Local/ms-playwright`에 설치돼 있고, 저장소가 핀한 playwright 1.63.0이 같은 리비전을 가리킨다. 그대로 쓰면 된다. 없어졌을 때만 설치된 Chrome을 `DS_TEST_BROWSER_EXECUTABLE`로 지정하거나 `npx playwright install chromium`을 실행한다.
 - `_ds_bundle.js`·`_ds_manifest.json`은 생성물이다. 직접 고치지 않고 소스를 고친 뒤 다시 만든다.
+
+## Claude Design 동기화 (`/design-sync`)
+
+이 저장소는 claude.ai/design 프로젝트 `31ea8e33-9298-4158-b1df-f1299f41fed6`으로 동기화된다.
+설정은 `.design-sync/config.json`, 업로드 산출물은 `ds-bundle/`(생성물).
+
+```bash
+npm run sync:ds
+```
+
+순서가 고정돼 있다: `build` → `prep.mjs` → `package-build.mjs` → `dts-fix.mjs` → `package-validate.mjs`.
+**중간 단계를 빠뜨려도 에러가 아니라 "그럭저럭 도는" 상태로 끝나므로 순서를 손으로 재현하지 않는다.**
+`prep.mjs`가 빠지면 토큰·컴포넌트 CSS가 통째로 누락돼 모든 디자인이 무스타일로 나가고,
+`dts-fix.mjs`가 빠지면 에이전트가 읽는 API 계약에 데이터 형태가 비어 있다. 두 스크립트의
+헤더 주석에 각각 왜 필요한지 적혀 있다.
+
+- 변환기 스크립트는 `.ds-sync/`에 스테이징된다(생성물). 스킬이 갱신되면 다시 복사한다.
+- `.design-sync/previews/*.tsx`는 사람이 쓴 미리보기다. 컴포넌트 prop 이름이 바뀌면 조용히
+  컴파일에 실패하고 그 컴포넌트가 기본 카드로 떨어진다(빌드 로그 `! preview build failed:`).
+- 업로드는 단방향이다. Claude Design에서 고친 것은 저장소로 돌아오지 않고 다음 동기화에 덮어써진다.
 
 ## 브라우저로 보기
 

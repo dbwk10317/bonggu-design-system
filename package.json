@@ -39,7 +39,8 @@
     "prepack": "npm run build:package",
     "pack:check": "npm pack --dry-run",
     "version:packages": "changeset version",
-    "test": "node tests/run.cjs"
+    "test": "node tests/run.cjs",
+    "sync:ds": "npm run build && node .design-sync/prep.mjs && node .ds-sync/package-build.mjs --config .design-sync/config.json --node-modules ./node_modules --entry ./dist/index.js --out ./ds-bundle && node .design-sync/dts-fix.mjs ./ds-bundle && node .ds-sync/package-validate.mjs ./ds-bundle"
   },
   "devDependencies": {
     "@babel/standalone": "8.0.4",

@@ -1,0 +1,28 @@
+{
+  "projectId": "31ea8e33-9298-4158-b1df-f1299f41fed6",
+  "shape": "package",
+  "pkg": "@dbwk10317/bonggu-design-system",
+  "globalName": "BongguDS",
+  "buildCmd": "npm run build && node .design-sync/prep.mjs",
+  "srcDir": "components",
+  "cssEntry": ".design-sync/.cache/flat.css",
+  "docsDir": ".design-sync/.cache/docs",
+  "docsMap": {
+    "AvatarGroup": ".design-sync/.cache/docs/Avatar.md",
+    "CodeBlock": ".design-sync/.cache/docs/Code.md",
+    "Kbd": ".design-sync/.cache/docs/Code.md",
+    "GridItem": ".design-sync/.cache/docs/Grid.md",
+    "NotificationTrigger": ".design-sync/.cache/docs/NotificationDrawer.md",
+    "SidebarNavGroup": ".design-sync/.cache/docs/SidebarShell.md",
+    "SidebarNavItem": ".design-sync/.cache/docs/SidebarShell.md",
+    "ToastProvider": ".design-sync/.cache/docs/Toast.md",
+    "ToolbarGrow": ".design-sync/.cache/docs/Toolbar.md"
+  },
+  "extraFonts": [
+    "dist/tokens/fonts.css",
+    "dist/fonts/phosphor/bold.css"
+  ],
+  "guidelinesGlob": [
+    "readme.md"
+  ]
+}
