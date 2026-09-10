@@ -28,6 +28,8 @@ export function SidebarShell({ brand, nav, navLabel = "주 메뉴", footer, topb
   }, [open]);
   return (
     <div className={cx("bds-shell", open && "bds-shell--open", className)} {...rest}>
+      {/* 첫 탭 스톱. 초점을 받을 때만 보인다(readme 접근성 절). */}
+      <a className="bds-skip" href={`#${id}-main`}>본문으로 건너뛰기</a>
       <aside id={id} ref={side} className="bds-shell__side">
         <div className="bds-shell__logo">
           {brand.mark === undefined ? <MascotMark size={26} /> : brand.mark}
@@ -38,7 +40,7 @@ export function SidebarShell({ brand, nav, navLabel = "주 메뉴", footer, topb
         {footer != null && <div className="bds-shell__foot">{footer}</div>}
       </aside>
       <div className="bds-shell__dim" onClick={() => setOpen(false)} aria-hidden="true" />
-      <div className="bds-shell__main">
+      <div className="bds-shell__main" id={`${id}-main`} tabIndex={-1}>
         <header className="bds-shell__top">
           <IconButton ref={burger} className="bds-shell__burger" icon="list" variant="ghost" aria-label="메뉴 열기" aria-expanded={open} aria-controls={id} onClick={() => setOpen(true)} />
           {topbar}

@@ -15,6 +15,10 @@
 .bds-shell__grp{padding:14px 12px 4px;font-size:var(--fs-caption);font-weight:var(--fw-medium);letter-spacing:var(--ls-caps);text-transform:uppercase;color:var(--ink-3)}
 .bds-shell__foot{padding:12px 16px;border-top:1px solid var(--line);font-size:var(--fs-caption);color:var(--ink-3);flex:none}
 .bds-shell__main{display:grid;grid-template-rows:auto minmax(0,1fr) auto;min-height:0;min-width:0}
+.bds-shell__main:focus{outline:0}
+/* 건너뛰기 링크: 초점을 받을 때만 보인다. bds-sr 로만 숨기면 초점을 받아도 보이지 않는다. */
+.bds-skip{position:fixed;top:0;left:0;z-index:var(--z-toast);transform:translateY(-120%);padding:8px 14px;border-radius:0 0 var(--radius-ctl) 0;background:var(--signal);color:var(--signal-fg);font-size:var(--fs-label);font-weight:var(--fw-medium);text-decoration:none;transition:transform var(--dur-fast) var(--ease-out)}
+.bds-skip:focus-visible{transform:none;color:var(--signal-fg);text-decoration:none}
 .bds-shell__top{display:flex;align-items:center;gap:var(--inline-gap);height:calc(var(--bar-h) + var(--safe-top));padding:var(--safe-top) calc(var(--page-pad) + var(--safe-right)) 0 calc(var(--page-pad) + var(--safe-left));border-bottom:1px solid var(--line);background:var(--canvas);min-width:0}
 .bds-shell__top h1{font-size:var(--fs-subheading);font-weight:var(--fw-bold);white-space:nowrap}
 .bds-shell__spacer{flex:1}

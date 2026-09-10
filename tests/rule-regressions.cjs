@@ -579,13 +579,18 @@ function radiusTokenViolations() {
   for (const file of walk('styles').filter((name) => name.endsWith('.css'))) {
     const css = withoutComments(read(file));
     for (const rule of cssRuleBodies(css)) {
-      if (!/border-radius\s*:\s*[0-9]/.test(rule.body)) continue;
-      const sel = rule.selector.split(',')[0].replace(/\s+/g, ' ').trim();
-      if (GRAPHIC_MARKS.has(sel)) continue;
-      const value = (rule.body.match(/border-radius\s*:\s*([^;}]+)/) ?? [])[1];
-      // 0 은 '모서리 없음'이라 토큰이 아니다. 50%·999px 은 원·알약으로 도형이 값을 정한다.
-      if (/^(0|50%|999px)$/.test((value ?? '').trim())) continue;
-      violations.push({ file, line: lineOf(css, rule.at), detail: `컨트롤 모서리를 리터럴로 적음(${(value ?? '').trim()}): ${sel}` });
+      const decl = (rule.body.match(/border-radius\s*:\s*([^;}]+)/) ?? [])[1];
+      if (!decl) continue;
+      const sel2 = rule.selector.split(',')[0].replace(/\s+/g, ' ').trim();
+      if (GRAPHIC_MARKS.has(sel2)) continue;
+      // 단축 표기는 모서리마다 값이 다르다. 각 값을 따로 본다.
+      // 0(모서리 없음)·50%·999px(원·알약)은 도형이 값을 정하므로 토큰이 아니다.
+      // var()·calc() 는 통째로 걷어낸 뒤 남은 것만 본다. 공백으로 먼저 쪼개면 calc 안이 흩어진다.
+      const parts = decl.replace(/(?:var|calc)\((?:[^()]|\([^()]*\))*\)/g, ' ').trim().split(/\s+/).filter(Boolean);
+      // 0(모서리 없음)·50%·999px(원·알약)·inherit(부모 모서리)은 도형이나 부모가 값을 정한다.
+      const bad = parts.filter((x) => !/^(0|50%|999px|inherit)$/.test(x));
+      if (!bad.length) continue;
+      violations.push({ file, line: lineOf(css, rule.at), detail: `컨트롤 모서리를 리터럴로 적음(${bad.join(' ')}): ${sel2}` });
     }
   }
   return violations;

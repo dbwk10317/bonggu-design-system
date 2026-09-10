@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useContext, useMemo, useRef, useState } from "react";
+import React, { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { cx } from "../core/frame.js";
 import { Icon } from "../action/Icon.jsx";
 
@@ -17,12 +17,21 @@ const reducedMotion = () => typeof matchMedia === "function" && matchMedia("(pre
 export function ToastProvider({ children, max = 3 }) {
   const [items, setItems] = useState(/** @type {QueuedToast[]} */ ([]));
   const seq = useRef(0);
-  const drop = useCallback((/** @type {number} */ id) => setItems((p) => p.filter((t) => t.id !== id)), []);
+  /* 타이머를 소유하지 않으면 프로바이더가 사라진 뒤에도 남고, 손으로 닫은 토스트의
+     자동 닫기 타이머가 계속 살아 있다. id 별로 들고 있다가 함께 거둔다. */
+  /** @type {import("react").MutableRefObject<Map<number, ReturnType<typeof setTimeout>>>} */
+  const timers = useRef(new Map());
+  useEffect(() => () => { timers.current.forEach(clearTimeout); timers.current.clear(); }, []);
+  const drop = useCallback((/** @type {number} */ id) => {
+    const t = timers.current.get(id);
+    if (t) { clearTimeout(t); timers.current.delete(id); }
+    setItems((p) => p.filter((x) => x.id !== id));
+  }, []);
   /* 닫기는 leaving 표시 → 퇴장 트랜지션 → 제거. 같은 토스트를 다시 닫아도 leaving은 그대로고 제거만 한 번 더 시도한다(없으면 무시) */
   const dismiss = useCallback((/** @type {number} */ id) => {
     if (reducedMotion()) return drop(id);
     setItems((p) => p.map((t) => (t.id === id ? { ...t, leaving: true } : t)));
-    setTimeout(() => drop(id), EXIT_MS);
+    timers.current.set(id, setTimeout(() => drop(id), EXIT_MS));
   }, [drop]);
   const toast = useCallback((/** @type {import("./Toast.d.ts").ToastOptions} */ t) => {
     const id = ++seq.current;
@@ -33,7 +42,7 @@ export function ToastProvider({ children, max = 3 }) {
       return next.filter((x) => x.leaving || over-- <= 0);
     });
     /* 행동(action)이 있거나 crit이면 닫기 전까지 남는다. duration을 직접 주면 그대로 따른다 */
-    const d = t.duration ?? (t.action || t.tone === "crit" ? 0 : 4000); if (d > 0) setTimeout(() => dismiss(id), d);
+    const d = t.duration ?? (t.action || t.tone === "crit" ? 0 : 4000); if (d > 0) timers.current.set(id, setTimeout(() => dismiss(id), d));
     return id;
   }, [dismiss, max]);
   /* toast·dismiss 는 이미 useCallback 으로 안정적이다. 인라인 객체만이 값을 흔들어,
