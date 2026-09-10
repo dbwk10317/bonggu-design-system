@@ -1,5 +1,5 @@
 import type { HTMLAttributes, ReactNode } from "react";
-export interface ErrorStateProps extends HTMLAttributes<HTMLDivElement> {
+export interface ErrorStateProps extends Omit<HTMLAttributes<HTMLDivElement>, "title"> {
   title?: ReactNode;
   description?: ReactNode;
   /** 오류 코드·요청 ID(mono) */

@@ -49,5 +49,7 @@
 - `components/<Name>.d.ts` 공개 타입 시그니처.
 - `components/<Name>.prompt.md` 그 컴포넌트의 사용 예시. 시스템 전체에 적용되는 규칙은 여기 적지 않는다.
 - `templates/dashboard/README.md` 템플릿의 파일이 어떤 화면인지에 대한 목록. 가상 제품 하나를 조립한 예시이며 제품 사양이 아니다.
+- `CHANGELOG.md` Changesets가 생성하는 릴리스별 변경 사실과 이관 안내. 버전 분류와 정책은 `readme.md`에 둔다.
+- `LICENSE`, `THIRD_PARTY_NOTICES.md`, `licenses/*` 프로젝트와 포함 자산의 법적 고지. 디자인 규칙을 적지 않는다.
 
 `_ds_bundle.js`, `_ds_manifest.json`, `_adherence.oxlintrc.json`은 생성물이다. 손으로 고치지 않고 출처(`components/**`, `tokens/*.css`)를 고친 뒤 `node build-bundle.mjs`를 다시 실행한다. adherence 설정에는 손으로 유지하는 항목이 섞여 있고, 첫 키 `x-generated`가 그 경계를 적어 둔다.

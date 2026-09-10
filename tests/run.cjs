@@ -10,6 +10,8 @@ const order = [
   'tests/manifest-token-regressions.cjs',
   'tests/consistency-regressions.cjs',
   'tests/rule-regressions.cjs',
+  'tests/release-regressions.cjs',
+  'tests/package-regressions.cjs',
   'tests/smoke-regressions.cjs',
   'tests/data-regressions.cjs',
   'tests/missing-value-regressions.cjs',

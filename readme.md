@@ -7,7 +7,7 @@
 - **데이터는 nullable이 기본.** 수집되지 않은 값은 꾸미지 않고 **"수집 안 됨"**으로 그대로 보여준다. 일부 실패는 페이지 실패가 아니라 `degraded` + 해당 카드의 결측으로 표현한다. 표기 문구·판정·클래스는 `components/core/frame.js`의 fit 계약처럼 `components/core/missing.js` 한 곳에서 나온다(`MISSING_TEXT`·`isMissing()`·`bds-na`). `null`·`undefined`·`NaN`이 결측이고 `""`·`0`은 수집된 값이다. 이 판정은 표기만의 규칙이 아니다. 좌표·누적·합계·축 범위 같은 계산에도 같은 기준을 쓰고, 유한한 수가 아닌 값은 계산에 들어가지 않는다.
 - **상태는 색 단독으로 전하지 않는다.** 항상 텍스트를 병기한다. 알림은 래치되어 읽음 처리 전까지 남는다.
 - **고정 픽셀 대신 `fit` 계약 + 컨테이너 쿼리.** 모든 컨테이너형 컴포넌트가 `fit="flex" | "fixed" | "auto"`를 받는다. flex(기본)는 부모 폭을 채우고 `min-width:0`으로 격자에서 찌그러지지 않으며, fixed는 `width`/`height`를 그대로 쓴다. 열 숨김·격자 접힘은 뷰포트가 아니라 **컨테이너 폭**(`@container`) 기준이다. 차트는 ResizeObserver로 실제 픽셀을 재서 viewBox를 맞춘다. 격자는 `repeat(auto-fit, minmax(min(100%, N), 1fr))`로만 만든다.
-- **전역 토큰은 별칭 없이 정본 하나로 유지한다.** 이름을 바꿀 때는 별칭을 추가하지 않고 정본을 개명한 뒤 모든 사용처를 함께 이관한다. 기존 소비 프로젝트와의 호환은 이 시스템의 범위에 포함하지 않는다.
+- **전역 토큰은 별칭 없이 정본 하나로 유지한다.** 이름을 바꿀 때는 별칭을 추가하지 않고 정본을 개명한 뒤 모든 사용처를 함께 이관한다. 공개 토큰의 삭제·개명은 major 변경으로 처리하고 이관표를 제공한다.
 - **차트와 UI는 한 팔레트, 한 크롬.** 차트 색은 범주형 8색(`--series-1~8`, oklch 명도 0.62·채도 0.14 고정), 의미 고정 쌍(`--series-rx/tx/used/reserved/free`), 순차 램프(`--ramp-1~6`) 세 계열만. 상태색은 임계선·미터 전용. 모든 차트(`Chart` kind 7종)는 격자(hairline)·축(mono 10.5)·범례·툴팁(elev-2)·빈 상태 크롬을 공유한다. 결측은 0으로 그리지 않고 종류마다 생략 방식이 정해져 있다. 선과 면은 구간을 끊고, 막대는 그리지 않으며 누적 합계에서도 뺀다. 파이는 세그먼트를 링과 합계에서 빼고 범례에는 결측으로 남긴다. 레이더는 결측 축에 닿는 선과 그 계열의 면 채움을 생략한다. 방사 게이지와 Sparkline은 값 자리에 결측을 표시한다. 어느 종류든 결측 하나가 축 범위나 다른 계열의 좌표를 바꾸지 않는다.
 - **반응형 검수 폭**: PC 1280 · 태블릿 834 · 모바일 390 + 라이트(기본)·다크 양쪽이 항상 깨지지 않아야 한다.
 
@@ -124,6 +124,17 @@
 
 그룹 기준: **action** 행동을 일으킴 · **layout** 자리와 간격 · **navigation** 화면·뷰 이동 · **input** 값을 받음 · **data** 수치·기록을 보임 · **display** 짧은 표식·텍스트 · **overlay** 위에 뜸 · **feedback** 시스템이 사용자에게 말함(진행·알림·상태).
 
+### 공개 API·버전·배포 계약
+
+- **패키지 식별자·라이선스**: 패키지명은 `@dbwk10317/bonggu-design-system`이고 저장소는 `https://github.com/dbwk10317/bonggu-design-system`이다. 프로젝트 코드는 `Copyright (c) 2026 dbwk10317`의 MIT License로 배포한다. 포함된 Spoqa Han Sans Neo·JetBrains Mono·Phosphor Icons는 `THIRD_PARTY_NOTICES.md`와 `licenses/`에 적힌 각 원래 라이선스를 유지한다.
+- **공개 JS·타입 표면**: 위 Components 목록의 96개 컴포넌트와 `useToast`, 그리고 각 공개 컴포넌트·훅의 `.d.ts`가 내보내는 관련 `type`·`interface`가 공개 API다. `components/core/`, `components/data/chart-math.js`, `theme-toggle.js`, `useFieldContext`, `passwordStrength`는 내부 구현이며 공개 진입점에서 내보내지 않는다. 기존 `window.Ds_d3ea90` 번들의 대문자 필터는 npm 공개 API의 정본이 아니다.
+- **SemVer 경계**: 1.0.0 이후 patch는 공개 계약을 유지하는 수정, minor는 기존 사용법을 유지하는 선택적 API 추가, major는 공개 컴포넌트·훅·타입·토큰·경로의 삭제·개명, 필수 prop·기본 동작·이벤트 시점의 비호환 변경, 지원 환경 축소다. 기본 크기·간격·타이포가 기존 레이아웃을 깨뜨리는 변경도 major다. 폐기 예정 API는 대체 방법을 먼저 알리고 major에서 제거하며, 토큰 이름은 호환 별칭을 만들지 않고 major 이관표로 안내한다.
+- **스타일 범위**: `styles.css`는 토큰, 폰트, 아이콘, 컴포넌트 스타일과 `tokens/base.css`를 함께 불러오는 단일 full-app 진입점이다. 명시적으로 import한 앱 전체의 `body`·제목·링크 등 전역 요소에 base/reset이 적용된다. 현재 일부 컴포넌트만 격리해 도입하는 scoped CSS 진입점은 없으며, 이 전역 영향을 받지 않는다고 가정하지 않는다.
+- **테마·밀도**: 라이트가 기본이고 다크는 `:root.dark` 또는 `[data-theme="dark"]`, compact 밀도는 `<html data-density="compact">`로 선택한다. `theme-toggle.js`는 문서 카드 전용 자동 실행 스크립트라 공개 npm 진입점에 포함하지 않는다. 컴포넌트의 브라우저 API 접근은 effect 또는 이벤트 시점에만 일어나며 모듈 import 자체가 DOM·`localStorage`·테마를 바꾸지 않는다.
+- **배포 자산 경로**: 배포물은 `styles.css`에서 `tokens/`·`styles/`를 불러오고 `tokens/`에서 `fonts/`를 불러오는 현재 상대 경로를 보존한다. `fonts/phosphor/`와 `assets/`도 패키지 안의 상대 경로 자산으로 제공하며 CDN이나 호스트 절대 경로에 의존하지 않는다.
+- **검증된 환경**: 현재 자동 회귀가 확인하는 React 범위는 18.3.1이고 런타임 외부 import는 `react`뿐이다. `react-dom` import는 없다. 브라우저 동작은 현재 회귀 게이트의 Chromium 계열에서 검증한다. 다른 React 버전, Safari, Firefox, 검증하지 않은 프레임워크까지 지원한다고 선언하지 않는다.
+- **변경 기록**: 소비자 코드·타입·토큰·스타일·동작에 영향을 주는 변경은 Changeset에 소비자 관점의 설명과 SemVer 영향도를 기록한다. 문서·검증·빌드 도구만 바뀌어 배포 결과가 같으면 빈 Changeset으로 의도를 표시하거나 릴리스 기록에서 제외할 수 있다. `CHANGELOG.md`는 Changesets가 릴리스별 변경 사실과 이관 안내를 생성하는 기록이며 정책의 정본은 아니다.
+
 ### 컴포넌트 선택 가이드
 - 나열: 세로 `Stack`, 가로 `Inline`, 양끝 정렬 `Spacer`, 최대 폭 `Container`, 카드 격자 `Grid`(비대칭은 `columns={12}` + `GridItem span`), 비율 상자 `AspectRatio`, 뷰포트별 표시 `Visible`.
 - 이동: 화면 5개 이하 `TopNav`, 그 이상 `SidebarShell`. 3단 이상 깊이 `Breadcrumb`, 20행 초과 목록 `Pagination`, 키보드 이동 `CommandPalette`(⌘K), 인라인 이동 `Link`.
@@ -131,3 +142,129 @@
 - 표시: 사람·서비스 `Avatar`, 건수 `Badge`(0이면 없음), 상태 문구 `StatusPill`, 분류 `Tag`. 접이식 `Accordion`(설정 고급 옵션만), 클릭 설명 패널 `Popover`, 한 줄 설명 `Tooltip`.
 - 피드백: 필드·카드 안 한 줄 `InlineMessage`, 페이지 `AlertBanner`, 일시 `Toast`. 재조회 `LoadingOverlay`, 첫 로딩 `Skeleton`. 파괴적 동작 `ConfirmDialog`(crit 채움은 여기서만). 카드 실패 `ErrorState`, 빈 결과 `EmptyState`, 값 하나 결측은 텍스트 "수집 안 됨".
 - 수치: 사용률 하나 `Gauge`(70/90 자동 톤), 증감 `TrendDelta`(나쁜 지표는 inverse), 공유 범례 `Legend`, 가용성 `UptimeBar`.
+
+## 패키지·버전·배포 전환 계획 (작업 인계)
+
+작성일: 2026-09-09. 상태: 1~2단계 검증 완료, 3단계 Changesets·CI·버전 PR 자동화 완료, 실제 publish 설정 전.
+
+이 절은 후속 에이전트의 작업 계획이다. 현재 제공 중인 기능이나 지원 보장을 뜻하지 않는다. 각 단계에서 확정한 계약은 이 문서의 해당 규범에 반영하고, 이 절에는 진행 상태와 남은 작업을 갱신한다. 별도 계획 파일이나 코드 주석을 규칙의 출처로 만들지 않는다.
+
+### 목표와 범위
+
+첫 목표는 실제 소비 프로젝트 하나가 정식 npm 패키지를 정확한 버전으로 설치하고, 업데이트와 이전 버전 복귀까지 검증한 `1.0.0`이다. 컴포넌트·타입·토큰·CSS·폰트·자산을 단일 패키지와 단일 버전으로 배포한다. 기존 HTML 카드·대시보드용 브라우저 번들도 같은 소스에서 계속 생성한다.
+
+패키지명은 `@dbwk10317/bonggu-design-system`, 라이선스는 `Copyright (c) 2026 dbwk10317`의 MIT License로 확정했다. 배포 레지스트리와 패키지 공개 범위는 아직 확정하지 않았다. 이를 결정하기 전에는 `private: true`를 유지하고 로컬 `.tgz` 설치까지만 진행한다. 이 계획은 외부 공개나 계정 생성의 실행 승인을 뜻하지 않는다.
+
+목표 소비 형태:
+
+```tsx
+import { Button, Panel } from '@dbwk10317/bonggu-design-system';
+import '@dbwk10317/bonggu-design-system/styles.css';
+```
+
+초기 범위에서 컴포넌트별 패키지 분리, 토큰의 독립 버전, CommonJS 이중 배포, 새 문서 플랫폼 구축은 제외한다. 실제 소비 요구가 생기면 범위를 다시 정한다.
+
+### 현재 구현 현황
+
+- 루트 `package.json`과 단일 lockfile이 패키지 빌드와 `tests` workspace의 검증 도구를 함께 고정한다. 검증한 React 버전은 18.3.1이다. Changesets와 GitHub 버전 PR 자동화는 구성했고 실제 publish는 비활성 상태다.
+- `build-bundle.mjs`는 기존 `window.Ds_d3ea90` 번들·매니페스트·adherence를 만들고, `build-package.mjs`는 같은 컴포넌트 소스에서 ESM·타입·CSS·자산 패키지를 만든다.
+- `styles.css`의 CSS·폰트·아이콘 상대 경로는 배포물에서도 보존되며 독립 fixture가 모든 참조를 검사한다.
+- `theme-toggle.js`는 기존 문서용 브라우저 번들에만 남고 npm 공개 진입점에는 포함되지 않는다. 패키지 import 전후 DOM·localStorage 불변을 검사한다.
+- `tokens/base.css`의 body·제목·링크 전역 적용은 full-app 스타일 계약이며, 설치 패키지와 기존 앱 CSS를 함께 로드하는 브라우저 fixture가 이 영향을 검사한다.
+- 공개 표면·SemVer·스타일·테마·밀도·자산 경로·검증 환경 계약은 이 문서의 공개 API·버전·배포 계약에 확정했다.
+
+착수 에이전트는 `git status`, 현재 소스, 이 문서, `tests/rule-regressions.cjs`, `tests/README.md`를 다시 확인한다. 컴포넌트 변경 전에는 해당 `.d.ts`·`.prompt.md`·실제 사용처를 비교한다. 아래 파일명 중 아직 없는 것은 신설 후보이며, 구현 시 기존 구조와 맞춰 확정한다.
+
+### 1단계: 공개 계약과 패키지 기반
+
+상태: 작업 1~8의 계약·패키지 기반 구현과 저장소 내 build·pack 검증 완료. 독립 fixture 설치 검증은 2단계에서 진행한다.
+
+작업:
+
+1. 공개 컴포넌트·훅·타입·CSS 토큰·테마·밀도·자산 경로를 조사하고 공개 진입점을 명시한다. 기존 번들의 대문자 export 필터를 npm 공개 API 정의로 그대로 사용하지 않는다. 내부 helper는 공개 목록과 분리한다.
+2. 이 문서에 버전별 호환 정책, 공개 API 경계, CSS 적용 범위, 지원 환경을 확정한다. 토큰 별칭 금지는 유지하고 이름 변경은 major와 이관표로 처리한다.
+3. 루트 `package.json`, 공개 JS·타입 진입점, 패키지 빌드 스크립트를 추가한다. 개발 도구는 lockfile로 고정하고, 기존 테스트 의존성과 중복 버전이 생기지 않도록 설치 구조를 정리한다. 설치 명령 변경은 `tests/README.md`에 반영한다.
+4. ESM과 `.d.ts`를 배포하고 `exports`로 공개 경로를 제한한다. React는 external·peer dependency로 관리한다. react-dom 등 나머지 의존성은 실제 import를 조사해 분류한다. 지원 버전 범위는 검증 결과로 정한다.
+5. 배포용 CSS·폰트·아이콘·브랜드 자산을 생성하거나 복사하고 파일 간 상대 경로를 검증한다. CSS가 tree shaking으로 제거되지 않도록 sideEffects 설정을 맞춘다.
+6. 전체 앱 적용용 스타일과 기존 앱의 컴포넌트 도입용 스타일의 경계를 정한다. 전역 reset, 토큰 scope, 폰트 로딩을 명시하며 기존 템플릿의 스타일은 유지한다. 단순히 reset을 빼고 정상 동작한다고 가정하지 않는다.
+7. 문서 테마 토글의 자동 실행을 npm 진입점에서 분리한다. npm import만으로 DOM·테마·localStorage를 변경하지 않게 하고 SSR import를 검증한다.
+8. `files`로 배포 파일을 제한하고 라이선스·제3자 자산 고지를 확인한다. 라이선스 종류나 자산 사용 권한을 임의로 정하지 않는다.
+
+주요 변경 대상: `readme.md`, 루트 패키지·lockfile, 공개 진입점, 패키지 빌드 스크립트, `build-bundle.mjs`, CSS 진입점, 관련 컴포넌트 문서·타입, `tests/README.md`.
+
+완료 기준: `npm pack` 산출물을 저장소 밖의 독립 fixture에 설치하여 공개 import·타입·CSS·폰트 로딩이 성공한다. 기존 브라우저 번들도 다시 생성되고 기존 검증을 통과한다.
+
+### 2단계: 배포 패키지 검증
+
+1단계 산출물인 `.tgz`를 설치해 검증한다. 소스 alias나 원본 저장소 경로로 연결하는 fixture는 배포 검증을 대신하지 못한다.
+
+상태: 검증 완료. 실제 pack 산출물의 file dependency 설치, 공개 TSX·관련 타입, 내부 경로 차단, ESM import·서버 렌더·hydration, import 시 DOM·localStorage 불변, 프로덕션 번들과 React 단일 사본, CSS·폰트·아이콘·exported assets 경로, tarball 내용 제한과 연속 pack 재현성을 확인한다. 설치 패키지 브라우저 fixture는 Button·Toast 상호작용과 라이트·다크 × 기본·compact × 1280·834·390의 12개 조합, 가로 넘침, 기존 앱 CSS와 full-app base/reset 통합을 Chromium에서 검사한다.
+
+| 검증 | 확인할 결과 |
+|---|---|
+| 공개 API·타입 | 공개 export 누락 없음, 실제 TypeScript 소비 빌드 성공, 내부 경로 접근 제한 |
+| React 프로덕션 빌드 | 미변환 JSX·깨진 모듈 경로 없음, React 중복 포함 없음 |
+| 정적 자산 | CSS·폰트·아이콘 요청 성공, 파일 누락·404 없음 |
+| SSR·hydration | import 시 브라우저 전역 오류 없음, 서버 렌더·hydration 경고 없음 |
+| 지원 환경 | 선언한 React·타입 조합 검증, 빌드 도구의 Node 요구와 소비 런타임 요구 구분 |
+| 시각·동작 | 라이트·다크, 밀도, 1280·834·390 폭, 기존 앱 CSS와의 통합 검증 |
+| 패키지 내용 | 필수 산출물·고지 포함, 로컬 설정·테스트 출력 등 불필요 파일 제외 |
+| 재현성 | 깨끗한 checkout과 lockfile에서 빌드·pack 성공, 생성물 차이 확인 |
+
+기존 회귀 게이트를 유지하고 실제 패키지 실패 조건의 검사를 추가한다. 기계로 판별 가능한 새 규범의 검사는 `tests/rule-regressions.cjs`에 연결하고, 통합 fixture 실행법·범위는 `tests/README.md`에 기록한다. 문서의 게이트 범위가 실제 실행 내용과 어긋난 부분도 맞춘다.
+
+일반 React fixture를 먼저 만들고, 실제 소비처가 Next.js이면 해당 환경과 클라이언트 경계 검증을 추가한다. 검증하지 않은 프레임워크나 브라우저를 지원한다고 기재하지 않는다.
+
+완료 기준: 원본 소스에 접근하지 않는 설치·빌드·실행 검증과 기존 회귀 검증이 모두 통과한다.
+
+### 3단계: 버전과 릴리스 자동화
+
+상태: Changesets 3.0.2, GitHub PR 검증, main의 버전 PR 자동화와 publish 비활성 회귀 게이트는 완료했다. 패키지명·scope·라이선스는 확정했고 레지스트리·공개 범위가 미정이라 beta publish, 인증, 태그와 GitHub Release 연결은 미착수다.
+
+정식 버전의 분류는 이 문서의 공개 API·버전·배포 계약을 따른다. 아래 표는 릴리스 자동화가 적용할 변경 분류다.
+
+| 분류 | 기준 |
+|---|---|
+| patch | 공개 계약을 유지하는 버그 수정 |
+| minor | 기존 소비 코드를 유지하는 컴포넌트·선택적 기능 추가 |
+| major | prop·토큰·공개 경로 삭제 또는 개명, 이벤트 계약 변경, 지원 환경 축소 |
+
+출시 흐름은 `1.0.0-beta.N` 통합 검증 후 `1.0.0` 정식 출시다. 사전 검증 패키지는 `next`, 정식 패키지는 `latest` 채널로 구분한다. 초기 유지보수 대상은 최신 정식 major로 제안하며, 지원 범위는 출시 전에 이 문서에 명시한다.
+
+작업:
+
+1. Changesets를 도입한다. PR에 소비자 관점의 변경 설명과 버전 영향도를 기록하고, 릴리스 PR에서 버전·changelog를 검토한다.
+2. changelog는 릴리스별 변경 사실과 이관 안내를 담는 생성 기록으로 정의한다. 이 역할을 `AGENTS.md`의 파일 역할표에도 추가하고 정책 자체는 이 문서에 둔다.
+3. 실제 Git 호스팅 환경을 확인해 CI를 구성한다. GitHub 사용 시 `.github/workflows/`에 PR 검증과 릴리스 workflow를 둔다.
+4. 릴리스 커밋에서 빌드·pack·설치 검증 후 검증한 동일 `.tgz`를 배포한다. 배포 단계에서 별도 재빌드하여 검증 대상과 달라지지 않도록 한다.
+5. 패키지 버전·Git 태그·릴리스 기록을 연결한다. 동일 버전 중복 실행과 부분 실패 재시도를 처리하고, 이미 배포된 버전을 덮어쓰려 하지 않는다.
+6. 레지스트리에 맞는 CI 인증을 설정한다. 공개 npm을 선택한 경우 지원 조건을 확인해 trusted publishing·provenance를 적용한다. 자격 증명을 저장소에 기록하지 않는다.
+7. 레지스트리·공개 범위가 확정되기 전에는 실제 publish를 활성화하지 않는다. 로컬 pack과 CI 검증 작업은 먼저 완료한다.
+
+완료 기준: 릴리스 PR에서 버전과 기록을 검토할 수 있고, 배포 설정 확정 후 beta 패키지를 설치 가능한 상태로 발행한다. 외부 설정이 미확정이면 pack·CI 완료 상태와 남은 설정을 구분해 보고한다.
+
+### 4단계: 소비 프로젝트 적용과 1.0.0
+
+1. 실제 소비 프로젝트 하나를 선정한다. 경로·접근 권한이 없으면 fixture 통합까지 완료하고 해당 정보만 요청한다.
+2. 기존 폴더 연결 또는 소스 복사를 패키지 import로 전환한다. CSS·테마·폰트·타입·오버레이·차트 등 실제 사용 흐름을 검증한다.
+3. 소비 프로젝트는 정확한 버전과 lockfile로 고정한다. 업데이트 PR에서 changelog·이관 안내·대표 화면을 검토하도록 절차를 문서화한다.
+4. 이전 패키지 버전과 lockfile로 되돌리는 동작을 검증한다. 잘못 배포된 버전은 레지스트리 기능에 맞게 사용 중단 안내하고 수정 버전을 발행한다.
+5. 가이드에 버전을 표시하고 해당 태그에서 같은 버전의 문서·예시를 확인할 수 있게 한다. 별도 문서 플랫폼 구축 없이 시작한다.
+6. beta에서 확인한 문제를 해결하고 1.0.0 설치 안내, 지원 환경, 공개 API, 변경 기록을 확정한다.
+
+완료 기준: 실제 소비 프로젝트에서 설치·빌드·화면·업데이트·버전 복귀가 검증되고 1.0.0 패키지와 대응 문서가 제공된다. fixture만 통과한 상태를 실제 소비 검증 완료로 보고하지 않는다.
+
+### 인계와 결과 보고
+
+진행 상태는 단계별로 미착수·진행 중·검증 완료를 기록한다. 현재 1단계 패키지 기반, 2단계 독립 `.tgz` 소비·브라우저 통합, 3단계의 Changesets·GitHub CI·버전 PR 자동화는 완료했다. 3단계의 실제 beta publish·인증·태그·GitHub Release와 4단계는 미착수다. 후속 작업은 외부 결정 사항을 확정한 뒤 publish를 활성화하거나, 실제 소비 프로젝트 경로를 받아 4단계 적용 검증을 진행한다.
+
+확정된 외부 결정은 패키지명 `@dbwk10317/bonggu-design-system`과 MIT License 저작권자 `dbwk10317`이다. 남은 외부 결정 사항은 배포 레지스트리·공개 범위와 실제 소비 프로젝트 경로다. 미확정 값을 확정값처럼 배포 설정에 넣지 않는다.
+
+최종 보고에는 변경 원인, 확정한 README 계약, 수정 방식, 기존 템플릿·소비 코드 영향, 실행한 검증과 결과, 배포 여부·버전, 남은 외부 설정을 포함한다. 소스 변경 시 기존 번들·매니페스트·adherence 생성물을 재생성하고 직접 편집하지 않는다.
+
+참고한 공식 자료:
+
+- [MUI 버전 정책](https://mui.com/material-ui/getting-started/versions/): SemVer에 따른 릴리스 분류.
+- [Atlassian 릴리스 단계](https://atlassian.design/release-phases/): 기능의 안정화·폐기 단계 구분.
+- [Changesets](https://github.com/changesets/changesets): 변경 설명·버전·changelog·배포 관리.
+- [npm provenance](https://docs.npmjs.com/generating-provenance-statements/): 배포 산출물의 출처 연결. 구현 시 최신 지원 조건을 다시 확인한다.

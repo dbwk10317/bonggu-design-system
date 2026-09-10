@@ -372,6 +372,83 @@ function declaredComponents() {
   return found;
 }
 
+function publicApiViolations() {
+  const text = read('readme.md');
+  const section = text.match(/### Components \((\d+) · (\d+)그룹\)\r?\n([\s\S]*?)\r?\n\r?\n그룹 기준:/);
+  if (!section) return [{ file: 'readme.md', line: 1, detail: 'Components 공개 목록을 읽을 수 없음' }];
+
+  const listed = [];
+  const groups = [];
+  for (const row of section[3].matchAll(/^- ([a-z]+):\s*(.+)$/gm)) {
+    groups.push(row[1]);
+    for (const item of row[2].split(',')) {
+      const name = item.trim().match(/^([A-Z]\w*)/);
+      if (name) listed.push(name[1]);
+    }
+  }
+
+  const violations = [];
+  const expectedCount = Number(section[1]);
+  const expectedGroups = Number(section[2]);
+  if (listed.length !== expectedCount) {
+    violations.push({ file: 'readme.md', line: lineOf(text, section.index), detail: `목록 ${listed.length}개, 제목 ${expectedCount}개` });
+  }
+  if (groups.length !== expectedGroups) {
+    violations.push({ file: 'readme.md', line: lineOf(text, section.index), detail: `그룹 행 ${groups.length}개, 제목 ${expectedGroups}개` });
+  }
+
+  const duplicateNames = listed.filter((name, index) => listed.indexOf(name) !== index);
+  for (const name of new Set(duplicateNames)) {
+    violations.push({ file: 'readme.md', line: lineOf(text, section.index), detail: `${name}이 공개 목록에 중복됨` });
+  }
+
+  const listedNames = new Set(listed);
+  const declarations = declaredComponents();
+  const declaredNames = new Set(declarations.map(({ name }) => name));
+  for (const name of listedNames) {
+    if (!declaredNames.has(name)) violations.push({ file: 'readme.md', line: lineOf(text, section.index), detail: `${name}의 공개 .d.ts 함수 선언이 없음` });
+  }
+  for (const { name, file } of declarations) {
+    if (!listedNames.has(name)) violations.push({ file, line: 1, detail: `${name}이 readme Components 공개 목록에 없음` });
+  }
+
+  const hookDeclarations = walk('components')
+    .filter((file) => file.endsWith('.d.ts'))
+    .flatMap((file) => [...read(file).matchAll(/export declare function useToast\s*\(/g)].map((match) => ({ file, at: match.index })));
+  if (hookDeclarations.length !== 1) {
+    violations.push({ file: 'components', line: 1, detail: `useToast 공개 선언 ${hookDeclarations.length}개 (필요: 1개)` });
+  }
+  return violations;
+}
+
+function packageIdentityViolations() {
+  const violations = [];
+  const pkg = JSON.parse(read('package.json'));
+  const expectedRepository = 'git+https://github.com/dbwk10317/bonggu-design-system.git';
+  if (pkg.name !== '@dbwk10317/bonggu-design-system') {
+    violations.push({ file: 'package.json', line: 1, detail: `패키지명 ${pkg.name}` });
+  }
+  if (pkg.license !== 'MIT') {
+    violations.push({ file: 'package.json', line: 1, detail: `라이선스 ${pkg.license}` });
+  }
+  if (pkg.repository?.url !== expectedRepository) {
+    violations.push({ file: 'package.json', line: 1, detail: `저장소 ${pkg.repository?.url}` });
+  }
+  const license = read('LICENSE');
+  if (!license.includes('Copyright (c) 2026 dbwk10317')) {
+    violations.push({ file: 'LICENSE', line: 1, detail: 'MIT 저작권자 또는 연도가 계약과 다름' });
+  }
+  for (const file of [
+    'THIRD_PARTY_NOTICES.md',
+    'licenses/JETBRAINS-MONO-OFL-1.1.txt',
+    'licenses/PHOSPHOR-ICONS-MIT.txt',
+    'licenses/SPOQA-HAN-SANS-OFL-1.1.txt',
+  ]) {
+    if (!fs.existsSync(path.join(root, file))) violations.push({ file, line: 1, detail: '배포 자산 라이선스 고지 누락' });
+  }
+  return violations;
+}
+
 const mentions = (text, name) => new RegExp(`\\b${name}\\b`).test(text);
 const GUIDE_INDEX = 'guidelines/index.html';
 
@@ -435,6 +512,8 @@ const checks = [
   ['tint 위 글자색', rawColorAsTextViolations(), '글자색은 같은 계열의 -ink를 씁니다. 원색은 채움 배경 전용입니다.'],
   ['장식 그라디언트', gradientViolations(), '배경은 단색으로 두고, 값·진행을 나타내는 그라디언트만 readme가 허용한 범위에서 씁니다.'],
   ['차트 면 채움 alpha', chartAlphaViolations(), '축이 있는 차트는 .14, 면이 겹치거나 소형인 차트는 .2를 씁니다.'],
+  ['공개 API 목록 정합성', publicApiViolations(), 'readme Components 목록·개수·그룹과 공개 .d.ts 함수 선언, useToast 선언을 함께 맞춥니다.'],
+  ['패키지 식별자·라이선스', packageIdentityViolations(), 'package.json·LICENSE·제3자 고지를 readme의 패키지 계약과 맞춥니다.'],
   ['그룹 카드 누락', cardCoverageViolations(), '그 컴포넌트를 자기 그룹의 *.card.html에 한 번 이상 그립니다.'],
   ['가이드 페이지 누락', guideIndexViolations(), 'guidelines/index.html의 목록과 목차에 그 컴포넌트·카드를 넣습니다.'],
   ['템플릿 미사용 컴포넌트', templateCoverageViolations(), 'templates/dashboard의 화면에서 그 컴포넌트를 실제로 씁니다.'],

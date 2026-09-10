@@ -2,7 +2,7 @@ import type { HTMLAttributes, ReactNode } from "react";
 export type UploadStatus = "queued" | "uploading" | "paused" | "verifying" | "done" | "failed";
 export interface UploadItem { id: string; name: string; size?: number; status: UploadStatus; /** 0~1 */ progress?: number; chunk?: number; chunks?: number; rate?: string; error?: string }
 /** 청크 업로드(ZIP 프로젝트·Dataset). Dropzone + 파일별 진행 + 일시정지·재개·재시도·취소. 상태는 부모가 소유한다. */
-export interface FileUploadProps extends Omit<HTMLAttributes<HTMLDivElement>, "title"> {
+export interface FileUploadProps extends Omit<HTMLAttributes<HTMLDivElement>, "title" | "onPause" | "onCancel"> {
   items: UploadItem[];
   accept?: string;
   multiple?: boolean;
