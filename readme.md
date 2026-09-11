@@ -162,7 +162,7 @@
 
 ## 패키지·버전·배포 전환 계획 (작업 인계)
 
-작성일: 2026-09-09. 상태: 1~3단계 완료. Changesets, CI 게이트, 태그 발행 워크플로와 인증까지 구성했다. 남은 것은 실제 태그를 미는 일과 4~5단계다.
+작성일: 2026-09-09. 상태: 1~3단계 완료. `1.0.0-beta.0`을 GitHub Packages `next` 채널로 발행했다. 남은 것은 4단계의 `1.0.0` 정식 발행과 5단계다.
 
 이 절은 후속 에이전트의 작업 계획이다. 현재 제공 중인 기능이나 지원 보장을 뜻하지 않는다. 각 단계에서 확정한 계약은 이 문서의 해당 규범에 반영하고, 이 절에는 진행 상태와 남은 작업을 갱신한다. 별도 계획 파일이나 코드 주석을 규칙의 출처로 만들지 않는다.
 
@@ -236,12 +236,13 @@ import '@dbwk10317/bonggu-design-system/styles.css';
 
 ### 3단계: 버전과 릴리스 자동화
 
-상태: Changesets 3.0.2, CI 게이트, 태그 발행 워크플로와 그 회귀 게이트는 완료했다. 패키지명·scope·라이선스·레지스트리는 확정했다. 남은 것은 실제 `1.0.0-beta.0` 태그를 미는 일이다.
+상태: 완료. Changesets 3.0.2, CI 게이트, 태그 발행 워크플로와 그 회귀 게이트를 구성하고 `1.0.0-beta.0`을 `next` 채널로 발행했다. 패키지명·scope·라이선스·레지스트리는 확정했다.
 
 **발행은 태그다.** 버전 확정과 태그 생성은 로컬에서 하고, 워크플로는 태그 푸시에서 검증하고 올리기만 한다. main 푸시로는 아무것도 발행되지 않는다. 버전 PR은 쓰지 않는다. 이 저장소는 PR을 쓰지 않으므로 봇이 PR을 여는 모델과 맞지 않는다.
 
 ```bash
 npx changeset version   # 버전과 CHANGELOG 확정
+npm install --package-lock-only --ignore-scripts   # changeset version은 lockfile 버전을 갱신하지 않는다
 git commit -am "release: v<버전>"
 git tag -a v<버전> -m "<버전>"   # -a 필수. 가벼운 태그는 --follow-tags가 밀지 않는다
 git push origin main --follow-tags
@@ -259,7 +260,9 @@ git push origin main --follow-tags
 
 출시 흐름은 `1.0.0-beta.N` 통합 검증 후 `1.0.0` 정식 출시다. 사전 검증 패키지는 `next`, 정식 패키지는 `latest` 채널로 구분한다. 유지보수 대상과 지원 범위는 이 문서의 공개 API·버전·배포 계약에 확정했다.
 
-현재 버전 `0.0.0-development`은 prerelease라 semver에서 major·minor·patch 어느 쪽으로 올려도 `0.0.0`으로 떨어진다. Changesets만으로는 `1.0.0`에 닿지 못한다. 발행 직전에 기준 버전을 `0.0.0`으로 두고 `changeset pre enter beta`를 거쳐야 `1.0.0-beta.0`이 나온다. 이 경로는 실제로 확인했다.
+첫 버전을 뗄 때 `0.0.0-development`이 걸림돌이었다. prerelease라 semver에서 major·minor·patch 어느 쪽으로 올려도 `0.0.0`으로 떨어져 Changesets만으로는 `1.0.0` 계열에 닿지 못한다. 기준 버전을 `0.0.0`으로 두고 `changeset pre enter beta`를 거쳐 `1.0.0-beta.0`을 냈다.
+
+정식 `1.0.0`은 pre 모드를 닫고 낸다. `changeset pre exit` 뒤 `changeset version`이 `.changeset/pre/`에 모아 둔 changeset을 다시 읽어 하나의 릴리스로 합치고 `1.0.0`을 낸다. 이 경로는 실제로 확인했다.
 
 작업:
 
@@ -293,7 +296,7 @@ git push origin main --follow-tags
 
 ### 인계와 결과 보고
 
-진행 상태는 단계별로 미착수·진행 중·검증 완료를 기록한다. 현재 1단계 패키지 기반, 2단계 독립 `.tgz` 소비·브라우저 통합, 3단계의 Changesets·CI 게이트·태그 발행 워크플로·인증은 완료했다. 미착수는 실제 beta 태그를 미는 일과 4~5단계다. GitHub Release 페이지 생성은 선택이며 현재 하지 않는다. 5단계는 1.0.0 발행 뒤에 실제 소비 프로젝트 경로를 받아 진행하며, 1.0.0 발행을 막지 않는다.
+진행 상태는 단계별로 미착수·진행 중·검증 완료를 기록한다. 현재 1단계 패키지 기반, 2단계 독립 `.tgz` 소비·브라우저 통합, 3단계의 Changesets·CI 게이트·태그 발행 워크플로·인증·beta 발행까지 완료했다. 미착수는 4단계의 `1.0.0` 정식 발행과 5단계다. GitHub Release 페이지 생성은 선택이며 현재 하지 않는다. 5단계는 1.0.0 발행 뒤에 실제 소비 프로젝트 경로를 받아 진행하며, 1.0.0 발행을 막지 않는다.
 
 확정된 외부 결정은 패키지명 `@dbwk10317/bonggu-design-system`, MIT License 저작권자 `dbwk10317`, 배포 레지스트리 GitHub Packages, 태그 기반 발행, 유지보수 대상과 지원 범위다. 남은 외부 결정 사항은 실제 소비 프로젝트 경로뿐이다. 미확정 값을 확정값처럼 배포 설정에 넣지 않는다.
 
