@@ -49,6 +49,11 @@ npm run sync:ds
 `dts-fix.mjs`가 빠지면 에이전트가 읽는 API 계약에 데이터 형태가 비어 있다. 두 스크립트의
 헤더 주석에 각각 왜 필요한지 적혀 있다.
 
+`.ds-sync/resync.mjs`는 이 저장소에서 돌지 않는다. 패키지가 `node_modules/@dbwk10317/`에
+깔려 있다고 보는데 `prep.mjs`가 그 일을 하지 않아 `package-build` 단계에서 ENOENT로 죽고,
+**죽으면서 `ds-bundle/`을 거의 비워 놓는다**. 그 처방이 가리키는 `preview-rebuild.mjs`도
+스테이징돼 있지 않다. 재동기화도 `npm run sync:ds`로 다시 만든 뒤 DesignSync 도구로 올린다.
+
 - 변환기 스크립트는 `.ds-sync/`에 스테이징된다(생성물). 스킬이 갱신되면 다시 복사한다.
 - `.design-sync/previews/*.tsx`는 사람이 쓴 미리보기다. 컴포넌트 prop 이름이 바뀌면 조용히
   컴파일에 실패하고 그 컴포넌트가 기본 카드로 떨어진다(빌드 로그 `! preview build failed:`).
