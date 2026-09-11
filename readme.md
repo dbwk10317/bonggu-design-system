@@ -167,7 +167,7 @@
 
 첫 목표는 회귀 게이트와 독립 fixture로 검증한 정식 `1.0.0`을 발행하는 것이다. 실제 소비 프로젝트 적용은 그 뒤에 온다. 소비처는 정식 버전을 설치해서 쓰는 것이지 발행의 선행 조건이 아니다. 컴포넌트·타입·토큰·CSS·폰트·자산을 단일 패키지와 단일 버전으로 배포한다. 기존 HTML 카드·대시보드용 브라우저 번들도 같은 소스에서 계속 생성한다.
 
-패키지명은 `@dbwk10317/bonggu-design-system`, 라이선스는 `Copyright (c) 2026 dbwk10317`의 MIT License로 확정했다. 배포 레지스트리와 패키지 공개 범위는 아직 확정하지 않았다. 이를 결정하기 전에는 `private: true`를 유지하고 로컬 `.tgz` 설치까지만 진행한다. 이 계획은 외부 공개나 계정 생성의 실행 승인을 뜻하지 않는다.
+패키지명은 `@dbwk10317/bonggu-design-system`, 라이선스는 `Copyright (c) 2026 dbwk10317`의 MIT License로 확정했다. 배포 레지스트리는 GitHub Packages(`https://npm.pkg.github.com`)로 확정했다. scope `@dbwk10317`은 저장소 소유자와 같아야 하며 현재 같다. 공개 범위는 저장소를 따른다. GitHub Packages는 공개 패키지도 설치에 인증을 요구하므로, 소비처는 `read:packages` 토큰과 `.npmrc`가 필요하다. publish 활성화(인증·워크플로) 전까지는 `private: true`를 유지한다.
 
 목표 소비 형태:
 
@@ -245,6 +245,8 @@ import '@dbwk10317/bonggu-design-system/styles.css';
 
 출시 흐름은 `1.0.0-beta.N` 통합 검증 후 `1.0.0` 정식 출시다. 사전 검증 패키지는 `next`, 정식 패키지는 `latest` 채널로 구분한다. 초기 유지보수 대상은 최신 정식 major로 제안하며, 지원 범위는 출시 전에 이 문서에 명시한다.
 
+현재 버전 `0.0.0-development`은 prerelease라 semver에서 major·minor·patch 어느 쪽으로 올려도 `0.0.0`으로 떨어진다. Changesets만으로는 `1.0.0`에 닿지 못한다. 발행 직전에 기준 버전을 `0.0.0`으로 두고 `changeset pre enter beta`를 거쳐야 `1.0.0-beta.0`이 나온다. 이 경로는 실제로 확인했다.
+
 작업:
 
 1. Changesets를 도입한다. PR에 소비자 관점의 변경 설명과 버전 영향도를 기록하고, 릴리스 PR에서 버전·changelog를 검토한다.
@@ -280,7 +282,7 @@ import '@dbwk10317/bonggu-design-system/styles.css';
 
 진행 상태는 단계별로 미착수·진행 중·검증 완료를 기록한다. 현재 1단계 패키지 기반, 2단계 독립 `.tgz` 소비·브라우저 통합, 3단계의 Changesets·GitHub CI·버전 PR 자동화는 완료했다. 3단계의 실제 beta publish·인증·태그·GitHub Release와 4~5단계는 미착수다. 후속 작업은 외부 결정 사항을 확정해 publish를 활성화하고 4단계로 `1.0.0`을 발행하는 것이다. 5단계는 그 뒤에 실제 소비 프로젝트 경로를 받아 진행하며, 1.0.0 발행을 막지 않는다.
 
-확정된 외부 결정은 패키지명 `@dbwk10317/bonggu-design-system`과 MIT License 저작권자 `dbwk10317`이다. 남은 외부 결정 사항은 배포 레지스트리·공개 범위와 실제 소비 프로젝트 경로다. 미확정 값을 확정값처럼 배포 설정에 넣지 않는다.
+확정된 외부 결정은 패키지명 `@dbwk10317/bonggu-design-system`, MIT License 저작권자 `dbwk10317`, 배포 레지스트리 GitHub Packages다. 남은 외부 결정 사항은 publish 인증·태그·릴리스 연결 방식, 지원 범위, 실제 소비 프로젝트 경로다. 미확정 값을 확정값처럼 배포 설정에 넣지 않는다.
 
 최종 보고에는 변경 원인, 확정한 README 계약, 수정 방식, 기존 템플릿·소비 코드 영향, 실행한 검증과 결과, 배포 여부·버전, 남은 외부 설정을 포함한다. 소스 변경 시 기존 번들·매니페스트·adherence 생성물을 재생성하고 직접 편집하지 않는다.
 

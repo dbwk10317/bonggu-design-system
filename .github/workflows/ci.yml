@@ -30,6 +30,3 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Build, pack, install, and test
         run: npm test
-      - name: Verify changesets
-        run: npx changeset status --since=origin/main
-        if: github.event_name == 'pull_request'

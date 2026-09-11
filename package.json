@@ -8,9 +8,6 @@
     "url": "git+https://github.com/dbwk10317/bonggu-design-system.git"
   },
   "type": "module",
-  "workspaces": [
-    "tests"
-  ],
   "files": [
     "dist",
     "THIRD_PARTY_NOTICES.md",
