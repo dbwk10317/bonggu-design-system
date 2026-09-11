@@ -24,5 +24,30 @@
   ],
   "guidelinesGlob": [
     "readme.md"
-  ]
+  ],
+  "overrides": {
+    "Modal": {
+      "cardMode": "single",
+      "primaryStory": "Basic"
+    },
+    "Drawer": {
+      "cardMode": "single",
+      "primaryStory": "NodeDetail"
+    },
+    "FormModal": {
+      "cardMode": "single",
+      "primaryStory": "Invite"
+    },
+    "ConfirmDialog": {
+      "cardMode": "single",
+      "primaryStory": "Danger"
+    },
+    "NotificationDrawer": {
+      "cardMode": "single",
+      "primaryStory": "WithTrigger"
+    },
+    "Heatmap": {
+      "cardMode": "column"
+    }
+  }
 }
