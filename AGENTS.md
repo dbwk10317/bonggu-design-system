@@ -55,5 +55,9 @@
 - `templates/dashboard/README.md` 템플릿의 파일이 어떤 화면인지에 대한 목록. 가상 제품 하나를 조립한 예시이며 제품 사양이 아니다.
 - `CHANGELOG.md` Changesets가 생성하는 릴리스별 변경 사실과 이관 안내. 버전 분류와 정책은 `readme.md`에 둔다.
 - `LICENSE`, `THIRD_PARTY_NOTICES.md`, `licenses/*` 프로젝트와 포함 자산의 법적 고지. 디자인 규칙을 적지 않는다.
+- `.design-sync/config.json` Claude Design 동기화 설정. 어떤 소스를 어떤 프로젝트로 올리는지만 적고 규칙을 적지 않는다.
+- `.design-sync/prep.mjs`, `.design-sync/dts-fix.mjs` 변환기의 손실을 메우는 전처리·후처리. 각 파일 헤더 주석에 왜 필요한지 한 줄로 남긴다.
+- `.design-sync/previews/*.tsx` 컴포넌트별 미리보기. 공개 prop을 실제로 쓰는 예시이며 규칙의 출처가 아니다.
+- `.design-sync/NOTES.md` 동기화 실행 순서와 재동기화 위험. 디자인 규칙을 적지 않고 실행 환경은 `CLAUDE.md`를 따른다.
 
 `_ds_bundle.js`, `_ds_manifest.json`, `_adherence.oxlintrc.json`은 생성물이다. 손으로 고치지 않고 출처(`components/**`, `tokens/*.css`)를 고친 뒤 `node build-bundle.mjs`를 다시 실행한다. adherence 설정에는 손으로 유지하는 항목이 섞여 있고, 첫 키 `x-generated`가 그 경계를 적어 둔다.

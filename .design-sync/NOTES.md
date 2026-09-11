@@ -60,7 +60,6 @@ npm run sync:ds
 - Node는 `C:\nvm4w\nodejs`. `BABEL_STANDALONE`은 이제 `node_modules/@babel/standalone`으로 해결된다.
 - Playwright 브라우저는 `~/AppData/Local/ms-playwright`에 **chromium-1243이 이미 설치돼 있고**
   저장소가 핀한 playwright 1.63.0이 같은 리비전을 가리킨다. 추가 설치 불필요.
-  (CLAUDE.md의 "번들 Chromium이 설치돼 있지 않다"는 서술은 이제 사실이 아니다.)
 - **Bash 도구의 heredoc이 백슬래시를 한 단계 삼킨다.** `\\u` → `\u`, `\\s` → `\s`.
   정규식이나 이스케이프가 들어가는 스크립트는 heredoc으로 쓰지 말고 Write 도구로 파일을 만든다.
   이것 때문에 조용히 틀린 스크립트를 여러 번 돌렸다.
