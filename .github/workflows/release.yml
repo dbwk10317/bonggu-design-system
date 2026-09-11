@@ -1,38 +1,52 @@
-name: Release PR
+name: Release
 
+# 태그가 발행이다. 버전 확정(changeset version)과 태그 생성은 로컬에서 하고, 여기서는
+# 검증하고 올리기만 한다. main 푸시로는 아무것도 발행되지 않는다.
 on:
   push:
-    branches: [main]
+    tags: ["v*"]
 
 concurrency:
   group: release-${{ github.ref }}
   cancel-in-progress: false
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
+  packages: write
 
 jobs:
-  version:
+  publish:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
       - name: Set up Node.js
         uses: actions/setup-node@v7
         with:
           node-version: 26
           cache: npm
+          registry-url: https://npm.pkg.github.com
       - name: Install dependencies
         run: npm ci
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
       - name: Verify release candidate
         run: npm test
-      - name: Create or update version pull request
-        uses: changesets/action@v2
-        with:
-          version-script: npm run version:packages
+      # 태그와 package.json이 어긋난 채로 올라가면 태그가 가리키는 커밋과 레지스트리의
+      # 버전이 달라진다. 되돌릴 수 없으므로 올리기 전에 막는다.
+      - name: Verify tag matches package version
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          pkg="$(node -p "require('./package.json').version")"
+          test "$tag" = "$pkg" || { echo "태그 ${GITHUB_REF_NAME}와 package.json ${pkg}가 다릅니다"; exit 1; }
+      # prerelease는 next, 정식은 latest. 기본값에 맡기면 beta가 latest를 가져간다.
+      - name: Publish
+        run: |
+          version="$(node -p "require('./package.json').version")"
+          case "$version" in
+            *-*) npm publish --tag next ;;
+            *) npm publish --tag latest ;;
+          esac
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

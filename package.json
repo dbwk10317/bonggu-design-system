@@ -1,7 +1,6 @@
 {
   "name": "@dbwk10317/bonggu-design-system",
   "version": "0.0.0-development",
-  "private": true,
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -13,6 +12,9 @@
     "THIRD_PARTY_NOTICES.md",
     "licenses"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
