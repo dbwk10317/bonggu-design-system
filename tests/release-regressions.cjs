@@ -52,6 +52,14 @@ assert.equal(pkg.workspaces, undefined, "루트에 workspaces가 생겨 배포 �
 
 // 설정 문자열만 보면 릴리스 자동화가 실제로 도는지 알 수 없다. 위 검사만 있던 동안 버전 PR 워크플로는
 // changeset version에서 죽고 있었는데도 이 파일은 통과했다. CLI를 실제로 돌려 확인한다.
+// changeset status는 baseBranch와의 diff로 동작한다. 릴리스 잡은 태그를 detached·shallow로
+// 체크아웃하므로 그곳에는 main 브랜치가 없고 status는 실행될 수 없다. 실행 가능한 곳에서만
+// 돌리고, 건너뛸 때는 건너뛴다고 적는다. 조용히 빠지면 아무도 다시 보지 않는다.
+const hasBase = spawnSync("git", ["rev-parse", "--verify", "--quiet", `refs/heads/${changesets.baseBranch}`], { cwd: root, encoding: "utf8" }).status === 0;
+if (!hasBase) {
+  console.log(`PASS release regressions: 태그 발행 경로 하나, 게이트 뒤 publish, 채널 분리 (changeset status는 ${changesets.baseBranch} 브랜치가 없는 체크아웃이라 건너뜀)`);
+  process.exit(0);
+}
 const status = spawnSync(process.execPath, [path.join(nodeModules, "@changesets", "cli", "bin.js"), "status"], { cwd: root, encoding: "utf8" });
 const statusOutput = `${status.stdout}${status.stderr}`;
 // 이 문구가 그 회귀의 이름이다. 어떤 상태에서도 나오면 안 된다.
