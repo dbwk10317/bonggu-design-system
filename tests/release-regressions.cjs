@@ -18,7 +18,9 @@ assert.match(pkg.name, /^@dbwk10317\//, "scope가 저장소 소유자와 다르�
 assert.equal(pkg.scripts.changeset, "changeset");
 assert.equal(pkg.scripts["version:packages"], "changeset version");
 assert.equal(changesets.baseBranch, "main");
-assert.deepEqual(changesets.privatePackages, { version: true, tag: false });
+// access·privatePackages는 changeset publish가 읽는 값인데 발행은 워크플로의 npm publish가 한다.
+// 소비처 없는 설정을 검사로 고정하지 않는다.
+assert.equal(changesets.access, undefined, "changeset publish를 쓰지 않으므로 access는 소비처가 없다");
 
 for (const [name, workflow] of [["CI", ci], ["Release", release]]) {
   assert.match(workflow, /actions\/checkout@v6/, `${name} workflow`);

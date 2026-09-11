@@ -1,5 +1,0 @@
-{
-  "name": "bonggu-design-system-regressions",
-  "private": true,
-  "scripts": { "test": "node run.cjs" }
-}
