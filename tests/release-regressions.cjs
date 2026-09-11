@@ -54,11 +54,19 @@ assert.equal(pkg.workspaces, undefined, "루트에 workspaces가 생겨 배포 �
 // changeset version에서 죽고 있었는데도 이 파일은 통과했다. CLI를 실제로 돌려 확인한다.
 const status = spawnSync(process.execPath, [path.join(nodeModules, "@changesets", "cli", "bin.js"), "status"], { cwd: root, encoding: "utf8" });
 const statusOutput = `${status.stdout}${status.stderr}`;
-// 대기 중 changeset이 없으면 status는 exit 1이다(릴리스 직후 커밋이 그렇다). 그것만 통과시키고
-// "not in the workspace" 같은 나머지 실패는 잡는다.
-if (!/no changesets were found/i.test(statusOutput)) {
+// 이 문구가 그 회귀의 이름이다. 어떤 상태에서도 나오면 안 된다.
+assert(!/not in the workspace/i.test(statusOutput), `changesets가 배포 대상을 versionable 목록에서 빼고 있다: ${statusOutput}`);
+// status의 결과는 대기 중 changeset이 있는지에 달려 있다. 셋 다 정상 상태다.
+//   있음         -> exit 0, 릴리스 계획에 배포 대상이 뜬다
+//   없음 + 깨끗  -> exit 0, "Packages to be bumped:" 뒤가 빈다 (릴리스 커밋이 그렇다)
+//   없음 + 변경  -> exit 1, "no changesets were found"
+// 배포 대상 이름을 요구할 수 있는 것은 첫 경우뿐이므로, 그때만 요구한다.
+const pending = fs.readdirSync(path.join(root, ".changeset")).filter((name) => name.endsWith(".md") && name !== "README.md");
+if (pending.length) {
   assert.equal(status.status, 0, `changeset status가 실패함: ${statusOutput}`);
   assert.match(statusOutput, new RegExp(pkg.name.replace(/[/\\^$*+?.()|[\]{}]/g, "\\$&")), `changeset status가 배포 대상 ${pkg.name}을 릴리스 계획에 잡지 못함: ${statusOutput}`);
+} else {
+  assert(status.status === 0 || /no changesets were found/i.test(statusOutput), `changeset status가 예상 밖으로 실패함: ${statusOutput}`);
 }
 
 console.log("PASS release regressions: 태그 발행 경로 하나, 게이트 뒤 publish, 채널 분리, 배포 대상이 릴리스 계획에 잡힘");

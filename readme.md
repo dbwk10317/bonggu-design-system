@@ -243,7 +243,8 @@ import '@dbwk10317/bonggu-design-system/styles.css';
 ```bash
 npx changeset version   # 버전과 CHANGELOG 확정
 git commit -am "release: v<버전>"
-git tag v<버전> && git push origin main --follow-tags
+git tag -a v<버전> -m "<버전>"   # -a 필수. 가벼운 태그는 --follow-tags가 밀지 않는다
+git push origin main --follow-tags
 ```
 
 워크플로는 올리기 전에 두 가지를 막는다. 게이트(`npm test`)를 통과하지 못하면 올리지 않고, 태그와 `package.json`의 버전이 다르면 올리지 않는다. 채널은 버전이 정하며 prerelease는 `next`, 정식은 `latest`로 간다.
