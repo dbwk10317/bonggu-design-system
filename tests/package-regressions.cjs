@@ -194,7 +194,7 @@ async function main() {
   const tarballDependency = `file:${path.relative(consumer, tarball).replaceAll("\\", "/")}`;
   fs.writeFileSync(path.join(consumer, "package.json"), packageTemplate.replace("__PACKAGE_TARBALL__", tarballDependency));
   fs.rmSync(path.join(consumer, "package.template.json"));
-  run(process.execPath, [npmCli, "install", "--offline", "--ignore-scripts", "--no-audit", "--no-fund"]);
+  run(process.execPath, [npmCli, "install", "--prefer-offline", "--ignore-scripts", "--no-audit", "--no-fund"]);
 
   const packageRoot = fs.realpathSync(path.join(consumer, "node_modules", "@dbwk10317", "bonggu-design-system"));
   assert(packageRoot.startsWith(`${fs.realpathSync(consumer)}${path.sep}`), "file dependency가 fixture 밖 원본으로 연결됨");

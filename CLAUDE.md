@@ -30,7 +30,7 @@ DS_TEST_BROWSER_EXECUTABLE="C:\Program Files\Google\Chrome\Application\chrome.ex
 ```
 
 - `tests/run.cjs`가 번들을 먼저 다시 만들므로, 검증까지 돌릴 때 `build-bundle.mjs`를 따로 실행할 필요는 없다. 번들 다음이 타입 검사와 린트다.
-- `package-regressions.cjs`는 소비 fixture를 오프라인으로 깐다. npm 캐시가 비어 있으면 `ENOTCACHED`로 실패하므로 그때는 온라인으로 한 번 받아 캐시를 채운다.
+- `package-regressions.cjs`는 소비 fixture를 `--prefer-offline`으로 깐다. 캐시에 있으면 캐시를, 없으면 레지스트리를 쓴다. 캐시가 빈 깨끗한 기계(CI 러너)에서도 그대로 돈다.
 - Playwright 번들 Chromium(chromium-1243)이 `~/AppData/Local/ms-playwright`에 설치돼 있고, 저장소가 핀한 playwright 1.63.0이 같은 리비전을 가리킨다. 그대로 쓰면 된다. 없어졌을 때만 설치된 Chrome을 `DS_TEST_BROWSER_EXECUTABLE`로 지정하거나 `npx playwright install chromium`을 실행한다.
 - `_ds_bundle.js`·`_ds_manifest.json`은 생성물이다. 직접 고치지 않고 소스를 고친 뒤 다시 만든다.
 

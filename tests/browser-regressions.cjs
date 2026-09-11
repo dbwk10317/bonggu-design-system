@@ -177,11 +177,20 @@ async function run() {
     const guideErrors = [];
     guide.on('pageerror', e => guideErrors.push(`pageerror: ${e.message}`));
     guide.on('console', m => { if (m.type() === 'error') guideErrors.push(`console: ${m.text()}`); });
+    // 해시만 다른 goto는 문서를 다시 읽지 않는다. show()가 iframe src를 바꾸는 동안 이전 카드가 남아 있어,
+    // 곧바로 단언하면 직전 해시의 DOM을 읽는다. 그 해시의 카드가 실제로 커밋될 때까지 기다린다.
+    const openGuide = async (hash) => {
+      await guide.goto(`http://127.0.0.1:${server.address().port}/guidelines/index.html#${hash}`);
+      await guide.waitForFunction((h) => {
+        const link = document.querySelector(`#gd-nav a[href="#${h}"]`), frame = document.getElementById('gd-frame');
+        return !!link && frame.contentWindow.location.href === new URL(link.dataset.src, location.href).href;
+      }, hash);
+      return guide.frameLocator('#gd-frame');
+    };
     for (const width of [1280, 390]) {
       await guide.setViewportSize({ width, height: 900 });
       for (const group of guideGroups) {
-        await guide.goto(`http://127.0.0.1:${server.address().port}/guidelines/index.html#${group}`);
-        const frame = guide.frameLocator('#gd-frame');
+        const frame = await openGuide(group);
         await frame.locator('#root > *').first().waitFor();
         assert.equal(await guide.locator('bds-theme-toggle').count(), 1, `가이드 상단 테마 토글 ${group} @${width}`);
         assert.equal(await frame.locator('bds-theme-toggle').count(), 0, `삽입 카드 중복 테마 토글 ${group} @${width}`);
@@ -233,16 +242,14 @@ async function run() {
         }
       }
       for (const value of guideValues) {
-        await guide.goto(`http://127.0.0.1:${server.address().port}/guidelines/index.html#${value}`);
-        const frame = guide.frameLocator('#gd-frame');
+        const frame = await openGuide(value);
         await frame.locator('body.bds-demo-page > *').first().waitFor();
         assert.equal(await guide.locator('bds-theme-toggle').count(), 1, `가이드 상단 테마 토글 ${value} @${width}`);
         assert.equal(await frame.locator('bds-theme-toggle').count(), 0, `삽입 값 카드 중복 테마 토글 ${value} @${width}`);
         const valueWidth = await frame.locator('body').evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
         assert.equal(valueWidth.scroll <= valueWidth.client, true, `값 카드 문서 가로 스크롤 ${value} @${width}: ${JSON.stringify(valueWidth)}`);
       }
-      await guide.goto(`http://127.0.0.1:${server.address().port}/guidelines/index.html#template`);
-      const template = guide.frameLocator('#gd-frame');
+      const template = await openGuide('template');
       await template.locator('[data-screen="overview"]').waitFor();
       assert.equal(await template.getByRole('button', { name: /(?:라이트|다크) 테마로/ }).count(), 0, `삽입 템플릿 중복 테마 토글 @${width}`);
       const outerDark = await guide.locator('bds-theme-toggle button').getAttribute('aria-pressed') === 'true';
