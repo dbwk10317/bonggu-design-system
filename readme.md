@@ -28,6 +28,7 @@
 - OTP의 부분값은 중간 빈자리를 ASCII 공백으로 보존한다. 말미 공백만 생략하고 모든 칸이 숫자일 때만 완성으로 본다.
 - MultiSelect는 선택한 뒤 활성 인덱스를 목록 시작으로 옮기고, 바뀐 목록 범위 안에서 키보드 이동을 계속한다.
 - DatePicker는 외부 선택값이 바뀌거나 팝업이 다시 열릴 때 선택된 월로 맞춘다. 달을 넘기는 것만으로는 선택값이 바뀌지 않는다.
+- **입력 컴포넌트는 `ref`를 조작 요소로 넘긴다.** `components/input`의 모든 컴포넌트는 `forwardRef`이고 공개 선언은 `ForwardRefExoticComponent<Props & RefAttributes<요소>>`다. 네이티브 `input`·`select`·`textarea`·`button` 하나를 그리면 그 요소로, 여럿이면 첫 번째(OTP 첫 칸, TimePicker 시)로, 조작 요소가 없으면 루트로 넘긴다. 폼 라이브러리의 `register`와 프로그램 포커스가 이것에 의존한다.
 - Select의 선택값은 기본·compact·터치 컨트롤 높이 안에서 세로 중앙에 둔다. 목록은 네이티브 `select`가 그린다. `appearance: base-select`를 지원하는 브라우저에서는 같은 토큰으로 다시 그리고, 지원하지 않으면 브라우저 기본 목록으로 남는다. 목록 모양을 완전히 통제해야 하면 Select가 아니라 Combobox를 쓴다.
 
 **데이터와 결측**
@@ -143,11 +144,11 @@
 - **패키지 식별자·라이선스**: 패키지명은 `@dbwk10317/bonggu-design-system`이고 저장소는 `https://github.com/dbwk10317/bonggu-design-system`이다. 프로젝트 코드는 `Copyright (c) 2026 dbwk10317`의 MIT License로 배포한다. 포함된 Spoqa Han Sans Neo·JetBrains Mono·Phosphor Icons는 `THIRD_PARTY_NOTICES.md`와 `licenses/`에 적힌 각 원래 라이선스를 유지한다.
 - **공개 JS·타입 표면**: 위 Components 목록의 96개 컴포넌트와 `useToast`, 그리고 각 공개 컴포넌트·훅의 `.d.ts`가 내보내는 관련 `type`·`interface`가 공개 API다. `components/core/`, `components/data/chart-math.js`, `theme-toggle.js`, `useFieldContext`, `passwordStrength`는 내부 구현이며 공개 진입점에서 내보내지 않는다. 번들 네임스페이스는 공개 진입점을 그대로 따르지만, 정본은 `public-entry.js`다.
 - **SemVer 경계**: 1.0.0 이후 patch는 공개 계약을 유지하는 수정, minor는 기존 사용법을 유지하는 선택적 API 추가, major는 공개 컴포넌트·훅·타입·토큰·경로의 삭제·개명, 필수 prop·기본 동작·이벤트 시점의 비호환 변경, 지원 환경 축소다. 기본 크기·간격·타이포가 기존 레이아웃을 깨뜨리는 변경도 major다. 폐기 예정 API는 대체 방법을 먼저 알리고 major에서 제거하며, 토큰 이름은 호환 별칭을 만들지 않고 major 이관표로 안내한다.
-- **스타일 범위**: `styles.css`는 토큰, 폰트, 아이콘, 컴포넌트 스타일과 `tokens/base.css`를 함께 불러오는 단일 full-app 진입점이다. 명시적으로 import한 앱 전체의 `body`·제목·링크 등 전역 요소에 base/reset이 적용된다. 현재 일부 컴포넌트만 격리해 도입하는 scoped CSS 진입점은 없으며, 이 전역 영향을 받지 않는다고 가정하지 않는다.
+- **스타일 범위**: `styles.css`는 토큰, 폰트, 아이콘, 컴포넌트 스타일과 `tokens/base.css`를 함께 불러오는 단일 full-app 진입점이다. `base.css`의 요소 리셋(`body`·제목·링크·목록·폼 요소 등)은 `@layer bds-reset` 안에 있다. 레이어 밖 규칙이 레이어 안 규칙보다 항상 우선하므로, 소비 앱이 같은 요소를 직접 스타일하면 앱의 규칙이 이기고 앱이 건드리지 않은 요소에만 리셋이 적용된다. 컴포넌트 스타일(`bds-*`)과 유틸(`.bds-mono`·`.bds-sr`)은 레이어 밖이다. 별도 scoped CSS 진입점은 없다.
 - **테마·밀도**: 라이트가 기본이고 다크는 `:root.dark` 또는 `[data-theme="dark"]`, compact 밀도는 `<html data-density="compact">`로 선택한다. `theme-toggle.js`는 문서 카드 전용 자동 실행 스크립트라 공개 npm 진입점에 포함하지 않는다. 컴포넌트의 브라우저 API 접근은 effect 또는 이벤트 시점에만 일어나며 모듈 import 자체가 DOM·`localStorage`·테마를 바꾸지 않는다.
 - **배포 자산 경로**: 배포물은 `styles.css`에서 `tokens/`·`styles/`를 불러오고 `tokens/`에서 `fonts/`를 불러오는 현재 상대 경로를 보존한다. `fonts/phosphor/`와 `assets/`도 패키지 안의 상대 경로 자산으로 제공하며 CDN이나 호스트 절대 경로에 의존하지 않는다.
-- **검증된 환경**: 현재 자동 회귀가 확인하는 React 범위는 18.3.1이고 런타임 외부 import는 `react`뿐이다. `react-dom` import는 없다. 브라우저 동작은 현재 회귀 게이트의 Chromium 계열에서 검증한다. 다른 React 버전, Safari, Firefox, 검증하지 않은 프레임워크까지 지원한다고 선언하지 않는다.
-- **지원 범위**: 유지보수 대상은 최신 정식 major 하나다. 이전 major는 patch를 내지 않으며, 필요하면 최신 major로 이관한다. 지원한다고 말하는 범위는 게이트가 검증하는 범위와 같다. React 18.3.1, Chromium 계열, 그리고 위 검증된 환경에 적힌 것뿐이다. 범위를 넓히려면 문서가 아니라 게이트에 그 조합을 먼저 추가한다.
+- **검증된 환경**: 자동 회귀가 확인하는 React는 18.3.1과 19.3.0이고 peer 범위는 `>=18.2.0 <20`이다. 소비 fixture는 두 조합 각각에서 설치·타입·SSR·hydration·브라우저 상호작용을 검사한다. 런타임 외부 import는 `react`뿐이다. `react-dom` import는 없다. 브라우저 동작은 현재 회귀 게이트의 Chromium 계열에서 검증한다. 다른 React 버전, Safari, Firefox, 검증하지 않은 프레임워크까지 지원한다고 선언하지 않는다.
+- **지원 범위**: 유지보수 대상은 최신 정식 major 하나다. 이전 major는 patch를 내지 않으며, 필요하면 최신 major로 이관한다. 지원한다고 말하는 범위는 게이트가 검증하는 범위와 같다. React 18.2 이상 19 이하(게이트는 18.3.1·19.3.0), Chromium 계열, 그리고 위 검증된 환경에 적힌 것뿐이다. 범위를 넓히려면 문서가 아니라 게이트에 그 조합을 먼저 추가한다.
 - **Node 요구**: 저장소의 빌드·검증은 Node 26에서 확인한다. 배포물은 브라우저용 ESM이고 Node 전용 API를 쓰지 않으며, 서버 렌더는 게이트가 Node 26에서만 확인한다. 검증한 Node가 하나뿐이라 `engines`로 소비처 하한을 선언하지 않는다. 하한을 선언해야 하면 그 버전을 게이트에 먼저 추가한다.
 - **폐기 유예**: 폐기 예정 API는 최소 한 번의 minor에서 대체 방법을 함께 알린 뒤 다음 major에서 제거한다. 기간이 아니라 릴리스 단위로 센다.
 - **변경 기록**: 소비자 코드·타입·토큰·스타일·동작에 영향을 주는 변경은 Changeset에 소비자 관점의 설명과 SemVer 영향도를 기록한다. 문서·검증·빌드 도구만 바뀌어 배포 결과가 같으면 빈 Changeset으로 의도를 표시하거나 릴리스 기록에서 제외할 수 있다. `CHANGELOG.md`는 Changesets가 릴리스별 변경 사실과 이관 안내를 생성하는 기록이며 정책의 정본은 아니다.
@@ -162,7 +163,7 @@
 
 ## 패키지·버전·배포 전환 계획 (작업 인계)
 
-작성일: 2026-09-09. 상태: 1~3단계 완료. `1.0.0-beta.0`을 GitHub Packages `next` 채널로 발행했다. 남은 것은 4단계의 `1.0.0` 정식 발행과 5단계다.
+작성일: 2026-09-09. 상태: 1~3단계 완료. `1.0.0-beta.0`은 GitHub Packages `next` 채널로 발행했고, 2026-09-14에 레지스트리를 npmjs로 옮겼다(`1.0.0`부터 npmjs). 남은 것은 4단계의 `1.0.0` 정식 발행과 5단계다.
 
 이 절은 후속 에이전트의 작업 계획이다. 현재 제공 중인 기능이나 지원 보장을 뜻하지 않는다. 각 단계에서 확정한 계약은 이 문서의 해당 규범에 반영하고, 이 절에는 진행 상태와 남은 작업을 갱신한다. 별도 계획 파일이나 코드 주석을 규칙의 출처로 만들지 않는다.
 
@@ -170,7 +171,7 @@
 
 첫 목표는 회귀 게이트와 독립 fixture로 검증한 정식 `1.0.0`을 발행하는 것이다. 실제 소비 프로젝트 적용은 그 뒤에 온다. 소비처는 정식 버전을 설치해서 쓰는 것이지 발행의 선행 조건이 아니다. 컴포넌트·타입·토큰·CSS·폰트·자산을 단일 패키지와 단일 버전으로 배포한다. 기존 HTML 카드·대시보드용 브라우저 번들도 같은 소스에서 계속 생성한다.
 
-패키지명은 `@dbwk10317/bonggu-design-system`, 라이선스는 `Copyright (c) 2026 dbwk10317`의 MIT License로 확정했다. 배포 레지스트리는 GitHub Packages(`https://npm.pkg.github.com`)로 확정했다. scope `@dbwk10317`은 저장소 소유자와 같아야 하며 현재 같다. 공개 범위는 저장소를 따른다. GitHub Packages는 공개 패키지도 설치에 인증을 요구하므로, 소비처는 `read:packages` 토큰과 `.npmrc`가 필요하다. publish 활성화(인증·워크플로) 전까지는 `private: true`를 유지한다.
+패키지명은 `@dbwk10317/bonggu-design-system`, 라이선스는 `Copyright (c) 2026 dbwk10317`의 MIT License로 확정했다. 배포 레지스트리는 npmjs(`https://registry.npmjs.org`) 공개 패키지다(`publishConfig.access: public`. scope 패키지의 기본은 restricted라 명시하지 않으면 첫 발행이 실패한다). 소비처는 인증 없이 `npm install @dbwk10317/bonggu-design-system`으로 설치한다. npmjs 계정 또는 조직 `dbwk10317`이 이 scope를 소유해야 하며, 발행 인증은 저장소 시크릿 `NPM_TOKEN`(해당 패키지 publish 권한의 granular access token)이다. `1.0.0-beta.0`은 전환 전 GitHub Packages에 남아 있고 그대로 둔다.
 
 목표 소비 형태:
 
@@ -183,11 +184,11 @@ import '@dbwk10317/bonggu-design-system/styles.css';
 
 ### 현재 구현 현황
 
-- 루트 `package.json`과 단일 lockfile이 패키지 빌드와 검증 도구를 함께 고정한다. 배포 대상이 저장소 루트의 패키지라 workspaces는 선언하지 않는다. 선언하면 changesets가 루트를 versionable 목록에서 빼 릴리스 계획을 세우지 못한다. 검증한 React 버전은 18.3.1이다. Changesets와 태그 발행 워크플로를 구성했고, 발행은 태그를 밀 때만 일어난다.
+- 루트 `package.json`과 단일 lockfile이 패키지 빌드와 검증 도구를 함께 고정한다. 배포 대상이 저장소 루트의 패키지라 workspaces는 선언하지 않는다. 선언하면 changesets가 루트를 versionable 목록에서 빼 릴리스 계획을 세우지 못한다. 검증한 React 조합은 18.3.1·19.3.0이다. Changesets와 태그 발행 워크플로를 구성했고, 발행은 태그를 밀 때만 일어난다.
 - `build-bundle.mjs`는 기존 `window.Ds_d3ea90` 번들·매니페스트·adherence를 만들고, `build-package.mjs`는 같은 컴포넌트 소스에서 ESM·타입·CSS·자산 패키지를 만든다.
 - `styles.css`의 CSS·폰트·아이콘 상대 경로는 배포물에서도 보존되며 독립 fixture가 모든 참조를 검사한다.
 - `theme-toggle.js`는 기존 문서용 브라우저 번들에만 남고 npm 공개 진입점에는 포함되지 않는다. 패키지 import 전후 DOM·localStorage 불변을 검사한다.
-- `tokens/base.css`의 body·제목·링크 전역 적용은 full-app 스타일 계약이며, 설치 패키지와 기존 앱 CSS를 함께 로드하는 브라우저 fixture가 이 영향을 검사한다.
+- `tokens/base.css`의 요소 리셋은 `@layer bds-reset`에 있다. 설치 패키지와 기존 앱 CSS를 함께 로드하는 브라우저 fixture가 앱 규칙은 이기고 앱이 건드리지 않은 요소에는 리셋이 적용되는지 검사한다.
 - 공개 표면·SemVer·스타일·테마·밀도·자산 경로·검증 환경 계약은 이 문서의 공개 API·버전·배포 계약에 확정했다.
 
 착수 에이전트는 `git status`, 현재 소스, 이 문서, `tests/rule-regressions.cjs`, `tests/README.md`를 다시 확인한다. 컴포넌트 변경 전에는 해당 `.d.ts`·`.prompt.md`·실제 사용처를 비교한다. 아래 파일명 중 아직 없는 것은 신설 후보이며, 구현 시 기존 구조와 맞춰 확정한다.
@@ -236,7 +237,7 @@ import '@dbwk10317/bonggu-design-system/styles.css';
 
 ### 3단계: 버전과 릴리스 자동화
 
-상태: 완료. Changesets 3.0.2, CI 게이트, 태그 발행 워크플로와 그 회귀 게이트를 구성하고 `1.0.0-beta.0`을 `next` 채널로 발행했다. 패키지명·scope·라이선스·레지스트리는 확정했다.
+상태: 완료. Changesets 3.0.2, CI 게이트, 태그 발행 워크플로와 그 회귀 게이트를 구성하고 `1.0.0-beta.0`을 GitHub Packages `next` 채널로 발행했다. 그 뒤 레지스트리를 npmjs로 옮겼다. 패키지명·scope·라이선스·레지스트리는 확정했다.
 
 **발행은 태그다.** 버전 확정과 태그 생성은 로컬에서 하고, 워크플로는 태그 푸시에서 검증하고 올리기만 한다. main 푸시로는 아무것도 발행되지 않는다. 버전 PR은 쓰지 않는다. 이 저장소는 PR을 쓰지 않으므로 봇이 PR을 여는 모델과 맞지 않는다.
 
@@ -271,7 +272,7 @@ git push origin main --follow-tags
 3. `.github/workflows/`에 main 푸시 게이트(`ci.yml`)와 태그 발행(`release.yml`)을 둔다. 발행 경로는 태그 하나뿐이고, 회귀 게이트가 그 사실을 검사한다.
 4. 발행 전에 같은 커밋에서 빌드·pack·설치 검증을 돌린다. 검증하지 않은 산출물이 올라가지 않도록 게이트가 publish보다 먼저 온다.
 5. 패키지 버전·Git 태그·릴리스 기록을 연결한다. 태그와 `package.json`이 어긋나면 발행을 중단한다. 이미 배포된 버전은 덮어쓰지 않는다.
-6. 인증은 워크플로 내장 `GITHUB_TOKEN`과 `packages: write`를 쓴다. GitHub Packages는 npm 레지스트리 전용인 trusted publishing·provenance를 쓰지 않는다. 자격 증명을 저장소에 기록하지 않는다.
+6. 인증은 저장소 시크릿 `NPM_TOKEN`이다. trusted publishing(OIDC)은 npmjs에 패키지가 먼저 존재해야 설정할 수 있으므로 `1.0.0`을 토큰으로 낸 뒤 옮길 수 있다. 자격 증명을 저장소에 기록하지 않는다.
 
 완료 기준: 릴리스 PR에서 버전과 기록을 검토할 수 있고, 배포 설정 확정 후 beta 패키지를 설치 가능한 상태로 발행한다. 외부 설정이 미확정이면 pack·CI 완료 상태와 남은 설정을 구분해 보고한다.
 
@@ -298,15 +299,17 @@ git push origin main --follow-tags
 
 진행 상태는 단계별로 미착수·진행 중·검증 완료를 기록한다. 현재 1단계 패키지 기반, 2단계 독립 `.tgz` 소비·브라우저 통합, 3단계의 Changesets·CI 게이트·태그 발행 워크플로·인증·beta 발행까지 완료했다. 미착수는 4단계의 `1.0.0` 정식 발행과 5단계다. GitHub Release 페이지 생성은 선택이며 현재 하지 않는다. 5단계는 1.0.0 발행 뒤에 실제 소비 프로젝트 경로를 받아 진행하며, 1.0.0 발행을 막지 않는다.
 
-확정된 외부 결정은 패키지명 `@dbwk10317/bonggu-design-system`, MIT License 저작권자 `dbwk10317`, 배포 레지스트리 GitHub Packages, 태그 기반 발행, 유지보수 대상과 지원 범위다. 남은 외부 결정 사항은 실제 소비 프로젝트 경로뿐이다. 미확정 값을 확정값처럼 배포 설정에 넣지 않는다.
+확정된 외부 결정은 패키지명 `@dbwk10317/bonggu-design-system`, MIT License 저작권자 `dbwk10317`, 배포 레지스트리 npmjs 공개, 태그 기반 발행, 유지보수 대상과 지원 범위다. 남은 외부 설정은 npmjs scope `@dbwk10317` 소유 확인과 저장소 시크릿 `NPM_TOKEN` 등록, 남은 외부 결정은 실제 소비 프로젝트 경로다. 미확정 값을 확정값처럼 배포 설정에 넣지 않는다.
+
+beta 소비 테스트는 하지 않고 `1.0.0`으로 바로 가기로 했다(2026-09-14). 그 대신 소비 fixture를 실제 사용 폭으로 넓혔다. React 18·19 두 조합, 입력 `ref` 포커스, 라벨로 닿는 입력·select와 폼 제출, 모달 열고 닫기와 포커스 복원, 표 선택, 실제 폭으로 그려지는 차트, 레이어 리셋과 앱 CSS의 우선순위를 브라우저에서 검사한다. 같은 이유로 `1.0.0` 뒤에 major가 될 변경을 먼저 끝냈다. React peer 범위, 입력 21개의 `forwardRef`, `hideOnMobile` 별칭 삭제, 리셋의 `@layer`.
 
 다음 작업은 순서대로 셋이다.
 
-1. **beta 확인.** 소비처에서 `next` 채널로 `1.0.0-beta.0`을 설치해 실제 사용 흐름을 본다. GitHub Packages는 공개 패키지도 설치에 인증을 요구하므로 `read:packages` 토큰과 `.npmrc`가 필요하다.
-2. **4단계 `1.0.0` 정식 발행.** beta에서 문제가 없으면 위 출시 흐름의 pre 종료 경로로 낸다. 지원 범위·공개 API·변경 기록은 이미 이 문서에 확정돼 있다.
-3. **5단계.** 소비 프로젝트 경로를 받아 진행한다.
+1. **외부 설정.** npmjs에서 scope `@dbwk10317`을 쓸 수 있는지 확인하고 저장소 시크릿 `NPM_TOKEN`을 등록한다.
+2. **4단계 `1.0.0` 정식 발행.** 위 출시 흐름의 pre 종료 경로로 낸다. 지원 범위·공개 API·변경 기록은 이 문서에 확정돼 있다.
+3. **5단계.** 소비 프로젝트 경로를 받아 진행한다. 여기서 나온 계약 위반 요구는 별칭 없이 `2.0.0`으로 간다.
 
-발행 결과를 레지스트리에서 직접 확인하려면 `read:packages` 스코프가 필요하다. 저장소의 Packages 탭이 가장 확실하고, 로컬 `gh` 토큰에 그 스코프가 없으면 API 조회는 403이 된다. 워크플로 로그의 `+ <패키지>@<버전>` 줄과 종료 코드도 발행 근거다.
+발행 결과는 `npm view @dbwk10317/bonggu-design-system versions`로 확인한다. 워크플로 로그의 `+ <패키지>@<버전>` 줄과 종료 코드도 발행 근거다. 잘못 나간 버전은 되돌리지 못하므로 `npm deprecate`로 표시하고 수정 버전을 낸다.
 
 최종 보고에는 변경 원인, 확정한 README 계약, 수정 방식, 기존 템플릿·소비 코드 영향, 실행한 검증과 결과, 배포 여부·버전, 남은 외부 설정을 포함한다. 소스 변경 시 기존 번들·매니페스트·adherence 생성물을 재생성하고 직접 편집하지 않는다.
 

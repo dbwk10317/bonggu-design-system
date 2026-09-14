@@ -1,4 +1,4 @@
-import type { InputHTMLAttributes, ReactNode } from "react";
+import type { ForwardRefExoticComponent, InputHTMLAttributes, ReactNode, RefAttributes } from "react";
 /**
  * 한 줄 텍스트 입력. Field 안에서 쓴다.
  */
@@ -16,4 +16,4 @@ export interface TextFieldProps extends Omit<InputHTMLAttributes<HTMLInputElemen
   mono?: boolean;
   invalid?: boolean;
 }
-export declare function TextField(props: TextFieldProps): ReactNode;
+export declare const TextField: ForwardRefExoticComponent<TextFieldProps & RefAttributes<HTMLInputElement>>;

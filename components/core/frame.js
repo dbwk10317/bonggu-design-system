@@ -27,6 +27,10 @@ export function frameStyle({ fit = "flex", width, height, minHeight, style } = {
 /** @param {...(string | false | null | undefined)} a */
 export const cx = (...a) => a.filter(Boolean).join(" ");
 
+/** 바깥 ref 와 안쪽 ref 를 한 요소에 함께 건다. 콜백·객체 ref 모두 받는다.
+ * @template T @param {import("react").ForwardedRef<T>} ref @param {T | null} el */
+export const assignRef = (ref, el) => { if (typeof ref === "function") ref(el); else if (ref) ref.current = el; };
+
 /* 간격 계약: gap·size는 --sp 단계 번호(0~10) 또는 CSS 길이 그대로. Stack·Inline·Spacer가 공유한다. */
 /** @type {Record<number, string | number>} */
 const GAP = { 0: 0, 1: "var(--sp-1)", 2: "var(--sp-2)", 3: "var(--sp-3)", 4: "var(--sp-4)", 5: "var(--sp-5)", 6: "var(--sp-6)", 7: "var(--sp-7)", 8: "var(--sp-8)", 9: "var(--sp-9)", 10: "var(--sp-10)" };

@@ -12,7 +12,8 @@ export interface LegendItem {
   shape?: "square" | "line" | "dot";
   hidden?: boolean;
 }
-export interface LegendProps extends HTMLAttributes<HTMLUListElement> {
+// onToggle 은 React 19 부터 DOM 이벤트(ToggleEvent) 이름이기도 하다. 범례의 항목 토글과 시그니처가 달라 빼고 상속한다.
+export interface LegendProps extends Omit<HTMLAttributes<HTMLUListElement>, "onToggle"> {
   items: LegendItem[];
   /** 기본 "square" */
   shape?: "square" | "line" | "dot";

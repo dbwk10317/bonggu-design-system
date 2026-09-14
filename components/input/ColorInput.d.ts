@@ -1,4 +1,4 @@
-import type { HTMLAttributes, ReactNode } from "react";
+import type { ForwardRefExoticComponent, HTMLAttributes, RefAttributes } from "react";
 /** 색 선택(조명 ARGB). 스와치 picker + hex 입력 + 프리셋 칩. */
 export interface ColorInputProps extends Omit<HTMLAttributes<HTMLDivElement>, "onChange" | "defaultValue"> {
   /** #RRGGBB */
@@ -13,4 +13,4 @@ export interface ColorInputProps extends Omit<HTMLAttributes<HTMLDivElement>, "o
   onChange?: (hex: string) => void;
   "aria-label"?: string;
 }
-export declare function ColorInput(props: ColorInputProps): ReactNode;
+export declare const ColorInput: ForwardRefExoticComponent<ColorInputProps & RefAttributes<HTMLInputElement>>;

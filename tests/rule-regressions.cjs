@@ -462,6 +462,17 @@ function packageIdentityViolations() {
   return violations;
 }
 
+// readme 입력 절: 입력 컴포넌트는 ref 를 조작 요소로 넘긴다. 구현은 forwardRef, 공개 선언은 ForwardRefExoticComponent.
+function inputRefViolations() {
+  const violations = [];
+  for (const file of walk('components/input').filter((f) => f.endsWith('.jsx'))) {
+    const dts = file.replace(/\.jsx$/, '.d.ts');
+    if (!/\bforwardRef\(/.test(read(file))) violations.push({ file, line: 1, detail: 'forwardRef 로 감싸지 않음' });
+    if (!fs.existsSync(path.join(root, dts)) || !/ForwardRefExoticComponent</.test(read(dts))) violations.push({ file: dts, line: 1, detail: 'ForwardRefExoticComponent 선언이 없음' });
+  }
+  return violations;
+}
+
 const mentions = (text, name) => new RegExp(`\\b${name}\\b`).test(text);
 const renders = (text, name) => new RegExp('<' + name + '(?=[\\s/>])').test(text);
 const GUIDE_INDEX = 'guidelines/index.html';
@@ -698,6 +709,7 @@ const checks = [
   ['호버·프레스 짝', pressStateViolations(), '호버는 --panel-2 한 단계, 프레스는 --panel-3 두 단계입니다. 눌러서 동작하는 표면은 둘을 짝으로 냅니다(터치 기기에는 호버가 없습니다).'],
   ['모서리 토큰', radiusTokenViolations(), '컨트롤 모서리는 --radius-xs/ctl/panel/sheet/pill을 씁니다. 안쪽 상자는 바깥 − 패딩을 calc()로 적습니다. 리터럴은 그래픽 마크(막대·잉크·셀·구분선)에만 허용합니다.'],
   ['테마 전환·DOM id', themeAndIdViolations(), '테마 토글은 트랜지션을 끄고 리플로우 뒤 다음 프레임에 되돌립니다. 컴포넌트의 DOM id 는 useId 로 만듭니다.'],
+  ['입력 ref 전달', inputRefViolations(), 'components/input 의 컴포넌트는 forwardRef 로 감싸 ref 를 조작 요소로 넘기고, .d.ts 는 ForwardRefExoticComponent<Props & RefAttributes<요소>> 로 선언합니다.'],
   ['가이드 페이지 누락', guideIndexViolations(), 'guidelines/index.html의 목록과 목차에 그 컴포넌트·카드를 넣습니다.'],
   ['템플릿 미사용 컴포넌트', templateCoverageViolations(), 'templates/dashboard의 화면에서 그 컴포넌트를 실제로 씁니다.'],
 ];

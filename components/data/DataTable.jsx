@@ -6,7 +6,7 @@ import { Checkbox } from "../input/Checkbox.jsx";
 
 const TABLE_DESKTOP_HIDE = "bds-table__d-hide";
 const TABLE_MOBILE_HIDE = "bds-table__m-hide";
-const hideCls = (/** @type {import("./DataTable.d.ts").DataTableColumn<any>} */ c) => (c.hideBelow === "desktop" ? TABLE_DESKTOP_HIDE : c.hideBelow === "tablet" || c.hideOnMobile ? TABLE_MOBILE_HIDE : undefined);
+const hideCls = (/** @type {import("./DataTable.d.ts").DataTableColumn<any>} */ c) => (c.hideBelow === "desktop" ? TABLE_DESKTOP_HIDE : c.hideBelow === "tablet" ? TABLE_MOBILE_HIDE : undefined);
 
 /* 셀 하나의 결측 판정.
    render 없는 열: row[key]가 값이므로 core/missing.js 규칙을 그대로 쓴다. null/undefined는 빈 칸이 아니라 "수집 안 됨"이다.

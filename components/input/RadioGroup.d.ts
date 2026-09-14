@@ -1,4 +1,4 @@
-import type { HTMLAttributes, ReactNode } from "react";
+import type { ForwardRefExoticComponent, HTMLAttributes, ReactNode, RefAttributes } from "react";
 export interface RadioOption { value: string; label: ReactNode; hint?: ReactNode; disabled?: boolean; }
 export interface RadioGroupProps extends Omit<HTMLAttributes<HTMLFieldSetElement>, "onChange"> {
   name?: string;
@@ -9,4 +9,4 @@ export interface RadioGroupProps extends Omit<HTMLAttributes<HTMLFieldSetElement
   layout?: "column" | "row" | "cards";
   disabled?: boolean;
 }
-export declare function RadioGroup(props: RadioGroupProps): ReactNode;
+export declare const RadioGroup: ForwardRefExoticComponent<RadioGroupProps & RefAttributes<HTMLFieldSetElement>>;

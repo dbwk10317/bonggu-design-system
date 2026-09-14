@@ -1,4 +1,4 @@
-import type { HTMLAttributes, ReactNode } from "react";
+import type { ForwardRefExoticComponent, HTMLAttributes, RefAttributes } from "react";
 export interface MultiSelectProps {
   options: { value: string; label: string }[];
   value: string[];
@@ -12,4 +12,4 @@ export interface MultiSelectProps {
   className?: string;
   style?: any;
 }
-export declare function MultiSelect(props: MultiSelectProps): ReactNode;
+export declare const MultiSelect: ForwardRefExoticComponent<MultiSelectProps & RefAttributes<HTMLInputElement>>;

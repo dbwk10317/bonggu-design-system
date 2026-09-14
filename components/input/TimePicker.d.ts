@@ -1,4 +1,4 @@
-import type { HTMLAttributes, ReactNode } from "react";
+import type { ForwardRefExoticComponent, HTMLAttributes, RefAttributes } from "react";
 export interface TimePickerProps {
   /** "HH:MM" 24시간 */
   value?: string;
@@ -12,4 +12,4 @@ export interface TimePickerProps {
   className?: string;
   style?: any;
 }
-export declare function TimePicker(props: TimePickerProps): ReactNode;
+export declare const TimePicker: ForwardRefExoticComponent<TimePickerProps & RefAttributes<HTMLSelectElement>>;

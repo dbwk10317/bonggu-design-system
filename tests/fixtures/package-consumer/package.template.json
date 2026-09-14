@@ -5,11 +5,11 @@
   "type": "module",
   "dependencies": {
     "@dbwk10317/bonggu-design-system": "__PACKAGE_TARBALL__",
-    "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react": "__REACT__",
+    "react-dom": "__REACT__"
   },
   "devDependencies": {
-    "@types/react": "18.3.31",
-    "@types/react-dom": "18.3.7"
+    "@types/react": "__TYPES_REACT__",
+    "@types/react-dom": "__TYPES_REACT_DOM__"
   }
 }

@@ -1,4 +1,4 @@
-import type { HTMLAttributes, ReactNode } from "react";
+import type { ForwardRefExoticComponent, HTMLAttributes, RefAttributes } from "react";
 export interface DatePickerProps {
   /** "YYYY-MM-DD". 외부 변경 및 다시 열 때 표시 월을 선택 월에 맞춘다. */
   value?: string;
@@ -13,4 +13,4 @@ export interface DatePickerProps {
   className?: string;
   style?: any;
 }
-export declare function DatePicker(props: DatePickerProps): ReactNode;
+export declare const DatePicker: ForwardRefExoticComponent<DatePickerProps & RefAttributes<HTMLButtonElement>>;

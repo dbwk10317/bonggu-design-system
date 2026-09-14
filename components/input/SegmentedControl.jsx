@@ -1,9 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
-import { cx, frameStyle } from "../core/frame.js";
+import React, { forwardRef, useEffect, useRef, useState } from "react";
+import { assignRef, cx, frameStyle } from "../core/frame.js";
 
-/** 2~5개 상호배타 선택. 선택 thumb가 미끄러진다. fit="flex"면 옵션이 폭을 균등 분할.
- * @param {Parameters<typeof import("./SegmentedControl.d.ts").SegmentedControl>[0]} props */
-export function SegmentedControl({ options = [], value, onChange, size = "md", fit = "auto", width, className, style, "aria-label": ariaLabel, ...rest }) {
+/** 2~5개 상호배타 선택. 선택 thumb가 미끄러진다. fit="flex"면 옵션이 폭을 균등 분할. */
+export const SegmentedControl = forwardRef(
+  /**
+   * @param {import("./SegmentedControl.d.ts").SegmentedControlProps} props
+   * @param {import("react").ForwardedRef<HTMLDivElement>} ref
+   */
+  function SegmentedControl({ options = [], value, onChange, size = "md", fit = "auto", width, className, style, "aria-label": ariaLabel, ...rest }, ref) {
   const root = useRef(/** @type {HTMLDivElement | null} */ (null));
   const [thumb, setThumb] = useState(/** @type {{ left: number, width: number } | null} */ (null));
   useEffect(() => {
@@ -15,7 +19,7 @@ export function SegmentedControl({ options = [], value, onChange, size = "md", f
     return () => ro.disconnect();
   }, [value, options.length]);
   return (
-    <div ref={root} role="radiogroup" aria-label={ariaLabel} className={cx("bds-seg", size === "sm" && "bds-seg--sm", fit === "flex" && "bds-seg--flex", className)} style={frameStyle({ fit, width, style })} {...rest}>
+    <div ref={(el) => { root.current = el; assignRef(ref, el); }} role="radiogroup" aria-label={ariaLabel} className={cx("bds-seg", size === "sm" && "bds-seg--sm", fit === "flex" && "bds-seg--flex", className)} style={frameStyle({ fit, width, style })} {...rest}>
       {thumb && <span className="bds-seg__thumb" style={thumb} aria-hidden="true" />}
       {options.map((o) => (
         <button key={o.value} type="button" role="radio" aria-checked={o.value === value} className="bds-seg__opt" disabled={o.disabled}
@@ -38,4 +42,4 @@ export function SegmentedControl({ options = [], value, onChange, size = "md", f
       ))}
     </div>
   );
-}
+});

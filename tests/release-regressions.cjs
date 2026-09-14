@@ -12,9 +12,12 @@ const ci = read(".github/workflows/ci.yml");
 const release = read(".github/workflows/release.yml");
 
 assert.notEqual(pkg.private, true, "private: true면 태그를 밀어도 발행이 되지 않는다");
-assert.equal(pkg.publishConfig?.registry, "https://npm.pkg.github.com", "배포 레지스트리가 GitHub Packages가 아님");
-// GitHub Packages는 scope가 저장소 소유자와 같아야 받는다.
-assert.match(pkg.name, /^@dbwk10317\//, "scope가 저장소 소유자와 다르면 GitHub Packages가 거부한다");
+// 레지스트리는 npmjs 기본값이다. scope 패키지는 기본이 restricted라 access를 명시하지 않으면 첫 발행이 402로 죽는다.
+assert.equal(pkg.publishConfig?.registry, undefined, "레지스트리를 따로 지정하지 않는다(npmjs 기본값)");
+assert.equal(pkg.publishConfig?.access, "public", "scope 패키지는 publishConfig.access=public이어야 npmjs에 공개로 올라간다");
+assert.match(pkg.name, /^@dbwk10317\//, "패키지 scope가 readme 계약과 다름");
+// peer 범위는 게이트의 React 조합과 같아야 한다. 검증하지 않은 버전을 peer로 열지 않는다.
+assert.equal(pkg.peerDependencies?.react, ">=18.2.0 <20", "React peer 범위가 검증 범위(18.2~19)와 다름");
 assert.equal(pkg.scripts.changeset, "changeset");
 assert.equal(pkg.scripts["version:packages"], "changeset version");
 assert.equal(changesets.baseBranch, "main");
@@ -34,9 +37,9 @@ for (const [name, workflow] of [["CI", ci], ["Release", release]]) {
 assert(!/npm publish/.test(ci), "CI workflow가 발행을 한다");
 assert.match(release, /on:\s*\n\s*push:\s*\n\s*tags:/, "Release workflow가 태그가 아닌 이벤트로 돈다");
 assert(!/branches:/.test(release), "Release workflow에 branch 트리거가 남아 있다");
-assert.match(release, /packages:\s*write/, "GitHub Packages에 올리려면 packages: write가 필요하다");
-assert.match(release, /NODE_AUTH_TOKEN/, "publish에 인증 토큰이 연결되지 않음");
-assert.match(release, /registry-url:\s*https:\/\/npm\.pkg\.github\.com/, "setup-node가 GitHub Packages를 보지 않음");
+assert.match(release, /NODE_AUTH_TOKEN:\s*\$\{\{\s*secrets\.NPM_TOKEN\s*\}\}/, "publish 인증이 npmjs 토큰(NPM_TOKEN)이 아님");
+assert.match(release, /registry-url:\s*https:\/\/registry\.npmjs\.org/, "setup-node가 npmjs를 보지 않음");
+assert(!/npm\.pkg\.github\.com/.test(release) && !/packages:\s*write/.test(release), "GitHub Packages 설정이 남아 있다");
 
 // 검증하지 않은 산출물이 올라가지 않도록, 게이트가 publish보다 먼저 와야 한다.
 assert(release.indexOf("npm test") < release.indexOf("npm publish"), "게이트보다 publish가 먼저 온다");

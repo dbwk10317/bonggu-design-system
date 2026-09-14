@@ -1,12 +1,16 @@
-import React, { useEffect, useId, useRef, useState } from "react";
-import { cx, frameStyle } from "../core/frame.js";
+import React, { forwardRef, useEffect, useId, useRef, useState } from "react";
+import { assignRef, cx, frameStyle } from "../core/frame.js";
 import { Icon } from "../action/Icon.jsx";
 import { Tag } from "../display/Tag.jsx";
 import { useFieldContext } from "./Field.jsx";
 
-/** 여러 개 선택(태그 입력). options: {value,label}. value는 배열. 입력으로 필터, Backspace로 마지막 제거.
- * @param {Parameters<typeof import("./MultiSelect.d.ts").MultiSelect>[0]} props */
-export function MultiSelect({ options = [], value = [], onChange, placeholder = "선택", max, fit = "flex", width, disabled, className, style }) {
+/** 여러 개 선택(태그 입력). options: {value,label}. value는 배열. 입력으로 필터, Backspace로 마지막 제거. */
+export const MultiSelect = forwardRef(
+  /**
+   * @param {import("./MultiSelect.d.ts").MultiSelectProps} props
+   * @param {import("react").ForwardedRef<HTMLInputElement>} ref
+   */
+  function MultiSelect({ options = [], value = [], onChange, placeholder = "선택", max, fit = "flex", width, disabled, className, style }, ref) {
   const f = useFieldContext(), uid = useId().replace(/:/g, "");
   const [q, setQ] = useState(""), [open, setOpen] = useState(false), [idx, setIdx] = useState(0);
   const root = useRef(/** @type {HTMLDivElement | null} */ (null)), input = useRef(/** @type {HTMLInputElement | null} */ (null));
@@ -34,7 +38,7 @@ export function MultiSelect({ options = [], value = [], onChange, placeholder = 
     <div ref={root} className={cx("bds-multi", "bds-combo", className)} style={frameStyle({ fit, width, style })}>
       <div className={cx("bds-ctl", f?.invalid && "bds-ctl--err", disabled && "bds-ctl--disabled")} onClick={() => input.current?.focus()}>
         {value.map((v) => { const o = options.find((x) => x.value === v); return <Tag key={v} onRemove={disabled ? undefined : () => remove(v)}>{o?.label ?? v}</Tag>; })}
-        <input ref={input} id={f?.id} aria-describedby={f?.describedBy} role="combobox" aria-expanded={open} aria-controls={`${uid}-list`} aria-activedescendant={open && !full && list[activeIdx] ? `${uid}-${activeIdx}` : undefined} aria-autocomplete="list" value={q} disabled={disabled} readOnly={full} aria-readonly={full || undefined} placeholder={value.length ? (full ? "" : "") : placeholder} onChange={(e) => { setQ(e.target.value); setOpen(true); }} onFocus={() => setOpen(true)} onKeyDown={onKey} />
+        <input ref={(el) => { input.current = el; assignRef(ref, el); }} id={f?.id} aria-describedby={f?.describedBy} role="combobox" aria-expanded={open} aria-controls={`${uid}-list`} aria-activedescendant={open && !full && list[activeIdx] ? `${uid}-${activeIdx}` : undefined} aria-autocomplete="list" value={q} disabled={disabled} readOnly={full} aria-readonly={full || undefined} placeholder={value.length ? (full ? "" : "") : placeholder} onChange={(e) => { setQ(e.target.value); setOpen(true); }} onFocus={() => setOpen(true)} onKeyDown={onKey} />
         <Icon name="caret-down" size={13} className="bds-multi__caret" />
       </div>
       {open && !full && <ul id={`${uid}-list`} role="listbox" className="bds-combo__list">
@@ -43,4 +47,4 @@ export function MultiSelect({ options = [], value = [], onChange, placeholder = 
       </ul>}
     </div>
   );
-}
+});

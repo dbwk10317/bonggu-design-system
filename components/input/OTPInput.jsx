@@ -1,10 +1,14 @@
-import React, { useRef } from "react";
-import { cx } from "../core/frame.js";
+import React, { forwardRef, useRef } from "react";
+import { assignRef, cx } from "../core/frame.js";
 import { useFieldContext } from "./Field.jsx";
 
-/** 인증 코드(OTP) 입력. length 자리 숫자, 붙여넣기 지원, 다 채우면 onComplete.
- * @param {Parameters<typeof import("./OTPInput.d.ts").OTPInput>[0]} props */
-export function OTPInput({ length = 6, value = "", onChange, onComplete, group = 3, invalid, disabled, className }) {
+/** 인증 코드(OTP) 입력. length 자리 숫자, 붙여넣기 지원, 다 채우면 onComplete. */
+export const OTPInput = forwardRef(
+  /**
+   * @param {import("./OTPInput.d.ts").OTPInputProps} props
+   * @param {import("react").ForwardedRef<HTMLInputElement>} ref
+   */
+  function OTPInput({ length = 6, value = "", onChange, onComplete, group = 3, invalid, disabled, className }, ref) {
   const f = useFieldContext();
   const refs = useRef(/** @type {(HTMLInputElement | null)[]} */ ([]));
   const chars = Array.from({ length }, (_, i) => value[i] === " " ? "" : value[i] ?? "");
@@ -22,7 +26,7 @@ export function OTPInput({ length = 6, value = "", onChange, onComplete, group =
   const onPaste = (e) => { const d = (e.clipboardData.getData("text") || "").replace(/\D/g, "").slice(0, length); if (!d) return; e.preventDefault(); commit(d); refs.current[Math.min(length - 1, d.length)]?.focus(); };
   return (
     <div className={cx("bds-otp", (invalid ?? f?.invalid) && "bds-otp--err", className)} role="group" aria-label="인증 코드" aria-describedby={f?.describedBy}>
-      {chars.map((c, i) => <React.Fragment key={i}>{group && i > 0 && i % group === 0 && <span className="bds-otp__sep" aria-hidden="true" />}<input ref={(el) => (refs.current[i] = el)} id={i === 0 ? f?.id : undefined} inputMode="numeric" autoComplete={i === 0 ? "one-time-code" : "off"} maxLength={2} value={c} disabled={disabled} aria-label={(i + 1) + "번째 자리"} onChange={(e) => onInput(i, e)} onKeyDown={(e) => onKey(i, e)} onPaste={onPaste} onFocus={(e) => e.target.select()} /></React.Fragment>)}
+      {chars.map((c, i) => <React.Fragment key={i}>{group && i > 0 && i % group === 0 && <span className="bds-otp__sep" aria-hidden="true" />}<input ref={(el) => { refs.current[i] = el; if (i === 0) assignRef(ref, el); }} id={i === 0 ? f?.id : undefined} inputMode="numeric" autoComplete={i === 0 ? "one-time-code" : "off"} maxLength={2} value={c} disabled={disabled} aria-label={(i + 1) + "번째 자리"} onChange={(e) => onInput(i, e)} onKeyDown={(e) => onKey(i, e)} onPaste={onPaste} onFocus={(e) => e.target.select()} /></React.Fragment>)}
     </div>
   );
-}
+});

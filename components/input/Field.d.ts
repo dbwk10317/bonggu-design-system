@@ -1,4 +1,4 @@
-import type { HTMLAttributes, ReactNode } from "react";
+import type { ForwardRefExoticComponent, HTMLAttributes, ReactNode, RefAttributes } from "react";
 /** 라벨·설명·오류를 입력에 연결하는 래퍼. 자식 입력(TextField 등)은 컨텍스트로 id·aria를 받는다. */
 export interface FieldProps extends HTMLAttributes<HTMLDivElement> {
   label?: ReactNode;
@@ -10,5 +10,5 @@ export interface FieldProps extends HTMLAttributes<HTMLDivElement> {
   id?: string;
   children: ReactNode;
 }
-export declare function Field(props: FieldProps): ReactNode;
+export declare const Field: ForwardRefExoticComponent<FieldProps & RefAttributes<HTMLDivElement>>;
 export declare function useFieldContext(): { id: string; describedBy?: string; invalid: boolean; required: boolean } | null;

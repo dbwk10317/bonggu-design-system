@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"Ds_d3ea90","components":[{"name":"Button","sourcePath":"components/action/Button.jsx"},{"name":"Icon","sourcePath":"components/action/Icon.jsx"},{"name":"IconButton","sourcePath":"components/action/IconButton.jsx"},{"name":"MascotMark","sourcePath":"components/brand/MascotMark.jsx"},{"name":"BarList","sourcePath":"components/data/BarList.jsx"},{"name":"Chart","sourcePath":"components/data/Chart.jsx"},{"name":"DataTable","sourcePath":"components/data/DataTable.jsx"},{"name":"DescriptionList","sourcePath":"components/data/DescriptionList.jsx"},{"name":"DiffView","sourcePath":"components/data/DiffView.jsx"},{"name":"Gauge","sourcePath":"components/data/Gauge.jsx"},{"name":"Heatmap","sourcePath":"components/data/Heatmap.jsx"},{"name":"KeyValues","sourcePath":"components/data/KeyValues.jsx"},{"name":"Legend","sourcePath":"components/data/Legend.jsx"},{"name":"LogViewer","sourcePath":"components/data/LogViewer.jsx"},{"name":"Sparkline","sourcePath":"components/data/Sparkline.jsx"},{"name":"StatTile","sourcePath":"components/data/StatTile.jsx"},{"name":"Timeline","sourcePath":"components/data/Timeline.jsx"},{"name":"TrendDelta","sourcePath":"components/data/TrendDelta.jsx"},{"name":"UptimeBar","sourcePath":"components/data/UptimeBar.jsx"},{"name":"Accordion","sourcePath":"components/display/Accordion.jsx"},{"name":"Avatar","sourcePath":"components/display/Avatar.jsx"},{"name":"AvatarGroup","sourcePath":"components/display/Avatar.jsx"},{"name":"Badge","sourcePath":"components/display/Badge.jsx"},{"name":"Code","sourcePath":"components/display/Code.jsx"},{"name":"CodeBlock","sourcePath":"components/display/Code.jsx"},{"name":"Kbd","sourcePath":"components/display/Code.jsx"},{"name":"CopyField","sourcePath":"components/display/CopyField.jsx"},{"name":"StatusPill","sourcePath":"components/display/StatusPill.jsx"},{"name":"Tag","sourcePath":"components/display/Tag.jsx"},{"name":"AlertBanner","sourcePath":"components/feedback/AlertBanner.jsx"},{"name":"ConfirmDialog","sourcePath":"components/feedback/ConfirmDialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"ErrorState","sourcePath":"components/feedback/ErrorState.jsx"},{"name":"InlineMessage","sourcePath":"components/feedback/InlineMessage.jsx"},{"name":"LoadingOverlay","sourcePath":"components/feedback/LoadingOverlay.jsx"},{"name":"NotificationTrigger","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"NotificationDrawer","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"ProgressBar","sourcePath":"components/feedback/ProgressBar.jsx"},{"name":"Skeleton","sourcePath":"components/feedback/Skeleton.jsx"},{"name":"Spinner","sourcePath":"components/feedback/Spinner.jsx"},{"name":"Stepper","sourcePath":"components/feedback/Stepper.jsx"},{"name":"ToastProvider","sourcePath":"components/feedback/Toast.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Checkbox","sourcePath":"components/input/Checkbox.jsx"},{"name":"CodeEditor","sourcePath":"components/input/CodeEditor.jsx"},{"name":"ColorInput","sourcePath":"components/input/ColorInput.jsx"},{"name":"Combobox","sourcePath":"components/input/Combobox.jsx"},{"name":"DatePicker","sourcePath":"components/input/DatePicker.jsx"},{"name":"DateRangePicker","sourcePath":"components/input/DateRangePicker.jsx"},{"name":"Dropzone","sourcePath":"components/input/Dropzone.jsx"},{"name":"Field","sourcePath":"components/input/Field.jsx"},{"name":"FileUpload","sourcePath":"components/input/FileUpload.jsx"},{"name":"MultiSelect","sourcePath":"components/input/MultiSelect.jsx"},{"name":"NumberStepper","sourcePath":"components/input/NumberStepper.jsx"},{"name":"OTPInput","sourcePath":"components/input/OTPInput.jsx"},{"name":"PasswordField","sourcePath":"components/input/PasswordField.jsx"},{"name":"RadioGroup","sourcePath":"components/input/RadioGroup.jsx"},{"name":"SearchField","sourcePath":"components/input/SearchField.jsx"},{"name":"SegmentedControl","sourcePath":"components/input/SegmentedControl.jsx"},{"name":"Select","sourcePath":"components/input/Select.jsx"},{"name":"Slider","sourcePath":"components/input/Slider.jsx"},{"name":"Switch","sourcePath":"components/input/Switch.jsx"},{"name":"TextArea","sourcePath":"components/input/TextArea.jsx"},{"name":"TextField","sourcePath":"components/input/TextField.jsx"},{"name":"TimePicker","sourcePath":"components/input/TimePicker.jsx"},{"name":"AspectRatio","sourcePath":"components/layout/AspectRatio.jsx"},{"name":"CardHead","sourcePath":"components/layout/CardHead.jsx"},{"name":"Container","sourcePath":"components/layout/Container.jsx"},{"name":"Divider","sourcePath":"components/layout/Divider.jsx"},{"name":"Grid","sourcePath":"components/layout/Grid.jsx"},{"name":"GridItem","sourcePath":"components/layout/Grid.jsx"},{"name":"Inline","sourcePath":"components/layout/Inline.jsx"},{"name":"PageHeader","sourcePath":"components/layout/PageHeader.jsx"},{"name":"PageStack","sourcePath":"components/layout/PageStack.jsx"},{"name":"Panel","sourcePath":"components/layout/Panel.jsx"},{"name":"Spacer","sourcePath":"components/layout/Spacer.jsx"},{"name":"Stack","sourcePath":"components/layout/Stack.jsx"},{"name":"StatusBar","sourcePath":"components/layout/StatusBar.jsx"},{"name":"Toolbar","sourcePath":"components/layout/Toolbar.jsx"},{"name":"ToolbarGrow","sourcePath":"components/layout/Toolbar.jsx"},{"name":"Visible","sourcePath":"components/layout/Visible.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"CommandPalette","sourcePath":"components/navigation/CommandPalette.jsx"},{"name":"Link","sourcePath":"components/navigation/Link.jsx"},{"name":"Pagination","sourcePath":"components/navigation/Pagination.jsx"},{"name":"SidebarShell","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavItem","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavGroup","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"},{"name":"TopNav","sourcePath":"components/navigation/TopNav.jsx"},{"name":"Drawer","sourcePath":"components/overlay/Drawer.jsx"},{"name":"DropdownMenu","sourcePath":"components/overlay/DropdownMenu.jsx"},{"name":"FormModal","sourcePath":"components/overlay/FormModal.jsx"},{"name":"Modal","sourcePath":"components/overlay/Modal.jsx"},{"name":"Popover","sourcePath":"components/overlay/Popover.jsx"},{"name":"Tooltip","sourcePath":"components/overlay/Tooltip.jsx"}],"sourceHashes":{"components/action/Button.jsx":"0d3d5e0685c1","components/action/Icon.jsx":"f8c4d1fbc1a0","components/action/IconButton.jsx":"3244f718b350","components/brand/MascotMark.jsx":"f7c944ff94c6","components/core/frame.js":"7b923fcdece0","components/core/missing.js":"6179b9da7d20","components/core/useAnchoredPopover.js":"abb7c195e417","components/data/BarList.jsx":"3f6e652d3e71","components/data/Chart.jsx":"940e24e6f222","components/data/DataTable.jsx":"c6106e50e23b","components/data/DescriptionList.jsx":"cb3d0cfc9c2a","components/data/DiffView.jsx":"7a68433475c8","components/data/Gauge.jsx":"dce4a33d4334","components/data/Heatmap.jsx":"73853f2e71da","components/data/KeyValues.jsx":"706f79cd85d6","components/data/Legend.jsx":"c11ffa7521b8","components/data/LogViewer.jsx":"526f0de9cbc2","components/data/Sparkline.jsx":"14331998ad36","components/data/StatTile.jsx":"982b73755681","components/data/Timeline.jsx":"cb7aebdce4e8","components/data/TrendDelta.jsx":"1af16573625a","components/data/UptimeBar.jsx":"58bde0cc64a0","components/data/chart-math.js":"8d99ceed4d4a","components/display/Accordion.jsx":"c6b11c055b2d","components/display/Avatar.jsx":"0eb3f05204fb","components/display/Badge.jsx":"ef8c708a5279","components/display/Code.jsx":"671910a40dff","components/display/CopyField.jsx":"5f27567e1b75","components/display/StatusPill.jsx":"9424dbe8785f","components/display/Tag.jsx":"7fea6b635b7d","components/feedback/AlertBanner.jsx":"43e68e6d6d2b","components/feedback/ConfirmDialog.jsx":"8846e248d2b7","components/feedback/EmptyState.jsx":"991c65ec9ea0","components/feedback/ErrorState.jsx":"94a9a3b608f7","components/feedback/InlineMessage.jsx":"4863d6bdf3bb","components/feedback/LoadingOverlay.jsx":"cba81277919d","components/feedback/NotificationDrawer.jsx":"21d3dbd68841","components/feedback/ProgressBar.jsx":"ba94e7c95ec0","components/feedback/Skeleton.jsx":"5a0a64c561cf","components/feedback/Spinner.jsx":"61fa930279ce","components/feedback/Stepper.jsx":"1d0a1438d9d5","components/feedback/Toast.jsx":"8350cbddc8ea","components/input/Checkbox.jsx":"8b4a71fd6e5f","components/input/CodeEditor.jsx":"12c2cbdd8ba2","components/input/ColorInput.jsx":"a6e539899311","components/input/Combobox.jsx":"12f64664ba00","components/input/DatePicker.jsx":"36208e806ceb","components/input/DateRangePicker.jsx":"de662f7081ff","components/input/Dropzone.jsx":"9b500b410d73","components/input/Field.jsx":"aabd84ac0af6","components/input/FileUpload.jsx":"316b5aa35b85","components/input/MultiSelect.jsx":"873ffe751d0d","components/input/NumberStepper.jsx":"aa8003883ea5","components/input/OTPInput.jsx":"76f385f8bd87","components/input/PasswordField.jsx":"d287923b6b92","components/input/RadioGroup.jsx":"1b72ab7a8b16","components/input/SearchField.jsx":"d241eb634399","components/input/SegmentedControl.jsx":"33ff360ded8f","components/input/Select.jsx":"e505b6430455","components/input/Slider.jsx":"6ee5974abea3","components/input/Switch.jsx":"8c77a423269d","components/input/TextArea.jsx":"e13bce42ecaa","components/input/TextField.jsx":"0e122c66da84","components/input/TimePicker.jsx":"20c1a3dfe0c4","components/layout/AspectRatio.jsx":"8eb9ad9b8a6c","components/layout/CardHead.jsx":"22f2c91c02d6","components/layout/Container.jsx":"b4aabbfef963","components/layout/Divider.jsx":"d7022662a639","components/layout/Grid.jsx":"550617f6d312","components/layout/Inline.jsx":"4d119913a6f5","components/layout/PageHeader.jsx":"b82f747dd1c3","components/layout/PageStack.jsx":"87d1a8ce93d3","components/layout/Panel.jsx":"36e87cb3149b","components/layout/Spacer.jsx":"26ab47ea78b4","components/layout/Stack.jsx":"2e36c1fdb6b9","components/layout/StatusBar.jsx":"aa43228d3d6d","components/layout/Toolbar.jsx":"e93acdeb4e3c","components/layout/Visible.jsx":"7c32fe686520","components/navigation/Breadcrumb.jsx":"20672d8bc5b1","components/navigation/CommandPalette.jsx":"611f9f1fda85","components/navigation/Link.jsx":"987ae0f27bff","components/navigation/Pagination.jsx":"15e321c1d09c","components/navigation/SidebarShell.jsx":"7795d516fbd3","components/navigation/Tabs.jsx":"d46691262252","components/navigation/TopNav.jsx":"b9d4b7bc5558","components/overlay/Drawer.jsx":"89a1063765a3","components/overlay/DropdownMenu.jsx":"8a797beb205a","components/overlay/FormModal.jsx":"aa986b09b43e","components/overlay/Modal.jsx":"3e3a5aeabe58","components/overlay/Popover.jsx":"ad454f7afccd","components/overlay/Tooltip.jsx":"b86b3c1802a6","components/overlay/useModalDialog.js":"90deb19830c0","theme-toggle.js":"5200a778702b"},"inlinedExternals":[],"unexposedExports":[{"name":"cx","sourcePath":"components/core/frame.js"},{"name":"DASHES","sourcePath":"components/data/chart-math.js"},{"name":"estWidth","sourcePath":"components/data/chart-math.js"},{"name":"fmtKo","sourcePath":"components/data/chart-math.js"},{"name":"frameStyle","sourcePath":"components/core/frame.js"},{"name":"histBins","sourcePath":"components/data/chart-math.js"},{"name":"isMissing","sourcePath":"components/core/missing.js"},{"name":"MISSING_CLASS","sourcePath":"components/core/missing.js"},{"name":"MISSING_TEXT","sourcePath":"components/core/missing.js"},{"name":"niceTicks","sourcePath":"components/data/chart-math.js"},{"name":"NOTIFICATION_DRAWER_ID","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"numeric","sourcePath":"components/core/missing.js"},{"name":"passwordStrength","sourcePath":"components/input/PasswordField.jsx"},{"name":"pathLength","sourcePath":"components/data/chart-math.js"},{"name":"r1","sourcePath":"components/data/chart-math.js"},{"name":"runsOf","sourcePath":"components/data/chart-math.js"},{"name":"seriesDash","sourcePath":"components/data/chart-math.js"},{"name":"smoothPath","sourcePath":"components/data/chart-math.js"},{"name":"spaceToken","sourcePath":"components/core/frame.js"},{"name":"stackBars","sourcePath":"components/data/chart-math.js"},{"name":"toneInk","sourcePath":"components/data/chart-math.js"},{"name":"toneVar","sourcePath":"components/data/chart-math.js"},{"name":"useAnchoredPopover","sourcePath":"components/core/useAnchoredPopover.js"},{"name":"useFieldContext","sourcePath":"components/input/Field.jsx"},{"name":"useModalDialog","sourcePath":"components/overlay/useModalDialog.js"}],"hooks":[{"name":"useToast","sourcePath":"components/feedback/Toast.jsx"}]} */
+/* @ds-bundle: {"format":4,"namespace":"Ds_d3ea90","components":[{"name":"Button","sourcePath":"components/action/Button.jsx"},{"name":"Icon","sourcePath":"components/action/Icon.jsx"},{"name":"IconButton","sourcePath":"components/action/IconButton.jsx"},{"name":"MascotMark","sourcePath":"components/brand/MascotMark.jsx"},{"name":"BarList","sourcePath":"components/data/BarList.jsx"},{"name":"Chart","sourcePath":"components/data/Chart.jsx"},{"name":"DataTable","sourcePath":"components/data/DataTable.jsx"},{"name":"DescriptionList","sourcePath":"components/data/DescriptionList.jsx"},{"name":"DiffView","sourcePath":"components/data/DiffView.jsx"},{"name":"Gauge","sourcePath":"components/data/Gauge.jsx"},{"name":"Heatmap","sourcePath":"components/data/Heatmap.jsx"},{"name":"KeyValues","sourcePath":"components/data/KeyValues.jsx"},{"name":"Legend","sourcePath":"components/data/Legend.jsx"},{"name":"LogViewer","sourcePath":"components/data/LogViewer.jsx"},{"name":"Sparkline","sourcePath":"components/data/Sparkline.jsx"},{"name":"StatTile","sourcePath":"components/data/StatTile.jsx"},{"name":"Timeline","sourcePath":"components/data/Timeline.jsx"},{"name":"TrendDelta","sourcePath":"components/data/TrendDelta.jsx"},{"name":"UptimeBar","sourcePath":"components/data/UptimeBar.jsx"},{"name":"Accordion","sourcePath":"components/display/Accordion.jsx"},{"name":"Avatar","sourcePath":"components/display/Avatar.jsx"},{"name":"AvatarGroup","sourcePath":"components/display/Avatar.jsx"},{"name":"Badge","sourcePath":"components/display/Badge.jsx"},{"name":"Code","sourcePath":"components/display/Code.jsx"},{"name":"CodeBlock","sourcePath":"components/display/Code.jsx"},{"name":"Kbd","sourcePath":"components/display/Code.jsx"},{"name":"CopyField","sourcePath":"components/display/CopyField.jsx"},{"name":"StatusPill","sourcePath":"components/display/StatusPill.jsx"},{"name":"Tag","sourcePath":"components/display/Tag.jsx"},{"name":"AlertBanner","sourcePath":"components/feedback/AlertBanner.jsx"},{"name":"ConfirmDialog","sourcePath":"components/feedback/ConfirmDialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"ErrorState","sourcePath":"components/feedback/ErrorState.jsx"},{"name":"InlineMessage","sourcePath":"components/feedback/InlineMessage.jsx"},{"name":"LoadingOverlay","sourcePath":"components/feedback/LoadingOverlay.jsx"},{"name":"NotificationTrigger","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"NotificationDrawer","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"ProgressBar","sourcePath":"components/feedback/ProgressBar.jsx"},{"name":"Skeleton","sourcePath":"components/feedback/Skeleton.jsx"},{"name":"Spinner","sourcePath":"components/feedback/Spinner.jsx"},{"name":"Stepper","sourcePath":"components/feedback/Stepper.jsx"},{"name":"ToastProvider","sourcePath":"components/feedback/Toast.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Checkbox","sourcePath":"components/input/Checkbox.jsx"},{"name":"CodeEditor","sourcePath":"components/input/CodeEditor.jsx"},{"name":"ColorInput","sourcePath":"components/input/ColorInput.jsx"},{"name":"Combobox","sourcePath":"components/input/Combobox.jsx"},{"name":"DatePicker","sourcePath":"components/input/DatePicker.jsx"},{"name":"DateRangePicker","sourcePath":"components/input/DateRangePicker.jsx"},{"name":"Dropzone","sourcePath":"components/input/Dropzone.jsx"},{"name":"Field","sourcePath":"components/input/Field.jsx"},{"name":"FileUpload","sourcePath":"components/input/FileUpload.jsx"},{"name":"MultiSelect","sourcePath":"components/input/MultiSelect.jsx"},{"name":"NumberStepper","sourcePath":"components/input/NumberStepper.jsx"},{"name":"OTPInput","sourcePath":"components/input/OTPInput.jsx"},{"name":"PasswordField","sourcePath":"components/input/PasswordField.jsx"},{"name":"RadioGroup","sourcePath":"components/input/RadioGroup.jsx"},{"name":"SearchField","sourcePath":"components/input/SearchField.jsx"},{"name":"SegmentedControl","sourcePath":"components/input/SegmentedControl.jsx"},{"name":"Select","sourcePath":"components/input/Select.jsx"},{"name":"Slider","sourcePath":"components/input/Slider.jsx"},{"name":"Switch","sourcePath":"components/input/Switch.jsx"},{"name":"TextArea","sourcePath":"components/input/TextArea.jsx"},{"name":"TextField","sourcePath":"components/input/TextField.jsx"},{"name":"TimePicker","sourcePath":"components/input/TimePicker.jsx"},{"name":"AspectRatio","sourcePath":"components/layout/AspectRatio.jsx"},{"name":"CardHead","sourcePath":"components/layout/CardHead.jsx"},{"name":"Container","sourcePath":"components/layout/Container.jsx"},{"name":"Divider","sourcePath":"components/layout/Divider.jsx"},{"name":"Grid","sourcePath":"components/layout/Grid.jsx"},{"name":"GridItem","sourcePath":"components/layout/Grid.jsx"},{"name":"Inline","sourcePath":"components/layout/Inline.jsx"},{"name":"PageHeader","sourcePath":"components/layout/PageHeader.jsx"},{"name":"PageStack","sourcePath":"components/layout/PageStack.jsx"},{"name":"Panel","sourcePath":"components/layout/Panel.jsx"},{"name":"Spacer","sourcePath":"components/layout/Spacer.jsx"},{"name":"Stack","sourcePath":"components/layout/Stack.jsx"},{"name":"StatusBar","sourcePath":"components/layout/StatusBar.jsx"},{"name":"Toolbar","sourcePath":"components/layout/Toolbar.jsx"},{"name":"ToolbarGrow","sourcePath":"components/layout/Toolbar.jsx"},{"name":"Visible","sourcePath":"components/layout/Visible.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"CommandPalette","sourcePath":"components/navigation/CommandPalette.jsx"},{"name":"Link","sourcePath":"components/navigation/Link.jsx"},{"name":"Pagination","sourcePath":"components/navigation/Pagination.jsx"},{"name":"SidebarShell","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavItem","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavGroup","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"},{"name":"TopNav","sourcePath":"components/navigation/TopNav.jsx"},{"name":"Drawer","sourcePath":"components/overlay/Drawer.jsx"},{"name":"DropdownMenu","sourcePath":"components/overlay/DropdownMenu.jsx"},{"name":"FormModal","sourcePath":"components/overlay/FormModal.jsx"},{"name":"Modal","sourcePath":"components/overlay/Modal.jsx"},{"name":"Popover","sourcePath":"components/overlay/Popover.jsx"},{"name":"Tooltip","sourcePath":"components/overlay/Tooltip.jsx"}],"sourceHashes":{"components/action/Button.jsx":"0d3d5e0685c1","components/action/Icon.jsx":"f8c4d1fbc1a0","components/action/IconButton.jsx":"3244f718b350","components/brand/MascotMark.jsx":"f7c944ff94c6","components/core/frame.js":"8d08ebf0925c","components/core/missing.js":"6179b9da7d20","components/core/useAnchoredPopover.js":"abb7c195e417","components/data/BarList.jsx":"3f6e652d3e71","components/data/Chart.jsx":"940e24e6f222","components/data/DataTable.jsx":"d12e0cb058cc","components/data/DescriptionList.jsx":"cb3d0cfc9c2a","components/data/DiffView.jsx":"7a68433475c8","components/data/Gauge.jsx":"dce4a33d4334","components/data/Heatmap.jsx":"73853f2e71da","components/data/KeyValues.jsx":"706f79cd85d6","components/data/Legend.jsx":"c11ffa7521b8","components/data/LogViewer.jsx":"526f0de9cbc2","components/data/Sparkline.jsx":"14331998ad36","components/data/StatTile.jsx":"982b73755681","components/data/Timeline.jsx":"cb7aebdce4e8","components/data/TrendDelta.jsx":"1af16573625a","components/data/UptimeBar.jsx":"58bde0cc64a0","components/data/chart-math.js":"8d99ceed4d4a","components/display/Accordion.jsx":"c6b11c055b2d","components/display/Avatar.jsx":"0eb3f05204fb","components/display/Badge.jsx":"ef8c708a5279","components/display/Code.jsx":"671910a40dff","components/display/CopyField.jsx":"5f27567e1b75","components/display/StatusPill.jsx":"9424dbe8785f","components/display/Tag.jsx":"7fea6b635b7d","components/feedback/AlertBanner.jsx":"43e68e6d6d2b","components/feedback/ConfirmDialog.jsx":"8846e248d2b7","components/feedback/EmptyState.jsx":"991c65ec9ea0","components/feedback/ErrorState.jsx":"94a9a3b608f7","components/feedback/InlineMessage.jsx":"4863d6bdf3bb","components/feedback/LoadingOverlay.jsx":"cba81277919d","components/feedback/NotificationDrawer.jsx":"21d3dbd68841","components/feedback/ProgressBar.jsx":"ba94e7c95ec0","components/feedback/Skeleton.jsx":"5a0a64c561cf","components/feedback/Spinner.jsx":"61fa930279ce","components/feedback/Stepper.jsx":"1d0a1438d9d5","components/feedback/Toast.jsx":"8350cbddc8ea","components/input/Checkbox.jsx":"06a9a2f9d93a","components/input/CodeEditor.jsx":"00de5ef679d5","components/input/ColorInput.jsx":"4a9a2402b1b8","components/input/Combobox.jsx":"7c0557acd1cf","components/input/DatePicker.jsx":"37351974643e","components/input/DateRangePicker.jsx":"480ce9f848c9","components/input/Dropzone.jsx":"79bbff544bf1","components/input/Field.jsx":"9e1e1fdf76e3","components/input/FileUpload.jsx":"6bb00d3a7d06","components/input/MultiSelect.jsx":"371fef180d54","components/input/NumberStepper.jsx":"48b919b65db8","components/input/OTPInput.jsx":"139ba24eba86","components/input/PasswordField.jsx":"6852252526b2","components/input/RadioGroup.jsx":"926899f27882","components/input/SearchField.jsx":"daa6725d6e13","components/input/SegmentedControl.jsx":"fcd86e204228","components/input/Select.jsx":"6688d217f1de","components/input/Slider.jsx":"f9b3f6d55cd6","components/input/Switch.jsx":"b0ac82405e34","components/input/TextArea.jsx":"346cd3bc100e","components/input/TextField.jsx":"d99f3c611daa","components/input/TimePicker.jsx":"b83adcce2957","components/layout/AspectRatio.jsx":"8eb9ad9b8a6c","components/layout/CardHead.jsx":"22f2c91c02d6","components/layout/Container.jsx":"b4aabbfef963","components/layout/Divider.jsx":"d7022662a639","components/layout/Grid.jsx":"550617f6d312","components/layout/Inline.jsx":"4d119913a6f5","components/layout/PageHeader.jsx":"b82f747dd1c3","components/layout/PageStack.jsx":"87d1a8ce93d3","components/layout/Panel.jsx":"36e87cb3149b","components/layout/Spacer.jsx":"26ab47ea78b4","components/layout/Stack.jsx":"2e36c1fdb6b9","components/layout/StatusBar.jsx":"aa43228d3d6d","components/layout/Toolbar.jsx":"e93acdeb4e3c","components/layout/Visible.jsx":"7c32fe686520","components/navigation/Breadcrumb.jsx":"20672d8bc5b1","components/navigation/CommandPalette.jsx":"611f9f1fda85","components/navigation/Link.jsx":"987ae0f27bff","components/navigation/Pagination.jsx":"15e321c1d09c","components/navigation/SidebarShell.jsx":"7795d516fbd3","components/navigation/Tabs.jsx":"d46691262252","components/navigation/TopNav.jsx":"b9d4b7bc5558","components/overlay/Drawer.jsx":"89a1063765a3","components/overlay/DropdownMenu.jsx":"8a797beb205a","components/overlay/FormModal.jsx":"aa986b09b43e","components/overlay/Modal.jsx":"3e3a5aeabe58","components/overlay/Popover.jsx":"ad454f7afccd","components/overlay/Tooltip.jsx":"b86b3c1802a6","components/overlay/useModalDialog.js":"90deb19830c0","theme-toggle.js":"5200a778702b"},"inlinedExternals":[],"unexposedExports":[{"name":"assignRef","sourcePath":"components/core/frame.js"},{"name":"cx","sourcePath":"components/core/frame.js"},{"name":"DASHES","sourcePath":"components/data/chart-math.js"},{"name":"estWidth","sourcePath":"components/data/chart-math.js"},{"name":"fmtKo","sourcePath":"components/data/chart-math.js"},{"name":"frameStyle","sourcePath":"components/core/frame.js"},{"name":"histBins","sourcePath":"components/data/chart-math.js"},{"name":"isMissing","sourcePath":"components/core/missing.js"},{"name":"MISSING_CLASS","sourcePath":"components/core/missing.js"},{"name":"MISSING_TEXT","sourcePath":"components/core/missing.js"},{"name":"niceTicks","sourcePath":"components/data/chart-math.js"},{"name":"NOTIFICATION_DRAWER_ID","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"numeric","sourcePath":"components/core/missing.js"},{"name":"passwordStrength","sourcePath":"components/input/PasswordField.jsx"},{"name":"pathLength","sourcePath":"components/data/chart-math.js"},{"name":"r1","sourcePath":"components/data/chart-math.js"},{"name":"runsOf","sourcePath":"components/data/chart-math.js"},{"name":"seriesDash","sourcePath":"components/data/chart-math.js"},{"name":"smoothPath","sourcePath":"components/data/chart-math.js"},{"name":"spaceToken","sourcePath":"components/core/frame.js"},{"name":"stackBars","sourcePath":"components/data/chart-math.js"},{"name":"toneInk","sourcePath":"components/data/chart-math.js"},{"name":"toneVar","sourcePath":"components/data/chart-math.js"},{"name":"useAnchoredPopover","sourcePath":"components/core/useAnchoredPopover.js"},{"name":"useFieldContext","sourcePath":"components/input/Field.jsx"},{"name":"useModalDialog","sourcePath":"components/overlay/useModalDialog.js"}],"hooks":[{"name":"useToast","sourcePath":"components/feedback/Toast.jsx"}]} */
 
 (() => {
 
@@ -60,6 +60,12 @@ function frameStyle({
 /** @param {...(string | false | null | undefined)} a */
 const cx = (...a) => a.filter(Boolean).join(" ");
 
+/** 바깥 ref 와 안쪽 ref 를 한 요소에 함께 건다. 콜백·객체 ref 모두 받는다.
+ * @template T @param {import("react").ForwardedRef<T>} ref @param {T | null} el */
+const assignRef = (ref, el) => {
+  if (typeof ref === "function") ref(el);else if (ref) ref.current = el;
+};
+
 /* 간격 계약: gap·size는 --sp 단계 번호(0~10) 또는 CSS 길이 그대로. Stack·Inline·Spacer가 공유한다. */
 /** @type {Record<number, string | number>} */
 const GAP = {
@@ -77,7 +83,7 @@ const GAP = {
 };
 /** @param {number | string | undefined} g */
 const spaceToken = g => typeof g === "number" && GAP[g] !== undefined ? GAP[g] : g;
-Object.assign(__ds_scope, { frameStyle, cx, spaceToken });
+Object.assign(__ds_scope, { frameStyle, cx, assignRef, spaceToken });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/core/frame.js", error: String((e && e.message) || e) }); }
 
 // components/action/Icon.jsx
@@ -3583,7 +3589,7 @@ Object.assign(__ds_scope, { ToastProvider, useToast, Toast });
 // components/input/Checkbox.jsx
 try { (() => {
 const { forwardRef } = React;
-const { cx, Icon } = __ds_scope;
+const { assignRef, cx, Icon } = __ds_scope;
 /** 체크박스. children이 라벨. 라벨 없이 쓰면 aria-label 필수(표 선택 열). indeterminate는 ref로 세팅. */
 const Checkbox = /*#__PURE__*/forwardRef(
 /**
@@ -3605,7 +3611,7 @@ function Checkbox({
     disabled: disabled,
     ref: el => {
       if (el && indeterminate !== undefined) el.indeterminate = indeterminate;
-      if (typeof ref === "function") ref(el);else if (ref) ref.current = el;
+      assignRef(ref, el);
     },
     ...rest
   }), /*#__PURE__*/React.createElement("span", {
@@ -3624,7 +3630,7 @@ const { Fragment, useId, useState } = React;
 const { cx, frameStyle, MISSING_CLASS, MISSING_TEXT, isMissing, Icon, Checkbox } = __ds_scope;
 const TABLE_DESKTOP_HIDE = "bds-table__d-hide";
 const TABLE_MOBILE_HIDE = "bds-table__m-hide";
-const hideCls = (/** @type {import("./DataTable.d.ts").DataTableColumn<any>} */c) => c.hideBelow === "desktop" ? TABLE_DESKTOP_HIDE : c.hideBelow === "tablet" || c.hideOnMobile ? TABLE_MOBILE_HIDE : undefined;
+const hideCls = (/** @type {import("./DataTable.d.ts").DataTableColumn<any>} */c) => c.hideBelow === "desktop" ? TABLE_DESKTOP_HIDE : c.hideBelow === "tablet" ? TABLE_MOBILE_HIDE : undefined;
 
 /* 셀 하나의 결측 판정.
    render 없는 열: row[key]가 값이므로 core/missing.js 규칙을 그대로 쓴다. null/undefined는 빈 칸이 아니라 "수집 안 됨"이다.
@@ -3810,10 +3816,14 @@ Object.assign(__ds_scope, { DataTable });
 
 // components/input/Dropzone.jsx
 try { (() => {
-const { useRef, useState } = React;
+const { forwardRef, useRef, useState } = React;
 const { cx, frameStyle, Icon } = __ds_scope;
-/** 파일 드롭존. 클릭/드롭/키보드로 파일을 받아 onFiles(File[])를 호출한다.
- * @param {Parameters<typeof import("./Dropzone.d.ts").Dropzone>[0]} props */
+/** 파일 드롭존. 클릭/드롭/키보드로 파일을 받아 onFiles(File[])를 호출한다. */
+const Dropzone = /*#__PURE__*/forwardRef(
+/**
+ * @param {import("./Dropzone.d.ts").DropzoneProps} props
+ * @param {import("react").ForwardedRef<HTMLDivElement>} ref
+ */
 function Dropzone({
   accept,
   multiple = false,
@@ -3828,7 +3838,7 @@ function Dropzone({
   className,
   style,
   ...rest
-}) {
+}, ref) {
   const input = useRef(/** @type {HTMLInputElement | null} */null);
   const [over, setOver] = useState(false);
   const emit = (/** @type {FileList | File[] | null | undefined} */list) => {
@@ -3836,6 +3846,7 @@ function Dropzone({
     if (files.length) onFiles?.(multiple ? files : files.slice(0, 1));
   };
   return /*#__PURE__*/React.createElement("div", {
+    ref: ref,
     role: "button",
     tabIndex: disabled ? -1 : 0,
     "aria-disabled": disabled || undefined,
@@ -3876,21 +3887,25 @@ function Dropzone({
       e.target.value = "";
     }
   }));
-}
+});
 Object.assign(__ds_scope, { Dropzone });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/input/Dropzone.jsx", error: String((e && e.message) || e) }); }
 
 // components/input/Field.jsx
 try { (() => {
-const { createContext, useContext, useId } = React;
+const { forwardRef, createContext, useContext, useId } = React;
 const { cx, Icon } = __ds_scope;
 /** @typedef {{ id: string, describedBy?: string, invalid: boolean, required: boolean }} FieldCtxValue */
 /** @type {import("react").Context<FieldCtxValue | null>} */
 const FieldCtx = /*#__PURE__*/createContext(/** @type {any} */null);
 const useFieldContext = () => useContext(FieldCtx);
 
-/** 라벨·설명·오류를 입력에 연결하는 래퍼. 자식 입력은 useFieldContext()로 id·aria를 받는다.
- * @param {Parameters<typeof import("./Field.d.ts").Field>[0]} props */
+/** 라벨·설명·오류를 입력에 연결하는 래퍼. 자식 입력은 useFieldContext()로 id·aria를 받는다. */
+const Field = /*#__PURE__*/forwardRef(
+/**
+ * @param {import("./Field.d.ts").FieldProps} props
+ * @param {import("react").ForwardedRef<HTMLDivElement>} ref
+ */
 function Field({
   label,
   hint,
@@ -3900,7 +3915,7 @@ function Field({
   className,
   children,
   ...rest
-}) {
+}, ref) {
   const auto = useId();
   const inputId = id ?? `f-${auto}`;
   const hintId = hint ? `${inputId}-h` : undefined;
@@ -3914,6 +3929,7 @@ function Field({
   return /*#__PURE__*/React.createElement(FieldCtx.Provider, {
     value: ctx
   }, /*#__PURE__*/React.createElement("div", {
+    ref: ref,
     className: cx("bds-field", className),
     ...rest
   }, label != null && /*#__PURE__*/React.createElement("label", {
@@ -3933,16 +3949,20 @@ function Field({
     name: "warning-circle",
     size: 13
   }), error)));
-}
+});
 Object.assign(__ds_scope, { useFieldContext, Field });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/input/Field.jsx", error: String((e && e.message) || e) }); }
 
 // components/input/CodeEditor.jsx
 try { (() => {
-const { useEffect, useMemo, useRef } = React;
-const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
-/** JSON/코드 입력. 줄번호 + mono + Tab 들여쓰기. language="json"이면 파싱해 오류 위치를 아래에 표시하고 onValidChange(obj|null)를 부른다.
- * @param {Parameters<typeof import("./CodeEditor.d.ts").CodeEditor>[0]} props */
+const { forwardRef, useEffect, useMemo, useRef } = React;
+const { assignRef, cx, frameStyle, Icon, useFieldContext } = __ds_scope;
+/** JSON/코드 입력. 줄번호 + mono + Tab 들여쓰기. language="json"이면 파싱해 오류 위치를 아래에 표시하고 onValidChange(obj|null)를 부른다. */
+const CodeEditor = /*#__PURE__*/forwardRef(
+/**
+ * @param {import("./CodeEditor.d.ts").CodeEditorProps} props
+ * @param {import("react").ForwardedRef<HTMLTextAreaElement>} ref
+ */
 function CodeEditor({
   value,
   defaultValue = "",
@@ -3960,7 +3980,7 @@ function CodeEditor({
   className,
   style,
   "aria-label": ariaLabel
-}) {
+}, ref) {
   const f = useFieldContext();
   const [inner, setInner] = React.useState(defaultValue);
   const v = value ?? inner;
@@ -4044,7 +4064,10 @@ function CodeEditor({
     key: i,
     className: cx(err?.line === i + 1 && "bds-code-ed__ln--err")
   }, i + 1))), /*#__PURE__*/React.createElement("textarea", {
-    ref: ta,
+    ref: el => {
+      ta.current = el;
+      assignRef(ref, el);
+    },
     id: f?.id,
     "aria-describedby": f?.describedBy,
     "aria-label": ariaLabel,
@@ -4078,17 +4101,21 @@ function CodeEditor({
     name: "check",
     size: 13
   }), "유효한 JSON") : null));
-}
+});
 Object.assign(__ds_scope, { CodeEditor });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/input/CodeEditor.jsx", error: String((e && e.message) || e) }); }
 
 // components/input/ColorInput.jsx
 try { (() => {
-const { useState } = React;
+const { forwardRef, useState } = React;
 const { cx, frameStyle, useFieldContext } = __ds_scope;
 const HEX = /^#?([0-9a-f]{6})$/i;
-/** 색 선택: 스와치(네이티브 picker) + hex 입력 + 프리셋 칩. 값은 #RRGGBB. 조명(ARGB) 색 지정용 · UI 토큰 색이 아니다.
- * @param {Parameters<typeof import("./ColorInput.d.ts").ColorInput>[0]} props */
+/** 색 선택: 스와치(네이티브 picker) + hex 입력 + 프리셋 칩. 값은 #RRGGBB. 조명(ARGB) 색 지정용 · UI 토큰 색이 아니다. */
+const ColorInput = /*#__PURE__*/forwardRef(
+/**
+ * @param {import("./ColorInput.d.ts").ColorInputProps} props
+ * @param {import("react").ForwardedRef<HTMLInputElement>} ref
+ */
 function ColorInput({
   value,
   defaultValue = "#5CA8FF",
@@ -4102,7 +4129,7 @@ function ColorInput({
   className,
   style,
   "aria-label": ariaLabel
-}) {
+}, ref) {
   const f = useFieldContext();
   const [inner, setInner] = useState(defaultValue);
   const [text, setText] = useState(/** @type {string | null} */null);
@@ -4136,6 +4163,7 @@ function ColorInput({
     disabled: disabled,
     onChange: e => set(e.target.value)
   })), /*#__PURE__*/React.createElement("input", {
+    ref: ref,
     id: f?.id,
     "aria-describedby": f?.describedBy,
     "aria-label": f?.id ? undefined : `${ariaLabel ?? "색"} 16진값`,
@@ -4173,16 +4201,20 @@ function ColorInput({
     disabled: disabled,
     onClick: () => set(p)
   }))));
-}
+});
 Object.assign(__ds_scope, { ColorInput });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/input/ColorInput.jsx", error: String((e && e.message) || e) }); }
 
 // components/input/Combobox.jsx
 try { (() => {
-const { useEffect, useId, useRef, useState } = React;
+const { forwardRef, useEffect, useId, useRef, useState } = React;
 const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
-/** 검색 가능한 선택. options {value,label,detail?,disabled?}. 타이핑으로 거르고 ↑↓ Enter Esc. 선택지 6개 이상이면 Select 대신 이것.
- * @param {Parameters<typeof import("./Combobox.d.ts").Combobox>[0]} props */
+/** 검색 가능한 선택. options {value,label,detail?,disabled?}. 타이핑으로 거르고 ↑↓ Enter Esc. 선택지 6개 이상이면 Select 대신 이것. */
+const Combobox = /*#__PURE__*/forwardRef(
+/**
+ * @param {import("./Combobox.d.ts").ComboboxProps} props
+ * @param {import("react").ForwardedRef<HTMLInputElement>} ref
+ */
 function Combobox({
   options = [],
   value,
@@ -4199,7 +4231,7 @@ function Combobox({
   className,
   style,
   "aria-label": ariaLabel
-}) {
+}, ref) {
   const f = useFieldContext();
   const uid = useId().replace(/:/g, "");
   const [open, setOpen] = useState(false);
@@ -4275,6 +4307,7 @@ function Combobox({
     size: 14,
     className: "bds-ctl__affix"
   }), /*#__PURE__*/React.createElement("input", {
+    ref: ref,
     id: f?.id,
     role: "combobox",
     "aria-expanded": open,
@@ -4336,20 +4369,24 @@ function Combobox({
     size: 13,
     className: "bds-combo__ck"
   })))));
-}
+});
 Object.assign(__ds_scope, { Combobox });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/input/Combobox.jsx", error: String((e && e.message) || e) }); }
 
 // components/input/DatePicker.jsx
 try { (() => {
-const { useEffect, useRef, useState } = React;
-const { cx, frameStyle, Icon, IconButton, useFieldContext } = __ds_scope;
+const { forwardRef, useEffect, useRef, useState } = React;
+const { assignRef, cx, frameStyle, Icon, IconButton, useFieldContext } = __ds_scope;
 const pad = (/** @type {number} */n) => String(n).padStart(2, "0");
 const iso = (/** @type {Date} */d) => d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
 const DOW = ["일", "월", "화", "수", "목", "금", "토"];
 
-/** 단일 날짜 선택. value는 "YYYY-MM-DD". min/max 같은 형식. 기간은 DateRangePicker.
- * @param {Parameters<typeof import("./DatePicker.d.ts").DatePicker>[0]} props */
+/** 단일 날짜 선택. value는 "YYYY-MM-DD". min/max 같은 형식. 기간은 DateRangePicker. */
+const DatePicker = /*#__PURE__*/forwardRef(
+/**
+ * @param {import("./DatePicker.d.ts").DatePickerProps} props
+ * @param {import("react").ForwardedRef<HTMLButtonElement>} ref
+ */
 function DatePicker({
   value,
   onChange,
@@ -4362,7 +4399,7 @@ function DatePicker({
   disabled,
   className,
   style
-}) {
+}, ref) {
   const f = useFieldContext();
   const [open, setOpen] = useState(false);
   const sel = value ? new Date(value + "T00:00:00") : null;
@@ -4441,7 +4478,10 @@ function DatePicker({
       style
     })
   }, /*#__PURE__*/React.createElement("button", {
-    ref: trig,
+    ref: el => {
+      trig.current = el;
+      assignRef(ref, el);
+    },
     type: "button",
     id: f?.id,
     "aria-describedby": f?.describedBy,
@@ -4524,12 +4564,13 @@ function DatePicker({
       }
     }, d.getDate());
   }))))));
-}
+});
 Object.assign(__ds_scope, { DatePicker });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/input/DatePicker.jsx", error: String((e && e.message) || e) }); }
 
 // components/input/DateRangePicker.jsx
 try { (() => {
+const { forwardRef } = React;
 const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
 const PRESETS = [{
   value: "1h",
@@ -4548,8 +4589,12 @@ const PRESETS = [{
   label: "7일"
 }];
 const fmtLocal = (/** @type {Date | null | undefined} */d) => d ? new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 16) : "";
-/** 기간 선택: 빠른 프리셋(최근 N) + 직접 시작/끝. value {preset?:string, from?:Date, to?:Date}. 차트 기간용.
- * @param {Parameters<typeof import("./DateRangePicker.d.ts").DateRangePicker>[0]} props */
+/** 기간 선택: 빠른 프리셋(최근 N) + 직접 시작/끝. value {preset?:string, from?:Date, to?:Date}. 차트 기간용. */
+const DateRangePicker = /*#__PURE__*/forwardRef(
+/**
+ * @param {import("./DateRangePicker.d.ts").DateRangePickerProps} props
+ * @param {import("react").ForwardedRef<HTMLDivElement>} ref
+ */
 function DateRangePicker({
   value = {
     preset: "12h"
@@ -4564,7 +4609,7 @@ function DateRangePicker({
   className,
   style,
   "aria-label": ariaLabel = "기간"
-}) {
+}, ref) {
   const f = useFieldContext();
   const custom = !value.preset;
   const set = (/** @type {import("./DateRangePicker.d.ts").DateRange} */next) => onChange?.(next);
@@ -4581,6 +4626,7 @@ function DateRangePicker({
     next?.click();
   };
   return /*#__PURE__*/React.createElement("div", {
+    ref: ref,
     className: cx("bds-range", disabled && "bds-ctl--disabled", className),
     role: "group",
     "aria-label": ariaLabel,
@@ -4649,12 +4695,13 @@ function DateRangePicker({
       to: e.target.value ? new Date(e.target.value) : undefined
     })
   }))));
-}
+});
 Object.assign(__ds_scope, { DateRangePicker });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/input/DateRangePicker.jsx", error: String((e && e.message) || e) }); }
 
 // components/input/FileUpload.jsx
 try { (() => {
+const { forwardRef } = React;
 const { cx, frameStyle, Icon, Dropzone, ProgressBar, Button } = __ds_scope;
 const fmtBytes = (/** @type {number | null | undefined} */v) => {
   if (v == null) return "";
@@ -4671,8 +4718,12 @@ const STATUS = {
   done: ["완료", "ok"],
   failed: ["실패", "crit"]
 };
-/** 청크 업로드 목록. Dropzone + 파일별 ProgressBar + 일시정지/재개/재시도/취소. 진행 상태는 부모가 items로 내려준다(업로드 로직은 컴포넌트 밖).
- * @param {Parameters<typeof import("./FileUpload.d.ts").FileUpload>[0]} props */
+/** 청크 업로드 목록. Dropzone + 파일별 ProgressBar + 일시정지/재개/재시도/취소. 진행 상태는 부모가 items로 내려준다(업로드 로직은 컴포넌트 밖). */
+const FileUpload = /*#__PURE__*/forwardRef(
+/**
+ * @param {import("./FileUpload.d.ts").FileUploadProps} props
+ * @param {import("react").ForwardedRef<HTMLDivElement>} ref
+ */
 function FileUpload({
   items = [],
   accept,
@@ -4688,7 +4739,7 @@ function FileUpload({
   width,
   className,
   style
-}) {
+}, ref) {
   return /*#__PURE__*/React.createElement("div", {
     className: cx("bds-upload", className),
     style: frameStyle({
@@ -4697,6 +4748,7 @@ function FileUpload({
       style
     })
   }, /*#__PURE__*/React.createElement(Dropzone, {
+    ref: ref,
     accept: accept,
     multiple: multiple,
     onFiles: onFiles,
@@ -4761,16 +4813,20 @@ function FileUpload({
       onClick: () => onCancel(it.id)
     })));
   })));
-}
+});
 Object.assign(__ds_scope, { FileUpload });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/input/FileUpload.jsx", error: String((e && e.message) || e) }); }
 
 // components/input/MultiSelect.jsx
 try { (() => {
-const { useEffect, useId, useRef, useState } = React;
-const { cx, frameStyle, Icon, Tag, useFieldContext } = __ds_scope;
-/** 여러 개 선택(태그 입력). options: {value,label}. value는 배열. 입력으로 필터, Backspace로 마지막 제거.
- * @param {Parameters<typeof import("./MultiSelect.d.ts").MultiSelect>[0]} props */
+const { forwardRef, useEffect, useId, useRef, useState } = React;
+const { assignRef, cx, frameStyle, Icon, Tag, useFieldContext } = __ds_scope;
+/** 여러 개 선택(태그 입력). options: {value,label}. value는 배열. 입력으로 필터, Backspace로 마지막 제거. */
+const MultiSelect = /*#__PURE__*/forwardRef(
+/**
+ * @param {import("./MultiSelect.d.ts").MultiSelectProps} props
+ * @param {import("react").ForwardedRef<HTMLInputElement>} ref
+ */
 function MultiSelect({
   options = [],
   value = [],
@@ -4782,7 +4838,7 @@ function MultiSelect({
   disabled,
   className,
   style
-}) {
+}, ref) {
   const f = useFieldContext(),
     uid = useId().replace(/:/g, "");
   const [q, setQ] = useState(""),
@@ -4850,7 +4906,10 @@ function MultiSelect({
       onRemove: disabled ? undefined : () => remove(v)
     }, o?.label ?? v);
   }), /*#__PURE__*/React.createElement("input", {
-    ref: input,
+    ref: el => {
+      input.current = el;
+      assignRef(ref, el);
+    },
     id: f?.id,
     "aria-describedby": f?.describedBy,
     role: "combobox",
@@ -4891,15 +4950,20 @@ function MultiSelect({
       add(o.value);
     }
   }, o.label))));
-}
+});
 Object.assign(__ds_scope, { MultiSelect });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/input/MultiSelect.jsx", error: String((e && e.message) || e) }); }
 
 // components/input/NumberStepper.jsx
 try { (() => {
+const { forwardRef } = React;
 const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
-/** 숫자 입력 + −/+ 버튼. 값은 mono. min/max에서 버튼 비활성.
- * @param {Parameters<typeof import("./NumberStepper.d.ts").NumberStepper>[0]} props */
+/** 숫자 입력 + −/+ 버튼. 값은 mono. min/max에서 버튼 비활성. */
+const NumberStepper = /*#__PURE__*/forwardRef(
+/**
+ * @param {import("./NumberStepper.d.ts").NumberStepperProps} props
+ * @param {import("react").ForwardedRef<HTMLInputElement>} ref
+ */
 function NumberStepper({
   value,
   defaultValue = 0,
@@ -4916,7 +4980,7 @@ function NumberStepper({
   className,
   style,
   ...rest
-}) {
+}, ref) {
   const f = useFieldContext();
   const [inner, setInner] = React.useState(defaultValue);
   const v = value ?? inner;
@@ -4961,6 +5025,7 @@ function NumberStepper({
     name: "minus",
     size: 12
   })), /*#__PURE__*/React.createElement("input", {
+    ref: ref,
     id: f?.id,
     "aria-describedby": f?.describedBy,
     type: "number",
@@ -4993,16 +5058,20 @@ function NumberStepper({
     name: "plus",
     size: 12
   })));
-}
+});
 Object.assign(__ds_scope, { NumberStepper });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/input/NumberStepper.jsx", error: String((e && e.message) || e) }); }
 
 // components/input/OTPInput.jsx
 try { (() => {
-const { useRef } = React;
-const { cx, useFieldContext } = __ds_scope;
-/** 인증 코드(OTP) 입력. length 자리 숫자, 붙여넣기 지원, 다 채우면 onComplete.
- * @param {Parameters<typeof import("./OTPInput.d.ts").OTPInput>[0]} props */
+const { forwardRef, useRef } = React;
+const { assignRef, cx, useFieldContext } = __ds_scope;
+/** 인증 코드(OTP) 입력. length 자리 숫자, 붙여넣기 지원, 다 채우면 onComplete. */
+const OTPInput = /*#__PURE__*/forwardRef(
+/**
+ * @param {import("./OTPInput.d.ts").OTPInputProps} props
+ * @param {import("react").ForwardedRef<HTMLInputElement>} ref
+ */
 function OTPInput({
   length = 6,
   value = "",
@@ -5012,7 +5081,7 @@ function OTPInput({
   invalid,
   disabled,
   className
-}) {
+}, ref) {
   const f = useFieldContext();
   const refs = useRef(/** @type {(HTMLInputElement | null)[]} */[]);
   const chars = Array.from({
@@ -5063,7 +5132,10 @@ function OTPInput({
     className: "bds-otp__sep",
     "aria-hidden": "true"
   }), /*#__PURE__*/React.createElement("input", {
-    ref: el => refs.current[i] = el,
+    ref: el => {
+      refs.current[i] = el;
+      if (i === 0) assignRef(ref, el);
+    },
     id: i === 0 ? f?.id : undefined,
     inputMode: "numeric",
     autoComplete: i === 0 ? "one-time-code" : "off",
@@ -5076,16 +5148,20 @@ function OTPInput({
     onPaste: onPaste,
     onFocus: e => e.target.select()
   }))));
-}
+});
 Object.assign(__ds_scope, { OTPInput });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/input/OTPInput.jsx", error: String((e && e.message) || e) }); }
 
 // components/input/RadioGroup.jsx
 try { (() => {
-const { useId } = React;
+const { forwardRef, useId } = React;
 const { cx, Checkbox } = __ds_scope;
-/** 라디오 묶음. options: {value, label, hint?, disabled?}. layout: column(기본) · row · cards(설명 있는 선택지).
- * @param {Parameters<typeof import("./RadioGroup.d.ts").RadioGroup>[0]} props */
+/** 라디오 묶음. options: {value, label, hint?, disabled?}. layout: column(기본) · row · cards(설명 있는 선택지). */
+const RadioGroup = /*#__PURE__*/forwardRef(
+/**
+ * @param {import("./RadioGroup.d.ts").RadioGroupProps} props
+ * @param {import("react").ForwardedRef<HTMLFieldSetElement>} ref
+ */
 function RadioGroup({
   name,
   value,
@@ -5096,10 +5172,11 @@ function RadioGroup({
   disabled,
   className,
   ...rest
-}) {
+}, ref) {
   const uid = useId().replace(/:/g, ""),
     nm = name ?? "rg-" + uid;
   return /*#__PURE__*/React.createElement("fieldset", {
+    ref: ref,
     className: cx("bds-radiogrp", layout === "row" && "bds-radiogrp--row", layout === "cards" && "bds-radiogrp--cards", className),
     disabled: disabled,
     ...rest
@@ -5125,16 +5202,20 @@ function RadioGroup({
       className: "bds-radiogrp__hint"
     }, o.hint));
   }));
-}
+});
 Object.assign(__ds_scope, { RadioGroup });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/input/RadioGroup.jsx", error: String((e && e.message) || e) }); }
 
 // components/input/SearchField.jsx
 try { (() => {
-const { useEffect, useRef } = React;
-const { cx, frameStyle, Icon } = __ds_scope;
-/** 검색 입력. `/` 단축키로 포커스, 값이 있으면 지우기 버튼. onSearch(value)는 Enter에 호출.
- * @param {Parameters<typeof import("./SearchField.d.ts").SearchField>[0]} props */
+const { forwardRef, useEffect, useRef } = React;
+const { assignRef, cx, frameStyle, Icon } = __ds_scope;
+/** 검색 입력. `/` 단축키로 포커스, 값이 있으면 지우기 버튼. onSearch(value)는 Enter에 호출. */
+const SearchField = /*#__PURE__*/forwardRef(
+/**
+ * @param {import("./SearchField.d.ts").SearchFieldProps} props
+ * @param {import("react").ForwardedRef<HTMLInputElement>} ref
+ */
 function SearchField({
   value,
   onChange,
@@ -5148,8 +5229,8 @@ function SearchField({
   style,
   "aria-label": ariaLabel = "검색",
   ...rest
-}) {
-  const ref = useRef(/** @type {HTMLInputElement | null} */null);
+}, ref) {
+  const input = useRef(/** @type {HTMLInputElement | null} */null);
   /* .d.ts 가 InputHTMLAttributes 를 상속하므로 onKeyDown 은 타입상 합법이다. 뒤에 펼치면
      Enter→onSearch 와 Esc→비우기가 조용히 죽는다. 빼내어 함께 부른다(NumberStepper 와 같은 방식). */
   const {
@@ -5161,7 +5242,7 @@ function SearchField({
     const onKey = (/** @type {KeyboardEvent} */e) => {
       if (e.key === "/" && !/input|textarea|select/i.test(document.activeElement?.tagName ?? "")) {
         e.preventDefault();
-        ref.current?.focus();
+        input.current?.focus();
       }
     };
     document.addEventListener("keydown", onKey);
@@ -5181,7 +5262,10 @@ function SearchField({
     name: "magnifying-glass",
     size: 15
   })), /*#__PURE__*/React.createElement("input", {
-    ref: ref,
+    ref: el => {
+      input.current = el;
+      assignRef(ref, el);
+    },
     type: "search",
     value: value,
     onChange: e => onChange?.(e.target.value, e),
@@ -5206,16 +5290,20 @@ function SearchField({
     className: "bds-ctl__affix bds-ctl__kbd",
     "aria-hidden": "true"
   }, "/"));
-}
+});
 Object.assign(__ds_scope, { SearchField });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/input/SearchField.jsx", error: String((e && e.message) || e) }); }
 
 // components/input/SegmentedControl.jsx
 try { (() => {
-const { useEffect, useRef, useState } = React;
-const { cx, frameStyle } = __ds_scope;
-/** 2~5개 상호배타 선택. 선택 thumb가 미끄러진다. fit="flex"면 옵션이 폭을 균등 분할.
- * @param {Parameters<typeof import("./SegmentedControl.d.ts").SegmentedControl>[0]} props */
+const { forwardRef, useEffect, useRef, useState } = React;
+const { assignRef, cx, frameStyle } = __ds_scope;
+/** 2~5개 상호배타 선택. 선택 thumb가 미끄러진다. fit="flex"면 옵션이 폭을 균등 분할. */
+const SegmentedControl = /*#__PURE__*/forwardRef(
+/**
+ * @param {import("./SegmentedControl.d.ts").SegmentedControlProps} props
+ * @param {import("react").ForwardedRef<HTMLDivElement>} ref
+ */
 function SegmentedControl({
   options = [],
   value,
@@ -5227,7 +5315,7 @@ function SegmentedControl({
   style,
   "aria-label": ariaLabel,
   ...rest
-}) {
+}, ref) {
   const root = useRef(/** @type {HTMLDivElement | null} */null);
   const [thumb, setThumb] = useState(/** @type {{ left: number, width: number } | null} */null);
   useEffect(() => {
@@ -5246,7 +5334,10 @@ function SegmentedControl({
     return () => ro.disconnect();
   }, [value, options.length]);
   return /*#__PURE__*/React.createElement("div", {
-    ref: root,
+    ref: el => {
+      root.current = el;
+      assignRef(ref, el);
+    },
     role: "radiogroup",
     "aria-label": ariaLabel,
     className: cx("bds-seg", size === "sm" && "bds-seg--sm", fit === "flex" && "bds-seg--flex", className),
@@ -5282,15 +5373,20 @@ function SegmentedControl({
     },
     "data-seg-value": o.value
   }, o.label)));
-}
+});
 Object.assign(__ds_scope, { SegmentedControl });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/input/SegmentedControl.jsx", error: String((e && e.message) || e) }); }
 
 // components/input/Select.jsx
 try { (() => {
+const { forwardRef } = React;
 const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
-/** 네이티브 select를 토큰으로 감싼 선택 입력. options: {value,label,disabled}[].
- * @param {Parameters<typeof import("./Select.d.ts").Select>[0]} props */
+/** 네이티브 select를 토큰으로 감싼 선택 입력. options: {value,label,disabled}[]. */
+const Select = /*#__PURE__*/forwardRef(
+/**
+ * @param {import("./Select.d.ts").SelectProps} props
+ * @param {import("react").ForwardedRef<HTMLSelectElement>} ref
+ */
 function Select({
   options = [],
   placeholder,
@@ -5302,7 +5398,7 @@ function Select({
   className,
   style,
   ...rest
-}) {
+}, ref) {
   const f = useFieldContext();
   return /*#__PURE__*/React.createElement("div", {
     className: cx("bds-ctl bds-ctl--select", size === "sm" && "bds-ctl--sm", (invalid ?? f?.invalid) && "bds-ctl--err", disabled && "bds-ctl--disabled", className),
@@ -5312,6 +5408,7 @@ function Select({
       style
     })
   }, /*#__PURE__*/React.createElement("select", {
+    ref: ref,
     id: f?.id,
     "aria-describedby": f?.describedBy,
     "aria-invalid": (invalid ?? f?.invalid) || undefined,
@@ -5329,15 +5426,20 @@ function Select({
     size: 14,
     className: "bds-ctl__caret"
   }));
-}
+});
 Object.assign(__ds_scope, { Select });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/input/Select.jsx", error: String((e && e.message) || e) }); }
 
 // components/input/Slider.jsx
 try { (() => {
+const { forwardRef } = React;
 const { cx, frameStyle, useFieldContext } = __ds_scope;
-/** 범위 슬라이더. 네이티브 range를 토큰으로. marks면 눈금 라벨, showValue면 오른쪽에 현재 값(mono).
- * @param {Parameters<typeof import("./Slider.d.ts").Slider>[0]} props */
+/** 범위 슬라이더. 네이티브 range를 토큰으로. marks면 눈금 라벨, showValue면 오른쪽에 현재 값(mono). */
+const Slider = /*#__PURE__*/forwardRef(
+/**
+ * @param {import("./Slider.d.ts").SliderProps} props
+ * @param {import("react").ForwardedRef<HTMLInputElement>} ref
+ */
 function Slider({
   value,
   defaultValue,
@@ -5356,7 +5458,7 @@ function Slider({
   className,
   style,
   ...rest
-}) {
+}, ref) {
   const f = useFieldContext();
   const [inner, setInner] = React.useState(defaultValue ?? min);
   const v = value ?? inner;
@@ -5374,6 +5476,7 @@ function Slider({
   }, /*#__PURE__*/React.createElement("div", {
     className: "bds-slider__row"
   }, /*#__PURE__*/React.createElement("input", {
+    ref: ref,
     id: f?.id,
     "aria-describedby": f?.describedBy,
     type: "range",
@@ -5403,24 +5506,30 @@ function Slider({
       }
     }, typeof m === "object" ? m.label : m);
   })));
-}
+});
 Object.assign(__ds_scope, { Slider });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/input/Slider.jsx", error: String((e && e.message) || e) }); }
 
 // components/input/Switch.jsx
 try { (() => {
+const { forwardRef } = React;
 const { cx } = __ds_scope;
-/** 켬/끔 스위치. 즉시 반영되는 설정에만 쓴다(저장 버튼이 따로 있으면 Checkbox).
- * @param {Parameters<typeof import("./Switch.d.ts").Switch>[0]} props */
+/** 켬/끔 스위치. 즉시 반영되는 설정에만 쓴다(저장 버튼이 따로 있으면 Checkbox). */
+const Switch = /*#__PURE__*/forwardRef(
+/**
+ * @param {import("./Switch.d.ts").SwitchProps} props
+ * @param {import("react").ForwardedRef<HTMLInputElement>} ref
+ */
 function Switch({
   children,
   disabled,
   className,
   ...rest
-}) {
+}, ref) {
   return /*#__PURE__*/React.createElement("label", {
     className: cx("bds-switch", disabled && "bds-switch--disabled", className)
   }, /*#__PURE__*/React.createElement("input", {
+    ref: ref,
     type: "checkbox",
     role: "switch",
     disabled: disabled,
@@ -5429,15 +5538,20 @@ function Switch({
     className: "bds-switch__track",
     "aria-hidden": "true"
   }), children != null && /*#__PURE__*/React.createElement("span", null, children));
-}
+});
 Object.assign(__ds_scope, { Switch });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/input/Switch.jsx", error: String((e && e.message) || e) }); }
 
 // components/input/TextArea.jsx
 try { (() => {
+const { forwardRef } = React;
 const { cx, frameStyle, useFieldContext } = __ds_scope;
-/** 여러 줄 입력. rows로 초기 높이, 세로로만 리사이즈.
- * @param {Parameters<typeof import("./TextArea.d.ts").TextArea>[0]} props */
+/** 여러 줄 입력. rows로 초기 높이, 세로로만 리사이즈. */
+const TextArea = /*#__PURE__*/forwardRef(
+/**
+ * @param {import("./TextArea.d.ts").TextAreaProps} props
+ * @param {import("react").ForwardedRef<HTMLTextAreaElement>} ref
+ */
 function TextArea({
   rows = 3,
   fit = "flex",
@@ -5448,7 +5562,7 @@ function TextArea({
   className,
   style,
   ...rest
-}) {
+}, ref) {
   const f = useFieldContext();
   return /*#__PURE__*/React.createElement("div", {
     className: cx("bds-ctl bds-ctl--area", (invalid ?? f?.invalid) && "bds-ctl--err", disabled && "bds-ctl--disabled", className),
@@ -5458,6 +5572,7 @@ function TextArea({
       style
     })
   }, /*#__PURE__*/React.createElement("textarea", {
+    ref: ref,
     id: f?.id,
     rows: rows,
     "aria-describedby": f?.describedBy,
@@ -5466,15 +5581,20 @@ function TextArea({
     className: mono ? "bds-mono" : undefined,
     ...rest
   }));
-}
+});
 Object.assign(__ds_scope, { TextArea });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/input/TextArea.jsx", error: String((e && e.message) || e) }); }
 
 // components/input/TextField.jsx
 try { (() => {
+const { forwardRef } = React;
 const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
-/** 한 줄 텍스트 입력. Field 안에서 라벨을 받는다. prefix/suffix에 단위·아이콘.
- * @param {Parameters<typeof import("./TextField.d.ts").TextField>[0]} props */
+/** 한 줄 텍스트 입력. Field 안에서 라벨을 받는다. prefix/suffix에 단위·아이콘. */
+const TextField = /*#__PURE__*/forwardRef(
+/**
+ * @param {import("./TextField.d.ts").TextFieldProps} props
+ * @param {import("react").ForwardedRef<HTMLInputElement>} ref
+ */
 function TextField({
   size = "md",
   fit = "flex",
@@ -5488,7 +5608,7 @@ function TextField({
   className,
   style,
   ...rest
-}) {
+}, ref) {
   const f = useFieldContext();
   return /*#__PURE__*/React.createElement("div", {
     className: cx("bds-ctl", size === "sm" && "bds-ctl--sm", (invalid ?? f?.invalid) && "bds-ctl--err", disabled && "bds-ctl--disabled", className),
@@ -5505,6 +5625,7 @@ function TextField({
   })), prefix && /*#__PURE__*/React.createElement("span", {
     className: "bds-ctl__affix"
   }, prefix), /*#__PURE__*/React.createElement("input", {
+    ref: ref,
     id: f?.id,
     "aria-describedby": f?.describedBy,
     "aria-invalid": (invalid ?? f?.invalid) || undefined,
@@ -5515,13 +5636,13 @@ function TextField({
   }), suffix && /*#__PURE__*/React.createElement("span", {
     className: "bds-ctl__affix"
   }, suffix));
-}
+});
 Object.assign(__ds_scope, { TextField });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/input/TextField.jsx", error: String((e && e.message) || e) }); }
 
 // components/input/PasswordField.jsx
 try { (() => {
-const { useState } = React;
+const { forwardRef, useState } = React;
 const { Icon, TextField } = __ds_scope;
 const LV = ["", "약함", "보통", "좋음", "강함"];
 const passwordStrength = (s = "") => {
@@ -5534,20 +5655,25 @@ const passwordStrength = (s = "") => {
   return Math.min(4, Math.max(1, n));
 };
 
-/** 비밀번호 입력. 보기 토글 + (선택) 강도 미터. strength는 텍스트로도 병기한다.
- * @param {Parameters<typeof import("./PasswordField.d.ts").PasswordField>[0]} props */
+/** 비밀번호 입력. 보기 토글 + (선택) 강도 미터. strength는 텍스트로도 병기한다. */
+const PasswordField = /*#__PURE__*/forwardRef(
+/**
+ * @param {import("./PasswordField.d.ts").PasswordFieldProps} props
+ * @param {import("react").ForwardedRef<HTMLInputElement>} ref
+ */
 function PasswordField({
   value,
   onChange,
   strength = false,
   autoComplete = "current-password",
   ...rest
-}) {
+}, ref) {
   const [show, setShow] = useState(false);
   const lv = strength ? passwordStrength(value) : 0;
   return /*#__PURE__*/React.createElement("div", {
     className: "bds-pw"
   }, /*#__PURE__*/React.createElement(TextField, {
+    ref: ref,
     type: show ? "text" : "password",
     value: value,
     onChange: onChange,
@@ -5572,16 +5698,21 @@ function PasswordField({
     className: "bds-pw__lv",
     role: "status"
   }, lv ? "강도: " + LV[lv] : "8자 이상, 대·소문자·숫자·기호 조합")));
-}
+});
 Object.assign(__ds_scope, { passwordStrength, PasswordField });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/input/PasswordField.jsx", error: String((e && e.message) || e) }); }
 
 // components/input/TimePicker.jsx
 try { (() => {
+const { forwardRef } = React;
 const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
 const pad = (/** @type {number} */n) => String(n).padStart(2, "0");
-/** 시:분 선택(24시간). value "HH:MM". step은 분 단위(기본 5).
- * @param {Parameters<typeof import("./TimePicker.d.ts").TimePicker>[0]} props */
+/** 시:분 선택(24시간). value "HH:MM". step은 분 단위(기본 5). */
+const TimePicker = /*#__PURE__*/forwardRef(
+/**
+ * @param {import("./TimePicker.d.ts").TimePickerProps} props
+ * @param {import("react").ForwardedRef<HTMLSelectElement>} ref
+ */
 function TimePicker({
   value = "",
   onChange,
@@ -5592,7 +5723,7 @@ function TimePicker({
   disabled,
   className,
   style
-}) {
+}, ref) {
   const f = useFieldContext();
   const [h, m] = value ? value.split(":").map(Number) : [null, null];
   const set = (/** @type {number | null} */hh, /** @type {number | null} */mm) => onChange?.(pad(hh ?? 0) + ":" + pad(mm ?? 0));
@@ -5612,6 +5743,7 @@ function TimePicker({
     name: "clock",
     size: 15
   })), /*#__PURE__*/React.createElement("select", {
+    ref: ref,
     id: f?.id,
     "aria-label": "시",
     value: h ?? "",
@@ -5639,7 +5771,7 @@ function TimePicker({
     key: v,
     value: v
   }, pad(v)))));
-}
+});
 Object.assign(__ds_scope, { TimePicker });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/input/TimePicker.jsx", error: String((e && e.message) || e) }); }
 

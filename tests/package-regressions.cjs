@@ -13,7 +13,12 @@ const root = path.resolve(__dirname, "..");
 const template = path.join(__dirname, "fixtures", "package-consumer");
 const tempRoot = fs.realpathSync(os.tmpdir());
 const work = fs.mkdtempSync(path.join(tempRoot, "bonggu-package-fixture-"));
-const consumer = path.join(work, "consumer");
+// 소비 fixture 는 React 조합마다 새로 깐다. peer 범위(package.json)는 이 목록이 검증하는 범위와 같아야 한다.
+const REACT_MATRIX = [
+  { react: "18.3.1", typesReact: "18.3.31", typesReactDom: "18.3.7" },
+  { react: "19.3.0", typesReact: "19.3.0", typesReactDom: "19.3.0" },
+];
+let consumer = path.join(work, "consumer");
 const artifacts = path.join(work, "artifacts");
 const npmCli = process.env.npm_execpath || path.join(path.dirname(process.execPath), "node_modules", "npm", "bin", "npm-cli.js");
 
@@ -174,7 +179,6 @@ async function assertProductionBundle(packageRoot) {
 
 async function main() {
   fs.mkdirSync(artifacts);
-  fs.cpSync(template, consumer, { recursive: true });
 
   const pack = run(process.execPath, [npmCli, "pack", "--pack-destination", artifacts, "--silent"], { cwd: root });
   const tarballs = fs.readdirSync(artifacts).filter((name) => name.endsWith(".tgz"));
@@ -190,11 +194,25 @@ async function main() {
   assert.deepEqual(normalizedTarContents(tarball), normalizedTarContents(path.join(secondArtifacts, secondTarballs[0])), "연속 npm pack의 정규화 파일 내용이 다름");
   console.log("PASS package reproducibility: two normalized tarball contents match");
 
-  const packageTemplate = fs.readFileSync(path.join(consumer, "package.template.json"), "utf8");
-  const tarballDependency = `file:${path.relative(consumer, tarball).replaceAll("\\", "/")}`;
-  fs.writeFileSync(path.join(consumer, "package.json"), packageTemplate.replace("__PACKAGE_TARBALL__", tarballDependency));
-  fs.rmSync(path.join(consumer, "package.template.json"));
-  run(process.execPath, [npmCli, "install", "--prefer-offline", "--ignore-scripts", "--no-audit", "--no-fund"]);
+  const packageTemplate = fs.readFileSync(path.join(template, "package.template.json"), "utf8");
+  for (const versions of REACT_MATRIX) {
+    console.log(`--- consumer fixture: react ${versions.react}`);
+    consumer = path.join(work, `consumer-${versions.react}`);
+    fs.cpSync(template, consumer, { recursive: true });
+    const tarballDependency = `file:${path.relative(consumer, tarball).replaceAll("\\", "/")}`;
+    fs.writeFileSync(path.join(consumer, "package.json"), packageTemplate
+      .replace("__PACKAGE_TARBALL__", tarballDependency)
+      .replaceAll("__REACT__", versions.react)
+      .replace("__TYPES_REACT__", versions.typesReact)
+      .replace("__TYPES_REACT_DOM__", versions.typesReactDom));
+    fs.rmSync(path.join(consumer, "package.template.json"));
+    // 18 은 루트 lockfile 로 캐시에 있고, 19 는 캐시에 없으면 레지스트리에서 받는다(정확한 버전 고정).
+    run(process.execPath, [npmCli, "install", "--prefer-offline", "--ignore-scripts", "--no-audit", "--no-fund"]);
+    await verifyConsumer();
+  }
+}
+
+async function verifyConsumer() {
 
   const packageRoot = fs.realpathSync(path.join(consumer, "node_modules", "@dbwk10317", "bonggu-design-system"));
   assert(packageRoot.startsWith(`${fs.realpathSync(consumer)}${path.sep}`), "file dependency가 fixture 밖 원본으로 연결됨");

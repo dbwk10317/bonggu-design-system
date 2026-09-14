@@ -1,4 +1,4 @@
-import type { ReactNode, TextareaHTMLAttributes } from "react";
+import type { ForwardRefExoticComponent, RefAttributes, TextareaHTMLAttributes } from "react";
 export interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   rows?: number;
   /** flex=부모 폭(기본), fixed=width, auto=내용 크기 */
@@ -7,4 +7,4 @@ export interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElemen
   mono?: boolean;
   invalid?: boolean;
 }
-export declare function TextArea(props: TextAreaProps): ReactNode;
+export declare const TextArea: ForwardRefExoticComponent<TextAreaProps & RefAttributes<HTMLTextAreaElement>>;

@@ -1,4 +1,4 @@
-import type { InputHTMLAttributes, ReactNode } from "react";
+import type { ForwardRefExoticComponent, InputHTMLAttributes, ReactNode, RefAttributes } from "react";
 /** 범위 슬라이더. 밝기(1~5), 갱신 주기 같은 연속·서열 값. 3개 이하 선택지는 SegmentedControl. */
 export interface SliderProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "defaultValue" | "onChange" | "size" | "width"> {
   value?: number;
@@ -14,4 +14,4 @@ export interface SliderProps extends Omit<InputHTMLAttributes<HTMLInputElement>,
   width?: number | string;
   onChange?: (value: number, event: React.ChangeEvent<HTMLInputElement>) => void;
 }
-export declare function Slider(props: SliderProps): ReactNode;
+export declare const Slider: ForwardRefExoticComponent<SliderProps & RefAttributes<HTMLInputElement>>;

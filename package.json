@@ -13,7 +13,7 @@
     "licenses"
   ],
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "access": "public"
   },
   "types": "./dist/index.d.ts",
   "exports": {
@@ -28,7 +28,7 @@
     "**/*.css"
   ],
   "peerDependencies": {
-    "react": "18.3.1"
+    "react": ">=18.2.0 <20"
   },
   "scripts": {
     "build": "npm run build:package && npm run build:browser",

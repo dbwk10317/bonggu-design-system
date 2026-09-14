@@ -12,7 +12,6 @@ concurrency:
 
 permissions:
   contents: read
-  packages: write
 
 jobs:
   publish:
@@ -26,7 +25,7 @@ jobs:
         with:
           node-version: 26
           cache: npm
-          registry-url: https://npm.pkg.github.com
+          registry-url: https://registry.npmjs.org
       - name: Install dependencies
         run: npm ci
       - name: Install Chromium
@@ -41,6 +40,7 @@ jobs:
           pkg="$(node -p "require('./package.json').version")"
           test "$tag" = "$pkg" || { echo "태그 ${GITHUB_REF_NAME}와 package.json ${pkg}가 다릅니다"; exit 1; }
       # prerelease는 next, 정식은 latest. 기본값에 맡기면 beta가 latest를 가져간다.
+      # 인증은 저장소 시크릿 NPM_TOKEN(npmjs granular access token, 이 패키지 publish 권한).
       - name: Publish
         run: |
           version="$(node -p "require('./package.json').version")"
@@ -49,4 +49,4 @@ jobs:
             *) npm publish --tag latest ;;
           esac
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

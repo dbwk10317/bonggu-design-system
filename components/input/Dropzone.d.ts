@@ -1,4 +1,4 @@
-import type { HTMLAttributes, ReactNode } from "react";
+import type { ForwardRefExoticComponent, HTMLAttributes, ReactNode, RefAttributes } from "react";
 export interface DropzoneProps extends Omit<HTMLAttributes<HTMLDivElement>, "title"> {
   accept?: string;
   multiple?: boolean;
@@ -12,4 +12,4 @@ export interface DropzoneProps extends Omit<HTMLAttributes<HTMLDivElement>, "tit
   height?: number | string;
   disabled?: boolean;
 }
-export declare function Dropzone(props: DropzoneProps): ReactNode;
+export declare const Dropzone: ForwardRefExoticComponent<DropzoneProps & RefAttributes<HTMLDivElement>>;

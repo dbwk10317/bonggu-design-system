@@ -1,4 +1,4 @@
-import type { HTMLAttributes, ReactNode } from "react";
+import type { ForwardRefExoticComponent, HTMLAttributes, ReactNode, RefAttributes } from "react";
 export interface SegmentedOption { value: string; label: React.ReactNode; disabled?: boolean }
 /** 2~5개 상호배타 선택. */
 export interface SegmentedControlProps extends Omit<HTMLAttributes<HTMLDivElement>, "onChange"> {
@@ -11,4 +11,4 @@ export interface SegmentedControlProps extends Omit<HTMLAttributes<HTMLDivElemen
   width?: number | string;
   "aria-label": string;
 }
-export declare function SegmentedControl(props: SegmentedControlProps): ReactNode;
+export declare const SegmentedControl: ForwardRefExoticComponent<SegmentedControlProps & RefAttributes<HTMLDivElement>>;

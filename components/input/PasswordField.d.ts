@@ -1,4 +1,4 @@
-import type { HTMLAttributes, ReactNode } from "react";
+import type { ForwardRefExoticComponent, HTMLAttributes, RefAttributes } from "react";
 import type { InputHTMLAttributes } from "react";
 export interface PasswordFieldProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "size" | "type" | "value"> {
   /** 제어 값. 강도 계산이 문자열만 받는다 */
@@ -10,4 +10,4 @@ export interface PasswordFieldProps extends Omit<InputHTMLAttributes<HTMLInputEl
   width?: number | string;
 }
 export declare function passwordStrength(s: string): 0 | 1 | 2 | 3 | 4;
-export declare function PasswordField(props: PasswordFieldProps): ReactNode;
+export declare const PasswordField: ForwardRefExoticComponent<PasswordFieldProps & RefAttributes<HTMLInputElement>>;

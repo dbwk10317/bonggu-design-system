@@ -1,5 +1,5 @@
 import type { HTMLAttributes, Key, ReactNode } from "react";
-export interface DataTableColumn<T> { key: string; header: ReactNode; /** 수치 열: mono + 우측 정렬 */ align?: "num"; sortable?: boolean; width?: number | string; /** 컨테이너 640px 미만(tablet) / 900px 미만(desktop)에서 숨김 */ hideBelow?: "tablet" | "desktop"; hideOnMobile?: boolean;
+export interface DataTableColumn<T> { key: string; header: ReactNode; /** 수치 열: mono + 우측 정렬 */ align?: "num"; sortable?: boolean; width?: number | string; /** 컨테이너 640px 미만(tablet) / 900px 미만(desktop)에서 숨김 */ hideBelow?: "tablet" | "desktop";
   /**
    * 셀 표시를 직접 만든다. 반환은 ReactNode이므로 null은 React 규칙대로 "아무것도 그리지 않음"이며 결측이 아니다.
    * 결측을 표시하려면 render를 두지 않고 값에 null을 넣거나, 문구("수집 안 됨")를 그대로 반환한다.

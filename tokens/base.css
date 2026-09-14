@@ -1,4 +1,6 @@
 /* 전역 기반: 리셋, 한글 줄바꿈, mono 유틸, 포커스, 스크롤바, 모션 키프레임, reduced-motion. */
+/* 요소 리셋은 이름 있는 레이어에 둔다. 레이어 밖 규칙이 항상 이기므로 소비 앱이 같은 요소를 직접 스타일하면 그쪽이 적용된다. */
+@layer bds-reset{
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;height:100%;overscroll-behavior:none}
 body{margin:0;min-height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-ui);font-size:var(--fs-body);line-height:var(--lh-body);letter-spacing:var(--ls-ui);-webkit-font-smoothing:antialiased;
@@ -15,6 +17,7 @@ img,svg{display:block;max-width:100%}
 table{border-collapse:collapse;border-spacing:0}
 :focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px;border-radius:var(--radius-ctl)}
 ::selection{background:var(--signal-tint)}
+}
 /* 수치·코드·시각: 결측 문구("수집 안 됨")에는 붙이지 않는다 */
 .bds-mono{font-family:var(--font-data);font-variant-numeric:tabular-nums;letter-spacing:var(--ls-data)}
 .bds-ellipsis{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}

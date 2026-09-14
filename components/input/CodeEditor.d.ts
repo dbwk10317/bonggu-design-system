@@ -1,4 +1,4 @@
-import type { HTMLAttributes, ReactNode } from "react";
+import type { ForwardRefExoticComponent, HTMLAttributes, RefAttributes } from "react";
 /** JSON/코드 입력. 줄번호·mono·Tab 들여쓰기, JSON 실시간 유효성. 학습 config·run input. */
 export interface CodeEditorProps extends Omit<HTMLAttributes<HTMLDivElement>, "onChange" | "defaultValue"> {
   value?: string;
@@ -17,4 +17,4 @@ export interface CodeEditorProps extends Omit<HTMLAttributes<HTMLDivElement>, "o
   disabled?: boolean;
   "aria-label"?: string;
 }
-export declare function CodeEditor(props: CodeEditorProps): ReactNode;
+export declare const CodeEditor: ForwardRefExoticComponent<CodeEditorProps & RefAttributes<HTMLTextAreaElement>>;
