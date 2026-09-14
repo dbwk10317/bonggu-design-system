@@ -10,7 +10,7 @@ export const Basic = () => (
   </Stack>
 );
 
-/* 부분 선택은 indeterminate 다. 체크와 해제 중간을 checked 로 흉내 내지 않는다. */
+/* Partial selection is indeterminate, not a checked hack. */
 export const Indeterminate = () => {
   const REGIONS = ["서울", "경기", "부산"];
   const [on, setOn] = React.useState<string[]>(["서울"]);
@@ -33,7 +33,7 @@ export const Indeterminate = () => {
   );
 };
 
-/* radio 를 켜면 단일 선택이다. 같은 name 으로 묶는다. */
+/* radio makes it single-select; group items with the same name. */
 export const Radio = () => (
   <Field label="적용 대상">
     <Stack gap={2}>
@@ -44,5 +44,5 @@ export const Radio = () => (
   </Field>
 );
 
-/* 라벨 없이 쓰면 aria-label 을 반드시 준다(표의 행 선택 등). */
+/* Without a visible label (e.g. table row selection), always add aria-label. */
 export const NoLabel = () => <Checkbox aria-label="edge-seoul-01 선택" />;

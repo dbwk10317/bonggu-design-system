@@ -9,7 +9,7 @@ export const Basic = () => (
   </Grid>
 );
 
-/* onChange 는 확정된 값만 준다. 입력 중 빈칸이나 범위 밖 값으로 상태를 흔들지 않는다. */
+/* onChange only fires with a committed value; it won't churn state on a blank or out-of-range value while typing. */
 export const Controlled = () => {
   const [n, setN] = React.useState(5);
   return (

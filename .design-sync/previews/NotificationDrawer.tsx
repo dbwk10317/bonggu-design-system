@@ -9,7 +9,7 @@ const ITEMS: NotificationItem[] = [
   { id: "a4", title: "예정된 점검", description: "9월 14일 02:00~03:00 게이트웨이 재시작.", tone: "info", time: "어제", read: true, resolved: true },
 ];
 
-/* 상단바의 종 버튼과 짝이다. 트리거가 open 을 쥐고 드로어는 그것만 본다. */
+/* Pairs with the bell button in the top bar; the trigger owns open, the drawer just reads it. */
 export const WithTrigger = () => {
   const [open, setOpen] = React.useState(true);
   const [items, setItems] = React.useState(ITEMS);
@@ -31,7 +31,7 @@ export const WithTrigger = () => {
   );
 };
 
-/* 비어 있을 때도 자기 빈 상태를 가진다. 따로 EmptyState 를 얹지 않는다. */
+/* Has its own empty state even when empty; don't add a separate EmptyState. */
 export const Empty = () => {
   const [open, setOpen] = React.useState(true);
   return (
@@ -44,7 +44,7 @@ export const Empty = () => {
   );
 };
 
-/* 읽은 것과 안 읽은 것이 섞여 있는 모습. resolved 는 이미 끝난 일이다. */
+/* Shows a mix of read and unread; resolved means it's already over. */
 export const Mixed = () => {
   const [open, setOpen] = React.useState(true);
   return (

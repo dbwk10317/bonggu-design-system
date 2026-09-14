@@ -1,7 +1,7 @@
 import * as React from "react";
 import { InlineMessage, Stack, Panel, CardHead, Field, TextField, Code } from "@dbwk10317/bonggu-design-system";
 
-/* 어떤 것 하나에 붙는 짧은 설명이다. 화면 전체에 걸치는 알림은 AlertBanner. */
+/* A short note attached to one thing; use AlertBanner for a screen-wide alert. */
 export const Tones = () => (
   <Stack gap={3}>
     <InlineMessage tone="neutral">이 값은 다음 수집 주기에 반영됩니다.</InlineMessage>

@@ -12,7 +12,7 @@ const MANIFEST = `{
   "targets": { "region": ["서울", "경기"], "model": "BG-EDGE-2" }
 }`;
 
-/* 줄바꿈하지 않고 가로로 스크롤한다. 명령이 접혀서 잘못 복사되는 일을 막는다. */
+/* Scrolls horizontally instead of wrapping, so copied commands aren't broken by line breaks. */
 export const Shell = () => <CodeBlock>{INSTALL}</CodeBlock>;
 
 export const Json = () => <CodeBlock language="json">{MANIFEST}</CodeBlock>;

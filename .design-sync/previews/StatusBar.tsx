@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StatusBar, Stack } from "@dbwk10317/bonggu-design-system";
 
-/* 셸 맨 아래 줄. 지금 무엇을 보고 있는지와 데이터가 언제 것인지를 항상 띄워 둔다. */
+/* Bottom line of the shell; always shows what you're looking at and when the data is from. */
 export const Live = () => (
   <StatusBar
     live={{ label: "실시간" }}
@@ -10,7 +10,7 @@ export const Live = () => (
   />
 );
 
-/* 실시간이 아니면 live 를 주지 않는다. 점이 사라져 "지금 값"이 아님을 알린다. */
+/* Skip live when it's not real-time; the dot disappearing signals this isn't a current value. */
 export const Static = () => (
   <StatusBar
     items={["API 경유", <><span className="bds-mono">config-api</span> 경유 화면</>]}

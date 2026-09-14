@@ -5,7 +5,7 @@ const Cell = ({ label }: { label: string }) => (
   <Panel padding="sm"><CardHead title={label} /></Panel>
 );
 
-/* span 은 Grid columns 기준 칸 수다. Grid 에 columns 를 주지 않으면 아무 효과가 없다. */
+/* span counts columns against the Grid's columns; has no effect without it. */
 export const Spans = () => (
   <Grid columns={12}>
     <GridItem span={12}><Cell label="span 12" /></GridItem>
@@ -17,7 +17,7 @@ export const Spans = () => (
   </Grid>
 );
 
-/* 좁아질 때 몇 칸으로 접을지 따로 준다. 480px 미만은 언제나 전폭이다. */
+/* Set how many columns to collapse to as it narrows; always full width below 480px. */
 export const Responsive = () => (
   <Stack gap={4}>
     <p className="bds-mono">span 8 / spanMd 12 · span 4 / spanMd 6 / spanSm 12</p>

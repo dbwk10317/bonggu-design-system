@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link, Stack, Panel, InlineMessage } from "@dbwk10317/bonggu-design-system";
 
-/* 문장 안에서 다른 곳으로 보낼 때. 화면 전환이 목적이면 Button 이 아니라 Link 다. */
+/* For sending somewhere else from within a sentence; use Link, not Button, for navigation. */
 export const InProse = () => (
   <Stack gap={3}>
     <p>이 노드는 <Link href="#nodes">노드 목록</Link>에서도 볼 수 있습니다.</p>
@@ -9,7 +9,7 @@ export const InProse = () => (
   </Stack>
 );
 
-/* external 은 새 탭으로 나간다는 표시를 붙인다. 같은 콘솔 안 이동에는 쓰지 않는다. */
+/* external marks it as leaving in a new tab; don't use it for navigation within the same console. */
 export const External = () => (
   <Stack gap={2}>
     <Link href="https://grafana.example" external>Grafana 대시보드</Link>
@@ -17,7 +17,7 @@ export const External = () => (
   </Stack>
 );
 
-/* 촘촘한 목록이나 표 안에서 파란 글자가 너무 많아지면 quiet 로 본문색을 쓴다. */
+/* Use quiet for body-text color when blue text piles up in a dense list or table. */
 export const Quiet = () => (
   <Panel padding="sm">
     <Stack gap={2}>

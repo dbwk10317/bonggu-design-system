@@ -11,7 +11,7 @@ export const Basic = () => (
   </Panel>
 );
 
-/* 라벨은 두 선택지 사이를 가를 때. 목록 구분에는 라벨 없는 선을 쓴다. */
+/* Use a label to split two options; use a plain divider for list separation. */
 export const WithLabel = () => (
   <Stack gap={4} style={{ maxWidth: 320 }}>
     <Button variant="primary">SSO 로 로그인</Button>
@@ -20,7 +20,7 @@ export const WithLabel = () => (
   </Stack>
 );
 
-/* 가로로 나열한 메타 값 사이에는 세로선. */
+/* Use vertical between inline meta values. */
 export const Vertical = () => (
   <Inline gap={3} align="center">
     <span className="bds-mono">2.14.0</span>

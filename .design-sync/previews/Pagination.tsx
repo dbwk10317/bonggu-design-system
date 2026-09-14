@@ -15,7 +15,7 @@ export const Basic = () => {
   );
 };
 
-/* 페이지가 많으면 현재 위치 양옆만 남기고 접는다. siblings 로 몇 개를 남길지 정한다. */
+/* With many pages it collapses to just the current position's neighbors; siblings sets how many to keep. */
 export const ManyPages = () => (
   <Stack gap={4}>
     <Pagination page={12} total={40} siblings={1} aria-label="siblings 1" />
@@ -31,7 +31,7 @@ export const Edges = () => (
   </Stack>
 );
 
-/* 표 아래에 둔다. 20행이 넘어갈 때부터 의미가 있다. */
+/* Goes below a table; only meaningful past 20 rows. */
 export const UnderTable = () => (
   <Panel>
     <div style={{ minHeight: 72 }}>노드 20행</div>

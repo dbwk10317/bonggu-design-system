@@ -1,8 +1,8 @@
 import * as React from "react";
 import { Toast, ToastProvider, useToast, Button, Stack, Inline } from "@dbwk10317/bonggu-design-system";
 
-/* 보통은 직접 그리지 않는다. 앱 루트의 ToastProvider 가 그리고, 화면에서는 useToast().toast() 를 부른다.
-   여기서는 모양을 보기 위해 각 톤을 그대로 세워 둔다. */
+/* Normally not rendered directly — the app-root ToastProvider draws it and screens call
+   useToast().toast(). Shown standing still here just to see each tone. */
 export const Tones = () => (
   <Stack gap={3}>
     <Toast tone="ok" message="두 장치에 적용했습니다." />
@@ -12,12 +12,12 @@ export const Tones = () => (
   </Stack>
 );
 
-/* 되돌릴 수 있는 일은 확인 창 대신 토스트에 되돌리기를 붙인다. */
+/* For a reversible action, attach an undo action to the toast instead of a confirm dialog. */
 export const WithAction = () => (
   <Toast tone="info" message="노드 3대를 격리했습니다." action="되돌리기" onAction={() => {}} onDismiss={() => {}} />
 );
 
-/* 실제 사용법. duration 0 은 사람이 닫을 때까지 남는다 — 실패에만 쓴다. */
+/* Real usage: duration 0 stays until a person dismisses it — use only for failures. */
 function Trigger() {
   const { toast } = useToast();
   return (

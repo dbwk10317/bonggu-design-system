@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Spacer, Inline, Stack, Button, Panel, Tag } from "@dbwk10317/bonggu-design-system";
 
-/* 크기를 주지 않으면 남는 공간을 다 먹는다. 툴바 오른쪽 정렬을 이걸로 만든다. */
+/* Without a size it fills all remaining space; this is how toolbar right-alignment is built. */
 export const Push = () => (
   <Panel padding="sm">
     <Inline gap={2} align="center" wrap={false}>
@@ -13,7 +13,7 @@ export const Push = () => (
   </Panel>
 );
 
-/* size 를 주면 고정 간격이다. --sp 단계 번호를 쓴다. */
+/* With size it's a fixed gap; use a --sp step number. */
 export const Fixed = () => (
   <Stack gap={0} style={{ background: "var(--fill-1)", padding: 12, borderRadius: "var(--r-sm)" }}>
     <b>수집 설정</b>

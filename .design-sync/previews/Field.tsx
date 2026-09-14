@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Field, TextField, Select, Switch, NumberStepper, Stack, Grid } from "@dbwk10317/bonggu-design-system";
 
-/* 라벨·설명·오류를 입력에 연결한다. 자식 입력은 id·aria 를 컨텍스트로 받으므로 직접 달지 않는다. */
+/* Wires label/hint/error to the input; the child gets id/aria from context, don't set them directly. */
 export const Basic = () => (
   <Stack gap={4} style={{ maxWidth: 420 }}>
     <Field label="노드 이름"><TextField defaultValue="봉구 강남점" /></Field>
@@ -12,7 +12,7 @@ export const Basic = () => (
   </Stack>
 );
 
-/* error 가 있으면 hint 대신 나오고 입력이 aria-invalid 가 된다. 둘을 같이 띄우지 않는다. */
+/* error replaces hint and marks the input aria-invalid; never shown together. */
 export const WithError = () => (
   <Stack gap={4} style={{ maxWidth: 420 }}>
     <Field label="에이전트 엔드포인트" hint="https:// 로 시작합니다."><TextField defaultValue="https://edge.bonggu.me" mono /></Field>

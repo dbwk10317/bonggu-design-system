@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Visible, Inline, Stack, Button, Tag, Panel } from "@dbwk10317/bonggu-design-system";
 
-/* 좁은 화면에서 자리를 못 내는 보조 동작을 숨긴다. 핵심 동작은 절대 숨기지 않는다. */
+/* Hides secondary actions that don't fit on a narrow screen; never hide the primary action. */
 export const HideSecondary = () => (
   <Panel padding="sm">
     <Inline gap={2} align="center" wrap={false}>
@@ -13,7 +13,7 @@ export const HideSecondary = () => (
   </Panel>
 );
 
-/* 같은 정보를 폭에 따라 다른 모양으로 낼 때 짝으로 쓴다. */
+/* Used in pairs to render the same info differently depending on width. */
 export const SwapByWidth = () => (
   <Stack gap={3}>
     <Visible above="md"><Panel padding="sm">넓은 화면: 표로 봅니다 (md 이상)</Panel></Visible>

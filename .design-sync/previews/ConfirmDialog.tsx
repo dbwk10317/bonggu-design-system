@@ -1,7 +1,7 @@
 import * as React from "react";
 import { ConfirmDialog, Button, Inline, Code } from "@dbwk10317/bonggu-design-system";
 
-/* 되돌릴 수 있는 일에는 쓰지 않는다. 확인 라벨은 동사 하나로 무슨 일이 일어나는지 말한다. */
+/* Not for reversible actions. confirmLabel should be a single verb naming the action. */
 export const Restart = () => {
   const [open, setOpen] = React.useState(true);
   return (
@@ -17,7 +17,7 @@ export const Restart = () => {
   );
 };
 
-/* 되돌릴 수 없으면 danger. 무엇이 남고 무엇이 사라지는지 문장으로 적는다. */
+/* Use danger when irreversible; spell out what stays and what's gone. */
 export const Danger = () => {
   const [open, setOpen] = React.useState(true);
   return (
@@ -33,7 +33,7 @@ export const Danger = () => {
   );
 };
 
-/* 범위가 넓거나 값이 비싼 일은 이름을 그대로 치게 한다. */
+/* For broad or high-value actions, require typing the exact name. */
 export const TypeToConfirm = () => {
   const [open, setOpen] = React.useState(true);
   return (
@@ -50,7 +50,7 @@ export const TypeToConfirm = () => {
   );
 };
 
-/* busy 는 확인·취소·Esc·딤 닫기를 전부 잠근다. 처리 도중 창이 사라지지 않게 한다. */
+/* busy locks confirm, cancel, Esc, and dim-click so the dialog can't vanish mid-operation. */
 export const Busy = () => {
   const [open, setOpen] = React.useState(true);
   return (

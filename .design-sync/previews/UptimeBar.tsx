@@ -12,7 +12,7 @@ export const Basic = () => (
   <UptimeBar name="결제 API" segments={NINETY} start="90일 전" end="오늘" />
 );
 
-/* off 는 아직 수집하지 않은 구간이라 가용성 분모에서 빠진다. 장애로 세지 않는다. */
+/* off is a not-yet-collected span, excluded from the availability denominator — not counted as downtime. */
 export const NotYetCollected = () => (
   <UptimeBar
     name="신규 배포 채널"

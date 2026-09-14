@@ -1,14 +1,14 @@
 import * as React from "react";
 import { Tag, Inline, Stack, Panel, CardHead } from "@dbwk10317/bonggu-design-system";
 
-/* 분류를 붙이는 표식이다. 상태를 알리는 자리에는 StatusPill 을 쓴다. */
+/* A label for classification; use StatusPill to signal state. */
 export const Basic = () => (
   <Inline gap={2}>
     <Tag>서울</Tag><Tag>BG-EDGE-2</Tag><Tag icon="tag">2.14.0</Tag><Tag accent>선택됨</Tag>
   </Inline>
 );
 
-/* onRemove 가 있으면 지울 수 있는 칩이 된다. 필터를 걷어내는 데 쓴다. */
+/* onRemove turns it into a removable chip, for clearing a filter. */
 export const Removable = () => {
   const [on, setOn] = React.useState(["서울", "경기", "부산", "온라인"]);
   return (
@@ -33,7 +33,7 @@ export const WithIcon = () => (
   </Inline>
 );
 
-/* 표 안에서는 행이 길어지지 않게 몇 개만 남기고 수로 접는다. */
+/* In a table, keep only a few and collapse the rest into a count so rows don't grow long. */
 export const InRow = () => (
   <Inline gap={2} align="center" wrap={false}>
     <span className="bds-mono">edge-seoul-01</span>

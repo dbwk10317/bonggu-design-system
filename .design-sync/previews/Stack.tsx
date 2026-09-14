@@ -5,7 +5,7 @@ const Box = ({ children }: { children: React.ReactNode }) => (
   <div style={{ background: "var(--fill-2)", borderRadius: "var(--r-sm)", padding: "8px 12px" }}>{children}</div>
 );
 
-/* gap 은 --sp 단계 번호다. 픽셀을 직접 적지 않으면 밀도 전환이 그대로 따라온다. */
+/* gap is a --sp step number; skip raw pixels and density switches come along automatically. */
 export const Gaps = () => (
   <Inline gap={5} align="start">
     {[2, 4, 6].map((g) => (
@@ -28,7 +28,7 @@ export const Align = () => (
   </Inline>
 );
 
-/* 폼과 카드 본문의 기본 배치다. Panel 안에서 세로 리듬을 이것 하나로 맞춘다. */
+/* Default layout for forms and card bodies; sets vertical rhythm inside a Panel on its own. */
 export const InPanel = () => (
   <Panel>
     <Stack gap={4}>

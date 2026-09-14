@@ -1,7 +1,7 @@
 import * as React from "react";
 import { EmptyState, Panel, Button, Inline, Stack } from "@dbwk10317/bonggu-design-system";
 
-/* 아직 아무것도 없는 자리. 표정으로 이게 문제인지 아닌지를 먼저 알린다. */
+/* For a spot with nothing yet; the face signals whether this is a problem. */
 export const FirstRun = () => (
   <Panel>
     <EmptyState
@@ -13,7 +13,7 @@ export const FirstRun = () => (
   </Panel>
 );
 
-/* 필터 때문에 비었을 때는 "없다"가 아니라 "이 조건에 없다"고 말한다. */
+/* When empty due to a filter, say "none match this" rather than "none exist". */
 export const NoResults = () => (
   <Panel>
     <EmptyState
@@ -25,7 +25,7 @@ export const NoResults = () => (
   </Panel>
 );
 
-/* 잘못된 상태는 tone="error". 표정도 같이 바꾼다. */
+/* Use tone="error" for a broken state, and change the face to match. */
 export const Error_ = () => (
   <Panel>
     <EmptyState
@@ -38,7 +38,7 @@ export const Error_ = () => (
   </Panel>
 );
 
-/* 좁은 자리(카드 안, 드로어)에서는 plain 으로 여백과 마크를 줄인다. */
+/* Use plain in tight spots (inside a card, a drawer) to cut padding and marks. */
 export const Compact = () => (
   <Stack gap={4}>
     <Panel padding="sm"><EmptyState plain face={false} title="최근 7일 동안 남은 기록이 없습니다" /></Panel>

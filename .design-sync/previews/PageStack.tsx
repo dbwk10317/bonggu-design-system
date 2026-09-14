@@ -1,7 +1,7 @@
 import * as React from "react";
 import { PageStack, PageHeader, Panel, CardHead, Grid, StatTile, Button } from "@dbwk10317/bonggu-design-system";
 
-/* 셸 본문의 직계 자식이다. 화면 하나는 PageStack 하나로 시작한다. */
+/* A direct child of the shell body; each screen starts with one PageStack. */
 export const Screen = () => (
   <PageStack>
     <PageHeader title="노드" description="전국 매장에 설치한 엣지 노드 38대." actions={<Button variant="primary" icon="plus">노드 추가</Button>} />
@@ -15,7 +15,7 @@ export const Screen = () => (
   </PageStack>
 );
 
-/* 섹션이 많아 빽빽하면 sm, 항목이 적어 허전하면 lg. 기본은 md. */
+/* sm when many sections feel cramped, lg when few feel sparse; default is md. */
 export const Gaps = () => (
   <>
     {(["sm", "md", "lg"] as const).map((g) => (

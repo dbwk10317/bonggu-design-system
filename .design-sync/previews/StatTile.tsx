@@ -11,7 +11,7 @@ export const Basic = () => (
   </Grid>
 );
 
-/* 결측은 0이 아니다. 수집이 끊긴 값은 "수집 안 됨"으로 두고 단위도 붙이지 않는다. */
+/* Missing isn't 0; leave a broken value as "수집 안 됨" with no unit. */
 export const Missing = () => (
   <Grid min={200}>
     <StatTile label="엣지 캐시 적중률" value={null} unit="%" icon="database" />
@@ -27,7 +27,7 @@ export const WithPillAndDetail = () => (
   />
 );
 
-/* Panel 안에 여러 개를 나란히 둘 때는 flat 으로 테두리를 겹치지 않게 한다. */
+/* Use flat for several side by side inside a Panel, so borders don't double up. */
 export const FlatInPanel = () => (
   <Panel padding="sm">
     <Grid min={160} gap={0}>

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { SidebarNavItem, SidebarNavGroup, Badge, Stack } from "@dbwk10317/bonggu-design-system";
 
-/* SidebarShell 의 nav 로 넣는 항목이다. 여기서는 240px 레일만 흉내 내 보여준다. */
+/* An item placed in SidebarShell's nav; here it's just mocked up as a 240px rail. */
 const Rail = ({ children }: { children: React.ReactNode }) => (
   <nav aria-label="예시" style={{ width: 240, padding: 8, background: "var(--surface-2)", borderRadius: "var(--r-md)" }}>{children}</nav>
 );
@@ -15,7 +15,7 @@ export const Basic = () => (
   </Rail>
 );
 
-/* 지금 보고 있는 화면 하나만 active 다. 배지는 손이 가야 하는 수를 알린다. */
+/* Only the current screen is active; the badge signals a count needing attention. */
 export const WithBadge = () => (
   <Rail>
     <SidebarNavItem icon="pulse" label="개요" href="#overview" />
@@ -24,7 +24,7 @@ export const WithBadge = () => (
   </Rail>
 );
 
-/* 항목이 6개를 넘어가면 그룹 라벨로 나눈다. */
+/* Split with group labels once there are more than 6 items. */
 export const Grouped = () => (
   <Rail>
     <SidebarNavItem icon="pulse" label="개요" href="#overview" active />
@@ -39,7 +39,7 @@ export const Grouped = () => (
   </Rail>
 );
 
-/* 주소가 아니라 상태를 바꾸는 항목은 onClick 으로 둔다. */
+/* Use onClick, not href, for an item that changes state rather than navigating. */
 export const OnClick = () => {
   const [view, setView] = React.useState("overview");
   return (

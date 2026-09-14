@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Code, Stack, Panel, InlineMessage } from "@dbwk10317/bonggu-design-system";
 
-/* 문장 안의 식별자·경로·값. 여러 줄 명령은 CodeBlock 이다. */
+/* For inline identifiers/paths/values; use CodeBlock for multi-line commands. */
 export const InProse = () => (
   <Stack gap={3}>
     <p><Code>edge-seoul-03</Code> 이 22분 동안 응답하지 않았습니다.</p>

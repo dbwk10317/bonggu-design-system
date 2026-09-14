@@ -9,7 +9,7 @@ export const Basic = () => (
   </Stack>
 );
 
-/* 값이 없으면 비결정형이다. 진행률을 모르는 작업에 0%를 그리지 않는다. */
+/* No value means indeterminate; don't render 0% for a task with unknown progress. */
 export const Indeterminate = () => (
   <ProgressBar value={null} label="노드 재색인" detail="남은 시간을 아직 알 수 없습니다" />
 );

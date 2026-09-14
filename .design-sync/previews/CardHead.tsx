@@ -1,7 +1,7 @@
 import * as React from "react";
 import { CardHead, Panel, Stack, Button, StatusPill, Sparkline } from "@dbwk10317/bonggu-design-system";
 
-/* Panel 의 첫 줄에 둔다. 제목은 무엇을 보는 카드인지, meta 는 그 범위나 시점이다. */
+/* First line of a Panel: title says what the card shows, meta gives its scope or time. */
 export const InPanel = () => (
   <Panel>
     <CardHead title="지역별 요청 비중" meta="최근 24시간" />
@@ -9,7 +9,7 @@ export const InPanel = () => (
   </Panel>
 );
 
-/* 버전·ID 처럼 자리가 고정된 값은 metaMono 로 붙인다. */
+/* Use metaMono for fixed-width values like versions or IDs. */
 export const MonoMeta = () => (
   <Panel>
     <CardHead title="진행 중인 롤아웃" meta="2.15.0-rc1" metaMono />

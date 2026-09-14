@@ -3,7 +3,7 @@ import { Toolbar, ToolbarGrow, SearchField, Select, Button, IconButton, Panel, S
 
 const REGIONS = [{ value: "", label: "모든 지역" }, { value: "seoul", label: "서울" }, { value: "busan", label: "부산" }];
 
-/* 표·목록 위에 붙는 필터 줄. 검색은 늘어나고, 액션은 end 로 오른쪽 끝에 붙는다. */
+/* A filter row above a table/list; the search grows, and actions attach at the right via end. */
 export const Basic = () => (
   <Panel padding="sm">
     <Toolbar end={<Button size="sm" variant="primary" icon="plus">노드 추가</Button>}>
@@ -23,7 +23,7 @@ export const WithoutEnd = () => (
   </Panel>
 );
 
-/* 선택 상태를 알리는 줄로도 쓴다. */
+/* Also used as a bar announcing a selection state. */
 export const SelectionBar = () => (
   <Stack gap={3}>
     <Panel padding="sm">

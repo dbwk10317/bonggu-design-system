@@ -4,7 +4,7 @@ import { Heatmap, Panel, CardHead, Legend, Stack } from "@dbwk10317/bonggu-desig
 const DAYS = ["월", "화", "수", "목", "금", "토", "일"];
 const HOURS = Array.from({ length: 12 }, (_, i) => `${String(i * 2).padStart(2, "0")}시`);
 
-/* 값은 [행][열]이다. 일요일 야간 두 칸은 수집기가 꺼져 있던 구간이라 null 로 둔다. */
+/* values are [row][col]; Sunday night's two null cells are when the collector was off. */
 const LOAD: (number | null)[][] = DAYS.map((_, row) =>
   HOURS.map((__, col) => {
     if (row === 6 && col > 9) return null;
@@ -17,7 +17,7 @@ export const Basic = () => (
   <Heatmap aria-label="요일과 시간대별 요청량" rows={DAYS} cols={HOURS} values={LOAD} cell={18} valueFormatter={(v) => `${v}만 건`} />
 );
 
-/* 0 과 결측은 다르다. 값이 0 이면 가장 옅은 칸, 수집이 안 됐으면 빈 칸이다. */
+/* 0 and missing are different: 0 renders the lightest cell, uncollected renders empty. */
 export const WithGaps = () => (
   <Panel>
     <CardHead title="요청량" meta="최근 7일" />
@@ -33,7 +33,7 @@ export const WithGaps = () => (
   </Panel>
 );
 
-/* 축 라벨이 빽빽하면 rowLabel·colLabel 로 솎는다. */
+/* Thin out crowded axis labels with rowLabel/colLabel. */
 export const ThinnedLabels = () => (
   <Heatmap
     aria-label="라벨을 솎은 요청량"

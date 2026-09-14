@@ -10,11 +10,11 @@ const COMMANDS = [
   { id: "restart", label: "선택한 노드 재시작", group: "동작", icon: "arrow-clockwise", keywords: "reboot 재부팅" },
 ];
 
-/* inline 은 딤 없이 패널만 그린다. 문서와 미리보기용이고, 앱에서는 쓰지 않는다. */
+/* inline renders just the panel with no dim overlay — for docs/previews only, not the app. */
 export const Inline_ = () => <CommandPalette inline items={COMMANDS} placeholder="화면 이동, 표시 바꾸기" />;
 
-/* 앱에서는 모달 세션이다. 열 때마다 검색어와 강조가 초기화되고,
-   명령은 세션이 닫힌 뒤 실행된다(열린 채로는 바깥 요소가 inert 라 포커스를 못 옮긴다). */
+/* In the app it's a modal session: search and highlight reset on each open, and the
+   command runs only after the session closes (outside elements are inert while open). */
 export const Modal_ = () => {
   const [open, setOpen] = React.useState(false);
   const [ran, setRan] = React.useState("아직 없음");
@@ -40,7 +40,7 @@ export const Modal_ = () => {
   );
 };
 
-/* keywords 로 다른 말로 찾아도 걸리게 한다("reboot" 으로 "재시작"). */
+/* keywords lets alternate terms match too, e.g. "reboot" also matches "재시작". */
 export const Keywords = () => (
   <CommandPalette
     inline

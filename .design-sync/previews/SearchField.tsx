@@ -3,7 +3,7 @@ import { SearchField, Toolbar, ToolbarGrow, Panel, Stack, Select } from "@dbwk10
 
 const NODES = ["edge-seoul-01 · 봉구 강남점", "edge-seoul-03 · 봉구 성수점", "edge-busan-02 · 봉구 해운대점", "edge-jeju-01 · 봉구 제주점"];
 
-/* 제어형이다. value 와 onChange 를 반드시 준다. */
+/* Controlled; always provide value and onChange. */
 export const Filtering = () => {
   const [q, setQ] = React.useState("");
   const shown = NODES.filter((n) => n.includes(q));
@@ -19,7 +19,7 @@ export const Filtering = () => {
   );
 };
 
-/* 입력마다 거르지 않고 Enter 에서만 조회할 때는 onSearch. */
+/* Use onSearch to query only on Enter instead of filtering on every keystroke. */
 export const OnEnter = () => {
   const [q, setQ] = React.useState("");
   const [ran, setRan] = React.useState("");
@@ -43,7 +43,7 @@ export const InToolbar = () => {
   );
 };
 
-/* 화면에 검색이 하나뿐일 때만 단축키를 켠다. 여럿이면 서로 포커스를 뺏는다. */
+/* Enable the shortcut only when a screen has one search field; multiple would steal focus from each other. */
 export const NoShortcut = () => {
   const [q, setQ] = React.useState("");
   return <SearchField value={q} onChange={setQ} shortcut={false} size="sm" fit="fixed" width={200} placeholder="단축키 없음" aria-label="보조 검색" />;

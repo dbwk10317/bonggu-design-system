@@ -1,7 +1,7 @@
 import * as React from "react";
 import { PageHeader, PageStack, Button, Inline, Stack, Panel } from "@dbwk10317/bonggu-design-system";
 
-/* 화면의 첫 줄이다. 제목은 무슨 화면인지, description 은 여기서 무엇을 할 수 있는지. */
+/* First line of the screen: title says what screen this is, description says what you can do here. */
 export const Basic = () => (
   <PageHeader title="배포" description="에이전트와 장치 펌웨어를 단계별로 내보냅니다." />
 );

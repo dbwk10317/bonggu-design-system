@@ -15,7 +15,7 @@ export const Area = () => (
   <div style={{ height: 48 }}><Sparkline values={cpu} tone={3} area /></div>
 );
 
-/* null은 수집되지 않은 구간이라 선을 끊는다. 0으로 메우지 않는다. */
+/* null is an uncollected span, so it breaks the line; don't fill with 0. */
 export const WithGaps = () => (
   <div style={{ height: 48 }}>
     <Sparkline values={[24, 28, 31, null, null, 44, 52, 49, 61, 58]} tone={4} area />

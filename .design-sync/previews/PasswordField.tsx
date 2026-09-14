@@ -1,14 +1,14 @@
 import * as React from "react";
 import { PasswordField, Field, Stack } from "@dbwk10317/bonggu-design-system";
 
-/* 로그인에는 강도 미터를 붙이지 않는다. 이미 정해진 비밀번호를 채점할 이유가 없다. */
+/* No strength meter on sign-in — no reason to grade a password that's already set. */
 export const SignIn = () => (
   <Field label="비밀번호">
     <PasswordField autoComplete="current-password" />
   </Field>
 );
 
-/* 새로 정할 때만 strength. 무엇이 부족한지 보이게 한다. */
+/* strength only when setting a new password, to show what's missing. */
 export const NewPassword = () => {
   const [v, setV] = React.useState("bonggu");
   return (

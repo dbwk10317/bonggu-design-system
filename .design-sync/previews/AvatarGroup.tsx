@@ -12,7 +12,7 @@ const TEAM = [
 
 export const Basic = () => <AvatarGroup users={TEAM} />;
 
-/* max 를 넘으면 나머지는 +n 으로 접힌다. 줄바꿈으로 흘리지 않는다. */
+/* Beyond max, extras collapse into a +n badge instead of wrapping. */
 export const Overflow = () => (
   <Stack gap={4}>
     <AvatarGroup users={TEAM} max={3} />

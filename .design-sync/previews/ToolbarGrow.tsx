@@ -3,7 +3,7 @@ import { Toolbar, ToolbarGrow, SearchField, Select, Button, Panel, Stack } from 
 
 const STATES = [{ value: "", label: "모든 상태" }, { value: "online", label: "온라인" }, { value: "degraded", label: "수집 지연" }];
 
-/* Toolbar 안에서 남는 폭을 가져갈 것 하나를 감싼다. 보통 검색 입력이다. */
+/* Wraps the one thing in a Toolbar that should take the remaining width, usually a search input. */
 export const Basic = () => (
   <Panel padding="sm">
     <Toolbar end={<Button size="sm" variant="primary">적용</Button>}>
@@ -13,7 +13,7 @@ export const Basic = () => (
   </Panel>
 );
 
-/* 감싸지 않으면 모두 내용 폭이라 툴바 왼쪽에 몰린다. 차이를 나란히 둔다. */
+/* Without it everything is content-width and bunches to the left; shown side by side to see the difference. */
 export const WithAndWithout = () => (
   <Stack gap={3}>
     <Panel padding="sm">

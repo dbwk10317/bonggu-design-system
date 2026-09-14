@@ -31,7 +31,7 @@ export const Justify = () => (
   </Stack>
 );
 
-/* 기본은 좁아지면 줄바꿈이다. 한 줄을 지켜야 하는 툴바 조각만 wrap={false}. */
+/* Default wraps as it narrows; use wrap={false} only for toolbar pieces that must stay one line. */
 export const Wrap = () => (
   <Stack gap={4}>
     <Panel padding="sm" style={{ width: 260 }}>

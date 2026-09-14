@@ -9,7 +9,7 @@ export const Basic = () => (
   </Inline>
 );
 
-/* 툴팁 안에서 단축키를 알린다. 아이콘만 있는 버튼은 이름과 단축키를 함께 준다. */
+/* Shows a shortcut inside a tooltip; an icon-only button should pair its name with the shortcut. */
 export const InTooltip = () => (
   <Tooltip content={<>명령 팔레트 <Kbd>Ctrl</Kbd> <Kbd>K</Kbd></>}>
     <IconButton icon="magnifying-glass" variant="ghost" aria-label="명령 팔레트 열기" />

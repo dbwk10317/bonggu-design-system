@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Switch, Stack, Panel, Inline, CardHead } from "@dbwk10317/bonggu-design-system";
 
-/* 즉시 반영되는 설정에 쓴다. 저장 버튼이 따로 있는 폼에는 Checkbox 다. */
+/* Use for settings that apply immediately; use Checkbox in a form with a separate save button. */
 export const Basic = () => (
   <Stack gap={3}>
     <Switch defaultChecked>배포 실패 시 자동으로 되돌립니다</Switch>

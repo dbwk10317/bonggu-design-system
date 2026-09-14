@@ -9,7 +9,7 @@ export const Variants = () => (
   </Stack>
 );
 
-/* 곧 들어올 내용과 같은 모양으로 둔다. 도착했을 때 자리가 흔들리지 않아야 한다. */
+/* Match the shape of the incoming content so nothing shifts when it arrives. */
 export const CardShape = () => (
   <Grid min={200}>
     {[0, 1, 2].map((i) => (
@@ -40,7 +40,7 @@ export const TableShape = () => (
   </Panel>
 );
 
-/* 폭이 정해진 자리에는 fixed. 그 밖에는 부모 폭을 따른다. */
+/* Use fixed where the width is set; otherwise it follows the parent's width. */
 export const Sizing = () => (
   <Stack gap={3}>
     <Skeleton variant="block" height={16} />

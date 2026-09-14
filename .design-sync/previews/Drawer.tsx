@@ -3,7 +3,7 @@ import { Drawer, Button, Stack, Inline, KeyValues, StatusPill, Tabs, Sparkline, 
 
 const cpu = [31, 34, 30, 42, 58, 51, 47, 63, 71, 66, 59, 62, 78, 74, 69];
 
-/* 목록 맥락을 유지한 채 한 항목의 상세를 본다. 삭제·저장 같은 결정은 Modal 이다. */
+/* Shows one item's detail while keeping the list context; use Modal for decisions like delete/save. */
 export const NodeDetail = () => {
   const [open, setOpen] = React.useState(true);
   return (
@@ -33,7 +33,7 @@ export const NodeDetail = () => {
   );
 };
 
-/* 탭을 넣어 한 항목의 여러 면을 한 자리에서 본다. */
+/* Add tabs to show several facets of one item in one place. */
 export const WithTabs = () => {
   const [open, setOpen] = React.useState(true);
   const [tab, setTab] = React.useState("summary");
@@ -55,7 +55,7 @@ export const WithTabs = () => {
   );
 };
 
-/* 좁은 보조 정보는 sm. 표나 코드가 들어가면 lg. */
+/* sm for narrow supporting info; lg when it holds a table or code. */
 export const Sizes = () => {
   const [size, setSize] = React.useState<"sm" | "md" | "lg" | null>("sm");
   return (

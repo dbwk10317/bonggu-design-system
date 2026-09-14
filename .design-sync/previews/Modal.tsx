@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Modal, Button, Stack, Inline, OTPInput, KeyValues, InlineMessage } from "@dbwk10317/bonggu-design-system";
 
-/* 네이티브 dialog 라 포커스가 안에 갇히고 Esc·딤으로 닫힌다. open 을 직접 쥔다. */
+/* A native dialog: focus is trapped inside and Esc/dim-click close it. open is controlled directly. */
 export const Basic = () => {
   const [open, setOpen] = React.useState(true);
   return (
@@ -22,7 +22,7 @@ export const Basic = () => {
   );
 };
 
-/* 읽기만 하는 상세는 size 를 키운다. 결정이 아니라 확인이 목적이면 Drawer 도 검토한다. */
+/* Increase size for a read-only detail view; also consider Drawer when the goal is review, not a decision. */
 export const Details = () => {
   const [open, setOpen] = React.useState(true);
   return (
@@ -48,7 +48,7 @@ export const Details = () => {
   );
 };
 
-/* 액션이 없으면 알리기만 하는 창이다. 닫기 버튼만 남긴다. */
+/* With no actions it's just an announcement; leave only the close button. */
 export const NoActions = () => {
   const [open, setOpen] = React.useState(true);
   return (

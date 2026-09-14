@@ -1,7 +1,7 @@
 import * as React from "react";
 import { AlertBanner, Stack, Button, Link } from "@dbwk10317/bonggu-design-system";
 
-/* 화면 위쪽에 걸어 두는 알림이다. warn·crit 은 role="alert" 라 읽어 주는 순간이 다르다. */
+/* warn/crit use role="alert", so screen readers announce them immediately. */
 export const Tones = () => (
   <Stack gap={3}>
     <AlertBanner tone="info" title="예정된 점검">9월 14일 02:00~03:00 사이 게이트웨이가 재시작됩니다.</AlertBanner>
@@ -11,7 +11,7 @@ export const Tones = () => (
   </Stack>
 );
 
-/* onClose 가 있으면 닫을 수 있다. 사라지면 안 되는 경고에는 주지 않는다. */
+/* Only add onClose when the banner is allowed to disappear. */
 export const Dismissible = () => {
   const [on, setOn] = React.useState(true);
   return on
@@ -25,7 +25,7 @@ export const WithAction = () => (
   </AlertBanner>
 );
 
-/* 제목 없이 한 줄로도 쓴다. 문장이 짧으면 제목을 따로 만들지 않는다. */
+/* Skip the title for short one-line messages. */
 export const TitleOnly = () => (
   <Stack gap={3}>
     <AlertBanner tone="info">읽기 전용 계정으로 보고 있습니다.</AlertBanner>

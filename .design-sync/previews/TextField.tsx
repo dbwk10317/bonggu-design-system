@@ -1,7 +1,7 @@
 import * as React from "react";
 import { TextField, Field, Stack, Grid, Inline } from "@dbwk10317/bonggu-design-system";
 
-/* 라벨·설명·오류는 Field 가 붙인다. TextField 에 직접 라벨을 달지 않는다. */
+/* Field attaches label/hint/error; don't set a label directly on TextField. */
 export const InField = () => (
   <Stack gap={4}>
     <Field label="노드 이름" hint="매장에서 부르는 이름을 씁니다.">
@@ -37,7 +37,7 @@ export const States = () => (
   </Stack>
 );
 
-/* fit="auto" 는 내용 크기다. 툴바처럼 폭을 먹으면 안 되는 자리에 쓴다. */
+/* fit="auto" sizes to content; use it where the field shouldn't eat width, like in a toolbar. */
 export const Auto = () => (
   <Inline gap={2} align="center">
     <span>재시도</span>

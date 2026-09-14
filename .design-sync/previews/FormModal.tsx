@@ -4,7 +4,7 @@ import { FormModal, Button, Stack, Grid, Field, TextField, Select, MultiSelect, 
 const ROLES = [{ value: "admin", label: "관리자" }, { value: "op", label: "운영자" }, { value: "view", label: "읽기 전용" }];
 const REGIONS = [{ value: "seoul", label: "서울" }, { value: "gyeonggi", label: "경기" }, { value: "busan", label: "부산" }];
 
-/* 제출이 있는 창은 Modal 이 아니라 FormModal 이다. Enter 제출과 busy 잠금이 딸려 온다. */
+/* Use FormModal, not Modal, for a dialog with a submit — it adds Enter-to-submit and busy locking. */
 export const Invite = () => {
   const [open, setOpen] = React.useState(true);
   const [regions, setRegions] = React.useState<string[]>(["seoul"]);
@@ -32,7 +32,7 @@ export const Invite = () => {
   );
 };
 
-/* 제출 중에는 busy 로 잠근다. 두 번 눌러 두 번 만들어지는 일을 막는다. */
+/* Lock with busy while submitting, to prevent a double click creating it twice. */
 export const Busy = () => {
   const [open, setOpen] = React.useState(true);
   return (
@@ -45,7 +45,7 @@ export const Busy = () => {
   );
 };
 
-/* 되돌릴 수 없는 제출은 danger. error 는 제출이 실패한 이유를 창 안에 남긴다. */
+/* danger for an irreversible submit; error keeps the failure reason inside the dialog. */
 export const DangerWithError = () => {
   const [open, setOpen] = React.useState(true);
   return (

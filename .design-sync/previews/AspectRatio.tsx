@@ -7,7 +7,7 @@ const Fill = ({ label }: { label: string }) => (
   </div>
 );
 
-/* 이미지가 아직 없어도 자리가 흔들리지 않는다. 로딩 중 레이아웃 점프를 막는 용도다. */
+/* Reserves space before the image loads, preventing layout jump. */
 export const Ratios = () => (
   <Grid min={160}>
     <AspectRatio ratio="16/9"><Fill label="16/9" /></AspectRatio>

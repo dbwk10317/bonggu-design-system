@@ -1,7 +1,7 @@
 import * as React from "react";
 import { ToastProvider, useToast, Button, Inline, Stack, Panel, CardHead } from "@dbwk10317/bonggu-design-system";
 
-/* 앱 루트에 한 번만 둔다. 화면마다 감싸면 토스트가 여러 겹으로 쌓인다. */
+/* Mount once at the app root; wrapping it per screen stacks toasts in layers. */
 function Actions() {
   const { toast } = useToast();
   return (
@@ -26,7 +26,7 @@ export const Basic = () => (
   </ToastProvider>
 );
 
-/* max 를 넘으면 오래된 것부터 사라진다. 화면을 토스트로 덮지 않는다. */
+/* Beyond max, the oldest disappears first, so toasts don't cover the screen. */
 function Burst() {
   const { toast } = useToast();
   return (

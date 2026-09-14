@@ -9,7 +9,7 @@ export const Directions = () => (
   </Inline>
 );
 
-/* 응답시간·오류율은 늘어나는 쪽이 나쁘다. inverse가 색을 뒤집는다. */
+/* For response time/error rate, up is bad; inverse flips the color. */
 export const Inverse = () => (
   <Stack gap={2}>
     <TrendDelta value={0.18} percent inverse label="p95 응답시간" />

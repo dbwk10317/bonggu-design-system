@@ -3,7 +3,7 @@ import { DropdownMenu, Button, Inline, Stack } from "@dbwk10317/bonggu-design-sy
 
 const noop = () => {};
 
-/* 행 액션이 3개 이상이면 "…" 로 접는다. 위험 동작은 구분선 뒤 맨 아래. */
+/* Collapse row actions into "…" at 3+ items; put danger actions last, after a divider. */
 export const Basic = () => (
   <DropdownMenu
     aria-label="노드 행 동작"
