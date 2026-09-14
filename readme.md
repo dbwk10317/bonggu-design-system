@@ -303,10 +303,11 @@ git push origin main --follow-tags
 
 beta 소비 테스트는 하지 않고 `1.0.0`으로 바로 가기로 했다(2026-09-14). 그 대신 소비 fixture를 실제 사용 폭으로 넓혔다. React 18·19 두 조합, 입력 `ref` 포커스, 라벨로 닿는 입력·select와 폼 제출, 모달 열고 닫기와 포커스 복원, 표 선택, 실제 폭으로 그려지는 차트, 레이어 리셋과 앱 CSS의 우선순위를 브라우저에서 검사한다. 같은 이유로 `1.0.0` 뒤에 major가 될 변경을 먼저 끝냈다. React peer 범위, 입력 21개의 `forwardRef`, `hideOnMobile` 별칭 삭제, 리셋의 `@layer`.
 
-다음 작업은 순서대로 둘이다.
+다음 작업은 하나다.
 
-1. **OIDC 첫 발행 확인.** Trusted Publishing은 실제 태그 발행에서만 검증된다(`--dry-run`은 토큰 교환을 하지 않는다). 다음 patch·minor가 첫 확인이다. 실패하면 Publish 단계 로그의 OIDC 오류를 보고 npmjs Trusted Publisher 설정(저장소·워크플로 파일 이름·environment 공란)을 대조한다.
-2. **5단계.** 소비 프로젝트 경로를 받아 진행한다. 여기서 나온 계약 위반 요구는 별칭 없이 `2.0.0`으로 간다.
+- **5단계.** 소비 프로젝트 경로를 받아 진행한다. 여기서 나온 계약 위반 요구는 별칭 없이 `2.0.0`으로 간다.
+
+OIDC 발행은 `1.0.1`(태그 `v1.0.1`, 2026-09-14)로 실제 검증했다. Publish 단계는 verbose로 돌아 id-token 획득, 교환 요청(`/-/npm/v1/oidc/token/exchange/package/…` 201), provenance 서명이 로그에 남는다. 첫 시도는 npmjs Trusted Publisher 등록이 저장되지 않은 채로 돌아 `ENEEDAUTH`였고, 재등록 뒤 태그를 새 커밋으로 옮겨 다시 밀었다. 교환 요청 줄이 없이 `ENEEDAUTH`면 npmjs 쪽 등록부터 본다.
 
 첫 발행(토큰 방식)에서 겪은 것: Publish 단계가 인증 문제로 죽어도 태그를 다시 만들 필요가 없다. 원인을 고치고 `gh run rerun <run-id> --failed`로 같은 실행을 재개한다. 발행 직후 레지스트리 루트 문서(`npm view`)는 몇 분 늦게 나타나고 버전별 문서(`/1.0.0`)가 먼저 200이 된다.
 
