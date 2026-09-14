@@ -50,8 +50,13 @@ jobs:
           test "$tag" = "$pkg" || { echo "태그 ${GITHUB_REF_NAME}와 package.json ${pkg}가 다릅니다"; exit 1; }
       # prerelease는 next, 정식은 latest. 기본값에 맡기면 beta가 latest를 가져간다.
       # provenance 는 OIDC 발행에서 자동으로 붙는다.
+      # OIDC 교환이 실패하면 npm 은 이유를 verbose 로그에만 남기고 ENEEDAUTH 로 끝난다. 그래서 verbose 로 돌린다.
       - name: Publish
+        env:
+          NPM_CONFIG_LOGLEVEL: verbose
         run: |
+          echo "npm $(npm --version)"
+          test -n "$ACTIONS_ID_TOKEN_REQUEST_URL" && echo "id-token: available" || echo "id-token: MISSING"
           version="$(node -p "require('./package.json').version")"
           case "$version" in
             *-*) npm publish --tag next ;;
