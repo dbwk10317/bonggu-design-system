@@ -171,7 +171,7 @@
 
 첫 목표는 회귀 게이트와 독립 fixture로 검증한 정식 `1.0.0`을 발행하는 것이다. 실제 소비 프로젝트 적용은 그 뒤에 온다. 소비처는 정식 버전을 설치해서 쓰는 것이지 발행의 선행 조건이 아니다. 컴포넌트·타입·토큰·CSS·폰트·자산을 단일 패키지와 단일 버전으로 배포한다. 기존 HTML 카드·대시보드용 브라우저 번들도 같은 소스에서 계속 생성한다.
 
-패키지명은 `@dbwk10317/bonggu-design-system`, 라이선스는 `Copyright (c) 2026 dbwk10317`의 MIT License로 확정했다. 배포 레지스트리는 npmjs(`https://registry.npmjs.org`) 공개 패키지다(`publishConfig.access: public`. scope 패키지의 기본은 restricted라 명시하지 않으면 첫 발행이 실패한다). 소비처는 인증 없이 `npm install @dbwk10317/bonggu-design-system`으로 설치한다. npmjs 계정 또는 조직 `dbwk10317`이 이 scope를 소유해야 하며, 발행 인증은 저장소 시크릿 `NPM_TOKEN`(해당 패키지 publish 권한의 granular access token)이다. `1.0.0-beta.0`은 전환 전 GitHub Packages에 남아 있고 그대로 둔다.
+패키지명은 `@dbwk10317/bonggu-design-system`, 라이선스는 `Copyright (c) 2026 dbwk10317`의 MIT License로 확정했다. 배포 레지스트리는 npmjs(`https://registry.npmjs.org`) 공개 패키지다(`publishConfig.access: public`. scope 패키지의 기본은 restricted라 명시하지 않으면 첫 발행이 실패한다). 소비처는 인증 없이 `npm install @dbwk10317/bonggu-design-system`으로 설치한다. npmjs 계정 또는 조직 `dbwk10317`이 이 scope를 소유한다. 발행 인증은 Trusted Publishing(GitHub Actions OIDC)이다. npmjs 패키지 설정의 Trusted Publisher에 저장소 `dbwk10317/bonggu-design-system`과 워크플로 파일 `release.yml`이 등록돼 있고, 저장소에는 발행 시크릿이 없다. provenance는 OIDC 발행에서 자동으로 붙는다. `1.0.0-beta.0`은 전환 전 GitHub Packages에 남아 있고 그대로 둔다.
 
 목표 소비 형태:
 
@@ -272,7 +272,7 @@ git push origin main --follow-tags
 3. `.github/workflows/`에 main 푸시 게이트(`ci.yml`)와 태그 발행(`release.yml`)을 둔다. 발행 경로는 태그 하나뿐이고, 회귀 게이트가 그 사실을 검사한다.
 4. 발행 전에 같은 커밋에서 빌드·pack·설치 검증을 돌린다. 검증하지 않은 산출물이 올라가지 않도록 게이트가 publish보다 먼저 온다.
 5. 패키지 버전·Git 태그·릴리스 기록을 연결한다. 태그와 `package.json`이 어긋나면 발행을 중단한다. 이미 배포된 버전은 덮어쓰지 않는다.
-6. 인증은 저장소 시크릿 `NPM_TOKEN`이다. trusted publishing(OIDC)은 npmjs에 패키지가 먼저 존재해야 설정할 수 있으므로 `1.0.0`을 토큰으로 낸 뒤 옮길 수 있다. 자격 증명을 저장소에 기록하지 않는다.
+6. 인증은 Trusted Publishing(OIDC)이다. 워크플로는 `id-token: write`만 갖고 토큰을 읽지 않으며, `setup-node`에 `registry-url`을 주지 않는다(주면 `NODE_AUTH_TOKEN`을 읽는 `.npmrc` 줄이 생겨 OIDC 경로와 충돌한다). npm 11.5.1 이상이 필요해 워크플로가 먼저 확인한다. `1.0.0`은 패키지가 없던 때라 granular token으로 냈고, 그 뒤 OIDC로 옮겼다. 자격 증명을 저장소에 기록하지 않는다.
 
 완료 기준: 릴리스 PR에서 버전과 기록을 검토할 수 있고, 배포 설정 확정 후 beta 패키지를 설치 가능한 상태로 발행한다. 외부 설정이 미확정이면 pack·CI 완료 상태와 남은 설정을 구분해 보고한다.
 
@@ -299,16 +299,16 @@ git push origin main --follow-tags
 
 진행 상태는 단계별로 미착수·진행 중·검증 완료를 기록한다. 1~4단계가 끝났다. `1.0.0`은 npmjs에 있고 인증 없이 `npm install @dbwk10317/bonggu-design-system`으로 설치되며 React 19.3.0 소비처에서 import까지 확인했다. 미착수는 5단계다. GitHub Release 페이지 생성은 선택이며 현재 하지 않는다. 5단계는 1.0.0 발행 뒤에 실제 소비 프로젝트 경로를 받아 진행하며, 1.0.0 발행을 막지 않는다.
 
-확정된 외부 결정은 패키지명 `@dbwk10317/bonggu-design-system`, MIT License 저작권자 `dbwk10317`, 배포 레지스트리 npmjs 공개, 태그 기반 발행, 유지보수 대상과 지원 범위다. 저장소 시크릿 `NPM_TOKEN`은 등록돼 있다(granular token, 90일 만료라 갱신이 필요하다). 남은 외부 결정은 실제 소비 프로젝트 경로다. 미확정 값을 확정값처럼 배포 설정에 넣지 않는다.
+확정된 외부 결정은 패키지명 `@dbwk10317/bonggu-design-system`, MIT License 저작권자 `dbwk10317`, 배포 레지스트리 npmjs 공개, 태그 기반 발행, 유지보수 대상과 지원 범위다. 발행 인증은 Trusted Publishing으로 옮겼고 저장소 시크릿은 없다. 남은 외부 결정은 실제 소비 프로젝트 경로다. 미확정 값을 확정값처럼 배포 설정에 넣지 않는다.
 
 beta 소비 테스트는 하지 않고 `1.0.0`으로 바로 가기로 했다(2026-09-14). 그 대신 소비 fixture를 실제 사용 폭으로 넓혔다. React 18·19 두 조합, 입력 `ref` 포커스, 라벨로 닿는 입력·select와 폼 제출, 모달 열고 닫기와 포커스 복원, 표 선택, 실제 폭으로 그려지는 차트, 레이어 리셋과 앱 CSS의 우선순위를 브라우저에서 검사한다. 같은 이유로 `1.0.0` 뒤에 major가 될 변경을 먼저 끝냈다. React peer 범위, 입력 21개의 `forwardRef`, `hideOnMobile` 별칭 삭제, 리셋의 `@layer`.
 
 다음 작업은 순서대로 둘이다.
 
-1. **토큰 정리.** 패키지가 존재하므로 npmjs 패키지 설정에서 Trusted Publishing(GitHub Actions OIDC)을 연결하거나, 토큰을 이 패키지 하나로 좁혀 다시 만든다. 첫 발행에 쓴 토큰은 All packages 권한이다.
+1. **OIDC 첫 발행 확인.** Trusted Publishing은 실제 태그 발행에서만 검증된다(`--dry-run`은 토큰 교환을 하지 않는다). 다음 patch·minor가 첫 확인이다. 실패하면 Publish 단계 로그의 OIDC 오류를 보고 npmjs Trusted Publisher 설정(저장소·워크플로 파일 이름·environment 공란)을 대조한다.
 2. **5단계.** 소비 프로젝트 경로를 받아 진행한다. 여기서 나온 계약 위반 요구는 별칭 없이 `2.0.0`으로 간다.
 
-첫 발행에서 겪은 것: 시크릿이 빈 값으로 저장되면 Publish 단계가 `ENEEDAUTH`로 죽는다. 실행 로그의 `env:` 블록에서 `NODE_AUTH_TOKEN:` 뒤가 `***`가 아니라 비어 있으면 그것이다. 시크릿을 다시 넣고 `gh run rerun <run-id> --failed`로 같은 실행을 재개하면 태그를 다시 만들 필요가 없다. 발행 직후 레지스트리 루트 문서(`npm view`)는 몇 분 늦게 나타나고 버전별 문서(`/1.0.0`)가 먼저 200이 된다.
+첫 발행(토큰 방식)에서 겪은 것: Publish 단계가 인증 문제로 죽어도 태그를 다시 만들 필요가 없다. 원인을 고치고 `gh run rerun <run-id> --failed`로 같은 실행을 재개한다. 발행 직후 레지스트리 루트 문서(`npm view`)는 몇 분 늦게 나타나고 버전별 문서(`/1.0.0`)가 먼저 200이 된다.
 
 발행 결과는 `npm view @dbwk10317/bonggu-design-system versions`로 확인한다. 워크플로 로그의 `+ <패키지>@<버전>` 줄과 종료 코드도 발행 근거다. 잘못 나간 버전은 되돌리지 못하므로 `npm deprecate`로 표시하고 수정 버전을 낸다.
 

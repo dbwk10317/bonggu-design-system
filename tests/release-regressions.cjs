@@ -37,8 +37,10 @@ for (const [name, workflow] of [["CI", ci], ["Release", release]]) {
 assert(!/npm publish/.test(ci), "CI workflow가 발행을 한다");
 assert.match(release, /on:\s*\n\s*push:\s*\n\s*tags:/, "Release workflow가 태그가 아닌 이벤트로 돈다");
 assert(!/branches:/.test(release), "Release workflow에 branch 트리거가 남아 있다");
-assert.match(release, /NODE_AUTH_TOKEN:\s*\$\{\{\s*secrets\.NPM_TOKEN\s*\}\}/, "publish 인증이 npmjs 토큰(NPM_TOKEN)이 아님");
-assert.match(release, /registry-url:\s*https:\/\/registry\.npmjs\.org/, "setup-node가 npmjs를 보지 않음");
+// 인증은 Trusted Publishing(OIDC)이다. 시크릿 토큰이나 registry-url(.npmrc 의 NODE_AUTH_TOKEN 줄)이 다시 생기면 OIDC 경로가 깨진다.
+assert.match(release, /id-token:\s*write/, "OIDC 발행에는 id-token: write 가 필요하다");
+assert(!/NODE_AUTH_TOKEN|NPM_TOKEN|registry-url/.test(release.replace(/^\s*#.*$/gm, "")), "Trusted Publishing 워크플로에 토큰 인증 설정이 남아 있다");
+assert.match(release, /npm --version/, "러너 npm 이 11.5.1 이상인지 확인하지 않는다");
 assert(!/npm\.pkg\.github\.com/.test(release) && !/packages:\s*write/.test(release), "GitHub Packages 설정이 남아 있다");
 
 // 검증하지 않은 산출물이 올라가지 않도록, 게이트가 publish보다 먼저 와야 한다.
