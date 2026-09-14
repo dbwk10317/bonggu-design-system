@@ -14,10 +14,10 @@
 
 ## 여는 법
 
-`x-import`가 `fetch`로 화면 파일을 읽으므로 `file://`로는 열리지 않습니다. 저장소 루트에서 정적 서버를 띄우고 `http://localhost:8080/templates/dashboard/Dashboard.dc.html`을 엽니다.
+`x-import`가 `fetch`로 화면 파일을 읽으므로 `file://`로는 열리지 않습니다. 저장소 루트에서 아무 정적 서버나 띄우고 `http://localhost:8080/templates/dashboard/Dashboard.dc.html`을 엽니다. 예:
 
 ```bash
-python -m http.server 8080
+python3 -m http.server 8080
 ```
 
 ## 화면

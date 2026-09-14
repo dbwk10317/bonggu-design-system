@@ -55,12 +55,10 @@ npm run sync:ds
 
 - `[RENDER_THIN]` / `[RENDER_BLANK]`가 미리보기 미작성 컴포넌트에서 나는 것은 실패가 아니라 기본 카드다.
 
-## 환경 (Windows)
+## 환경
 
-- Node는 `C:\nvm4w\nodejs`. `BABEL_STANDALONE`은 이제 `node_modules/@babel/standalone`으로 해결된다.
-- Playwright 브라우저는 `~/AppData/Local/ms-playwright`에 **chromium-1243이 이미 설치돼 있고**
-  저장소가 핀한 playwright 1.63.0이 같은 리비전을 가리킨다. 추가 설치 불필요.
-- **Bash 도구의 heredoc이 백슬래시를 한 단계 삼킨다.** `\\u` → `\u`, `\\s` → `\s`.
+- Node.js와 Playwright 브라우저 준비는 `CLAUDE.md`의 실행 환경을 따른다. `BABEL_STANDALONE`은 `node_modules/@babel/standalone`으로 해결된다.
+- **따옴표 없는 heredoc(`<<EOF`)은 백슬래시를 한 단계 삼킨다.** `\\u` → `\u`, `\\s` → `\s`.
   정규식이나 이스케이프가 들어가는 스크립트는 heredoc으로 쓰지 말고 Write 도구로 파일을 만든다.
   이것 때문에 조용히 틀린 스크립트를 여러 번 돌렸다.
 

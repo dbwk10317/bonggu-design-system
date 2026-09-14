@@ -2,10 +2,10 @@
 
 디자인 규칙은 [RULE.md](RULE.md) 한 곳에 있고, 기계로 판별하는 검사는 `tests/rule-regressions.cjs`에 있다. 규칙의 출처 선언과 작업 원칙은 [AGENTS.md](AGENTS.md)를 따른다. 이 문서에는 Claude Code 실행 환경에만 해당하는 내용만 둔다.
 
-## 실행 환경 (Windows)
+## 실행 환경
 
-- Node는 `C:\nvm4w\nodejs`에 있다. PATH에 없으면 먼저 넣는다.
-- 기본 셸은 PowerShell이다. POSIX 문법(`&&`, heredoc, `2>/dev/null`)이 필요하면 Bash 도구를 쓴다.
+- Node.js가 필요하다. 요구 버전은 [tests/README.md](tests/README.md)를 따른다.
+- 명령 예시는 POSIX 셸 문법이다.
 - 임시 파일은 저장소가 아니라 세션 스크래치패드 디렉터리에 만든다.
 
 ## 번들과 검증
@@ -26,12 +26,12 @@ npm run lint        # eslint.config.mjs · react-hooks + jsx-a11y
 ```
 
 ```bash
-DS_TEST_BROWSER_EXECUTABLE="C:\Program Files\Google\Chrome\Application\chrome.exe" node tests/run.cjs
+node tests/run.cjs
 ```
 
 - `tests/run.cjs`가 번들을 먼저 다시 만들므로, 검증까지 돌릴 때 `build-bundle.mjs`를 따로 실행할 필요는 없다. 번들 다음이 타입 검사와 린트다.
 - `package-regressions.cjs`는 소비 fixture를 `--prefer-offline`으로 깐다. 캐시에 있으면 캐시를, 없으면 레지스트리를 쓴다. 캐시가 빈 깨끗한 기계(CI 러너)에서도 그대로 돈다.
-- Playwright 번들 Chromium(chromium-1243)이 `~/AppData/Local/ms-playwright`에 설치돼 있고, 저장소가 핀한 playwright 1.63.0이 같은 리비전을 가리킨다. 그대로 쓰면 된다. 없어졌을 때만 설치된 Chrome을 `DS_TEST_BROWSER_EXECUTABLE`로 지정하거나 `npx playwright install chromium`을 실행한다.
+- 브라우저 검증은 저장소가 핀한 playwright 버전의 번들 Chromium을 쓴다. 없으면 `npx playwright install chromium`으로 설치하거나, 설치된 Chrome/Edge 실행 파일 경로를 `DS_TEST_BROWSER_EXECUTABLE`로 지정한다.
 - `_ds_bundle.js`·`_ds_manifest.json`은 생성물이다. 직접 고치지 않고 소스를 고친 뒤 다시 만든다.
 
 ## Claude Design 동기화 (`/design-sync`)
@@ -61,10 +61,10 @@ npm run sync:ds
 
 ## 브라우저로 보기
 
-템플릿은 `x-import`가 `fetch`로 화면 파일을 읽어 `file://`에서 열리지 않는다. 저장소 루트에서 정적 서버를 띄운다.
+템플릿은 `x-import`가 `fetch`로 화면 파일을 읽어 `file://`에서 열리지 않는다. 저장소 루트에서 아무 정적 서버나 띄운다. 예:
 
 ```bash
-python -m http.server 8080
+python3 -m http.server 8080
 ```
 
 - 템플릿 `http://localhost:8080/templates/dashboard/Dashboard.dc.html`

@@ -87,7 +87,7 @@ The same source builds a browser bundle (`_ds_bundle.js`, exposed as `window.Ds_
 ## Documentation
 
 - [RULE.md](RULE.md) (Korean): the design rules. Tokens, copy, accessibility and behavior contracts, the public API and versioning contract, and the release procedure. This is the single source of truth; machine-checkable rules are enforced by `tests/rule-regressions.cjs`.
-- [Guide](guidelines/index.html): every component and token card, viewable at the three review widths. Serve the repository root (`python -m http.server 8080`) and open `http://localhost:8080/guidelines/index.html`.
+- [Guide](guidelines/index.html): every component and token card, viewable at the three review widths. Serve the repository root with any static server (for example `python3 -m http.server 8080`) and open `http://localhost:8080/guidelines/index.html`.
 - [Sample app](templates/dashboard/README.md): a clickable edge-fleet console with six screens and a public status page.
 - [AGENTS.md](AGENTS.md): how changes are made in this repository. [tests/README.md](tests/README.md): what the verification gate covers.
 - [CHANGELOG.md](CHANGELOG.md)

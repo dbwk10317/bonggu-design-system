@@ -87,7 +87,7 @@ export function App() {
 ## 문서
 
 - [RULE.md](RULE.md): 디자인 규칙 전체. token, 문구, 접근성과 동작 규칙, 공개 API와 버전 규칙, 릴리스 절차가 있습니다. 규칙은 이 문서 한 곳에만 두고, 기계로 확인할 수 있는 항목은 `tests/rule-regressions.cjs`가 검사합니다.
-- [가이드](guidelines/index.html): 모든 component와 token 카드를 검수 폭 세 가지로 볼 수 있습니다. 저장소 루트에서 정적 서버를 띄우고(`python -m http.server 8080`) `http://localhost:8080/guidelines/index.html`을 엽니다.
+- [가이드](guidelines/index.html): 모든 component와 token 카드를 검수 폭 세 가지로 볼 수 있습니다. 저장소 루트에서 아무 정적 서버나 띄우고(예: `python3 -m http.server 8080`) `http://localhost:8080/guidelines/index.html`을 엽니다.
 - [샘플 앱](templates/dashboard/README.md): 화면 6개와 공개 상태 페이지가 있는 엣지 노드 운영 콘솔입니다. 클릭해서 둘러볼 수 있습니다.
 - [AGENTS.md](AGENTS.md): 이 저장소에서 코드를 고치는 원칙. [tests/README.md](tests/README.md): 검증이 무엇을 확인하는지.
 - [CHANGELOG.md](CHANGELOG.md)
