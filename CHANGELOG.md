@@ -1,5 +1,11 @@
 # @dbwk10317/bonggu-design-system
 
+## 1.0.1
+
+### Patch Changes
+
+- 발행 인증을 Trusted Publishing(GitHub Actions OIDC)으로 옮깁니다. 이 버전부터 npmjs 패키지 페이지에 provenance 증명(어느 저장소·워크플로·커밋에서 빌드됐는지)이 붙습니다. 패키지 내용은 1.0.0과 같습니다.
+
 ## 1.0.0
 
 ### Major Changes
