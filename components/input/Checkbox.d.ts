@@ -1,5 +1,5 @@
 import type { ForwardRefExoticComponent, InputHTMLAttributes, ReactNode, RefAttributes } from "react";
-/** 체크박스(radio=true면 라디오). 라벨 없이 쓰면 aria-label 필수. */
+/** Checkbox (radio when radio=true). aria-label is required when used without a label. */
 export interface CheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {
   children?: ReactNode;
   radio?: boolean;

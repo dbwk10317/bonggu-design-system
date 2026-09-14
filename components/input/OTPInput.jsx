@@ -2,7 +2,7 @@ import React, { forwardRef, useRef } from "react";
 import { assignRef, cx } from "../core/frame.js";
 import { useFieldContext } from "./Field.jsx";
 
-/** 인증 코드(OTP) 입력. length 자리 숫자, 붙여넣기 지원, 다 채우면 onComplete. */
+/** One-time code input: length digit boxes, paste support, onComplete once every box is filled. */
 export const OTPInput = forwardRef(
   /**
    * @param {import("./OTPInput.d.ts").OTPInputProps} props

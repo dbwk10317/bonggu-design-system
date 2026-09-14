@@ -1,7 +1,7 @@
 import React from "react";
 import { cx } from "../core/frame.js";
 
-/** 설명 목록(dl). 긴 값·문장이 있을 때 KeyValues 대신. 좁으면 한 열로 접힌다.
+/** Description list (dl). Use instead of KeyValues for long values or sentences; collapses to one column when narrow.
  * @param {Parameters<typeof import("./DescriptionList.d.ts").DescriptionList>[0]} props */
 export function DescriptionList({ items = [], className, ...rest }) {
   return (

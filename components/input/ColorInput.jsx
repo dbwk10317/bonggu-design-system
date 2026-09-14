@@ -3,7 +3,7 @@ import { cx, frameStyle } from "../core/frame.js";
 import { useFieldContext } from "./Field.jsx";
 
 const HEX = /^#?([0-9a-f]{6})$/i;
-/** 색 선택: 스와치(네이티브 picker) + hex 입력 + 프리셋 칩. 값은 #RRGGBB. 조명(ARGB) 색 지정용 · UI 토큰 색이 아니다. */
+/** Color picker: swatch (native picker) + hex input + preset chips. Value is #RRGGBB. For lighting (ARGB) colors, not UI token colors. */
 export const ColorInput = forwardRef(
   /**
    * @param {import("./ColorInput.d.ts").ColorInputProps} props

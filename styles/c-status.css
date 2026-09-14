@@ -9,7 +9,7 @@
 .bds-tag__x{display:grid;place-items:center;width:16px;height:16px;min-width:24px;min-height:24px;margin:-4px -8px -4px -4px;border:0;border-radius:var(--radius-xs);background:transparent;color:inherit;padding:0}
 .bds-tag__x:hover{background:var(--panel-2)}
 .bds-tag__x:active{background:var(--panel-3)}
-/* 톤별 색. 컴포넌트 스코프 변수 대신 명시 규칙(토큰은 :root에만) */
+/* Per-tone colors as explicit rules; tokens live on :root only, no component-scoped variables */
 .bds-pill.bds-tone--ok{color:var(--ok-ink);background:var(--ok-tint)}.bds-pill.bds-tone--ok .bds-pill__dot{background:var(--ok)}.bds-pill--outline.bds-tone--ok{border-color:color-mix(in oklch,var(--ok) 45%,transparent)}
 .bds-pill.bds-tone--warn{color:var(--warn-ink);background:var(--warn-tint)}.bds-pill.bds-tone--warn .bds-pill__dot{background:var(--warn)}.bds-pill--outline.bds-tone--warn{border-color:color-mix(in oklch,var(--warn) 45%,transparent)}
 .bds-pill.bds-tone--crit{color:var(--crit-ink);background:var(--crit-tint)}.bds-pill.bds-tone--crit .bds-pill__dot{background:var(--crit)}.bds-pill--outline.bds-tone--crit{border-color:color-mix(in oklch,var(--crit) 45%,transparent)}

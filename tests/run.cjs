@@ -3,16 +3,16 @@ const { spawnSync } = require('node:child_process');
 const { createRequire } = require('node:module');
 const deps = process.env.DS_TEST_NODE_MODULES ? createRequire(path.join(path.resolve(process.env.DS_TEST_NODE_MODULES), '__run.cjs')) : require;
 const root = path.resolve(__dirname, '..');
-// tsc·eslint 는 bin 경로를 exports 로 내보내지 않아 resolve 가 통하지 않는다. package-regressions.cjs 와 같은 방식으로 조합한다.
+// tsc/eslint do not expose their bin paths via exports, so resolve() fails; build the path like package-regressions.cjs does.
 const nodeModules = process.env.DS_TEST_NODE_MODULES ? path.resolve(process.env.DS_TEST_NODE_MODULES) : path.join(root, "node_modules");
 const env = { ...process.env, BABEL_STANDALONE: deps.resolve('@babel/standalone') };
-// 빠른 정적 검사부터. 목록에 적힌 파일은 모두 있어야 한다.
-// 항목은 파일 하나이거나 [파일, ...인자]다. 인자가 필요한 것은 도구뿐이다.
+// Fast static checks first; every listed file must exist.
+// An entry is a file or [file, ...args]; only the tools take args.
 const order = [
   'build-bundle.mjs',
-  // 타입과 린트가 먼저다. 소스가 성립하지 않으면 나머지 검사 결과는 읽을 필요가 없다.
+  // Types and lint first: if the source does not hold, the remaining results are not worth reading.
   [path.join(nodeModules, 'typescript', 'bin', 'tsc'), '--project', path.join(root, 'tsconfig.json')],
-  // 템플릿도 공개 API를 쓴다. prop 이름이 바뀌면 조용히 깨지고 렌더 검사는 마운트만 보므로 여기서 잡는다.
+  // Templates use the public API too; a renamed prop breaks silently and the render check only sees mounting.
   [path.join(nodeModules, 'typescript', 'bin', 'tsc'), '--project', path.join(root, 'tsconfig.templates.json')],
   [path.join(nodeModules, 'eslint', 'bin', 'eslint.js'), root],
   'tests/manifest-token-regressions.cjs',

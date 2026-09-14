@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 const root = dirname(fileURLToPath(import.meta.url));
 const dist = join(root, "dist");
 const require = createRequire(import.meta.url);
-// Babel의 debug 코드가 로드 시 bare localStorage를 읽으므로 비활성 스텁으로 경고만 막는다.
+// Babel's debug code reads bare localStorage at load; an inert stub only silences Node's warning.
 try { Object.defineProperty(globalThis, "localStorage", { value: { getItem: () => null }, configurable: true, writable: true }); } catch {}
 const Babel = require("@babel/standalone");
 
@@ -19,14 +19,14 @@ const read = (path) => readFileSync(join(root, path), "utf8");
 const modulePath = (path) => posix(relative(root, path)).replace(/\.jsx$/, ".js");
 const normalizeImports = (code) => code.replace(/(from\s+["'][^"']+)\.jsx(["'])/g, "$1.js$2");
 
-const readme = read("readme.md");
+const readme = read("RULE.md");
 const componentSection = readme.match(/### Components \((\d+) · \d+그룹\)\r?\n([\s\S]*?)\r?\n\r?\n그룹 기준:/);
-if (!componentSection) throw new Error("readme.md의 공개 Components 목록을 읽을 수 없습니다.");
+if (!componentSection) throw new Error("RULE.md의 공개 Components 목록을 읽을 수 없습니다.");
 const documented = [...componentSection[2].matchAll(/^- [a-z]+:\s*(.+)$/gm)]
   .flatMap((match) => match[1].split(","))
   .map((item) => item.trim().match(/^([A-Z]\w*)/)?.[1])
   .filter(Boolean);
-if (documented.length !== Number(componentSection[1])) throw new Error("readme.md의 공개 Components 개수와 목록이 다릅니다.");
+if (documented.length !== Number(componentSection[1])) throw new Error("RULE.md의 공개 Components 개수와 목록이 다릅니다.");
 
 const jsEntry = read("public-entry.js");
 const jsExports = [...jsEntry.matchAll(/^export \{([^}]+)\} from "([^"]+)";/gm)]
@@ -34,7 +34,7 @@ const jsExports = [...jsEntry.matchAll(/^export \{([^}]+)\} from "([^"]+)";/gm)]
 const expectedValues = [...documented, "useToast"].sort();
 const actualValues = [...jsExports].sort();
 if (JSON.stringify(actualValues) !== JSON.stringify(expectedValues)) {
-  throw new Error("public-entry.js는 README 96개 컴포넌트와 useToast만 내보내야 합니다.");
+  throw new Error("public-entry.js는 RULE.md 96개 컴포넌트와 useToast만 내보내야 합니다.");
 }
 for (const internal of ["useFieldContext", "passwordStrength", "NOTIFICATION_DRAWER_ID"]) {
   if (jsExports.includes(internal)) throw new Error(`public-entry.js가 내부 값 ${internal}을 내보냅니다.`);

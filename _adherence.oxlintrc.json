@@ -1,5 +1,5 @@
 {
-  "x-generated": "생성물. 직접 고치지 말고 tokens/*.css·components/**/*.d.ts를 고친 뒤 `node build-bundle.mjs`를 다시 실행한다. 토큰 종류는 각 tokens/*.css의 `/* @token-kinds ... */` 원천 주석으로 정한다. plugins·overrides·react/forbid-elements·전역 no-restricted-syntax 3개·x-omelette.fontFamilies만 손으로 유지한다.",
+  "x-generated": "Generated. Do not edit by hand: change tokens/*.css or components/**/*.d.ts and rerun `node build-bundle.mjs`. Token kinds come from the `/* @token-kinds ... */` comment in each tokens/*.css. Only plugins, overrides, react/forbid-elements, the 3 global no-restricted-syntax rules and x-omelette.fontFamilies are maintained by hand.",
   "plugins": [
     "react",
     "import"

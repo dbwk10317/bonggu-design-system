@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Button, Chart, DataTable, Field, Modal, Panel, Select, SidebarNavItem, SidebarShell, StatusPill, TextField, ToastProvider, useToast } from "@dbwk10317/bonggu-design-system";
 
-// Node 가 서버 렌더도 하므로 JSX 없이 쓴다.
+// No JSX: Node also server-renders this file.
 const h = React.createElement;
 const rows = [{ id: "a", name: "edge-a", cpu: 12 }, { id: "b", name: "edge-b", cpu: null }];
 const columns = [{ key: "name", header: "이름" }, { key: "cpu", header: "CPU", align: "num" }];
@@ -11,7 +11,7 @@ function SaveButton() {
   return h(Button, { id: "fixture-save", variant: "primary", onClick: () => toast({ message: "저장 완료", tone: "ok", duration: 0 }) }, "저장");
 }
 
-/** 소비처가 첫 주에 쓰는 폼: 입력 ref 로 포커스, 네이티브 select 값, 제출, 확인 모달. */
+/** A first-week consumer form: focus via input ref, native select value, submit, confirm modal. */
 function NodeForm() {
   const input = useRef(null);
   const [name, setName] = useState("");

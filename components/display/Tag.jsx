@@ -2,7 +2,7 @@ import React from "react";
 import { cx } from "../core/frame.js";
 import { Icon } from "../action/Icon.jsx";
 
-/** 태그. 분류·선택 표시. accent는 "선택됨" 같은 강조 하나에만. onRemove가 있으면 x 버튼.
+/** Tag for categories and selections. accent is for a single emphasis such as "선택됨"; onRemove adds an x button.
  * @param {Parameters<typeof import("./Tag.d.ts").Tag>[0]} props */
 export function Tag({ accent = false, icon, onRemove, className, children, ...rest }) {
   return (

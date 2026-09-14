@@ -6,7 +6,7 @@ export interface DropzoneProps extends Omit<HTMLAttributes<HTMLDivElement>, "tit
   title?: ReactNode;
   hint?: ReactNode;
   icon?: string;
-  /** flex=부모 폭(기본), fixed=width, auto=내용 크기 */
+  /** flex = parent width (default), fixed = width, auto = content size */
   fit?: "flex" | "fixed" | "auto";
   width?: number | string;
   height?: number | string;

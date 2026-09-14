@@ -1,11 +1,11 @@
 import type { ForwardRefExoticComponent, HTMLAttributes, RefAttributes } from "react";
 export interface OTPInputProps {
   length?: number;
-  /** 자리별 숫자 문자열. 중간 빈 자리는 ASCII 공백, 말미 빈 자리는 생략한다. 완성값은 숫자만 포함한다. */
+  /** Per-box digit string. Inner blanks are ASCII spaces, trailing blanks are omitted. A complete value contains digits only. */
   value?: string;
   onChange?: (value: string) => void;
   onComplete?: (value: string) => void;
-  /** 구분 간격(기본 3). 0이면 없음 */
+  /** Separator interval (default 3). 0 disables it */
   group?: number;
   invalid?: boolean;
   disabled?: boolean;

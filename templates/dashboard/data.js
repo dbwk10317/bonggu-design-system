@@ -1,6 +1,5 @@
-/* 가상 제품 "봉구 엣지 콘솔"의 목 데이터. 전국 매장에 설치한 엣지 노드(소형 서버 + 안내 단말 +
-   결제 리더기)를 원격으로 운영하는 화면을 가정한다. 실제 수집기가 없으므로 값은 고정 시드로 만든다.
-   결측(null)은 일부러 섞어 둔다. 이 시스템의 결측 계약을 템플릿에서도 그대로 보여야 한다. */
+/* Mock data for the fictional "봉구 엣지 콘솔": remote operation of store edge nodes (small server + kiosk + payment reader).
+   Values come from a fixed seed; nulls are mixed in on purpose so the template exercises the missing-value contract. */
 if (!window.KIT) {
 const rnd = (seed) => () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
 const series = (seed, n, base, swing, round = 0) => { const r = rnd(seed); return Array.from({ length: n }, () => Number((base + (r() - 0.5) * swing).toFixed(round))); };
@@ -19,11 +18,11 @@ window.KIT = {
     requests: series(11, 24, 1400, 900),
     errors: series(29, 24, 18, 34).map((v) => Math.max(0, v)),
     rx: series(5, 24, 26, 22, 1), tx: series(7, 24, 9, 8, 1),
-    // 06:00~07:00 두 칸은 수집기가 멈춰 있던 구간이다. 0이 아니라 결측으로 남긴다.
+    // 06:00-07:00: collector was down; left as missing, not 0
     p95: [...series(13, 6, 210, 90), null, null, ...series(17, 16, 190, 120)],
     samples: series(23, 160, 180, 260).map((v) => Math.max(24, v)),
     load: [0, 1, 2, 3, 4, 5, 6].map((row) => Array.from({ length: 12 }, (_, col) => {
-      if (row === 6 && col > 9) return null;                       // 일요일 야간은 수집 안 됨
+      if (row === 6 && col > 9) return null;                       // Sunday night not collected
       const r = rnd(row * 31 + col * 7)();
       return Math.round((col > 3 && col < 10 ? 60 : 18) * (0.5 + r));
     })),
@@ -40,7 +39,7 @@ window.KIT = {
     NODE("edge-busan-02", "봉구 해운대점", "부산", "degraded", { cpu: 58, mem: 71, temp: 63, latency: 340, agent: "2.13.2", led: "off" }),
     NODE("edge-daegu-01", "봉구 동성로점", "대구", "online", { cpu: 21, mem: 46, temp: 44, latency: 58 }),
     NODE("edge-gwangju-01", "봉구 충장로점", "광주", "online", { cpu: 17, mem: 39, temp: 41, latency: 71 }),
-    // 회선이 끊긴 노드. 지표를 0으로 꾸미지 않고 결측 그대로 둔다.
+    // Offline node: metrics stay missing, not faked as 0
     NODE("edge-daejeon-01", "봉구 둔산점", "대전", "offline", { cpu: null, mem: null, disk: null, temp: null, latency: null, uptime: null, display: null, led: null, owner: "김서준" }),
     NODE("edge-daejeon-02", "봉구 유성점", "대전", "online", { cpu: 24, mem: 49, temp: 45.5, latency: 66, owner: "김서준" }),
     NODE("edge-seoul-04", "봉구 여의도점", "서울", "online", { cpu: 29, mem: 55, temp: 48, latency: 27, owner: "박하늘" }),
@@ -52,7 +51,7 @@ window.KIT = {
     { name: "artifact-cdn", label: "배포 저장소", tone: "ok", text: "정상", latency: 88 },
     { name: "device-api", label: "장치 제어 API", tone: "ok", text: "정상", latency: null },
   ],
-  /* 90칸 = 최근 90일. off는 아직 노드를 설치하기 전이라 가용성 분모에서 빠진다. */
+  /* 90 cells = last 90 days. off = before install, excluded from the availability denominator */
   uptime: (seed, bad) => Array.from({ length: 90 }, (_, i) => {
     if (seed === 3 && i < 6) return { status: "off", label: "설치 전" };
     const r = rnd(seed * 17 + i)();
@@ -115,12 +114,12 @@ window.KIT = {
   },
 };
 }
-/* 화면 모듈을 렌더 없이 로드하기 위한 빈 컴포넌트 */
+/* Empty component so a screen module can load without rendering */
 window.KitNoop = window.KitNoop || (() => null);
-/* 번들이 비동기로 로드되므로 화면 모듈은 window.Ds_d3ea90를 직접 읽지 않고 이 프록시를 구조분해한다.
-   각 키는 렌더 시점에 실제 컴포넌트로 위임하는 얇은 래퍼라 로드 순서에 의존하지 않는다. */
+/* The bundle loads async, so screens destructure this proxy instead of window.Ds_d3ea90.
+   Each key is a thin wrapper resolving the real component at render time, so load order does not matter. */
 window.DS = /** @type {typeof window.DS} */ (new Proxy({}, { get(_, name) {
-  // 훅은 호출하는 쪽의 렌더 안에서 실제 훅을 그대로 불러야 한다. 컴포넌트 래퍼로 감싸면 안 된다.
+  // Hooks must run inside the caller's render; a component wrapper would break the rules of hooks
   if (/^use[A-Z]/.test(String(name))) return (...a) => window.Ds_d3ea90?.[name](...a);
   const W = (props) => { const C = window.Ds_d3ea90?.[name]; return C ? window.React.createElement(C, props) : null; };
   W.displayName = String(name); return W;

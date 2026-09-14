@@ -1,7 +1,7 @@
 import React from "react";
 import { cx } from "../core/frame.js";
 
-/** 페이지 제목 + 한 문장 설명 + 오른쪽 액션. 좁으면 액션이 아래로 감싼다.
+/** Page title + one-sentence description + right-side actions; actions wrap below when narrow.
  * @param {Parameters<typeof import("./PageHeader.d.ts").PageHeader>[0]} props */
 export function PageHeader({ title, description, actions, className, ...rest }) {
   return (

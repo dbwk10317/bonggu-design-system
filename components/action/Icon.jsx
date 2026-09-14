@@ -1,8 +1,8 @@
 import React from "react";
 import { cx } from "../core/frame.js";
 
-/** Phosphor Bold 아이콘. name은 Phosphor 아이콘 이름(kebab-case, 예: "bell", "gear-six").
- *  리액트 프로젝트에서는 @phosphor-icons/react의 동일 아이콘을 weight="bold"로 쓴다. 장식 아이콘은 aria-hidden.
+/** Phosphor Bold icon; name is the Phosphor icon name (kebab-case, e.g. "bell", "gear-six").
+ *  React projects may use the same icon from @phosphor-icons/react with weight="bold". Decorative icons are aria-hidden. See RULE.md "ICONOGRAPHY".
  * @param {Parameters<typeof import("./Icon.d.ts").Icon>[0]} props
  */
 export function Icon({ name, size = 16, label, className, style, ...rest }) {

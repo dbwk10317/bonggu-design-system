@@ -1,6 +1,6 @@
 import type { ForwardRefExoticComponent, HTMLAttributes, RefAttributes } from "react";
 export interface DatePickerProps {
-  /** "YYYY-MM-DD". 외부 변경 및 다시 열 때 표시 월을 선택 월에 맞춘다. */
+  /** "YYYY-MM-DD". The displayed month follows this value on external change and on reopen. */
   value?: string;
   onChange?: (value: string) => void;
   min?: string;

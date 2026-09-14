@@ -3,7 +3,7 @@ import { cx, frameStyle } from "../core/frame.js";
 import { Icon } from "../action/Icon.jsx";
 import { useFieldContext } from "./Field.jsx";
 
-/** 숫자 입력 + −/+ 버튼. 값은 mono. min/max에서 버튼 비활성. */
+/** Number input with −/+ buttons. Value in mono; buttons disable at min/max. */
 export const NumberStepper = forwardRef(
   /**
    * @param {import("./NumberStepper.d.ts").NumberStepperProps} props
@@ -14,8 +14,8 @@ export const NumberStepper = forwardRef(
   const [inner, setInner] = React.useState(defaultValue);
   const v = value ?? inner;
   const [draft, setDraft] = React.useState(String(v));
-  /* 확정 값이 바뀌면 편집 중 문자열을 맞춘다. 이펙트로 하면 부모가 값을 거부했을 때
-     v 가 그대로라 이펙트가 돌지 않고 입력창이 계속 어긋난 값을 보인다. */
+  /* Sync the draft string when the committed value changes. An effect would not fire when the parent
+     rejects the value (v unchanged), leaving the input showing a stale draft. */
   const [prevV, setPrevV] = React.useState(v);
   if (prevV !== v) { setPrevV(v); setDraft(String(v)); }
   const set = (/** @type {number} */ n) => { const c = Math.min(max, Math.max(min, n)); setInner(c); setDraft(String(c)); if (c !== v) onChange?.(c); };

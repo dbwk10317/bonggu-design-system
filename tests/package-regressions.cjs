@@ -13,7 +13,7 @@ const root = path.resolve(__dirname, "..");
 const template = path.join(__dirname, "fixtures", "package-consumer");
 const tempRoot = fs.realpathSync(os.tmpdir());
 const work = fs.mkdtempSync(path.join(tempRoot, "bonggu-package-fixture-"));
-// 소비 fixture 는 React 조합마다 새로 깐다. peer 범위(package.json)는 이 목록이 검증하는 범위와 같아야 한다.
+// The consumer fixture is reinstalled per React combination. The peer range in package.json must match this matrix.
 const REACT_MATRIX = [
   { react: "18.3.1", typesReact: "18.3.31", typesReactDom: "18.3.7" },
   { react: "19.3.0", typesReact: "19.3.0", typesReactDom: "19.3.0" },
@@ -93,7 +93,7 @@ function assertPackageContents(tarball) {
   for (const name of required) assert(lowerNames.has(name), `tarball 필수 파일 누락: ${name}`);
   for (const name of names) {
     assert(
-      name === "package/package.json" || ["package/readme.md", "package/license", "package/third_party_notices.md"].includes(name.toLowerCase()) || name.startsWith("package/dist/") || name.startsWith("package/licenses/"),
+      name === "package/package.json" || ["package/readme.md", "package/readme_ko.md", "package/license", "package/third_party_notices.md"].includes(name.toLowerCase()) || name.startsWith("package/dist/") || name.startsWith("package/licenses/"),
       `tarball 불필요 파일 포함: ${name}`,
     );
     assert(!/\.(?:jsx|prompt\.md|card\.html)$/i.test(name), `tarball 소스·문서 fixture 포함: ${name}`);
@@ -206,7 +206,7 @@ async function main() {
       .replace("__TYPES_REACT__", versions.typesReact)
       .replace("__TYPES_REACT_DOM__", versions.typesReactDom));
     fs.rmSync(path.join(consumer, "package.template.json"));
-    // 18 은 루트 lockfile 로 캐시에 있고, 19 는 캐시에 없으면 레지스트리에서 받는다(정확한 버전 고정).
+    // React 18 is in the cache via the root lockfile; 19 falls back to the registry when uncached (exact versions pinned).
     run(process.execPath, [npmCli, "install", "--prefer-offline", "--ignore-scripts", "--no-audit", "--no-fund"]);
     await verifyConsumer();
   }

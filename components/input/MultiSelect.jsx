@@ -4,7 +4,7 @@ import { Icon } from "../action/Icon.jsx";
 import { Tag } from "../display/Tag.jsx";
 import { useFieldContext } from "./Field.jsx";
 
-/** 여러 개 선택(태그 입력). options: {value,label}. value는 배열. 입력으로 필터, Backspace로 마지막 제거. */
+/** Multi select (tag input). options: {value,label}; value is an array. Type to filter, Backspace removes the last tag. */
 export const MultiSelect = forwardRef(
   /**
    * @param {import("./MultiSelect.d.ts").MultiSelectProps} props
@@ -18,10 +18,10 @@ export const MultiSelect = forwardRef(
   const list = options.filter((o) => !sel.has(o.value) && o.label.toLowerCase().includes(q.trim().toLowerCase()));
   const activeIdx = Math.min(idx, Math.max(0, list.length - 1));
   const full = max != null && value.length >= max;
-  /* 가득 차도 입력을 없애지 않는다. 포커스가 있는 요소를 disabled 로 만들면 브라우저가 포커스를
-     body 로 떨어뜨리고, 안내도 없이 탭 순서에서 사라진다. 읽기 전용으로 두고 이유를 알린다. */
+  /* The input stays when full. Disabling a focused element drops focus to body and silently removes it
+     from the tab order; readOnly keeps it reachable and aria-readonly says why. */
   useEffect(() => { if (!open) return; const on = (/** @type {MouseEvent} */ e) => { if (!root.current?.contains(/** @type {Node} */ (e.target))) setOpen(false); }; document.addEventListener("mousedown", on); return () => document.removeEventListener("mousedown", on); }, [open]);
-  /* 검색어나 열림이 바뀌면 강조를 첫 항목으로. */
+  /* Reset the highlight to the first item when the query or open state changes. */
   const cue = q + "\u0000" + open;
   const [prevCue, setPrevCue] = useState(cue);
   if (prevCue !== cue) { setPrevCue(cue); setIdx(0); }

@@ -2,7 +2,7 @@ import React, { forwardRef, useId } from "react";
 import { cx } from "../core/frame.js";
 import { Checkbox } from "./Checkbox.jsx";
 
-/** 라디오 묶음. options: {value, label, hint?, disabled?}. layout: column(기본) · row · cards(설명 있는 선택지). */
+/** Radio group. options: {value, label, hint?, disabled?}. layout: column (default) · row · cards (options with descriptions). */
 export const RadioGroup = forwardRef(
   /**
    * @param {import("./RadioGroup.d.ts").RadioGroupProps} props

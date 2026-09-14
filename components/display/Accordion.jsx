@@ -2,7 +2,7 @@ import React, { useId, useState } from "react";
 import { cx } from "../core/frame.js";
 import { Icon } from "../action/Icon.jsx";
 
-/** 접이식 섹션. items: {id, title, meta?, content}. multiple이면 여러 개 동시 펼침. plain은 테두리 없음(설정 패널 안).
+/** Collapsible sections. items: {id, title, meta?, content}. multiple allows several open at once; plain drops the border (inside a settings panel).
  * @param {Parameters<typeof import("./Accordion.d.ts").Accordion>[0]} props */
 export function Accordion({ items = [], defaultOpen = [], multiple = false, plain = false, className, ...rest }) {
   const [open, setOpen] = useState(() => new Set(defaultOpen));

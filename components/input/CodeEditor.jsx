@@ -3,7 +3,7 @@ import { assignRef, cx, frameStyle } from "../core/frame.js";
 import { Icon } from "../action/Icon.jsx";
 import { useFieldContext } from "./Field.jsx";
 
-/** JSON/코드 입력. 줄번호 + mono + Tab 들여쓰기. language="json"이면 파싱해 오류 위치를 아래에 표시하고 onValidChange(obj|null)를 부른다. */
+/** JSON/code input: line numbers, mono, Tab indents. With language="json" it parses, shows the error line below and calls onValidChange(obj|null). */
 export const CodeEditor = forwardRef(
   /**
    * @param {import("./CodeEditor.d.ts").CodeEditorProps} props
@@ -15,20 +15,20 @@ export const CodeEditor = forwardRef(
   const v = value ?? inner;
   const ta = useRef(/** @type {HTMLTextAreaElement | null} */ (null)), gutter = useRef(/** @type {HTMLPreElement | null} */ (null));
   const lines = useMemo(() => v.split("\n").length, [v]);
-  /* 파싱은 렌더에서, 통지는 커밋 뒤에. checked 는 "이번 입력이 검사 대상이었나"다. */
+  /* Parse during render, notify after commit. checked = "was this input subject to validation". */
   const parsed = useMemo(() => {
     if (language !== "json" || !v.trim()) return { checked: false, value: null, err: null };
     try { return { checked: true, value: JSON.parse(v), err: null }; }
     catch (e) { const msg = e instanceof Error ? e.message : String(e); const m = /position (\d+)/.exec(msg); let line = null; if (m) { line = v.slice(0, Number(m[1])).split("\n").length; } return { checked: true, value: null, err: { line, message: msg.replace(/^JSON\.parse: |^Unexpected token.*?in JSON at position \d+$/, (/** @type {string} */ s) => s).replace("JSON.parse: ", "") } }; }
   }, [v, language]);
   const err = parsed.err;
-  /* 통지 콜백은 매 렌더 새 함수인 경우가 많다. 의존성에 넣으면 값이 그대로인데도 다시 통지한다. */
+  /* The callback is usually a new function every render; as an effect dependency it would re-notify with an unchanged value. */
   const notifyValid = useRef(onValidChange);
   useEffect(() => { notifyValid.current = onValidChange; });
   useEffect(() => { if (parsed.checked) notifyValid.current?.(parsed.value); }, [parsed]);
   const set = (/** @type {string} */ s) => { setInner(s); onChange?.(s); };
   const onKey = (/** @type {import("react").KeyboardEvent<HTMLTextAreaElement>} */ e) => {
-    /* Tab은 들여쓰기, Shift+Tab은 가로채지 않아 키보드로 빠져나갈 수 있다 */
+    /* Tab indents; Shift+Tab is left alone so keyboard users can leave the editor */
     if (e.key === "Tab" && !e.shiftKey && !readOnly) { e.preventDefault(); const t = e.currentTarget, s = t.selectionStart, en = t.selectionEnd; const next = v.slice(0, s) + "  " + v.slice(en); set(next); requestAnimationFrame(() => { t.selectionStart = t.selectionEnd = s + 2; }); }
   };
   return (

@@ -1,9 +1,9 @@
 import type { HTMLAttributes, ReactNode } from "react";
 export interface StatusBarProps extends HTMLAttributes<HTMLDivElement> {
   live?: { label: string };
-  /** 왼쪽 상태 항목 */
+  /** Status items on the left */
   items?: ReactNode[];
-  /** 오른쪽 메타 항목 */
+  /** Meta items on the right */
   right?: ReactNode[];
 }
 export declare function StatusBar(props: StatusBarProps): ReactNode;

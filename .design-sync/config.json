@@ -23,7 +23,7 @@
     "dist/fonts/phosphor/bold.css"
   ],
   "guidelinesGlob": [
-    "readme.md"
+    "RULE.md"
   ],
   "overrides": {
     "Modal": {

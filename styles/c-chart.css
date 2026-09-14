@@ -1,4 +1,4 @@
-/* chart: 모든 차트가 한 크롬을 공유한다(격자·축·범례·툴팁). 색은 --chart-n만. 진입 모션은 그리기 1회. */
+/* chart: one chrome for every kind (grid, axes, legend, tooltip). Colors: --series-* only. Draw-in animation runs once. */
 .bds-chart{position:relative;display:grid;gap:10px;min-width:0;container-type:inline-size}
 .bds-chart__stage{position:relative;min-width:0;width:100%}
 .bds-chart__svg{display:block;width:100%;height:100%;overflow:visible}

@@ -2,7 +2,7 @@ import React, { forwardRef } from "react";
 import { assignRef, cx } from "../core/frame.js";
 import { Icon } from "../action/Icon.jsx";
 
-/** 체크박스. children이 라벨. 라벨 없이 쓰면 aria-label 필수(표 선택 열). indeterminate는 ref로 세팅. */
+/** Checkbox. children is the label; without one, pass aria-label (e.g. a table selection column). indeterminate has no HTML attribute, so it is applied through the ref callback. */
 export const Checkbox = forwardRef(
   /**
    * @param {import("./Checkbox.d.ts").CheckboxProps} props

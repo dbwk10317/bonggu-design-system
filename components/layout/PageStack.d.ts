@@ -1,4 +1,4 @@
 import type { HTMLAttributes, ReactNode } from "react";
-/** 셸 본문 직계 자식. 섹션 간격 --grid-gap. */
+/** Direct child of the shell body. Sections are spaced by --grid-gap. */
 export interface PageStackProps extends HTMLAttributes<HTMLElement> { gap?: "sm" | "md" | "lg"; children: ReactNode }
 export declare function PageStack(props: PageStackProps): ReactNode;

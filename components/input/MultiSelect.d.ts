@@ -4,7 +4,7 @@ export interface MultiSelectProps {
   value: string[];
   onChange?: (value: string[]) => void;
   placeholder?: string;
-  /** 최대 선택 수 */
+  /** Maximum number of selections */
   max?: number;
   fit?: "flex" | "fixed" | "auto";
   width?: number | string;

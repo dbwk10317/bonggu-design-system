@@ -1,32 +1,32 @@
 import type { HTMLAttributes, ReactNode } from "react";
 /**
- * 큰 수치 타일. 숫자면 mono(ko-KR 천 단위), 문자열이면 그대로. 기본은 즉시 갱신.
- * 결측(null·undefined·NaN)이면 "수집 안 됨"을 mono 없이 표시하고 단위는 붙이지 않는다.
+ * Big-number tile. Numbers render in mono with ko-KR grouping, strings as is. Updates instantly by default.
+ * Missing (null/undefined/NaN) shows "수집 안 됨" without mono and without the unit.
  */
 export interface StatTileProps extends HTMLAttributes<HTMLDivElement> {
   label: ReactNode;
-  /** 결측이면 null. "수집 안 됨"으로 표시한다 */
+  /** null when missing; shown as "수집 안 됨" */
   value: number | string | null;
   unit?: string;
-  /** 소수 자릿수 */
+  /** Fraction digits */
   digits?: number;
-  /** 증감(숫자면 부호·색 자동) */
+  /** Change; a number gets its sign and color automatically */
   delta?: number | string;
   deltaLabel?: string;
-  /** 최근 추세 */
+  /** Recent trend */
   spark?: (number | null)[];
-  /** 수치 아래 보조 줄(Tag 나열, 마지막 갱신 등) */
+  /** Secondary line under the value (Tags, last update, etc.) */
   detail?: ReactNode;
-  /** 라벨 옆 상태 pill */
+  /** Status pill next to the label */
   pill?: { tone: "ok" | "warn" | "crit" | "info" | "off"; text: string };
-  /** 라벨 앞 Phosphor 아이콘 */
+  /** Phosphor icon before the label */
   icon?: string;
   tone?: 1 | 2 | 3 | 4 | 5 | 6;
-  /** 카드 테두리 없이(Panel 안에 여러 개) */
+  /** No card border (several tiles inside one Panel) */
   flat?: boolean;
-  /** 진입 1회 카운트업. 기본 false(실시간 수치는 트랜지션 없이 즉시 바뀐다) */
+  /** One-time count-up on entry. Default false: live numbers change instantly */
   animate?: boolean;
-  /** flex=부모 폭(기본), fixed=width·height */
+  /** flex = parent width (default), fixed = width/height */
   fit?: "flex" | "fixed";
   width?: number | string;
 }

@@ -2,13 +2,11 @@ import React from "react";
 import { cx } from "../core/frame.js";
 import { MISSING_CLASS, MISSING_TEXT, isMissing } from "../core/missing.js";
 
-/* 세그먼트마다 배열을 새로 만들면 상태 페이지에서 막대 하나에 수십 번 버려진다. */
+/* Hoisted: rebuilding this array per segment would allocate dozens of times per bar on a status page. */
 const TONES = ["ok", "warn", "crit"];
 
-/** 가용성 막대(일/시간 단위 90칸). segments: {status: ok|warn|crit|off, label?}. 비율은 ok+warn 기준으로 계산해 텍스트로 병기.
- *  칸의 off는 상태 넷 중 하나(그 구간이 수집되지 않음)이고 문구는 같은 MISSING_TEXT를 쓴다.
- *  다만 칸의 표기는 텍스트가 아니라 track 색이므로 .bds-na를 붙이지 않는다. 헤더 비율만 결측 문구로 표시한다.
- *  좁은 컨테이너에서는 칸 간격과 최소폭을 줄여 모든 구간을 내부 폭에 맞춘다.
+/** Availability bar (90 day/hour cells). segments: {status: ok|warn|crit|off, label?}. The percentage is computed from ok+warn and shown as text.
+ *  off cells are missing intervals: they share MISSING_TEXT via title but not .bds-na, because a cell is a track color, not text. See RULE.md "데이터와 결측".
  * @param {Parameters<typeof import("./UptimeBar.d.ts").UptimeBar>[0]} props
  */
 export function UptimeBar({ name, segments = [], start, end, height = 28, uptime, className, ...rest }) {

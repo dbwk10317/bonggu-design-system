@@ -1,19 +1,19 @@
 import React, { cloneElement, useEffect, useId, useRef, useState } from "react";
 import { cx } from "../core/frame.js";
 
-/** 클릭으로 여는 설명·미니 폼 패널. Tooltip과 달리 상호작용 요소를 넣을 수 있다. trigger 하나를 감싼다.
+/** Click-opened panel for explanations or mini forms. Unlike Tooltip it may hold interactive content. Wraps one trigger.
  * @param {Parameters<typeof import("./Popover.d.ts").Popover>[0]} props */
 export function Popover({ trigger, title, side = "bottom", open: ctrl, onOpenChange, className, children }) {
   const [inner, setInner] = useState(false);
   const open = ctrl ?? inner;
-  /* 통지 콜백은 매 렌더 새 함수다. 이펙트 의존성에 넣으면 리스너를 매번 다시 건다. */
+  /* onOpenChange is a new function every render; as an effect dependency it would re-bind the listeners each time. */
   const notify = useRef(onOpenChange);
   useEffect(() => { notify.current = onOpenChange; });
   const set = (/** @type {boolean} */ v) => { setInner(v); onOpenChange?.(v); };
   const root = useRef(/** @type {HTMLDivElement | null} */ (null)), id = useId().replace(/:/g, "");
   useEffect(() => {
     if (!open) return;
-    /* 닫기는 이펙트 안에서 만든다. 바깥 set 을 쓰면 매 렌더 새 함수라 리스너를 다시 걸게 된다. */
+    /* Build close inside the effect; the outer set is a new function per render and would re-bind the listeners. */
     const close = () => { setInner(false); notify.current?.(false); };
     const on = (/** @type {MouseEvent} */ e) => { if (!root.current?.contains(/** @type {Node} */ (e.target))) close(); };
     const key = (/** @type {KeyboardEvent} */ e) => { if (e.key === "Escape") { close(); /** @type {HTMLElement | null | undefined} */ (root.current?.firstElementChild)?.focus?.(); } }; document.addEventListener("mousedown", on); document.addEventListener("keydown", key); return () => { document.removeEventListener("mousedown", on); document.removeEventListener("keydown", key); }; }, [open]);

@@ -1,5 +1,5 @@
 import type { ForwardRefExoticComponent, InputHTMLAttributes, ReactNode, RefAttributes } from "react";
-/** 즉시 반영되는 설정 토글. */
+/** Toggle for settings that apply immediately. */
 export interface SwitchProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {
   children?: ReactNode;
 }

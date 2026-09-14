@@ -1,3 +1,3 @@
 import type { HTMLAttributes, ReactNode } from "react";
-export interface SkeletonProps extends HTMLAttributes<HTMLElement> { variant?: "block" | "text" | "circle"; fit?: "flex" | "fixed"; width?: number | string; height?: number | string; /** 문장 여러 줄 */ lines?: number }
+export interface SkeletonProps extends HTMLAttributes<HTMLElement> { variant?: "block" | "text" | "circle"; fit?: "flex" | "fixed"; width?: number | string; height?: number | string; /** Number of text lines */ lines?: number }
 export declare function Skeleton(props: SkeletonProps): ReactNode;

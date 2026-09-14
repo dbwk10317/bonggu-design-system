@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
 import { cx } from "../core/frame.js";
 
-/** 켬/끔 스위치. 즉시 반영되는 설정에만 쓴다(저장 버튼이 따로 있으면 Checkbox). */
+/** On/off switch for settings that apply immediately (use Checkbox when there is a separate save button). */
 export const Switch = forwardRef(
   /**
    * @param {import("./Switch.d.ts").SwitchProps} props

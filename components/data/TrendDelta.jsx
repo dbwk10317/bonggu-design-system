@@ -3,8 +3,8 @@ import { cx } from "../core/frame.js";
 import { MISSING_CLASS, MISSING_TEXT, isMissing, numeric } from "../core/missing.js";
 import { Icon } from "../action/Icon.jsx";
 
-/** 증감 표시. value는 변화량(숫자) 또는 비율(percent). inverse면 증가가 나쁜 지표(응답시간·오류). 항상 화살표+숫자, 색 단독 금지.
- *  결측이면 화살표 없이 "수집 안 됨"을 mono 없이 표시한다.
+/** Change indicator. value is an absolute delta or a ratio (percent). inverse marks metrics where up is bad (latency, errors). Always arrow + number, never color alone.
+ *  Missing values show the missing text with no arrow and no mono.
  * @param {Parameters<typeof import("./TrendDelta.d.ts").TrendDelta>[0]} props
  */
 export function TrendDelta({ value, percent = false, inverse = false, label, precision = 1, className, ...rest }) {

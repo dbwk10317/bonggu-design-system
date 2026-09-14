@@ -1,12 +1,12 @@
 import type { ButtonHTMLAttributes, ForwardRefExoticComponent, ReactNode, RefAttributes } from "react";
-/** 아이콘 전용 버튼. aria-label 필수. */
+/** Icon-only button. aria-label is required. */
 export interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   "aria-label": string;
-  /** Phosphor 아이콘 이름. children으로 직접 넘겨도 된다. */
+  /** Phosphor icon name; children may be passed instead. */
   icon?: string;
   size?: "sm" | "md" | "lg";
   variant?: "outline" | "ghost" | "danger";
-  /** 0보다 크면 우상단 카운트 배지 */
+  /** Count badge at the top right when > 0 */
   badge?: number;
   children?: ReactNode;
 }

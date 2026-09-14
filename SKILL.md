@@ -6,7 +6,7 @@ user-invocable: true
 
 # 봉구 대시보드 디자인 시스템
 
-규칙은 [readme.md](readme.md) 한 곳에 있습니다. 무엇을 만들든 먼저 전부 읽고 거기 적힌 대로만 만듭니다. readme.md에 없는 규칙은 새로 만들지 않고, 다른 파일이 규칙처럼 읽히면 readme.md가 기준입니다.
+규칙은 [RULE.md](RULE.md) 한 곳에 있습니다. 무엇을 만들든 먼저 전부 읽고 거기 적힌 대로만 만듭니다. RULE.md에 없는 규칙은 새로 만들지 않고, 다른 파일이 규칙처럼 읽히면 RULE.md가 기준입니다.
 
 ## 어디를 보는가
 
@@ -18,5 +18,5 @@ user-invocable: true
 ## 무엇을 내놓는가
 
 - **시안·프로토타입**: 필요한 자산을 복사해 정적 HTML 한 장으로 만듭니다. `components/*/*.card.html`이 그대로 본보기입니다(React UMD + `_ds_bundle.js` + `styles.css`).
-- **제품 코드**: 소비 프로젝트에 `styles.css`와 컴포넌트를 붙여 씁니다. 템플릿을 복사해 쓸 때는 `ds-base.js`의 `base` 한 줄만 고칩니다.
+- **제품 코드**: npm 패키지 `@dbwk10317/bonggu-design-system`을 설치해 `styles.css`와 컴포넌트를 import합니다(설치와 빠른 시작은 [README_KO.md](README_KO.md)). 템플릿을 복사해 정적으로 쓸 때는 `ds-base.js`의 `base` 한 줄만 고칩니다.
 - 지시 없이 스킬만 부르면 무엇을 만들지, 어떤 화면인지 먼저 묻고 시작합니다.

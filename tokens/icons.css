@@ -1,2 +1,2 @@
-/* 아이콘: Phosphor Bold. 웹폰트는 fonts/phosphor/에 셀프호스팅(CDN 없음). 리액트 프로젝트에서는 @phosphor-icons/react weight="bold"를 같은 이름으로 써도 된다. */
+/* Phosphor Bold webfont, self-hosted (no CDN). See RULE.md "ICONOGRAPHY". */
 @import url("../fonts/phosphor/bold.css");

@@ -7,8 +7,8 @@ import { MascotMark } from "../brand/MascotMark.jsx";
 /** @type {import("react").Context<(() => void) | null>} */
 const CloseCtx = createContext(/** @type {any} */ (null));
 
-/** 대시보드 셸: 240px 사이드바 + 52px 상단바 + 본문 + 28px 상태바. 부모가 높이를 정한다(페이지는 100dvh).
- *  1024 미만: 사이드바가 오버레이 드로어(햄버거). 768 미만: 상태바 숨김. 본문은 컨테이너 쿼리 대상(container-name: body).
+/** Dashboard shell: 240px sidebar + 52px top bar + body + 28px status bar. The parent sets the height (pages use 100dvh).
+ *  Below 1024 the sidebar becomes an overlay drawer (hamburger); below 768 the status bar is hidden. The body is a container-query root (container-name: body).
  * @param {Parameters<typeof import("./SidebarShell.d.ts").SidebarShell>[0]} props
  */
 export function SidebarShell({ brand, nav, navLabel = "주 메뉴", footer, topbar, statusbar, className, children, ...rest }) {
@@ -17,9 +17,9 @@ export function SidebarShell({ brand, nav, navLabel = "주 메뉴", footer, topb
   const burger = useRef(/** @type {HTMLButtonElement | null} */ (null)), side = useRef(/** @type {HTMLElement | null} */ (null));
   useEffect(() => {
     if (!open) return;
-    /* 드로어로 열리면 포커스를 안으로(닫기 버튼) 옮기고, 닫히면 햄버거로 돌린다.
-       정리 시점의 burger.current 는 이미 다른 노드일 수 있어 지금 노드를 담아 둔다.
-       레일로 넓어지면 햄버거가 숨으므로, 보이지 않으면 되돌리지 않는다(포커스가 body 로 떨어진다). */
+    /* Move focus into the drawer (close button) on open and back to the hamburger on close.
+       burger.current may point at a different node by cleanup time, so capture it now.
+       Widening to the rail hides the hamburger; focusing a hidden node drops focus to body, so skip it then. */
     const trigger = burger.current;
     side.current?.querySelector("button")?.focus();
     const onKey = (/** @type {KeyboardEvent} */ e) => e.key === "Escape" && setOpen(false);
@@ -28,7 +28,7 @@ export function SidebarShell({ brand, nav, navLabel = "주 메뉴", footer, topb
   }, [open]);
   return (
     <div className={cx("bds-shell", open && "bds-shell--open", className)} {...rest}>
-      {/* 첫 탭 스톱. 초점을 받을 때만 보인다(readme 접근성 절). */}
+      {/* First tab stop; visible only while focused. See RULE.md "접근성". */}
       <a className="bds-skip" href={`#${id}-main`}>본문으로 건너뛰기</a>
       <aside id={id} ref={side} className="bds-shell__side">
         <div className="bds-shell__logo">
@@ -52,7 +52,7 @@ export function SidebarShell({ brand, nav, navLabel = "주 메뉴", footer, topb
   );
 }
 
-/** 사이드바 항목. href가 있으면 a, 없으면 button. 드로어 안에서 고르면 드로어가 닫힌다.
+/** Sidebar item: <a> with href, otherwise <button>. Picking one inside the drawer closes it.
  * @param {Parameters<typeof import("./SidebarShell.d.ts").SidebarNavItem>[0]} props */
 export function SidebarNavItem({ icon, label, href, target, active = false, badge, onClick }) {
   const close = useContext(CloseCtx);
@@ -63,6 +63,6 @@ export function SidebarNavItem({ icon, label, href, target, active = false, badg
     : <button type="button" className={cls} aria-current={active ? "page" : undefined} onClick={handle}>{inner}</button>;
 }
 
-/** 사이드바 섹션 라벨.
+/** Sidebar section label.
  * @param {Parameters<typeof import("./SidebarShell.d.ts").SidebarNavGroup>[0]} props */
 export function SidebarNavGroup({ label }) { return <div className="bds-shell__grp">{label}</div>; }

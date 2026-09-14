@@ -1,7 +1,7 @@
 name: Release
 
-# 태그가 발행이다. 버전 확정(changeset version)과 태그 생성은 로컬에서 하고, 여기서는
-# 검증하고 올리기만 한다. main 푸시로는 아무것도 발행되지 않는다.
+# Tags publish. Version bump (changeset version) and tagging happen locally; this only verifies
+# and uploads. Pushes to main publish nothing. See RULE.md "릴리스".
 on:
   push:
     tags: ["v*"]
@@ -10,8 +10,8 @@ concurrency:
   group: release-${{ github.ref }}
   cancel-in-progress: false
 
-# 인증은 Trusted Publishing(OIDC)이다. npm이 GitHub의 id-token 을 짧은 발행 토큰으로 바꿔 쓰므로
-# 저장소에 시크릿이 없다. npmjs 패키지 설정의 Trusted Publisher 에 이 저장소와 이 파일 이름이 등록돼 있어야 한다.
+# Auth is Trusted Publishing (OIDC): npm exchanges GitHub's id-token for a short-lived publish token, so the
+# repo holds no secret. The npmjs package's Trusted Publisher must list this repo and this workflow file name.
 permissions:
   contents: read
   id-token: write
@@ -23,14 +23,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-      # registry-url 을 주지 않는다. 주면 setup-node 가 NODE_AUTH_TOKEN 을 읽는 .npmrc 를 만들고,
-      # OIDC 발행에는 그 줄이 없어야 한다. 기본 레지스트리가 npmjs 다.
+      # No registry-url: with it, setup-node writes an .npmrc that reads NODE_AUTH_TOKEN, and OIDC
+      # publishing needs that line absent. The default registry is npmjs.
       - name: Set up Node.js
         uses: actions/setup-node@v7
         with:
           node-version: 26
           cache: npm
-      # Trusted Publishing 은 npm 11.5.1 부터다. 러너의 npm 이 그보다 낮으면 publish 가 ENEEDAUTH 로 죽는다.
+      # Trusted Publishing needs npm >= 11.5.1; an older runner npm fails publish with ENEEDAUTH.
       - name: Verify npm supports trusted publishing
         run: |
           v="$(npm --version)"
@@ -41,16 +41,16 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Verify release candidate
         run: npm test
-      # 태그와 package.json이 어긋난 채로 올라가면 태그가 가리키는 커밋과 레지스트리의
-      # 버전이 달라진다. 되돌릴 수 없으므로 올리기 전에 막는다.
+      # A tag/package.json mismatch would leave the tagged commit and the registry version out of sync;
+      # that's irreversible, so block it before publishing.
       - name: Verify tag matches package version
         run: |
           tag="${GITHUB_REF_NAME#v}"
           pkg="$(node -p "require('./package.json').version")"
           test "$tag" = "$pkg" || { echo "태그 ${GITHUB_REF_NAME}와 package.json ${pkg}가 다릅니다"; exit 1; }
-      # prerelease는 next, 정식은 latest. 기본값에 맡기면 beta가 latest를 가져간다.
-      # provenance 는 OIDC 발행에서 자동으로 붙는다.
-      # OIDC 교환이 실패하면 npm 은 이유를 verbose 로그에만 남기고 ENEEDAUTH 로 끝난다. 그래서 verbose 로 돌린다.
+      # prerelease → next, stable → latest (left to the default, a beta would take latest).
+      # provenance is attached automatically on OIDC publishes.
+      # On a failed OIDC exchange npm logs the reason only at verbose level and exits ENEEDAUTH, hence verbose.
       - name: Publish
         env:
           NPM_CONFIG_LOGLEVEL: verbose

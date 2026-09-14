@@ -26,7 +26,7 @@ assert(notifications.includes('id="alarms"'));
 assert(notifications.includes('bds-side__panel'));
 assert(!notifications.includes('role="dialog"'), 'notifications use the common native dialog');
 
-// Toast 퇴장: 닫기는 bds-toast--leaving 표시 뒤에 제거된다. 연속 닫기·max 초과·reduced-motion을 함께 본다.
+// Toast exit, see RULE.md "동작 계약" (오버레이와 피드백): double dismiss, max overflow and reduced-motion.
 const { create, act } = dependencyRequire('react-test-renderer');
 const { ToastProvider, Toast, useToast } = sourceModule('components/feedback/Toast.jsx');
 const sleep = (ms) => new Promise((done) => setTimeout(done, ms));
@@ -48,14 +48,14 @@ const sleep = (ms) => new Promise((done) => setTimeout(done, ms));
   await act(async () => { api.dismiss(first); });
   assert.deepEqual(shown(), [{ id: first, leaving: true }, { id: second, leaving: false }], 'closing the same toast twice keeps one exiting toast');
 
-  // 퇴장 중인 토스트는 max 자리를 차지하지 않는다: max=2인데 살아 있는 것이 둘로 유지된다.
+  // An exiting toast does not count toward max: with max=2, two live toasts remain.
   await act(async () => { third = api.toast({ message: '셋', duration: 0 }); });
   assert.deepEqual(live().map((t) => t.id), [second, third], 'an exiting toast does not evict a live one');
 
   await act(async () => { await sleep(400); });
   assert.deepEqual(shown().map((t) => t.id), [second, third], 'the exiting toast is removed once the transition ends');
 
-  // reduced-motion: 퇴장 표시 없이 바로 사라진다.
+  // reduced-motion: removed immediately, no exit state.
   const media = globalThis.matchMedia;
   globalThis.matchMedia = (q) => ({ matches: /reduce/.test(q) });
   try {

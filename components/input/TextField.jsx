@@ -3,7 +3,7 @@ import { cx, frameStyle } from "../core/frame.js";
 import { Icon } from "../action/Icon.jsx";
 import { useFieldContext } from "./Field.jsx";
 
-/** 한 줄 텍스트 입력. Field 안에서 라벨을 받는다. prefix/suffix에 단위·아이콘. */
+/** Single-line text input. Takes its label from Field. prefix/suffix hold units or icons. */
 export const TextField = forwardRef(
   /**
    * @param {import("./TextField.d.ts").TextFieldProps} props

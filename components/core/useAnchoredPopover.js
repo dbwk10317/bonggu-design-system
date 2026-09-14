@@ -1,10 +1,10 @@
 import { useEffect, useLayoutEffect, useRef } from "react";
 
-// 서버에는 레이아웃이 없어 측정할 것이 없다. 브라우저에서만 그리기 전에 동기로 배치한다.
+// Nothing to measure on the server; position synchronously before paint only in the browser.
 const useIsoLayoutEffect = typeof document === "undefined" ? useEffect : useLayoutEffect;
 
-/** 비모달 메뉴의 배치 계약: DOM 소속은 유지하고 native popover로 clipping 밖 top layer에 표시한다.
- * fixed 좌표는 트리거·visual viewport에서 계산하고 스크롤/리사이즈 시 다시 맞춘다. */
+/** Non-modal panel placement: stays in its DOM position but renders in the top layer via native popover, so clipping ancestors cannot cut it.
+ * Fixed coordinates come from the trigger and the visual viewport and are recomputed on scroll/resize. See RULE.md "동작 계약". */
 /** @param {{ open: boolean, anchorRef: { current: HTMLElement | null }, panelRef: { current: HTMLElement | null }, align?: "start" | "end", onDismiss?: () => void }} options */
 export function useAnchoredPopover({ open, anchorRef, panelRef, align = "end", onDismiss }) {
   const dismissRef = useRef(onDismiss);
@@ -25,8 +25,8 @@ export function useAnchoredPopover({ open, anchorRef, panelRef, align = "end", o
       const vw = viewport?.width ?? document.documentElement.clientWidth;
       const vh = viewport?.height ?? document.documentElement.clientHeight;
       const margin = 8, gap = 4, a = anchor.getBoundingClientRect();
-      /* 읽기를 먼저 모으고 쓰기를 뒤로 미룬다. 쓰기·읽기를 번갈아 하면 스크롤 한 번마다
-         강제 리플로우가 두 번 난다. 이 핸들러는 캡처 단계 스크롤에 걸려 자주 돈다. */
+      /* Batch the reads before the writes: interleaving them forces two reflows per scroll event,
+         and this handler runs on every capture-phase scroll. */
       const capH = Math.max(0, vh - margin * 2);
       const below = Math.max(0, vy + vh - margin - a.bottom - gap);
       const above = Math.max(0, a.top - gap - vy - margin);

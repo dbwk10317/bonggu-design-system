@@ -1,26 +1,26 @@
 import type { HTMLAttributes, ReactNode } from "react";
 export interface LegendItem {
   label: ReactNode;
-  /** 스와치 CSS 색. 주면 tone보다 우선 */
+  /** Swatch CSS color. Takes precedence over tone */
   color?: string;
-  /** 시리즈 번호 1~8, 의미 키 rx·tx·used·reserved·free·ok·warn·crit, info·signal, 그 외 문자열은 CSS 색 */
+  /** Series number 1–8 or a semantic key (rx, tx, used, reserved, free, ok, warn, crit) */
   tone?: import("./Chart.d.ts").ChartTone;
   value?: ReactNode;
-  /** shape="line"일 때 선 패턴(stroke-dasharray) */
+  /** Line pattern (stroke-dasharray) when shape="line" */
   dash?: string;
-  /** 항목별 스와치 모양. 생략하면 Legend의 shape */
+  /** Per-item swatch shape. Defaults to the Legend's shape */
   shape?: "square" | "line" | "dot";
   hidden?: boolean;
 }
-// onToggle 은 React 19 부터 DOM 이벤트(ToggleEvent) 이름이기도 하다. 범례의 항목 토글과 시그니처가 달라 빼고 상속한다.
+// Since React 19 onToggle is also a DOM event (ToggleEvent) prop with a different signature, so it is omitted from the inherited attributes.
 export interface LegendProps extends Omit<HTMLAttributes<HTMLUListElement>, "onToggle"> {
   items: LegendItem[];
-  /** 기본 "square" */
+  /** Default "square" */
   shape?: "square" | "line" | "dot";
   vertical?: boolean;
-  /** 작은 글자(Chart 내장 범례용). 기본 false */
+  /** Small text, used for the legend inside Chart. Default false */
   compact?: boolean;
-  /** 주면 클릭 토글 가능 */
+  /** When given, items become click toggles */
   onToggle?: (index: number, item: LegendItem) => void;
 }
 export declare function Legend(props: LegendProps): ReactNode;

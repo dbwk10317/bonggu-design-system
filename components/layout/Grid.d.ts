@@ -1,21 +1,21 @@
 import type { HTMLAttributes, ReactNode } from "react";
-/** 반응형 카드 격자. auto-fit(cols/min) 또는 고정 열(columns) + GridItem span. */
+/** Responsive card grid: auto-fit (cols/min) or fixed columns (columns) with GridItem spans. */
 export interface GridProps extends HTMLAttributes<HTMLDivElement> {
-  /** 이상적 열 수(auto-fit). 2 | 3 | 4 */
+  /** Ideal column count (auto-fit). 2 | 3 | 4 */
   cols?: 2 | 3 | 4;
-  /** 카드 최소 폭(px 또는 CSS 길이). 주면 cols 대신 쓴다 */
+  /** Minimum card width (px or CSS length); overrides cols */
   min?: number | string;
-  /** 고정 열 수(보통 12). 주면 자식 GridItem의 span을 쓴다 */
+  /** Fixed column count (usually 12); children use GridItem span */
   columns?: number;
   children?: ReactNode;
 }
 export declare function Grid(props: GridProps): ReactNode;
 export interface GridItemProps extends HTMLAttributes<HTMLDivElement> {
-  /** 격자 컨테이너 ≥900px에서의 칸 수 */
+  /** Columns spanned when the grid container is ≥900px */
   span?: number;
   /** <900px */
   spanMd?: number;
-  /** <640px. 480 미만은 항상 전폭 */
+  /** <640px; below 480 always full width */
   spanSm?: number;
   children?: ReactNode;
 }

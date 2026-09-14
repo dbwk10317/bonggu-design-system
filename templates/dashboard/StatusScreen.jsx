@@ -2,7 +2,7 @@
 const { TopNav, Container, PageHeader, Panel, CardHead, Grid, Stack, Inline, Spacer, Divider, Chart, UptimeBar, Timeline, KeyValues, StatusPill, MascotMark, Button, Link, Icon, AlertBanner } = window.DS;
 const { services, uptime, events, ticks, fleet } = window.KIT;
 
-/* 고객이 보는 공개 상태 페이지. 화면이 넷뿐이라 셸 대신 TopNav를 쓴다(readme의 이동 선택 규칙). */
+/* Customer-facing public status page. Few views, so TopNav instead of the shell. See RULE.md "컴포넌트 선택 가이드" */
 function StatusScreen({ onBack }) {
   const [view, setView] = React.useState("now");
   const degraded = services.some((s) => s.tone !== "ok");

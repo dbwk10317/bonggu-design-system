@@ -2,7 +2,7 @@ import React from "react";
 import { cx } from "../core/frame.js";
 import { MISSING_CLASS, MISSING_TEXT, isMissing } from "../core/missing.js";
 
-/** 키·값 행 목록. rows: [key, value][] 또는 {k,v,mono?}[]. 수치 값은 mono, 결측 값은 "수집 안 됨"으로 그리고 mono를 벗는다.
+/** Key/value rows. rows: [key, value][] or {k,v,mono?}[]. Numeric values are mono; missing values show the missing text without mono.
  * @param {Parameters<typeof import("./KeyValues.d.ts").KeyValues>[0]} props */
 export function KeyValues({ rows = [], lined = false, className, ...rest }) {
   return (

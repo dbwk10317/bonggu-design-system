@@ -3,7 +3,7 @@ import { cx, frameStyle } from "../core/frame.js";
 import { Icon } from "../action/Icon.jsx";
 import { useFieldContext } from "./Field.jsx";
 
-/** 네이티브 select를 토큰으로 감싼 선택 입력. options: {value,label,disabled}[]. */
+/** Native select styled with tokens. options: {value,label,disabled}[]. */
 export const Select = forwardRef(
   /**
    * @param {import("./Select.d.ts").SelectProps} props

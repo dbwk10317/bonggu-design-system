@@ -1,7 +1,7 @@
 import type { HTMLAttributes, ReactNode } from "react";
-/** 비율 고정 상자 */
+/** Fixed aspect-ratio box */
 export interface AspectRatioProps extends HTMLAttributes<HTMLDivElement> {
-  /** "16/9" | "4/3" | "1/1" | 숫자 */
+  /** "16/9" | "4/3" | "1/1" | number */
   ratio?: string | number;
   children?: ReactNode;
 }

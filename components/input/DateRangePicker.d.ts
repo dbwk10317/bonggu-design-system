@@ -1,7 +1,7 @@
 import type { ForwardRefExoticComponent, HTMLAttributes, RefAttributes } from "react";
 export interface DateRange { preset?: string; from?: Date; to?: Date }
 export interface RangePreset { value: string; label: string }
-/** 차트·표 기간 선택. "최근 N" 프리셋 + 직접 시작/끝. */
+/** Period picker for charts and tables: "last N" presets + custom from/to. */
 export interface DateRangePickerProps extends Omit<HTMLAttributes<HTMLDivElement>, "onChange"> {
   value: DateRange;
   onChange: (value: DateRange) => void;

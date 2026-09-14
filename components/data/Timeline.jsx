@@ -4,7 +4,7 @@ import { Icon } from "../action/Icon.jsx";
 
 /** @type {Record<string, string>} */
 const TONE = { ok: "정상", warn: "주의", crit: "위험", info: "정보" };
-/** 시간순 이벤트 목록(운영 변화, lease 상태 전이). items: {time, title, detail?, tone?, icon?}. 최신이 위. tone은 점 색 + 스크린리더 텍스트.
+/** Chronological event list (ops changes, lease transitions). items: {time, title, detail?, tone?, icon?}. Newest first. tone sets the dot color plus screen-reader text.
  * @param {Parameters<typeof import("./Timeline.d.ts").Timeline>[0]} props */
 export function Timeline({ items = [], dense = false, fit = "flex", width, "aria-label": ariaLabel, className, style }) {
   return (

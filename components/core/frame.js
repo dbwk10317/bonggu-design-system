@@ -1,9 +1,6 @@
-/* fit 계약: 모든 컨테이너형 컴포넌트가 공유하는 크기 규칙.
-   fit="flex"  (기본) 부모 폭을 채우고 높이는 내용/비율로 정한다. min-width:0으로 격자에서 찌그러지지 않는다.
-   fit="fixed" width/height(px 또는 CSS 길이)를 그대로 쓴다. 내용은 그 상자 안에서 스크롤·축소된다.
-   fit="auto"  내용 크기(버튼·pill 같은 컨트롤 기본). */
+/* Single implementation of the fit contract; every container component routes through frameStyle(). See RULE.md "fit 계약". */
 
-/** 이 시스템은 토큰 값을 인라인 커스텀 속성으로 넘긴다. React의 CSSProperties는 `--*` 키를 받지 않아 여기서 함께 선언한다.
+/** Token values are passed as inline custom properties, and React's CSSProperties rejects `--*` keys, so widen it here.
  * @typedef {import("react").CSSProperties & Partial<Record<`--${string}`, string | number>>} DSStyle */
 /** @typedef {"flex" | "fixed" | "auto"} Fit */
 /** @typedef {number | string} Length */
@@ -27,11 +24,11 @@ export function frameStyle({ fit = "flex", width, height, minHeight, style } = {
 /** @param {...(string | false | null | undefined)} a */
 export const cx = (...a) => a.filter(Boolean).join(" ");
 
-/** 바깥 ref 와 안쪽 ref 를 한 요소에 함께 건다. 콜백·객체 ref 모두 받는다.
+/** Attach a forwarded ref alongside an inner one; accepts callback and object refs.
  * @template T @param {import("react").ForwardedRef<T>} ref @param {T | null} el */
 export const assignRef = (ref, el) => { if (typeof ref === "function") ref(el); else if (ref) ref.current = el; };
 
-/* 간격 계약: gap·size는 --sp 단계 번호(0~10) 또는 CSS 길이 그대로. Stack·Inline·Spacer가 공유한다. */
+/* Spacing scale shared by Stack·Inline·Spacer: --sp step number (0–10) or a CSS length passed through. */
 /** @type {Record<number, string | number>} */
 const GAP = { 0: 0, 1: "var(--sp-1)", 2: "var(--sp-2)", 3: "var(--sp-3)", 4: "var(--sp-4)", 5: "var(--sp-5)", 6: "var(--sp-6)", 7: "var(--sp-7)", 8: "var(--sp-8)", 9: "var(--sp-9)", 10: "var(--sp-10)" };
 /** @param {number | string | undefined} g */

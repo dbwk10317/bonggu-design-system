@@ -3,7 +3,7 @@ export interface TopNavLink { label: ReactNode; href?: string; icon?: string; ac
 export interface TopNavProps extends HTMLAttributes<HTMLElement> {
   brand: { name: ReactNode; href?: string; mark?: ReactNode | null };
   links: TopNavLink[];
-  /** 오른쪽 끝(알림·계정) */
+  /** Right end (notifications, account) */
   end?: ReactNode;
   sticky?: boolean;
 }

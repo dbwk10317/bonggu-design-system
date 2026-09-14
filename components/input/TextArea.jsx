@@ -2,7 +2,7 @@ import React, { forwardRef } from "react";
 import { cx, frameStyle } from "../core/frame.js";
 import { useFieldContext } from "./Field.jsx";
 
-/** 여러 줄 입력. rows로 초기 높이, 세로로만 리사이즈. */
+/** Multi-line input. rows sets the initial height; resizes vertically only. */
 export const TextArea = forwardRef(
   /**
    * @param {import("./TextArea.d.ts").TextAreaProps} props

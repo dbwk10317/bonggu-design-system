@@ -3,7 +3,7 @@ import { cx } from "../core/frame.js";
 import { MascotMark } from "../brand/MascotMark.jsx";
 import { Button } from "../action/Button.jsx";
 
-/** 영역 실패 상태(ErrorBoundary fallback·요청 실패). 마스코트 crying + 제목 + 원인 + 다시 시도. 빈 결과는 EmptyState.
+/** Failure state for a region (ErrorBoundary fallback, failed request): crying mascot + title + cause + retry. Empty results belong in EmptyState.
  * @param {Parameters<typeof import("./ErrorState.d.ts").ErrorState>[0]} props */
 export function ErrorState({ title = "불러오지 못했습니다", description, code, onRetry, retryLabel = "다시 시도", actions, mascot = true, className, ...rest }) {
   return (

@@ -2,8 +2,8 @@ import React from "react";
 import { cx, frameStyle } from "../core/frame.js";
 import { MISSING_CLASS, MISSING_TEXT, isMissing, numeric } from "../core/missing.js";
 
-/** 이름·값·막대 목록(디스크별 사용량, GPU 예약). max 생략 시 항목 최대값. thresholds로 warn/crit 색 전환.
- *  결측 값(null·undefined·NaN)은 막대 0 + "수집 안 됨" 문구로 그린다.
+/** Name / value / bar list (per-disk usage, GPU reservations). max defaults to the largest item; thresholds switch bars to warn/crit color.
+ *  Missing values draw a zero bar plus the missing text.
  * @param {Parameters<typeof import("./BarList.d.ts").BarList>[0]} props
  */
 export function BarList({ items = [], max, valueFormatter = (v) => v.toLocaleString("ko-KR"), thresholds, tone = 1, thick = false, fit = "flex", width, className, style, "aria-label": ariaLabel, ...rest }) {

@@ -2,7 +2,7 @@ import React, { forwardRef, useRef, useState } from "react";
 import { cx, frameStyle } from "../core/frame.js";
 import { Icon } from "../action/Icon.jsx";
 
-/** 파일 드롭존. 클릭/드롭/키보드로 파일을 받아 onFiles(File[])를 호출한다. */
+/** File drop zone. Accepts files by click, drop or keyboard and calls onFiles(File[]). */
 export const Dropzone = forwardRef(
   /**
    * @param {import("./Dropzone.d.ts").DropzoneProps} props

@@ -1,5 +1,5 @@
-// CSS와 소스가 서로를 검증한다. 규칙 A: 소스가 붙이는 bds-* 클래스는 CSS에 규칙이 있어야 한다.
-// 규칙 B: CSS에 있는 bds-* 클래스는 어떤 소비자든 실제로 붙여야 한다.
+// CSS and sources cross-check each other. Rule A: every bds-* class a source applies has a CSS rule.
+// Rule B: every bds-* class in CSS is applied by some consumer.
 const fs = require('node:fs');
 const path = require('node:path');
 
@@ -19,9 +19,9 @@ function walk(dir, out = []) {
   return out;
 }
 
-// ---- CSS 정의 ----------------------------------------------------------
-// 클래스는 셀렉터의 점 접두사로만 센다. @keyframes 이름(bds-grow-y, bds-toast-in)과
-// animation 값에는 점이 없으므로 클래스로 오인되지 않는다.
+// ---- CSS definitions ---------------------------------------------------
+// Classes are counted only by the dot prefix in selectors; @keyframes names (bds-grow-y, bds-toast-in)
+// and animation values have no dot, so they are not mistaken for classes.
 const defined = new Map(); // class -> "file:line"
 for (const dir of CSS_DIRS) {
   for (const file of walk(dir).filter((f) => f.endsWith('.css'))) {
@@ -32,14 +32,14 @@ for (const dir of CSS_DIRS) {
   }
 }
 
-// ---- 소비자가 붙이는 클래스 --------------------------------------------
-// class/className 값만 본다. id("bds-cmdk-list")나 aria 참조는 클래스가 아니므로 제외된다.
-const MARK = '\u0000'; // 보간·문자열 연결 지점
+// ---- Classes applied by consumers --------------------------------------
+// Only class/className values count; ids ("bds-cmdk-list") and aria references are not classes.
+const MARK = '\u0000'; // interpolation / string concatenation point
 const used = new Map(); // class -> "file:line"
-const prefixes = new Set(); // 동적 조합의 고정 접두사
+const prefixes = new Set(); // fixed prefixes of dynamic compositions
 
-// 클래스 표현식을 리터럴 텍스트로 평탄화한다. 리터럴 밖의 `+`는 MARK,
-// 나머지 코드(식별자·연산자)는 공백이 되어 토큰 경계가 된다.
+// Flatten a class expression to literal text: `+` outside literals becomes MARK,
+// other code (identifiers, operators) becomes whitespace and thus a token boundary.
 function flatten(expr) {
   let out = '';
   for (let i = 0; i < expr.length; i++) {
@@ -63,12 +63,12 @@ function flatten(expr) {
       continue;
     }
     if (ch === '+') out += MARK; // "bds-hide-" + bp
-    else if (!/\s/.test(ch)) out += ' '; // 식별자·연산자는 토큰 경계
+    else if (!/\s/.test(ch)) out += ' '; // identifiers/operators are token boundaries
   }
   return out;
 }
 
-// start 위치의 여는 괄호부터 짝이 맞는 닫는 괄호까지. 문자열 안의 괄호는 세지 않는다.
+// From the opening bracket at `start` to its matching close; brackets inside strings are not counted.
 function balanced(text, start, open, close) {
   let depth = 0, quote = null;
   for (let i = start; i < text.length; i++) {
@@ -83,7 +83,7 @@ function balanced(text, start, open, close) {
   return text.slice(start + 1);
 }
 
-// 객체 속성 값: 깊이 0에서 , 또는 } 를 만나면 끝난다. MascotMark처럼 createElement 인자로 넘기는 형태.
+// Object property value: ends at `,` or `}` at depth 0 (createElement props, e.g. MascotMark).
 function propertyValue(text, start) {
   let depth = 0, quote = null;
   for (let i = start; i < text.length; i++) {
@@ -99,9 +99,9 @@ function propertyValue(text, start) {
   return text.slice(start);
 }
 
-// 클래스가 등장하는 자리. cx()는 이 디자인 시스템의 클래스 결합 함수라 변수로 한 번 거쳐
-// 붙는 경우(SidebarShell의 cls)도 잡히고, bds-로 시작하는 문자열 상수는 클래스 상수로 본다
-// (core/missing.js의 MISSING_CLASS처럼 import해서 cx에 넘기는 형태).
+// Where classes appear. cx() is the system's class combinator, so classes routed through a variable
+// (SidebarShell's cls) are caught too; string constants starting with bds- count as class constants
+// (core/missing.js MISSING_CLASS, imported and passed to cx).
 function classExpressions(text) {
   const out = [];
   for (const m of text.matchAll(/\bclass(?:Name)?\s*=\s*/g)) {
@@ -127,7 +127,7 @@ for (const file of consumers) {
     for (const piece of flatten(expr).split(/\s+/)) {
       if (!piece.startsWith('bds-')) continue;
       const stem = piece.split(MARK)[0];
-      if (piece.includes(MARK)) prefixes.add(stem); // 동적 조합: 접두사로만 안다
+      if (piece.includes(MARK)) prefixes.add(stem); // dynamic composition: only the prefix is known
       else if (!used.has(stem)) used.set(stem, `${file}:${lineOf(text, at)}`);
     }
   }

@@ -1,7 +1,7 @@
 import React, { forwardRef, useEffect, useRef, useState } from "react";
 import { assignRef, cx, frameStyle } from "../core/frame.js";
 
-/** 2~5개 상호배타 선택. 선택 thumb가 미끄러진다. fit="flex"면 옵션이 폭을 균등 분할. */
+/** 2–5 mutually exclusive options with a sliding thumb. fit="flex" splits the width evenly. */
 export const SegmentedControl = forwardRef(
   /**
    * @param {import("./SegmentedControl.d.ts").SegmentedControlProps} props
@@ -28,7 +28,7 @@ export const SegmentedControl = forwardRef(
           onKeyDown={(e) => {
             const dir = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
             if (!dir) return;
-            /* 화살표는 페이지를 스크롤시키지 않는다. 선택과 포커스를 함께 옮겨야 낭독이 따라온다. */
+            /* Arrows must not scroll the page. Move selection and focus together or the screen reader keeps reading the old item. */
             e.preventDefault();
             const i = options.findIndex((x) => x.value === value);
             const next = options[(i + dir + options.length) % options.length];

@@ -7,7 +7,7 @@ import { Icon } from "../action/Icon.jsx";
 const FieldCtx = createContext(/** @type {any} */ (null));
 export const useFieldContext = () => useContext(FieldCtx);
 
-/** 라벨·설명·오류를 입력에 연결하는 래퍼. 자식 입력은 useFieldContext()로 id·aria를 받는다. */
+/** Wires label, hint and error to an input. Child inputs read id and aria attributes via useFieldContext(). */
 export const Field = forwardRef(
   /**
    * @param {import("./Field.d.ts").FieldProps} props

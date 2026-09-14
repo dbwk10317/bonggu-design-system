@@ -1,5 +1,5 @@
 {
-  "//": "components/** 의 JSDoc 타입 검사 전용. 배포물을 만들지 않는다(noEmit). 소비자가 받는 .d.ts 는 tests/package-regressions.cjs 가 실제 tarball 을 깔아 따로 검사한다.",
+  "//": "JSDoc type-check of components/** only; emits nothing (noEmit). The .d.ts consumers receive is checked separately by tests/package-regressions.cjs against the real tarball.",
   "compilerOptions": {
     "target": "ES2022",
     "lib": ["ES2022", "DOM", "DOM.Iterable"],

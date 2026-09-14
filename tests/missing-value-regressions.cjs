@@ -1,4 +1,5 @@
-// 결측("수집 안 됨") 공통 구조 회귀. 재현 조건: DataTable이 null을 빈 칸으로 감추던 것, 표기 문자열·클래스가 컴포넌트마다 갈라지던 것.
+// Missing-value ("수집 안 됨") contract. See RULE.md "동작 계약" (데이터와 결측) and "CONTENT FUNDAMENTALS (카피)".
+// Regressions guarded: DataTable hiding null as an empty cell; marker string and class diverging per component.
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
@@ -9,11 +10,11 @@ const render = (Component, props) => renderToStaticMarkup(React.createElement(Co
 
 const { MISSING_TEXT, MISSING_CLASS, isMissing } = sourceModule('components/core/missing.js');
 
-// 1. 판정 규칙의 경계. 값인 것과 결측인 것.
+// 1. Boundary of the predicate: values vs missing.
 for (const missing of [null, undefined, NaN, MISSING_TEXT]) assert(isMissing(missing), `${String(missing)}은 결측`);
 for (const value of ['', 0, false, '0', -1, 'ok', {}, []]) assert(!isMissing(value), `${JSON.stringify(value)}은 값`);
 
-// 2. DataTable: render 없는 열의 null은 빈 칸이 아니라 결측이다(원래 `?? ""`가 감추던 자리).
+// 2. DataTable: null in a column without render is missing, not blank (the old `?? ""` hid it).
 const { DataTable } = sourceModule('components/data/DataTable.jsx');
 const columns = [{ key: 'name', header: '이름' }, { key: 'cpu', header: 'CPU', align: 'num' }, { key: 'note', header: '비고' }];
 const table = render(DataTable, { columns, rows: [{ name: 'monitoring-api', cpu: null, note: '' }] });
@@ -25,8 +26,8 @@ assert(!cells[2].attrs.includes(MISSING_CLASS), '빈 문자열에는 결측 클�
 assert(!cells[0].attrs.includes(MISSING_CLASS) && cells[0].text === 'monitoring-api', '정상 값은 그대로');
 assert(!/class="(?:[^"]*\s)?na(?:\s[^"]*)?"/.test(table), '네임스페이스 밖 .na 클래스는 남지 않는다');
 
-// 3. DataTable: render 열의 반환은 ReactNode다. null은 React 규칙대로 "아무것도 그리지 않음"이고 결측이 아니다.
-//    (templates/dashboard/SettingsScreen.jsx의 폐기된 토큰 행 = 버튼 없음)
+// 3. DataTable: a render column returns a ReactNode; null means "render nothing" per React, not missing
+//    (revoked token rows in templates/dashboard/SettingsScreen.jsx have no button).
 const rendered = render(DataTable, {
   columns: [{ key: 'act', header: '', render: (r) => (r.revoked ? null : 'X') }, { key: 'v', header: '값', render: (r) => r.v }],
   rows: [{ revoked: true, v: MISSING_TEXT }],
@@ -36,7 +37,7 @@ assert.equal(renderedCells[0].text, '', 'render()가 돌려준 null은 빈 칸�
 assert(!renderedCells[0].attrs.includes(MISSING_CLASS), 'render()의 null에는 결측 표기를 붙이지 않는다');
 assert(renderedCells[1].attrs.includes(MISSING_CLASS), '문구로 포맷해 넘기는 기존 사용처는 계속 결측으로 인식한다');
 
-// 4. 표기 문자열이 모든 컴포넌트에서 같고, 인라인 style이 아니라 공통 클래스가 붙는다.
+// 4. Same marker string in every component, styled by the shared class rather than inline style.
 const { BarList } = sourceModule('components/data/BarList.jsx');
 const { KeyValues } = sourceModule('components/data/KeyValues.jsx');
 const { Heatmap } = sourceModule('components/data/Heatmap.jsx');
@@ -48,8 +49,8 @@ const { Cartesian } = sourceModule('components/data/Chart.jsx');
 const marks = [
   ['BarList', render(BarList, { items: [{ name: 'nvme0n1', value: null }] }), true],
   ['KeyValues', render(KeyValues, { rows: [['실행 중', null]] }), true],
-  ['Heatmap', render(Heatmap, { rows: ['월'], cols: ['00'], values: [[null]] }), false], // 결측 문구는 숨김 표에만
-  ['Gauge', render(Gauge, { value: null }), false], // SVG text: .bds-gauge--off 규칙이 표기를 담당한다
+  ['Heatmap', render(Heatmap, { rows: ['월'], cols: ['00'], values: [[null]] }), false], // marker text only in the hidden table
+  ['Gauge', render(Gauge, { value: null }), false], // SVG text: the .bds-gauge--off rule handles the marker
   ['TrendDelta', render(TrendDelta, { value: null }), true],
   ['UptimeBar', render(UptimeBar, { name: 'svc', segments: [{ status: 'off' }] }), true],
   ['StatTile', render(StatTile, { label: '요청', value: null, unit: '건' }), true],
@@ -59,14 +60,14 @@ const marks = [
 for (const [name, html, classed] of marks) {
   assert(html.includes(MISSING_TEXT), `${name}이 공통 표기 문자열을 쓴다`);
   assert.equal(html.includes(MISSING_CLASS), classed, `${name}의 공통 클래스 사용 여부`);
-  // 제거한 인라인 복붙(font-family:var(--font-ui) / color:var(--ink-3))이 되살아나면 실패한다. stop-color 같은 차트 좌표 style은 대상이 아니다.
+  // Fails if the removed inline copy-paste (font-family:var(--font-ui) / color:var(--ink-3)) comes back. Chart geometry styles like stop-color are out of scope.
   assert(!/style="[^"]*(?:font-family:|(?:^|[;"])\s*color:)/.test(html), `${name}은 결측 표기를 인라인 style로 그리지 않는다`);
 }
 assert(!render(StatTile, { label: '요청', value: null, unit: '건' }).includes('건'), '결측에는 단위를 붙이지 않는다');
 assert(render(StatTile, { label: '요청', value: 0 }).includes('>0<'), '0은 값이므로 그대로 표시');
 assert(render(BarList, { items: [{ name: 'nvme0n1', value: 0 }] }).includes('>0<'), 'BarList의 0도 값');
 
-// 5. 문자열 상수와 표기 클래스는 core/missing.js 한 곳에서만 나온다.
+// 5. The marker string and class are declared only in core/missing.js and one CSS block.
 const files = [];
 (function walk(dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -87,8 +88,8 @@ for (const dead of ['bds-barlist__v--na', 'bds-kv__v--na', 'td.na{']) {
   assert(!files.some((p) => fs.readFileSync(p, 'utf8').includes(dead)) && !css.includes(dead), `죽은 클래스 ${dead} 제거`);
 }
 
-// 6. 판정이 계산에도 적용된다. 재현 조건: NaN 하나가 축 범위를 통해 차트 전체 좌표를 NaN으로 만들던 것.
-//    fit="fixed"로 폭을 주면 서버 렌더에서도 기하가 그려지므로 SVG 속성을 그대로 검사할 수 있다.
+// 6. The predicate also applies to math. Regression: one NaN turned every chart coordinate into NaN via the axis range.
+//    fit="fixed" gives a width, so geometry is drawn in server render and SVG attributes can be inspected directly.
 const { Chart } = sourceModule('components/data/Chart.jsx');
 const { Sparkline } = sourceModule('components/data/Sparkline.jsx');
 const fixed = { fit: 'fixed', width: 400, height: 240, 'aria-label': '검사' };
@@ -110,13 +111,13 @@ for (const [name, props] of Object.entries(dirtyCharts)) {
   assert(!/NaN|Infinity/.test(html), `${name}: 결측이 SVG 좌표로 새지 않는다`);
 }
 assert(!/NaN|Infinity/.test(render(Sparkline, { values: dirty })), 'Sparkline: 결측이 좌표로 새지 않는다');
-// 오염된 계열이 있어도 축 눈금과 정상 계열의 좌표는 살아 있어야 한다.
+// A dirty series must not erase axis ticks or the clean series' coordinates.
 const mixed = render(Chart, { ...fixed, ...dirtyCharts.line });
 assert([...mixed.matchAll(/class="bds-chart__tick"/g)].length > 3, '결측 하나가 축 눈금을 지우지 않는다');
 assert(/class="bds-chart__line" d="M[\d.]+ [\d.]+/.test(mixed), '결측이 섞인 차트에서도 정상 계열은 그려진다');
-// 결측을 0으로 꾸미지 않는다.
+// Missing is never dressed up as 0.
 assert(render(Chart, { ...fixed, kind: 'pie', segments: [{ label: 'x', value: NaN }, { label: 'y', value: 5 }] }).includes(MISSING_TEXT), 'pie 결측 세그먼트는 0이 아니라 결측');
-// 0은 계속 값이다.
+// 0 is still a value.
 assert(render(Chart, { ...fixed, kind: 'bar', labels: ['a', 'b'], series: [{ label: 's', values: [0, 5] }] }).includes('bds-chart__bar'), '0은 값이므로 막대를 그린다');
 
 console.log('PASS: missing-value contract, DataTable null cells, single marker string and class, chart geometry boundary');

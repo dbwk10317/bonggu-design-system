@@ -2,53 +2,51 @@
    color: --canvas, --canvas-sunken, --panel, --panel-2, --panel-3, --line, --line-strong, --hairline, --line-input, --scrim, --ink, --ink-2, --ink-3, --ink-muted, --ink-inverse, --on-warn, --signal, --signal-hover, --signal-active, --signal-tint, --signal-tint-line, --signal-ink, --signal-fg, --focus-ring, --ok, --ok-tint, --ok-ink, --warn, --warn-tint, --warn-ink, --crit, --crit-tint, --crit-ink, --info, --info-tint, --info-ink, --neutral, --neutral-tint, --neutral-ink, --meter-track, --meter-ok, --meter-warn, --meter-crit, --series-1, --series-2, --series-3, --series-4, --series-5, --series-6, --series-7, --series-8, --series-rx, --series-tx, --series-used, --series-reserved, --series-free, --ramp-1, --ramp-2, --ramp-3, --ramp-4, --ramp-5, --ramp-6, --plot-grid, --plot-axis, --plot-axis-ink, --mark-face, --mark-line, --mark-edge, --mark-ear, --image-edge, --scrollbar-thumb, --scrollbar-thumb-hover
    shadow: --elev-1, --elev-2, --elev-3
 */
-/* 봉구서버 스타일가이드 v1(2026-09) 색 토큰. 라이트 기본(:root), 다크는 :root.dark / [data-theme="dark"].
-   규칙: 시그널(파랑)은 선택·포커스·주 동작·송신(tx)에만. 상태색(ok/warn/crit/info)과 섞지 않는다. 색 단독으로 뜻을 전하지 않는다.
-   이름은 여기 정의된 것이 전부다(--canvas, --ink, --signal …). 별칭은 두지 않는다. */
+/* Color tokens (Bonggu style guide v1, 2026-09). Light on :root, dark on :root.dark / [data-theme="dark"]. No aliases. See RULE.md "VISUAL FOUNDATIONS". */
 :root{
   color-scheme:light;
-  /* 바탕·면·선 */
+  /* canvas, surfaces, lines */
   --canvas:#ffffff;--canvas-sunken:#f4f5f7;--panel:#ffffff;--panel-2:#f0f2f5;--panel-3:#e8ebef;
-  --line:#e4e7ec;--line-strong:#c8cdd6;--hairline:#eef0f3;--line-input:#7d8596; /* 컨트롤 식별 경계선: panel·canvas·sunken 위 3:1 이상 */
+  --line:#e4e7ec;--line-strong:#c8cdd6;--hairline:#eef0f3;--line-input:#7d8596; /* control-identifying border: >= 3:1 on panel, canvas, sunken */
   --scrim:rgba(20,23,28,.42);
-  /* 잉크 */
-  --ink:#15181d;--ink-2:#4a5160;--ink-3:#656d7d;--ink-muted:#a6adba;--ink-inverse:#ffffff; /* ink-3: 흰 바탕 5.2:1, panel-2 위 4.64:1 (보조 텍스트 AA) */
-  --on-warn:#15181d; /* warn 채움 위 글자. 다크 warn도 밝은 앰버라 같은 값 */
-  /* 시그널 */
+  /* ink */
+  --ink:#15181d;--ink-2:#4a5160;--ink-3:#656d7d;--ink-muted:#a6adba;--ink-inverse:#ffffff; /* ink-3: 5.2:1 on white, 4.64:1 on panel-2 (AA for secondary text) */
+  --on-warn:#15181d; /* text on warn fill; dark warn is also light amber, so same value */
+  /* signal */
   --signal:oklch(0.55 0.17 255);--signal-hover:oklch(0.50 0.17 255);--signal-active:oklch(0.45 0.17 255);
   --signal-tint:oklch(0.95 0.03 255);--signal-tint-line:oklch(0.85 0.07 255);--signal-fg:#ffffff;
-  --signal-ink:oklch(0.49 0.17 255); /* signal-tint 위 5.47:1, 흰 바탕 6.34:1 */
+  --signal-ink:oklch(0.49 0.17 255); /* 5.47:1 on signal-tint, 6.34:1 on white */
   --focus-ring:oklch(0.55 0.17 255 / .4);
-  /* 상태: 원색 · -tint(배경) · -ink(그 위 글자) */
+  /* status: base, -tint (background), -ink (text on tint) */
   --ok:oklch(0.58 0.15 152);--ok-tint:oklch(0.95 0.04 152);--ok-ink:oklch(0.42 0.13 152);
   --warn:oklch(0.72 0.16 72);--warn-tint:oklch(0.96 0.05 80);--warn-ink:oklch(0.50 0.13 65);
   --crit:oklch(0.58 0.20 25);--crit-tint:oklch(0.95 0.04 25);--crit-ink:oklch(0.45 0.18 25);
   --info:oklch(0.60 0.12 225);--info-tint:oklch(0.95 0.03 225);--info-ink:oklch(0.45 0.11 225);
   --neutral:#656d7d;--neutral-tint:#f0f2f5;--neutral-ink:#4a5160;
-  /* 미터 */
+  /* meters */
   --meter-track:#e8ebef;--meter-ok:oklch(0.58 0.15 152);--meter-warn:oklch(0.72 0.16 72);--meter-crit:oklch(0.58 0.20 25);
-  /* 차트: 범주형 8색(명도 0.62 채도 0.14 고정) · 의미 고정 쌍 · 순차 램프 */
+  /* charts: 8 categorical (fixed L 0.62 C 0.14), fixed-meaning pairs, sequential ramp */
   --series-1:oklch(0.62 0.14 255);--series-2:oklch(0.62 0.14 160);--series-3:oklch(0.62 0.14 40);--series-4:oklch(0.62 0.14 300);
   --series-5:oklch(0.62 0.14 95);--series-6:oklch(0.62 0.14 205);--series-7:oklch(0.62 0.14 345);--series-8:oklch(0.62 0.14 125);
   --series-rx:oklch(0.60 0.12 225);--series-tx:oklch(0.55 0.17 255);--series-used:oklch(0.55 0.17 255);--series-reserved:oklch(0.62 0.14 300);--series-free:#e8ebef;
   --ramp-1:oklch(0.96 0.02 255);--ramp-2:oklch(0.88 0.06 255);--ramp-3:oklch(0.78 0.10 255);--ramp-4:oklch(0.66 0.14 255);--ramp-5:oklch(0.52 0.17 255);--ramp-6:oklch(0.38 0.14 255);
   --plot-grid:#eef0f3;--plot-axis:#c8cdd6;--plot-axis-ink:#656d7d;
-  /* 그림자: 떠 있는 것에만 */
+  /* shadows: floating elements only */
   --elev-1:0 1px 2px rgba(20,23,28,.06);--elev-2:0 4px 12px rgba(20,23,28,.08),0 1px 2px rgba(20,23,28,.05);--elev-3:0 16px 40px rgba(20,23,28,.14),0 2px 6px rgba(20,23,28,.06);
-  /* 마스코트 마크(기존 시스템 이관): 얼굴은 양 테마 모두 밝게. 귀는 실제 강아지 봉구의 앰버(기존 @bonggu/ui --accent 값 그대로) — 시그널 파랑과 무관, UI 어디에도 재사용하지 않는다 */
+  /* mascot mark (ported): face stays light in both themes. Ear amber is the real dog's color (legacy @bonggu/ui --accent), unrelated to signal blue; never reuse it in UI */
   --mark-face:#ffffff;--mark-line:#15181d;--mark-edge:#c8cdd6;--mark-ear:#99581F;
-  /* 사진 가장자리. 틴트된 중립(--line)을 쓰면 아래 면 색을 받아 때처럼 보인다 */
+  /* photo edge. A tinted neutral (--line) picks up the surface color and looks like grime */
   --image-edge:oklch(0 0 0 / .1);
   --scrollbar-thumb:#c8cdd6;--scrollbar-thumb-hover:#a6adba;
 }
 :root.dark,:root[data-theme="dark"]{
   color-scheme:dark;
   --canvas:#0f1115;--canvas-sunken:#0a0b0f;--panel:#161920;--panel-2:#1d2129;--panel-3:#262b35;
-  --line:#2e3440;--line-strong:#3a414e;--hairline:#262b35;--line-input:#6c7483;--scrim:rgba(0,0,0,.6); /* 컨트롤 식별 경계선: sunken·panel·panel-2/3 위 3:1 이상 */
+  --line:#2e3440;--line-strong:#3a414e;--hairline:#262b35;--line-input:#6c7483;--scrim:rgba(0,0,0,.6); /* control-identifying border: >= 3:1 on sunken, panel, panel-2/3 */
   --ink:#eef0f4;--ink-2:#aeb5c2;--ink-3:#848c9d;--ink-muted:#555d6c;--ink-inverse:#15181d;--on-warn:#15181d;
   --signal:oklch(0.72 0.14 255);--signal-hover:oklch(0.77 0.13 255);--signal-active:oklch(0.66 0.15 255);
   --signal-tint:oklch(0.30 0.06 255);--signal-tint-line:oklch(0.42 0.09 255);--signal-fg:#0f1115;--focus-ring:oklch(0.72 0.14 255 / .45);
-  --signal-ink:oklch(0.80 0.13 255); /* signal-tint 위 7.16:1 */
+  --signal-ink:oklch(0.80 0.13 255); /* 7.16:1 on signal-tint */
   --ok:oklch(0.72 0.14 152);--ok-tint:oklch(0.28 0.05 152);--ok-ink:oklch(0.80 0.13 152);
   --warn:oklch(0.80 0.15 78);--warn-tint:oklch(0.30 0.06 78);--warn-ink:oklch(0.85 0.14 80);
   --crit:oklch(0.70 0.18 25);--crit-tint:oklch(0.30 0.07 25);--crit-ink:oklch(0.80 0.15 25);

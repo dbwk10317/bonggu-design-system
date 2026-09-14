@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"Ds_d3ea90","components":[{"name":"Button","sourcePath":"components/action/Button.jsx"},{"name":"Icon","sourcePath":"components/action/Icon.jsx"},{"name":"IconButton","sourcePath":"components/action/IconButton.jsx"},{"name":"MascotMark","sourcePath":"components/brand/MascotMark.jsx"},{"name":"BarList","sourcePath":"components/data/BarList.jsx"},{"name":"Chart","sourcePath":"components/data/Chart.jsx"},{"name":"DataTable","sourcePath":"components/data/DataTable.jsx"},{"name":"DescriptionList","sourcePath":"components/data/DescriptionList.jsx"},{"name":"DiffView","sourcePath":"components/data/DiffView.jsx"},{"name":"Gauge","sourcePath":"components/data/Gauge.jsx"},{"name":"Heatmap","sourcePath":"components/data/Heatmap.jsx"},{"name":"KeyValues","sourcePath":"components/data/KeyValues.jsx"},{"name":"Legend","sourcePath":"components/data/Legend.jsx"},{"name":"LogViewer","sourcePath":"components/data/LogViewer.jsx"},{"name":"Sparkline","sourcePath":"components/data/Sparkline.jsx"},{"name":"StatTile","sourcePath":"components/data/StatTile.jsx"},{"name":"Timeline","sourcePath":"components/data/Timeline.jsx"},{"name":"TrendDelta","sourcePath":"components/data/TrendDelta.jsx"},{"name":"UptimeBar","sourcePath":"components/data/UptimeBar.jsx"},{"name":"Accordion","sourcePath":"components/display/Accordion.jsx"},{"name":"Avatar","sourcePath":"components/display/Avatar.jsx"},{"name":"AvatarGroup","sourcePath":"components/display/Avatar.jsx"},{"name":"Badge","sourcePath":"components/display/Badge.jsx"},{"name":"Code","sourcePath":"components/display/Code.jsx"},{"name":"CodeBlock","sourcePath":"components/display/Code.jsx"},{"name":"Kbd","sourcePath":"components/display/Code.jsx"},{"name":"CopyField","sourcePath":"components/display/CopyField.jsx"},{"name":"StatusPill","sourcePath":"components/display/StatusPill.jsx"},{"name":"Tag","sourcePath":"components/display/Tag.jsx"},{"name":"AlertBanner","sourcePath":"components/feedback/AlertBanner.jsx"},{"name":"ConfirmDialog","sourcePath":"components/feedback/ConfirmDialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"ErrorState","sourcePath":"components/feedback/ErrorState.jsx"},{"name":"InlineMessage","sourcePath":"components/feedback/InlineMessage.jsx"},{"name":"LoadingOverlay","sourcePath":"components/feedback/LoadingOverlay.jsx"},{"name":"NotificationTrigger","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"NotificationDrawer","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"ProgressBar","sourcePath":"components/feedback/ProgressBar.jsx"},{"name":"Skeleton","sourcePath":"components/feedback/Skeleton.jsx"},{"name":"Spinner","sourcePath":"components/feedback/Spinner.jsx"},{"name":"Stepper","sourcePath":"components/feedback/Stepper.jsx"},{"name":"ToastProvider","sourcePath":"components/feedback/Toast.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Checkbox","sourcePath":"components/input/Checkbox.jsx"},{"name":"CodeEditor","sourcePath":"components/input/CodeEditor.jsx"},{"name":"ColorInput","sourcePath":"components/input/ColorInput.jsx"},{"name":"Combobox","sourcePath":"components/input/Combobox.jsx"},{"name":"DatePicker","sourcePath":"components/input/DatePicker.jsx"},{"name":"DateRangePicker","sourcePath":"components/input/DateRangePicker.jsx"},{"name":"Dropzone","sourcePath":"components/input/Dropzone.jsx"},{"name":"Field","sourcePath":"components/input/Field.jsx"},{"name":"FileUpload","sourcePath":"components/input/FileUpload.jsx"},{"name":"MultiSelect","sourcePath":"components/input/MultiSelect.jsx"},{"name":"NumberStepper","sourcePath":"components/input/NumberStepper.jsx"},{"name":"OTPInput","sourcePath":"components/input/OTPInput.jsx"},{"name":"PasswordField","sourcePath":"components/input/PasswordField.jsx"},{"name":"RadioGroup","sourcePath":"components/input/RadioGroup.jsx"},{"name":"SearchField","sourcePath":"components/input/SearchField.jsx"},{"name":"SegmentedControl","sourcePath":"components/input/SegmentedControl.jsx"},{"name":"Select","sourcePath":"components/input/Select.jsx"},{"name":"Slider","sourcePath":"components/input/Slider.jsx"},{"name":"Switch","sourcePath":"components/input/Switch.jsx"},{"name":"TextArea","sourcePath":"components/input/TextArea.jsx"},{"name":"TextField","sourcePath":"components/input/TextField.jsx"},{"name":"TimePicker","sourcePath":"components/input/TimePicker.jsx"},{"name":"AspectRatio","sourcePath":"components/layout/AspectRatio.jsx"},{"name":"CardHead","sourcePath":"components/layout/CardHead.jsx"},{"name":"Container","sourcePath":"components/layout/Container.jsx"},{"name":"Divider","sourcePath":"components/layout/Divider.jsx"},{"name":"Grid","sourcePath":"components/layout/Grid.jsx"},{"name":"GridItem","sourcePath":"components/layout/Grid.jsx"},{"name":"Inline","sourcePath":"components/layout/Inline.jsx"},{"name":"PageHeader","sourcePath":"components/layout/PageHeader.jsx"},{"name":"PageStack","sourcePath":"components/layout/PageStack.jsx"},{"name":"Panel","sourcePath":"components/layout/Panel.jsx"},{"name":"Spacer","sourcePath":"components/layout/Spacer.jsx"},{"name":"Stack","sourcePath":"components/layout/Stack.jsx"},{"name":"StatusBar","sourcePath":"components/layout/StatusBar.jsx"},{"name":"Toolbar","sourcePath":"components/layout/Toolbar.jsx"},{"name":"ToolbarGrow","sourcePath":"components/layout/Toolbar.jsx"},{"name":"Visible","sourcePath":"components/layout/Visible.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"CommandPalette","sourcePath":"components/navigation/CommandPalette.jsx"},{"name":"Link","sourcePath":"components/navigation/Link.jsx"},{"name":"Pagination","sourcePath":"components/navigation/Pagination.jsx"},{"name":"SidebarShell","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavItem","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavGroup","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"},{"name":"TopNav","sourcePath":"components/navigation/TopNav.jsx"},{"name":"Drawer","sourcePath":"components/overlay/Drawer.jsx"},{"name":"DropdownMenu","sourcePath":"components/overlay/DropdownMenu.jsx"},{"name":"FormModal","sourcePath":"components/overlay/FormModal.jsx"},{"name":"Modal","sourcePath":"components/overlay/Modal.jsx"},{"name":"Popover","sourcePath":"components/overlay/Popover.jsx"},{"name":"Tooltip","sourcePath":"components/overlay/Tooltip.jsx"}],"sourceHashes":{"components/action/Button.jsx":"0d3d5e0685c1","components/action/Icon.jsx":"f8c4d1fbc1a0","components/action/IconButton.jsx":"3244f718b350","components/brand/MascotMark.jsx":"f7c944ff94c6","components/core/frame.js":"8d08ebf0925c","components/core/missing.js":"6179b9da7d20","components/core/useAnchoredPopover.js":"abb7c195e417","components/data/BarList.jsx":"3f6e652d3e71","components/data/Chart.jsx":"940e24e6f222","components/data/DataTable.jsx":"d12e0cb058cc","components/data/DescriptionList.jsx":"cb3d0cfc9c2a","components/data/DiffView.jsx":"7a68433475c8","components/data/Gauge.jsx":"dce4a33d4334","components/data/Heatmap.jsx":"73853f2e71da","components/data/KeyValues.jsx":"706f79cd85d6","components/data/Legend.jsx":"c11ffa7521b8","components/data/LogViewer.jsx":"526f0de9cbc2","components/data/Sparkline.jsx":"14331998ad36","components/data/StatTile.jsx":"982b73755681","components/data/Timeline.jsx":"cb7aebdce4e8","components/data/TrendDelta.jsx":"1af16573625a","components/data/UptimeBar.jsx":"58bde0cc64a0","components/data/chart-math.js":"8d99ceed4d4a","components/display/Accordion.jsx":"c6b11c055b2d","components/display/Avatar.jsx":"0eb3f05204fb","components/display/Badge.jsx":"ef8c708a5279","components/display/Code.jsx":"671910a40dff","components/display/CopyField.jsx":"5f27567e1b75","components/display/StatusPill.jsx":"9424dbe8785f","components/display/Tag.jsx":"7fea6b635b7d","components/feedback/AlertBanner.jsx":"43e68e6d6d2b","components/feedback/ConfirmDialog.jsx":"8846e248d2b7","components/feedback/EmptyState.jsx":"991c65ec9ea0","components/feedback/ErrorState.jsx":"94a9a3b608f7","components/feedback/InlineMessage.jsx":"4863d6bdf3bb","components/feedback/LoadingOverlay.jsx":"cba81277919d","components/feedback/NotificationDrawer.jsx":"21d3dbd68841","components/feedback/ProgressBar.jsx":"ba94e7c95ec0","components/feedback/Skeleton.jsx":"5a0a64c561cf","components/feedback/Spinner.jsx":"61fa930279ce","components/feedback/Stepper.jsx":"1d0a1438d9d5","components/feedback/Toast.jsx":"8350cbddc8ea","components/input/Checkbox.jsx":"06a9a2f9d93a","components/input/CodeEditor.jsx":"00de5ef679d5","components/input/ColorInput.jsx":"4a9a2402b1b8","components/input/Combobox.jsx":"7c0557acd1cf","components/input/DatePicker.jsx":"37351974643e","components/input/DateRangePicker.jsx":"480ce9f848c9","components/input/Dropzone.jsx":"79bbff544bf1","components/input/Field.jsx":"9e1e1fdf76e3","components/input/FileUpload.jsx":"6bb00d3a7d06","components/input/MultiSelect.jsx":"371fef180d54","components/input/NumberStepper.jsx":"48b919b65db8","components/input/OTPInput.jsx":"139ba24eba86","components/input/PasswordField.jsx":"6852252526b2","components/input/RadioGroup.jsx":"926899f27882","components/input/SearchField.jsx":"daa6725d6e13","components/input/SegmentedControl.jsx":"fcd86e204228","components/input/Select.jsx":"6688d217f1de","components/input/Slider.jsx":"f9b3f6d55cd6","components/input/Switch.jsx":"b0ac82405e34","components/input/TextArea.jsx":"346cd3bc100e","components/input/TextField.jsx":"d99f3c611daa","components/input/TimePicker.jsx":"b83adcce2957","components/layout/AspectRatio.jsx":"8eb9ad9b8a6c","components/layout/CardHead.jsx":"22f2c91c02d6","components/layout/Container.jsx":"b4aabbfef963","components/layout/Divider.jsx":"d7022662a639","components/layout/Grid.jsx":"550617f6d312","components/layout/Inline.jsx":"4d119913a6f5","components/layout/PageHeader.jsx":"b82f747dd1c3","components/layout/PageStack.jsx":"87d1a8ce93d3","components/layout/Panel.jsx":"36e87cb3149b","components/layout/Spacer.jsx":"26ab47ea78b4","components/layout/Stack.jsx":"2e36c1fdb6b9","components/layout/StatusBar.jsx":"aa43228d3d6d","components/layout/Toolbar.jsx":"e93acdeb4e3c","components/layout/Visible.jsx":"7c32fe686520","components/navigation/Breadcrumb.jsx":"20672d8bc5b1","components/navigation/CommandPalette.jsx":"611f9f1fda85","components/navigation/Link.jsx":"987ae0f27bff","components/navigation/Pagination.jsx":"15e321c1d09c","components/navigation/SidebarShell.jsx":"7795d516fbd3","components/navigation/Tabs.jsx":"d46691262252","components/navigation/TopNav.jsx":"b9d4b7bc5558","components/overlay/Drawer.jsx":"89a1063765a3","components/overlay/DropdownMenu.jsx":"8a797beb205a","components/overlay/FormModal.jsx":"aa986b09b43e","components/overlay/Modal.jsx":"3e3a5aeabe58","components/overlay/Popover.jsx":"ad454f7afccd","components/overlay/Tooltip.jsx":"b86b3c1802a6","components/overlay/useModalDialog.js":"90deb19830c0","theme-toggle.js":"5200a778702b"},"inlinedExternals":[],"unexposedExports":[{"name":"assignRef","sourcePath":"components/core/frame.js"},{"name":"cx","sourcePath":"components/core/frame.js"},{"name":"DASHES","sourcePath":"components/data/chart-math.js"},{"name":"estWidth","sourcePath":"components/data/chart-math.js"},{"name":"fmtKo","sourcePath":"components/data/chart-math.js"},{"name":"frameStyle","sourcePath":"components/core/frame.js"},{"name":"histBins","sourcePath":"components/data/chart-math.js"},{"name":"isMissing","sourcePath":"components/core/missing.js"},{"name":"MISSING_CLASS","sourcePath":"components/core/missing.js"},{"name":"MISSING_TEXT","sourcePath":"components/core/missing.js"},{"name":"niceTicks","sourcePath":"components/data/chart-math.js"},{"name":"NOTIFICATION_DRAWER_ID","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"numeric","sourcePath":"components/core/missing.js"},{"name":"passwordStrength","sourcePath":"components/input/PasswordField.jsx"},{"name":"pathLength","sourcePath":"components/data/chart-math.js"},{"name":"r1","sourcePath":"components/data/chart-math.js"},{"name":"runsOf","sourcePath":"components/data/chart-math.js"},{"name":"seriesDash","sourcePath":"components/data/chart-math.js"},{"name":"smoothPath","sourcePath":"components/data/chart-math.js"},{"name":"spaceToken","sourcePath":"components/core/frame.js"},{"name":"stackBars","sourcePath":"components/data/chart-math.js"},{"name":"toneInk","sourcePath":"components/data/chart-math.js"},{"name":"toneVar","sourcePath":"components/data/chart-math.js"},{"name":"useAnchoredPopover","sourcePath":"components/core/useAnchoredPopover.js"},{"name":"useFieldContext","sourcePath":"components/input/Field.jsx"},{"name":"useModalDialog","sourcePath":"components/overlay/useModalDialog.js"}],"hooks":[{"name":"useToast","sourcePath":"components/feedback/Toast.jsx"}]} */
+/* @ds-bundle: {"format":4,"namespace":"Ds_d3ea90","components":[{"name":"Button","sourcePath":"components/action/Button.jsx"},{"name":"Icon","sourcePath":"components/action/Icon.jsx"},{"name":"IconButton","sourcePath":"components/action/IconButton.jsx"},{"name":"MascotMark","sourcePath":"components/brand/MascotMark.jsx"},{"name":"BarList","sourcePath":"components/data/BarList.jsx"},{"name":"Chart","sourcePath":"components/data/Chart.jsx"},{"name":"DataTable","sourcePath":"components/data/DataTable.jsx"},{"name":"DescriptionList","sourcePath":"components/data/DescriptionList.jsx"},{"name":"DiffView","sourcePath":"components/data/DiffView.jsx"},{"name":"Gauge","sourcePath":"components/data/Gauge.jsx"},{"name":"Heatmap","sourcePath":"components/data/Heatmap.jsx"},{"name":"KeyValues","sourcePath":"components/data/KeyValues.jsx"},{"name":"Legend","sourcePath":"components/data/Legend.jsx"},{"name":"LogViewer","sourcePath":"components/data/LogViewer.jsx"},{"name":"Sparkline","sourcePath":"components/data/Sparkline.jsx"},{"name":"StatTile","sourcePath":"components/data/StatTile.jsx"},{"name":"Timeline","sourcePath":"components/data/Timeline.jsx"},{"name":"TrendDelta","sourcePath":"components/data/TrendDelta.jsx"},{"name":"UptimeBar","sourcePath":"components/data/UptimeBar.jsx"},{"name":"Accordion","sourcePath":"components/display/Accordion.jsx"},{"name":"Avatar","sourcePath":"components/display/Avatar.jsx"},{"name":"AvatarGroup","sourcePath":"components/display/Avatar.jsx"},{"name":"Badge","sourcePath":"components/display/Badge.jsx"},{"name":"Code","sourcePath":"components/display/Code.jsx"},{"name":"CodeBlock","sourcePath":"components/display/Code.jsx"},{"name":"Kbd","sourcePath":"components/display/Code.jsx"},{"name":"CopyField","sourcePath":"components/display/CopyField.jsx"},{"name":"StatusPill","sourcePath":"components/display/StatusPill.jsx"},{"name":"Tag","sourcePath":"components/display/Tag.jsx"},{"name":"AlertBanner","sourcePath":"components/feedback/AlertBanner.jsx"},{"name":"ConfirmDialog","sourcePath":"components/feedback/ConfirmDialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"ErrorState","sourcePath":"components/feedback/ErrorState.jsx"},{"name":"InlineMessage","sourcePath":"components/feedback/InlineMessage.jsx"},{"name":"LoadingOverlay","sourcePath":"components/feedback/LoadingOverlay.jsx"},{"name":"NotificationTrigger","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"NotificationDrawer","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"ProgressBar","sourcePath":"components/feedback/ProgressBar.jsx"},{"name":"Skeleton","sourcePath":"components/feedback/Skeleton.jsx"},{"name":"Spinner","sourcePath":"components/feedback/Spinner.jsx"},{"name":"Stepper","sourcePath":"components/feedback/Stepper.jsx"},{"name":"ToastProvider","sourcePath":"components/feedback/Toast.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Checkbox","sourcePath":"components/input/Checkbox.jsx"},{"name":"CodeEditor","sourcePath":"components/input/CodeEditor.jsx"},{"name":"ColorInput","sourcePath":"components/input/ColorInput.jsx"},{"name":"Combobox","sourcePath":"components/input/Combobox.jsx"},{"name":"DatePicker","sourcePath":"components/input/DatePicker.jsx"},{"name":"DateRangePicker","sourcePath":"components/input/DateRangePicker.jsx"},{"name":"Dropzone","sourcePath":"components/input/Dropzone.jsx"},{"name":"Field","sourcePath":"components/input/Field.jsx"},{"name":"FileUpload","sourcePath":"components/input/FileUpload.jsx"},{"name":"MultiSelect","sourcePath":"components/input/MultiSelect.jsx"},{"name":"NumberStepper","sourcePath":"components/input/NumberStepper.jsx"},{"name":"OTPInput","sourcePath":"components/input/OTPInput.jsx"},{"name":"PasswordField","sourcePath":"components/input/PasswordField.jsx"},{"name":"RadioGroup","sourcePath":"components/input/RadioGroup.jsx"},{"name":"SearchField","sourcePath":"components/input/SearchField.jsx"},{"name":"SegmentedControl","sourcePath":"components/input/SegmentedControl.jsx"},{"name":"Select","sourcePath":"components/input/Select.jsx"},{"name":"Slider","sourcePath":"components/input/Slider.jsx"},{"name":"Switch","sourcePath":"components/input/Switch.jsx"},{"name":"TextArea","sourcePath":"components/input/TextArea.jsx"},{"name":"TextField","sourcePath":"components/input/TextField.jsx"},{"name":"TimePicker","sourcePath":"components/input/TimePicker.jsx"},{"name":"AspectRatio","sourcePath":"components/layout/AspectRatio.jsx"},{"name":"CardHead","sourcePath":"components/layout/CardHead.jsx"},{"name":"Container","sourcePath":"components/layout/Container.jsx"},{"name":"Divider","sourcePath":"components/layout/Divider.jsx"},{"name":"Grid","sourcePath":"components/layout/Grid.jsx"},{"name":"GridItem","sourcePath":"components/layout/Grid.jsx"},{"name":"Inline","sourcePath":"components/layout/Inline.jsx"},{"name":"PageHeader","sourcePath":"components/layout/PageHeader.jsx"},{"name":"PageStack","sourcePath":"components/layout/PageStack.jsx"},{"name":"Panel","sourcePath":"components/layout/Panel.jsx"},{"name":"Spacer","sourcePath":"components/layout/Spacer.jsx"},{"name":"Stack","sourcePath":"components/layout/Stack.jsx"},{"name":"StatusBar","sourcePath":"components/layout/StatusBar.jsx"},{"name":"Toolbar","sourcePath":"components/layout/Toolbar.jsx"},{"name":"ToolbarGrow","sourcePath":"components/layout/Toolbar.jsx"},{"name":"Visible","sourcePath":"components/layout/Visible.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"CommandPalette","sourcePath":"components/navigation/CommandPalette.jsx"},{"name":"Link","sourcePath":"components/navigation/Link.jsx"},{"name":"Pagination","sourcePath":"components/navigation/Pagination.jsx"},{"name":"SidebarShell","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavItem","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavGroup","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"},{"name":"TopNav","sourcePath":"components/navigation/TopNav.jsx"},{"name":"Drawer","sourcePath":"components/overlay/Drawer.jsx"},{"name":"DropdownMenu","sourcePath":"components/overlay/DropdownMenu.jsx"},{"name":"FormModal","sourcePath":"components/overlay/FormModal.jsx"},{"name":"Modal","sourcePath":"components/overlay/Modal.jsx"},{"name":"Popover","sourcePath":"components/overlay/Popover.jsx"},{"name":"Tooltip","sourcePath":"components/overlay/Tooltip.jsx"}],"sourceHashes":{"components/action/Button.jsx":"c62369aed97e","components/action/Icon.jsx":"a694a0248ddd","components/action/IconButton.jsx":"28c1b69891be","components/brand/MascotMark.jsx":"108f0e26ddb1","components/core/frame.js":"e6cab42871c7","components/core/missing.js":"9c6eb02238e9","components/core/useAnchoredPopover.js":"a292e7ea8c36","components/data/BarList.jsx":"a607689b97e2","components/data/Chart.jsx":"366036f451fd","components/data/DataTable.jsx":"3497ce8b45d1","components/data/DescriptionList.jsx":"d53228d4f9a9","components/data/DiffView.jsx":"49865b07e16d","components/data/Gauge.jsx":"2b0333d9b626","components/data/Heatmap.jsx":"ee74d855fd7b","components/data/KeyValues.jsx":"a9a2b31c5453","components/data/Legend.jsx":"c9ef5c648d25","components/data/LogViewer.jsx":"e8645c8bb1ac","components/data/Sparkline.jsx":"c595a28c5510","components/data/StatTile.jsx":"13aac2f36fc9","components/data/Timeline.jsx":"dd36ee198f98","components/data/TrendDelta.jsx":"ac70aa53c1db","components/data/UptimeBar.jsx":"ecd7b52d3764","components/data/chart-math.js":"f2fd5cb558aa","components/display/Accordion.jsx":"160837212661","components/display/Avatar.jsx":"cf95da1dcd7b","components/display/Badge.jsx":"839f2911da0e","components/display/Code.jsx":"2cadcf437d51","components/display/CopyField.jsx":"71c59b052ad9","components/display/StatusPill.jsx":"42e1f6412edb","components/display/Tag.jsx":"8fd40b2716cc","components/feedback/AlertBanner.jsx":"37af744d0f2f","components/feedback/ConfirmDialog.jsx":"9314adb2ef35","components/feedback/EmptyState.jsx":"9a36a35239c6","components/feedback/ErrorState.jsx":"bdfe9967cb46","components/feedback/InlineMessage.jsx":"2908d9d6568f","components/feedback/LoadingOverlay.jsx":"808315db1b59","components/feedback/NotificationDrawer.jsx":"b80c44505f7f","components/feedback/ProgressBar.jsx":"b887381b1d65","components/feedback/Skeleton.jsx":"e58ec91928df","components/feedback/Spinner.jsx":"e6469506af29","components/feedback/Stepper.jsx":"ff932f970169","components/feedback/Toast.jsx":"e9c5f2afe99b","components/input/Checkbox.jsx":"c2f228a181d7","components/input/CodeEditor.jsx":"e17062ce1ee3","components/input/ColorInput.jsx":"3108e13d7d35","components/input/Combobox.jsx":"6ce5d175aea1","components/input/DatePicker.jsx":"3ef8469f190f","components/input/DateRangePicker.jsx":"26cf8f06825e","components/input/Dropzone.jsx":"ba50e0be7bc0","components/input/Field.jsx":"3f41c509d6af","components/input/FileUpload.jsx":"6fbb560b9b21","components/input/MultiSelect.jsx":"f6c1ee0ae2bb","components/input/NumberStepper.jsx":"82af93015edf","components/input/OTPInput.jsx":"97fff529f0fe","components/input/PasswordField.jsx":"8ac8938e579a","components/input/RadioGroup.jsx":"9f29907d6d71","components/input/SearchField.jsx":"cf4aa5b04c52","components/input/SegmentedControl.jsx":"c79b5ee46d18","components/input/Select.jsx":"9d13b86e749d","components/input/Slider.jsx":"3d33ca7c3831","components/input/Switch.jsx":"95edecb06231","components/input/TextArea.jsx":"ca2d53344f90","components/input/TextField.jsx":"d18b0653e045","components/input/TimePicker.jsx":"a7997da4bb8d","components/layout/AspectRatio.jsx":"1093ba3c7cdc","components/layout/CardHead.jsx":"5e796f7f65d3","components/layout/Container.jsx":"dfed454a180b","components/layout/Divider.jsx":"91e950079f0c","components/layout/Grid.jsx":"7fb16c382cb5","components/layout/Inline.jsx":"95a181e6c42e","components/layout/PageHeader.jsx":"c1988f5413c3","components/layout/PageStack.jsx":"c421dadc99d2","components/layout/Panel.jsx":"1bbf399154b2","components/layout/Spacer.jsx":"7a0eda0d3151","components/layout/Stack.jsx":"872a90ea88d3","components/layout/StatusBar.jsx":"cc50c3718e1e","components/layout/Toolbar.jsx":"7162bc0f7cc9","components/layout/Visible.jsx":"8a7d015c252d","components/navigation/Breadcrumb.jsx":"727f5b81b1d5","components/navigation/CommandPalette.jsx":"94bc755fb5ac","components/navigation/Link.jsx":"60ed89c7c057","components/navigation/Pagination.jsx":"efbc23bfae6f","components/navigation/SidebarShell.jsx":"d0ec8b5b280d","components/navigation/Tabs.jsx":"b2f492c73bd6","components/navigation/TopNav.jsx":"1e42302464b7","components/overlay/Drawer.jsx":"e8a40e4bfb5f","components/overlay/DropdownMenu.jsx":"d024cc4dc495","components/overlay/FormModal.jsx":"ad57c1894117","components/overlay/Modal.jsx":"4171c081677d","components/overlay/Popover.jsx":"30fdaf59ba80","components/overlay/Tooltip.jsx":"bd51fe5c89a1","components/overlay/useModalDialog.js":"418af1f7bb38","theme-toggle.js":"4c9978c62871"},"inlinedExternals":[],"unexposedExports":[{"name":"assignRef","sourcePath":"components/core/frame.js"},{"name":"cx","sourcePath":"components/core/frame.js"},{"name":"DASHES","sourcePath":"components/data/chart-math.js"},{"name":"estWidth","sourcePath":"components/data/chart-math.js"},{"name":"fmtKo","sourcePath":"components/data/chart-math.js"},{"name":"frameStyle","sourcePath":"components/core/frame.js"},{"name":"histBins","sourcePath":"components/data/chart-math.js"},{"name":"isMissing","sourcePath":"components/core/missing.js"},{"name":"MISSING_CLASS","sourcePath":"components/core/missing.js"},{"name":"MISSING_TEXT","sourcePath":"components/core/missing.js"},{"name":"niceTicks","sourcePath":"components/data/chart-math.js"},{"name":"NOTIFICATION_DRAWER_ID","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"numeric","sourcePath":"components/core/missing.js"},{"name":"passwordStrength","sourcePath":"components/input/PasswordField.jsx"},{"name":"pathLength","sourcePath":"components/data/chart-math.js"},{"name":"r1","sourcePath":"components/data/chart-math.js"},{"name":"runsOf","sourcePath":"components/data/chart-math.js"},{"name":"seriesDash","sourcePath":"components/data/chart-math.js"},{"name":"smoothPath","sourcePath":"components/data/chart-math.js"},{"name":"spaceToken","sourcePath":"components/core/frame.js"},{"name":"stackBars","sourcePath":"components/data/chart-math.js"},{"name":"toneInk","sourcePath":"components/data/chart-math.js"},{"name":"toneVar","sourcePath":"components/data/chart-math.js"},{"name":"useAnchoredPopover","sourcePath":"components/core/useAnchoredPopover.js"},{"name":"useFieldContext","sourcePath":"components/input/Field.jsx"},{"name":"useModalDialog","sourcePath":"components/overlay/useModalDialog.js"}],"hooks":[{"name":"useToast","sourcePath":"components/feedback/Toast.jsx"}]} */
 
 (() => {
 
@@ -12,12 +12,9 @@ const __ds_run = () => {
 
 // components/core/frame.js
 try { (() => {
-/* fit 계약: 모든 컨테이너형 컴포넌트가 공유하는 크기 규칙.
-   fit="flex"  (기본) 부모 폭을 채우고 높이는 내용/비율로 정한다. min-width:0으로 격자에서 찌그러지지 않는다.
-   fit="fixed" width/height(px 또는 CSS 길이)를 그대로 쓴다. 내용은 그 상자 안에서 스크롤·축소된다.
-   fit="auto"  내용 크기(버튼·pill 같은 컨트롤 기본). */
+/* Single implementation of the fit contract; every container component routes through frameStyle(). See RULE.md "fit 계약". */
 
-/** 이 시스템은 토큰 값을 인라인 커스텀 속성으로 넘긴다. React의 CSSProperties는 `--*` 키를 받지 않아 여기서 함께 선언한다.
+/** Token values are passed as inline custom properties, and React's CSSProperties rejects `--*` keys, so widen it here.
  * @typedef {import("react").CSSProperties & Partial<Record<`--${string}`, string | number>>} DSStyle */
 /** @typedef {"flex" | "fixed" | "auto"} Fit */
 /** @typedef {number | string} Length */
@@ -60,13 +57,13 @@ function frameStyle({
 /** @param {...(string | false | null | undefined)} a */
 const cx = (...a) => a.filter(Boolean).join(" ");
 
-/** 바깥 ref 와 안쪽 ref 를 한 요소에 함께 건다. 콜백·객체 ref 모두 받는다.
+/** Attach a forwarded ref alongside an inner one; accepts callback and object refs.
  * @template T @param {import("react").ForwardedRef<T>} ref @param {T | null} el */
 const assignRef = (ref, el) => {
   if (typeof ref === "function") ref(el);else if (ref) ref.current = el;
 };
 
-/* 간격 계약: gap·size는 --sp 단계 번호(0~10) 또는 CSS 길이 그대로. Stack·Inline·Spacer가 공유한다. */
+/* Spacing scale shared by Stack·Inline·Spacer: --sp step number (0–10) or a CSS length passed through. */
 /** @type {Record<number, string | number>} */
 const GAP = {
   0: 0,
@@ -89,8 +86,8 @@ Object.assign(__ds_scope, { frameStyle, cx, assignRef, spaceToken });
 // components/action/Icon.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** Phosphor Bold 아이콘. name은 Phosphor 아이콘 이름(kebab-case, 예: "bell", "gear-six").
- *  리액트 프로젝트에서는 @phosphor-icons/react의 동일 아이콘을 weight="bold"로 쓴다. 장식 아이콘은 aria-hidden.
+/** Phosphor Bold icon; name is the Phosphor icon name (kebab-case, e.g. "bell", "gear-six").
+ *  React projects may use the same icon from @phosphor-icons/react with weight="bold". Decorative icons are aria-hidden. See RULE.md "ICONOGRAPHY".
  * @param {Parameters<typeof import("./Icon.d.ts").Icon>[0]} props
  */
 function Icon({
@@ -119,7 +116,7 @@ Object.assign(__ds_scope, { Icon });
 // components/action/Button.jsx
 try { (() => {
 const { cx, frameStyle, Icon } = __ds_scope;
-/** 버튼. variant는 의미(primary/secondary/ghost/danger), size는 밀도, fit="flex"면 부모 폭을 채운다.
+/** Button. variant is meaning (primary/secondary/ghost/danger), size is density, fit="flex" fills the parent width.
  * @param {Parameters<typeof import("./Button.d.ts").Button>[0]} props */
 function Button({
   variant = "secondary",
@@ -161,7 +158,7 @@ Object.assign(__ds_scope, { Button });
 try { (() => {
 const { forwardRef } = React;
 const { cx, Icon } = __ds_scope;
-/** 아이콘 전용 버튼. aria-label 필수. badge(숫자)가 0보다 크면 우상단 카운트가 붙고 접근 가능한 이름에 "N건"이 더해진다. */
+/** Icon-only button; aria-label is required. A badge > 0 renders a top-right count and appends "N건" to the accessible name, so callers must not add the count themselves. See RULE.md "접근성". */
 const IconButton = /*#__PURE__*/forwardRef(
 /**
  * @param {import("./IconButton.d.ts").IconButtonProps} props
@@ -615,7 +612,7 @@ function Face({
   }
 }
 
-/** 봉구 심볼. 색은 마스코트 토큰, 크기는 7단계 또는 기존 px 값을 사용합니다.
+/** Bonggu symbol. Colors come from the mascot tokens; size is one of 7 steps or a legacy px number.
  * @param {Parameters<typeof import("./MascotMark.d.ts").MascotMark>[0]} props */
 function MascotMark({
   face = 'neutral',
@@ -665,14 +662,14 @@ Object.assign(__ds_scope, { MascotMark });
 
 // components/core/missing.js
 try { (() => {
-/* 결측 계약의 단일 출처. 판정 규칙과 근거는 readme.md에 있다.
-   문자열 비교가 이 파일 한 곳에만 있으므로 문구를 바꾸면 판정과 표기가 함께 움직인다. */
+/* Single source of the missing-value contract (see RULE.md "설계 원칙").
+   The string comparison lives only here, so changing the text moves detection and display together. */
 const MISSING_TEXT = "수집 안 됨";
-/** 표기 스타일 선언은 styles/c-data.css의 한 블록에만 있다. */
+/** Styled in exactly one block of styles/c-data.css. */
 const MISSING_CLASS = "bds-na";
 /** @param {unknown} v */
 const isMissing = v => v == null || v === MISSING_TEXT || typeof v === "number" && Number.isNaN(v);
-/** 계산에 들어갈 값의 경계. 유한한 수가 아니면 결측(null)으로 만든다. 0과 음수는 값이다. */
+/** Gate for values entering calculations: non-finite becomes null; 0 and negatives are values. */
 /** @param {unknown} v @returns {number | null} */
 const numeric = v => typeof v === "number" && Number.isFinite(v) ? v : null;
 Object.assign(__ds_scope, { MISSING_TEXT, MISSING_CLASS, isMissing, numeric });
@@ -681,11 +678,11 @@ Object.assign(__ds_scope, { MISSING_TEXT, MISSING_CLASS, isMissing, numeric });
 // components/core/useAnchoredPopover.js
 try { (() => {
 const { useEffect, useLayoutEffect, useRef } = React;
-// 서버에는 레이아웃이 없어 측정할 것이 없다. 브라우저에서만 그리기 전에 동기로 배치한다.
+// Nothing to measure on the server; position synchronously before paint only in the browser.
 const useIsoLayoutEffect = typeof document === "undefined" ? useEffect : useLayoutEffect;
 
-/** 비모달 메뉴의 배치 계약: DOM 소속은 유지하고 native popover로 clipping 밖 top layer에 표시한다.
- * fixed 좌표는 트리거·visual viewport에서 계산하고 스크롤/리사이즈 시 다시 맞춘다. */
+/** Non-modal panel placement: stays in its DOM position but renders in the top layer via native popover, so clipping ancestors cannot cut it.
+ * Fixed coordinates come from the trigger and the visual viewport and are recomputed on scroll/resize. See RULE.md "동작 계약". */
 /** @param {{ open: boolean, anchorRef: { current: HTMLElement | null }, panelRef: { current: HTMLElement | null }, align?: "start" | "end", onDismiss?: () => void }} options */
 function useAnchoredPopover({
   open,
@@ -723,8 +720,8 @@ function useAnchoredPopover({
       const margin = 8,
         gap = 4,
         a = anchor.getBoundingClientRect();
-      /* 읽기를 먼저 모으고 쓰기를 뒤로 미룬다. 쓰기·읽기를 번갈아 하면 스크롤 한 번마다
-         강제 리플로우가 두 번 난다. 이 핸들러는 캡처 단계 스크롤에 걸려 자주 돈다. */
+      /* Batch the reads before the writes: interleaving them forces two reflows per scroll event,
+         and this handler runs on every capture-phase scroll. */
       const capH = Math.max(0, vh - margin * 2);
       const below = Math.max(0, vy + vh - margin - a.bottom - gap);
       const above = Math.max(0, a.top - gap - vy - margin);
@@ -769,8 +766,8 @@ Object.assign(__ds_scope, { useAnchoredPopover });
 // components/data/BarList.jsx
 try { (() => {
 const { cx, frameStyle, MISSING_CLASS, MISSING_TEXT, isMissing, numeric } = __ds_scope;
-/** 이름·값·막대 목록(디스크별 사용량, GPU 예약). max 생략 시 항목 최대값. thresholds로 warn/crit 색 전환.
- *  결측 값(null·undefined·NaN)은 막대 0 + "수집 안 됨" 문구로 그린다.
+/** Name / value / bar list (per-disk usage, GPU reservations). max defaults to the largest item; thresholds switch bars to warn/crit color.
+ *  Missing values draw a zero bar plus the missing text.
  * @param {Parameters<typeof import("./BarList.d.ts").BarList>[0]} props
  */
 function BarList({
@@ -838,7 +835,7 @@ Object.assign(__ds_scope, { BarList });
 // components/data/DescriptionList.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** 설명 목록(dl). 긴 값·문장이 있을 때 KeyValues 대신. 좁으면 한 열로 접힌다.
+/** Description list (dl). Use instead of KeyValues for long values or sentences; collapses to one column when narrow.
  * @param {Parameters<typeof import("./DescriptionList.d.ts").DescriptionList>[0]} props */
 function DescriptionList({
   items = [],
@@ -860,7 +857,7 @@ Object.assign(__ds_scope, { DescriptionList });
 // components/data/DiffView.jsx
 try { (() => {
 const { cx, frameStyle } = __ds_scope;
-/** 필드 단위 변경 비교(Revision diff). changes: {field, from, to, kind?: changed|added|removed}. 값은 mono.
+/** Field-level change comparison (revision diff). changes: {field, from, to, kind?: changed|added|removed}. Values in mono.
  * @param {Parameters<typeof import("./DiffView.d.ts").DiffView>[0]} props */
 function DiffView({
   changes = [],
@@ -911,8 +908,8 @@ Object.assign(__ds_scope, { DiffView });
 // components/data/Gauge.jsx
 try { (() => {
 const { cx, frameStyle, MISSING_TEXT, numeric } = __ds_scope;
-/** 반원 게이지. value 0~1(또는 max 기준). 임계 70/90으로 톤 자동(ok·warn·crit). 결측이면 "수집 안 됨".
- *  결측 문구의 표기는 SVG text라 색이 fill이다. 공통 .bds-na 대신 tone off 규칙(.bds-gauge--off .bds-gauge__v)이 담당한다.
+/** Half-circle gauge. value 0–1 (or relative to max); tone follows thresholds (ok/warn/crit).
+ *  The missing text is SVG text, so its color comes from fill via .bds-gauge--off .bds-gauge__v rather than .bds-na. See RULE.md "데이터와 결측".
  * @param {Parameters<typeof import("./Gauge.d.ts").Gauge>[0]} props
  */
 function Gauge({
@@ -999,8 +996,8 @@ Object.assign(__ds_scope, { Gauge });
 try { (() => {
 const { useId, useState } = React;
 const { cx, frameStyle, MISSING_CLASS, MISSING_TEXT, isMissing, numeric } = __ds_scope;
-/** 시간×요일 같은 2차원 강도 격자. 색은 --ramp-1~6 순차 램프만 쓴다(상태색 금지). 값 null은 빈 칸(수집 안 됨).
- *  격자는 tabIndex=0: 화살표로 셀 이동, Home/End 행 양끝, Esc 해제. 마우스 hover와 같은 아래 줄 텍스트가 뜬다. 숨김 표(bds-sr)가 aria-describedby로 연결된다.
+/** 2-D intensity grid (hour × weekday and the like) on the --ramp-1~6 sequential ramp. null cells are blank (missing).
+ *  Keyboard: arrows move the cell, Home/End jump to the row ends, Esc clears; the footer readout mirrors mouse hover. A11y surfaces follow RULE.md "접근성".
  * @param {Parameters<typeof import("./Heatmap.d.ts").Heatmap>[0]} props
  */
 function Heatmap({
@@ -1019,8 +1016,8 @@ function Heatmap({
   style
 }) {
   const [hoverRaw, setHover] = useState(/** @type {[number, number] | null} */null);
-  /* 좌표는 rows·cols 길이에 의존한다. 스트림이 줄면 이전 좌표가 범위를 벗어나므로
-     읽는 자리마다 막지 않고 렌더에서 한 번 걸러 낸다. */
+  /* Hover coordinates depend on rows/cols length. When a stream shrinks the old pair goes out of
+     range, so filter once here instead of guarding every read. */
   const hover = hoverRaw && hoverRaw[0] < rows.length && hoverRaw[1] < cols.length ? hoverRaw : null;
   const srId = useId();
   const flat = /** @type {number[]} */values.flat().filter(v => !isMissing(v));
@@ -1127,7 +1124,7 @@ Object.assign(__ds_scope, { Heatmap });
 // components/data/KeyValues.jsx
 try { (() => {
 const { cx, MISSING_CLASS, MISSING_TEXT, isMissing } = __ds_scope;
-/** 키·값 행 목록. rows: [key, value][] 또는 {k,v,mono?}[]. 수치 값은 mono, 결측 값은 "수집 안 됨"으로 그리고 mono를 벗는다.
+/** Key/value rows. rows: [key, value][] or {k,v,mono?}[]. Numeric values are mono; missing values show the missing text without mono.
  * @param {Parameters<typeof import("./KeyValues.d.ts").KeyValues>[0]} props */
 function KeyValues({
   rows = [],
@@ -1160,7 +1157,7 @@ Object.assign(__ds_scope, { KeyValues });
 try { (() => {
 const { useEffect, useRef } = React;
 const { cx, frameStyle } = __ds_scope;
-/** 로그 뷰어. lines: string | {level,time,text}. follow=true면 새 줄에 따라 바닥으로 스크롤.
+/** Log viewer. lines: string | {level,time,text}. follow=true keeps the view scrolled to the bottom as lines arrive.
  * @param {Parameters<typeof import("./LogViewer.d.ts").LogViewer>[0]} props */
 function LogViewer({
   lines = [],
@@ -1175,8 +1172,8 @@ function LogViewer({
   ...rest
 }) {
   const ref = useRef(/** @type {HTMLDivElement | null} */null);
-  /* 링버퍼(lines.slice(-200))면 길이가 고정돼 length 만 보면 이펙트가 다시 돌지 않는다.
-     로그가 바빠지는 순간 자동 추적이 멈추므로 배열 자체를 본다. */
+  /* With a ring buffer (lines.slice(-200)) the length never changes, so depending on length alone
+     would stop following exactly when the log gets busy. Depend on the array itself. */
   useEffect(() => {
     if (follow && ref.current) ref.current.scrollTop = ref.current.scrollHeight;
   }, [lines, follow]);
@@ -1225,7 +1222,7 @@ const TONE = {
   crit: "위험",
   info: "정보"
 };
-/** 시간순 이벤트 목록(운영 변화, lease 상태 전이). items: {time, title, detail?, tone?, icon?}. 최신이 위. tone은 점 색 + 스크린리더 텍스트.
+/** Chronological event list (ops changes, lease transitions). items: {time, title, detail?, tone?, icon?}. Newest first. tone sets the dot color plus screen-reader text.
  * @param {Parameters<typeof import("./Timeline.d.ts").Timeline>[0]} props */
 function Timeline({
   items = [],
@@ -1271,8 +1268,8 @@ Object.assign(__ds_scope, { Timeline });
 // components/data/TrendDelta.jsx
 try { (() => {
 const { cx, MISSING_CLASS, MISSING_TEXT, isMissing, numeric, Icon } = __ds_scope;
-/** 증감 표시. value는 변화량(숫자) 또는 비율(percent). inverse면 증가가 나쁜 지표(응답시간·오류). 항상 화살표+숫자, 색 단독 금지.
- *  결측이면 화살표 없이 "수집 안 됨"을 mono 없이 표시한다.
+/** Change indicator. value is an absolute delta or a ratio (percent). inverse marks metrics where up is bad (latency, errors). Always arrow + number, never color alone.
+ *  Missing values show the missing text with no arrow and no mono.
  * @param {Parameters<typeof import("./TrendDelta.d.ts").TrendDelta>[0]} props
  */
 function TrendDelta({
@@ -1308,13 +1305,11 @@ Object.assign(__ds_scope, { TrendDelta });
 // components/data/UptimeBar.jsx
 try { (() => {
 const { cx, MISSING_CLASS, MISSING_TEXT, isMissing } = __ds_scope;
-/* 세그먼트마다 배열을 새로 만들면 상태 페이지에서 막대 하나에 수십 번 버려진다. */
+/* Hoisted: rebuilding this array per segment would allocate dozens of times per bar on a status page. */
 const TONES = ["ok", "warn", "crit"];
 
-/** 가용성 막대(일/시간 단위 90칸). segments: {status: ok|warn|crit|off, label?}. 비율은 ok+warn 기준으로 계산해 텍스트로 병기.
- *  칸의 off는 상태 넷 중 하나(그 구간이 수집되지 않음)이고 문구는 같은 MISSING_TEXT를 쓴다.
- *  다만 칸의 표기는 텍스트가 아니라 track 색이므로 .bds-na를 붙이지 않는다. 헤더 비율만 결측 문구로 표시한다.
- *  좁은 컨테이너에서는 칸 간격과 최소폭을 줄여 모든 구간을 내부 폭에 맞춘다.
+/** Availability bar (90 day/hour cells). segments: {status: ok|warn|crit|off, label?}. The percentage is computed from ok+warn and shown as text.
+ *  off cells are missing intervals: they share MISSING_TEXT via title but not .bds-na, because a cell is a track color, not text. See RULE.md "데이터와 결측".
  * @param {Parameters<typeof import("./UptimeBar.d.ts").UptimeBar>[0]} props
  */
 function UptimeBar({
@@ -1364,16 +1359,16 @@ Object.assign(__ds_scope, { UptimeBar });
 // components/data/chart-math.js
 try { (() => {
 const { numeric } = __ds_scope;
-/* 차트 공용 계산. 렌더와 분리해 테스트·재사용 가능하게 둔다.
-   내보내는 함수는 어떤 입력에도 유한한 결과나 null만 낸다. 결측 판정은 core/missing.js의 numeric 하나를 쓴다.
-   타입은 공개 Chart.d.ts의 것을 그대로 쓴다. 같은 모양을 여기 다시 적지 않는다. */
+/* Shared chart math, kept out of render so it can be tested and reused.
+   Every export returns a finite result or null for any input; missing detection is core/missing.js numeric() only.
+   Types come from the public Chart.d.ts; the same shapes are not redeclared here. */
 /** @typedef {import("./Chart.d.ts").ChartTone} ChartTone */
 /** @typedef {import("./Chart.d.ts").ChartSeries} ChartSeries */
-/** @typedef {[number, number]} Point 픽셀 좌표 */
+/** @typedef {[number, number]} Point Pixel coordinate */
 
 /** @param {number} n */
 const r1 = n => Math.round(n * 10) / 10;
-/* 범주형 8색. tone에 문자열("rx","tx","used","reserved","free")을 주면 의미 고정 쌍을 쓴다. */
+/* 8 categorical colors; a string tone ("rx","tx","used","reserved","free") selects a fixed semantic pair. */
 /** @type {Record<string, 1>} */
 const METER = {
   ok: 1,
@@ -1382,13 +1377,13 @@ const METER = {
 };
 /** @param {ChartTone | undefined} tone @param {number} [i] */
 const toneVar = (tone, i) => typeof tone === "string" ? METER[tone] ? `var(--meter-${tone})` : `var(--series-${tone})` : `var(--series-${tone ?? (i ?? 0) % 8 + 1})`;
-/* 미터 톤이면 값 텍스트도 같은 상태 잉크로 */
+/* Meter tones color the value text with the matching state ink */
 /** @param {ChartTone | undefined} tone */
 const toneInk = tone => typeof tone === "string" && METER[tone] ? `var(--${tone}-ink)` : undefined;
 /** @param {number} v */
 const fmtKo = v => Math.abs(v) >= 1000 ? Math.round(v).toLocaleString("ko-KR") : Number.isInteger(v) ? String(v) : v.toFixed(1);
 
-/** 보기 좋은 축 눈금: 데이터 범위를 1·2·5×10^n 간격으로 나눈다.
+/** Nice axis ticks: split the data range at 1·2·5×10^n steps.
  * @param {number} lo @param {number} hi @param {number} [count]
  * @returns {{ ticks: number[], lo: number, hi: number }} */
 function niceTicks(lo, hi, count = 4) {
@@ -1404,7 +1399,7 @@ function niceTicks(lo, hi, count = 4) {
     step = (norm >= 5 ? 10 : norm >= 2 ? 5 : norm >= 1 ? 2 : 1) * mag;
   const start = Math.floor(lo / step) * step,
     end = Math.ceil(hi / step) * step;
-  // 데이터 눈금은 픽셀 좌표용 r1로 반올림하지 않는다. 인덱스로 생성해 누적 오차도 피한다.
+  // Data ticks are not rounded with the pixel-space r1; generating by index also avoids accumulated float error.
   const ticks = Array.from({
     length: Math.round((end - start) / step) + 1
   }, (_, i) => Number((start + i * step).toPrecision(15)));
@@ -1415,7 +1410,7 @@ function niceTicks(lo, hi, count = 4) {
   };
 }
 
-/** 누적 막대: 양수와 음수를 각각 0에서 쌓는다. null은 구간을 만들거나 합계에 기여하지 않는다.
+/** Stacked bars: positives and negatives each stack from 0. null makes no band and adds nothing to the totals.
  * @param {ChartSeries[]} series @param {number} count
  * @returns {{ bands: ({ start: number, end: number } | null)[][], lo: number, hi: number }} */
 function stackBars(series, count) {
@@ -1441,7 +1436,7 @@ function stackBars(series, count) {
   };
 }
 
-/** Catmull-Rom → 베지어. 두 점이면 직선.
+/** Catmull-Rom → cubic Bézier. Two points fall back to a straight line.
  * @param {Point[]} pts @param {number} [tension] */
 function smoothPath(pts, tension = 0.18) {
   if (pts.length < 3) return pts.map(([x, y], i) => `${i ? "L" : "M"}${x} ${y}`).join(" ");
@@ -1456,7 +1451,7 @@ function smoothPath(pts, tension = 0.18) {
   return d;
 }
 
-/** 결측 구간에서 끊은 점 배열들.
+/** Point runs, split at missing values.
  * @param {(number | null)[]} values @param {(i: number) => number} x @param {(v: number) => number} y
  * @returns {Point[][]} */
 function runsOf(values, x, y) {
@@ -1482,16 +1477,16 @@ function pathLength(pts) {
   return l * 1.15;
 }
 
-/** 텍스트 폭 추정(mono 10.5px ≈ 6.4px/char). y축 여백 계산용.
+/** Text width estimate (mono 10.5px ≈ 6.4px/char) for the y-axis gutter.
  * @param {unknown} s */
 const estWidth = s => String(s).length * 6.4 + 10;
 
-/** 3계열 이상이면 선 스타일을 실선·대시·점·대시점 순으로 돌린다. series.dash로 명시(문자열=그 패턴, false=실선). */
+/** With 3+ series, line styles cycle solid · dash · dot · dash-dot. series.dash overrides (string = that pattern, false = solid). */
 const DASHES = ["", "6 4", "2 4", "8 3 2 3"];
 /** @param {ChartSeries} s @param {number} i @param {number} count */
 const seriesDash = (s, i, count) => s.dash === false ? undefined : typeof s.dash === "string" ? s.dash || undefined : count >= 3 ? DASHES[i % DASHES.length] || undefined : undefined;
 
-/** 히스토그램 구간. 표본 2개 미만이면 null. n은 bins 또는 √n(6~30).
+/** Histogram bins. null with fewer than 2 samples. n is bins or √samples clamped to 6–30.
  * @param {(number | null)[] | undefined} samples @param {number} [bins]
  * @returns {{ xs: number[], lo: number, hi: number, span: number, n: number, counts: number[] } | null} */
 function histBins(samples, bins) {
@@ -1520,11 +1515,11 @@ Object.assign(__ds_scope, { r1, toneVar, toneInk, fmtKo, niceTicks, stackBars, s
 // components/data/Legend.jsx
 try { (() => {
 const { cx, toneVar } = __ds_scope;
-/* 스와치 색: color가 있으면 그대로, tone이 시리즈 번호·의미 키·미터 톤이면 토큰, info/signal은 상태 토큰, 그 외 문자열은 CSS 색으로 본다. */
+/* Swatch color: explicit color wins; series numbers, semantic keys and meter tones map to tokens, info/signal to state tokens, any other string is taken as a CSS color. */
 const swatchColor = (/** @type {import("./Legend.d.ts").LegendItem} */it, /** @type {number} */i) => it.color ?? (typeof it.tone === "string" && !/^(rx|tx|used|reserved|free|ok|warn|crit)$/.test(it.tone) ? /^(info|signal)$/.test(it.tone) ? `var(--${it.tone})` : it.tone : toneVar(it.tone, i));
 
-/** 독립 범례. items: {label, color?(CSS 색), tone?(series 번호·의미 키), value?, dash?(선 패턴), shape?, hidden?}.
- *  shape="line"이면 선 스와치(dash 패턴 반영), square/dot은 네모·점. onToggle을 주면 클릭으로 시리즈 숨김. compact는 Chart 내장 범례용 작은 글자.
+/** Standalone legend. items: {label, color?(CSS color), tone?(series number or semantic key), value?, dash?(line pattern), shape?, hidden?}.
+ *  shape="line" draws a line swatch honoring dash; square/dot draw a square or a dot. onToggle makes items clickable; compact is the small variant used inside Chart.
  * @param {Parameters<typeof import("./Legend.d.ts").Legend>[0]} props
  */
 function Legend({
@@ -1590,10 +1585,10 @@ const { cx, frameStyle, MISSING_CLASS, MISSING_TEXT, isMissing, numeric, r1, ton
 /** @typedef {import("./Chart.d.ts").ChartThreshold} ChartThreshold */
 /** @typedef {(v: number) => string} Fmt */
 /** @typedef {[number, number]} Point */
-/** 결측이 null로 바뀐 세그먼트. 0으로 바꾸면 수집 실패가 "0"으로 보이므로 null을 유지한다.
+/** Segment with missing values normalized to null. Coercing to 0 would make a failed collection look like "0".
  * @typedef {Omit<import("./Chart.d.ts").ChartSegment, "value"> & { value: number | null }} NormSegment */
-/** normalize를 지난 뒤의 내부 표현. 공개 계약은 Chart.d.ts의 ChartProps 유니온이고,
- * 여기서는 kind에 따라 쓰이는 필드만 채워진 평면 형태로 다룬다.
+/** Internal shape after normalize. The public contract is the ChartProps union in Chart.d.ts;
+ * here it is a flat object where only the fields relevant to kind are filled.
  * @typedef {{
  *   kind?: "line" | "area" | "bar" | "pie" | "radial" | "radar" | "histogram",
  *   labels?: string[], series?: ChartSeries[], segments?: NormSegment[],
@@ -1607,7 +1602,7 @@ const { cx, frameStyle, MISSING_CLASS, MISSING_TEXT, isMissing, numeric, r1, ton
  *   style?: DSStyle, "aria-label"?: string
  * }} NormProps */
 
-/* ---------- 공용 크롬 ---------- */
+/* ---------- Shared chrome ---------- */
 /** @param {{ current: HTMLElement | null }} ref @param {number} [fixedW] @param {number} [fixedH] */
 function useSize(ref, fixedW, fixedH) {
   const [size, setSize] = useState({
@@ -1638,8 +1633,8 @@ function useSize(ref, fixedW, fixedH) {
 /** @param {boolean} enabled */
 function useAnimateOnce(enabled) {
   const [on, setOn] = useState(enabled);
-  /* enabled 가 다시 켜지면 한 번 더 무장한다. 켜기만 하고 되돌리지 않으면 live 를 껐을 때
-     진입 모션이 영영 돌지 않는다. */
+  /* Re-arm when enabled turns back on. Without resetting, turning live off later would never
+     replay the entry animation. */
   const [prevEnabled, setPrevEnabled] = useState(enabled);
   if (prevEnabled !== enabled) {
     setPrevEnabled(enabled);
@@ -1687,8 +1682,8 @@ const cell = (fmt, v) => {
   return n == null ? MISSING_TEXT : fmt(n);
 };
 
-/* 데이터가 기하 계산에 닿기 전 단 한 곳의 경계. 여기서 결측은 모두 null이 되므로 아래 계산은 값이 null인지만 본다.
-   이 경계가 없으면 NaN 하나가 축 범위를 통해 차트 전체의 좌표를 무효로 만든다. */
+/* The single boundary before data reaches geometry. Every missing value becomes null here, so the math below
+   only checks for null. Without it one NaN would poison the axis range and every coordinate in the chart. */
 /** @param {NormProps} props @returns {NormProps} */
 function normalize(props) {
   const series = props.series?.map(s => ({
@@ -1713,8 +1708,8 @@ function normalize(props) {
   return out;
 }
 
-/* ---------- 직교(line·area·bar) ---------- */
-/** hover/setHover는 Chart가 갖는다(마우스·키보드가 같은 인덱스를 움직여 같은 Tip을 띄운다). */
+/* ---------- Cartesian (line · area · bar) ---------- */
+/** hover/setHover live in Chart so mouse and keyboard drive the same index and the same Tip. */
 /** @param {{ kind: "line" | "area" | "bar", labels: string[], series: ChartSeries[], fmt: Fmt, uid: string, xTicks?: "auto" | "ends" | "none", w: number, h: number, thresholds?: ChartThreshold[], stacked?: boolean, yMin?: number, yMax?: number, hover: number | null, setHover: (i: number | null) => void }} props */
 function Cartesian({
   kind,
@@ -1869,7 +1864,7 @@ function Cartesian({
         });
       }));
     }
-    /* 대시는 프레젠테이션 속성으로 준다. 진입 모션 동안은 .bds-chart--animate .bds-chart__line의 CSS(그리기용 dasharray)가 속성을 덮고, 클래스가 빠지면 이 패턴이 드러난다. */
+    /* Dash goes on as a presentation attribute. During the entry animation the .bds-chart--animate .bds-chart__line CSS (draw-on dasharray) overrides it; once the class drops, this pattern shows. */
     const runs = runsOf(s.values, x, y),
       baseY = y(Math.max(lo, 0)),
       dash = seriesDash(s, si, series.length);
@@ -1927,7 +1922,7 @@ function Cartesian({
   }));
 }
 
-/* ---------- 도넛 ---------- */
+/* ---------- Donut ---------- */
 /** @param {{ segments: NormSegment[], fmt: Fmt, caption?: import("react").ReactNode, w: number, h: number, hover: number | null, setHover: (i: number | null) => void }} props */
 function Pie({
   segments,
@@ -1938,7 +1933,7 @@ function Pie({
   hover,
   setHover
 }) {
-  // 결측 세그먼트는 null로 남긴다. 0으로 바꾸면 수집 실패가 "0"으로 보인다.
+  // Missing segments stay null; 0 would read as a collected zero.
   const vals = segments.map(s => s.value == null ? null : Math.max(0, s.value)),
     sum = vals.reduce((/** @type {number} */a, b) => a + (b ?? 0), 0);
   if (!sum || w < 40) return null;
@@ -2005,7 +2000,7 @@ function Pie({
   }, act ? cell(fmt, hoverVal) : fmt(sum)), /*#__PURE__*/React.createElement("small", null, act ? act.label : caption)));
 }
 
-/* ---------- 방사 게이지 ---------- */
+/* ---------- Radial gauge ---------- */
 /** @param {{ value: number, label?: import("react").ReactNode, tone?: ChartTone, fmt: Fmt, w: number, h: number, animate?: boolean }} props */
 function Radial({
   value,
@@ -2023,7 +2018,7 @@ function Radial({
   }, [value]);
   if (w < 40) return null;
   const v = Math.min(1, Math.max(0, value));
-  // 240° 게이지. 높이 = 1.5r + stroke, 폭 = 2r + stroke 안에 들어오도록 r을 정한다.
+  // 240° gauge. Pick r so that height = 1.5r + stroke and width = 2r + stroke both fit.
   const r = Math.min(h / 1.6, w / 2.1) - 2,
     stroke = Math.max(6, r * 0.14),
     cx0 = w / 2,
@@ -2072,7 +2067,7 @@ function Radial({
   }, fmt(v)), label != null && /*#__PURE__*/React.createElement("small", null, label)));
 }
 
-/* ---------- 레이더 ---------- */
+/* ---------- Radar ---------- */
 /** @param {{ axes: string[], series: ChartSeries[], max?: number, fmt: Fmt, w: number, h: number, hover: number | null, setHover: (i: number | null) => void }} props */
 function Radar({
   axes,
@@ -2116,7 +2111,7 @@ function Radar({
   })), series.map((s, si) => {
     const points = axes.map((_, i) => s.values[i] == null ? null : pt(i, Math.max(0, s.values[i] / top)));
     const color = toneVar(s.tone, si);
-    // 닫힌 면은 모든 축이 수집된 경우에만 그린다. 결측 축 양옆을 건너 연결하지 않는다.
+    // The closed fill is drawn only when every axis has a value; never bridge across a missing axis.
     if (points.every(Boolean)) return /*#__PURE__*/React.createElement("polygon", {
       key: si,
       points: /** @type {Point[]} */points.map(p => p.join(",")).join(" "),
@@ -2172,8 +2167,8 @@ function Radar({
   }));
 }
 
-/* ---------- 히스토그램 ---------- */
-/** 원시 표본(samples)을 bins개 구간으로 나눠 막대로. 분위선(p50/p95)은 thresholds처럼 세로 점선으로. 구간 계산은 chart-math.histBins(SR 표와 공유). */
+/* ---------- Histogram ---------- */
+/** Raw samples binned into bars. Percentile lines (p50/p95) are vertical dashes like thresholds. Bins come from chart-math.histBins, shared with the SR table. */
 /** @param {{ hist: ReturnType<typeof histBins>, fmt: Fmt, w: number, h: number, tone?: ChartTone, percentiles?: number[], unit?: string, animate?: boolean, hover: number | null, setHover: (i: number | null) => void }} props */
 function Histogram({
   hist,
@@ -2286,8 +2281,8 @@ function Histogram({
   }));
 }
 
-/* ---------- 스크린리더 표 ---------- */
-/** 시각 차트와 같은 데이터를 표로. 항상 렌더(bds-sr로 숨김)하고 루트가 aria-describedby로 가리킨다. */
+/* ---------- Screen-reader table ---------- */
+/** The visual chart's data as a table. Always rendered (hidden with bds-sr) and referenced by aria-describedby. */
 /** @param {{ id: string, kind: NonNullable<NormProps["kind"]>, props: NormProps, bins: ReturnType<typeof histBins>, fmt: Fmt }} props */
 function SrTable({
   id,
@@ -2316,7 +2311,7 @@ function SrTable({
     head = ["계열"].concat(cols);
     rows = (props.series ?? []).map(s => [s.label].concat(cols.map((_, i) => cell(fmt, s.values[i]))));
   }
-  // 표는 내용 폭을 따라 늘어나 width:1px을 무시한다. 숨김은 블록 래퍼가 맡아야 문서 가로 넘침이 나지 않는다.
+  // A table grows to its content and ignores width:1px; the block wrapper must do the hiding or the document overflows horizontally.
   return /*#__PURE__*/React.createElement("div", {
     className: "bds-sr"
   }, /*#__PURE__*/React.createElement("table", {
@@ -2334,7 +2329,7 @@ function SrTable({
   }, c)))))));
 }
 
-/* ---------- 진입점 ---------- */
+/* ---------- Entry point ---------- */
 const DEFAULT_H = {
   line: 200,
   area: 200,
@@ -2345,16 +2340,14 @@ const DEFAULT_H = {
   histogram: 180
 };
 
-/** 단일 차트. kind: line | area | bar | pie | radial | radar | histogram.
- *  fit="flex"(기본)면 부모 폭을 채우고 height(px)만 정한다. fit="fixed"면 width·height 그대로.
- *  색은 --series-1~8만, 상태 의미는 라벨 텍스트가 전한다. 진입 시 1회 그리기 모션(live면 끔).
- *  paused=true면 마지막으로 받은 props 스냅샷을 그대로 그린다(스트림이 흘러도 화면은 멈춤).
- *  stage는 tabIndex=0: ←/→ 로 인덱스 이동, Home/End 양끝, Esc 해제. 숨김 표(bds-sr)가 aria-describedby로 연결된다.
+/** Single chart component. kind: line | area | bar | pie | radial | radar | histogram.
+ *  paused=true keeps drawing the last props snapshot while the stream moves on.
+ *  Keyboard on the stage: ←/→ move the index, Home/End jump to the ends, Esc clears. Colors, motion and a11y surfaces follow RULE.md "설계 원칙" and "접근성".
  * @param {Parameters<typeof import("./Chart.d.ts").Chart>[0]} rawProps
  */
 function Chart(rawProps) {
-  /* paused 는 "지금 보이는 것을 그대로 두라"는 요청이라 상태다. 얼리는 순간의 props 를 담아 두고
-     푸는 순간 버린다. 렌더 중 ref 를 고치면 버려진 렌더의 props 가 스냅샷으로 남을 수 있다. */
+  /* paused means "keep what is on screen", so it is state: capture props when freezing, drop them when
+     unfreezing. Writing a ref during render could leave a discarded render's props as the snapshot. */
   const [frozen, setFrozen] = useState(/** @type {typeof rawProps | null} */null);
   if (rawProps.paused && frozen === null) setFrozen(rawProps);
   if (!rawProps.paused && frozen !== null) setFrozen(null);
@@ -2382,11 +2375,11 @@ function Chart(rawProps) {
   const anim = useAnimateOnce(animate && !live);
   const w = fit === "fixed" && typeof width === "number" ? width : size.w;
   const lineKind = kind === "line" || kind === "area";
-  /* 표본 구간은 렌더당 한 번만 계산해 Histogram·SrTable·count 가 같은 결과를 쓴다. */
+  /* Bin once per render so Histogram, SrTable and count agree. */
   const bins = kind === "histogram" ? histBins(props.samples, props.bins) : null;
   const count = kind === "pie" ? (props.segments ?? []).length : kind === "histogram" ? bins ? bins.n : 0 : kind === "radar" ? (props.axes ?? []).length : kind === "radial" ? 0 : (props.labels ?? []).length;
-  /* hover 는 count 에 대한 인덱스다. 스트림이 줄면 이전 인덱스가 범위를 벗어나 툴팁과 커서가
-     플롯 밖에 남으므로, 읽는 자리마다 막지 않고 렌더에서 한 번 거른다. */
+  /* hover indexes into count. When a stream shrinks the old index goes out of range and the tooltip
+     and cursor would linger outside the plot, so filter once here instead of guarding every read. */
   const hover = hoverRaw != null && hoverRaw < count ? hoverRaw : null;
   /** @type {import("react").ReactNode} */
   let body = null;
@@ -2476,7 +2469,7 @@ function Chart(rawProps) {
       setHover: setHover
     });
   }
-  /* 화살표로 옮긴 지점의 읽을거리. 시각 Tip 과 같은 내용을 글로 낸다. */
+  /* Text readout for the keyboard-selected point; same content as the visual Tip. */
   const readout = hover == null ? "" : [kind === "pie" ? props.segments?.[hover]?.label : kind === "radar" ? props.axes?.[hover] : props.labels?.[hover], ...(props.series ?? []).map(s => `${s.label} ${cell(valueFormatter, s.values[hover])}`), kind === "pie" ? cell(valueFormatter, props.segments?.[hover]?.value) : null].filter(Boolean).join(", ");
   /** @param {import("react").KeyboardEvent<HTMLDivElement>} e */
   const onKey = e => {
@@ -2536,7 +2529,7 @@ Object.assign(__ds_scope, { Chart });
 try { (() => {
 const { useId } = React;
 const { cx, numeric, runsOf, toneVar } = __ds_scope;
-/** 미니 추세선. 부모 크기를 채운다(fit은 부모가 정한다). 결측 구간은 끊는다. 축·범례 없음.
+/** Mini trend line. Fills its parent (the parent owns fit). Missing runs break the line; no axes or legend.
  * @param {Parameters<typeof import("./Sparkline.d.ts").Sparkline>[0]} props */
 function Sparkline({
   values = [],
@@ -2609,7 +2602,7 @@ Object.assign(__ds_scope, { Sparkline });
 try { (() => {
 const { useId, useState } = React;
 const { cx, Icon } = __ds_scope;
-/** 접이식 섹션. items: {id, title, meta?, content}. multiple이면 여러 개 동시 펼침. plain은 테두리 없음(설정 패널 안).
+/** Collapsible sections. items: {id, title, meta?, content}. multiple allows several open at once; plain drops the border (inside a settings panel).
  * @param {Parameters<typeof import("./Accordion.d.ts").Accordion>[0]} props */
 function Accordion({
   items = [],
@@ -2690,7 +2683,7 @@ const STATUS = {
   off: "오프라인"
 };
 
-/** 사용자·서비스 아바타. src 없으면 이름 이니셜(한글은 뒤 두 글자). status로 온라인 점(접근 가능한 이름에 텍스트로 병기).
+/** User or service avatar. Without src, shows initials (last two characters for Korean names). status adds a presence dot, spelled out in the accessible name.
  * @param {Parameters<typeof import("./Avatar.d.ts").Avatar>[0]} props */
 function Avatar({
   name,
@@ -2726,7 +2719,7 @@ function Avatar({
   }));
 }
 
-/** 겹친 아바타 묶음. max 초과는 +N.
+/** Overlapping avatar group; overflow beyond max renders +N.
  * @param {Parameters<typeof import("./Avatar.d.ts").AvatarGroup>[0]} props */
 function AvatarGroup({
   users = [],
@@ -2760,7 +2753,7 @@ Object.assign(__ds_scope, { Avatar, AvatarGroup });
 // components/display/Badge.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** 숫자 카운트 배지. children으로 감싸면 오른쪽 위에 붙는다. max 초과는 "99+". dot은 숫자 없는 점.
+/** Count badge. Wrapping children anchors it to their top right. Above max renders "99+"; dot shows no number.
  * @param {Parameters<typeof import("./Badge.d.ts").Badge>[0]} props */
 function Badge({
   count,
@@ -2789,7 +2782,7 @@ Object.assign(__ds_scope, { Badge });
 // components/display/Code.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** 인라인 코드 조각. 식별자·경로·명령 한 토막.
+/** Inline code fragment: an identifier, path or short command.
  * @param {Parameters<typeof import("./Code.d.ts").Code>[0]} props */
 function Code({
   children,
@@ -2801,7 +2794,7 @@ function Code({
     ...rest
   }, children);
 }
-/** 코드 블록. 여러 줄 명령·JSON. 가로 스크롤, 줄바꿈 안 함.
+/** Code block for multi-line commands or JSON. Scrolls horizontally, never wraps.
  * @param {Parameters<typeof import("./Code.d.ts").CodeBlock>[0]} props */
 function CodeBlock({
   children,
@@ -2815,7 +2808,7 @@ function CodeBlock({
     ...rest
   }, /*#__PURE__*/React.createElement("code", null, children));
 }
-/** 키보드 키.
+/** Keyboard key.
  * @param {Parameters<typeof import("./Code.d.ts").Kbd>[0]} props */
 function Kbd({
   children,
@@ -2834,7 +2827,7 @@ Object.assign(__ds_scope, { Code, CodeBlock, Kbd });
 try { (() => {
 const { useState } = React;
 const { cx, frameStyle, Icon } = __ds_scope;
-/** 복사 전용 값(토큰·식별자·curl). 읽기 전용 mono + 복사 버튼. multiline이면 <pre>. secret이면 마스킹 + 보기 토글.
+/** Copy-only value (token, identifier, curl). Read-only mono text plus a copy button; multiline renders a <pre>, secret masks with a reveal toggle.
  * @param {Parameters<typeof import("./CopyField.d.ts").CopyField>[0]} props */
 function CopyField({
   value,
@@ -2907,7 +2900,7 @@ Object.assign(__ds_scope, { CopyField });
 // components/display/StatusPill.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** 상태 pill. tone은 ok/warn/crit/info/off/accent. 색 단독 금지: children 텍스트 필수. pulse는 실시간일 때만.
+/** Status pill. tone: ok/warn/crit/info/off/accent. children text is required because color alone never conveys state; pulse only for live updates.
  * @param {Parameters<typeof import("./StatusPill.d.ts").StatusPill>[0]} props */
 function StatusPill({
   tone = "off",
@@ -2934,12 +2927,12 @@ Object.assign(__ds_scope, { StatusPill });
 try { (() => {
 const { useEffect, useRef, useState } = React;
 const { cx, frameStyle, MISSING_CLASS, MISSING_TEXT, isMissing, Icon, Sparkline, StatusPill } = __ds_scope;
-/* animate=true일 때만 카운트업. 기본은 꺼짐: 실시간 수치는 트랜지션 없이 즉시 바뀐다. 꺼지면 target을 그대로 돌려주는 no-op. */
+/* Count-up only when animate=true (default off, see RULE.md "VISUAL FOUNDATIONS"); when off it returns target unchanged. */
 /** @param {number} target @param {boolean} enabled */
 function useCountUp(target, enabled) {
   const [v, setV] = useState(enabled ? 0 : target);
   const from = useRef(0);
-  /* 지금 화면에 보이는 값. 중간에 끊기면 이 값이 다음 tween 의 시작점이다. */
+  /* The value currently on screen; if interrupted, the next tween starts here. */
   const shown = useRef(0);
   useEffect(() => {
     if (!enabled || typeof target !== "number") return;
@@ -2956,7 +2949,7 @@ function useCountUp(target, enabled) {
       if (p < 1) raf = requestAnimationFrame(step);else from.current = target;
     };
     raf = requestAnimationFrame(step);
-    /* 끊겼으면 0이 아니라 보이던 값에서 이어야 숫자가 뒤로 튀지 않는다. */
+    /* Resume from the shown value, not 0, so the number never jumps backwards. */
     return () => {
       if (raf != null) {
         cancelAnimationFrame(raf);
@@ -2967,9 +2960,9 @@ function useCountUp(target, enabled) {
   return enabled ? v : target;
 }
 
-/** 큰 수치 하나. value가 숫자면 mono(ko-KR 천 단위), 문자열이면 그대로, 결측이면 "수집 안 됨"(mono·단위 없음).
- *  기본은 즉시 갱신, animate={true}일 때만 진입 카운트업. delta는 증감, spark는 최근 추세. */
-/** detail: 수치 아래 보조 줄(모델 이름·마지막 heartbeat 등). pill: {tone,text} 상태 pill(라벨 옆). icon: 라벨 앞 Phosphor 아이콘.
+/** One big number. Numeric value: mono with ko-KR grouping; string: as is; missing: missing text without mono or unit.
+ *  Updates instantly by default; animate={true} counts up once on entry. delta is the change, spark the recent trend. */
+/** detail: secondary line under the value (model name, last heartbeat). pill: {tone,text} status pill next to the label. icon: Phosphor icon before the label.
  * @param {Parameters<typeof import("./StatTile.d.ts").StatTile>[0]} props */
 function StatTile({
   label,
@@ -3039,7 +3032,7 @@ Object.assign(__ds_scope, { StatTile });
 // components/display/Tag.jsx
 try { (() => {
 const { cx, Icon } = __ds_scope;
-/** 태그. 분류·선택 표시. accent는 "선택됨" 같은 강조 하나에만. onRemove가 있으면 x 버튼.
+/** Tag for categories and selections. accent is for a single emphasis such as "선택됨"; onRemove adds an x button.
  * @param {Parameters<typeof import("./Tag.d.ts").Tag>[0]} props */
 function Tag({
   accent = false,
@@ -3077,7 +3070,7 @@ const ICON = {
   warn: "warning",
   crit: "warning-octagon"
 };
-/** 인라인 알림 배너. 페이지·섹션 단위 상태(수집 실패, 미구성). 토스트가 아니라 남아 있어야 하는 알림. warn·crit은 role="alert", 그 외는 role="status".
+/** Inline alert banner for page/section state (collection failure, not configured): a notice that must persist, unlike a toast. warn/crit use role="alert", others role="status".
  * @param {Parameters<typeof import("./AlertBanner.d.ts").AlertBanner>[0]} props */
 function AlertBanner({
   tone = "info",
@@ -3112,7 +3105,7 @@ Object.assign(__ds_scope, { AlertBanner });
 // components/feedback/EmptyState.jsx
 try { (() => {
 const { cx, MascotMark } = __ds_scope;
-/** 빈 상태. 봉구 표정으로 톤을 전한다(기본 curious, 오류는 worried). actions에 다음 행동 버튼.
+/** Empty state. Bonggu's face sets the tone (curious by default, worried for errors); actions holds the next-step buttons.
  * @param {Parameters<typeof import("./EmptyState.d.ts").EmptyState>[0]} props */
 function EmptyState({
   title,
@@ -3145,7 +3138,7 @@ Object.assign(__ds_scope, { EmptyState });
 // components/feedback/ErrorState.jsx
 try { (() => {
 const { cx, MascotMark, Button } = __ds_scope;
-/** 영역 실패 상태(ErrorBoundary fallback·요청 실패). 마스코트 crying + 제목 + 원인 + 다시 시도. 빈 결과는 EmptyState.
+/** Failure state for a region (ErrorBoundary fallback, failed request): crying mascot + title + cause + retry. Empty results belong in EmptyState.
  * @param {Parameters<typeof import("./ErrorState.d.ts").ErrorState>[0]} props */
 function ErrorState({
   title = "불러오지 못했습니다",
@@ -3194,7 +3187,7 @@ const ICON = {
   info: "info",
   neutral: "info"
 };
-/** 필드 아래·카드 안 한 줄 메시지. 페이지 수준은 AlertBanner, 일시 알림은 Toast.
+/** One-line message under a field or inside a card. Page-level notices are AlertBanner; transient ones are Toast.
  * @param {Parameters<typeof import("./InlineMessage.d.ts").InlineMessage>[0]} props */
 function InlineMessage({
   tone = "neutral",
@@ -3219,7 +3212,7 @@ Object.assign(__ds_scope, { InlineMessage });
 try { (() => {
 const { useId } = React;
 const { cx, frameStyle } = __ds_scope;
-/** 선형 진행 바. value 0~1이면 결정형, null이면 비결정형(흐르는 띠). tone: accent(기본)·ok·warn·crit.
+/** Linear progress bar. value 0–1 is determinate, null is indeterminate (flowing band). tone: accent (default) · ok · warn · crit.
  * @param {Parameters<typeof import("./ProgressBar.d.ts").ProgressBar>[0]} props */
 function ProgressBar({
   value,
@@ -3275,7 +3268,7 @@ Object.assign(__ds_scope, { ProgressBar });
 // components/feedback/Skeleton.jsx
 try { (() => {
 const { cx, frameStyle } = __ds_scope;
-/** 스켈레톤. variant: block | text | circle. fit="flex"면 폭을 채우고 height만, fixed면 width·height.
+/** Skeleton. variant: block | text | circle. fit="flex" fills the width and takes only height; fixed takes width and height.
  * @param {Parameters<typeof import("./Skeleton.d.ts").Skeleton>[0]} props */
 function Skeleton({
   variant = "block",
@@ -3318,7 +3311,7 @@ Object.assign(__ds_scope, { Skeleton });
 // components/feedback/Spinner.jsx
 try { (() => {
 const { cx, MascotMark } = __ds_scope;
-/** 스피너. size px. label이 있으면 옆에 텍스트(권장). mascot=true면 봉구 얼굴이 돈다(md 이상).
+/** Spinner. size in px. label renders text beside it (recommended). mascot spins a blank Bonggu face (md sizes and up).
  * @param {Parameters<typeof import("./Spinner.d.ts").Spinner>[0]} props */
 function Spinner({
   size = 18,
@@ -3360,7 +3353,7 @@ Object.assign(__ds_scope, { Spinner });
 // components/feedback/LoadingOverlay.jsx
 try { (() => {
 const { cx, Spinner } = __ds_scope;
-/** 영역 위 로딩 덮개. children이 있으면 그 영역을 감싸고 active일 때 덮는다. fixed는 전체 화면(라우트 전환·긴 저장).
+/** Loading overlay for a region. With children it wraps them and covers them while active; fixed covers the whole screen (route changes, long saves).
  * @param {Parameters<typeof import("./LoadingOverlay.d.ts").LoadingOverlay>[0]} props */
 function LoadingOverlay({
   active = true,
@@ -3396,7 +3389,7 @@ const SR = {
   done: "완료",
   error: "오류"
 };
-/** 단계 표시(등록 9단계, 학습 stage). steps: {label, detail?, status?: done|current|error|todo}. current 인덱스를 주면 status를 자동 채운다. done·error는 스크린리더용 텍스트를 함께 읽는다.
+/** Step indicator (registration steps, training stages). steps: {label, detail?, status?: done|current|error|todo}. A current index fills in status; done/error also emit screen-reader text.
  * @param {Parameters<typeof import("./Stepper.d.ts").Stepper>[0]} props */
 function Stepper({
   steps = [],
@@ -3458,7 +3451,7 @@ const { createContext, useCallback, useContext, useEffect, useMemo, useRef, useS
 const { cx, Icon } = __ds_scope;
 /** @type {import("react").Context<ReturnType<typeof import("./Toast.d.ts").useToast> | null>} */
 const ToastCtx = /*#__PURE__*/createContext(/** @type {any} */null);
-/** Provider 가 관리하는 큐 항목. 공개 계약은 ToastOptions 이고 id·leaving 은 여기서만 쓴다.
+/** Queue entry owned by the Provider. The public contract is ToastOptions; id and leaving are internal.
  * @typedef {import("./Toast.d.ts").ToastOptions & { id: number, leaving?: boolean }} QueuedToast */
 /** @type {Record<string, string>} */
 const ICON = {
@@ -3467,11 +3460,11 @@ const ICON = {
   warn: "warning",
   crit: "warning-octagon"
 };
-/* 퇴장 길이는 .bds-toast--leaving의 transition(--dur-base)과 같아야 한다. reduced-motion이면 애니메이션 없이 즉시 제거한다 */
+/* Must match the .bds-toast--leaving transition (--dur-base). Under reduced-motion the toast is dropped immediately. */
 const EXIT_MS = 180;
 const reducedMotion = () => typeof matchMedia === "function" && matchMedia("(prefers-reduced-motion:reduce)").matches;
 
-/** 토스트 프로바이더. 앱 루트에 한 번. useToast().toast({message, tone?, action?, duration?})
+/** Toast provider; mount once at the app root. useToast().toast({message, tone?, action?, duration?})
  * @param {Parameters<typeof import("./Toast.d.ts").ToastProvider>[0]} props */
 function ToastProvider({
   children,
@@ -3479,8 +3472,8 @@ function ToastProvider({
 }) {
   const [items, setItems] = useState(/** @type {QueuedToast[]} */[]);
   const seq = useRef(0);
-  /* 타이머를 소유하지 않으면 프로바이더가 사라진 뒤에도 남고, 손으로 닫은 토스트의
-     자동 닫기 타이머가 계속 살아 있다. id 별로 들고 있다가 함께 거둔다. */
+  /* Timers are tracked per id so they can be cleared together: otherwise they outlive the provider,
+     and a manually dismissed toast keeps its auto-dismiss timer alive. */
   /** @type {import("react").MutableRefObject<Map<number, ReturnType<typeof setTimeout>>>} */
   const timers = useRef(new Map());
   useEffect(() => () => {
@@ -3495,7 +3488,7 @@ function ToastProvider({
     }
     setItems(p => p.filter(x => x.id !== id));
   }, []);
-  /* 닫기는 leaving 표시 → 퇴장 트랜지션 → 제거. 같은 토스트를 다시 닫아도 leaving은 그대로고 제거만 한 번 더 시도한다(없으면 무시) */
+  /* Dismiss = mark leaving → exit transition → drop. Dismissing the same toast again just retries the drop (a no-op if gone). */
   const dismiss = useCallback((/** @type {number} */id) => {
     if (reducedMotion()) return drop(id);
     setItems(p => p.map(t => t.id === id ? {
@@ -3513,17 +3506,17 @@ function ToastProvider({
         duration: 4000,
         ...t
       })];
-      /* 퇴장 중인 토스트는 자리를 비우는 중이므로 max에서 세지 않는다. 넘치는 만큼 오래된 것부터 즉시 뺀다 */
+      /* Leaving toasts are already vacating and don't count toward max; overflow drops the oldest immediately. */
       let over = next.filter(x => !x.leaving).length - max;
       return next.filter(x => x.leaving || over-- <= 0);
     });
-    /* 행동(action)이 있거나 crit이면 닫기 전까지 남는다. duration을 직접 주면 그대로 따른다 */
+    /* With an action or crit tone the toast stays until dismissed; an explicit duration always wins. */
     const d = t.duration ?? (t.action || t.tone === "crit" ? 0 : 4000);
     if (d > 0) timers.current.set(id, setTimeout(() => dismiss(id), d));
     return id;
   }, [dismiss, max]);
-  /* toast·dismiss 는 이미 useCallback 으로 안정적이다. 인라인 객체만이 값을 흔들어,
-     토스트 하나당(등장·leaving·제거) useToast 소비자 전체가 세 번 다시 그려졌다. */
+  /* toast and dismiss are already stable; an inline object here re-rendered every useToast consumer
+     three times per toast (enter, leaving, drop). */
   const api = useMemo(() => ({
     toast,
     dismiss
@@ -3548,7 +3541,7 @@ function useToast() {
   return c;
 }
 
-/** 토스트 한 장. 보통 Provider가 그린다. leaving은 Provider가 퇴장 중에 세운다.
+/** A single toast, normally rendered by the Provider, which sets leaving during the exit.
  * @param {Parameters<typeof import("./Toast.d.ts").Toast>[0]} props */
 function Toast({
   message,
@@ -3590,7 +3583,7 @@ Object.assign(__ds_scope, { ToastProvider, useToast, Toast });
 try { (() => {
 const { forwardRef } = React;
 const { assignRef, cx, Icon } = __ds_scope;
-/** 체크박스. children이 라벨. 라벨 없이 쓰면 aria-label 필수(표 선택 열). indeterminate는 ref로 세팅. */
+/** Checkbox. children is the label; without one, pass aria-label (e.g. a table selection column). indeterminate has no HTML attribute, so it is applied through the ref callback. */
 const Checkbox = /*#__PURE__*/forwardRef(
 /**
  * @param {import("./Checkbox.d.ts").CheckboxProps} props
@@ -3632,10 +3625,9 @@ const TABLE_DESKTOP_HIDE = "bds-table__d-hide";
 const TABLE_MOBILE_HIDE = "bds-table__m-hide";
 const hideCls = (/** @type {import("./DataTable.d.ts").DataTableColumn<any>} */c) => c.hideBelow === "desktop" ? TABLE_DESKTOP_HIDE : c.hideBelow === "tablet" ? TABLE_MOBILE_HIDE : undefined;
 
-/* 셀 하나의 결측 판정.
-   render 없는 열: row[key]가 값이므로 core/missing.js 규칙을 그대로 쓴다. null/undefined는 빈 칸이 아니라 "수집 안 됨"이다.
-   render 있는 열: 반환은 ReactNode다. React 규칙대로 null은 "아무것도 그리지 않음"이므로 결측으로 보지 않는다
-                   (예: 폐기된 토큰 행의 버튼 없음). 이미 문구로 포맷해 반환하는 사용처만 결측으로 인식한다. */
+/* Missing-value check for one cell. Without render, row[key] is a value and core/missing.js applies.
+   With render, the result is a ReactNode: null means "render nothing" (e.g. no button on a revoked-token row), not missing;
+   only a returned MISSING_TEXT counts. See RULE.md "데이터와 결측". */
 const cellOf = (/** @type {import("./DataTable.d.ts").DataTableColumn<any>} */c, /** @type {any} */row, /** @type {number} */i) => {
   const v = c.render ? c.render(row, i) : row[c.key];
   const na = c.render ? v === MISSING_TEXT : isMissing(v);
@@ -3645,9 +3637,8 @@ const cellOf = (/** @type {import("./DataTable.d.ts").DataTableColumn<any>} */c,
   };
 };
 
-/** 데이터 표. 컨테이너 폭 기준으로 열을 숨기고(hideBelow), 숨긴 정보는 expandable로 펼쳐 본다.
- *  정렬은 표시만 하고 실제 정렬은 소비자가 rows에 반영한다.
- *  결측: render 없는 열의 null·undefined·NaN은 "수집 안 됨"으로 표시한다(빈 칸으로 감추지 않는다).
+/** Data table. Columns hide by container width (hideBelow); hidden detail is reached through expandable.
+ *  Sorting is display only; the consumer sorts rows. Missing cells follow RULE.md "데이터와 결측".
  * @param {Parameters<typeof import("./DataTable.d.ts").DataTable>[0]} props
  */
 function DataTable({
@@ -3676,17 +3667,17 @@ function DataTable({
   const [expanded, setExpanded] = useState(() => new Set(defaultExpandedKeys));
   const autoId = useId(),
     hid = header?.id ?? autoId;
-  /* 행의 신원은 위치가 아니라 값이다(readme 데이터 절). 정렬·필터로 위치가 바뀌면 같은 인덱스가
-     다른 레코드를 가리켜 선택이 엉뚱한 행에 붙는다. 신원 없이 선택·펼침을 켜면 알린다. */
+  /* Row identity is a value, not a position (see RULE.md "데이터와 결측"): after sort/filter the same
+     index points at another record and selection sticks to the wrong row. Warn when identity is missing. */
   const keyOf = rowKey ?? ((/** @type {any} */r, /** @type {number} */i) => r.id ?? i);
   if ((selectable || expandable) && !rowKey && rows.some(r => /** @type {any} */r?.id == null)) {
     console.warn("DataTable: 선택·펼침에는 rowKey나 row.id로 행의 신원을 주어야 합니다. 위치는 정렬·필터에서 다른 행을 가리킵니다.");
   }
   const keys = rows.map((r, i) => keyOf(r, i));
-  /* 펼침은 지금 있는 행에만 의미가 있다. 정리하지 않으면 목록이 길게 도는 동안 계속 쌓이고,
-     신원이 재사용되면 엉뚱한 행이 펼쳐진 채로 나타난다. 읽는 자리에서 한 번 거른다. */
+  /* Expansion only means something for rows that still exist. Left alone the set grows for the life of the
+     list, and a reused key would show a different row pre-expanded. Filter once at the read site. */
   const openKeys = expandable ? keys.filter(k => expanded.has(k)) : [];
-  /* 숨김 클래스와 수치 정렬은 열만 보고 정해진다. 행마다 다시 구하면 행×열 번 돈다. */
+  /* Hide class and numeric alignment depend on the column only; computing per row would cost rows × columns. */
   const colCls = columns.map(c => cx(c.align === "num" && "bds-table__num", hideCls(c)));
   const sel = new Set(selectedKeys);
   const selCount = keys.filter(k => sel.has(k)).length;
@@ -3818,7 +3809,7 @@ Object.assign(__ds_scope, { DataTable });
 try { (() => {
 const { forwardRef, useRef, useState } = React;
 const { cx, frameStyle, Icon } = __ds_scope;
-/** 파일 드롭존. 클릭/드롭/키보드로 파일을 받아 onFiles(File[])를 호출한다. */
+/** File drop zone. Accepts files by click, drop or keyboard and calls onFiles(File[]). */
 const Dropzone = /*#__PURE__*/forwardRef(
 /**
  * @param {import("./Dropzone.d.ts").DropzoneProps} props
@@ -3900,7 +3891,7 @@ const { cx, Icon } = __ds_scope;
 const FieldCtx = /*#__PURE__*/createContext(/** @type {any} */null);
 const useFieldContext = () => useContext(FieldCtx);
 
-/** 라벨·설명·오류를 입력에 연결하는 래퍼. 자식 입력은 useFieldContext()로 id·aria를 받는다. */
+/** Wires label, hint and error to an input. Child inputs read id and aria attributes via useFieldContext(). */
 const Field = /*#__PURE__*/forwardRef(
 /**
  * @param {import("./Field.d.ts").FieldProps} props
@@ -3957,7 +3948,7 @@ Object.assign(__ds_scope, { useFieldContext, Field });
 try { (() => {
 const { forwardRef, useEffect, useMemo, useRef } = React;
 const { assignRef, cx, frameStyle, Icon, useFieldContext } = __ds_scope;
-/** JSON/코드 입력. 줄번호 + mono + Tab 들여쓰기. language="json"이면 파싱해 오류 위치를 아래에 표시하고 onValidChange(obj|null)를 부른다. */
+/** JSON/code input: line numbers, mono, Tab indents. With language="json" it parses, shows the error line below and calls onValidChange(obj|null). */
 const CodeEditor = /*#__PURE__*/forwardRef(
 /**
  * @param {import("./CodeEditor.d.ts").CodeEditorProps} props
@@ -3987,7 +3978,7 @@ function CodeEditor({
   const ta = useRef(/** @type {HTMLTextAreaElement | null} */null),
     gutter = useRef(/** @type {HTMLPreElement | null} */null);
   const lines = useMemo(() => v.split("\n").length, [v]);
-  /* 파싱은 렌더에서, 통지는 커밋 뒤에. checked 는 "이번 입력이 검사 대상이었나"다. */
+  /* Parse during render, notify after commit. checked = "was this input subject to validation". */
   const parsed = useMemo(() => {
     if (language !== "json" || !v.trim()) return {
       checked: false,
@@ -4018,7 +4009,7 @@ function CodeEditor({
     }
   }, [v, language]);
   const err = parsed.err;
-  /* 통지 콜백은 매 렌더 새 함수인 경우가 많다. 의존성에 넣으면 값이 그대로인데도 다시 통지한다. */
+  /* The callback is usually a new function every render; as an effect dependency it would re-notify with an unchanged value. */
   const notifyValid = useRef(onValidChange);
   useEffect(() => {
     notifyValid.current = onValidChange;
@@ -4031,7 +4022,7 @@ function CodeEditor({
     onChange?.(s);
   };
   const onKey = (/** @type {import("react").KeyboardEvent<HTMLTextAreaElement>} */e) => {
-    /* Tab은 들여쓰기, Shift+Tab은 가로채지 않아 키보드로 빠져나갈 수 있다 */
+    /* Tab indents; Shift+Tab is left alone so keyboard users can leave the editor */
     if (e.key === "Tab" && !e.shiftKey && !readOnly) {
       e.preventDefault();
       const t = e.currentTarget,
@@ -4110,7 +4101,7 @@ try { (() => {
 const { forwardRef, useState } = React;
 const { cx, frameStyle, useFieldContext } = __ds_scope;
 const HEX = /^#?([0-9a-f]{6})$/i;
-/** 색 선택: 스와치(네이티브 picker) + hex 입력 + 프리셋 칩. 값은 #RRGGBB. 조명(ARGB) 색 지정용 · UI 토큰 색이 아니다. */
+/** Color picker: swatch (native picker) + hex input + preset chips. Value is #RRGGBB. For lighting (ARGB) colors, not UI token colors. */
 const ColorInput = /*#__PURE__*/forwardRef(
 /**
  * @param {import("./ColorInput.d.ts").ColorInputProps} props
@@ -4209,7 +4200,7 @@ Object.assign(__ds_scope, { ColorInput });
 try { (() => {
 const { forwardRef, useEffect, useId, useRef, useState } = React;
 const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
-/** 검색 가능한 선택. options {value,label,detail?,disabled?}. 타이핑으로 거르고 ↑↓ Enter Esc. 선택지 6개 이상이면 Select 대신 이것. */
+/** Searchable single select. options {value,label,detail?,disabled?}. Type to filter; ↑↓ Enter Esc. */
 const Combobox = /*#__PURE__*/forwardRef(
 /**
  * @param {import("./Combobox.d.ts").ComboboxProps} props
@@ -4251,7 +4242,7 @@ function Combobox({
     document.addEventListener("mousedown", on);
     return () => document.removeEventListener("mousedown", on);
   }, [open]);
-  /* 검색어나 열림이 바뀌면 강조를 첫 항목으로. 렌더 중 조정이라 옛 강조가 한 프레임 보이지 않는다. */
+  /* Reset the highlight to the first item when the query or open state changes. Done during render so the stale highlight never paints for a frame. */
   const cue = q + "\u0000" + open;
   const [prevCue, setPrevCue] = useState(cue);
   if (prevCue !== cue) {
@@ -4265,7 +4256,7 @@ function Combobox({
     setQ("");
   };
   const onKey = (/** @type {import("react").KeyboardEvent<HTMLElement>} */e) => {
-    /* 비활성 항목은 pick 이 거부하므로 강조도 지나친다. 멈추면 Enter 가 아무 일도 하지 않는다. */
+    /* Skip disabled items: pick() rejects them, so stopping on one would make Enter a no-op. */
     const step = (/** @type {number} */from, /** @type {number} */dir) => {
       for (let i = from + dir; i >= 0 && i < list.length; i += dir) if (!list[i].disabled) return i;
       return from;
@@ -4286,7 +4277,7 @@ function Combobox({
       setOpen(false);
       setQ("");
     }
-    /* Tab 은 가로채지 않는다. 다만 포커스가 나가면 목록도 닫아야 aria-expanded 가 거짓말하지 않는다. */else if (e.key === "Tab") {
+    /* Tab is not intercepted, but the list must close when focus leaves or aria-expanded lies. */else if (e.key === "Tab") {
       setOpen(false);
       setQ("");
     }
@@ -4381,7 +4372,7 @@ const pad = (/** @type {number} */n) => String(n).padStart(2, "0");
 const iso = (/** @type {Date} */d) => d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
 const DOW = ["일", "월", "화", "수", "목", "금", "토"];
 
-/** 단일 날짜 선택. value는 "YYYY-MM-DD". min/max 같은 형식. 기간은 DateRangePicker. */
+/** Single date picker. value is "YYYY-MM-DD"; min/max use the same format. For ranges use DateRangePicker. */
 const DatePicker = /*#__PURE__*/forwardRef(
 /**
  * @param {import("./DatePicker.d.ts").DatePickerProps} props
@@ -4407,7 +4398,7 @@ function DatePicker({
     const d = sel ?? new Date();
     return new Date(d.getFullYear(), d.getMonth(), 1);
   });
-  /* 값이 바뀌면 그 달로 옮긴다. 사용자가 넘겨 둔 달은 값이 그대로면 유지된다. */
+  /* Follow the value to its month. A month the user paged to survives as long as the value is unchanged. */
   const [prevValue, setPrevValue] = useState(value);
   if (prevValue !== value) {
     setPrevValue(value);
@@ -4416,7 +4407,7 @@ function DatePicker({
   }
   const root = useRef(/** @type {HTMLDivElement | null} */null),
     trig = useRef(/** @type {HTMLButtonElement | null} */null);
-  /* 닫힐 때 포커스를 트리거 버튼으로 돌린다(달력 셀이 언마운트되면 포커스가 body로 떨어진다) */
+  /* Return focus to the trigger on close (unmounting the focused calendar cell would drop focus to body) */
   const close = () => {
     setOpen(false);
     trig.current?.focus();
@@ -4450,7 +4441,7 @@ function DatePicker({
     length: 6
   }, (_, r) => cells.slice(r * 7, r * 7 + 7));
   const today = iso(new Date());
-  /* 그리드는 탭 스톱 하나에 화살표 이동이다(readme 접근성 절). 포커스가 셀에 있으므로 핸들러도 셀에 둔다. */
+  /* One tab stop, arrows move (see RULE.md "접근성"). Focus lives on the cell, so the handler does too. */
   const onCellKey = (/** @type {import("react").KeyboardEvent<HTMLButtonElement>} */e) => {
     const step = /** @type {Record<string, number>} */{
       ArrowRight: 1,
@@ -4589,7 +4580,7 @@ const PRESETS = [{
   label: "7일"
 }];
 const fmtLocal = (/** @type {Date | null | undefined} */d) => d ? new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 16) : "";
-/** 기간 선택: 빠른 프리셋(최근 N) + 직접 시작/끝. value {preset?:string, from?:Date, to?:Date}. 차트 기간용. */
+/** Range picker: quick presets (last N) + custom from/to. value {preset?:string, from?:Date, to?:Date}. For chart periods. */
 const DateRangePicker = /*#__PURE__*/forwardRef(
 /**
  * @param {import("./DateRangePicker.d.ts").DateRangePickerProps} props
@@ -4613,7 +4604,7 @@ function DateRangePicker({
   const f = useFieldContext();
   const custom = !value.preset;
   const set = (/** @type {import("./DateRangePicker.d.ts").DateRange} */next) => onChange?.(next);
-  /* 라디오그룹은 탭 스톱 하나에 화살표 이동이다(readme 접근성 절). 포커스가 라디오에 있으므로 핸들러도 거기 둔다. */
+  /* One tab stop, arrows move (see RULE.md "접근성"). Focus lives on the radio, so the handler does too. */
   const onRadioKey = (/** @type {import("react").KeyboardEvent<HTMLButtonElement>} */e) => {
     const dir = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
     if (!dir) return;
@@ -4718,7 +4709,7 @@ const STATUS = {
   done: ["완료", "ok"],
   failed: ["실패", "crit"]
 };
-/** 청크 업로드 목록. Dropzone + 파일별 ProgressBar + 일시정지/재개/재시도/취소. 진행 상태는 부모가 items로 내려준다(업로드 로직은 컴포넌트 밖). */
+/** Chunked upload list: Dropzone + per-file ProgressBar + pause/resume/retry/cancel. Progress comes from the parent via items; upload logic lives outside the component. */
 const FileUpload = /*#__PURE__*/forwardRef(
 /**
  * @param {import("./FileUpload.d.ts").FileUploadProps} props
@@ -4821,7 +4812,7 @@ Object.assign(__ds_scope, { FileUpload });
 try { (() => {
 const { forwardRef, useEffect, useId, useRef, useState } = React;
 const { assignRef, cx, frameStyle, Icon, Tag, useFieldContext } = __ds_scope;
-/** 여러 개 선택(태그 입력). options: {value,label}. value는 배열. 입력으로 필터, Backspace로 마지막 제거. */
+/** Multi select (tag input). options: {value,label}; value is an array. Type to filter, Backspace removes the last tag. */
 const MultiSelect = /*#__PURE__*/forwardRef(
 /**
  * @param {import("./MultiSelect.d.ts").MultiSelectProps} props
@@ -4850,8 +4841,8 @@ function MultiSelect({
   const list = options.filter(o => !sel.has(o.value) && o.label.toLowerCase().includes(q.trim().toLowerCase()));
   const activeIdx = Math.min(idx, Math.max(0, list.length - 1));
   const full = max != null && value.length >= max;
-  /* 가득 차도 입력을 없애지 않는다. 포커스가 있는 요소를 disabled 로 만들면 브라우저가 포커스를
-     body 로 떨어뜨리고, 안내도 없이 탭 순서에서 사라진다. 읽기 전용으로 두고 이유를 알린다. */
+  /* The input stays when full. Disabling a focused element drops focus to body and silently removes it
+     from the tab order; readOnly keeps it reachable and aria-readonly says why. */
   useEffect(() => {
     if (!open) return;
     const on = (/** @type {MouseEvent} */e) => {
@@ -4860,7 +4851,7 @@ function MultiSelect({
     document.addEventListener("mousedown", on);
     return () => document.removeEventListener("mousedown", on);
   }, [open]);
-  /* 검색어나 열림이 바뀌면 강조를 첫 항목으로. */
+  /* Reset the highlight to the first item when the query or open state changes. */
   const cue = q + "\u0000" + open;
   const [prevCue, setPrevCue] = useState(cue);
   if (prevCue !== cue) {
@@ -4958,7 +4949,7 @@ Object.assign(__ds_scope, { MultiSelect });
 try { (() => {
 const { forwardRef } = React;
 const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
-/** 숫자 입력 + −/+ 버튼. 값은 mono. min/max에서 버튼 비활성. */
+/** Number input with −/+ buttons. Value in mono; buttons disable at min/max. */
 const NumberStepper = /*#__PURE__*/forwardRef(
 /**
  * @param {import("./NumberStepper.d.ts").NumberStepperProps} props
@@ -4985,8 +4976,8 @@ function NumberStepper({
   const [inner, setInner] = React.useState(defaultValue);
   const v = value ?? inner;
   const [draft, setDraft] = React.useState(String(v));
-  /* 확정 값이 바뀌면 편집 중 문자열을 맞춘다. 이펙트로 하면 부모가 값을 거부했을 때
-     v 가 그대로라 이펙트가 돌지 않고 입력창이 계속 어긋난 값을 보인다. */
+  /* Sync the draft string when the committed value changes. An effect would not fire when the parent
+     rejects the value (v unchanged), leaving the input showing a stale draft. */
   const [prevV, setPrevV] = React.useState(v);
   if (prevV !== v) {
     setPrevV(v);
@@ -5066,7 +5057,7 @@ Object.assign(__ds_scope, { NumberStepper });
 try { (() => {
 const { forwardRef, useRef } = React;
 const { assignRef, cx, useFieldContext } = __ds_scope;
-/** 인증 코드(OTP) 입력. length 자리 숫자, 붙여넣기 지원, 다 채우면 onComplete. */
+/** One-time code input: length digit boxes, paste support, onComplete once every box is filled. */
 const OTPInput = /*#__PURE__*/forwardRef(
 /**
  * @param {import("./OTPInput.d.ts").OTPInputProps} props
@@ -5156,7 +5147,7 @@ Object.assign(__ds_scope, { OTPInput });
 try { (() => {
 const { forwardRef, useId } = React;
 const { cx, Checkbox } = __ds_scope;
-/** 라디오 묶음. options: {value, label, hint?, disabled?}. layout: column(기본) · row · cards(설명 있는 선택지). */
+/** Radio group. options: {value, label, hint?, disabled?}. layout: column (default) · row · cards (options with descriptions). */
 const RadioGroup = /*#__PURE__*/forwardRef(
 /**
  * @param {import("./RadioGroup.d.ts").RadioGroupProps} props
@@ -5210,7 +5201,7 @@ Object.assign(__ds_scope, { RadioGroup });
 try { (() => {
 const { forwardRef, useEffect, useRef } = React;
 const { assignRef, cx, frameStyle, Icon } = __ds_scope;
-/** 검색 입력. `/` 단축키로 포커스, 값이 있으면 지우기 버튼. onSearch(value)는 Enter에 호출. */
+/** Search input. `/` shortcut focuses it; a clear button appears when there is a value. onSearch(value) fires on Enter. */
 const SearchField = /*#__PURE__*/forwardRef(
 /**
  * @param {import("./SearchField.d.ts").SearchFieldProps} props
@@ -5231,8 +5222,8 @@ function SearchField({
   ...rest
 }, ref) {
   const input = useRef(/** @type {HTMLInputElement | null} */null);
-  /* .d.ts 가 InputHTMLAttributes 를 상속하므로 onKeyDown 은 타입상 합법이다. 뒤에 펼치면
-     Enter→onSearch 와 Esc→비우기가 조용히 죽는다. 빼내어 함께 부른다(NumberStepper 와 같은 방식). */
+  /* The .d.ts extends InputHTMLAttributes, so onKeyDown is legal. Spread after ours it would silently
+     kill Enter→onSearch and Esc→clear; pull it out and call both (same approach as NumberStepper). */
   const {
     onKeyDown,
     ...inputProps
@@ -5298,7 +5289,7 @@ Object.assign(__ds_scope, { SearchField });
 try { (() => {
 const { forwardRef, useEffect, useRef, useState } = React;
 const { assignRef, cx, frameStyle } = __ds_scope;
-/** 2~5개 상호배타 선택. 선택 thumb가 미끄러진다. fit="flex"면 옵션이 폭을 균등 분할. */
+/** 2–5 mutually exclusive options with a sliding thumb. fit="flex" splits the width evenly. */
 const SegmentedControl = /*#__PURE__*/forwardRef(
 /**
  * @param {import("./SegmentedControl.d.ts").SegmentedControlProps} props
@@ -5363,7 +5354,7 @@ function SegmentedControl({
     onKeyDown: e => {
       const dir = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
       if (!dir) return;
-      /* 화살표는 페이지를 스크롤시키지 않는다. 선택과 포커스를 함께 옮겨야 낭독이 따라온다. */
+      /* Arrows must not scroll the page. Move selection and focus together or the screen reader keeps reading the old item. */
       e.preventDefault();
       const i = options.findIndex(x => x.value === value);
       const next = options[(i + dir + options.length) % options.length];
@@ -5381,7 +5372,7 @@ Object.assign(__ds_scope, { SegmentedControl });
 try { (() => {
 const { forwardRef } = React;
 const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
-/** 네이티브 select를 토큰으로 감싼 선택 입력. options: {value,label,disabled}[]. */
+/** Native select styled with tokens. options: {value,label,disabled}[]. */
 const Select = /*#__PURE__*/forwardRef(
 /**
  * @param {import("./Select.d.ts").SelectProps} props
@@ -5434,7 +5425,7 @@ Object.assign(__ds_scope, { Select });
 try { (() => {
 const { forwardRef } = React;
 const { cx, frameStyle, useFieldContext } = __ds_scope;
-/** 범위 슬라이더. 네이티브 range를 토큰으로. marks면 눈금 라벨, showValue면 오른쪽에 현재 값(mono). */
+/** Range slider on a native range input. marks adds tick labels; showValue shows the current value (mono) on the right. */
 const Slider = /*#__PURE__*/forwardRef(
 /**
  * @param {import("./Slider.d.ts").SliderProps} props
@@ -5514,7 +5505,7 @@ Object.assign(__ds_scope, { Slider });
 try { (() => {
 const { forwardRef } = React;
 const { cx } = __ds_scope;
-/** 켬/끔 스위치. 즉시 반영되는 설정에만 쓴다(저장 버튼이 따로 있으면 Checkbox). */
+/** On/off switch for settings that apply immediately (use Checkbox when there is a separate save button). */
 const Switch = /*#__PURE__*/forwardRef(
 /**
  * @param {import("./Switch.d.ts").SwitchProps} props
@@ -5546,7 +5537,7 @@ Object.assign(__ds_scope, { Switch });
 try { (() => {
 const { forwardRef } = React;
 const { cx, frameStyle, useFieldContext } = __ds_scope;
-/** 여러 줄 입력. rows로 초기 높이, 세로로만 리사이즈. */
+/** Multi-line input. rows sets the initial height; resizes vertically only. */
 const TextArea = /*#__PURE__*/forwardRef(
 /**
  * @param {import("./TextArea.d.ts").TextAreaProps} props
@@ -5589,7 +5580,7 @@ Object.assign(__ds_scope, { TextArea });
 try { (() => {
 const { forwardRef } = React;
 const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
-/** 한 줄 텍스트 입력. Field 안에서 라벨을 받는다. prefix/suffix에 단위·아이콘. */
+/** Single-line text input. Takes its label from Field. prefix/suffix hold units or icons. */
 const TextField = /*#__PURE__*/forwardRef(
 /**
  * @param {import("./TextField.d.ts").TextFieldProps} props
@@ -5655,7 +5646,7 @@ const passwordStrength = (s = "") => {
   return Math.min(4, Math.max(1, n));
 };
 
-/** 비밀번호 입력. 보기 토글 + (선택) 강도 미터. strength는 텍스트로도 병기한다. */
+/** Password input with show/hide toggle and optional strength meter. Strength is also announced as text. */
 const PasswordField = /*#__PURE__*/forwardRef(
 /**
  * @param {import("./PasswordField.d.ts").PasswordFieldProps} props
@@ -5707,7 +5698,7 @@ try { (() => {
 const { forwardRef } = React;
 const { cx, frameStyle, Icon, useFieldContext } = __ds_scope;
 const pad = (/** @type {number} */n) => String(n).padStart(2, "0");
-/** 시:분 선택(24시간). value "HH:MM". step은 분 단위(기본 5). */
+/** Hour:minute picker (24h). value "HH:MM". step is in minutes (default 5). */
 const TimePicker = /*#__PURE__*/forwardRef(
 /**
  * @param {import("./TimePicker.d.ts").TimePickerProps} props
@@ -5778,7 +5769,7 @@ Object.assign(__ds_scope, { TimePicker });
 // components/layout/AspectRatio.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** 비율 상자. 이미지·프리뷰(LCD 4:3)·iframe. ratio는 "16/9" 같은 문자열 또는 숫자.
+/** Aspect-ratio box for images, previews (LCD 4:3) and iframes. ratio is a string like "16/9" or a number.
  * @param {Parameters<typeof import("./AspectRatio.d.ts").AspectRatio>[0]} props */
 function AspectRatio({
   ratio = "16/9",
@@ -5802,7 +5793,7 @@ Object.assign(__ds_scope, { AspectRatio });
 // components/layout/CardHead.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** 카드 제목 줄: 제목(왼쪽) + 메타(오른쪽, 모델명·인터페이스 같은 고정 정보).
+/** Card title row: title on the left, fixed meta (model name, interface) on the right.
  * @param {Parameters<typeof import("./CardHead.d.ts").CardHead>[0]} props */
 function CardHead({
   title,
@@ -5827,7 +5818,7 @@ Object.assign(__ds_scope, { CardHead });
 // components/layout/Container.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** 최대 폭 중앙 정렬 컨테이너. 기본 --content-max 1440, narrow는 760(설정·폼 페이지). pad는 좌우 --page-pad.
+/** Centered max-width container: --content-max 1440 by default, 760 with narrow (settings and form pages). pad adds horizontal --page-pad.
  * @param {Parameters<typeof import("./Container.d.ts").Container>[0]} props */
 function Container({
   narrow = false,
@@ -5847,7 +5838,7 @@ Object.assign(__ds_scope, { Container });
 // components/layout/Divider.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** 구분선. label을 주면 가운데 글자, vertical은 Inline 안에서 세로선.
+/** Divider. label renders centered text; vertical draws a vertical rule inside an Inline.
  * @param {Parameters<typeof import("./Divider.d.ts").Divider>[0]} props */
 function Divider({
   vertical = false,
@@ -5872,8 +5863,8 @@ Object.assign(__ds_scope, { Divider });
 // components/layout/Grid.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** 반응형 카드 격자. cols는 '이상적' 열 수이고 minmax(auto-fit)로 폭에 따라 저절로 줄어든다. min으로 카드 최소 폭을 직접 줄 수도 있다.
- *  columns={12}를 주면 고정 열 격자가 되고 자식 GridItem의 span으로 2/3+1/3 같은 비대칭 배치를 만든다(컨테이너 폭 기준 접힘).
+/** Responsive card grid. cols is the ideal column count; auto-fit minmax shrinks it with the width, or min sets the card minimum directly.
+ *  columns={12} switches to a fixed grid where GridItem spans build asymmetric layouts like 2/3 + 1/3 (collapsing by container width).
  * @param {Parameters<typeof import("./Grid.d.ts").Grid>[0]} props
  */
 function Grid({
@@ -5903,7 +5894,7 @@ function Grid({
   }, children);
 }
 
-/** Grid columns 모드의 칸. span(≥900) · spanMd(<900) · spanSm(<640), 480 미만은 항상 전폭.
+/** Cell for Grid columns mode: span (≥900) · spanMd (<900) · spanSm (<640); below 480 always full width.
  * @param {Parameters<typeof import("./Grid.d.ts").GridItem>[0]} props */
 function GridItem({
   span = 12,
@@ -5931,7 +5922,7 @@ Object.assign(__ds_scope, { Grid, GridItem });
 // components/layout/Inline.jsx
 try { (() => {
 const { cx, spaceToken } = __ds_scope;
-/** 가로 나열(버튼·칩·메타). 기본 wrap. gap을 주지 않으면 밀도별 --inline-gap을 쓴다.
+/** Horizontal row (buttons, chips, meta). Wraps by default; without gap it uses the density-scaled --inline-gap.
  * @param {Parameters<typeof import("./Inline.d.ts").Inline>[0]} props */
 function Inline({
   gap,
@@ -5961,7 +5952,7 @@ Object.assign(__ds_scope, { Inline });
 // components/layout/PageHeader.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** 페이지 제목 + 한 문장 설명 + 오른쪽 액션. 좁으면 액션이 아래로 감싼다.
+/** Page title + one-sentence description + right-side actions; actions wrap below when narrow.
  * @param {Parameters<typeof import("./PageHeader.d.ts").PageHeader>[0]} props */
 function PageHeader({
   title,
@@ -5985,7 +5976,7 @@ Object.assign(__ds_scope, { PageHeader });
 // components/layout/PageStack.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** 페이지 본문 섹션 묶음. 섹션 간격은 --grid-gap(뷰포트에 따라 흐른다). 셸 본문의 직계 자식은 항상 이것.
+/** Stack of page-body sections spaced by --grid-gap (fluid with the viewport). Always the direct child of the shell body.
  * @param {Parameters<typeof import("./PageStack.d.ts").PageStack>[0]} props */
 function PageStack({
   gap = "md",
@@ -6004,7 +5995,7 @@ Object.assign(__ds_scope, { PageStack });
 // components/layout/Panel.jsx
 try { (() => {
 const { cx, frameStyle } = __ds_scope;
-/** 카드/패널. 층 구분은 보더, 그림자는 최소. caption은 상단 소문자 캡션. interactive면 호버 상승, selected면 악센트 링.
+/** Card / panel. caption is the small top caption; interactive adds hover lift (visual only), selected adds the accent ring.
  * @param {Parameters<typeof import("./Panel.d.ts").Panel>[0]} props */
 function Panel({
   caption,
@@ -6041,7 +6032,7 @@ Object.assign(__ds_scope, { Panel });
 // components/layout/Spacer.jsx
 try { (() => {
 const { cx, spaceToken } = __ds_scope;
-/** flex 빈 공간. size를 주면 고정 간격(세로 스택 안).
+/** Flex filler; with size, a fixed gap (inside a vertical stack).
  * @param {Parameters<typeof import("./Spacer.d.ts").Spacer>[0]} props */
 function Spacer({
   size,
@@ -6067,7 +6058,7 @@ Object.assign(__ds_scope, { Spacer });
 // components/layout/Stack.jsx
 try { (() => {
 const { cx, spaceToken } = __ds_scope;
-/** 세로 스택. gap은 --sp 단계 번호(1~10) 또는 CSS 길이. align/justify는 flex 값. as로 태그 변경.
+/** Vertical stack. gap is an --sp step (1–10) or CSS length; align/justify are flex values; as changes the tag.
  * @param {Parameters<typeof import("./Stack.d.ts").Stack>[0]} props */
 function Stack({
   gap = 4,
@@ -6096,7 +6087,7 @@ Object.assign(__ds_scope, { Stack });
 // components/layout/StatusBar.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** 셸 하단 상태바.
+/** Status bar at the bottom of the shell.
  * @param {Parameters<typeof import("./StatusBar.d.ts").StatusBar>[0]} props */
 function StatusBar({
   live,
@@ -6128,7 +6119,7 @@ Object.assign(__ds_scope, { StatusBar });
 // components/layout/Toolbar.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** 표 위 도구 줄: 검색(늘어남) + 필터 + 오른쪽 끝 액션. 좁으면 줄바꿈. role="toolbar"는 화살표 이동을 약속하므로 붙이지 않는다(Tab으로 컨트롤 사이를 이동).
+/** Tool row above a table: search (grows) + filters + end actions; wraps when narrow. No role="toolbar": that role promises arrow-key navigation, and controls here move with Tab.
  * @param {Parameters<typeof import("./Toolbar.d.ts").Toolbar>[0]} props */
 function Toolbar({
   children,
@@ -6143,7 +6134,7 @@ function Toolbar({
     className: "bds-toolbar__end"
   }, end));
 }
-/** Toolbar 안에서 늘어나는 슬롯(검색 필드 등).
+/** Growing slot inside a Toolbar (search field etc.).
  * @param {Parameters<typeof import("./Toolbar.d.ts").ToolbarGrow>[0]} props */
 function ToolbarGrow({
   children
@@ -6158,7 +6149,7 @@ Object.assign(__ds_scope, { Toolbar, ToolbarGrow });
 // components/layout/Visible.jsx
 try { (() => {
 const { cx } = __ds_scope;
-/** 뷰포트 단계별 표시. above="md"는 768 이상에서만, below="md"는 768 미만에서만. 레이아웃 박스를 만들지 않는다(display:contents).
+/** Viewport-step visibility: above="md" shows at 768 and up, below="md" under 768. Creates no layout box (display:contents).
  * @param {Parameters<typeof import("./Visible.d.ts").Visible>[0]} props */
 function Visible({
   above,
@@ -6177,7 +6168,7 @@ Object.assign(__ds_scope, { Visible });
 try { (() => {
 const { useState } = React;
 const { Icon } = __ds_scope;
-/** 경로 표시. items: {label, href?}. 마지막은 현재 페이지. maxItems 초과 시 중간을 "…"로 접는다.
+/** Path trail. items: {label, href?}; the last is the current page. Beyond maxItems the middle collapses to "…".
  * @param {Parameters<typeof import("./Breadcrumb.d.ts").Breadcrumb>[0]} props */
 function Breadcrumb({
   items = [],
@@ -6186,7 +6177,7 @@ function Breadcrumb({
   ...rest
 }) {
   const [all, setAll] = useState(false);
-  /* 펼침은 그 경로에만 의미가 있다. 경로가 바뀌면 접힌 상태로 돌아간다. */
+  /* Expansion belongs to one path; a new items array collapses again. */
   const [prevItems, setPrevItems] = useState(items);
   if (prevItems !== items) {
     setPrevItems(items);
@@ -6238,7 +6229,7 @@ Object.assign(__ds_scope, { Breadcrumb });
 // components/navigation/Link.jsx
 try { (() => {
 const { cx, Icon } = __ds_scope;
-/** 텍스트 링크. 외부 링크는 external로 아이콘·rel 자동. quiet는 본문색.
+/** Text link. external adds the icon and rel automatically; quiet uses the body text color.
  * @param {Parameters<typeof import("./Link.d.ts").Link>[0]} props */
 function Link({
   href,
@@ -6266,7 +6257,7 @@ Object.assign(__ds_scope, { Link });
 // components/navigation/Pagination.jsx
 try { (() => {
 const { cx, IconButton } = __ds_scope;
-/** 페이지 번호. page는 1부터. total은 총 페이지 수. info에 "1–20 / 184" 같은 범위를 준다.
+/** Page numbers. page is 1-based, total is the page count; info takes a range like "1–20 / 184".
  * @param {Parameters<typeof import("./Pagination.d.ts").Pagination>[0]} props */
 function Pagination({
   page = 1,
@@ -6330,8 +6321,8 @@ const { cx, Icon, IconButton, MascotMark } = __ds_scope;
 /** @type {import("react").Context<(() => void) | null>} */
 const CloseCtx = /*#__PURE__*/createContext(/** @type {any} */null);
 
-/** 대시보드 셸: 240px 사이드바 + 52px 상단바 + 본문 + 28px 상태바. 부모가 높이를 정한다(페이지는 100dvh).
- *  1024 미만: 사이드바가 오버레이 드로어(햄버거). 768 미만: 상태바 숨김. 본문은 컨테이너 쿼리 대상(container-name: body).
+/** Dashboard shell: 240px sidebar + 52px top bar + body + 28px status bar. The parent sets the height (pages use 100dvh).
+ *  Below 1024 the sidebar becomes an overlay drawer (hamburger); below 768 the status bar is hidden. The body is a container-query root (container-name: body).
  * @param {Parameters<typeof import("./SidebarShell.d.ts").SidebarShell>[0]} props
  */
 function SidebarShell({
@@ -6351,9 +6342,9 @@ function SidebarShell({
     side = useRef(/** @type {HTMLElement | null} */null);
   useEffect(() => {
     if (!open) return;
-    /* 드로어로 열리면 포커스를 안으로(닫기 버튼) 옮기고, 닫히면 햄버거로 돌린다.
-       정리 시점의 burger.current 는 이미 다른 노드일 수 있어 지금 노드를 담아 둔다.
-       레일로 넓어지면 햄버거가 숨으므로, 보이지 않으면 되돌리지 않는다(포커스가 body 로 떨어진다). */
+    /* Move focus into the drawer (close button) on open and back to the hamburger on close.
+       burger.current may point at a different node by cleanup time, so capture it now.
+       Widening to the rail hides the hamburger; focusing a hidden node drops focus to body, so skip it then. */
     const trigger = burger.current;
     side.current?.querySelector("button")?.focus();
     const onKey = (/** @type {KeyboardEvent} */e) => e.key === "Escape" && setOpen(false);
@@ -6425,7 +6416,7 @@ function SidebarShell({
   }, statusbar)));
 }
 
-/** 사이드바 항목. href가 있으면 a, 없으면 button. 드로어 안에서 고르면 드로어가 닫힌다.
+/** Sidebar item: <a> with href, otherwise <button>. Picking one inside the drawer closes it.
  * @param {Parameters<typeof import("./SidebarShell.d.ts").SidebarNavItem>[0]} props */
 function SidebarNavItem({
   icon,
@@ -6474,7 +6465,7 @@ function SidebarNavItem({
   }, inner);
 }
 
-/** 사이드바 섹션 라벨.
+/** Sidebar section label.
  * @param {Parameters<typeof import("./SidebarShell.d.ts").SidebarNavGroup>[0]} props */
 function SidebarNavGroup({
   label
@@ -6490,7 +6481,7 @@ Object.assign(__ds_scope, { SidebarShell, SidebarNavItem, SidebarNavGroup });
 try { (() => {
 const { useEffect, useId, useRef, useState } = React;
 const { cx, Icon } = __ds_scope;
-/** 탭. items: {value,label,count?,icon?}[]. 선택 탭만 Tab 순서에 들고 화살표·Home·End로 옮긴다. panelId(value)를 주면 aria-controls를 붙인다. 잉크바가 선택 탭 아래로 미끄러진다. 넘치면 가로 스크롤.
+/** Tabs. items: {value,label,count?,icon?}[]. Single tab stop with arrow/Home/End roving; panelId(value) adds aria-controls. Ink bar slides under the selected tab; overflow scrolls horizontally.
  * @param {Parameters<typeof import("./Tabs.d.ts").Tabs>[0]} props */
 function Tabs({
   items = [],
@@ -6562,7 +6553,7 @@ Object.assign(__ds_scope, { Tabs });
 // components/navigation/TopNav.jsx
 try { (() => {
 const { cx, Icon, MascotMark } = __ds_scope;
-/** 사이드바 없는 제품의 상단 내비. brand + links(가로 스크롤) + end. 화면 5개 이하일 때 SidebarShell 대신.
+/** Top navigation for products without a sidebar: brand + links (horizontal scroll) + end. Use instead of SidebarShell for five screens or fewer.
  * @param {Parameters<typeof import("./TopNav.d.ts").TopNav>[0]} props */
 function TopNav({
   brand,
@@ -6603,7 +6594,7 @@ Object.assign(__ds_scope, { TopNav });
 try { (() => {
 const { useEffect, useId, useRef, useState } = React;
 const { cx, useAnchoredPopover, Icon, IconButton } = __ds_scope;
-/** "…" 메뉴. items: {label, icon?, onSelect, danger?, disabled?} | "-"(구분선). trigger를 안 주면 점 세 개 IconButton.
+/** "…" menu. items: {label, icon?, onSelect, danger?, disabled?} | "-" (separator). Without trigger, renders a dots-three IconButton.
  * @param {Parameters<typeof import("./DropdownMenu.d.ts").DropdownMenu>[0]} props */
 function DropdownMenu({
   items = [],
@@ -6626,7 +6617,7 @@ function DropdownMenu({
     align,
     onDismiss: () => setOpen(false)
   });
-  /* 닫힐 때 포커스를 트리거로 돌린다(메뉴 항목이 언마운트되면 포커스가 body로 떨어진다) */
+  /* Return focus to the trigger on close; once the items unmount it would drop to body. */
   const close = () => {
     if (panel.current?.matches(":popover-open")) panel.current.hidePopover();
     setOpen(false); /** @type {HTMLElement | null | undefined} */
@@ -6651,8 +6642,8 @@ function DropdownMenu({
       document.removeEventListener("keydown", key);
     };
   }, [open]);
-  /* 포커스를 옮기는 계기는 열림과 활성 인덱스뿐이다. items 를 의존성에 두면 인라인 배열이라
-     부모가 다시 그릴 때마다 포커스가 활성 항목으로 되돌아가 사용자가 옮긴 포커스를 뺏는다. */
+  /* Only open state and the active index move focus. items is usually an inline array, so listing it
+     as a dependency would snap focus back to the active item on every parent render. */
   const active = enabled.includes(idx) ? idx : enabled[0];
   useEffect(() => {
     if (!open) return;
@@ -6762,7 +6753,7 @@ Object.assign(__ds_scope, { DropdownMenu });
 try { (() => {
 const { cloneElement, useEffect, useId, useRef, useState } = React;
 const { cx } = __ds_scope;
-/** 클릭으로 여는 설명·미니 폼 패널. Tooltip과 달리 상호작용 요소를 넣을 수 있다. trigger 하나를 감싼다.
+/** Click-opened panel for explanations or mini forms. Unlike Tooltip it may hold interactive content. Wraps one trigger.
  * @param {Parameters<typeof import("./Popover.d.ts").Popover>[0]} props */
 function Popover({
   trigger,
@@ -6775,7 +6766,7 @@ function Popover({
 }) {
   const [inner, setInner] = useState(false);
   const open = ctrl ?? inner;
-  /* 통지 콜백은 매 렌더 새 함수다. 이펙트 의존성에 넣으면 리스너를 매번 다시 건다. */
+  /* onOpenChange is a new function every render; as an effect dependency it would re-bind the listeners each time. */
   const notify = useRef(onOpenChange);
   useEffect(() => {
     notify.current = onOpenChange;
@@ -6788,7 +6779,7 @@ function Popover({
     id = useId().replace(/:/g, "");
   useEffect(() => {
     if (!open) return;
-    /* 닫기는 이펙트 안에서 만든다. 바깥 set 을 쓰면 매 렌더 새 함수라 리스너를 다시 걸게 된다. */
+    /* Build close inside the effect; the outer set is a new function per render and would re-bind the listeners. */
     const close = () => {
       setInner(false);
       notify.current?.(false);
@@ -6839,7 +6830,7 @@ Object.assign(__ds_scope, { Popover });
 try { (() => {
 const { cloneElement, useEffect, useId, useRef, useState } = React;
 const { cx } = __ds_scope;
-/** 범용 툴팁. 자식 하나를 감싸 hover/focus에 content를 보인다. Esc·blur·mouseleave로 닫힌다. 잘린 텍스트·아이콘 버튼 설명용. 상호작용 요소는 넣지 않는다.
+/** Generic tooltip. Wraps one child and shows content on hover/focus; closes on Esc, blur and mouseleave. For truncated text and icon-button labels; never interactive content.
  * @param {Parameters<typeof import("./Tooltip.d.ts").Tooltip>[0]} props */
 function Tooltip({
   content,
@@ -6891,16 +6882,16 @@ try { (() => {
 const { useEffect, useRef } = React;
 // Share the body lock across nested dialogs, including dialogs closed out of order.
 /** @typedef {{ dialog: HTMLDialogElement, opener: HTMLElement | null }} DialogEntry */
-/** 세션은 자기가 잠근 body 를 들고 있는다. 여는 시점과 닫는 시점의 document 를 따로 읽지 않는다.
+/** A session keeps the body it locked; the document is not re-read at close time.
  * @type {WeakMap<Document, { entries: DialogEntry[], body: HTMLElement, overflow: string }>} */
 const sessions = new WeakMap();
 
-/** 네이티브 dialog 의 개방 세션. 스크롤 잠금·포커스 복원·중첩 정리와 배경 클릭 해제를 함께 소유한다.
- * 배경 해제를 여기 두는 이유: dialog 의 배경은 ::backdrop 이라 별도 요소가 없고, 패널 바깥 좌표
- * 판정이 Modal·Drawer 에 똑같이 필요했다. JSX 에 핸들러를 두면 두 곳에 같은 코드가 생긴다.
+/** Open session of a native dialog: owns scroll lock, focus restore, nesting cleanup and backdrop dismissal. See RULE.md "동작 계약".
+ * Backdrop dismissal lives here because ::backdrop has no element of its own, so it needs an outside-the-panel
+ * hit test, and Modal and Drawer would otherwise duplicate that handler in JSX.
  * @param {{ current: HTMLDialogElement | null }} panel
  * @param {boolean} open
- * @param {(() => void) | undefined} [onClose] 배경을 눌렀을 때. 생략하면 배경 클릭으로 닫지 않는다.
+ * @param {(() => void) | undefined} [onClose] Called on backdrop press. Omit to disable backdrop dismissal.
  */
 function useModalDialog(panel, open, onClose) {
   const closeRef = useRef(onClose);
@@ -6929,7 +6920,7 @@ function useModalDialog(panel, open, onClose) {
     if (!dialog.open) dialog.showModal();
     // showModal performs native autofocus; retain it and use the panel only as fallback.
     if (!dialog.contains(doc.activeElement)) dialog.focus();
-    /* 배경 판정은 mousedown 으로 한다. click 은 패널 안에서 시작해 밖에서 끝난 드래그도 잡는다. */
+    /* Hit-test on mousedown: click would also fire for a drag that starts inside the panel and ends outside. */
     const onDown = (/** @type {MouseEvent} */e) => {
       if (e.target !== dialog) return;
       const r = dialog.getBoundingClientRect();
@@ -6938,8 +6929,8 @@ function useModalDialog(panel, open, onClose) {
     dialog.addEventListener("mousedown", onDown);
     return () => {
       dialog.removeEventListener("mousedown", onDown);
-      /* 닫는 동안 이미 다이얼로그 밖의 실제 요소로 포커스가 옮겨졌다면 그쪽이 의도한 자리다.
-         opener 로 되돌리면 명령이 보낸 포커스를 덮는다. body 는 "아무 데도 없음"이라 되돌린다. */
+      /* If focus already escaped to a real element outside the dialog, that is the intended target and
+         restoring the opener would clobber it. body means "nowhere", so restore in that case. */
       const moved = doc.activeElement;
       const escaped = moved != null && moved !== doc.body && !dialog.contains(moved);
       const top = state.entries.at(-1) === entry;
@@ -6956,8 +6947,8 @@ function useModalDialog(panel, open, onClose) {
         state.body.style.overflow = state.overflow;
         sessions.delete(doc);
       }
-      /* dialog.close() 는 브라우저가 스스로 opener 로 포커스를 되돌린다. 명령이 이미 다른 곳으로
-         보냈다면 그 자리가 의도한 곳이므로 닫은 뒤 다시 돌려준다. */
+      /* dialog.close() moves focus back to the opener on its own. If a command already sent focus
+         elsewhere, hand it back there after closing. */
       if (escaped) /** @type {HTMLElement} */moved.focus?.();else if (top && entry.opener?.isConnected && (!remaining || remaining.contains(entry.opener))) entry.opener.focus?.();
       if (remaining && !remaining.contains(doc.activeElement)) remaining.focus();
     };
@@ -6970,7 +6961,7 @@ Object.assign(__ds_scope, { useModalDialog });
 try { (() => {
 const { useEffect, useId, useMemo, useRef, useState } = React;
 const { cx, Icon, useModalDialog } = __ds_scope;
-/** ⌘K 명령 팔레트. items: {id, label, icon?, group?, hint?, keywords?, onSelect}. open/onClose 제어형. inline이면 딤 없이 패널만(문서용).
+/** ⌘K command palette. items: {id, label, icon?, group?, hint?, keywords?, onSelect}. Controlled via open/onClose. inline renders the panel alone, without a backdrop (for docs).
  * @param {Parameters<typeof import("./CommandPalette.d.ts").CommandPalette>[0]} props */
 function CommandPalette({
   open = false,
@@ -6980,8 +6971,8 @@ function CommandPalette({
   inline = false,
   className
 }) {
-  /* 열 때마다 새 세션이다. 검색어·강조를 이펙트로 되돌리면 되돌리기 전 한 프레임이 그대로 보인다.
-     ConfirmDialog 와 같은 방식으로, 닫히면 언마운트해 상태를 남기지 않는다. */
+  /* Each open is a fresh session. Resetting query/highlight in an effect would flash the stale frame first,
+     so, like ConfirmDialog, unmount on close and keep no state. */
   if (!inline && !open) return null;
   return /*#__PURE__*/React.createElement(CommandSession, {
     onClose: onClose,
@@ -7004,25 +6995,25 @@ function CommandSession({
   const [idx, setIdx] = useState(0);
   const uid = useId().replace(/:/g, "");
   const panel = useRef(/** @type {HTMLDialogElement | null} */null);
-  /* 모달일 때만 dialog 세션을 연다. 포커스 가둠·Esc·배경 해제·포커스 복원을 훅이 맡는다.
-     inline 은 문서용 패널이라 세션을 열지 않는다(포커스를 뺏으면 안 된다). */
+  /* The dialog session (focus trap, Esc, backdrop, focus restore) opens only when modal.
+     inline is a documentation panel and must not steal focus. */
   useModalDialog(panel, !inline, onClose);
   const list = useMemo(() => {
     const s = q.trim().toLowerCase();
     return !s ? items : items.filter(it => (it.label + " " + (it.keywords ?? "") + " " + (it.group ?? "")).toLowerCase().includes(s));
   }, [q, items]);
-  /* 검색어가 바뀌면 강조를 첫 항목으로. */
+  /* Reset the highlight when the query changes. */
   const [prevQ, setPrevQ] = useState(q);
   if (prevQ !== q) {
     setPrevQ(q);
     setIdx(0);
   }
-  /* 목록이 줄면 이전 강조가 범위를 벗어난다. 읽는 자리마다 막지 않고 여기서 한 번 거른다. */
+  /* A shrinking list can leave idx out of range; clamp once here instead of at every read site. */
   const active = idx < list.length ? idx : 0;
 
-  /* 모달이 열려 있는 동안 바깥 요소는 inert 라 포커스를 받지 못한다. 포커스를 옮기는 명령이
-     동작하려면 세션이 끝난 뒤에 실행해야 한다. 타이머가 아니라 dialog 세션의 정리에 묶는다
-     (useModalDialog 보다 뒤에 선언했으므로 dialog.close() 뒤에 돈다). */
+  /* While the modal is open everything outside is inert, so a command that moves focus must run after the
+     session ends. Tie it to this effect's cleanup rather than a timer: declared after useModalDialog,
+     so it runs after dialog.close(). See RULE.md "동작 계약". */
   const pending = useRef(/** @type {import("./CommandPalette.d.ts").CommandItem | null} */null);
   useEffect(() => () => {
     const it = pending.current;
@@ -7119,7 +7110,7 @@ Object.assign(__ds_scope, { CommandPalette });
 try { (() => {
 const { useId, useRef } = React;
 const { useModalDialog, cx, IconButton } = __ds_scope;
-/** 오른쪽 사이드 패널. 네이티브 <dialog>.showModal()로 포커스를 가둔다. 목록을 보면서 상세를 볼 때(실행 상세·모델 상세). 확인이 필요한 결정은 Modal. size: sm 380 · md 480 · lg 640. 768 미만은 전체 폭.
+/** Right-side panel on native <dialog>.showModal(). For viewing detail beside a list; decisions that need confirmation belong in Modal. size: sm 380 · md 480 · lg 640; full width below 768.
  * @param {Parameters<typeof import("./Drawer.d.ts").Drawer>[0]} props */
 function Drawer({
   open,
@@ -7180,7 +7171,7 @@ const TONE_LABEL = {
   ok: "정상"
 };
 
-/** 상단바 종 버튼. 읽지 않은 수가 배지로.
+/** Top-bar bell button; the unread count is shown as a badge.
  * @param {Parameters<typeof import("./NotificationDrawer.d.ts").NotificationTrigger>[0]} props */
 function NotificationTrigger({
   unreadCount = 0,
@@ -7189,7 +7180,7 @@ function NotificationTrigger({
   controls = NOTIFICATION_DRAWER_ID,
   ...rest
 }) {
-  // 읽지 않은 수를 이름에 넣는 것은 badge를 그리는 IconButton의 몫이다. 여기서 숫자를 적으면 두 번 읽힌다.
+  // IconButton, which draws the badge, adds the count to the accessible name; repeating it here reads twice. See RULE.md "접근성".
   return /*#__PURE__*/React.createElement(IconButton, {
     icon: "bell",
     badge: unreadCount,
@@ -7201,7 +7192,7 @@ function NotificationTrigger({
   });
 }
 
-/** 오른쪽 알림 드로어(380px, 모바일 전폭). 항목을 누르면 onRead(id).
+/** Right-side notification drawer (380px, full width on mobile). Pressing an item calls onRead(id).
  * @param {Parameters<typeof import("./NotificationDrawer.d.ts").NotificationDrawer>[0]} props */
 function NotificationDrawer({
   open,
@@ -7265,7 +7256,7 @@ Object.assign(__ds_scope, { NOTIFICATION_DRAWER_ID, NotificationTrigger, Notific
 try { (() => {
 const { useId, useRef } = React;
 const { useModalDialog, cx, IconButton } = __ds_scope;
-/** 모달. 네이티브 <dialog>.showModal()로 포커스를 가둔다. Esc·딤·닫기 → onClose. 640 미만에서는 바텀시트. size: sm 360 · md 440 · lg 560 · xl 760.
+/** Modal on native <dialog>.showModal(). Esc, backdrop and the close button call onClose. Bottom sheet below 640. size: sm 360 · md 440 · lg 560 · xl 760.
  * @param {Parameters<typeof import("./Modal.d.ts").Modal>[0]} props */
 function Modal({
   open,
@@ -7318,7 +7309,7 @@ Object.assign(__ds_scope, { Modal });
 try { (() => {
 const { useState } = React;
 const { Modal, Button, TextField } = __ds_scope;
-/** 확인 모달. danger면 확인 버튼 crit 채움. typeToConfirm에 이름을 주면 그대로 입력해야 확인이 활성화된다.
+/** Confirmation modal. danger fills the confirm button with crit. With typeToConfirm, the exact string must be typed before confirm enables.
  * @param {Parameters<typeof import("./ConfirmDialog.d.ts").ConfirmDialog>[0]} props */
 function ConfirmDialog({
   open,
@@ -7401,7 +7392,7 @@ Object.assign(__ds_scope, { ConfirmDialog });
 try { (() => {
 const { useId } = React;
 const { Modal, Button } = __ds_scope;
-/** 폼 모달. Enter 제출, 제출 버튼 라벨은 동사. busy 중 취소도 막는다.
+/** Form modal. Enter submits; the submit label is a verb. While busy, cancel is blocked too.
  * @param {Parameters<typeof import("./FormModal.d.ts").FormModal>[0]} props */
 function FormModal({
   open,
@@ -7456,7 +7447,7 @@ Object.assign(__ds_scope, { FormModal });
 
 // theme-toggle.js
 try { (() => {
-/* 문서 테마 동기화 구현. 동작 기준은 readme.md의 문서 테마 규칙을 따른다. */
+/* Document theme sync. See RULE.md "컴포넌트 사용 규칙" (document theme controls). */
 (() => {
   const KEY = "bds-theme";
   const standalone = /theme-toggle\.js(\?|$)/.test(document.currentScript?.src || "");
@@ -7468,7 +7459,7 @@ try { (() => {
       return false;
     }
   })();
-  /* 테마 전환 처방은 readme.md의 색 절을 따른다. 트랜지션을 끄지 않으면 스냅이 아니라 번짐이 된다. */
+  /* Kill transitions while flipping the theme or the swap smears instead of snapping. See RULE.md "VISUAL FOUNDATIONS" */
   const apply = t => {
     const root = document.documentElement;
     const stop = document.createElement("style");

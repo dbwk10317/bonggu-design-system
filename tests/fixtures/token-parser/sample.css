@@ -7,7 +7,7 @@
   --demo-bg:#fff;
   --demo-gap:8px;
 }
-/* 주석 안의 --demo-ghost는 선언이 아니다 */
+/* --demo-ghost inside a comment is not a declaration */
 :root.dark,:root[data-theme="dark"]{
   --demo-ink:#eee;
 }

@@ -5,7 +5,7 @@ import { TextField } from "./TextField.jsx";
 const LV = ["", "약함", "보통", "좋음", "강함"];
 export const passwordStrength = (s = "") => { if (!s) return 0; let n = 0; if (s.length >= 8) n++; if (s.length >= 12) n++; if (/[A-Z]/.test(s) && /[a-z]/.test(s)) n++; if (/\d/.test(s) && /[^\w]/.test(s)) n++; return Math.min(4, Math.max(1, n)); };
 
-/** 비밀번호 입력. 보기 토글 + (선택) 강도 미터. strength는 텍스트로도 병기한다. */
+/** Password input with show/hide toggle and optional strength meter. Strength is also announced as text. */
 export const PasswordField = forwardRef(
   /**
    * @param {import("./PasswordField.d.ts").PasswordFieldProps} props

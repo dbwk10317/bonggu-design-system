@@ -10,10 +10,10 @@ import { Legend } from "./Legend.jsx";
 /** @typedef {import("./Chart.d.ts").ChartThreshold} ChartThreshold */
 /** @typedef {(v: number) => string} Fmt */
 /** @typedef {[number, number]} Point */
-/** 결측이 null로 바뀐 세그먼트. 0으로 바꾸면 수집 실패가 "0"으로 보이므로 null을 유지한다.
+/** Segment with missing values normalized to null. Coercing to 0 would make a failed collection look like "0".
  * @typedef {Omit<import("./Chart.d.ts").ChartSegment, "value"> & { value: number | null }} NormSegment */
-/** normalize를 지난 뒤의 내부 표현. 공개 계약은 Chart.d.ts의 ChartProps 유니온이고,
- * 여기서는 kind에 따라 쓰이는 필드만 채워진 평면 형태로 다룬다.
+/** Internal shape after normalize. The public contract is the ChartProps union in Chart.d.ts;
+ * here it is a flat object where only the fields relevant to kind are filled.
  * @typedef {{
  *   kind?: "line" | "area" | "bar" | "pie" | "radial" | "radar" | "histogram",
  *   labels?: string[], series?: ChartSeries[], segments?: NormSegment[],
@@ -27,7 +27,7 @@ import { Legend } from "./Legend.jsx";
  *   style?: DSStyle, "aria-label"?: string
  * }} NormProps */
 
-/* ---------- 공용 크롬 ---------- */
+/* ---------- Shared chrome ---------- */
 /** @param {{ current: HTMLElement | null }} ref @param {number} [fixedW] @param {number} [fixedH] */
 function useSize(ref, fixedW, fixedH) {
   const [size, setSize] = useState({ w: fixedW ?? 0, h: fixedH ?? 0 });
@@ -43,8 +43,8 @@ function useSize(ref, fixedW, fixedH) {
 /** @param {boolean} enabled */
 function useAnimateOnce(enabled) {
   const [on, setOn] = useState(enabled);
-  /* enabled 가 다시 켜지면 한 번 더 무장한다. 켜기만 하고 되돌리지 않으면 live 를 껐을 때
-     진입 모션이 영영 돌지 않는다. */
+  /* Re-arm when enabled turns back on. Without resetting, turning live off later would never
+     replay the entry animation. */
   const [prevEnabled, setPrevEnabled] = useState(enabled);
   if (prevEnabled !== enabled) { setPrevEnabled(enabled); setOn(enabled); }
   useEffect(() => { if (!enabled) return; const t = setTimeout(() => setOn(false), 1100); return () => clearTimeout(t); }, [enabled]);
@@ -63,8 +63,8 @@ function Tip({ x, w, title, rows }) {
 /** @param {Fmt} fmt @param {number | null | undefined} v */
 const cell = (fmt, v) => { const n = numeric(v); return n == null ? MISSING_TEXT : fmt(n); };
 
-/* 데이터가 기하 계산에 닿기 전 단 한 곳의 경계. 여기서 결측은 모두 null이 되므로 아래 계산은 값이 null인지만 본다.
-   이 경계가 없으면 NaN 하나가 축 범위를 통해 차트 전체의 좌표를 무효로 만든다. */
+/* The single boundary before data reaches geometry. Every missing value becomes null here, so the math below
+   only checks for null. Without it one NaN would poison the axis range and every coordinate in the chart. */
 /** @param {NormProps} props @returns {NormProps} */
 function normalize(props) {
   const series = props.series?.map((s) => ({ ...s, values: (s.values ?? []).map(numeric) }));
@@ -81,8 +81,8 @@ function normalize(props) {
   return out;
 }
 
-/* ---------- 직교(line·area·bar) ---------- */
-/** hover/setHover는 Chart가 갖는다(마우스·키보드가 같은 인덱스를 움직여 같은 Tip을 띄운다). */
+/* ---------- Cartesian (line · area · bar) ---------- */
+/** hover/setHover live in Chart so mouse and keyboard drive the same index and the same Tip. */
 /** @param {{ kind: "line" | "area" | "bar", labels: string[], series: ChartSeries[], fmt: Fmt, uid: string, xTicks?: "auto" | "ends" | "none", w: number, h: number, thresholds?: ChartThreshold[], stacked?: boolean, yMin?: number, yMax?: number, hover: number | null, setHover: (i: number | null) => void }} props */
 function Cartesian({ kind, labels, series, fmt, uid, xTicks, w, h, thresholds = [], stacked, yMin, yMax, hover, setHover }) {
   const n = labels.length;
@@ -122,7 +122,7 @@ function Cartesian({ kind, labels, series, fmt, uid, xTicks, w, h, thresholds = 
                 return <rect key={i} className="bds-chart__bar" x={r1(x(i) + off - groupW / 2)} y={Math.min(y0, y1)} width={r1(groupW)} height={Math.max(1, Math.abs(y0 - y1))} rx={stacked ? 0 : 3} fill={color} opacity={hover == null || hover === i ? 1 : 0.45} style={{ animationDelay: `${i * 25}ms` }} />;
               })}</g>;
             }
-            /* 대시는 프레젠테이션 속성으로 준다. 진입 모션 동안은 .bds-chart--animate .bds-chart__line의 CSS(그리기용 dasharray)가 속성을 덮고, 클래스가 빠지면 이 패턴이 드러난다. */
+            /* Dash goes on as a presentation attribute. During the entry animation the .bds-chart--animate .bds-chart__line CSS (draw-on dasharray) overrides it; once the class drops, this pattern shows. */
             const runs = runsOf(s.values, x, y), baseY = y(Math.max(lo, 0)), dash = seriesDash(s, si, series.length);
             return <g key={si}>{runs.map((pts, ri) => pts.length === 1 ? <circle key={ri} cx={pts[0][0]} cy={pts[0][1]} r={3} fill={color} /> : <g key={ri}>
               {kind === "area" && <path className="bds-chart__area" d={`${smoothPath(pts)} L${pts[pts.length - 1][0]} ${baseY} L${pts[0][0]} ${baseY}Z`} fill={`url(#${uid}-g${si})`} />}
@@ -138,10 +138,10 @@ function Cartesian({ kind, labels, series, fmt, uid, xTicks, w, h, thresholds = 
   );
 }
 
-/* ---------- 도넛 ---------- */
+/* ---------- Donut ---------- */
 /** @param {{ segments: NormSegment[], fmt: Fmt, caption?: import("react").ReactNode, w: number, h: number, hover: number | null, setHover: (i: number | null) => void }} props */
 function Pie({ segments, fmt, caption, w, h, hover, setHover }) {
-  // 결측 세그먼트는 null로 남긴다. 0으로 바꾸면 수집 실패가 "0"으로 보인다.
+  // Missing segments stay null; 0 would read as a collected zero.
   const vals = segments.map((s) => (s.value == null ? null : Math.max(0, s.value))), sum = vals.reduce((/** @type {number} */ a, b) => a + (b ?? 0), 0);
   if (!sum || w < 40) return null;
   const R = Math.min(w, h) / 2 - 4, stroke = Math.max(10, R * 0.34), r = R - stroke / 2, C = 2 * Math.PI * r, cx0 = w / 2, cy0 = h / 2;
@@ -170,14 +170,14 @@ function Pie({ segments, fmt, caption, w, h, hover, setHover }) {
   );
 }
 
-/* ---------- 방사 게이지 ---------- */
+/* ---------- Radial gauge ---------- */
 /** @param {{ value: number, label?: import("react").ReactNode, tone?: ChartTone, fmt: Fmt, w: number, h: number, animate?: boolean }} props */
 function Radial({ value, label, tone, fmt, w, h, animate }) {
   const [shown, setShown] = useState(animate ? 0 : value);
   useEffect(() => { const t = requestAnimationFrame(() => setShown(value)); return () => cancelAnimationFrame(t); }, [value]);
   if (w < 40) return null;
   const v = Math.min(1, Math.max(0, value));
-  // 240° 게이지. 높이 = 1.5r + stroke, 폭 = 2r + stroke 안에 들어오도록 r을 정한다.
+  // 240° gauge. Pick r so that height = 1.5r + stroke and width = 2r + stroke both fit.
   const r = Math.min(h / 1.6, w / 2.1) - 2, stroke = Math.max(6, r * 0.14), cx0 = w / 2, cy0 = r + stroke / 2 + 2;
   const a0 = Math.PI * 7 / 6, a1 = -Math.PI / 6;
   const pt = (/** @type {number} */ a) => /** @type {Point} */ ([r1(cx0 + Math.cos(a) * r), r1(cy0 - Math.sin(a) * r)]);
@@ -195,7 +195,7 @@ function Radial({ value, label, tone, fmt, w, h, animate }) {
   );
 }
 
-/* ---------- 레이더 ---------- */
+/* ---------- Radar ---------- */
 /** @param {{ axes: string[], series: ChartSeries[], max?: number, fmt: Fmt, w: number, h: number, hover: number | null, setHover: (i: number | null) => void }} props */
 function Radar({ axes, series, max, fmt, w, h, hover, setHover }) {
   const n = axes.length; if (n < 3 || w < 40) return null;
@@ -211,7 +211,7 @@ function Radar({ axes, series, max, fmt, w, h, hover, setHover }) {
         {series.map((s, si) => {
           const points = axes.map((_, i) => s.values[i] == null ? null : pt(i, Math.max(0, s.values[i] / top)));
           const color = toneVar(s.tone, si);
-          // 닫힌 면은 모든 축이 수집된 경우에만 그린다. 결측 축 양옆을 건너 연결하지 않는다.
+          // The closed fill is drawn only when every axis has a value; never bridge across a missing axis.
           if (points.every(Boolean)) return <polygon key={si} points={/** @type {Point[]} */ (points).map((p) => p.join(",")).join(" ")} fill={color} fillOpacity=".2" stroke={color} strokeWidth="2" strokeLinejoin="round" />;
           return <g key={si}>{points.map((p, i) => {
             const next = points[(i + 1) % n];
@@ -226,8 +226,8 @@ function Radar({ axes, series, max, fmt, w, h, hover, setHover }) {
   );
 }
 
-/* ---------- 히스토그램 ---------- */
-/** 원시 표본(samples)을 bins개 구간으로 나눠 막대로. 분위선(p50/p95)은 thresholds처럼 세로 점선으로. 구간 계산은 chart-math.histBins(SR 표와 공유). */
+/* ---------- Histogram ---------- */
+/** Raw samples binned into bars. Percentile lines (p50/p95) are vertical dashes like thresholds. Bins come from chart-math.histBins, shared with the SR table. */
 /** @param {{ hist: ReturnType<typeof histBins>, fmt: Fmt, w: number, h: number, tone?: ChartTone, percentiles?: number[], unit?: string, animate?: boolean, hover: number | null, setHover: (i: number | null) => void }} props */
 function Histogram({ hist, fmt, w, h, tone, percentiles = [], unit, animate, hover, setHover }) {
   const b = hist;
@@ -254,8 +254,8 @@ function Histogram({ hist, fmt, w, h, tone, percentiles = [], unit, animate, hov
   );
 }
 
-/* ---------- 스크린리더 표 ---------- */
-/** 시각 차트와 같은 데이터를 표로. 항상 렌더(bds-sr로 숨김)하고 루트가 aria-describedby로 가리킨다. */
+/* ---------- Screen-reader table ---------- */
+/** The visual chart's data as a table. Always rendered (hidden with bds-sr) and referenced by aria-describedby. */
 /** @param {{ id: string, kind: NonNullable<NormProps["kind"]>, props: NormProps, bins: ReturnType<typeof histBins>, fmt: Fmt }} props */
 function SrTable({ id, kind, props, bins, fmt }) {
   /** @type {import("react").ReactNode[]} */
@@ -266,7 +266,7 @@ function SrTable({ id, kind, props, bins, fmt }) {
   else if (kind === "radial") { head = props.label != null ? ["값", "상태"] : ["값"]; const rv = numeric(props.value) == null ? MISSING_TEXT : fmt(Math.min(1, Math.max(0, /** @type {number} */ (props.value)))); rows = [props.label != null ? [rv, props.label] : [rv]]; }
   else if (kind === "histogram") { const b = bins; head = ["구간", "표본"]; rows = b ? b.counts.map((c, i) => [`${fmt(b.lo + (i / b.n) * b.span)}~${fmt(b.lo + ((i + 1) / b.n) * b.span)}${props.unit ?? ""}`, `${c}건`]) : []; }
   else { const cols = kind === "radar" ? (props.axes ?? []) : (props.labels ?? []); head = ["계열"].concat(cols); rows = (props.series ?? []).map((s) => [s.label].concat(cols.map((_, i) => cell(fmt, s.values[i])))); }
-  // 표는 내용 폭을 따라 늘어나 width:1px을 무시한다. 숨김은 블록 래퍼가 맡아야 문서 가로 넘침이 나지 않는다.
+  // A table grows to its content and ignores width:1px; the block wrapper must do the hiding or the document overflows horizontally.
   return (
     <div className="bds-sr">
       <table id={id}>
@@ -277,19 +277,17 @@ function SrTable({ id, kind, props, bins, fmt }) {
   );
 }
 
-/* ---------- 진입점 ---------- */
+/* ---------- Entry point ---------- */
 const DEFAULT_H = { line: 200, area: 200, bar: 200, pie: 180, radial: 110, radar: 260, histogram: 180 };
 
-/** 단일 차트. kind: line | area | bar | pie | radial | radar | histogram.
- *  fit="flex"(기본)면 부모 폭을 채우고 height(px)만 정한다. fit="fixed"면 width·height 그대로.
- *  색은 --series-1~8만, 상태 의미는 라벨 텍스트가 전한다. 진입 시 1회 그리기 모션(live면 끔).
- *  paused=true면 마지막으로 받은 props 스냅샷을 그대로 그린다(스트림이 흘러도 화면은 멈춤).
- *  stage는 tabIndex=0: ←/→ 로 인덱스 이동, Home/End 양끝, Esc 해제. 숨김 표(bds-sr)가 aria-describedby로 연결된다.
+/** Single chart component. kind: line | area | bar | pie | radial | radar | histogram.
+ *  paused=true keeps drawing the last props snapshot while the stream moves on.
+ *  Keyboard on the stage: ←/→ move the index, Home/End jump to the ends, Esc clears. Colors, motion and a11y surfaces follow RULE.md "설계 원칙" and "접근성".
  * @param {Parameters<typeof import("./Chart.d.ts").Chart>[0]} rawProps
  */
 export function Chart(rawProps) {
-  /* paused 는 "지금 보이는 것을 그대로 두라"는 요청이라 상태다. 얼리는 순간의 props 를 담아 두고
-     푸는 순간 버린다. 렌더 중 ref 를 고치면 버려진 렌더의 props 가 스냅샷으로 남을 수 있다. */
+  /* paused means "keep what is on screen", so it is state: capture props when freezing, drop them when
+     unfreezing. Writing a ref during render could leave a discarded render's props as the snapshot. */
   const [frozen, setFrozen] = useState(/** @type {typeof rawProps | null} */ (null));
   if (rawProps.paused && frozen === null) setFrozen(rawProps);
   if (!rawProps.paused && frozen !== null) setFrozen(null);
@@ -304,15 +302,15 @@ export function Chart(rawProps) {
   const anim = useAnimateOnce(animate && !live);
   const w = fit === "fixed" && typeof width === "number" ? width : size.w;
   const lineKind = kind === "line" || kind === "area";
-  /* 표본 구간은 렌더당 한 번만 계산해 Histogram·SrTable·count 가 같은 결과를 쓴다. */
+  /* Bin once per render so Histogram, SrTable and count agree. */
   const bins = kind === "histogram" ? histBins(props.samples, props.bins) : null;
   const count = kind === "pie" ? (props.segments ?? []).length
     : kind === "histogram" ? (bins ? bins.n : 0)
     : kind === "radar" ? (props.axes ?? []).length
     : kind === "radial" ? 0
     : (props.labels ?? []).length;
-  /* hover 는 count 에 대한 인덱스다. 스트림이 줄면 이전 인덱스가 범위를 벗어나 툴팁과 커서가
-     플롯 밖에 남으므로, 읽는 자리마다 막지 않고 렌더에서 한 번 거른다. */
+  /* hover indexes into count. When a stream shrinks the old index goes out of range and the tooltip
+     and cursor would linger outside the plot, so filter once here instead of guarding every read. */
   const hover = hoverRaw != null && hoverRaw < count ? hoverRaw : null;
   /** @type {import("react").ReactNode} */
   let body = null;
@@ -328,7 +326,7 @@ export function Chart(rawProps) {
   else if (kind === "histogram") { hasData = !!bins; body = <Histogram hist={bins} tone={props.tone} percentiles={props.percentiles ?? []} unit={props.unit} fmt={valueFormatter} w={w} h={h} animate={anim} hover={hover} setHover={setHover} />; }
   else if (kind === "radar") { const axes = props.axes ?? []; hasData = axes.length >= 3 && (props.series ?? []).some((s) => axes.some((_, i) => s.values[i] != null)); body = <Radar axes={props.axes ?? []} series={props.series ?? []} max={props.max} fmt={valueFormatter} w={w} h={h} hover={hover} setHover={setHover} />; }
   else { hasData = (props.labels ?? []).length > 0 && (props.series ?? []).some((s) => s.values.some((v) => v != null)); body = <Cartesian kind={kind} labels={props.labels ?? []} series={props.series ?? []} fmt={valueFormatter} uid={uid} xTicks={props.xTicks ?? "auto"} w={w} h={h} thresholds={props.thresholds} stacked={props.stacked} yMin={props.yMin} yMax={props.yMax} hover={hover} setHover={setHover} />; }
-  /* 화살표로 옮긴 지점의 읽을거리. 시각 Tip 과 같은 내용을 글로 낸다. */
+  /* Text readout for the keyboard-selected point; same content as the visual Tip. */
   const readout = hover == null ? "" : [
     kind === "pie" ? props.segments?.[hover]?.label : kind === "radar" ? props.axes?.[hover] : props.labels?.[hover],
     ...(props.series ?? []).map((s) => `${s.label} ${cell(valueFormatter, s.values[hover])}`),

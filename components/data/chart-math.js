@@ -1,26 +1,26 @@
-/* 차트 공용 계산. 렌더와 분리해 테스트·재사용 가능하게 둔다.
-   내보내는 함수는 어떤 입력에도 유한한 결과나 null만 낸다. 결측 판정은 core/missing.js의 numeric 하나를 쓴다.
-   타입은 공개 Chart.d.ts의 것을 그대로 쓴다. 같은 모양을 여기 다시 적지 않는다. */
+/* Shared chart math, kept out of render so it can be tested and reused.
+   Every export returns a finite result or null for any input; missing detection is core/missing.js numeric() only.
+   Types come from the public Chart.d.ts; the same shapes are not redeclared here. */
 import { numeric } from "../core/missing.js";
 
 /** @typedef {import("./Chart.d.ts").ChartTone} ChartTone */
 /** @typedef {import("./Chart.d.ts").ChartSeries} ChartSeries */
-/** @typedef {[number, number]} Point 픽셀 좌표 */
+/** @typedef {[number, number]} Point Pixel coordinate */
 
 /** @param {number} n */
 export const r1 = (n) => Math.round(n * 10) / 10;
-/* 범주형 8색. tone에 문자열("rx","tx","used","reserved","free")을 주면 의미 고정 쌍을 쓴다. */
+/* 8 categorical colors; a string tone ("rx","tx","used","reserved","free") selects a fixed semantic pair. */
 /** @type {Record<string, 1>} */
 const METER = { ok: 1, warn: 1, crit: 1 };
 /** @param {ChartTone | undefined} tone @param {number} [i] */
 export const toneVar = (tone, i) => typeof tone === "string" ? (METER[tone] ? `var(--meter-${tone})` : `var(--series-${tone})`) : `var(--series-${tone ?? (((i ?? 0) % 8) + 1)})`;
-/* 미터 톤이면 값 텍스트도 같은 상태 잉크로 */
+/* Meter tones color the value text with the matching state ink */
 /** @param {ChartTone | undefined} tone */
 export const toneInk = (tone) => (typeof tone === "string" && METER[tone] ? `var(--${tone}-ink)` : undefined);
 /** @param {number} v */
 export const fmtKo = (v) => (Math.abs(v) >= 1000 ? Math.round(v).toLocaleString("ko-KR") : Number.isInteger(v) ? String(v) : v.toFixed(1));
 
-/** 보기 좋은 축 눈금: 데이터 범위를 1·2·5×10^n 간격으로 나눈다.
+/** Nice axis ticks: split the data range at 1·2·5×10^n steps.
  * @param {number} lo @param {number} hi @param {number} [count]
  * @returns {{ ticks: number[], lo: number, hi: number }} */
 export function niceTicks(lo, hi, count = 4) {
@@ -28,12 +28,12 @@ export function niceTicks(lo, hi, count = 4) {
   const span = hi - lo, raw = span / count, mag = Math.pow(10, Math.floor(Math.log10(raw)));
   const norm = raw / mag, step = (norm >= 5 ? 10 : norm >= 2 ? 5 : norm >= 1 ? 2 : 1) * mag;
   const start = Math.floor(lo / step) * step, end = Math.ceil(hi / step) * step;
-  // 데이터 눈금은 픽셀 좌표용 r1로 반올림하지 않는다. 인덱스로 생성해 누적 오차도 피한다.
+  // Data ticks are not rounded with the pixel-space r1; generating by index also avoids accumulated float error.
   const ticks = Array.from({ length: Math.round((end - start) / step) + 1 }, (_, i) => Number((start + i * step).toPrecision(15)));
   return { ticks, lo: start, hi: end };
 }
 
-/** 누적 막대: 양수와 음수를 각각 0에서 쌓는다. null은 구간을 만들거나 합계에 기여하지 않는다.
+/** Stacked bars: positives and negatives each stack from 0. null makes no band and adds nothing to the totals.
  * @param {ChartSeries[]} series @param {number} count
  * @returns {{ bands: ({ start: number, end: number } | null)[][], lo: number, hi: number }} */
 export function stackBars(series, count) {
@@ -48,7 +48,7 @@ export function stackBars(series, count) {
   return { bands, lo: Math.min(0, ...negative), hi: Math.max(0, ...positive) };
 }
 
-/** Catmull-Rom → 베지어. 두 점이면 직선.
+/** Catmull-Rom → cubic Bézier. Two points fall back to a straight line.
  * @param {Point[]} pts @param {number} [tension] */
 export function smoothPath(pts, tension = 0.18) {
   if (pts.length < 3) return pts.map(([x, y], i) => `${i ? "L" : "M"}${x} ${y}`).join(" ");
@@ -60,7 +60,7 @@ export function smoothPath(pts, tension = 0.18) {
   return d;
 }
 
-/** 결측 구간에서 끊은 점 배열들.
+/** Point runs, split at missing values.
  * @param {(number | null)[]} values @param {(i: number) => number} x @param {(v: number) => number} y
  * @returns {Point[][]} */
 export function runsOf(values, x, y) {
@@ -76,16 +76,16 @@ export function runsOf(values, x, y) {
 /** @param {Point[]} pts */
 export function pathLength(pts) { let l = 0; for (let i = 1; i < pts.length; i++) l += Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]); return l * 1.15; }
 
-/** 텍스트 폭 추정(mono 10.5px ≈ 6.4px/char). y축 여백 계산용.
+/** Text width estimate (mono 10.5px ≈ 6.4px/char) for the y-axis gutter.
  * @param {unknown} s */
 export const estWidth = (s) => String(s).length * 6.4 + 10;
 
-/** 3계열 이상이면 선 스타일을 실선·대시·점·대시점 순으로 돌린다. series.dash로 명시(문자열=그 패턴, false=실선). */
+/** With 3+ series, line styles cycle solid · dash · dot · dash-dot. series.dash overrides (string = that pattern, false = solid). */
 export const DASHES = ["", "6 4", "2 4", "8 3 2 3"];
 /** @param {ChartSeries} s @param {number} i @param {number} count */
 export const seriesDash = (s, i, count) => s.dash === false ? undefined : typeof s.dash === "string" ? (s.dash || undefined) : count >= 3 ? (DASHES[i % DASHES.length] || undefined) : undefined;
 
-/** 히스토그램 구간. 표본 2개 미만이면 null. n은 bins 또는 √n(6~30).
+/** Histogram bins. null with fewer than 2 samples. n is bins or √samples clamped to 6–30.
  * @param {(number | null)[] | undefined} samples @param {number} [bins]
  * @returns {{ xs: number[], lo: number, hi: number, span: number, n: number, counts: number[] } | null} */
 export function histBins(samples, bins) {

@@ -2,11 +2,11 @@ import React from "react";
 import { cx } from "../core/frame.js";
 import { toneVar } from "./chart-math.js";
 
-/* 스와치 색: color가 있으면 그대로, tone이 시리즈 번호·의미 키·미터 톤이면 토큰, info/signal은 상태 토큰, 그 외 문자열은 CSS 색으로 본다. */
+/* Swatch color: explicit color wins; series numbers, semantic keys and meter tones map to tokens, info/signal to state tokens, any other string is taken as a CSS color. */
 const swatchColor = (/** @type {import("./Legend.d.ts").LegendItem} */ it, /** @type {number} */ i) => it.color ?? (typeof it.tone === "string" && !/^(rx|tx|used|reserved|free|ok|warn|crit)$/.test(it.tone) ? (/^(info|signal)$/.test(it.tone) ? `var(--${it.tone})` : it.tone) : toneVar(it.tone, i));
 
-/** 독립 범례. items: {label, color?(CSS 색), tone?(series 번호·의미 키), value?, dash?(선 패턴), shape?, hidden?}.
- *  shape="line"이면 선 스와치(dash 패턴 반영), square/dot은 네모·점. onToggle을 주면 클릭으로 시리즈 숨김. compact는 Chart 내장 범례용 작은 글자.
+/** Standalone legend. items: {label, color?(CSS color), tone?(series number or semantic key), value?, dash?(line pattern), shape?, hidden?}.
+ *  shape="line" draws a line swatch honoring dash; square/dot draw a square or a dot. onToggle makes items clickable; compact is the small variant used inside Chart.
  * @param {Parameters<typeof import("./Legend.d.ts").Legend>[0]} props
  */
 export function Legend({ items = [], shape = "square", vertical = false, compact = false, onToggle, className, ...rest }) {

@@ -1,22 +1,20 @@
-/* 화면 배치용 CSS만. 색·간격·반경·글자 크기는 디자인 시스템 토큰을 참조한다.
-   컴포넌트가 이미 하는 일(카드, 격자, 간격 나열)은 여기서 다시 만들지 않는다. */
+/* Screen-layout CSS only; colors, spacing, radius, type come from tokens. Nothing a component already does (cards, grids, stacks) is rebuilt here. */
 
 .kit-app{height:100%}
 .kit-dim{color:var(--ink-3);font-size:var(--fs-caption)}
 
-/* 넓어진 기본 간격에서도 모바일 상단바의 핵심 조작만 한 줄에 남긴다. */
+/* Mobile top bar: keep only the essential controls on one line */
 @media (width < 768px){.kit-mobile-hide,.bds-shell__top .bds-mark,.bds-shell__top .bds-pill{display:none}}
 
-/* 표 셀 안에서 상세를 여는 글자 버튼. 스케일보다 작게 그리는 조작 요소라 24px을 하한으로 받고
-   터치 기기에서는 --h-touch까지 올린다(디자인 시스템의 조작 영역 규칙). */
+/* Text button opening details inside a table cell: 24px floor, --h-touch on touch devices. See RULE.md "VISUAL FOUNDATIONS" */
 .kit-linkcell{display:inline-flex;align-items:center;min-height:24px;padding:0;border:0;background:none;color:var(--signal-ink);cursor:pointer;text-align:left}
 .kit-linkcell:hover{color:var(--signal-hover);text-decoration:underline}
 @media (pointer:coarse){.kit-linkcell{min-height:var(--h-touch)}}
 
-/* 값 옆에 붙는 작은 추세선 자리. Sparkline은 부모 상자를 채운다. */
+/* Slot for the trend line next to a value; Sparkline fills its parent box */
 .kit-spark{width:96px;height:32px;flex:none}
 
-/* 장치 카드 */
+/* device card */
 .kit-prevhead{display:flex;align-items:center;gap:var(--sp-2);flex-wrap:wrap}
 .kit-prevhead b{font-size:var(--fs-label);font-weight:var(--fw-medium)}
 .kit-prevhead .bds-mono{margin-left:auto}
@@ -25,7 +23,7 @@
 .kit-photo{border:1px solid var(--line);border-radius:var(--radius-ctl)}
 .kit-photo>span{display:grid;place-items:center;padding:var(--sp-2);text-align:center;background:var(--canvas-sunken);font-size:var(--fs-caption);color:var(--ink-3);overflow:hidden}
 
-/* 제어부 */
+/* controls */
 .kit-ctlhead{display:flex;align-items:center;gap:var(--sp-4);flex-wrap:wrap}
 .kit-ctlhead b{font-size:var(--fs-label)}
 .kit-fields{display:grid;gap:var(--sp-4)}
@@ -33,7 +31,7 @@
 .kit-actions{display:flex;gap:var(--sp-2);align-items:center}
 @media (width < 640px){.kit-bottom{flex-direction:column;align-items:stretch}.kit-actions>*{flex:1}}
 
-/* 공개 상태 페이지: 셸 없이 TopNav + Container로 선다 */
+/* Public status page: TopNav + Container, no shell */
 .kit-public{min-height:100%;background:var(--canvas-sunken);padding-bottom:var(--sp-8)}
 .kit-public .bds-container{padding-top:var(--sp-5)}
 .kit-foot{padding-top:var(--sp-3);border-top:1px solid var(--line)}

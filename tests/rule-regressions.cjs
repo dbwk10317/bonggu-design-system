@@ -1,5 +1,5 @@
-// readme.md에 명시된 시각·카피 규범 중 소스에서 확정적으로 판별할 수 있는 항목을 검사한다.
-// 이 파일은 생성물과 번들을 읽지 않는다. 실패 목록은 원본 파일의 위치와 함께 출력한다.
+// Machine-checkable subset of RULE.md, evaluated against sources only (never generated files or the bundle).
+// Failures are reported with the source file and line.
 const fs = require('node:fs');
 const path = require('node:path');
 
@@ -40,14 +40,13 @@ function cssFiles() {
   return CSS_DIRS.flatMap((dir) => walk(dir)).filter((file) => file.endsWith('.css'));
 }
 
-// 템플릿 CSS는 자체 kit- 네임스페이스를 쓰므로 클래스 접두사 규칙 대상은 아니지만,
-// 글자 크기·색 계열처럼 값에 관한 규칙은 시스템과 같이 지켜야 한다.
+// Template CSS uses its own kit- namespace, so it is exempt from the class-prefix rule
+// but still bound by value rules (font size, color families).
 function templateCssFiles() {
   return walk('templates').filter((file) => file.endsWith('.css'));
 }
 
-// 가이드 카드와 컴포넌트 카드는 값 규칙을 .css가 아니라 <style> 블록에 담는다.
-// .css만 읽으면 그 표면이 통째로 값 검사 밖에 남는다.
+// Guide and component cards keep their CSS in <style> blocks; reading only .css files would skip that surface.
 function htmlStyleSources() {
   return [...CSS_DIRS, 'components', 'templates']
     .flatMap((dir) => walk(dir))
@@ -247,7 +246,7 @@ function textSizeViolations() {
   return violations;
 }
 
-// tokens/*.css의 @token-kinds 주석이 토큰 이름의 정본 목록이다(build-bundle.mjs가 같은 원천을 쓴다).
+// The @token-kinds comment in tokens/*.css is the canonical token list (build-bundle.mjs reads the same source).
 function tokenRegistry() {
   const names = new Map();
   for (const file of cssFiles().filter((f) => f.startsWith('tokens/'))) {
@@ -259,7 +258,7 @@ function tokenRegistry() {
   return names;
 }
 
-// media·container 쿼리는 var()를 받지 못해 리터럴로 써야 한다. tokens/layout.css 머리주석이 이 제약을 적어 둔다.
+// Media/container queries cannot take var(), so these are reference-only literals (see the header of tokens/layout.css).
 const REFERENCE_ONLY_TOKENS = new Set([
   '--bp-sm', '--bp-md', '--bp-lg', '--bp-xl',
   '--cq-xs', '--cq-sm', '--cq-md', '--cq-lg', '--cq-xl',
@@ -279,7 +278,7 @@ function deadTokenViolations() {
   return violations;
 }
 
-// 원색은 채움 배경이다. -ink 짝이 있는 계열의 원색을 글자색으로 쓰면 라이트 테마에서 4.5:1을 넘지 못한다.
+// See RULE.md "VISUAL FOUNDATIONS": raw family colors are fills; as text they fail 4.5:1 in the light theme.
 function rawColorAsTextViolations() {
   const registry = tokenRegistry();
   const families = [...registry.keys()]
@@ -297,7 +296,7 @@ function rawColorAsTextViolations() {
   return violations;
 }
 
-// 값을 나타내는 그라디언트만 허용한다. 허용 범위는 readme의 배경 규칙에 있다.
+// See RULE.md "VISUAL FOUNDATIONS" (배경): only value-carrying gradients are allowed.
 const FUNCTIONAL_GRADIENT_SELECTORS = [/-range-track/, /slider-runnable-track/, /\.bds-skel\b/];
 
 function gradientViolations() {
@@ -313,7 +312,7 @@ function gradientViolations() {
   return violations;
 }
 
-// 차트 면 채움 alpha: 축이 있는 차트 .14, 면이 겹치거나 소형인 차트 .2. 0은 그라디언트의 끝점이다.
+// See RULE.md "VISUAL FOUNDATIONS" (배경). 0 is a gradient stop, not a fill.
 const CHART_ALPHAS = new Set(['0', '.14', '.2']);
 
 function chartAlphaViolations() {
@@ -371,14 +370,13 @@ function iconViolations() {
     .map((use) => ({ file: use.file, line: use.line, detail: `Icon name "${use.name}"가 fonts/phosphor/bold.css에 없음` }));
 }
 
-// readme: 컴포넌트는 자기 그룹 카드에 한 번 이상 나오고, guidelines/index.html은 모든 컴포넌트와 카드·템플릿을
-// 가리키며, 템플릿은 모든 컴포넌트를 한 번 이상 쓴다. 셋 다 "사람이 눈으로 확인할 수 있는가"를 지킨다.
-// 컴포넌트 목록은 생성물이 아니라 .d.ts의 공개 선언에서 읽는다.
+// See RULE.md "컴포넌트 사용 규칙" (card, guide index and template coverage).
+// The component list comes from public .d.ts declarations, not from generated files.
 function declaredComponents() {
   const found = [];
   for (const file of walk('components').filter((candidate) => candidate.endsWith('.d.ts'))) {
     const group = file.split('/')[1];
-    // forwardRef 컴포넌트는 const + ForwardRefExoticComponent 로 선언된다. 둘 다 공개 컴포넌트다.
+    // forwardRef components are declared as const + ForwardRefExoticComponent; both forms are public.
     const decl = /export declare (?:function ([A-Z]\w*)|const ([A-Z]\w*)\s*:\s*ForwardRefExoticComponent)/g;
     for (const match of read(file).matchAll(decl)) found.push({ name: match[1] ?? match[2], group, file });
   }
@@ -386,9 +384,9 @@ function declaredComponents() {
 }
 
 function publicApiViolations() {
-  const text = read('readme.md');
+  const text = read('RULE.md');
   const section = text.match(/### Components \((\d+) · (\d+)그룹\)\r?\n([\s\S]*?)\r?\n\r?\n그룹 기준:/);
-  if (!section) return [{ file: 'readme.md', line: 1, detail: 'Components 공개 목록을 읽을 수 없음' }];
+  if (!section) return [{ file: 'RULE.md', line: 1, detail: 'Components 공개 목록을 읽을 수 없음' }];
 
   const listed = [];
   const groups = [];
@@ -404,22 +402,22 @@ function publicApiViolations() {
   const expectedCount = Number(section[1]);
   const expectedGroups = Number(section[2]);
   if (listed.length !== expectedCount) {
-    violations.push({ file: 'readme.md', line: lineOf(text, section.index), detail: `목록 ${listed.length}개, 제목 ${expectedCount}개` });
+    violations.push({ file: 'RULE.md', line: lineOf(text, section.index), detail: `목록 ${listed.length}개, 제목 ${expectedCount}개` });
   }
   if (groups.length !== expectedGroups) {
-    violations.push({ file: 'readme.md', line: lineOf(text, section.index), detail: `그룹 행 ${groups.length}개, 제목 ${expectedGroups}개` });
+    violations.push({ file: 'RULE.md', line: lineOf(text, section.index), detail: `그룹 행 ${groups.length}개, 제목 ${expectedGroups}개` });
   }
 
   const duplicateNames = listed.filter((name, index) => listed.indexOf(name) !== index);
   for (const name of new Set(duplicateNames)) {
-    violations.push({ file: 'readme.md', line: lineOf(text, section.index), detail: `${name}이 공개 목록에 중복됨` });
+    violations.push({ file: 'RULE.md', line: lineOf(text, section.index), detail: `${name}이 공개 목록에 중복됨` });
   }
 
   const listedNames = new Set(listed);
   const declarations = declaredComponents();
   const declaredNames = new Set(declarations.map(({ name }) => name));
   for (const name of listedNames) {
-    if (!declaredNames.has(name)) violations.push({ file: 'readme.md', line: lineOf(text, section.index), detail: `${name}의 공개 .d.ts 함수 선언이 없음` });
+    if (!declaredNames.has(name)) violations.push({ file: 'RULE.md', line: lineOf(text, section.index), detail: `${name}의 공개 .d.ts 함수 선언이 없음` });
   }
   for (const { name, file } of declarations) {
     if (!listedNames.has(name)) violations.push({ file, line: 1, detail: `${name}이 readme Components 공개 목록에 없음` });
@@ -462,7 +460,7 @@ function packageIdentityViolations() {
   return violations;
 }
 
-// readme 입력 절: 입력 컴포넌트는 ref 를 조작 요소로 넘긴다. 구현은 forwardRef, 공개 선언은 ForwardRefExoticComponent.
+// See RULE.md "동작 계약" (입력): input components forward ref to the control element.
 function inputRefViolations() {
   const violations = [];
   for (const file of walk('components/input').filter((f) => f.endsWith('.jsx'))) {
@@ -525,8 +523,8 @@ function guideCardStructureViolations() {
   return violations;
 }
 
-/* readme 접근성 절: 그림으로 그리는 데이터는 시각·숨김 표·탐색 표면 셋을 함께 낸다.
-   루트에 role="img"를 두면 후손이 접근성 트리에서 잘려 숨김 표와 탐색 표면이 함께 사라진다. */
+/* See RULE.md "접근성". A role="img" root prunes descendants from the accessibility tree,
+   taking the hidden table and the navigation surface with it. */
 function dataGraphicA11yViolations() {
   const violations = [];
   for (const file of ['components/data/Chart.jsx', 'components/data/Heatmap.jsx']) {
@@ -551,8 +549,7 @@ function dataGraphicA11yViolations() {
   }
   return violations;
 }
-/* readme 상호작용 절: 호버는 한 단계(--panel-2), 프레스는 두 단계(--panel-3).
-   눌러서 동작하는 표면은 둘을 짝으로 낸다. 짝이 없으면 터치 기기에서 아무 반응이 없다. */
+/* See RULE.md "VISUAL FOUNDATIONS" (hover/press pairing). Touch devices have no hover, so an unpaired hover is dead. */
 const HIGHLIGHT_ONLY = new Map([
   ['.bds-table tbody tr td', '표 행은 강조만 한다. 선택은 행 안의 체크박스가 받는다'],
   ['.bds-log__line', '로그 줄은 강조만 한다'],
@@ -579,8 +576,7 @@ function pressStateViolations() {
   }
   return violations;
 }
-/* readme 모서리 절: 컨트롤은 토큰(--radius-xs/ctl/panel/sheet/pill)을 쓰고,
-   막대·잉크·격자 셀·구분선 같은 그래픽 마크만 도형 크기에 비례하는 값을 쓴다. */
+/* See RULE.md "VISUAL FOUNDATIONS" (모서리). Only graphic marks (bars, ink, cells, separators) may use literal radii. */
 const GRAPHIC_MARKS = new Set([
   '.bds-chart__tip-row i', '.bds-barlist__track', '.bds-barlist__fill', '.bds-barlist--thick .bds-barlist__track',
   '.bds-heat__cell', '.bds-heat__scale i', '.bds-tabs__ink', '.bds-otp__sep', '.bds-pw__meter',
@@ -595,11 +591,9 @@ function radiusTokenViolations() {
       if (!decl) continue;
       const sel2 = rule.selector.split(',')[0].replace(/\s+/g, ' ').trim();
       if (GRAPHIC_MARKS.has(sel2)) continue;
-      // 단축 표기는 모서리마다 값이 다르다. 각 값을 따로 본다.
-      // 0(모서리 없음)·50%·999px(원·알약)은 도형이 값을 정하므로 토큰이 아니다.
-      // var()·calc() 는 통째로 걷어낸 뒤 남은 것만 본다. 공백으로 먼저 쪼개면 calc 안이 흩어진다.
+      // Strip var()/calc() as whole units before splitting the shorthand; splitting on whitespace first scatters calc internals.
       const parts = decl.replace(/(?:var|calc)\((?:[^()]|\([^()]*\))*\)/g, ' ').trim().split(/\s+/).filter(Boolean);
-      // 0(모서리 없음)·50%·999px(원·알약)·inherit(부모 모서리)은 도형이나 부모가 값을 정한다.
+      // 0, 50%, 999px (circle/pill) and inherit are set by the shape or the parent, not by a token.
       const bad = parts.filter((x) => !/^(0|50%|999px|inherit)$/.test(x));
       if (!bad.length) continue;
       violations.push({ file, line: lineOf(css, rule.at), detail: `컨트롤 모서리를 리터럴로 적음(${bad.join(' ')}): ${sel2}` });
@@ -607,10 +601,7 @@ function radiusTokenViolations() {
   }
   return violations;
 }
-/* readme 색 절: 테마를 바꿀 때 트랜지션을 끈다. 끄지 않으면 색·배경·선·그림자에 걸린
-   트랜지션이 한꺼번에 발화해 스냅이 아니라 번짐이 된다.
-   readme 색 절: 컴포넌트가 만드는 DOM id 는 useId 로 만든다. 리터럴 id 는 한 화면에
-   그 컴포넌트가 둘 있으면 aria-controls·aria-activedescendant·htmlFor 가 서로를 가리킨다. */
+/* See RULE.md "VISUAL FOUNDATIONS" (theme switch disables transitions; component DOM ids come from useId). */
 function themeAndIdViolations() {
   const violations = [];
   const toggleFile = 'theme-toggle.js';
@@ -672,10 +663,10 @@ function guideIndexViolations() {
 }
 
 function templateCoverageViolations() {
-  // .js(목 데이터·생성물)에는 JSX가 없다. 화면 파일만 본다.
+  // Only screen .jsx files; .js holds mock data and generated code without JSX.
   const source = sourceFiles(['templates/dashboard'], new Set(['.jsx'])).map(read).join('\n');
   return declaredComponents()
-    // Toast는 ToastProvider가 렌더한다. 화면이 직접 마운트하지 않는 유일한 컴포넌트다.
+    // Toast is rendered by ToastProvider, the only component screens never mount directly.
     .filter(({ name }) => name !== 'Toast' && !renders(source, name))
     .map(({ name, file }) => ({ file: 'templates/dashboard', line: 1, detail: `${name}을 템플릿이 쓰지 않음 (${file})` }));
 }

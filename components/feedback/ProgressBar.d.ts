@@ -1,10 +1,10 @@
 import type { HTMLAttributes, ReactNode } from "react";
-/** 선형 진행 바. 업로드·등록 작업처럼 시작~끝이 있는 진행에. 비율 게이지(radial)와 구분한다. */
+/** Linear progress bar for work with a start and an end (uploads, registration). Not a ratio gauge (radial). */
 export interface ProgressBarProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
-  /** 0~1. null/undefined면 비결정형 */
+  /** 0–1; null/undefined means indeterminate */
   value?: number | null;
   label?: ReactNode;
-  /** 바 아래 보조 줄(예: "3/9 청크 · 42 MiB/s") */
+  /** Secondary line under the bar (e.g. "3/9 청크 · 42 MiB/s") */
   detail?: ReactNode;
   tone?: "accent" | "ok" | "warn" | "crit";
   size?: "sm" | "md";

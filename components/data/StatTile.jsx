@@ -5,12 +5,12 @@ import { Icon } from "../action/Icon.jsx";
 import { Sparkline } from "./Sparkline.jsx";
 import { StatusPill } from "../display/StatusPill.jsx";
 
-/* animate=true일 때만 카운트업. 기본은 꺼짐: 실시간 수치는 트랜지션 없이 즉시 바뀐다. 꺼지면 target을 그대로 돌려주는 no-op. */
+/* Count-up only when animate=true (default off, see RULE.md "VISUAL FOUNDATIONS"); when off it returns target unchanged. */
 /** @param {number} target @param {boolean} enabled */
 function useCountUp(target, enabled) {
   const [v, setV] = useState(enabled ? 0 : target);
   const from = useRef(0);
-  /* 지금 화면에 보이는 값. 중간에 끊기면 이 값이 다음 tween 의 시작점이다. */
+  /* The value currently on screen; if interrupted, the next tween starts here. */
   const shown = useRef(0);
   useEffect(() => {
     if (!enabled || typeof target !== "number") return;
@@ -19,15 +19,15 @@ function useCountUp(target, enabled) {
     let raf;
     const step = (/** @type {number} */ t) => { const p = Math.min(1, (t - start) / dur), e = 1 - Math.pow(1 - p, 3); shown.current = f + (target - f) * e; setV(shown.current); if (p < 1) raf = requestAnimationFrame(step); else from.current = target; };
     raf = requestAnimationFrame(step);
-    /* 끊겼으면 0이 아니라 보이던 값에서 이어야 숫자가 뒤로 튀지 않는다. */
+    /* Resume from the shown value, not 0, so the number never jumps backwards. */
     return () => { if (raf != null) { cancelAnimationFrame(raf); from.current = shown.current; } };
   }, [target, enabled]);
   return enabled ? v : target;
 }
 
-/** 큰 수치 하나. value가 숫자면 mono(ko-KR 천 단위), 문자열이면 그대로, 결측이면 "수집 안 됨"(mono·단위 없음).
- *  기본은 즉시 갱신, animate={true}일 때만 진입 카운트업. delta는 증감, spark는 최근 추세. */
-/** detail: 수치 아래 보조 줄(모델 이름·마지막 heartbeat 등). pill: {tone,text} 상태 pill(라벨 옆). icon: 라벨 앞 Phosphor 아이콘.
+/** One big number. Numeric value: mono with ko-KR grouping; string: as is; missing: missing text without mono or unit.
+ *  Updates instantly by default; animate={true} counts up once on entry. delta is the change, spark the recent trend. */
+/** detail: secondary line under the value (model name, last heartbeat). pill: {tone,text} status pill next to the label. icon: Phosphor icon before the label.
  * @param {Parameters<typeof import("./StatTile.d.ts").StatTile>[0]} props */
 export function StatTile({ label, value, unit, digits = 0, delta, deltaLabel, spark, detail, pill, icon, tone = 1, flat = false, animate = false, fit = "flex", width, className, style, ...rest }) {
   const na = isMissing(value);

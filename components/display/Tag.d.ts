@@ -1,5 +1,5 @@
 import type { HTMLAttributes, ReactNode } from "react";
-/** 태그(분류·선택 표시). */
+/** Tag for categories and selections. */
 export interface TagProps extends HTMLAttributes<HTMLSpanElement> {
   accent?: boolean;
   icon?: string;

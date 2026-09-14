@@ -16,7 +16,7 @@
 .bds-shell__foot{padding:12px 16px;border-top:1px solid var(--line);font-size:var(--fs-caption);color:var(--ink-3);flex:none}
 .bds-shell__main{display:grid;grid-template-rows:auto minmax(0,1fr) auto;min-height:0;min-width:0}
 .bds-shell__main:focus{outline:0}
-/* 건너뛰기 링크: 초점을 받을 때만 보인다. bds-sr 로만 숨기면 초점을 받아도 보이지 않는다. */
+/* Skip link shows on focus only; .bds-sr alone would stay invisible when focused. See RULE.md "접근성" */
 .bds-skip{position:fixed;top:0;left:0;z-index:var(--z-toast);transform:translateY(-120%);padding:8px 14px;border-radius:0 0 var(--radius-ctl) 0;background:var(--signal);color:var(--signal-fg);font-size:var(--fs-label);font-weight:var(--fw-medium);text-decoration:none;transition:transform var(--dur-fast) var(--ease-out)}
 .bds-skip:focus-visible{transform:none;color:var(--signal-fg);text-decoration:none}
 .bds-shell__top{display:flex;align-items:center;gap:var(--inline-gap);height:calc(var(--bar-h) + var(--safe-top));padding:var(--safe-top) calc(var(--page-pad) + var(--safe-right)) 0 calc(var(--page-pad) + var(--safe-left));border-bottom:1px solid var(--line);background:var(--canvas);min-width:0}
@@ -50,7 +50,7 @@
 .bds-panel--sm{padding:var(--sp-3)}
 .bds-panel--none{padding:0;gap:0}
 .bds-panel--sunken{background:var(--canvas-sunken);box-shadow:none}
-/* as="button"으로 만든 조작 카드. 버튼의 UA 기본값만 되돌리고 카드 모양은 .bds-panel이 그대로 정한다 */
+/* Panel rendered as="button": undo UA button defaults only; .bds-panel still draws the card */
 button.bds-panel{font:inherit;color:inherit;text-align:left;width:100%;align-items:stretch}
 .bds-panel--interactive{cursor:pointer;transition:border-color var(--dur-fast) var(--ease-out),background var(--dur-fast) var(--ease-out)}
 .bds-panel--interactive:hover{border-color:var(--line-strong);background:var(--panel-2)}
@@ -66,7 +66,7 @@ button.bds-panel{font:inherit;color:inherit;text-align:left;width:100%;align-ite
 .bds-statusbar__dot{width:6px;height:6px;border-radius:50%;background:var(--ok);animation:bds-pulse 1.8s var(--ease-out) infinite}
 .bds-statusbar__right{margin-left:auto;display:inline-flex;gap:16px}
 .bds-grid{display:grid;gap:var(--grid-gap);grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));min-width:0;container-type:inline-size}
-/* 고정 열 격자(columns={12}) + GridItem span. 컨테이너 xl 900 미만 spanMd, lg 640 미만 spanSm, md 480 미만 전폭 */
+/* Fixed-column grid (columns={12}) + GridItem span: spanMd below container xl 900, spanSm below lg 640, full width below md 480 */
 .bds-grid--fixed{grid-template-columns:repeat(var(--cols,12),minmax(0,1fr))}
 .bds-col{grid-column:span var(--span,12);min-width:0}
 @container (max-width:900px){.bds-col{grid-column:span var(--span-md,var(--span,12))}}

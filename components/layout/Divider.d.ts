@@ -1,8 +1,8 @@
 import type { HTMLAttributes, ReactNode } from "react";
-/** 구분선 */
+/** Divider */
 export interface DividerProps extends HTMLAttributes<HTMLElement> {
   vertical?: boolean;
-  /** 가운데 라벨(예: "또는") */
+  /** Centered label (e.g. "또는") */
   label?: ReactNode;
 }
 export declare function Divider(props: DividerProps): ReactNode;

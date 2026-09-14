@@ -1,18 +1,17 @@
-/* 템플릿은 ESM 이 아니라 script 로 로드된다. 번들·목 데이터·화면 모듈이 모두 window 를 거치므로
-   타입도 여기서 한 번 선언한다. 컴포넌트 타입은 공개 진입점 그대로다. */
+/* The template loads as plain scripts, not ESM: bundle, mock data and screen modules all go through window, so their types are declared once here. Component types are the public entry's. */
 import type { ComponentType } from "react";
 
 declare global {
-  /** App 이 window 에서 찾아 그리는 화면 모듈 이름 */
+  /** Screen module names App looks up on window */
   type ScreenName = "OverviewScreen" | "NodesScreen" | "DevicesScreen" | "DeploysScreen" | "AccessScreen" | "SettingsScreen" | "StatusScreen";
 
   interface Window {
     DS: typeof import("../../public-entry.js");
     KIT: typeof import("./data.js");
-    /** 번들이 올린 네임스페이스. 프록시가 로드 순서에 상관없이 여기서 꺼낸다. */
+    /** Namespace the bundle registers; the DS proxy reads it regardless of load order */
     Ds_d3ea90?: typeof import("../../public-entry.js");
     React: typeof import("react");
-    /** 화면 모듈은 IIFE 라 window 에 등록한다. App 이 이름으로 찾아 그린다. */
+    /** Screen modules are IIFEs registered on window; App renders them by name */
     DashboardApp: ComponentType<any>;
     OverviewScreen: ComponentType<any>;
     NodesScreen: ComponentType<any>;
@@ -21,7 +20,7 @@ declare global {
     AccessScreen: ComponentType<any>;
     SettingsScreen: ComponentType<any>;
     StatusScreen: ComponentType<any>;
-    /** 화면 모듈을 렌더 없이 로드하기 위한 빈 컴포넌트 */
+    /** Empty component so a screen module can load without rendering */
     KitNoop: ComponentType<any>;
   }
   const React: typeof import("react");

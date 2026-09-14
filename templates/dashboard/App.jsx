@@ -1,5 +1,5 @@
 (() => {
-/* 화면 모듈은 window에 등록된다(x-import 로더는 ESM import를 지원하지 않는다). 렌더 시점에 읽어 로드 순서에 의존하지 않는다. */
+/* Screen modules register on window (the x-import loader has no ESM import); read at render time so load order does not matter. */
 /** @param {{ name: ScreenName } & Record<string, unknown>} props */
 const Screen = ({ name, ...p }) => { const C = window[name]; return C ? <C {...p} /> : null; };
 const { SidebarShell, SidebarNavItem, SidebarNavGroup, StatusBar, StatusPill, MascotMark, NotificationTrigger, NotificationDrawer, ToastProvider, IconButton, Button, Badge, Tooltip, Kbd, CommandPalette, PageStack, PageHeader, EmptyState } = window.DS;
@@ -33,7 +33,7 @@ function App() {
     ? <Screen name={SCREEN[view]} />
     : <PageStack><PageHeader title="없는 화면" description="주소의 해시가 이 콘솔이 아는 화면과 맞지 않습니다." /><EmptyState face="curious" title="화면을 찾지 못했습니다" description="왼쪽 메뉴에서 화면을 고르거나 명령 팔레트를 엽니다." actions={<Button onClick={() => go("overview")}>개요로</Button>} /></PageStack>;
 
-  // 팔레트가 선택과 동시에 스스로 닫고, 명령은 닫힌 뒤 실행된다. 명령이 직접 닫을 필요가 없다.
+  // The palette closes itself on select and runs the command after closing; commands need not close it.
   const commands = [
     ...Object.entries(TITLES).map(([id, label]) => ({ id, label, group: "이동", icon: id === "status" ? "broadcast" : "arrow-right", hint: <span className="bds-mono">#{id}</span>, onSelect: () => go(id) })),
     ...(!EMBEDDED ? [{ id: "theme", label: dark ? "라이트 테마로 바꾸기" : "다크 테마로 바꾸기", group: "표시", icon: dark ? "sun" : "moon", onSelect: () => setDark((v) => !v) }] : []),
@@ -62,13 +62,13 @@ function App() {
 
   return (
     <ToastProvider>
-      {/* 상태 페이지는 고객이 보는 공개 화면이라 콘솔 셸을 두르지 않는다. 같은 토큰·컴포넌트로 그린다. */}
+      {/* The status page is customer-facing, so no console shell; same tokens and components. */}
       <div className="kit-app" data-screen={view}>{view === "status" ? <Screen name="StatusScreen" onBack={() => go("overview")} /> : shell}</div>
       <NotificationDrawer open={notif} onClose={() => setNotif(false)} items={alarms} onRead={(id) => setAlarms((a) => a.map((x) => (x.id === id ? { ...x, read: true } : x)))} onReadAll={() => setAlarms((a) => a.map((x) => ({ ...x, read: true })))} />
       <CommandPalette open={palette} onClose={() => setPalette(false)} items={commands} placeholder="화면 이동, 표시 바꾸기" />
     </ToastProvider>
   );
 }
-/* DC 템플릿은 <x-import component="DashboardApp" from="./App.jsx">, 정적 HTML은 window.DashboardApp 으로 마운트한다. */
+/* The DC template mounts via <x-import component="DashboardApp" from="./App.jsx">; static HTML uses window.DashboardApp. */
 window.DashboardApp = App;
 })();

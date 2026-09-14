@@ -1,10 +1,10 @@
 import type { HTMLAttributes, ReactNode } from "react";
-/** 복사 전용 값. 토큰 원문(1회 표시), 식별자, curl 호출 예시. */
+/** Copy-only value: a token shown once, an identifier, a curl example. */
 export interface CopyFieldProps extends Omit<HTMLAttributes<HTMLDivElement>, "children" | "onCopy"> {
   value: string;
   label?: ReactNode;
   multiline?: boolean;
-  /** 마스킹 + 보기 토글 */
+  /** Masked, with a reveal toggle */
   secret?: boolean;
   copyLabel?: string;
   copiedLabel?: string;

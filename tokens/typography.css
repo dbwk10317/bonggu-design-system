@@ -1,8 +1,7 @@
 /* @token-kinds
    font: --font-ui, --font-data, --fs-display, --fs-title, --fs-heading, --fs-subheading, --fs-body, --fs-label, --fs-caption, --fs-micro, --fs-metric, --lh-tight, --lh-snug, --lh-body, --fw-regular, --fw-medium, --fw-bold, --ls-ui, --ls-data, --ls-caps
 */
-/* 스타일가이드 타이포. UI·본문 Spoqa Han Sans Neo, 수치·코드·식별자 JetBrains Mono. 두 서체 역할을 바꾸지 않는다.
-   한글 자간 0(음수 금지), keep-all, 본문 14 이하로 내리지 않는다. 11.5 미만은 mono 단위·타임스탬프만. */
+/* Type tokens: Spoqa Han Sans Neo for UI/body, JetBrains Mono for numbers/code. See RULE.md "VISUAL FOUNDATIONS". */
 :root{
   --font-ui:"Spoqa Han Sans Neo","Malgun Gothic",system-ui,sans-serif;
   --font-data:"JetBrains Mono","SF Mono",Menlo,Consolas,monospace;

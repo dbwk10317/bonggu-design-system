@@ -3,9 +3,9 @@ export interface SelectOption { value: string; label: string; disabled?: boolean
 export interface SelectProps extends Omit<SelectHTMLAttributes<HTMLSelectElement>, "size"> {
   options: SelectOption[];
   placeholder?: string;
-  /** 선택 컨트롤 크기. 기본값은 md */
+  /** Control size. Default md */
   size?: "sm" | "md";
-  /** flex=부모 폭(기본), fixed=width, auto=내용 크기 */
+  /** flex = parent width (default), fixed = width, auto = content size */
   fit?: "flex" | "fixed" | "auto";
   width?: number | string;
   invalid?: boolean;

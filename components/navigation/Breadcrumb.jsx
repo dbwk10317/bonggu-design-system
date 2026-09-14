@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Icon } from "../action/Icon.jsx";
 
-/** 경로 표시. items: {label, href?}. 마지막은 현재 페이지. maxItems 초과 시 중간을 "…"로 접는다.
+/** Path trail. items: {label, href?}; the last is the current page. Beyond maxItems the middle collapses to "…".
  * @param {Parameters<typeof import("./Breadcrumb.d.ts").Breadcrumb>[0]} props */
 export function Breadcrumb({ items = [], maxItems = 4, className, ...rest }) {
   const [all, setAll] = useState(false);
-  /* 펼침은 그 경로에만 의미가 있다. 경로가 바뀌면 접힌 상태로 돌아간다. */
+  /* Expansion belongs to one path; a new items array collapses again. */
   const [prevItems, setPrevItems] = useState(items);
   if (prevItems !== items) { setPrevItems(items); if (all) setAll(false); }
   const collapse = !all && items.length > maxItems;

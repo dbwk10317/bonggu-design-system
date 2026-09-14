@@ -1,7 +1,7 @@
 import React from "react";
 import { cx, frameStyle } from "../core/frame.js";
 
-/** 필드 단위 변경 비교(Revision diff). changes: {field, from, to, kind?: changed|added|removed}. 값은 mono.
+/** Field-level change comparison (revision diff). changes: {field, from, to, kind?: changed|added|removed}. Values in mono.
  * @param {Parameters<typeof import("./DiffView.d.ts").DiffView>[0]} props */
 export function DiffView({ changes = [], from, to, emptyText = "변경된 항목이 없습니다", fit = "flex", width, "aria-label": ariaLabel, className, style }) {
   return (

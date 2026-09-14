@@ -1,54 +1,54 @@
 import type { ReactNode } from "react";
-/** 범주형 1~8, 의미 고정 쌍 "rx"|"tx"|"used"|"reserved"|"free", 미터 임계 "ok"|"warn"|"crit"(radial·BarList) */
+/** Categorical 1–8, fixed semantic pairs "rx"|"tx"|"used"|"reserved"|"free", meter thresholds "ok"|"warn"|"crit" (radial, BarList) */
 export type ChartTone = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | "rx" | "tx" | "used" | "reserved" | "free" | "ok" | "warn" | "crit";
 export interface ChartSeries {
   key?: string; label: ReactNode; tone?: ChartTone;
-  /** null은 미수집 구간(선을 끊는다) */
+  /** null is an uncollected interval (breaks the line) */
   values: (number | null)[];
-  /** line·area 선 패턴(stroke-dasharray). 생략하면 3계열 이상일 때 실선 · "6 4" · "2 4" · "8 3 2 3" 순환. false는 항상 실선 */
+  /** line/area stroke-dasharray. Omitted: with 3+ series cycles solid · "6 4" · "2 4" · "8 3 2 3". false: always solid */
   dash?: string | false;
 }
 export interface ChartSegment { label: ReactNode; value: number; tone?: ChartTone }
 export interface ChartThreshold { value: number; label?: string; tone?: "warn" | "crit" | "info" | "ok" }
 interface ChartBase {
-  /** flex=부모 폭(기본), fixed=width·height */
+  /** flex = parent width (default), fixed = width/height */
   fit?: "flex" | "fixed";
   width?: number | string;
-  /** 차트 영역 높이(px). 기본 line/area/bar 200, pie 180, radial 110, radar 260 */
+  /** Plot height (px). Defaults: line/area/bar 200, pie 180, radial 110, radar 260, histogram 180 */
   height?: number;
-  /** 무엇의 차트인지. 생략하면 "차트". 숨김 데이터 표가 aria-describedby로 항상 연결된다 */
+  /** What the chart shows. Defaults to "차트". The hidden data table is always linked via aria-describedby */
   "aria-label"?: string;
   valueFormatter?: (v: number) => string;
-  /** 데이터 없을 때 문구. 기본 "수집 안 됨" */
+  /** Text shown when there is no data. Default "수집 안 됨" */
   emptyText?: string;
   showLegend?: boolean;
-  /** 진입 1회 그리기 모션. 기본 true(live면 false) */
+  /** One-time draw-on animation on entry. Default true (false when live) */
   animate?: boolean;
-  /** 스트림 갱신 차트. 진입 모션을 끈다(값은 트랜지션 없이 즉시 바뀐다) */
+  /** Streaming chart: disables the entry animation (values change instantly, no transition) */
   live?: boolean;
-  /** true면 마지막으로 받은 props 스냅샷을 그대로 그린다. false로 돌리면 최신 props로 따라잡는다 */
+  /** true keeps drawing the last received props snapshot; switching back to false catches up with the latest props */
   paused?: boolean;
   className?: string;
 }
 export interface CartesianChartProps extends ChartBase {
   kind: "line" | "area" | "bar";
   labels: string[];
-  /** 단위가 다른 계열은 한 차트에 겹치지 않는다 */
+  /** Series with different units do not share one chart */
   series: ChartSeries[];
   xTicks?: "auto" | "ends" | "none";
-  /** 임계선(경고·위험) */
+  /** Threshold lines (warn/crit) */
   thresholds?: ChartThreshold[];
-  /** bar만: 양수·음수를 각각 0에서 누적. null은 막대와 합계에서 제외 */
+  /** bar only: positives and negatives each stack from 0. null is excluded from bars and totals */
   stacked?: boolean;
   yMin?: number; yMax?: number;
 }
-export interface PieChartProps extends ChartBase { kind: "pie"; segments: ChartSegment[]; /** 중앙 합계 아래 캡션 */ caption?: ReactNode }
-export interface RadialChartProps extends ChartBase { kind: "radial"; /** 0~1 */ value: number | null; /** 중앙 수치 아래 상태 텍스트(색과 한 쌍) */ label?: ReactNode; tone?: ChartTone }
+export interface PieChartProps extends ChartBase { kind: "pie"; segments: ChartSegment[]; /** Caption under the center total */ caption?: ReactNode }
+export interface RadialChartProps extends ChartBase { kind: "radial"; /** 0~1 */ value: number | null; /** State text under the center value (paired with the color) */ label?: ReactNode; tone?: ChartTone }
 export interface RadarChartProps extends ChartBase { kind: "radar"; axes: string[]; series: ChartSeries[]; max?: number }
-/** 분포(응답시간 p50/p95). samples는 원시 표본, 구간은 자동(√n) 또는 bins. percentiles는 0~1 비율(예: [0.5, 0.95]) */
+/** Distribution (latency p50/p95). samples are raw; bins are automatic (√n) or explicit. percentiles are 0–1 ratios (e.g. [0.5, 0.95]) */
 export interface HistogramChartProps extends ChartBase { kind: "histogram"; samples: (number | null)[]; bins?: number; tone?: ChartTone; percentiles?: number[]; unit?: string }
 export type ChartProps = CartesianChartProps | PieChartProps | RadialChartProps | RadarChartProps | HistogramChartProps;
 /**
- * 단일 차트 컴포넌트. kind로 표현이 바뀌고 크롬(격자·축·범례·툴팁)은 공유한다.
+ * Single chart component. kind selects the representation; the chrome (grid, axes, legend, tooltip) is shared.
  */
 export declare function Chart(props: ChartProps): ReactNode;

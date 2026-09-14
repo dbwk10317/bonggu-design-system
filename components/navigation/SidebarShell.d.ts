@@ -1,7 +1,7 @@
 import type { HTMLAttributes, ReactNode } from "react";
-export interface SidebarShellBrand { /** 생략=봉구 마크, null=마크 없음 */ mark?: ReactNode; name: string; sub?: string }
+export interface SidebarShellBrand { /** Omit for the Bonggu mark, null for no mark */ mark?: ReactNode; name: string; sub?: string }
 /**
- * 대시보드 셸. 240px 사이드바 + 52px 상단바 + 본문 + 28px 상태바. 1024 미만 드로어, 768 미만 상태바 숨김.
+ * Dashboard shell: 240px sidebar + 52px top bar + body + 28px status bar. Drawer below 1024; status bar hidden below 768.
  */
 export interface SidebarShellProps extends HTMLAttributes<HTMLDivElement> {
   brand: SidebarShellBrand;

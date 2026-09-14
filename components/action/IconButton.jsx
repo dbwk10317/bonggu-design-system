@@ -2,7 +2,7 @@ import React, { forwardRef } from "react";
 import { cx } from "../core/frame.js";
 import { Icon } from "./Icon.jsx";
 
-/** 아이콘 전용 버튼. aria-label 필수. badge(숫자)가 0보다 크면 우상단 카운트가 붙고 접근 가능한 이름에 "N건"이 더해진다. */
+/** Icon-only button; aria-label is required. A badge > 0 renders a top-right count and appends "N건" to the accessible name, so callers must not add the count themselves. See RULE.md "접근성". */
 export const IconButton = forwardRef(
   /**
    * @param {import("./IconButton.d.ts").IconButtonProps} props

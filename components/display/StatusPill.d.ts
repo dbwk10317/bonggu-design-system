@@ -1,12 +1,12 @@
 import type { HTMLAttributes, ReactNode } from "react";
 export type Tone = "ok" | "warn" | "crit" | "info" | "off" | "accent";
 /**
- * 상태 pill. 텍스트 필수(색 단독 금지).
+ * Status pill. Text is required; color alone never conveys state (see RULE.md "설계 원칙").
  */
 export interface StatusPillProps extends HTMLAttributes<HTMLSpanElement> {
   tone?: Tone;
   size?: "sm" | "md" | "lg";
-  /** 실시간 갱신 중일 때만 점이 맥동 */
+  /** Pulse the dot only while updating live */
   pulse?: boolean;
   dot?: boolean;
   outline?: boolean;

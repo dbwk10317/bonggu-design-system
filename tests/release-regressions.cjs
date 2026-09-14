@@ -12,17 +12,17 @@ const ci = read(".github/workflows/ci.yml");
 const release = read(".github/workflows/release.yml");
 
 assert.notEqual(pkg.private, true, "private: true면 태그를 밀어도 발행이 되지 않는다");
-// 레지스트리는 npmjs 기본값이다. scope 패키지는 기본이 restricted라 access를 명시하지 않으면 첫 발행이 402로 죽는다.
+// Registry is the npmjs default. Scoped packages default to restricted; without explicit access the first publish dies with 402.
 assert.equal(pkg.publishConfig?.registry, undefined, "레지스트리를 따로 지정하지 않는다(npmjs 기본값)");
 assert.equal(pkg.publishConfig?.access, "public", "scope 패키지는 publishConfig.access=public이어야 npmjs에 공개로 올라간다");
 assert.match(pkg.name, /^@dbwk10317\//, "패키지 scope가 readme 계약과 다름");
-// peer 범위는 게이트의 React 조합과 같아야 한다. 검증하지 않은 버전을 peer로 열지 않는다.
+// See RULE.md "공개 API·버전·배포 계약" (검증된 환경): the peer range must match the React matrix the gate verifies.
 assert.equal(pkg.peerDependencies?.react, ">=18.2.0 <20", "React peer 범위가 검증 범위(18.2~19)와 다름");
 assert.equal(pkg.scripts.changeset, "changeset");
 assert.equal(pkg.scripts["version:packages"], "changeset version");
 assert.equal(changesets.baseBranch, "main");
-// access·privatePackages는 changeset publish가 읽는 값인데 발행은 워크플로의 npm publish가 한다.
-// 소비처 없는 설정을 검사로 고정하지 않는다.
+// access/privatePackages are read by `changeset publish`, but publishing is done by the workflow's npm publish.
+// Do not pin config that has no consumer.
 assert.equal(changesets.access, undefined, "changeset publish를 쓰지 않으므로 access는 소비처가 없다");
 
 for (const [name, workflow] of [["CI", ci], ["Release", release]]) {
@@ -33,33 +33,32 @@ for (const [name, workflow] of [["CI", ci], ["Release", release]]) {
   assert.match(workflow, /npm test/, `${name} workflow`);
 }
 
-// 발행 경로는 하나여야 한다. 태그 말고 다른 것으로도 발행되면 되돌릴 수 없는 실수가 난다.
+// See RULE.md "릴리스": tags are the only publish path.
 assert(!/npm publish/.test(ci), "CI workflow가 발행을 한다");
 assert.match(release, /on:\s*\n\s*push:\s*\n\s*tags:/, "Release workflow가 태그가 아닌 이벤트로 돈다");
 assert(!/branches:/.test(release), "Release workflow에 branch 트리거가 남아 있다");
-// 인증은 Trusted Publishing(OIDC)이다. 시크릿 토큰이나 registry-url(.npmrc 의 NODE_AUTH_TOKEN 줄)이 다시 생기면 OIDC 경로가 깨진다.
+// Auth is Trusted Publishing (OIDC). A secret token or registry-url (which writes a NODE_AUTH_TOKEN line to .npmrc) breaks the OIDC path.
 assert.match(release, /id-token:\s*write/, "OIDC 발행에는 id-token: write 가 필요하다");
 assert(!/NODE_AUTH_TOKEN|NPM_TOKEN|registry-url/.test(release.replace(/^\s*#.*$/gm, "")), "Trusted Publishing 워크플로에 토큰 인증 설정이 남아 있다");
 assert.match(release, /npm --version/, "러너 npm 이 11.5.1 이상인지 확인하지 않는다");
 assert(!/npm\.pkg\.github\.com/.test(release) && !/packages:\s*write/.test(release), "GitHub Packages 설정이 남아 있다");
 
-// 검증하지 않은 산출물이 올라가지 않도록, 게이트가 publish보다 먼저 와야 한다.
+// Gate before publish, so unverified output never ships.
 assert(release.indexOf("npm test") < release.indexOf("npm publish"), "게이트보다 publish가 먼저 온다");
-// 태그와 package.json이 어긋나면 태그가 가리키는 커밋과 레지스트리의 버전이 달라진다.
+// Tag and package.json version must agree, or the tagged commit and the registry version diverge.
 assert.match(release, /GITHUB_REF_NAME/, "태그와 package.json 버전을 대조하지 않는다");
-// prerelease를 기본 dist-tag로 올리면 beta가 latest를 가져간다.
+// A prerelease published under the default dist-tag would take over `latest`.
 assert.match(release, /npm publish --tag next/, "prerelease를 next 채널로 올리지 않는다");
 assert.match(release, /npm publish --tag latest/, "정식을 latest 채널로 올리지 않는다");
 
-// 배포 대상은 저장소 루트의 패키지다. 루트에 workspaces를 선언하면 루트가 workspace 루트가 되고
-// changesets는 루트를 versionable 목록에서 빼, 릴리스 계획을 전혀 세우지 못한다.
+// The published package is the repo root. Declaring workspaces there makes the root a workspace root, and
+// changesets drops it from the versionable list, so no release plan is ever built.
 assert.equal(pkg.workspaces, undefined, "루트에 workspaces가 생겨 배포 대상이 changesets의 versionable 목록에서 빠짐");
 
-// 설정 문자열만 보면 릴리스 자동화가 실제로 도는지 알 수 없다. 위 검사만 있던 동안 버전 PR 워크플로는
-// changeset version에서 죽고 있었는데도 이 파일은 통과했다. CLI를 실제로 돌려 확인한다.
-// changeset status는 baseBranch와의 diff로 동작한다. 릴리스 잡은 태그를 detached·shallow로
-// 체크아웃하므로 그곳에는 main 브랜치가 없고 status는 실행될 수 없다. 실행 가능한 곳에서만
-// 돌리고, 건너뛸 때는 건너뛴다고 적는다. 조용히 빠지면 아무도 다시 보지 않는다.
+// Config strings alone do not prove the release automation runs: with only the checks above, the version-PR
+// workflow was dying in `changeset version` while this file passed. So run the CLI for real.
+// `changeset status` diffs against baseBranch. The release job checks the tag out detached and shallow, where
+// main does not exist, so status cannot run there; run it only where possible and say so when skipping.
 const hasBase = spawnSync("git", ["rev-parse", "--verify", "--quiet", `refs/heads/${changesets.baseBranch}`], { cwd: root, encoding: "utf8" }).status === 0;
 if (!hasBase) {
   console.log(`PASS release regressions: 태그 발행 경로 하나, 게이트 뒤 publish, 채널 분리 (changeset status는 ${changesets.baseBranch} 브랜치가 없는 체크아웃이라 건너뜀)`);
@@ -67,13 +66,13 @@ if (!hasBase) {
 }
 const status = spawnSync(process.execPath, [path.join(nodeModules, "@changesets", "cli", "bin.js"), "status"], { cwd: root, encoding: "utf8" });
 const statusOutput = `${status.stdout}${status.stderr}`;
-// 이 문구가 그 회귀의 이름이다. 어떤 상태에서도 나오면 안 된다.
+// This phrase is the name of that regression; it must never appear.
 assert(!/not in the workspace/i.test(statusOutput), `changesets가 배포 대상을 versionable 목록에서 빼고 있다: ${statusOutput}`);
-// status의 결과는 대기 중 changeset이 있는지에 달려 있다. 셋 다 정상 상태다.
-//   있음         -> exit 0, 릴리스 계획에 배포 대상이 뜬다
-//   없음 + 깨끗  -> exit 0, "Packages to be bumped:" 뒤가 빈다 (릴리스 커밋이 그렇다)
-//   없음 + 변경  -> exit 1, "no changesets were found"
-// 배포 대상 이름을 요구할 수 있는 것은 첫 경우뿐이므로, 그때만 요구한다.
+// The status result depends on whether changesets are pending. All three are healthy:
+//   pending            -> exit 0, the package appears in the release plan
+//   none + clean tree  -> exit 0, "Packages to be bumped:" is empty (a release commit looks like this)
+//   none + changes     -> exit 1, "no changesets were found"
+// Only the first case can be required to name the package.
 const pending = fs.readdirSync(path.join(root, ".changeset")).filter((name) => name.endsWith(".md") && name !== "README.md");
 if (pending.length) {
   assert.equal(status.status, 0, `changeset status가 실패함: ${statusOutput}`);

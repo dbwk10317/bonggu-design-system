@@ -139,8 +139,8 @@ async function assertPackageBrowser({ run, work, consumer }) {
             };
           });
           assert(metrics.canvas, "테마 canvas 토큰이 비어 있음");
-          // reset 은 @layer bds-reset 에 있다. host 가 직접 쓴 규칙(body·ul)은 host 가 이기고,
-          // host 가 건드리지 않은 요소(html box-sizing·img display)에는 reset 이 적용된다.
+          // See RULE.md "공개 API·버전·배포 계약" (스타일 범위): the reset lives in @layer bds-reset, so host rules
+          // (body, ul) win and untouched elements (html box-sizing, img display) still get the reset.
           assert.equal(metrics.bodyMargin, "37px", "host body 규칙이 레이어 reset 에 밀림");
           assert.equal(metrics.bodyFont.toLowerCase(), "serif", "host body 글꼴이 레이어 reset 에 밀림");
           assert.equal(metrics.listMargin, "19px", "host 목록 규칙이 레이어 reset 에 밀림");
@@ -175,7 +175,7 @@ async function assertPackageBrowser({ run, work, consumer }) {
     await page.waitForFunction(() => window.__fixtureHydrated === true);
     await page.getByRole("button", { name: "저장", exact: true }).click();
     await page.getByText("저장 완료", { exact: true }).waitFor();
-    // 폼: ref 로 입력 포커스, 라벨로 닿는 입력·select, 네이티브 제출 값
+    // Form: focus via ref, label-reachable input/select, native submit value.
     await page.getByRole("button", { name: "이름으로" }).click();
     assert.equal(await page.evaluate(() => document.activeElement?.id), "fixture-name", "TextField ref 가 input 을 가리키지 않음");
     await page.getByLabel("노드 이름").fill("edge-c");
@@ -183,16 +183,16 @@ async function assertPackageBrowser({ run, work, consumer }) {
     await page.getByRole("button", { name: "등록" }).click();
     await page.locator("#fixture-submitted").waitFor();
     assert.equal(await page.locator("#fixture-submitted").textContent(), "busan:edge-c", "폼 제출 값이 다름");
-    // 모달: 열림, Esc 로 닫힘, 포커스가 연 버튼으로 복원
+    // Modal: opens, closes on Esc, focus returns to the opener.
     await page.getByRole("button", { name: "확인 열기" }).click();
     await page.getByRole("dialog", { name: "등록 확인" }).waitFor();
     await page.keyboard.press("Escape");
     await page.getByRole("dialog", { name: "등록 확인" }).waitFor({ state: "detached" });
     assert.equal(await page.evaluate(() => document.activeElement?.id), "fixture-open", "모달을 닫은 뒤 포커스가 연 버튼으로 돌아오지 않음");
-    // 표: 행 선택이 신원(rowKey)에 붙고 선택 수가 뜬다
+    // Table: selection binds to row identity (rowKey) and the count shows.
     await page.getByRole("checkbox", { name: "edge-a 선택" }).check();
     await page.getByText("1개 선택됨").waitFor();
-    // 차트: ResizeObserver 로 실제 폭을 재서 그린다
+    // Chart: draws at the real width measured by ResizeObserver.
     const chartWidth = await page.evaluate(() => document.querySelector(".bds-chart__svg")?.getBoundingClientRect().width ?? 0);
     assert(chartWidth > 100, `Chart 가 실제 폭으로 그려지지 않음 (${chartWidth}px)`);
     await page.evaluate(() => document.fonts.ready);

@@ -1,5 +1,5 @@
 import type { ForwardRefExoticComponent, InputHTMLAttributes, RefAttributes } from "react";
-/** 숫자 입력 + 증감 버튼. epochs, batch_size, 갱신 초 같은 작은 정수·소수. */
+/** Number input with step buttons. Small integers and decimals such as epochs, batch_size, refresh seconds. */
 export interface NumberStepperProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "defaultValue" | "onChange" | "size" | "width"> {
   value?: number;
   defaultValue?: number;
@@ -9,7 +9,7 @@ export interface NumberStepperProps extends Omit<InputHTMLAttributes<HTMLInputEl
   fit?: "flex" | "fixed" | "auto";
   width?: number | string;
   invalid?: boolean;
-  /** blur·Enter·증감 버튼에서 확정된 숫자만 전달. 입력 중 빈칸/범위 밖 값은 편집 상태로 유지한다. */
+  /** Called only with numbers committed on blur, Enter or the step buttons. Empty or out-of-range text stays in the editing state. */
   onChange?: (value: number) => void;
 }
 export declare const NumberStepper: ForwardRefExoticComponent<NumberStepperProps & RefAttributes<HTMLInputElement>>;

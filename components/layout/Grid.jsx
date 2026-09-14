@@ -1,8 +1,8 @@
 import React from "react";
 import { cx } from "../core/frame.js";
 
-/** 반응형 카드 격자. cols는 '이상적' 열 수이고 minmax(auto-fit)로 폭에 따라 저절로 줄어든다. min으로 카드 최소 폭을 직접 줄 수도 있다.
- *  columns={12}를 주면 고정 열 격자가 되고 자식 GridItem의 span으로 2/3+1/3 같은 비대칭 배치를 만든다(컨테이너 폭 기준 접힘).
+/** Responsive card grid. cols is the ideal column count; auto-fit minmax shrinks it with the width, or min sets the card minimum directly.
+ *  columns={12} switches to a fixed grid where GridItem spans build asymmetric layouts like 2/3 + 1/3 (collapsing by container width).
  * @param {Parameters<typeof import("./Grid.d.ts").Grid>[0]} props
  */
 export function Grid({ cols = 3, min, columns, className, style, children, ...rest }) {
@@ -10,7 +10,7 @@ export function Grid({ cols = 3, min, columns, className, style, children, ...re
   return <div className={cx("bds-grid", !min && `bds-grid--${cols}`, className)} style={min ? { gridTemplateColumns: `repeat(auto-fit,minmax(min(100%,${typeof min === "number" ? `${min}px` : min}),1fr))`, ...style } : style} {...rest}>{children}</div>;
 }
 
-/** Grid columns 모드의 칸. span(≥900) · spanMd(<900) · spanSm(<640), 480 미만은 항상 전폭.
+/** Cell for Grid columns mode: span (≥900) · spanMd (<900) · spanSm (<640); below 480 always full width.
  * @param {Parameters<typeof import("./Grid.d.ts").GridItem>[0]} props */
 export function GridItem({ span = 12, spanMd, spanSm, className, style, children, ...rest }) {
   return <div className={cx("bds-col", className)} style={{ "--span": span, "--span-md": spanMd, "--span-sm": spanSm, ...style }} {...rest}>{children}</div>;

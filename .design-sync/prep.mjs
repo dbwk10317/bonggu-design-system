@@ -1,7 +1,7 @@
-// design-sync 변환기 입력 준비. 재동기화 때 package-build.mjs 전에 먼저 돌린다.
-//   1) dist/styles.css의 @import를 재귀로 인라인 → .cache/flat.css (cfg.cssEntry가 파일 하나만 받으므로)
-//   2) components/**/<Name>.prompt.md → .cache/docs/<Name>.md (변환기의 슬러그 매칭이 ".prompt"를 이름의 일부로 읽으므로)
-// 실행: node .design-sync/prep.mjs
+// Prepares design-sync transformer input. Must run before package-build.mjs on every resync.
+//   1) inline dist/styles.css @imports recursively → .cache/flat.css (cfg.cssEntry accepts a single file)
+//   2) components/**/<Name>.prompt.md → .cache/docs/<Name>.md (the transformer's slug matching reads ".prompt" as part of the name)
+// Run: node .design-sync/prep.mjs
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, statSync, rmSync } from "node:fs";
 import { dirname, resolve, join, basename } from "node:path";
 

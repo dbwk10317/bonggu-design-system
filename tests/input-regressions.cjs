@@ -9,7 +9,7 @@ const Babel = dependencyRequire("@babel/standalone");
 const React = dependencyRequire("react");
 const { create, act } = dependencyRequire("react-test-renderer");
 function component(name) {
-  const source = fs.readFileSync(path.join(__dirname, "../components/input", name + ".jsx"), "utf8").replace(/^import .*;\r?\n/gm, "").replace(/^export function /m, "function ").replace(/^export const /m, "var "); // var: vm 스크립트 최상위에서 컨텍스트 전역이 된다
+  const source = fs.readFileSync(path.join(__dirname, "../components/input", name + ".jsx"), "utf8").replace(/^import .*;\r?\n/gm, "").replace(/^export function /m, "function ").replace(/^export const /m, "var "); // var: becomes a context global at the top level of a vm script
   const scope = { React, ...React, useFieldContext: () => null, cx: (...v) => v.filter(Boolean).join(" "), frameStyle: () => ({}), assignRef: () => {}, Icon: () => null, IconButton: (p) => React.createElement("button", p), Tag: (p) => React.createElement("span", p), document: { addEventListener() {}, removeEventListener() {} } };
   vm.createContext(scope);
   vm.runInContext(Babel.transform(source, { presets: [["react", { runtime: "classic" }]] }).code, scope);

@@ -1,12 +1,12 @@
 import type { HTMLAttributes, ReactNode } from "react";
 import type { ElementType } from "react";
-/** 가로 나열 */
+/** Horizontal row */
 export interface InlineProps extends HTMLAttributes<HTMLElement> {
-  /** --sp 단계 번호 또는 CSS 길이. 주지 않으면 --inline-gap을 쓴다 */
+  /** --sp step number or CSS length; defaults to --inline-gap */
   gap?: number | string;
   align?: "start" | "center" | "end" | "baseline" | "stretch";
   justify?: "start" | "center" | "end" | "space-between";
-  /** 기본 true. false면 한 줄 유지 */
+  /** Default true; false keeps a single line */
   wrap?: boolean;
   as?: ElementType;
   children?: ReactNode;

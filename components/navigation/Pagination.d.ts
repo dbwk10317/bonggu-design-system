@@ -1,13 +1,13 @@
 import type { HTMLAttributes, ReactNode } from "react";
 export interface PaginationProps extends Omit<HTMLAttributes<HTMLElement>, "onChange"> {
-  /** 1부터 */
+  /** 1-based */
   page: number;
-  /** 총 페이지 수 */
+  /** Total page count */
   total: number;
   onChange?: (page: number) => void;
-  /** 현재 페이지 양옆 번호 수(기본 1) */
+  /** Numbers shown on each side of the current page (default 1) */
   siblings?: number;
-  /** "1–20 / 184" 같은 범위 표시 */
+  /** Range text such as "1–20 / 184" */
   info?: ReactNode;
   size?: "sm" | "md";
 }

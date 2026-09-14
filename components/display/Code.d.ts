@@ -1,8 +1,8 @@
 import type { HTMLAttributes, ReactNode } from "react";
-/** 인라인 코드(식별자·경로). */
+/** Inline code (identifiers, paths). */
 export declare function Code(props: HTMLAttributes<HTMLElement>): ReactNode;
-/** 코드 블록(명령·JSON). 줄바꿈하지 않고 가로 스크롤. */
+/** Code block (commands, JSON). No wrapping; scrolls horizontally. */
 export interface CodeBlockProps extends HTMLAttributes<HTMLPreElement> { language?: string }
 export declare function CodeBlock(props: CodeBlockProps): ReactNode;
-/** 키보드 키 표시. */
+/** Keyboard key. */
 export declare function Kbd(props: HTMLAttributes<HTMLElement>): ReactNode;

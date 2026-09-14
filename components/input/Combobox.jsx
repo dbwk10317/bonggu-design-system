@@ -3,7 +3,7 @@ import { cx, frameStyle } from "../core/frame.js";
 import { Icon } from "../action/Icon.jsx";
 import { useFieldContext } from "./Field.jsx";
 
-/** 검색 가능한 선택. options {value,label,detail?,disabled?}. 타이핑으로 거르고 ↑↓ Enter Esc. 선택지 6개 이상이면 Select 대신 이것. */
+/** Searchable single select. options {value,label,detail?,disabled?}. Type to filter; ↑↓ Enter Esc. */
 export const Combobox = forwardRef(
   /**
    * @param {import("./Combobox.d.ts").ComboboxProps} props
@@ -19,13 +19,13 @@ export const Combobox = forwardRef(
   const sel = options.find((o) => o.value === value) ?? null;
   const list = q ? options.filter((o) => `${o.label} ${o.detail ?? ""} ${o.value}`.toLowerCase().includes(q.toLowerCase())) : options;
   useEffect(() => { if (!open) return; const on = (/** @type {MouseEvent} */ e) => { if (!root.current?.contains(/** @type {Node} */ (e.target))) { setOpen(false); setQ(""); } }; document.addEventListener("mousedown", on); return () => document.removeEventListener("mousedown", on); }, [open]);
-  /* 검색어나 열림이 바뀌면 강조를 첫 항목으로. 렌더 중 조정이라 옛 강조가 한 프레임 보이지 않는다. */
+  /* Reset the highlight to the first item when the query or open state changes. Done during render so the stale highlight never paints for a frame. */
   const cue = q + "\u0000" + open;
   const [prevCue, setPrevCue] = useState(cue);
   if (prevCue !== cue) { setPrevCue(cue); setIdx(0); }
   const pick = (/** @type {import("./Combobox.d.ts").ComboOption | null | undefined} */ o) => { if (o?.disabled) return; onChange?.(o ? o.value : null, o ?? null); setOpen(false); setQ(""); };
   const onKey = (/** @type {import("react").KeyboardEvent<HTMLElement>} */ e) => {
-    /* 비활성 항목은 pick 이 거부하므로 강조도 지나친다. 멈추면 Enter 가 아무 일도 하지 않는다. */
+    /* Skip disabled items: pick() rejects them, so stopping on one would make Enter a no-op. */
     const step = (/** @type {number} */ from, /** @type {number} */ dir) => {
       for (let i = from + dir; i >= 0 && i < list.length; i += dir) if (!list[i].disabled) return i;
       return from;
@@ -34,7 +34,7 @@ export const Combobox = forwardRef(
     else if (e.key === "ArrowUp") { e.preventDefault(); setIdx((i) => step(i, -1)); }
     else if (e.key === "Enter") { if (open && list[idx]) { e.preventDefault(); pick(list[idx]); } else setOpen(true); }
     else if (e.key === "Escape") { setOpen(false); setQ(""); }
-    /* Tab 은 가로채지 않는다. 다만 포커스가 나가면 목록도 닫아야 aria-expanded 가 거짓말하지 않는다. */
+    /* Tab is not intercepted, but the list must close when focus leaves or aria-expanded lies. */
     else if (e.key === "Tab") { setOpen(false); setQ(""); }
   };
   return (

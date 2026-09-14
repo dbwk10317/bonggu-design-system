@@ -1,6 +1,6 @@
 import type { ForwardRefExoticComponent, HTMLAttributes, ReactNode, RefAttributes } from "react";
 export interface ComboOption { value: string; label: string; detail?: ReactNode; disabled?: boolean }
-/** 검색 가능한 단일 선택. 모델·revision·사용자처럼 목록이 자라는 곳. 6개 미만이면 Select. */
+/** Searchable single select for lists that grow (models, revisions, users). */
 export interface ComboboxProps extends Omit<HTMLAttributes<HTMLDivElement>, "onChange"> {
   options: ComboOption[];
   value: string | null;
@@ -12,7 +12,7 @@ export interface ComboboxProps extends Omit<HTMLAttributes<HTMLDivElement>, "onC
   width?: number | string;
   disabled?: boolean;
   invalid?: boolean;
-  /** Field.required를 재정의하는 접근성 상태. 제출 시 선택 value 검증은 폼에서 수행한다. */
+  /** Accessibility state overriding Field.required. Validating the selected value on submit is the form's job. */
   required?: boolean;
   clearable?: boolean;
   "aria-label"?: string;

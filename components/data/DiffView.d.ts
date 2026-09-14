@@ -1,6 +1,6 @@
 import type { HTMLAttributes, ReactNode } from "react";
 export interface DiffChange { field: string; from?: string | number | null; to?: string | number | null; kind?: "changed" | "added" | "removed" }
-/** 필드 단위 변경 비교. project revision diff. */
+/** Field-level change comparison, e.g. a project revision diff. */
 export interface DiffViewProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
   changes: DiffChange[];
   from?: ReactNode;

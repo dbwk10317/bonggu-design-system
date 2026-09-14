@@ -5,7 +5,7 @@ export interface FormModalProps {
   onSubmit: (e: FormEvent) => void;
   title: ReactNode;
   description?: ReactNode;
-  /** 동사. 기본 "저장". null이면 제출 버튼과 Enter 제출을 비활성화한다. */
+  /** A verb; default "저장". null removes the submit button and disables Enter submit. */
   submitLabel?: string | null;
   cancelLabel?: string;
   busy?: boolean;

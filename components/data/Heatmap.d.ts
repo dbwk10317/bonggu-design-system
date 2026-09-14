@@ -1,14 +1,14 @@
 import type { HTMLAttributes, ReactNode } from "react";
-/** 2차원 강도 격자(시간×요일 요청량, GPU 사용 패턴). 순차 램프 --ramp-1~6만 사용. */
+/** 2-D intensity grid (requests by hour × weekday, GPU usage patterns) on the --ramp-1~6 sequential ramp. */
 export interface HeatmapProps extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
   rows: ReactNode[];
   cols: ReactNode[];
-  /** values[rowIndex][colIndex]; null = 수집 안 됨 */
+  /** values[rowIndex][colIndex]; null = missing */
   values: (number | null)[][];
   valueFormatter?: (v: number) => string;
   rowLabel?: (r: ReactNode) => ReactNode;
   colLabel?: (c: ReactNode) => ReactNode;
-  /** 셀 최소 크기 px(기본 14). flex면 폭에 맞춰 늘어난다 */
+  /** Minimum cell size in px (default 14). With flex, cells grow to fill the width */
   cell?: number;
   gap?: number;
   fit?: "flex" | "fixed";

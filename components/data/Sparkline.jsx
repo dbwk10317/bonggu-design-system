@@ -3,7 +3,7 @@ import { cx } from "../core/frame.js";
 import { numeric } from "../core/missing.js";
 import { runsOf, toneVar } from "./chart-math.js";
 
-/** 미니 추세선. 부모 크기를 채운다(fit은 부모가 정한다). 결측 구간은 끊는다. 축·범례 없음.
+/** Mini trend line. Fills its parent (the parent owns fit). Missing runs break the line; no axes or legend.
  * @param {Parameters<typeof import("./Sparkline.d.ts").Sparkline>[0]} props */
 export function Sparkline({ values = [], tone = 1, area = true, className, ...rest }) {
   const uid = useId().replace(/:/g, "");

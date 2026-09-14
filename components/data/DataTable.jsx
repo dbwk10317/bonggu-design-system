@@ -8,35 +8,33 @@ const TABLE_DESKTOP_HIDE = "bds-table__d-hide";
 const TABLE_MOBILE_HIDE = "bds-table__m-hide";
 const hideCls = (/** @type {import("./DataTable.d.ts").DataTableColumn<any>} */ c) => (c.hideBelow === "desktop" ? TABLE_DESKTOP_HIDE : c.hideBelow === "tablet" ? TABLE_MOBILE_HIDE : undefined);
 
-/* 셀 하나의 결측 판정.
-   render 없는 열: row[key]가 값이므로 core/missing.js 규칙을 그대로 쓴다. null/undefined는 빈 칸이 아니라 "수집 안 됨"이다.
-   render 있는 열: 반환은 ReactNode다. React 규칙대로 null은 "아무것도 그리지 않음"이므로 결측으로 보지 않는다
-                   (예: 폐기된 토큰 행의 버튼 없음). 이미 문구로 포맷해 반환하는 사용처만 결측으로 인식한다. */
+/* Missing-value check for one cell. Without render, row[key] is a value and core/missing.js applies.
+   With render, the result is a ReactNode: null means "render nothing" (e.g. no button on a revoked-token row), not missing;
+   only a returned MISSING_TEXT counts. See RULE.md "데이터와 결측". */
 const cellOf = (/** @type {import("./DataTable.d.ts").DataTableColumn<any>} */ c, /** @type {any} */ row, /** @type {number} */ i) => {
   const v = c.render ? c.render(row, i) : row[c.key];
   const na = c.render ? v === MISSING_TEXT : isMissing(v);
   return { value: na ? MISSING_TEXT : v, na };
 };
 
-/** 데이터 표. 컨테이너 폭 기준으로 열을 숨기고(hideBelow), 숨긴 정보는 expandable로 펼쳐 본다.
- *  정렬은 표시만 하고 실제 정렬은 소비자가 rows에 반영한다.
- *  결측: render 없는 열의 null·undefined·NaN은 "수집 안 됨"으로 표시한다(빈 칸으로 감추지 않는다).
+/** Data table. Columns hide by container width (hideBelow); hidden detail is reached through expandable.
+ *  Sorting is display only; the consumer sorts rows. Missing cells follow RULE.md "데이터와 결측".
  * @param {Parameters<typeof import("./DataTable.d.ts").DataTable>[0]} props
  */
 export function DataTable({ columns = [], rows = [], rowKey, rowLabel, sort, onSortChange, selectable = false, selectedKeys = [], onSelectionChange, bulkActions, expandable, defaultExpandedKeys = [], header, empty = "표시할 항목이 없습니다.", fit = "flex", width, height, className, style, "aria-label": ariaLabel, ...rest }) {
   const [expanded, setExpanded] = useState(() => new Set(defaultExpandedKeys));
   const autoId = useId(), hid = header?.id ?? autoId;
-  /* 행의 신원은 위치가 아니라 값이다(readme 데이터 절). 정렬·필터로 위치가 바뀌면 같은 인덱스가
-     다른 레코드를 가리켜 선택이 엉뚱한 행에 붙는다. 신원 없이 선택·펼침을 켜면 알린다. */
+  /* Row identity is a value, not a position (see RULE.md "데이터와 결측"): after sort/filter the same
+     index points at another record and selection sticks to the wrong row. Warn when identity is missing. */
   const keyOf = rowKey ?? ((/** @type {any} */ r, /** @type {number} */ i) => r.id ?? i);
   if ((selectable || expandable) && !rowKey && rows.some((r) => /** @type {any} */ (r)?.id == null)) {
     console.warn("DataTable: 선택·펼침에는 rowKey나 row.id로 행의 신원을 주어야 합니다. 위치는 정렬·필터에서 다른 행을 가리킵니다.");
   }
   const keys = rows.map((r, i) => keyOf(r, i));
-  /* 펼침은 지금 있는 행에만 의미가 있다. 정리하지 않으면 목록이 길게 도는 동안 계속 쌓이고,
-     신원이 재사용되면 엉뚱한 행이 펼쳐진 채로 나타난다. 읽는 자리에서 한 번 거른다. */
+  /* Expansion only means something for rows that still exist. Left alone the set grows for the life of the
+     list, and a reused key would show a different row pre-expanded. Filter once at the read site. */
   const openKeys = expandable ? keys.filter((k) => expanded.has(k)) : [];
-  /* 숨김 클래스와 수치 정렬은 열만 보고 정해진다. 행마다 다시 구하면 행×열 번 돈다. */
+  /* Hide class and numeric alignment depend on the column only; computing per row would cost rows × columns. */
   const colCls = columns.map((c) => cx(c.align === "num" && "bds-table__num", hideCls(c)));
   const sel = new Set(selectedKeys);
   const selCount = keys.filter((k) => sel.has(k)).length;

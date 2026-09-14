@@ -3,9 +3,7 @@
    radius: --radius-xs, --radius-ctl, --radius-panel, --radius-sheet, --radius-pill
    other: --ease-out, --ease-in-out, --dur-fast, --dur-base, --dur-slow, --dur-gauge, --z-sticky, --z-drawer, --z-modal, --z-toast, --z-tip
 */
-/* 간격·형태·모션·레이아웃 토큰.
-   브레이크포인트 4단(뷰포트): sm 640 · md 768 · lg 1024 · xl 1380. media 쿼리는 리터럴로 쓰고 아래 토큰은 문서·JS용이다.
-   컨테이너 5단(@container, 컴포넌트 접힘 기준): xs 240 · sm 320 · md 480 · lg 640 · xl 900. */
+/* Spacing, shape, motion, layout tokens. The --bp- and --cq- tokens are for docs and JS only: custom properties cannot appear in media/container query conditions, so queries use literals. See RULE.md "VISUAL FOUNDATIONS". */
 :root{
   --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:20px;--sp-6:24px;--sp-7:32px;--sp-8:40px;--sp-9:48px;--sp-10:64px;
   --grid-gap:20px;--panel-pad:20px;--page-pad:24px;--kv-gap:8px;--inline-gap:12px;
@@ -27,9 +25,8 @@
   --z-toast:60;
   --z-tip:70;
 }
-/* 모바일(<768): 여백 한 단계 축소 */
 @media (width < 768px){:root{--panel-pad:16px;--page-pad:20px;--grid-gap:16px}}
-/* 밀도: <html data-density="compact"> 표·운영 콘솔용. 글자 크기는 줄이지 않는다 */
+/* compact density: spacing and control heights only, never font size */
 :root[data-density="compact"]{--panel-pad:12px;--grid-gap:10px;--page-pad:16px;--kv-gap:4px;--inline-gap:6px;--h-ctl-sm:24px;--h-ctl:28px;--h-ctl-lg:36px}
-/* 터치 기기: compact에서도 컨트롤 높이 36/44/48 유지. 밀도의 여백 설정은 그대로 적용 */
+/* touch: selector includes compact so density cannot push controls below touch height */
 @media (pointer:coarse){:root,:root[data-density="compact"]{--h-ctl-sm:36px;--h-ctl:44px;--h-ctl-lg:48px}}

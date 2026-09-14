@@ -2,7 +2,7 @@ import type { HTMLAttributes, ReactNode } from "react";
 export interface ErrorStateProps extends Omit<HTMLAttributes<HTMLDivElement>, "title"> {
   title?: ReactNode;
   description?: ReactNode;
-  /** 오류 코드·요청 ID(mono) */
+  /** Error code or request ID (mono) */
   code?: ReactNode;
   onRetry?: () => void;
   retryLabel?: ReactNode;

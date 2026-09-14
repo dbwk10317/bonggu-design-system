@@ -1,9 +1,9 @@
 import type { ForwardRefExoticComponent, HTMLAttributes, RefAttributes } from "react";
 export interface TimePickerProps {
-  /** "HH:MM" 24시간 */
+  /** "HH:MM", 24-hour */
   value?: string;
   onChange?: (value: string) => void;
-  /** 분 단위(기본 5) */
+  /** Minute step (default 5) */
   step?: number;
   size?: "sm" | "md";
   fit?: "flex" | "fixed" | "auto";

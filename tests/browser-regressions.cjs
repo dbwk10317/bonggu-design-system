@@ -4,7 +4,7 @@ const path = require('node:path');
 const http = require('node:http');
 const { createRequire } = require('node:module');
 const deps = process.env.DS_TEST_NODE_MODULES ? createRequire(path.join(path.resolve(process.env.DS_TEST_NODE_MODULES), '__browser-tests.cjs')) : require;
-// @babel/standalone 안의 debug가 로드 시 bare localStorage를 읽어 Node가 ExperimentalWarning을 내므로 Babel을 읽기 전에 불활성 스텁으로 가린다.
+// The debug module inside @babel/standalone reads bare localStorage at load, which makes Node emit an ExperimentalWarning; stub it first.
 try { Object.defineProperty(globalThis, 'localStorage', { value: { getItem: () => null }, configurable: true, writable: true }); } catch {}
 const { chromium } = deps('playwright');
 const root = path.resolve(__dirname, '..');
@@ -16,9 +16,9 @@ const localScripts = {
   '/test-react-dom.js': path.join(reactDomDir, 'umd/react-dom.development.js'),
   '/test-babel.js': path.join(babelDir, 'babel.min.js'),
 };
-// templates/dashboard/support.js는 dc-runtime 생성물이라 직접 고칠 수 없고, unpkg CDN URL과 SRI 해시를
-// 코드에 박아 둔다. 게이트가 네트워크에 의존하면 안 되므로 응답 본문에서만 그 URL을 이 서버가 서브하는
-// 로컬 경로로 바꾸고, 로컬 파일(개발 빌드/다른 babel 버전)이 SRI 불일치로 막히지 않게 integrity 값을 비운다.
+// templates/dashboard/support.js is dc-runtime output with unpkg URLs and SRI hashes baked in. The gate must not
+// touch the network, so the response body is rewritten to local paths and integrity values are blanked
+// (local dev builds / other babel versions would otherwise fail the SRI check).
 const CDN_LOCAL = {
   'https://unpkg.com/react@18.3.1/umd/react.development.js': '/test-react.js',
   'https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js': '/test-react-dom.js',
@@ -29,12 +29,12 @@ const CDN_LOCAL = {
 const rewriteSupport = (src) => Object.entries(CDN_LOCAL)
   .reduce((s, [from, to]) => s.split(from).join(to), src)
   .replace(/"sha384-[^"]*"/g, '""')
-  // 로컬 @babel/standalone은 8.x라 preset-react 기본값이 automatic runtime이다. 그러면 x-import가
-  // new Function으로 실행하는 코드에 import 문이 섞여 터진다. 템플릿이 고정한 7.29와 같게 classic으로 되돌린다.
+  // Local @babel/standalone is 8.x, whose preset-react defaults to the automatic runtime; that injects import
+  // statements into code x-import runs via new Function. Force classic to match the template's pinned 7.29.
   .replace('presets: ["react", "typescript"]', 'presets: [["react", { runtime: "classic" }], "typescript"]');
 const server = http.createServer((req, res) => {
   const url = new URL(req.url, 'http://localhost').pathname;
-  // 브라우저가 자동으로 요청한다. 404로 두면 콘솔 오류가 남아 실제 오류와 섞인다.
+  // Browsers request this automatically; a 404 would leave a console error that mixes with real ones.
   if (url === '/favicon.ico') { res.writeHead(204); res.end(); return; }
   const file = url === '/' ? path.join(__dirname, 'fixtures/regressions.html')
     : localScripts[url] ?? path.resolve(root, '.' + url);
@@ -107,8 +107,7 @@ async function run() {
     await page.getByRole('menuitem', { name: '복사', exact: true }).click(); await poll(() => window.picked, ['copy']);
     await page.getByRole('button', { name: '더 보기' }).press('ArrowDown'); await page.keyboard.press('Tab');
     await poll(() => document.activeElement.id, 'after-menu');
-    /* 명령 팔레트: 네이티브 dialog 세션이라 포커스가 갇히고 Esc·배경으로 닫힌다.
-       열어 보지 않으면 열림 경로의 훅이 한 번도 돌지 않아 어떤 게이트도 이 화면을 보지 못한다. */
+    /* CommandPalette, see RULE.md "동작 계약". Nothing else opens it, so the open-path hooks run only here. */
     await fresh('palette');
     await page.locator('#open-palette').click();
     await page.waitForFunction(() => document.querySelector('dialog.bds-cmdk__panel')?.matches(':modal'));
@@ -119,7 +118,7 @@ async function run() {
     await page.keyboard.press('Enter'); await poll(() => window.ran, ['restart']);
     await page.waitForFunction(() => !document.querySelector('dialog.bds-cmdk__panel'));
     await poll(() => document.activeElement.id, 'open-palette');
-    /* 명령이 포커스를 옮기면 닫힘 정리가 그것을 덮지 않는다. */
+    /* A command that moves focus must not be overridden by close-time focus restore. */
     await page.locator('#open-palette').click();
     await page.waitForFunction(() => document.querySelector('dialog.bds-cmdk__panel')?.matches(':modal'));
     await page.keyboard.type('이동');
@@ -127,7 +126,6 @@ async function run() {
     await page.keyboard.press('Enter');
     await page.waitForFunction(() => !document.querySelector('dialog.bds-cmdk__panel'));
     await poll(() => document.activeElement.id, 'jump-target');
-    /* Esc 로 닫기 */
     await page.locator('#open-palette').click();
     await page.waitForFunction(() => document.querySelector('dialog.bds-cmdk__panel')?.matches(':modal'));
     await page.keyboard.press('Escape');
@@ -177,8 +175,8 @@ async function run() {
     const guideErrors = [];
     guide.on('pageerror', e => guideErrors.push(`pageerror: ${e.message}`));
     guide.on('console', m => { if (m.type() === 'error') guideErrors.push(`console: ${m.text()}`); });
-    // 해시만 다른 goto는 문서를 다시 읽지 않는다. show()가 iframe src를 바꾸는 동안 이전 카드가 남아 있어,
-    // 곧바로 단언하면 직전 해시의 DOM을 읽는다. 그 해시의 카드가 실제로 커밋될 때까지 기다린다.
+    // A hash-only goto does not reload the document; while show() swaps the iframe src the previous card is still
+    // there, so an immediate assertion reads the prior hash's DOM. Wait until the frame actually shows the target card.
     const openGuide = async (hash) => {
       await guide.goto(`http://127.0.0.1:${server.address().port}/guidelines/index.html#${hash}`);
       await guide.waitForFunction((h) => {
@@ -279,11 +277,10 @@ async function run() {
       }
       await context.close();
     }
-    // 실제 대시보드 템플릿(templates/dashboard/Dashboard.dc.html) 게이트.
-    // 커버리지: 라우트 7개 × 1280·390 전수 + 834에서는 대표 3개(overview·devices·settings)만.
-    // 834는 1024 미만 드로어 경로를 390과 공유하므로 전수로 돌릴 이득이 적고 실행 시간만 늘어난다.
-    // 폭당 문서 로드는 1회고 라우트 전환은 hash로 한다(App이 hashchange를 구독한다).
-    // status는 공개 상태 페이지라 셸 없이 TopNav로 선다. 셸 제목 대신 data-screen 표식으로 확인한다.
+    // Dashboard template gate (templates/dashboard/Dashboard.dc.html).
+    // Coverage: all 7 routes at 1280 and 390, only 3 representative routes at 834 (it shares the <1024 drawer path
+    // with 390, so the full set only adds run time). One document load per width; routes switch via hash (App
+    // subscribes to hashchange). `status` is a public page without the shell, so it is matched by data-screen instead of the shell title.
     const TITLES = { overview: '개요', nodes: '노드', devices: '장치', deploys: '배포', access: '접근', settings: '설정' };
     const ROUTES = [...Object.keys(TITLES), 'status'];
     const mounted = ([route, title]) => {
@@ -303,7 +300,7 @@ async function run() {
       await dash.goto(`${url}#${routes[0]}`);
       for (const route of routes) {
         await dash.evaluate(r => { window.location.hash = '#' + r; }, route);
-        // 셸 상단바 제목 + 화면의 PageHeader가 함께 보이면 App과 해당 x-import 화면이 실제로 마운트된 것이다.
+        // Shell title plus the screen's PageHeader together prove App and the x-import screen really mounted.
         await dash.waitForFunction(mounted, [route, TITLES[route] ?? null]);
         assert.deepEqual(dashErrors, [], `${route} @${width}`);
         const dashOverflow = await dash.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth ? [] : [...document.querySelectorAll('body *')]
@@ -314,15 +311,15 @@ async function run() {
         assert.deepEqual(dashOverflow, [], `가로 넘침 ${route} @${width}`);
         assert.equal(await dash.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), true, `문서 가로 스크롤 ${route} @${width}`);
       }
-      // 화면 모듈은 훅을 window.DS 프록시로 받는다. 마운트만 보는 검사로는 그 위임이 끊겨도 통과하므로
-      // 실제로 토스트를 띄우는 동작을 한 번 시킨다. 폭마다 반복할 이유는 없어 1280에서만 잰다.
+      // Screen modules get hooks through the window.DS proxy; a mount-only check passes even if that delegation
+      // breaks, so trigger a real toast once. Width-independent, hence 1280 only.
       if (width === 1280) {
         await dash.evaluate(() => { window.location.hash = '#devices'; });
         await dash.waitForFunction(mounted, ['devices', TITLES.devices]);
         await dash.getByRole('button', { name: '적용', exact: true }).click();
         await dash.getByRole('status').filter({ hasText: '두 장치에 적용했습니다.' }).waitFor();
       }
-      // 1024 이상은 고정 레일, 미만은 햄버거 → 드로어. 셸이 있는 화면에서만 잰다.
+      // >=1024 fixed rail, below that hamburger -> drawer. Measured on a shell screen only.
       await dash.evaluate(() => { window.location.hash = '#overview'; });
       await dash.waitForFunction(mounted, ['overview', TITLES.overview]);
       const rail = dash.locator('.bds-shell__side'), burger = dash.locator('.bds-shell__burger');
@@ -337,8 +334,8 @@ async function run() {
     await dashContext.close();
     assert.deepEqual(dashErrors, []);
 
-    // 터치 하한 실측. readme의 최소 조작 영역은 높이와 너비 양쪽이고, 정적 CSS 검사로는
-    // flex가 실제로 줄여 놓은 결과를 볼 수 없다. coarse pointer로 실제 bounding box를 잰다.
+    // Touch floor, measured. See RULE.md "VISUAL FOUNDATIONS" (간격·밀도): static CSS checks cannot see what flex
+    // actually shrank, so real bounding boxes are measured under a coarse pointer.
     const touchContext = await browser.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, reducedMotion: 'reduce' });
     const touchPage = await touchContext.newPage();
     touchPage.setDefaultTimeout(20000);
@@ -350,11 +347,11 @@ async function run() {
         const floor = parseFloat(root.getPropertyValue('--h-touch'));
         const out = [], name = (el) => `${el.tagName.toLowerCase()}.${(el.className || '').toString().split(' ')[0]}`;
         const exposed = [];
-        // .bds-ctl은 입력의 껍데기이자 실제 조작 대상이므로 함께 잰다. 그 안의 native input,
-        // 그리고 label로 감싼 시각적으로 숨긴 input은 껍데기·라벨이 대상이라 세지 않는다.
+        // .bds-ctl is the input's shell and the real target, so it is measured; native inputs inside it,
+        // and visually hidden inputs wrapped in a label, are not (the shell/label is the target).
         for (const el of document.querySelectorAll('button,a[href],input,select,textarea,[role="button"],summary,.bds-ctl')) {
           const box = el.getBoundingClientRect();
-          if (!box.width || !box.height) continue;                    // 숨겨진 것은 조작 대상이 아니다
+          if (!box.width || !box.height) continue;                    // hidden elements are not targets
           const cs = getComputedStyle(el);
           if (cs.visibility === 'hidden' || cs.opacity === '0') continue;
           if (el.closest('[hidden],[aria-hidden="true"]')) continue;
@@ -363,13 +360,13 @@ async function run() {
           exposed.push([el, box, cs]);
         }
         for (const [el, box, cs] of exposed) {
-          // 선언한 하한이 배치에 의해 깎이지 않았는가. 크기를 고정 상자로 주면 여기서 걸린다.
+          // Declared floor must survive layout; a fixed-size box fails here.
           const minW = parseFloat(cs.minWidth) || 0, minH = parseFloat(cs.minHeight) || 0;
           if (box.width + 0.5 < minW || box.height + 0.5 < minH) out.push(`${name(el)} ${Math.round(box.width)}x${Math.round(box.height)} < min ${minW}x${minH}`);
-          // 어떤 조작 대상도 24px 미만으로 그리지 않는다.
+          // No target is drawn below 24px.
           if (box.width < 23.5 || box.height < 23.5) out.push(`${name(el)} ${Math.round(box.width)}x${Math.round(box.height)} < 24`);
         }
-        // 정사각 아이콘 버튼은 터치에서 정본 하한을 양쪽으로 채운다.
+        // Square icon buttons fill the touch floor on both axes.
         for (const [el, box] of exposed) {
           if (!el.classList.contains('bds-iconbtn') || el.classList.contains('bds-iconbtn--sm')) continue;
           if (box.width + 0.5 < floor || box.height + 0.5 < floor) out.push(`${name(el)} ${Math.round(box.width)}x${Math.round(box.height)} < h-touch ${floor}`);

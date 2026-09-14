@@ -2,7 +2,7 @@ import React, { forwardRef } from "react";
 import { cx, frameStyle } from "../core/frame.js";
 import { useFieldContext } from "./Field.jsx";
 
-/** 범위 슬라이더. 네이티브 range를 토큰으로. marks면 눈금 라벨, showValue면 오른쪽에 현재 값(mono). */
+/** Range slider on a native range input. marks adds tick labels; showValue shows the current value (mono) on the right. */
 export const Slider = forwardRef(
   /**
    * @param {import("./Slider.d.ts").SliderProps} props

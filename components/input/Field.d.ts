@@ -1,12 +1,12 @@
 import type { ForwardRefExoticComponent, HTMLAttributes, ReactNode, RefAttributes } from "react";
-/** 라벨·설명·오류를 입력에 연결하는 래퍼. 자식 입력(TextField 등)은 컨텍스트로 id·aria를 받는다. */
+/** Wires label, hint and error to an input. Child inputs (TextField etc.) receive id and aria via context. */
 export interface FieldProps extends HTMLAttributes<HTMLDivElement> {
   label?: ReactNode;
   hint?: ReactNode;
-  /** 있으면 hint 대신 표시되고 입력이 aria-invalid */
+  /** Replaces hint when present and marks the input aria-invalid */
   error?: ReactNode;
   required?: boolean;
-  /** 입력 id를 직접 정할 때 */
+  /** Set to choose the input id yourself */
   id?: string;
   children: ReactNode;
 }

@@ -4,7 +4,7 @@ import { useAnchoredPopover } from "../core/useAnchoredPopover.js";
 import { Icon } from "../action/Icon.jsx";
 import { IconButton } from "../action/IconButton.jsx";
 
-/** "…" 메뉴. items: {label, icon?, onSelect, danger?, disabled?} | "-"(구분선). trigger를 안 주면 점 세 개 IconButton.
+/** "…" menu. items: {label, icon?, onSelect, danger?, disabled?} | "-" (separator). Without trigger, renders a dots-three IconButton.
  * @param {Parameters<typeof import("./DropdownMenu.d.ts").DropdownMenu>[0]} props */
 export function DropdownMenu({ items = [], trigger, align = "end", size = "sm", "aria-label": ariaLabel = "더 보기", className }) {
   const [open, setOpen] = useState(false);
@@ -12,11 +12,11 @@ export function DropdownMenu({ items = [], trigger, align = "end", size = "sm", 
   const root = useRef(/** @type {HTMLDivElement | null} */ (null)), panel = useRef(/** @type {HTMLUListElement | null} */ (null)), uid = useId().replace(/:/g, "");
   const enabled = items.map((it, i) => (it !== "-" && !it.disabled ? i : -1)).filter((i) => i >= 0);
   useAnchoredPopover({ open, anchorRef: root, panelRef: panel, align, onDismiss: () => setOpen(false) });
-  /* 닫힐 때 포커스를 트리거로 돌린다(메뉴 항목이 언마운트되면 포커스가 body로 떨어진다) */
+  /* Return focus to the trigger on close; once the items unmount it would drop to body. */
   const close = () => { if (panel.current?.matches(":popover-open")) panel.current.hidePopover(); setOpen(false); /** @type {HTMLElement | null | undefined} */ (root.current?.querySelector("[aria-haspopup]"))?.focus(); };
   useEffect(() => { if (!open) return; const on = (/** @type {PointerEvent} */ e) => { if (!root.current?.contains(/** @type {Node} */ (e.target))) setOpen(false); }; const key = (/** @type {KeyboardEvent} */ e) => { if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); close(); } }; document.addEventListener("pointerdown", on); document.addEventListener("keydown", key); return () => { document.removeEventListener("pointerdown", on); document.removeEventListener("keydown", key); }; }, [open]);
-  /* 포커스를 옮기는 계기는 열림과 활성 인덱스뿐이다. items 를 의존성에 두면 인라인 배열이라
-     부모가 다시 그릴 때마다 포커스가 활성 항목으로 되돌아가 사용자가 옮긴 포커스를 뺏는다. */
+  /* Only open state and the active index move focus. items is usually an inline array, so listing it
+     as a dependency would snap focus back to the active item on every parent render. */
   const active = enabled.includes(idx) ? idx : enabled[0];
   useEffect(() => { if (!open) return; if (active !== undefined) /** @type {HTMLElement | null | undefined} */ (panel.current?.querySelector(`[data-menu-index="${active}"]`))?.focus(); }, [active, open]);
   const toggleOpen = () => { if (open) close(); else { setIdx(enabled[0] ?? -1); setOpen(true); } };

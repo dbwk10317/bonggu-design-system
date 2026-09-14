@@ -4,7 +4,7 @@ import { Icon } from "../action/Icon.jsx";
 import { useFieldContext } from "./Field.jsx";
 
 const pad = (/** @type {number} */ n) => String(n).padStart(2, "0");
-/** 시:분 선택(24시간). value "HH:MM". step은 분 단위(기본 5). */
+/** Hour:minute picker (24h). value "HH:MM". step is in minutes (default 5). */
 export const TimePicker = forwardRef(
   /**
    * @param {import("./TimePicker.d.ts").TimePickerProps} props

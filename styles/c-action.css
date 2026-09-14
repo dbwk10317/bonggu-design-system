@@ -3,7 +3,7 @@
 .bds-btn:disabled{cursor:not-allowed;opacity:.5}
 .bds-btn--sm{min-height:var(--h-ctl-sm);padding:0 10px;font-size:var(--fs-caption)}
 .bds-btn--lg{min-height:var(--h-ctl-lg);padding:0 18px;font-size:var(--fs-body)}
-/* fit="flex" 버튼만 부모를 채우려고 늘어난다. 그 밖의 버튼은 위에서 flex:none으로 줄어들지 않는다 */
+/* Only fit="flex" grows; every other button is flex:none above so it never shrinks in a flex row */
 .bds-btn--flex{width:100%;flex:1 1 auto}
 .bds-btn--primary{background:var(--signal);color:var(--signal-fg)}
 .bds-btn--primary:hover:not(:disabled){background:var(--signal-hover)}
@@ -37,12 +37,12 @@
 .bds-icon{display:inline-block;line-height:1;font-size:var(--icon-size,16px);width:1em;height:1em;flex:none}
 .bds-icon::before{display:block}
 
-/* 터치 하한을 소유하는 유일한 규칙. 컨트롤 크기 토큰으로 이미 44 이상이 되는 버튼·입력은 여기 없고,
-   좁은 자리에 들어가려고 그보다 작게 그리는 조작 요소만 모은다. 새 조작 요소는 이 목록에 넣는다. */
+/* Touch-floor selector list. Controls that already reach 44px through the size tokens (buttons, inputs) are not here;
+   only targets drawn smaller to fit tight spots are. Add new small targets to this list. See RULE.md "VISUAL FOUNDATIONS". */
 @media (pointer:coarse){
   .bds-table__exp,.bds-table__clear,.bds-table__sort,.bds-copy__btn,.bds-stepper-ctl__btn,
   .bds-color__swatch,.bds-color__chip,.bds-combo__x,.bds-check,
   .bds-crumb__more,.bds-tag__x,.bds-cal__d{min-width:var(--h-touch);min-height:var(--h-touch);flex:none}
-  /* 슬라이더는 가로로 늘어나야 하므로 높이만 올린다. */
+  /* range input must stretch horizontally, so raise height only */
   .bds-slider input[type=range]{min-height:var(--h-touch)}
 }

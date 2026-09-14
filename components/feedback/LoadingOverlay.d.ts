@@ -2,7 +2,7 @@ import type { HTMLAttributes, ReactNode } from "react";
 export interface LoadingOverlayProps {
   active?: boolean;
   label?: ReactNode;
-  /** 전체 화면 */
+  /** Full screen */
   fixed?: boolean;
   className?: string;
   children?: ReactNode;

@@ -4,7 +4,7 @@ export interface AccordionProps extends HTMLAttributes<HTMLDivElement> {
   items: AccordionItem[];
   defaultOpen?: string[];
   multiple?: boolean;
-  /** 테두리 없음(Panel 안) */
+  /** No border (inside a Panel) */
   plain?: boolean;
 }
 export declare function Accordion(props: AccordionProps): ReactNode;

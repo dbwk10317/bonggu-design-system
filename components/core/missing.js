@@ -1,10 +1,10 @@
-/* 결측 계약의 단일 출처. 판정 규칙과 근거는 readme.md에 있다.
-   문자열 비교가 이 파일 한 곳에만 있으므로 문구를 바꾸면 판정과 표기가 함께 움직인다. */
+/* Single source of the missing-value contract (see RULE.md "설계 원칙").
+   The string comparison lives only here, so changing the text moves detection and display together. */
 export const MISSING_TEXT = "수집 안 됨";
-/** 표기 스타일 선언은 styles/c-data.css의 한 블록에만 있다. */
+/** Styled in exactly one block of styles/c-data.css. */
 export const MISSING_CLASS = "bds-na";
 /** @param {unknown} v */
 export const isMissing = (v) => v == null || v === MISSING_TEXT || (typeof v === "number" && Number.isNaN(v));
-/** 계산에 들어갈 값의 경계. 유한한 수가 아니면 결측(null)으로 만든다. 0과 음수는 값이다. */
+/** Gate for values entering calculations: non-finite becomes null; 0 and negatives are values. */
 /** @param {unknown} v @returns {number | null} */
 export const numeric = (v) => (typeof v === "number" && Number.isFinite(v) ? v : null);

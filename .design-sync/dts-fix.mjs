@@ -1,25 +1,24 @@
-// 변환기가 낸 ds-bundle/components/**/<Name>.d.ts를 자기완결형으로 만든다.
+// Makes the transformer's ds-bundle/components/**/<Name>.d.ts self-contained.
 //
-// 변환기의 두 가지 손실을 메운다.
-//   (1) prop 타입을 이름으로만 적고(예: `columns: DataTableColumn<T>[]`) 그 이름의 선언을 넣지 않는다.
-//       React 타입(`ReactNode`·`Key`·`CSSProperties`)도 `React.` 없이 나온다.
-//   (2) `<Name>Props`가 판별 유니온이면 공통 베이스만 남기고 각 갈래의 prop을 통째로 잃는다
-//       (Chart: series·labels·segments·value·axes·samples가 전부 사라졌다).
-// 둘 다 조용히 일어나고, 결과는 디자인 에이전트가 읽는 API 계약의 구멍이다.
+// The transformer silently loses two things, leaving holes in the API contract the design agent reads:
+//   (1) prop types are referenced by name only (e.g. `columns: DataTableColumn<T>[]`) with no declaration,
+//       and React types (`ReactNode`, `Key`, `CSSProperties`) come out without the `React.` prefix.
+//   (2) a discriminated-union `<Name>Props` keeps only the common base; every branch's props vanish
+//       (Chart lost series, labels, segments, value, axes, samples).
 //
-// 정규식으로 추측하지 않는다. (1)은 TypeScript에게 "찾을 수 없는 이름"을 직접 물어 고치고,
-// (2)는 소스 AST에서 유니온 갈래를 읽어 병합한다. 둘 다 저장소 소스가 정본이라 손으로 베낀 사본이 없다.
+// No regex guessing: (1) asks TypeScript for "cannot find name" diagnostics and fixes those; (2) reads the
+// union branches from the source AST and merges them. Repo source is canonical in both; no hand-copied duplicates.
 //
-// _ds_sync.json은 .d.ts를 해싱하지 않으므로(renderHashFor=_preview+html, auxShaFor=guidelines+README)
-// 빌드 뒤에 돌려도 앵커가 상하지 않는다. 실행: package-build.mjs 다음, package-validate.mjs 앞.
+// _ds_sync.json doesn't hash .d.ts (renderHashFor=_preview+html, auxShaFor=guidelines+README), so running
+// after the build doesn't break anchors. Order: after package-build.mjs, before package-validate.mjs.
 import { readFileSync, writeFileSync, readdirSync, statSync } from "node:fs";
 import { join, dirname, resolve, basename } from "node:path";
 import { createRequire } from "node:module";
 
 const ROOT = resolve(dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1")), "..");
 const OUT = process.argv[2] ? resolve(process.argv[2]) : join(ROOT, "ds-bundle");
-// 저장소의 typescript는 7.x(네이티브 포트)라 JS 컴파일러 API가 없다.
-// 변환기가 쓰는 .ds-sync/의 ts-morph가 번들한 ts를 그대로 빌려 쓴다.
+// The repo's typescript is 7.x (native port) and has no JS compiler API;
+// borrow the ts bundled by the transformer's ts-morph in .ds-sync/.
 const require = createRequire(join(ROOT, ".ds-sync/x.js"));
 const { Project, ts } = require("ts-morph");
 
@@ -28,9 +27,9 @@ const walk = (d) => readdirSync(d).flatMap((f) => {
   return statSync(p).isDirectory() ? walk(p) : [p];
 });
 
-// ── 저장소 소스 .d.ts의 최상위 타입 선언 색인 ───────────────────────────────────
-const declText = new Map();  // 이름 -> 선언 텍스트 (덧붙이기용)
-const declNode = new Map();  // 이름 -> { node, sf } (유니온 병합용)
+// ── Index top-level type declarations from repo source .d.ts ──────────────────
+const declText = new Map();  // name -> declaration text (for appending)
+const declNode = new Map();  // name -> { node, sf } (for union merging)
 for (const file of walk(join(ROOT, "components")).filter((p) => p.endsWith(".d.ts"))) {
   const sf = ts.createSourceFile(file, readFileSync(file, "utf8"), ts.ScriptTarget.Latest, true);
   for (const st of sf.statements) {
@@ -44,10 +43,10 @@ for (const file of walk(join(ROOT, "components")).filter((p) => p.endsWith(".d.t
   }
 }
 
-// ── (2) 판별 유니온 props 평탄화 ────────────────────────────────────────────────
+// ── (2) Flatten discriminated-union props ──────────────────────────────────────
 const jsdocOf = (m) => (m.jsDoc?.length ? String(m.jsDoc[m.jsDoc.length - 1].comment ?? "").trim() : "");
 
-// 인터페이스의 프로퍼티를 로컬 extends 체인까지 따라가며 모은다.
+// Collects an interface's properties, following the local extends chain.
 function propsOfInterface(name, seen = new Set()) {
   const hit = declNode.get(name);
   if (!hit || seen.has(name) || !ts.isInterfaceDeclaration(hit.node)) return [];
@@ -65,9 +64,8 @@ function propsOfInterface(name, seen = new Set()) {
   return [...inherited, ...own];
 }
 
-// `export type XProps = A | B | C` 를 하나의 인터페이스 본문으로 병합한다.
-// 모든 갈래에 같은 타입으로 있는 prop만 필수로 남기고, 나머지는 선택으로 내리되
-// 어느 kind의 것인지 JSDoc에 적는다(에이전트가 잘못 조합하지 않도록).
+// Merges `export type XProps = A | B | C` into one interface body. Props present in every branch stay
+// required; the rest become optional, with the owning kind noted in JSDoc so the agent doesn't mix branches.
 function flattenUnionProps(compName) {
   const hit = declNode.get(`${compName}Props`);
   if (!hit || !ts.isTypeAliasDeclaration(hit.node) || !ts.isUnionTypeNode(hit.node.type)) return null;
@@ -79,7 +77,7 @@ function flattenUnionProps(compName) {
   const branches = memberNames.map((n) => ({ name: n, props: propsOfInterface(n) }));
   if (branches.some((b) => b.props.length === 0)) return null;
 
-  // 갈래를 사람이 읽는 이름으로: kind 리터럴이 있으면 그걸 쓴다.
+  // Human-readable branch label: the kind literal when present.
   const labelOf = (b) => {
     const k = b.props.find((p) => p.key === "kind");
     return k ? k.type.replace(/["\s]/g, "") : b.name.replace(/(Chart)?Props$/, "");
@@ -110,21 +108,21 @@ function flattenUnionProps(compName) {
   return { body: lines.join("\n"), branches: branches.length };
 }
 
-// ── React 네임스페이스로 넘길 이름들 ────────────────────────────────────────────
+// ── Names to qualify with the React namespace ──────────────────────────────────
 const REACT_TYPES = new Set([
   "ReactNode", "ReactElement", "ReactPortal", "CSSProperties", "Key", "Ref", "RefObject",
   "ComponentType", "JSXElementConstructor", "ElementType", "MouseEvent", "KeyboardEvent",
   "ChangeEvent", "FormEvent", "FocusEvent", "DragEvent", "ClipboardEvent", "SyntheticEvent",
   "HTMLAttributes", "ButtonHTMLAttributes", "InputHTMLAttributes", "AriaAttributes",
 ]);
-// React 내부 전용 타입 — 공개 API가 아니다. ref prop을 단순화한다.
+// React-internal type, not public API; simplifies the ref prop.
 const REACT_INTERNAL = /\bstring \| \(\(instance: (\w+)\) => void \| DO_NOT_USE_OR_YOU_WILL_BE_FIRED_CALLBACK_REF_RETURN_VALUES\[keyof DO_NOT_USE_OR_YOU_WILL_BE_FIRED_CALLBACK_REF_RETURN_VALUES\]\) \| RefObject<\w+>/g;
 
 const files = walk(join(OUT, "components")).filter((p) => p.endsWith(".d.ts"));
 const norm = (p) => p.replace(/\\/g, "/").toLowerCase();
 const fileSet = new Set(files.map(norm));
 
-// 진단 전에 한 번: ref prop 단순화 + 유니온 props 평탄화.
+// One pass before diagnosing: simplify ref props + flatten union props.
 const flattened = [];
 for (const f of files) {
   const name = basename(f, ".d.ts");
@@ -143,7 +141,7 @@ for (const f of files) {
 const diagnose = () => {
   const project = new Project({
     compilerOptions: {
-      // .d.ts는 선언 파일이라 skipLibCheck가 켜져 있으면 검사 자체를 건너뛴다.
+      // .d.ts are declaration files; with skipLibCheck on they wouldn't be checked at all.
       noEmit: true, skipLibCheck: false, strict: false,
       target: ts.ScriptTarget.ESNext, moduleResolution: ts.ModuleResolutionKind.Bundler,
       lib: ["lib.esnext.d.ts", "lib.dom.d.ts"], types: [],
@@ -159,14 +157,14 @@ const diagnose = () => {
     const sf = d.getSourceFile();
     if (!name || !sf) continue;
     const path = sf.getFilePath();
-    if (!fileSet.has(norm(path))) continue; // 우리 파일만. @types/react 등 라이브러리 진단은 무시
+    if (!fileSet.has(norm(path))) continue; // our files only; ignore diagnostics from @types/react etc.
     if (!missing.has(path)) missing.set(path, new Set());
     missing.get(path).add(name);
   }
   return missing;
 };
 
-// ── (1) 미해결 이름을 없어질 때까지 메운다 ──────────────────────────────────────
+// ── (1) Fill unresolved names until none remain ────────────────────────────────
 const unresolved = new Set();
 for (let pass = 1; pass <= 6; pass++) {
   const missing = diagnose();
@@ -177,7 +175,7 @@ for (let pass = 1; pass <= 6; pass++) {
     const add = [];
     for (const name of names) {
       if (REACT_TYPES.has(name)) {
-        // 타입 위치의 홑이름만. 이미 React.가 붙은 것과 프로퍼티 이름은 건드리지 않는다.
+        // Bare names in type position only; leave already-qualified React.X and property names alone.
         src = src.replace(new RegExp(`(?<![.\\w])${name}\\b`, "g"), `React.${name}`);
         changed++;
       } else if (declText.has(name)) {
@@ -194,7 +192,7 @@ for (let pass = 1; pass <= 6; pass++) {
   if (pass === 6) console.log("dts-fix: hit pass cap");
 }
 
-// 덧붙인 선언 안의 React 타입도 자격을 갖춰야 하므로 마지막 진단으로 확인한다.
+// Appended declarations may contain React types that also need qualifying, so diagnose once more.
 const left = diagnose();
 const total = [...left.values()].reduce((n, s) => n + s.size, 0);
 console.log(`dts-fix: ${files.length} file(s), ${declText.size} source type(s) indexed`);

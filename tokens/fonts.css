@@ -1,4 +1,4 @@
-/* 스타일가이드 서체: UI·본문 Spoqa Han Sans Neo(300/400/500/700), 수치·코드 JetBrains Mono. 셀프호스팅, CDN 없음. */
+/* Self-hosted fonts, no CDN: Spoqa Han Sans Neo 300/400/500/700 (UI), JetBrains Mono (numbers, code). */
 @font-face{font-family:"Spoqa Han Sans Neo";font-weight:300;font-style:normal;font-display:swap;src:url("../fonts/spoqa-han-sans-neo-300.woff2") format("woff2")}
 @font-face{font-family:"Spoqa Han Sans Neo";font-weight:400;font-style:normal;font-display:swap;src:url("../fonts/spoqa-han-sans-neo-400.woff2") format("woff2")}
 @font-face{font-family:"Spoqa Han Sans Neo";font-weight:500;font-style:normal;font-display:swap;src:url("../fonts/spoqa-han-sans-neo-500.woff2") format("woff2")}

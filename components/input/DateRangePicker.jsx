@@ -5,7 +5,7 @@ import { useFieldContext } from "./Field.jsx";
 
 const PRESETS = [{ value: "1h", label: "1시간" }, { value: "6h", label: "6시간" }, { value: "12h", label: "12시간" }, { value: "24h", label: "24시간" }, { value: "7d", label: "7일" }];
 const fmtLocal = (/** @type {Date | null | undefined} */ d) => d ? new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 16) : "";
-/** 기간 선택: 빠른 프리셋(최근 N) + 직접 시작/끝. value {preset?:string, from?:Date, to?:Date}. 차트 기간용. */
+/** Range picker: quick presets (last N) + custom from/to. value {preset?:string, from?:Date, to?:Date}. For chart periods. */
 export const DateRangePicker = forwardRef(
   /**
    * @param {import("./DateRangePicker.d.ts").DateRangePickerProps} props
@@ -15,7 +15,7 @@ export const DateRangePicker = forwardRef(
   const f = useFieldContext();
   const custom = !value.preset;
   const set = (/** @type {import("./DateRangePicker.d.ts").DateRange} */ next) => onChange?.(next);
-  /* 라디오그룹은 탭 스톱 하나에 화살표 이동이다(readme 접근성 절). 포커스가 라디오에 있으므로 핸들러도 거기 둔다. */
+  /* One tab stop, arrows move (see RULE.md "접근성"). Focus lives on the radio, so the handler does too. */
   const onRadioKey = (/** @type {import("react").KeyboardEvent<HTMLButtonElement>} */ e) => {
     const dir = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
     if (!dir) return;

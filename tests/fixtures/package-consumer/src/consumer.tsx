@@ -42,7 +42,7 @@ function ToastButton() {
   return <Button {...buttonProps} onClick={notify}>저장</Button>;
 }
 
-/** 폼 라이브러리가 기대하는 것: 입력 ref, 네이티브 select, 제출, 확인 모달. */
+/** What form libraries expect: input ref, native select, submit, confirm modal. */
 function NodeForm() {
   const input = useRef<HTMLInputElement>(null);
   const [name, setName] = useState("");

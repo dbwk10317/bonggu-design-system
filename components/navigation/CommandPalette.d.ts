@@ -5,7 +5,7 @@ export interface CommandPaletteProps {
   onClose?: () => void;
   items: CommandItem[];
   placeholder?: string;
-  /** 딤 없이 패널만(문서·임베드용) */
+  /** Panel only, no backdrop (docs and embeds) */
   inline?: boolean;
   className?: string;
 }

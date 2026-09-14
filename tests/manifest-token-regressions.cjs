@@ -1,6 +1,5 @@
-// 파서 자체를 독립 fixture로 시험한 뒤, 같은 파서로 _ds_manifest.json이 tokens/*.css와 맞는지 확인한다.
-// 파서를 두 벌 두면 같은 잘못된 가정을 공유해 빌드와 검사가 함께 틀려도 통과한다. 그래서 파서는
-// token-parser.mjs 하나뿐이고, 그 파서가 맞게 읽는지는 아래 fixture가 독립적으로 보증한다.
+// See RULE.md "동작 계약" (생성과 검증): one parser, token-parser.mjs, tested against an independent fixture,
+// then used to compare _ds_manifest.json with tokens/*.css. A second parser would share the same wrong assumptions.
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
@@ -10,7 +9,7 @@ const root = path.resolve(__dirname, '..');
 async function main() {
   const { parseTokenBlocks, parseTokenKinds, scanTokenNames, stripComments } = await import('../token-parser.mjs');
 
-  // 1. 파서 자체 검증. 기대값은 저장소의 실제 토큰과 무관하게 손으로 적는다.
+  // 1. Parser itself. Expected values are hand-written, independent of the repo's real tokens.
   const fixtureDir = path.join(__dirname, 'fixtures', 'token-parser');
   const fixture = fs.readFileSync(path.join(fixtureDir, 'sample.css'), 'utf8');
   const expectedParse = JSON.parse(fs.readFileSync(path.join(fixtureDir, 'expected.json'), 'utf8'));
@@ -19,7 +18,7 @@ async function main() {
   assert.deepEqual(parseTokenKinds(fixture), expectedParse.kinds, 'fixture @token-kinds 파싱');
   assert.throws(() => parseTokenKinds('/* @token-kinds\n   a: --dup\n   b: --dup\n*/'), /토큰 종류 중복/, '분류 중복은 던진다');
 
-  // 2. 같은 파서로 생성물과 원천을 대조한다.
+  // 2. Same parser: generated manifest vs source.
   const expected = [];
   for (const file of fs.readdirSync(path.join(root, 'tokens')).filter((name) => name.endsWith('.css')).sort()) {
     const source = stripComments(fs.readFileSync(path.join(root, 'tokens', file), 'utf8'));
@@ -53,8 +52,8 @@ async function main() {
     assert.equal(actual.kind, tokenKinds[actual.name], `manifest token kind differs: ${k}`);
   }
 
-  // 3. 모든 토큰이 :root 계열 블록 안에 있어야 한다. 블록 파서는 그 밖의 선언을 보지 못하므로
-  //    평면 스캔과 갈라지면 매니페스트에서 조용히 빠진다.
+  // 3. Every token must sit in a :root-family block. The block parser cannot see declarations elsewhere,
+  //    so anything the flat scan finds beyond it would silently drop out of the manifest.
   const flatNames = new Set();
   for (const file of fs.readdirSync(path.join(root, 'tokens')).filter((name) => name.endsWith('.css'))) {
     for (const name of scanTokenNames(fs.readFileSync(path.join(root, 'tokens', file), 'utf8'))) flatNames.add(name);

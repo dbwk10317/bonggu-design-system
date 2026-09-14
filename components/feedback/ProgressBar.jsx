@@ -1,7 +1,7 @@
 import React, { useId } from "react";
 import { cx, frameStyle } from "../core/frame.js";
 
-/** 선형 진행 바. value 0~1이면 결정형, null이면 비결정형(흐르는 띠). tone: accent(기본)·ok·warn·crit.
+/** Linear progress bar. value 0–1 is determinate, null is indeterminate (flowing band). tone: accent (default) · ok · warn · crit.
  * @param {Parameters<typeof import("./ProgressBar.d.ts").ProgressBar>[0]} props */
 export function ProgressBar({ value, label, detail, tone = "accent", size = "md", showValue = true, valueFormatter = (v) => `${Math.round(v * 100)}%`, fit = "flex", width, "aria-label": ariaLabel, className, style }) {
   const det = typeof value === "number" && Number.isFinite(value);

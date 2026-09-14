@@ -1,10 +1,10 @@
-/* 문서 테마 동기화 구현. 동작 기준은 readme.md의 문서 테마 규칙을 따른다. */
+/* Document theme sync. See RULE.md "컴포넌트 사용 규칙" (document theme controls). */
 (() => {
   const KEY = "bds-theme";
   const standalone = /theme-toggle\.js(\?|$)/.test(document.currentScript?.src || "");
   const autoMount = document.currentScript?.dataset.mount !== "false";
   const topLevel = (() => { try { return window.self === window.top; } catch { return false; } })();
-  /* 테마 전환 처방은 readme.md의 색 절을 따른다. 트랜지션을 끄지 않으면 스냅이 아니라 번짐이 된다. */
+  /* Kill transitions while flipping the theme or the swap smears instead of snapping. See RULE.md "VISUAL FOUNDATIONS" */
   const apply = (t) => {
     const root = document.documentElement;
     const stop = document.createElement("style");

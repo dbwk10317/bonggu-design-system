@@ -1,18 +1,18 @@
 import type { ForwardRefExoticComponent, InputHTMLAttributes, ReactNode, RefAttributes } from "react";
 /**
- * 한 줄 텍스트 입력. Field 안에서 쓴다.
+ * Single-line text input. Use inside Field.
  */
 export interface TextFieldProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "size" | "prefix"> {
   size?: "sm" | "md";
-  /** flex=부모 폭(기본), fixed=width, auto=내용 크기 */
+  /** flex = parent width (default), fixed = width, auto = content size */
   fit?: "flex" | "fixed" | "auto";
   width?: number | string;
-  /** 앞 아이콘(Phosphor) */
+  /** Leading icon (Phosphor) */
   icon?: string;
   prefix?: ReactNode;
-  /** 단위 등 */
+  /** Units and the like */
   suffix?: ReactNode;
-  /** 수치·코드 입력이면 mono */
+  /** mono for numeric or code input */
   mono?: boolean;
   invalid?: boolean;
 }
