@@ -63,7 +63,7 @@
 <body>
 <div class="gd">
   <aside class="gd__side">
-    <div class="gd__brand"><b>봉구 대시보드 디자인 시스템</b><span>96 컴포넌트 · 9그룹 · 값 카드 13장</span></div>
+    <div class="gd__brand"><b>봉구 대시보드 디자인 시스템</b><span>97 컴포넌트 · 9그룹 · 값 카드 13장</span></div>
     <nav class="gd__nav" id="gd-nav" aria-label="가이드 목차">
       <div class="gd__grp">시작</div>
       <a href="#home" data-view="home">개요와 컴포넌트 목록</a>
@@ -94,7 +94,7 @@
       <a href="#layout-breakpoints" data-src="./layout-breakpoints.html" data-sub="fit 계약과 컨테이너 쿼리">반응형 규칙</a>
       <a href="#motion" data-src="./motion.html" data-sub="fast 120 · base 180 · slow 260 · gauge 600">모션</a>
       <div class="gd__grp">조립 예시</div>
-      <a href="#template" data-src="../templates/dashboard/Dashboard.dc.html" data-sub="가상 제품 하나를 96개 컴포넌트로 조립한 대시보드">봉구 엣지 콘솔</a>
+      <a href="#template" data-src="../templates/dashboard/Dashboard.dc.html" data-sub="가상 제품 하나를 97개 컴포넌트로 조립한 대시보드">봉구 엣지 콘솔</a>
     </nav>
   </aside>
 
@@ -122,7 +122,7 @@
         </section>
 
         <section class="gd__card">
-          <h3>컴포넌트 96개</h3>
+          <h3>컴포넌트 97개</h3>
           <p>이름을 누르면 그 그룹의 카드로 갑니다. 각 컴포넌트의 공개 prop은 <code class="bds-mono">components/&lt;그룹&gt;/&lt;이름&gt;.d.ts</code>, 쓰는 법은 같은 이름의 <code class="bds-mono">.prompt.md</code>에 있습니다.</p>
           <div class="gd__cols" id="gd-groups"></div>
         </section>
@@ -130,7 +130,7 @@
         <section class="gd__card">
           <h3>고르는 기준</h3>
           <div class="gd__rule">
-            <span><b>나열</b> 세로 Stack · 가로 Inline · 양끝 정렬 Spacer · 최대 폭 Container · 카드 격자 Grid</span>
+            <span><b>나열</b> 세로 Stack · 가로 Inline · 양끝 정렬 Spacer · 최대 폭 Container · 카드 격자 Grid · 사진 목록 JustifiedGallery</span>
             <span><b>이동</b> 화면 5개 이하 TopNav · 그 이상 SidebarShell · 3단 이상 깊이 Breadcrumb · 20행 초과 Pagination · 키보드 CommandPalette</span>
             <span><b>선택</b> 2~3개 SegmentedControl · 2~5개 RadioGroup · 6개 이상 Select · 검색 필요 Combobox · 여러 개 MultiSelect</span>
             <span><b>피드백</b> 한 줄 InlineMessage · 페이지 AlertBanner · 일시 Toast · 파괴적 동작 ConfirmDialog · 카드 실패 ErrorState · 빈 결과 EmptyState</span>
@@ -148,7 +148,7 @@
 const GROUPS = [
   ["action", "Action · 행동을 일으킴", ["Button", "IconButton", "Icon"]],
   ["brand", "Brand · 마스코트", ["MascotMark"]],
-  ["layout", "Layout · 자리와 간격", ["PageStack", "PageHeader", "Panel", "CardHead", "Toolbar", "ToolbarGrow", "Grid", "GridItem", "StatusBar", "Container", "Stack", "Inline", "Spacer", "Divider", "AspectRatio", "Visible"]],
+  ["layout", "Layout · 자리와 간격", ["PageStack", "PageHeader", "Panel", "CardHead", "Toolbar", "ToolbarGrow", "Grid", "GridItem", "StatusBar", "Container", "Stack", "Inline", "Spacer", "Divider", "AspectRatio", "JustifiedGallery", "Visible"]],
   ["navigation", "Navigation · 화면 이동", ["SidebarShell", "SidebarNavItem", "SidebarNavGroup", "TopNav", "Tabs", "Breadcrumb", "Pagination", "Link", "CommandPalette"]],
   ["input", "Input · 값을 받음", ["Field", "TextField", "TextArea", "Select", "Checkbox", "RadioGroup", "Switch", "SearchField", "SegmentedControl", "Slider", "NumberStepper", "ColorInput", "Combobox", "MultiSelect", "DatePicker", "DateRangePicker", "TimePicker", "PasswordField", "OTPInput", "CodeEditor", "Dropzone", "FileUpload"]],
   ["data", "Data · 수치와 기록", ["Chart", "Sparkline", "Gauge", "Heatmap", "StatTile", "TrendDelta", "BarList", "KeyValues", "DescriptionList", "DataTable", "LogViewer", "Timeline", "DiffView", "Legend", "UptimeBar"]],

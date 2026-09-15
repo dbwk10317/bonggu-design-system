@@ -253,6 +253,14 @@
         "message": "<InlineMessage> tone must be one of 'neutral' | 'ok' | 'warn' | 'crit' | 'info'."
       },
       {
+        "selector": "JSXOpeningElement[name.name='JustifiedGallery'] > JSXAttribute > JSXIdentifier[name=/^(?:children)$/]",
+        "message": "<JustifiedGallery> removes that prop from its base type. Not accepted: children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='JustifiedGallery'] > JSXAttribute[name.name='fit'] > Literal[value!=/^(?:flex|fixed)$/]",
+        "message": "<JustifiedGallery> fit must be one of 'flex' | 'fixed'."
+      },
+      {
         "selector": "JSXOpeningElement[name.name='Legend'] > JSXAttribute[name.name='shape'] > Literal[value!=/^(?:square|line|dot)$/]",
         "message": "<Legend> shape must be one of 'square' | 'line' | 'dot'."
       },
@@ -645,6 +653,9 @@
         "replaces": []
       },
       "InlineMessage": {
+        "replaces": []
+      },
+      "JustifiedGallery": {
         "replaces": []
       },
       "Kbd": {

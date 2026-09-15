@@ -41,4 +41,25 @@ assert(uptime(['ok', 'warn', 'crit', 'off']).includes('66.67%'));
 assert(uptime(['crit']).includes('0.00%'));
 assert(uptime(['off']).includes('수집 안 됨'));
 assert(uptime([], { uptime: 98.2 }).includes('98.20%'));
-console.log('PASS: decimal ticks, signed stacking, missing chart values, uptime contract');
+const { justifyRows, JustifiedGallery } = sourceModule('components/layout/JustifiedGallery.jsx');
+const photos = [[4000, 2492], [3000, 3000], [4000, 2760], [4000, 2245], [2410, 3000], [4000, 3000], [2150, 3000], [null, 3000]].map(([width, height]) => ({ width, height }));
+const rowWidth = (row, gap) => row.tiles.reduce((sum, tile) => sum + tile.width, 0) + gap * (row.tiles.length - 1);
+for (const width of [390, 600, 834, 1280]) {
+  const rows = justifyRows(photos, width, 147, 8);
+  assert.deepEqual(rows.flatMap((row) => row.tiles.map((tile) => tile.index)), photos.map((_, i) => i), 'every photo once, in order');
+  for (const row of rows.slice(0, -1)) {
+    assert.equal(rowWidth(row, 8), width, 'filled rows match the container width');
+    for (const tile of row.tiles.slice(0, -1)) {
+      const { width: w, height: h } = photos[tile.index];
+      assert(Math.abs(tile.width / row.height - (w != null && h ? w / h : 1)) < 0.03, 'tiles keep the original aspect ratio');
+    }
+  }
+  const last = rows.at(-1);
+  assert(last.height <= 147 && rowWidth(last, 8) <= width, 'last row is not stretched');
+}
+const [single] = justifyRows([{ width: null, height: 100 }], 1000, 100, 8);
+assert.equal(single.tiles[0].width, single.height, 'missing original size lays out 1:1');
+assert.deepEqual(justifyRows(photos, 0, 147, 8), [], 'no width, no rows');
+const unmeasured = render(JustifiedGallery, { items: [{ id: 1, src: 'a.png', alt: 'a', width: 4, height: 3 }], footer: 'more' });
+assert(!unmeasured.includes('bds-jgal__tile') && unmeasured.includes('bds-jgal__foot'), 'server render draws no tiles before measuring');
+console.log('PASS: decimal ticks, signed stacking, missing chart values, uptime contract, justified rows');

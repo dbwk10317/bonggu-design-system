@@ -37,6 +37,7 @@
 
 - 차트 데이터 정밀도는 픽셀 반올림과 분리한다. 누적 막대는 양수·음수를 각각 0에서 쌓고 양쪽 합계를 축 범위에 포함한다. 가용성은 `(ok+warn)/(ok+warn+crit)`이며 off는 분모에서 제외한다.
 - UptimeBar의 구간은 컨테이너 안에서 같은 폭으로 나뉜다. 90칸의 최소폭과 간격을 고정해 작은 카드나 모바일에서 가로로 넘기지 않는다.
+- JustifiedGallery는 사진을 순서대로 행에 담고, 마지막 행을 뺀 모든 행의 폭을 컨테이너 폭과 정확히 맞춘다. 반올림 오차는 그 행의 마지막 타일이 흡수한다. 마지막 행은 늘리지 않고 목표 높이를 넘지 않는다. 목표 행 높이는 컨테이너 폭에서 나오며 `rowHeight`로 고정할 수 있다. 원본 크기가 결측이거나 0 이하이면 1:1로 배치한다.
 - **DataTable 행의 신원은 위치가 아니라 값이다.** `rowKey`나 `row.id`가 신원이고, 선택·펼침은 그 신원에 붙는다. 정렬은 표시만 하고 실제 정렬은 소비자가 `rows`에 반영하므로, 인덱스를 신원으로 쓰면 정렬·필터 뒤 같은 인덱스가 다른 레코드를 가리킨다. 신원 없이 선택·펼침을 켜면 알린다.
 - DataTable에서 `render`가 없는 열의 `null`은 결측으로 표시한다. `render`가 돌려준 `null`은 React 규칙대로 빈 칸이다. 값 대신 빈 칸을 원하면 빈 문자열을 넘긴다.
 - 결측 표기는 그리는 매체를 따른다. **HTML 텍스트**면 `bds-na`, **SVG 텍스트**면 `fill`로 색을 받고(Gauge), **텍스트가 아닌 칸**이면 track 색과 `title`로 알린다(UptimeBar). 문구 상수는 셋 다 공통을 쓴다. StatTile의 `deltaLabel`은 결측 표기가 아니라 보조 라벨이다.
@@ -86,7 +87,7 @@
 - **눌러서 동작을 일으키는 표면은 호버와 프레스를 짝으로 낸다.** 짝이 없으면 터치 기기에서 아무 반응이 없다(호버가 없기 때문이다). 호버만 있고 프레스가 없는 것은 눌러도 아무 일도 하지 않는 강조 전용 표면(표 행, 로그 줄)이다. **포커스**: `--focus-ring` 2px 외곽선 + 2px 오프셋. 위험 동작은 crit 외곽선 버튼, 채움은 확인 모달 안에서만.
 - **모션**: 짧고 절제. fast 120(hover·색) · base 180(토글·드롭다운·탭 잉크) · slow 260(드로어·모달) · gauge 600(게이지·바 값 변화, 차트 진입 1회). `--ease-out cubic-bezier(.2,.8,.2,1)`. 실시간 숫자는 트랜지션 없이 즉시 바뀐다(tabular-nums로 흔들림 방지). reduced-motion이면 전부 0. 상시 루프는 실시간 pulse·스피너·마스코트 깜빡임만. StatTile 등 수치 카운트업 없음(animate 기본 false).
 - **레이아웃 고정 요소**: ≥1024 레일 228px(활성 항목 signal-tint 배경 + signal-ink 글자), 미만은 상단 바 48 + 오버레이 드로어. 화면 안 2차 내비는 상단 탭 44(활성 2px 밑줄 signal). 하단 상태바 28(데스크톱)이며 한글 상태 라벨은 UI 서체, 수치·시각·식별자만 `bds-mono`를 쓴다. 모바일 하단 탭바 없음. 패널 격자는 컨테이너 쿼리 우선(auto-fit 3열 · 2열 · 1열), media는 폴백.
-- **이미지**: 장치 사진(4:3 크롭)만. 일러스트는 봉구 마크 하나. 특정 하드웨어를 흉내 내는 화면(LCD 미리보기, 조명 링 같은 것)은 그 제품의 것이므로 이 시스템에 두지 않는다.
+- **이미지**: 용도로 나뉜다. 한 장을 대표로 보이는 자리(장치 사진, 설치 미리보기)는 4:3 크롭(`AspectRatio`)이다. 여러 장을 훑어보는 사진 목록은 원본 비율을 지키며 행 폭을 채운다(`JustifiedGallery`). 일러스트는 봉구 마크 하나. 특정 하드웨어를 흉내 내는 화면(LCD 미리보기, 조명 링 같은 것)은 그 제품의 것이므로 이 시스템에 두지 않는다.
 
 ## ICONOGRAPHY
 
@@ -124,17 +125,17 @@
 - `styles/c-*.css` · 컴포넌트 클래스(action · input · status · data · chart · layout · overlay · feedback · extra · more)
 - `fonts/` · Spoqa Han Sans Neo 300/400/500/700, JetBrains Mono latin/latin-ext (woff2), `fonts/phosphor/` Phosphor Bold 웹폰트(셀프호스팅)
 - `assets/` · mascot-neutral.svg, favicon.svg
-- `guidelines/` · `index.html`(컴포넌트 96개 목록 + 카드·템플릿을 검수 폭별로 열어 보는 가이드 페이지), 검수 카드 공통 레이아웃 `card.css`, 색·타이포·간격·반응형·모션 스펙 카드 13장
+- `guidelines/` · `index.html`(컴포넌트 97개 목록 + 카드·템플릿을 검수 폭별로 열어 보는 가이드 페이지), 검수 카드 공통 레이아웃 `card.css`, 색·타이포·간격·반응형·모션 스펙 카드 13장
 - `theme-toggle.js` · 문서 테마 동기화. 가이드 상단 바 또는 독립 카드 우상단의 라이트/다크 토글을 사용한다. 제품에서는 `:root.dark` 클래스만 토글한다
 - `components/` · 9그룹, `components/<group>/<Name>.jsx` + `.d.ts` + `.prompt.md`(사용법), 그룹별 카드(`*.card.html`). 스타일은 `styles/c-*.css`의 `bds-*` 클래스와 토큰만. 번들 네임스페이스는 `window.Ds_d3ea90`이고, 공개 진입점이 내보내는 것은 컴포넌트든 훅이든 그대로 올라간다(`Ds_d3ea90.useToast`). 내부 훅은 올리지 않는다.
 - `templates/dashboard/` · 조립 예시. 가상 제품 "봉구 엣지 콘솔"을 이 시스템의 컴포넌트만으로 만든 클릭 가능한 대시보드(`Dashboard.dc.html`; 개요·노드·장치·배포·접근·설정 6화면 + 공개 상태 페이지, 라이트 기본 + 다크 토글). 소비 프로젝트는 `ds-base.js` 한 줄만 고쳐 쓴다.
 - `build-bundle.mjs` · `_ds_bundle.js`·`_ds_manifest.json` 빌드. 컴포넌트 소스를 고치면 `node build-bundle.mjs`로 다시 만든다(`@babel/standalone` 필요, 없으면 `BABEL_STANDALONE=<경로>`)
 - `token-parser.mjs` · `tokens/*.css`를 읽는 유일한 파서. 빌드와 검사가 같이 쓰고, 파서 자체는 `tests/fixtures/token-parser`가 검증한다
 
-### Components (96 · 9그룹)
+### Components (97 · 9그룹)
 - action: Button, IconButton, Icon
 - brand: MascotMark
-- layout: PageStack, PageHeader, Panel, CardHead, Toolbar, ToolbarGrow, Grid, GridItem, StatusBar, Container, Stack, Inline, Spacer, Divider, AspectRatio, Visible
+- layout: PageStack, PageHeader, Panel, CardHead, Toolbar, ToolbarGrow, Grid, GridItem, StatusBar, Container, Stack, Inline, Spacer, Divider, AspectRatio, JustifiedGallery, Visible
 - navigation: SidebarShell, SidebarNavItem, SidebarNavGroup, TopNav, Tabs, Breadcrumb, Pagination, Link, CommandPalette
 - input: Field, TextField, TextArea, Select, Checkbox, RadioGroup, Switch, SearchField, SegmentedControl, Slider, NumberStepper, ColorInput, Combobox, MultiSelect, DatePicker, DateRangePicker, TimePicker, PasswordField, OTPInput, CodeEditor, Dropzone, FileUpload
 - data: Chart(line·area·bar·pie·radial·radar·histogram), Sparkline, Gauge, Heatmap, StatTile, TrendDelta, BarList, KeyValues, DescriptionList, DataTable, LogViewer, Timeline, DiffView, Legend, UptimeBar
@@ -147,7 +148,7 @@
 ### 공개 API·버전·배포 계약
 
 - **패키지 식별자·라이선스**: 패키지명은 `@dbwk10317/bonggu-design-system`이고 저장소는 `https://github.com/dbwk10317/bonggu-design-system`이다. 프로젝트 코드는 `Copyright (c) 2026 dbwk10317`의 MIT License로 배포한다. 포함된 Spoqa Han Sans Neo·JetBrains Mono·Phosphor Icons는 `THIRD_PARTY_NOTICES.md`와 `licenses/`에 적힌 각 원래 라이선스를 유지한다.
-- **공개 JS·타입 표면**: 위 Components 목록의 96개 컴포넌트와 `useToast`, 그리고 각 공개 컴포넌트·훅의 `.d.ts`가 내보내는 관련 `type`·`interface`가 공개 API다. `components/core/`, `components/data/chart-math.js`, `theme-toggle.js`, `useFieldContext`, `passwordStrength`는 내부 구현이며 공개 진입점에서 내보내지 않는다. 번들 네임스페이스는 공개 진입점을 그대로 따르지만, 정본은 `public-entry.js`다.
+- **공개 JS·타입 표면**: 위 Components 목록의 97개 컴포넌트와 `useToast`, 그리고 각 공개 컴포넌트·훅의 `.d.ts`가 내보내는 관련 `type`·`interface`가 공개 API다. `components/core/`, `components/data/chart-math.js`, `theme-toggle.js`, `useFieldContext`, `passwordStrength`는 내부 구현이며 공개 진입점에서 내보내지 않는다. 번들 네임스페이스는 공개 진입점을 그대로 따르지만, 정본은 `public-entry.js`다.
 - **SemVer 경계**: 1.0.0 이후 patch는 공개 계약을 유지하는 수정, minor는 기존 사용법을 유지하는 선택적 API 추가, major는 공개 컴포넌트·훅·타입·토큰·경로의 삭제·개명, 필수 prop·기본 동작·이벤트 시점의 비호환 변경, 지원 환경 축소다. 기본 크기·간격·타이포가 기존 레이아웃을 깨뜨리는 변경도 major다. 폐기 예정 API는 대체 방법을 먼저 알리고 major에서 제거하며, 토큰 이름은 호환 별칭을 만들지 않고 major 이관표로 안내한다.
 - **스타일 범위**: `styles.css`는 토큰, 폰트, 아이콘, 컴포넌트 스타일과 `tokens/base.css`를 함께 불러오는 단일 full-app 진입점이다. `base.css`의 요소 리셋(`body`·제목·링크·목록·폼 요소 등)은 `@layer bds-reset` 안에 있다. 레이어 밖 규칙이 레이어 안 규칙보다 항상 우선하므로, 소비 앱이 같은 요소를 직접 스타일하면 앱의 규칙이 이기고 앱이 건드리지 않은 요소에만 리셋이 적용된다. 컴포넌트 스타일(`bds-*`)과 유틸(`.bds-mono`·`.bds-sr`)은 레이어 밖이다. 별도 scoped CSS 진입점은 없다.
 - **테마·밀도**: 라이트가 기본이고 다크는 `:root.dark` 또는 `[data-theme="dark"]`, compact 밀도는 `<html data-density="compact">`로 선택한다. `theme-toggle.js`는 문서 카드 전용 자동 실행 스크립트라 공개 npm 진입점에 포함하지 않는다. 컴포넌트의 브라우저 API 접근은 effect 또는 이벤트 시점에만 일어나며 모듈 import 자체가 DOM·`localStorage`·테마를 바꾸지 않는다.
@@ -159,7 +160,7 @@
 - **변경 기록**: 소비자 코드·타입·토큰·스타일·동작에 영향을 주는 변경은 Changeset에 소비자 관점의 설명과 SemVer 영향도를 기록한다. 문서·검증·빌드 도구만 바뀌어 배포 결과가 같으면 빈 Changeset으로 의도를 표시하거나 릴리스 기록에서 제외할 수 있다. `CHANGELOG.md`는 Changesets가 릴리스별 변경 사실과 이관 안내를 생성하는 기록이며 정책의 정본은 아니다.
 
 ### 컴포넌트 선택 가이드
-- 나열: 세로 `Stack`, 가로 `Inline`, 양끝 정렬 `Spacer`, 최대 폭 `Container`, 카드 격자 `Grid`(비대칭은 `columns={12}` + `GridItem span`), 비율 상자 `AspectRatio`, 뷰포트별 표시 `Visible`.
+- 나열: 세로 `Stack`, 가로 `Inline`, 양끝 정렬 `Spacer`, 최대 폭 `Container`, 카드 격자 `Grid`(비대칭은 `columns={12}` + `GridItem span`), 비율 상자 `AspectRatio`, 사진 목록 `JustifiedGallery`, 뷰포트별 표시 `Visible`.
 - 이동: 화면 5개 이하 `TopNav`, 그 이상 `SidebarShell`. 3단 이상 깊이 `Breadcrumb`, 20행 초과 목록 `Pagination`, 키보드 이동 `CommandPalette`(⌘K), 인라인 이동 `Link`.
 - 선택: 2~3개 `SegmentedControl`, 2~5개(설명 포함) `RadioGroup`, 6개 이상 `Select`, 검색 필요 `Combobox`, 여러 개 `MultiSelect`. 날짜 하나 `DatePicker`, 기간 `DateRangePicker`, 시각 `TimePicker`. 비밀번호 `PasswordField`, 인증 코드 `OTPInput`.
 - 표시: 사람·서비스 `Avatar`, 건수 `Badge`(0이면 없음), 상태 문구 `StatusPill`, 분류 `Tag`. 접이식 `Accordion`(설정 고급 옵션만), 클릭 설명 패널 `Popover`, 한 줄 설명 `Tooltip`.

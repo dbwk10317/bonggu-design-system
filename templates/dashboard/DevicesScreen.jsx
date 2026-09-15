@@ -1,5 +1,5 @@
 (() => {
-const { PageStack, PageHeader, Panel, Grid, Stack, Inline, Spacer, Divider, AspectRatio, Field, TextField, Select, SegmentedControl, RadioGroup, Switch, Checkbox, Slider, NumberStepper, ColorInput, TimePicker, Dropzone, Chart, KeyValues, StatusPill, Tag, MascotMark, Button, IconButton, Tooltip, Modal, InlineMessage, EmptyState, useToast } = window.DS;
+const { PageStack, PageHeader, Panel, Grid, GridItem, Stack, Inline, Spacer, Divider, AspectRatio, JustifiedGallery, Field, TextField, Select, SegmentedControl, RadioGroup, Switch, Checkbox, Slider, NumberStepper, ColorInput, TimePicker, Dropzone, Chart, KeyValues, StatusPill, Tag, MascotMark, Button, IconButton, Tooltip, Modal, InlineMessage, EmptyState, useToast } = window.DS;
 
 const IDLE = [{ value: "on", label: "항상 켜기" }, { value: "sleep", label: "자동 절전" }, { value: "schedule", label: "일정 따름" }, { value: "off", label: "끄기" }];
 const LABEL_COLORS = ["#F0A35A", "#5CA8FF", "#46B36B", "#B388FF", "#F2554D", "#22D3EE"];
@@ -30,8 +30,16 @@ function DevicesScreen() {
   const [zone, setZone] = React.useState("store");
   const [busy, setBusy] = React.useState(false);
   const [err, setErr] = React.useState(/** @type {{ title: string, detail: string } | null} */ (null));
-  const [photos, setPhotos] = React.useState(/** @type {string[]} */ ([]));
+  const [photos, setPhotos] = React.useState(/** @type {{ id: string, src: string, alt: string, width: number, height: number }[]} */ ([]));
+  const [cover, setCover] = React.useState(0);
   const picked = DEVICES.find((d) => d.id === target) ?? DEVICES[0];
+  /** @param {File[]} files */
+  const addPhotos = (files) => files.forEach((file) => {
+    const src = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => setPhotos((list) => [...list, { id: src, src, alt: file.name, width: img.naturalWidth, height: img.naturalHeight }]);
+    img.src = src;
+  });
 
   const apply = () => {
     setBusy(true);
@@ -114,12 +122,15 @@ function DevicesScreen() {
       </Panel>
 
       <Panel padding="sm">
-        <div className="kit-prevhead"><b>설치 현장 사진</b><span className="kit-dim">올리면 4:3으로 잘라 1280×960으로 변환합니다.</span></div>
-        <Dropzone accept="image/*" multiple icon="image" onFiles={(files) => setPhotos(files.map((f) => f.name))} title="사진을 끌어다 놓습니다" hint="JPG·PNG · 한 장에 10 MB까지" />
+        <div className="kit-prevhead"><b>설치 현장 사진</b><span className="kit-dim">목록에서 고른 사진이 4:3 대표 사진이 됩니다.</span></div>
+        <Dropzone accept="image/*" multiple icon="image" onFiles={addPhotos} title="사진을 끌어다 놓습니다" hint="JPG·PNG · 한 장에 10 MB까지" />
         <Divider />
         {photos.length === 0
           ? <EmptyState plain face="curious" title="아직 올린 사진이 없습니다" description="설치 위치와 배선을 찍어 두면 현장 점검을 나갈 때 바로 확인할 수 있습니다." />
-          : <Grid min={160}>{photos.map((name) => <AspectRatio key={name} ratio="4/3" className="kit-photo"><span className="bds-mono">{name}</span></AspectRatio>)}</Grid>}
+          : <Grid columns={12}>
+              <GridItem span={4} spanMd={12}><AspectRatio ratio="4/3"><img src={photos[cover].src} alt={`대표 사진 ${photos[cover].alt}`} /></AspectRatio></GridItem>
+              <GridItem span={8} spanMd={12}><JustifiedGallery aria-label="설치 현장 사진" items={photos} onOpen={(_, index) => setCover(index)} /></GridItem>
+            </Grid>}
       </Panel>
 
       <Modal open={!!err} onClose={() => setErr(null)} size="sm" title={err?.title} actions={<Button variant="primary" onClick={() => setErr(null)}>확인</Button>}>

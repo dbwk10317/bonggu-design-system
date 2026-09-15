@@ -1,4 +1,4 @@
-<!-- @dsCard group="Components" viewport="1100x740" name="Layout" subtitle="PageStack · PageHeader · Panel · CardHead · Toolbar · Grid/GridItem · StatusBar · Container · Stack · Inline · Spacer · Divider · AspectRatio · Visible" -->
+<!-- @dsCard group="Components" viewport="1100x740" name="Layout" subtitle="PageStack · PageHeader · Panel · CardHead · Toolbar · Grid/GridItem · StatusBar · Container · Stack · Inline · Spacer · Divider · AspectRatio · JustifiedGallery · Visible" -->
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><title>Layout</title><link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="../../guidelines/card.css"><script src="../../theme-toggle.js" defer></script>
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
@@ -9,7 +9,7 @@
 <script type="text/babel">
 const NS = window.Ds_d3ea90;
 
-const { PageStack, PageHeader, Panel, CardHead, Toolbar, ToolbarGrow, Grid, GridItem, StatusBar, Container, Stack, Inline, Spacer, Divider, AspectRatio, Visible, Button, SearchField, Select } = NS;
+const { PageStack, PageHeader, Panel, CardHead, Toolbar, ToolbarGrow, Grid, GridItem, StatusBar, Container, Stack, Inline, Spacer, Divider, AspectRatio, JustifiedGallery, Visible, Button, SearchField, Select } = NS;
 function App(){ const [q,setQ]=React.useState(""); return <>
   <section className="bds-demo-section">
     <div className="bds-demo-label">PageStack · 페이지 섹션 간격</div>
@@ -35,6 +35,11 @@ function App(){ const [q,setQ]=React.useState(""); return <>
     <div className="bds-demo-section"><div className="bds-demo-label">Container</div><div className="bds-demo-caption">narrow · max 760 · 중앙</div><Container narrow><div className="box" style={{textAlign:"center"}}>설정 폼 내용</div></Container></div>
     <div className="bds-demo-section"><div className="bds-demo-label">Visible</div><div className="bds-demo-caption">above md / below md</div><Inline><Visible above="md"><span className="box">≥768에서만 보임</span></Visible><Visible below="md"><span className="box">&lt;768에서만 보임</span></Visible></Inline></div>
   </div>
+  <section className="bds-demo-section">
+    <div className="bds-demo-label">JustifiedGallery · 원본 비율을 지키며 행 폭을 채움</div>
+    <div className="bds-demo-caption">마지막 줄은 늘리지 않음 · 원본 크기 결측은 1:1</div>
+    <JustifiedGallery aria-label="설치 현장 사진" onOpen={() => {}} items={[[4000,2492],[3000,3000],[4000,2760],[2410,3000],[4000,3000],[2150,3000],[4000,2245],[null,null]].map(([width,height],i)=>({ id: i, src: "../../assets/mascot-neutral.svg", alt: `설치 현장 사진 ${i + 1}`, width, height }))} />
+  </section>
 </>; }
 ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
 </script></body></html>

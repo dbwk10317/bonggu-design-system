@@ -16,6 +16,7 @@ export * from "./components/layout/Inline.js";
 export * from "./components/layout/Spacer.js";
 export * from "./components/layout/Divider.js";
 export * from "./components/layout/AspectRatio.js";
+export * from "./components/layout/JustifiedGallery.js";
 export * from "./components/layout/Visible.js";
 
 export * from "./components/navigation/SidebarShell.js";

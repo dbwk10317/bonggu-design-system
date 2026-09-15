@@ -1,5 +1,5 @@
 /* Extras 2 (2026-09-09): layout primitives, navigation, input, display, feedback, visualization */
-/* ---- Container · Stack · Inline · Divider · Spacer · AspectRatio · Visible ---- */
+/* ---- Container · Stack · Inline · Divider · Spacer · AspectRatio · JustifiedGallery · Visible ---- */
 .bds-container{width:100%;max-width:var(--content-max);margin-inline:auto;min-width:0}
 .bds-container--narrow{max-width:var(--content-narrow)}
 .bds-container--pad{padding-inline:var(--page-pad)}
@@ -13,6 +13,14 @@
 .bds-spacer{flex:1 1 0;min-width:0}
 .bds-ratio{position:relative;width:100%;aspect-ratio:var(--ratio,16/9);overflow:hidden;border-radius:var(--radius-panel);background:var(--canvas-sunken);min-width:0}
 .bds-ratio>*{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.bds-jgal{display:flex;flex-direction:column;gap:var(--sp-2);min-width:0}
+.bds-jgal__row{display:flex;gap:var(--sp-2)}
+.bds-jgal__tile{flex:none;display:block;overflow:hidden;padding:0;border:1px solid var(--line);border-radius:var(--radius-ctl);background:var(--canvas-sunken)}
+.bds-jgal__tile img{display:block;width:100%;height:100%;object-fit:cover}
+button.bds-jgal__tile{cursor:pointer;transition:border-color var(--dur-fast) var(--ease-out),box-shadow var(--dur-fast) var(--ease-out)}
+button.bds-jgal__tile:hover{border-color:var(--line-strong)}
+button.bds-jgal__tile:active{border-color:var(--line-strong);box-shadow:0 0 0 1px var(--line-strong)}
+.bds-jgal__foot{display:flex;justify-content:center;padding-top:var(--sp-2)}
 .bds-visible{display:contents}
 @media (width < 640px){.bds-hide-sm{display:none!important}}
 @media (width < 768px){.bds-hide-md{display:none!important}}

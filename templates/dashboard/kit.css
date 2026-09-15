@@ -20,8 +20,6 @@
 .kit-prevhead .bds-mono{margin-left:auto}
 .kit-row2{display:flex;gap:var(--sp-4);align-items:center;min-width:0}
 .kit-row2>:last-child{flex:1;min-width:0}
-.kit-photo{border:1px solid var(--line);border-radius:var(--radius-ctl)}
-.kit-photo>span{display:grid;place-items:center;padding:var(--sp-2);text-align:center;background:var(--canvas-sunken);font-size:var(--fs-caption);color:var(--ink-3);overflow:hidden}
 
 /* controls */
 .kit-ctlhead{display:flex;align-items:center;gap:var(--sp-4);flex-wrap:wrap}

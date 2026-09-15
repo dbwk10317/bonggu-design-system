@@ -16,6 +16,7 @@ export { Inline } from "./components/layout/Inline.jsx";
 export { Spacer } from "./components/layout/Spacer.jsx";
 export { Divider } from "./components/layout/Divider.jsx";
 export { AspectRatio } from "./components/layout/AspectRatio.jsx";
+export { JustifiedGallery } from "./components/layout/JustifiedGallery.jsx";
 export { Visible } from "./components/layout/Visible.jsx";
 
 export { SidebarShell, SidebarNavItem, SidebarNavGroup } from "./components/navigation/SidebarShell.jsx";
