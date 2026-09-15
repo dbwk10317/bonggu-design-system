@@ -662,6 +662,22 @@ function guideIndexViolations() {
   return violations;
 }
 
+/* See RULE.md "접근성" (shells emit a skip link; TopNav screens pass skipTo). */
+function skipLinkViolations() {
+  const violations = [];
+  for (const file of ['components/navigation/SidebarShell.jsx', 'components/navigation/TopNav.jsx']) {
+    if (!read(file).includes('className="bds-skip"')) violations.push({ file, line: 1, detail: '본문으로 건너뛰는 링크(bds-skip)를 내지 않음' });
+  }
+  for (const file of sourceFiles(['templates/dashboard'], new Set(['.jsx']))) {
+    const src = read(file);
+    for (const match of src.matchAll(/<TopNav\b/g)) {
+      const open = src.slice(match.index, src.indexOf('>', src.indexOf('links=', match.index)));
+      if (!/\bskipTo=/.test(open)) violations.push({ file, line: lineOf(src, match.index), detail: 'TopNav에 skipTo가 없어 건너뛰기 링크가 나오지 않음' });
+    }
+  }
+  return violations;
+}
+
 function templateCoverageViolations() {
   // Only screen .jsx files; .js holds mock data and generated code without JSX.
   const source = sourceFiles(['templates/dashboard'], new Set(['.jsx'])).map(read).join('\n');
@@ -700,6 +716,7 @@ const checks = [
   ['호버·프레스 짝', pressStateViolations(), '호버는 --panel-2 한 단계, 프레스는 --panel-3 두 단계입니다. 눌러서 동작하는 표면은 둘을 짝으로 냅니다(터치 기기에는 호버가 없습니다).'],
   ['모서리 토큰', radiusTokenViolations(), '컨트롤 모서리는 --radius-xs/ctl/panel/sheet/pill을 씁니다. 안쪽 상자는 바깥 − 패딩을 calc()로 적습니다. 리터럴은 그래픽 마크(막대·잉크·셀·구분선)에만 허용합니다.'],
   ['테마 전환·DOM id', themeAndIdViolations(), '테마 토글은 트랜지션을 끄고 리플로우 뒤 다음 프레임에 되돌립니다. 컴포넌트의 DOM id 는 useId 로 만듭니다.'],
+  ['본문 건너뛰기 링크', skipLinkViolations(), '셸은 bds-skip 링크를 첫 탭 스톱으로 냅니다. TopNav를 쓰는 화면은 skipTo로 본문 id를 넘깁니다.'],
   ['입력 ref 전달', inputRefViolations(), 'components/input 의 컴포넌트는 forwardRef 로 감싸 ref 를 조작 요소로 넘기고, .d.ts 는 ForwardRefExoticComponent<Props & RefAttributes<요소>> 로 선언합니다.'],
   ['가이드 페이지 누락', guideIndexViolations(), 'guidelines/index.html의 목록과 목차에 그 컴포넌트·카드를 넣습니다.'],
   ['템플릿 미사용 컴포넌트', templateCoverageViolations(), 'templates/dashboard의 화면에서 그 컴포넌트를 실제로 씁니다.'],

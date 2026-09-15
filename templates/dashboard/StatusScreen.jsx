@@ -14,9 +14,9 @@ function StatusScreen({ onBack }) {
   ];
   return (
     <div className="kit-public">
-      <TopNav sticky brand={{ name: "봉구 엣지 상태" }} links={links}
+      <TopNav skipTo="status-main" sticky brand={{ name: "봉구 엣지 상태" }} links={links}
         end={<><StatusPill tone={degraded ? "warn" : "ok"} pulse>{degraded ? "일부 지연" : "모든 서비스 정상"}</StatusPill><Button size="sm" variant="ghost" icon="arrow-left" onClick={onBack}>콘솔로</Button></>} />
-      <Container pad>
+      <Container pad id="status-main" tabIndex={-1}>
         <Stack gap={5}>
           <PageHeader title="서비스 상태" description="봉구 엣지가 제공하는 서비스의 현재 상태와 지난 90일 가용성을 5분마다 갱신해 보여 줍니다."
             actions={<MascotMark face={degraded ? "worried" : "smiling"} size="sm" />} />

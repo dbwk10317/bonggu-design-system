@@ -6,5 +6,7 @@ export interface TopNavProps extends HTMLAttributes<HTMLElement> {
   /** Right end (notifications, account) */
   end?: ReactNode;
   sticky?: boolean;
+  /** id of the page's main content. Renders the skip link as the first tab stop */
+  skipTo?: string;
 }
 export declare function TopNav(props: TopNavProps): ReactNode;
