@@ -1,4 +1,4 @@
-import React, { useId, useState } from "react";
+import React, { useEffect, useId, useRef, useState } from "react";
 import { cx, frameStyle } from "../core/frame.js";
 import { MISSING_CLASS, MISSING_TEXT, isMissing, numeric } from "../core/missing.js";
 
@@ -12,6 +12,15 @@ export function Heatmap({ rows = [], cols = [], values = [], valueFormatter = (v
      range, so filter once here instead of guarding every read. */
   const hover = hoverRaw && hoverRaw[0] < rows.length && hoverRaw[1] < cols.length ? hoverRaw : null;
   const srId = useId();
+  const grid = useRef(/** @type {HTMLDivElement | null} */ (null));
+  useEffect(() => {
+    const active = grid.current?.querySelector(".bds-heat__cell--on");
+    if (active && grid.current) {
+      const parent = grid.current, a = active.getBoundingClientRect(), b = parent.getBoundingClientRect();
+      if (a.left < b.left) parent.scrollLeft -= b.left - a.left;
+      else if (a.right > b.right) parent.scrollLeft += a.right - b.right;
+    }
+  }, [hoverRaw]);
   const flat = /** @type {number[]} */ (values.flat().filter((v) => !isMissing(v)));
   const lo = flat.length ? Math.min(...flat) : 0, hi = flat.length ? Math.max(...flat) : 1;
   /** @param {number | null} v */
@@ -41,13 +50,15 @@ export function Heatmap({ rows = [], cols = [], values = [], valueFormatter = (v
   };
   return (
     <div role="group" aria-label={ariaLabel} className={cx("bds-heat", className)} style={frameStyle({ fit, width, style: { "--cell": `${cell}px`, "--gap": `${gap}px`, "--cols": cols.length, ...style } })}>
-      <div className="bds-heat__grid" role="application" tabIndex={0} aria-label={`${ariaLabel ?? "격자"} 탐색`} aria-describedby={`${srId} ${srId}-now`} onKeyDown={onKey} onBlur={() => setHover(null)}>
+      <div ref={grid} className="bds-heat__scroll" role="application" tabIndex={0} aria-label={`${ariaLabel ?? "격자"} 탐색`} aria-describedby={`${srId} ${srId}-now`} onKeyDown={onKey} onBlur={() => setHover(null)}>
+        <div className="bds-heat__grid">
         <span />
         {cols.map((c, j) => <span key={j} className="bds-heat__col">{j % every === 0 ? cl(c) : ""}</span>)}
         {rows.map((r, i) => <React.Fragment key={i}>
           <span className="bds-heat__row">{rl(r)}</span>
           {cols.map((_, j) => { const v = values[i]?.[j]; return <i key={j} className={cx("bds-heat__cell", isMissing(v) && "bds-heat__cell--na", hover && hover[0] === i && hover[1] === j && "bds-heat__cell--on")} data-step={step(v)} onMouseEnter={() => setHover([i, j])} onMouseLeave={() => setHover(null)} />; })}
         </React.Fragment>)}
+        </div>
       </div>
       <div className="bds-sr">
         <table id={srId}>

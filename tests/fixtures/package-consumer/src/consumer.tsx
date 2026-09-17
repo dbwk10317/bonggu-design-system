@@ -1,6 +1,8 @@
 import { useCallback, useRef, useState, type FormEvent, type Key } from "react";
 import {
   Button,
+  FilterBar, SavedViews, TreeView, SplitPane, StateTimeline, ImageViewer, LogViewer,
+  type FilterToken, type SavedView, type TableColumnState,
   Chart,
   DataTable,
   Field,
@@ -14,6 +16,7 @@ import {
   useToast,
   type ButtonProps,
   type ChartSeries,
+  type ChartSegment,
   type DataTableColumn,
   type PanelProps,
   type ToastOptions,
@@ -31,6 +34,7 @@ const columns: DataTableColumn<NodeRow>[] = [
   { key: "cpu", header: "CPU", align: "num", hideBelow: "tablet" },
 ];
 const rows: NodeRow[] = [{ id: "a", name: "edge-a", cpu: 12 }, { id: "b", name: "edge-b", cpu: null }];
+const segments: ChartSegment[] = [{ label: "정상", value: 12 }, { label: "수집 지연", value: null }];
 const series: ChartSeries[] = [{ label: "요청", tone: 1, values: [1, 2, null, 4] }];
 
 function ToastButton() {
@@ -77,11 +81,29 @@ export function ConsumerApp() {
           <img src={mascotUrl} alt="봉구" />
           <ToastButton />
           <NodeForm />
-          <DataTable aria-label="노드" columns={columns} rows={rows} rowKey={(row) => row.id} rowLabel={(row) => row.name}
+          <DataTable fit="auto" aria-label="노드" columns={columns} rows={rows} rowKey={(row) => row.id} rowLabel={(row) => row.name}
             selectable selectedKeys={selected} onSelectionChange={setSelected} />
-          <Chart kind="line" aria-label="요청" labels={["1", "2", "3", "4"]} series={series} />
+          <Chart fit="auto" kind="line" aria-label="요청" labels={["1", "2", "3", "4"]} series={series} />
+          <Chart kind="pie" segments={segments} />
         </Panel>
+        <ExplorationConsumer />
       </SidebarShell>
     </ToastProvider>
   );
+}
+
+
+export function ExplorationConsumer() {
+  const [query, setQuery] = useState("");
+  const [filters, setFilters] = useState<FilterToken[]>([]);
+  const [columnState, setColumnState] = useState<TableColumnState[]>([]);
+  const [views, setViews] = useState<SavedView<{ query: string; filters: FilterToken[]; columnState: TableColumnState[] }>[]>([]);
+  const [selected, setSelected] = useState<string | null>(null);
+  return <Panel><FilterBar fields={[{key:"name",label:"이름"}]} query={query} onQueryChange={setQuery} filters={filters} onFiltersChange={setFilters} />
+    <SavedViews items={views} value={{query,filters,columnState}} onApply={view=>{setQuery(view.value.query);setFilters(view.value.filters);setColumnState(view.value.columnState);}} onSave={(name,value)=>setViews([...views,{id:name,name,value}])} />
+    <SplitPane first={<TreeView nodes={[{id:"a",label:"인증 서비스"}]} selectedId={selected} onSelect={setSelected} />} second={<DataTable rows={rows} columns={columns} columnSettings columnState={columnState} onColumnStateChange={setColumnState} />} />
+    <StateTimeline formatTime={v=>`${v}분`} rows={[{id:"a",label:"인증 서비스",intervals:[{id:"ok",start:0,end:60,status:"ok",label:"정상"}]}]} />
+    <LogViewer searchable lines={[{id:"1",level:"info",text:"연결됐습니다."}]} />
+    <ImageViewer open={false} images={[]} />
+  </Panel>;
 }

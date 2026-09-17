@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"Ds_d3ea90","components":[{"name":"Button","sourcePath":"components/action/Button.jsx"},{"name":"Icon","sourcePath":"components/action/Icon.jsx"},{"name":"IconButton","sourcePath":"components/action/IconButton.jsx"},{"name":"MascotMark","sourcePath":"components/brand/MascotMark.jsx"},{"name":"BarList","sourcePath":"components/data/BarList.jsx"},{"name":"Chart","sourcePath":"components/data/Chart.jsx"},{"name":"DataTable","sourcePath":"components/data/DataTable.jsx"},{"name":"DescriptionList","sourcePath":"components/data/DescriptionList.jsx"},{"name":"DiffView","sourcePath":"components/data/DiffView.jsx"},{"name":"Gauge","sourcePath":"components/data/Gauge.jsx"},{"name":"Heatmap","sourcePath":"components/data/Heatmap.jsx"},{"name":"KeyValues","sourcePath":"components/data/KeyValues.jsx"},{"name":"Legend","sourcePath":"components/data/Legend.jsx"},{"name":"LogViewer","sourcePath":"components/data/LogViewer.jsx"},{"name":"Sparkline","sourcePath":"components/data/Sparkline.jsx"},{"name":"StatTile","sourcePath":"components/data/StatTile.jsx"},{"name":"Timeline","sourcePath":"components/data/Timeline.jsx"},{"name":"TrendDelta","sourcePath":"components/data/TrendDelta.jsx"},{"name":"UptimeBar","sourcePath":"components/data/UptimeBar.jsx"},{"name":"Accordion","sourcePath":"components/display/Accordion.jsx"},{"name":"Avatar","sourcePath":"components/display/Avatar.jsx"},{"name":"AvatarGroup","sourcePath":"components/display/Avatar.jsx"},{"name":"Badge","sourcePath":"components/display/Badge.jsx"},{"name":"Code","sourcePath":"components/display/Code.jsx"},{"name":"CodeBlock","sourcePath":"components/display/Code.jsx"},{"name":"Kbd","sourcePath":"components/display/Code.jsx"},{"name":"CopyField","sourcePath":"components/display/CopyField.jsx"},{"name":"StatusPill","sourcePath":"components/display/StatusPill.jsx"},{"name":"Tag","sourcePath":"components/display/Tag.jsx"},{"name":"AlertBanner","sourcePath":"components/feedback/AlertBanner.jsx"},{"name":"ConfirmDialog","sourcePath":"components/feedback/ConfirmDialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"ErrorState","sourcePath":"components/feedback/ErrorState.jsx"},{"name":"InlineMessage","sourcePath":"components/feedback/InlineMessage.jsx"},{"name":"LoadingOverlay","sourcePath":"components/feedback/LoadingOverlay.jsx"},{"name":"NotificationTrigger","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"NotificationDrawer","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"ProgressBar","sourcePath":"components/feedback/ProgressBar.jsx"},{"name":"Skeleton","sourcePath":"components/feedback/Skeleton.jsx"},{"name":"Spinner","sourcePath":"components/feedback/Spinner.jsx"},{"name":"Stepper","sourcePath":"components/feedback/Stepper.jsx"},{"name":"ToastProvider","sourcePath":"components/feedback/Toast.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Checkbox","sourcePath":"components/input/Checkbox.jsx"},{"name":"CodeEditor","sourcePath":"components/input/CodeEditor.jsx"},{"name":"ColorInput","sourcePath":"components/input/ColorInput.jsx"},{"name":"Combobox","sourcePath":"components/input/Combobox.jsx"},{"name":"DatePicker","sourcePath":"components/input/DatePicker.jsx"},{"name":"DateRangePicker","sourcePath":"components/input/DateRangePicker.jsx"},{"name":"Dropzone","sourcePath":"components/input/Dropzone.jsx"},{"name":"Field","sourcePath":"components/input/Field.jsx"},{"name":"FileUpload","sourcePath":"components/input/FileUpload.jsx"},{"name":"MultiSelect","sourcePath":"components/input/MultiSelect.jsx"},{"name":"NumberStepper","sourcePath":"components/input/NumberStepper.jsx"},{"name":"OTPInput","sourcePath":"components/input/OTPInput.jsx"},{"name":"PasswordField","sourcePath":"components/input/PasswordField.jsx"},{"name":"RadioGroup","sourcePath":"components/input/RadioGroup.jsx"},{"name":"SearchField","sourcePath":"components/input/SearchField.jsx"},{"name":"SegmentedControl","sourcePath":"components/input/SegmentedControl.jsx"},{"name":"Select","sourcePath":"components/input/Select.jsx"},{"name":"Slider","sourcePath":"components/input/Slider.jsx"},{"name":"Switch","sourcePath":"components/input/Switch.jsx"},{"name":"TextArea","sourcePath":"components/input/TextArea.jsx"},{"name":"TextField","sourcePath":"components/input/TextField.jsx"},{"name":"TimePicker","sourcePath":"components/input/TimePicker.jsx"},{"name":"AspectRatio","sourcePath":"components/layout/AspectRatio.jsx"},{"name":"CardHead","sourcePath":"components/layout/CardHead.jsx"},{"name":"Container","sourcePath":"components/layout/Container.jsx"},{"name":"Divider","sourcePath":"components/layout/Divider.jsx"},{"name":"Grid","sourcePath":"components/layout/Grid.jsx"},{"name":"GridItem","sourcePath":"components/layout/Grid.jsx"},{"name":"Inline","sourcePath":"components/layout/Inline.jsx"},{"name":"JustifiedGallery","sourcePath":"components/layout/JustifiedGallery.jsx"},{"name":"PageHeader","sourcePath":"components/layout/PageHeader.jsx"},{"name":"PageStack","sourcePath":"components/layout/PageStack.jsx"},{"name":"Panel","sourcePath":"components/layout/Panel.jsx"},{"name":"Spacer","sourcePath":"components/layout/Spacer.jsx"},{"name":"Stack","sourcePath":"components/layout/Stack.jsx"},{"name":"StatusBar","sourcePath":"components/layout/StatusBar.jsx"},{"name":"Toolbar","sourcePath":"components/layout/Toolbar.jsx"},{"name":"ToolbarGrow","sourcePath":"components/layout/Toolbar.jsx"},{"name":"Visible","sourcePath":"components/layout/Visible.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"CommandPalette","sourcePath":"components/navigation/CommandPalette.jsx"},{"name":"Link","sourcePath":"components/navigation/Link.jsx"},{"name":"Pagination","sourcePath":"components/navigation/Pagination.jsx"},{"name":"SidebarShell","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavItem","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavGroup","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"},{"name":"TopNav","sourcePath":"components/navigation/TopNav.jsx"},{"name":"Drawer","sourcePath":"components/overlay/Drawer.jsx"},{"name":"DropdownMenu","sourcePath":"components/overlay/DropdownMenu.jsx"},{"name":"FormModal","sourcePath":"components/overlay/FormModal.jsx"},{"name":"Modal","sourcePath":"components/overlay/Modal.jsx"},{"name":"Popover","sourcePath":"components/overlay/Popover.jsx"},{"name":"Tooltip","sourcePath":"components/overlay/Tooltip.jsx"}],"sourceHashes":{"components/action/Button.jsx":"c62369aed97e","components/action/Icon.jsx":"a694a0248ddd","components/action/IconButton.jsx":"28c1b69891be","components/brand/MascotMark.jsx":"108f0e26ddb1","components/core/frame.js":"e6cab42871c7","components/core/missing.js":"9c6eb02238e9","components/core/useAnchoredPopover.js":"a292e7ea8c36","components/data/BarList.jsx":"a607689b97e2","components/data/Chart.jsx":"366036f451fd","components/data/DataTable.jsx":"3497ce8b45d1","components/data/DescriptionList.jsx":"d53228d4f9a9","components/data/DiffView.jsx":"49865b07e16d","components/data/Gauge.jsx":"2b0333d9b626","components/data/Heatmap.jsx":"ee74d855fd7b","components/data/KeyValues.jsx":"a9a2b31c5453","components/data/Legend.jsx":"c9ef5c648d25","components/data/LogViewer.jsx":"e8645c8bb1ac","components/data/Sparkline.jsx":"c595a28c5510","components/data/StatTile.jsx":"13aac2f36fc9","components/data/Timeline.jsx":"dd36ee198f98","components/data/TrendDelta.jsx":"ac70aa53c1db","components/data/UptimeBar.jsx":"ecd7b52d3764","components/data/chart-math.js":"f2fd5cb558aa","components/display/Accordion.jsx":"160837212661","components/display/Avatar.jsx":"cf95da1dcd7b","components/display/Badge.jsx":"839f2911da0e","components/display/Code.jsx":"2cadcf437d51","components/display/CopyField.jsx":"71c59b052ad9","components/display/StatusPill.jsx":"42e1f6412edb","components/display/Tag.jsx":"8fd40b2716cc","components/feedback/AlertBanner.jsx":"37af744d0f2f","components/feedback/ConfirmDialog.jsx":"9314adb2ef35","components/feedback/EmptyState.jsx":"9a36a35239c6","components/feedback/ErrorState.jsx":"bdfe9967cb46","components/feedback/InlineMessage.jsx":"2908d9d6568f","components/feedback/LoadingOverlay.jsx":"808315db1b59","components/feedback/NotificationDrawer.jsx":"b80c44505f7f","components/feedback/ProgressBar.jsx":"b887381b1d65","components/feedback/Skeleton.jsx":"e58ec91928df","components/feedback/Spinner.jsx":"e6469506af29","components/feedback/Stepper.jsx":"ff932f970169","components/feedback/Toast.jsx":"e9c5f2afe99b","components/input/Checkbox.jsx":"c2f228a181d7","components/input/CodeEditor.jsx":"e17062ce1ee3","components/input/ColorInput.jsx":"3108e13d7d35","components/input/Combobox.jsx":"6ce5d175aea1","components/input/DatePicker.jsx":"3ef8469f190f","components/input/DateRangePicker.jsx":"26cf8f06825e","components/input/Dropzone.jsx":"ba50e0be7bc0","components/input/Field.jsx":"3f41c509d6af","components/input/FileUpload.jsx":"6fbb560b9b21","components/input/MultiSelect.jsx":"f6c1ee0ae2bb","components/input/NumberStepper.jsx":"82af93015edf","components/input/OTPInput.jsx":"97fff529f0fe","components/input/PasswordField.jsx":"8ac8938e579a","components/input/RadioGroup.jsx":"9f29907d6d71","components/input/SearchField.jsx":"cf4aa5b04c52","components/input/SegmentedControl.jsx":"c79b5ee46d18","components/input/Select.jsx":"9d13b86e749d","components/input/Slider.jsx":"3d33ca7c3831","components/input/Switch.jsx":"95edecb06231","components/input/TextArea.jsx":"ca2d53344f90","components/input/TextField.jsx":"d18b0653e045","components/input/TimePicker.jsx":"a7997da4bb8d","components/layout/AspectRatio.jsx":"1093ba3c7cdc","components/layout/CardHead.jsx":"5e796f7f65d3","components/layout/Container.jsx":"dfed454a180b","components/layout/Divider.jsx":"91e950079f0c","components/layout/Grid.jsx":"7fb16c382cb5","components/layout/Inline.jsx":"95a181e6c42e","components/layout/JustifiedGallery.jsx":"40fe43bf9972","components/layout/PageHeader.jsx":"c1988f5413c3","components/layout/PageStack.jsx":"c421dadc99d2","components/layout/Panel.jsx":"1bbf399154b2","components/layout/Spacer.jsx":"7a0eda0d3151","components/layout/Stack.jsx":"872a90ea88d3","components/layout/StatusBar.jsx":"cc50c3718e1e","components/layout/Toolbar.jsx":"7162bc0f7cc9","components/layout/Visible.jsx":"8a7d015c252d","components/navigation/Breadcrumb.jsx":"727f5b81b1d5","components/navigation/CommandPalette.jsx":"94bc755fb5ac","components/navigation/Link.jsx":"60ed89c7c057","components/navigation/Pagination.jsx":"efbc23bfae6f","components/navigation/SidebarShell.jsx":"d0ec8b5b280d","components/navigation/Tabs.jsx":"b2f492c73bd6","components/navigation/TopNav.jsx":"41cf2439fdc2","components/overlay/Drawer.jsx":"e8a40e4bfb5f","components/overlay/DropdownMenu.jsx":"d024cc4dc495","components/overlay/FormModal.jsx":"ad57c1894117","components/overlay/Modal.jsx":"4171c081677d","components/overlay/Popover.jsx":"30fdaf59ba80","components/overlay/Tooltip.jsx":"bd51fe5c89a1","components/overlay/useModalDialog.js":"418af1f7bb38","theme-toggle.js":"4c9978c62871"},"inlinedExternals":[],"unexposedExports":[{"name":"assignRef","sourcePath":"components/core/frame.js"},{"name":"cx","sourcePath":"components/core/frame.js"},{"name":"DASHES","sourcePath":"components/data/chart-math.js"},{"name":"estWidth","sourcePath":"components/data/chart-math.js"},{"name":"fmtKo","sourcePath":"components/data/chart-math.js"},{"name":"frameStyle","sourcePath":"components/core/frame.js"},{"name":"histBins","sourcePath":"components/data/chart-math.js"},{"name":"isMissing","sourcePath":"components/core/missing.js"},{"name":"justifyRows","sourcePath":"components/layout/JustifiedGallery.jsx"},{"name":"MISSING_CLASS","sourcePath":"components/core/missing.js"},{"name":"MISSING_TEXT","sourcePath":"components/core/missing.js"},{"name":"niceTicks","sourcePath":"components/data/chart-math.js"},{"name":"NOTIFICATION_DRAWER_ID","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"numeric","sourcePath":"components/core/missing.js"},{"name":"passwordStrength","sourcePath":"components/input/PasswordField.jsx"},{"name":"pathLength","sourcePath":"components/data/chart-math.js"},{"name":"r1","sourcePath":"components/data/chart-math.js"},{"name":"runsOf","sourcePath":"components/data/chart-math.js"},{"name":"seriesDash","sourcePath":"components/data/chart-math.js"},{"name":"smoothPath","sourcePath":"components/data/chart-math.js"},{"name":"spaceToken","sourcePath":"components/core/frame.js"},{"name":"stackBars","sourcePath":"components/data/chart-math.js"},{"name":"toneInk","sourcePath":"components/data/chart-math.js"},{"name":"toneVar","sourcePath":"components/data/chart-math.js"},{"name":"useAnchoredPopover","sourcePath":"components/core/useAnchoredPopover.js"},{"name":"useFieldContext","sourcePath":"components/input/Field.jsx"},{"name":"useModalDialog","sourcePath":"components/overlay/useModalDialog.js"}],"hooks":[{"name":"useToast","sourcePath":"components/feedback/Toast.jsx"}]} */
+/* @ds-bundle: {"format":4,"namespace":"Ds_d3ea90","components":[{"name":"Button","sourcePath":"components/action/Button.jsx"},{"name":"Icon","sourcePath":"components/action/Icon.jsx"},{"name":"IconButton","sourcePath":"components/action/IconButton.jsx"},{"name":"MascotMark","sourcePath":"components/brand/MascotMark.jsx"},{"name":"BarList","sourcePath":"components/data/BarList.jsx"},{"name":"Chart","sourcePath":"components/data/Chart.jsx"},{"name":"DataTable","sourcePath":"components/data/DataTable.jsx"},{"name":"DescriptionList","sourcePath":"components/data/DescriptionList.jsx"},{"name":"DiffView","sourcePath":"components/data/DiffView.jsx"},{"name":"Gauge","sourcePath":"components/data/Gauge.jsx"},{"name":"Heatmap","sourcePath":"components/data/Heatmap.jsx"},{"name":"KeyValues","sourcePath":"components/data/KeyValues.jsx"},{"name":"Legend","sourcePath":"components/data/Legend.jsx"},{"name":"LogViewer","sourcePath":"components/data/LogViewer.jsx"},{"name":"Sparkline","sourcePath":"components/data/Sparkline.jsx"},{"name":"StatTile","sourcePath":"components/data/StatTile.jsx"},{"name":"StateTimeline","sourcePath":"components/data/StateTimeline.jsx"},{"name":"Timeline","sourcePath":"components/data/Timeline.jsx"},{"name":"TrendDelta","sourcePath":"components/data/TrendDelta.jsx"},{"name":"UptimeBar","sourcePath":"components/data/UptimeBar.jsx"},{"name":"Accordion","sourcePath":"components/display/Accordion.jsx"},{"name":"Avatar","sourcePath":"components/display/Avatar.jsx"},{"name":"AvatarGroup","sourcePath":"components/display/Avatar.jsx"},{"name":"Badge","sourcePath":"components/display/Badge.jsx"},{"name":"Code","sourcePath":"components/display/Code.jsx"},{"name":"CodeBlock","sourcePath":"components/display/Code.jsx"},{"name":"Kbd","sourcePath":"components/display/Code.jsx"},{"name":"CopyField","sourcePath":"components/display/CopyField.jsx"},{"name":"StatusPill","sourcePath":"components/display/StatusPill.jsx"},{"name":"Tag","sourcePath":"components/display/Tag.jsx"},{"name":"AlertBanner","sourcePath":"components/feedback/AlertBanner.jsx"},{"name":"ConfirmDialog","sourcePath":"components/feedback/ConfirmDialog.jsx"},{"name":"EmptyState","sourcePath":"components/feedback/EmptyState.jsx"},{"name":"ErrorState","sourcePath":"components/feedback/ErrorState.jsx"},{"name":"InlineMessage","sourcePath":"components/feedback/InlineMessage.jsx"},{"name":"LoadingOverlay","sourcePath":"components/feedback/LoadingOverlay.jsx"},{"name":"NotificationTrigger","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"NotificationDrawer","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"ProgressBar","sourcePath":"components/feedback/ProgressBar.jsx"},{"name":"Skeleton","sourcePath":"components/feedback/Skeleton.jsx"},{"name":"Spinner","sourcePath":"components/feedback/Spinner.jsx"},{"name":"Stepper","sourcePath":"components/feedback/Stepper.jsx"},{"name":"ToastProvider","sourcePath":"components/feedback/Toast.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Checkbox","sourcePath":"components/input/Checkbox.jsx"},{"name":"CodeEditor","sourcePath":"components/input/CodeEditor.jsx"},{"name":"ColorInput","sourcePath":"components/input/ColorInput.jsx"},{"name":"Combobox","sourcePath":"components/input/Combobox.jsx"},{"name":"DatePicker","sourcePath":"components/input/DatePicker.jsx"},{"name":"DateRangePicker","sourcePath":"components/input/DateRangePicker.jsx"},{"name":"Dropzone","sourcePath":"components/input/Dropzone.jsx"},{"name":"Field","sourcePath":"components/input/Field.jsx"},{"name":"FileUpload","sourcePath":"components/input/FileUpload.jsx"},{"name":"FilterBar","sourcePath":"components/input/FilterBar.jsx"},{"name":"MultiSelect","sourcePath":"components/input/MultiSelect.jsx"},{"name":"NumberStepper","sourcePath":"components/input/NumberStepper.jsx"},{"name":"OTPInput","sourcePath":"components/input/OTPInput.jsx"},{"name":"PasswordField","sourcePath":"components/input/PasswordField.jsx"},{"name":"RadioGroup","sourcePath":"components/input/RadioGroup.jsx"},{"name":"SearchField","sourcePath":"components/input/SearchField.jsx"},{"name":"SegmentedControl","sourcePath":"components/input/SegmentedControl.jsx"},{"name":"Select","sourcePath":"components/input/Select.jsx"},{"name":"Slider","sourcePath":"components/input/Slider.jsx"},{"name":"Switch","sourcePath":"components/input/Switch.jsx"},{"name":"TextArea","sourcePath":"components/input/TextArea.jsx"},{"name":"TextField","sourcePath":"components/input/TextField.jsx"},{"name":"TimePicker","sourcePath":"components/input/TimePicker.jsx"},{"name":"AspectRatio","sourcePath":"components/layout/AspectRatio.jsx"},{"name":"CardHead","sourcePath":"components/layout/CardHead.jsx"},{"name":"Container","sourcePath":"components/layout/Container.jsx"},{"name":"Divider","sourcePath":"components/layout/Divider.jsx"},{"name":"Grid","sourcePath":"components/layout/Grid.jsx"},{"name":"GridItem","sourcePath":"components/layout/Grid.jsx"},{"name":"Inline","sourcePath":"components/layout/Inline.jsx"},{"name":"JustifiedGallery","sourcePath":"components/layout/JustifiedGallery.jsx"},{"name":"PageHeader","sourcePath":"components/layout/PageHeader.jsx"},{"name":"PageStack","sourcePath":"components/layout/PageStack.jsx"},{"name":"Panel","sourcePath":"components/layout/Panel.jsx"},{"name":"Spacer","sourcePath":"components/layout/Spacer.jsx"},{"name":"SplitPane","sourcePath":"components/layout/SplitPane.jsx"},{"name":"Stack","sourcePath":"components/layout/Stack.jsx"},{"name":"StatusBar","sourcePath":"components/layout/StatusBar.jsx"},{"name":"Toolbar","sourcePath":"components/layout/Toolbar.jsx"},{"name":"ToolbarGrow","sourcePath":"components/layout/Toolbar.jsx"},{"name":"Visible","sourcePath":"components/layout/Visible.jsx"},{"name":"Breadcrumb","sourcePath":"components/navigation/Breadcrumb.jsx"},{"name":"CommandPalette","sourcePath":"components/navigation/CommandPalette.jsx"},{"name":"Link","sourcePath":"components/navigation/Link.jsx"},{"name":"Pagination","sourcePath":"components/navigation/Pagination.jsx"},{"name":"SavedViews","sourcePath":"components/navigation/SavedViews.jsx"},{"name":"SidebarShell","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavItem","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"SidebarNavGroup","sourcePath":"components/navigation/SidebarShell.jsx"},{"name":"Tabs","sourcePath":"components/navigation/Tabs.jsx"},{"name":"TopNav","sourcePath":"components/navigation/TopNav.jsx"},{"name":"TreeView","sourcePath":"components/navigation/TreeView.jsx"},{"name":"Drawer","sourcePath":"components/overlay/Drawer.jsx"},{"name":"DropdownMenu","sourcePath":"components/overlay/DropdownMenu.jsx"},{"name":"FormModal","sourcePath":"components/overlay/FormModal.jsx"},{"name":"ImageViewer","sourcePath":"components/overlay/ImageViewer.jsx"},{"name":"Modal","sourcePath":"components/overlay/Modal.jsx"},{"name":"Popover","sourcePath":"components/overlay/Popover.jsx"},{"name":"Tooltip","sourcePath":"components/overlay/Tooltip.jsx"}],"sourceHashes":{"components/action/Button.jsx":"c62369aed97e","components/action/Icon.jsx":"a694a0248ddd","components/action/IconButton.jsx":"28c1b69891be","components/brand/MascotMark.jsx":"108f0e26ddb1","components/core/frame.js":"e6cab42871c7","components/core/missing.js":"9c6eb02238e9","components/core/useAnchoredPopover.js":"a292e7ea8c36","components/data/BarList.jsx":"a607689b97e2","components/data/Chart.jsx":"94d109d7b19d","components/data/DataTable.jsx":"006029fa1b1a","components/data/DescriptionList.jsx":"d53228d4f9a9","components/data/DiffView.jsx":"49865b07e16d","components/data/Gauge.jsx":"4f79aa9def3e","components/data/Heatmap.jsx":"0e51ca504814","components/data/KeyValues.jsx":"a9a2b31c5453","components/data/Legend.jsx":"c9ef5c648d25","components/data/LogViewer.jsx":"12167943e5fc","components/data/Sparkline.jsx":"c595a28c5510","components/data/StatTile.jsx":"13aac2f36fc9","components/data/StateTimeline.jsx":"9220109a477e","components/data/Timeline.jsx":"dd36ee198f98","components/data/TrendDelta.jsx":"ac70aa53c1db","components/data/UptimeBar.jsx":"71499aa7e4cc","components/data/chart-math.js":"f2fd5cb558aa","components/data/plot-layout.js":"1f95395c78bf","components/data/plot-value.jsx":"ea4c03c382c3","components/display/Accordion.jsx":"160837212661","components/display/Avatar.jsx":"cf95da1dcd7b","components/display/Badge.jsx":"839f2911da0e","components/display/Code.jsx":"2cadcf437d51","components/display/CopyField.jsx":"71c59b052ad9","components/display/StatusPill.jsx":"42e1f6412edb","components/display/Tag.jsx":"8fd40b2716cc","components/feedback/AlertBanner.jsx":"37af744d0f2f","components/feedback/ConfirmDialog.jsx":"9314adb2ef35","components/feedback/EmptyState.jsx":"9a36a35239c6","components/feedback/ErrorState.jsx":"bdfe9967cb46","components/feedback/InlineMessage.jsx":"2908d9d6568f","components/feedback/LoadingOverlay.jsx":"808315db1b59","components/feedback/NotificationDrawer.jsx":"b80c44505f7f","components/feedback/ProgressBar.jsx":"b887381b1d65","components/feedback/Skeleton.jsx":"e58ec91928df","components/feedback/Spinner.jsx":"e6469506af29","components/feedback/Stepper.jsx":"ff932f970169","components/feedback/Toast.jsx":"e9c5f2afe99b","components/input/Checkbox.jsx":"c2f228a181d7","components/input/CodeEditor.jsx":"e17062ce1ee3","components/input/ColorInput.jsx":"3108e13d7d35","components/input/Combobox.jsx":"6ce5d175aea1","components/input/DatePicker.jsx":"3ef8469f190f","components/input/DateRangePicker.jsx":"26cf8f06825e","components/input/Dropzone.jsx":"ba50e0be7bc0","components/input/Field.jsx":"3f41c509d6af","components/input/FileUpload.jsx":"6fbb560b9b21","components/input/FilterBar.jsx":"d346edacd842","components/input/MultiSelect.jsx":"f6c1ee0ae2bb","components/input/NumberStepper.jsx":"82af93015edf","components/input/OTPInput.jsx":"97fff529f0fe","components/input/PasswordField.jsx":"8ac8938e579a","components/input/RadioGroup.jsx":"9f29907d6d71","components/input/SearchField.jsx":"cf4aa5b04c52","components/input/SegmentedControl.jsx":"c79b5ee46d18","components/input/Select.jsx":"9d13b86e749d","components/input/Slider.jsx":"3d33ca7c3831","components/input/Switch.jsx":"95edecb06231","components/input/TextArea.jsx":"ca2d53344f90","components/input/TextField.jsx":"d18b0653e045","components/input/TimePicker.jsx":"a7997da4bb8d","components/layout/AspectRatio.jsx":"1093ba3c7cdc","components/layout/CardHead.jsx":"5e796f7f65d3","components/layout/Container.jsx":"dfed454a180b","components/layout/Divider.jsx":"91e950079f0c","components/layout/Grid.jsx":"7fb16c382cb5","components/layout/Inline.jsx":"95a181e6c42e","components/layout/JustifiedGallery.jsx":"40fe43bf9972","components/layout/PageHeader.jsx":"c1988f5413c3","components/layout/PageStack.jsx":"c421dadc99d2","components/layout/Panel.jsx":"1bbf399154b2","components/layout/Spacer.jsx":"7a0eda0d3151","components/layout/SplitPane.jsx":"ebed9ea478fb","components/layout/Stack.jsx":"872a90ea88d3","components/layout/StatusBar.jsx":"cc50c3718e1e","components/layout/Toolbar.jsx":"7162bc0f7cc9","components/layout/Visible.jsx":"8a7d015c252d","components/navigation/Breadcrumb.jsx":"727f5b81b1d5","components/navigation/CommandPalette.jsx":"94bc755fb5ac","components/navigation/Link.jsx":"60ed89c7c057","components/navigation/Pagination.jsx":"efbc23bfae6f","components/navigation/SavedViews.jsx":"2f48cb971418","components/navigation/SidebarShell.jsx":"d0ec8b5b280d","components/navigation/Tabs.jsx":"b2f492c73bd6","components/navigation/TopNav.jsx":"41cf2439fdc2","components/navigation/TreeView.jsx":"abfec389e570","components/overlay/Drawer.jsx":"e8a40e4bfb5f","components/overlay/DropdownMenu.jsx":"d024cc4dc495","components/overlay/FormModal.jsx":"ad57c1894117","components/overlay/ImageViewer.jsx":"edfb4b4bde35","components/overlay/Modal.jsx":"4171c081677d","components/overlay/Popover.jsx":"30fdaf59ba80","components/overlay/Tooltip.jsx":"bd51fe5c89a1","components/overlay/useModalDialog.js":"418af1f7bb38","theme-toggle.js":"4c9978c62871"},"inlinedExternals":[],"unexposedExports":[{"name":"assignRef","sourcePath":"components/core/frame.js"},{"name":"cx","sourcePath":"components/core/frame.js"},{"name":"DASHES","sourcePath":"components/data/chart-math.js"},{"name":"emptyPlotMetrics","sourcePath":"components/data/plot-layout.js"},{"name":"estWidth","sourcePath":"components/data/chart-math.js"},{"name":"fmtKo","sourcePath":"components/data/chart-math.js"},{"name":"frameStyle","sourcePath":"components/core/frame.js"},{"name":"histBins","sourcePath":"components/data/chart-math.js"},{"name":"isMissing","sourcePath":"components/core/missing.js"},{"name":"justifyRows","sourcePath":"components/layout/JustifiedGallery.jsx"},{"name":"MISSING_CLASS","sourcePath":"components/core/missing.js"},{"name":"MISSING_TEXT","sourcePath":"components/core/missing.js"},{"name":"niceTicks","sourcePath":"components/data/chart-math.js"},{"name":"NOTIFICATION_DRAWER_ID","sourcePath":"components/feedback/NotificationDrawer.jsx"},{"name":"numeric","sourcePath":"components/core/missing.js"},{"name":"passwordStrength","sourcePath":"components/input/PasswordField.jsx"},{"name":"pathLength","sourcePath":"components/data/chart-math.js"},{"name":"plotLabelIsUI","sourcePath":"components/data/plot-layout.js"},{"name":"plotLabels","sourcePath":"components/data/plot-layout.js"},{"name":"plotValue","sourcePath":"components/data/plot-value.jsx"},{"name":"r1","sourcePath":"components/data/chart-math.js"},{"name":"runsOf","sourcePath":"components/data/chart-math.js"},{"name":"seriesDash","sourcePath":"components/data/chart-math.js"},{"name":"smoothPath","sourcePath":"components/data/chart-math.js"},{"name":"spaceToken","sourcePath":"components/core/frame.js"},{"name":"stackBars","sourcePath":"components/data/chart-math.js"},{"name":"toneInk","sourcePath":"components/data/chart-math.js"},{"name":"toneVar","sourcePath":"components/data/chart-math.js"},{"name":"useAnchoredPopover","sourcePath":"components/core/useAnchoredPopover.js"},{"name":"useFieldContext","sourcePath":"components/input/Field.jsx"},{"name":"useModalDialog","sourcePath":"components/overlay/useModalDialog.js"},{"name":"usePlotMetrics","sourcePath":"components/data/plot-layout.js"}],"hooks":[{"name":"useToast","sourcePath":"components/feedback/Toast.jsx"}]} */
 
 (() => {
 
@@ -905,96 +905,9 @@ function DiffView({
 Object.assign(__ds_scope, { DiffView });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/data/DiffView.jsx", error: String((e && e.message) || e) }); }
 
-// components/data/Gauge.jsx
-try { (() => {
-const { cx, frameStyle, MISSING_TEXT, numeric } = __ds_scope;
-/** Half-circle gauge. value 0–1 (or relative to max); tone follows thresholds (ok/warn/crit).
- *  The missing text is SVG text, so its color comes from fill via .bds-gauge--off .bds-gauge__v rather than .bds-na. See RULE.md "데이터와 결측".
- * @param {Parameters<typeof import("./Gauge.d.ts").Gauge>[0]} props
- */
-function Gauge({
-  value,
-  max = 1,
-  label,
-  unit,
-  valueFormatter,
-  thresholds = {
-    warn: 0.7,
-    crit: 0.9
-  },
-  tone,
-  ticks = false,
-  fit = "flex",
-  width,
-  height,
-  className,
-  style,
-  ...rest
-}) {
-  const n = numeric(value);
-  const r = n == null ? null : Math.max(0, Math.min(1, n / max));
-  const t = tone ?? (r == null ? "off" : r >= thresholds.crit ? "crit" : r >= thresholds.warn ? "warn" : "ok");
-  const W = 120,
-    H = 70,
-    R = 50,
-    cx0 = 60,
-    cy = 62,
-    sw = 10;
-  const len = Math.PI * R;
-  const d = "M " + (cx0 - R) + " " + cy + " A " + R + " " + R + " 0 0 1 " + (cx0 + R) + " " + cy;
-  const txt = r == null || n == null ? MISSING_TEXT : valueFormatter ? valueFormatter(n) : Math.round(r * 100) + "%";
-  return /*#__PURE__*/React.createElement("div", {
-    className: cx("bds-gauge", "bds-gauge--" + t, className),
-    style: frameStyle({
-      fit,
-      width,
-      height,
-      style
-    }),
-    role: "meter",
-    "aria-valuemin": 0,
-    "aria-valuemax": max,
-    "aria-valuenow": r == null ? undefined : n ?? undefined,
-    "aria-valuetext": txt + (label ? " " + label : ""),
-    ...rest
-  }, /*#__PURE__*/React.createElement("svg", {
-    viewBox: "0 0 " + W + " " + H,
-    "aria-hidden": "true"
-  }, /*#__PURE__*/React.createElement("path", {
-    d: d,
-    fill: "none",
-    className: "bds-gauge__track",
-    strokeWidth: sw,
-    strokeLinecap: "round"
-  }), r != null && /*#__PURE__*/React.createElement("path", {
-    d: d,
-    fill: "none",
-    className: "bds-gauge__arc",
-    strokeWidth: sw,
-    strokeLinecap: "round",
-    strokeDasharray: len,
-    strokeDashoffset: len * (1 - r)
-  }), /*#__PURE__*/React.createElement("text", {
-    x: cx0,
-    y: cy - 6,
-    textAnchor: "middle",
-    className: "bds-gauge__v",
-    fontSize: r == null ? 11 : 20
-  }, txt, r != null && unit && /*#__PURE__*/React.createElement("tspan", {
-    className: "bds-gauge__u",
-    fontSize: 10
-  }, " ", unit))), ticks && /*#__PURE__*/React.createElement("div", {
-    className: "bds-gauge__ticks"
-  }, /*#__PURE__*/React.createElement("span", null, "0"), /*#__PURE__*/React.createElement("span", null, valueFormatter ? valueFormatter(max) : "100%")), label && /*#__PURE__*/React.createElement("div", {
-    className: "bds-gauge__l"
-  }, label));
-}
-Object.assign(__ds_scope, { Gauge });
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/data/Gauge.jsx", error: String((e && e.message) || e) }); }
-
 // components/data/Heatmap.jsx
 try { (() => {
-const { useId, useState } = React;
+const { useEffect, useId, useRef, useState } = React;
 const { cx, frameStyle, MISSING_CLASS, MISSING_TEXT, isMissing, numeric } = __ds_scope;
 /** 2-D intensity grid (hour × weekday and the like) on the --ramp-1~6 sequential ramp. null cells are blank (missing).
  *  Keyboard: arrows move the cell, Home/End jump to the row ends, Esc clears; the footer readout mirrors mouse hover. A11y surfaces follow RULE.md "접근성".
@@ -1020,6 +933,16 @@ function Heatmap({
      range, so filter once here instead of guarding every read. */
   const hover = hoverRaw && hoverRaw[0] < rows.length && hoverRaw[1] < cols.length ? hoverRaw : null;
   const srId = useId();
+  const grid = useRef(/** @type {HTMLDivElement | null} */null);
+  useEffect(() => {
+    const active = grid.current?.querySelector(".bds-heat__cell--on");
+    if (active && grid.current) {
+      const parent = grid.current,
+        a = active.getBoundingClientRect(),
+        b = parent.getBoundingClientRect();
+      if (a.left < b.left) parent.scrollLeft -= b.left - a.left;else if (a.right > b.right) parent.scrollLeft += a.right - b.right;
+    }
+  }, [hoverRaw]);
   const flat = /** @type {number[]} */values.flat().filter(v => !isMissing(v));
   const lo = flat.length ? Math.min(...flat) : 0,
     hi = flat.length ? Math.max(...flat) : 1;
@@ -1060,13 +983,16 @@ function Heatmap({
       }
     })
   }, /*#__PURE__*/React.createElement("div", {
-    className: "bds-heat__grid",
+    ref: grid,
+    className: "bds-heat__scroll",
     role: "application",
     tabIndex: 0,
     "aria-label": `${ariaLabel ?? "격자"} 탐색`,
     "aria-describedby": `${srId} ${srId}-now`,
     onKeyDown: onKey,
     onBlur: () => setHover(null)
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "bds-heat__grid"
   }, /*#__PURE__*/React.createElement("span", null), cols.map((c, j) => /*#__PURE__*/React.createElement("span", {
     key: j,
     className: "bds-heat__col"
@@ -1083,7 +1009,7 @@ function Heatmap({
       onMouseEnter: () => setHover([i, j]),
       onMouseLeave: () => setHover(null)
     });
-  })))), /*#__PURE__*/React.createElement("div", {
+  }))))), /*#__PURE__*/React.createElement("div", {
     className: "bds-sr"
   }, /*#__PURE__*/React.createElement("table", {
     id: srId
@@ -1152,65 +1078,6 @@ function KeyValues({
 }
 Object.assign(__ds_scope, { KeyValues });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/data/KeyValues.jsx", error: String((e && e.message) || e) }); }
-
-// components/data/LogViewer.jsx
-try { (() => {
-const { useEffect, useRef } = React;
-const { cx, frameStyle } = __ds_scope;
-/** Log viewer. lines: string | {level,time,text}. follow=true keeps the view scrolled to the bottom as lines arrive.
- * @param {Parameters<typeof import("./LogViewer.d.ts").LogViewer>[0]} props */
-function LogViewer({
-  lines = [],
-  follow = true,
-  wrap = true,
-  numbers = true,
-  fit = "flex",
-  width,
-  height = 240,
-  className,
-  style,
-  ...rest
-}) {
-  const ref = useRef(/** @type {HTMLDivElement | null} */null);
-  /* With a ring buffer (lines.slice(-200)) the length never changes, so depending on length alone
-     would stop following exactly when the log gets busy. Depend on the array itself. */
-  useEffect(() => {
-    if (follow && ref.current) ref.current.scrollTop = ref.current.scrollHeight;
-  }, [lines, follow]);
-  return /*#__PURE__*/React.createElement("div", {
-    ref: ref,
-    tabIndex: 0,
-    className: cx("bds-log", !wrap && "bds-log--nowrap", className),
-    style: frameStyle({
-      fit,
-      width,
-      height,
-      style
-    }),
-    role: "log",
-    "aria-live": follow ? "polite" : "off",
-    ...rest
-  }, lines.map((l, i) => {
-    const o = typeof l === "string" ? {
-      text: l
-    } : l;
-    return /*#__PURE__*/React.createElement("div", {
-      key: i,
-      className: "bds-log__line"
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "bds-log__ln",
-      "aria-hidden": "true"
-    }, numbers ? i + 1 : ""), /*#__PURE__*/React.createElement("span", {
-      className: cx("bds-log__lv", o.level && `bds-log__lv--${o.level}`)
-    }, o.time ?? (o.level ? o.level.toUpperCase() : "")), /*#__PURE__*/React.createElement("span", {
-      className: "bds-log__msg"
-    }, o.level && o.time ? /*#__PURE__*/React.createElement("span", {
-      className: `bds-log__lv bds-log__lv--${o.level}`
-    }, o.level.toUpperCase(), " ") : null, o.text));
-  }));
-}
-Object.assign(__ds_scope, { LogViewer });
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/data/LogViewer.jsx", error: String((e && e.message) || e) }); }
 
 // components/data/Timeline.jsx
 try { (() => {
@@ -1329,7 +1196,8 @@ function UptimeBar({
   return /*#__PURE__*/React.createElement("div", {
     className: cx("bds-uptime", className),
     style: {
-      "--uh": height + "px"
+      "--uh": height + "px",
+      "--segments": Math.max(1, segments.length)
     },
     ...rest
   }, (name || pct != null) && /*#__PURE__*/React.createElement("div", {
@@ -1575,956 +1443,6 @@ function Legend({
 Object.assign(__ds_scope, { Legend });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/data/Legend.jsx", error: String((e && e.message) || e) }); }
 
-// components/data/Chart.jsx
-try { (() => {
-const { useEffect, useId, useRef, useState } = React;
-const { cx, frameStyle, MISSING_CLASS, MISSING_TEXT, isMissing, numeric, r1, toneVar, toneInk, fmtKo, niceTicks, stackBars, smoothPath, runsOf, pathLength, estWidth, seriesDash, histBins, Legend } = __ds_scope;
-/** @typedef {import("../core/frame.js").DSStyle} DSStyle */
-/** @typedef {import("./Chart.d.ts").ChartTone} ChartTone */
-/** @typedef {import("./Chart.d.ts").ChartSeries} ChartSeries */
-/** @typedef {import("./Chart.d.ts").ChartThreshold} ChartThreshold */
-/** @typedef {(v: number) => string} Fmt */
-/** @typedef {[number, number]} Point */
-/** Segment with missing values normalized to null. Coercing to 0 would make a failed collection look like "0".
- * @typedef {Omit<import("./Chart.d.ts").ChartSegment, "value"> & { value: number | null }} NormSegment */
-/** Internal shape after normalize. The public contract is the ChartProps union in Chart.d.ts;
- * here it is a flat object where only the fields relevant to kind are filled.
- * @typedef {{
- *   kind?: "line" | "area" | "bar" | "pie" | "radial" | "radar" | "histogram",
- *   labels?: string[], series?: ChartSeries[], segments?: NormSegment[],
- *   samples?: (number | null)[], bins?: number, axes?: string[],
- *   value?: number | null, label?: import("react").ReactNode, tone?: ChartTone,
- *   thresholds?: ChartThreshold[], stacked?: boolean, yMin?: number, yMax?: number,
- *   max?: number, unit?: string, percentiles?: number[], caption?: import("react").ReactNode,
- *   xTicks?: "auto" | "ends" | "none", fit?: "flex" | "fixed", width?: number | string, height?: number,
- *   valueFormatter?: Fmt, emptyText?: string, showLegend?: boolean,
- *   animate?: boolean, live?: boolean, paused?: boolean, className?: string,
- *   style?: DSStyle, "aria-label"?: string
- * }} NormProps */
-
-/* ---------- Shared chrome ---------- */
-/** @param {{ current: HTMLElement | null }} ref @param {number} [fixedW] @param {number} [fixedH] */
-function useSize(ref, fixedW, fixedH) {
-  const [size, setSize] = useState({
-    w: fixedW ?? 0,
-    h: fixedH ?? 0
-  });
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const measure = () => {
-      const r = el.getBoundingClientRect();
-      setSize(p => {
-        const w = Math.round(r.width),
-          h = Math.round(r.height);
-        return Math.abs(p.w - w) > 1 || Math.abs(p.h - h) > 1 ? {
-          w,
-          h
-        } : p;
-      });
-    };
-    measure();
-    const ro = new ResizeObserver(measure);
-    ro.observe(el);
-    return () => ro.disconnect();
-  }, [ref]);
-  return size;
-}
-/** @param {boolean} enabled */
-function useAnimateOnce(enabled) {
-  const [on, setOn] = useState(enabled);
-  /* Re-arm when enabled turns back on. Without resetting, turning live off later would never
-     replay the entry animation. */
-  const [prevEnabled, setPrevEnabled] = useState(enabled);
-  if (prevEnabled !== enabled) {
-    setPrevEnabled(enabled);
-    setOn(enabled);
-  }
-  useEffect(() => {
-    if (!enabled) return;
-    const t = setTimeout(() => setOn(false), 1100);
-    return () => clearTimeout(t);
-  }, [enabled]);
-  return on;
-}
-/** @param {{ x: number, w: number, title?: import("react").ReactNode, rows: { color: string, name: import("react").ReactNode, value: import("react").ReactNode }[] }} props */
-function Tip({
-  x,
-  w,
-  title,
-  rows
-}) {
-  const flip = x > w * 0.6;
-  return /*#__PURE__*/React.createElement("div", {
-    "aria-hidden": "true",
-    className: cx("bds-chart__tip", flip && "bds-chart__tip--flip"),
-    style: {
-      left: x
-    }
-  }, title != null && /*#__PURE__*/React.createElement("div", {
-    className: "bds-chart__tip-t"
-  }, title), rows.map((r, i) => /*#__PURE__*/React.createElement("div", {
-    key: i,
-    className: "bds-chart__tip-row"
-  }, /*#__PURE__*/React.createElement("i", {
-    style: {
-      "--series-color": r.color
-    }
-  }), /*#__PURE__*/React.createElement("span", {
-    className: "bds-chart__tip-n bds-ellipsis"
-  }, r.name), /*#__PURE__*/React.createElement("span", {
-    className: cx("bds-chart__tip-v", isMissing(r.value) && MISSING_CLASS)
-  }, r.value))));
-}
-/** @param {Fmt} fmt @param {number | null | undefined} v */
-const cell = (fmt, v) => {
-  const n = numeric(v);
-  return n == null ? MISSING_TEXT : fmt(n);
-};
-
-/* The single boundary before data reaches geometry. Every missing value becomes null here, so the math below
-   only checks for null. Without it one NaN would poison the axis range and every coordinate in the chart. */
-/** @param {NormProps} props @returns {NormProps} */
-function normalize(props) {
-  const series = props.series?.map(s => ({
-    ...s,
-    values: (s.values ?? []).map(numeric)
-  }));
-  const segments = props.segments?.map(sg => ({
-    ...sg,
-    value: numeric(sg.value)
-  }));
-  const out = {
-    ...props
-  };
-  if (series) out.series = series;
-  if (segments) out.segments = segments;
-  if ("value" in props) out.value = numeric(props.value);
-  if (props.samples) out.samples = props.samples.map(numeric);
-  if (props.thresholds) out.thresholds = props.thresholds.filter(t => numeric(t.value) != null);
-  if (props.max != null) out.max = numeric(props.max) ?? undefined;
-  if (props.yMin != null) out.yMin = numeric(props.yMin) ?? undefined;
-  if (props.yMax != null) out.yMax = numeric(props.yMax) ?? undefined;
-  return out;
-}
-
-/* ---------- Cartesian (line · area · bar) ---------- */
-/** hover/setHover live in Chart so mouse and keyboard drive the same index and the same Tip. */
-/** @param {{ kind: "line" | "area" | "bar", labels: string[], series: ChartSeries[], fmt: Fmt, uid: string, xTicks?: "auto" | "ends" | "none", w: number, h: number, thresholds?: ChartThreshold[], stacked?: boolean, yMin?: number, yMax?: number, hover: number | null, setHover: (i: number | null) => void }} props */
-function Cartesian({
-  kind,
-  labels,
-  series,
-  fmt,
-  uid,
-  xTicks,
-  w,
-  h,
-  thresholds = [],
-  stacked,
-  yMin,
-  yMax,
-  hover,
-  setHover
-}) {
-  const n = labels.length;
-  const stack = stacked && kind === "bar" ? stackBars(series, n) : null;
-  const all = (stack ? [stack.lo, stack.hi] : series.flatMap(s => s.values)).filter(v => v != null).concat(thresholds.map(t => t.value));
-  if (!n || !all.length || w < 40) return null;
-  const lo0 = Math.min(0, ...all),
-    hi0 = Math.max(...all);
-  const {
-    ticks,
-    lo,
-    hi
-  } = niceTicks(yMin ?? lo0, yMax ?? hi0, h < 140 ? 2 : 4);
-  const padL = Math.max(...ticks.map(t => estWidth(fmt(t)))),
-    padR = 8,
-    padT = 10,
-    padB = xTicks === "none" ? 8 : 26;
-  const iw = w - padL - padR,
-    ih = h - padT - padB;
-  const step = n > 1 ? iw / (n - 1) : 0;
-  const bandW = iw / n;
-  const x = (/** @type {number} */i) => r1(kind === "bar" ? padL + bandW * (i + 0.5) : n > 1 ? padL + i * step : padL + iw / 2);
-  const y = (/** @type {number} */v) => r1(padT + (1 - (v - lo) / (hi - lo || 1)) * ih);
-  const every = Math.max(1, Math.ceil(n / Math.max(2, Math.floor(iw / 58))));
-  const showX = (/** @type {number} */i) => xTicks !== "none" && (xTicks === "ends" ? i === 0 || i === n - 1 : i % every === 0 || i === n - 1);
-  const groupW = Math.min(28, bandW * 0.62 / (stacked ? 1 : series.length));
-  const onMove = (/** @type {import("react").MouseEvent<SVGSVGElement> | import("react").TouchEvent<SVGSVGElement>} */e) => {
-    const r = e.currentTarget.getBoundingClientRect();
-    const px = ("clientX" in e ? e.clientX : e.touches[0]?.clientX ?? 0) - r.left;
-    const i = kind === "bar" ? Math.floor((px - padL) / bandW) : Math.round((px - padL) / (step || 1));
-    setHover(Math.max(0, Math.min(n - 1, i)));
-  };
-  const rows = hover == null ? [] : series.map((s, si) => ({
-    color: toneVar(s.tone, si),
-    name: s.label,
-    value: cell(fmt, s.values[hover])
-  }));
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("svg", {
-    viewBox: `0 0 ${w} ${h}`,
-    width: w,
-    height: h,
-    className: "bds-chart__svg",
-    onMouseMove: onMove,
-    onTouchStart: onMove,
-    onTouchMove: onMove,
-    onMouseLeave: () => setHover(null),
-    "aria-hidden": "true"
-  }, /*#__PURE__*/React.createElement("defs", null, series.map((s, si) => /*#__PURE__*/React.createElement("linearGradient", {
-    key: si,
-    id: `${uid}-g${si}`,
-    x1: "0",
-    y1: "0",
-    x2: "0",
-    y2: "1"
-  }, /*#__PURE__*/React.createElement("stop", {
-    offset: "0",
-    stopColor: toneVar(s.tone, si),
-    stopOpacity: ".14"
-  }), /*#__PURE__*/React.createElement("stop", {
-    offset: "1",
-    stopColor: toneVar(s.tone, si),
-    stopOpacity: "0"
-  }))), /*#__PURE__*/React.createElement("clipPath", {
-    id: `${uid}-c`
-  }, /*#__PURE__*/React.createElement("rect", {
-    x: padL,
-    y: 0,
-    width: iw,
-    height: h
-  }))), ticks.map(t => /*#__PURE__*/React.createElement("g", {
-    key: t
-  }, /*#__PURE__*/React.createElement("line", {
-    className: "bds-chart__grid",
-    x1: padL,
-    x2: w - padR,
-    y1: y(t),
-    y2: y(t),
-    style: t === ticks[0] ? {
-      stroke: "var(--plot-axis)"
-    } : undefined
-  }), /*#__PURE__*/React.createElement("text", {
-    className: "bds-chart__tick",
-    x: padL - 8,
-    y: y(t) + 3.5,
-    textAnchor: "end"
-  }, fmt(t)))), labels.map((lb, i) => showX(i) ? /*#__PURE__*/React.createElement("text", {
-    key: i,
-    className: "bds-chart__tick",
-    x: x(i),
-    y: h - 8,
-    textAnchor: i === 0 && kind !== "bar" ? "start" : i === n - 1 && kind !== "bar" ? "end" : "middle"
-  }, lb) : null), thresholds.map((t, i) => /*#__PURE__*/React.createElement("g", {
-    key: i
-  }, /*#__PURE__*/React.createElement("line", {
-    x1: padL,
-    x2: w - padR,
-    y1: y(t.value),
-    y2: y(t.value),
-    stroke: `var(--${t.tone ?? "warn"})`,
-    strokeDasharray: "4 4",
-    strokeWidth: "1"
-  }), /*#__PURE__*/React.createElement("text", {
-    className: "bds-chart__tick",
-    style: {
-      "--tick-ink": `var(--${t.tone ?? "warn"})`
-    },
-    x: w - padR,
-    y: y(t.value) - 4,
-    textAnchor: "end",
-    fill: `var(--${t.tone ?? "warn"})`
-  }, t.label ?? fmt(t.value)))), /*#__PURE__*/React.createElement("g", {
-    clipPath: `url(#${uid}-c)`
-  }, series.map((s, si) => {
-    const color = toneVar(s.tone, si);
-    if (kind === "bar") {
-      const off = stacked ? 0 : (si - (series.length - 1) / 2) * groupW;
-      return /*#__PURE__*/React.createElement("g", {
-        key: si
-      }, s.values.map((v, i) => {
-        if (v == null) return null;
-        const band = stack?.bands[si][i];
-        const y1 = y(band ? band.end : v),
-          y0 = y(band ? band.start : 0);
-        return /*#__PURE__*/React.createElement("rect", {
-          key: i,
-          className: "bds-chart__bar",
-          x: r1(x(i) + off - groupW / 2),
-          y: Math.min(y0, y1),
-          width: r1(groupW),
-          height: Math.max(1, Math.abs(y0 - y1)),
-          rx: stacked ? 0 : 3,
-          fill: color,
-          opacity: hover == null || hover === i ? 1 : 0.45,
-          style: {
-            animationDelay: `${i * 25}ms`
-          }
-        });
-      }));
-    }
-    /* Dash goes on as a presentation attribute. During the entry animation the .bds-chart--animate .bds-chart__line CSS (draw-on dasharray) overrides it; once the class drops, this pattern shows. */
-    const runs = runsOf(s.values, x, y),
-      baseY = y(Math.max(lo, 0)),
-      dash = seriesDash(s, si, series.length);
-    return /*#__PURE__*/React.createElement("g", {
-      key: si
-    }, runs.map((pts, ri) => pts.length === 1 ? /*#__PURE__*/React.createElement("circle", {
-      key: ri,
-      cx: pts[0][0],
-      cy: pts[0][1],
-      r: 3,
-      fill: color
-    }) : /*#__PURE__*/React.createElement("g", {
-      key: ri
-    }, kind === "area" && /*#__PURE__*/React.createElement("path", {
-      className: "bds-chart__area",
-      d: `${smoothPath(pts)} L${pts[pts.length - 1][0]} ${baseY} L${pts[0][0]} ${baseY}Z`,
-      fill: `url(#${uid}-g${si})`
-    }), /*#__PURE__*/React.createElement("path", {
-      className: "bds-chart__line",
-      d: smoothPath(pts),
-      stroke: color,
-      strokeDasharray: dash,
-      style: {
-        "--draw-len": r1(pathLength(pts))
-      }
-    }))));
-  })), kind !== "bar" && series.map((s, si) => {
-    const last = runsOf(s.values, x, y).pop();
-    return last ? /*#__PURE__*/React.createElement("circle", {
-      key: si,
-      className: "bds-chart__dot bds-chart__end",
-      cx: last[last.length - 1][0],
-      cy: last[last.length - 1][1],
-      r: 2.5,
-      fill: toneVar(s.tone, si)
-    }) : null;
-  }), hover != null && kind !== "bar" && /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("line", {
-    className: "bds-chart__cursor",
-    x1: x(hover),
-    x2: x(hover),
-    y1: padT,
-    y2: h - padB
-  }), series.map((s, si) => s.values[hover] == null ? null : /*#__PURE__*/React.createElement("circle", {
-    key: si,
-    className: "bds-chart__dot",
-    cx: x(hover),
-    cy: y(s.values[hover]),
-    r: 4,
-    fill: toneVar(s.tone, si)
-  })))), hover != null && rows.length > 0 && /*#__PURE__*/React.createElement(Tip, {
-    x: x(hover),
-    w: w,
-    title: labels[hover],
-    rows: rows
-  }));
-}
-
-/* ---------- Donut ---------- */
-/** @param {{ segments: NormSegment[], fmt: Fmt, caption?: import("react").ReactNode, w: number, h: number, hover: number | null, setHover: (i: number | null) => void }} props */
-function Pie({
-  segments,
-  fmt,
-  caption,
-  w,
-  h,
-  hover,
-  setHover
-}) {
-  // Missing segments stay null; 0 would read as a collected zero.
-  const vals = segments.map(s => s.value == null ? null : Math.max(0, s.value)),
-    sum = vals.reduce((/** @type {number} */a, b) => a + (b ?? 0), 0);
-  if (!sum || w < 40) return null;
-  const R = Math.min(w, h) / 2 - 4,
-    stroke = Math.max(10, R * 0.34),
-    r = R - stroke / 2,
-    C = 2 * Math.PI * r,
-    cx0 = w / 2,
-    cy0 = h / 2;
-  /** @type {{ i: number, dash: number, off: number }[]} */
-  const arcs = [];
-  let acc = 0;
-  for (let i = 0; i < vals.length; i++) {
-    const v = vals[i];
-    if (v == null) continue;
-    const dash = v / sum * C;
-    if (dash > 0) arcs.push({
-      i,
-      dash,
-      off: -(acc / sum) * C
-    });
-    acc += v;
-  }
-  const act = hover != null ? segments[hover] : null;
-  const hoverVal = hover != null ? vals[hover] : null;
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("svg", {
-    viewBox: `0 0 ${w} ${h}`,
-    width: w,
-    height: h,
-    className: "bds-chart__svg",
-    onMouseLeave: () => setHover(null),
-    "aria-hidden": "true"
-  }, /*#__PURE__*/React.createElement("circle", {
-    cx: cx0,
-    cy: cy0,
-    r: r,
-    fill: "none",
-    strokeWidth: stroke,
-    className: "bds-chart__track"
-  }), arcs.map(a => /*#__PURE__*/React.createElement("circle", {
-    key: a.i,
-    className: "bds-chart__pieseg",
-    cx: cx0,
-    cy: cy0,
-    r: r,
-    fill: "none",
-    strokeWidth: hover === a.i ? stroke + 4 : stroke,
-    stroke: toneVar(segments[a.i].tone, a.i),
-    strokeDasharray: `${Math.max(0, a.dash - 2).toFixed(2)} ${C.toFixed(2)}`,
-    strokeDashoffset: a.off.toFixed(2),
-    transform: `rotate(-90 ${cx0} ${cy0})`,
-    opacity: hover == null || hover === a.i ? 1 : 0.4,
-    onMouseEnter: () => setHover(a.i),
-    style: {
-      transition: "stroke-width var(--dur-fast) var(--ease-out), opacity var(--dur-fast)"
-    }
-  }))), /*#__PURE__*/React.createElement("div", {
-    className: "bds-chart__center",
-    style: {
-      "--center-size": `${Math.max(14, Math.round(R * 0.42))}px`
-    }
-  }, /*#__PURE__*/React.createElement("b", {
-    className: cx(act && isMissing(hoverVal) && MISSING_CLASS)
-  }, act ? cell(fmt, hoverVal) : fmt(sum)), /*#__PURE__*/React.createElement("small", null, act ? act.label : caption)));
-}
-
-/* ---------- Radial gauge ---------- */
-/** @param {{ value: number, label?: import("react").ReactNode, tone?: ChartTone, fmt: Fmt, w: number, h: number, animate?: boolean }} props */
-function Radial({
-  value,
-  label,
-  tone,
-  fmt,
-  w,
-  h,
-  animate
-}) {
-  const [shown, setShown] = useState(animate ? 0 : value);
-  useEffect(() => {
-    const t = requestAnimationFrame(() => setShown(value));
-    return () => cancelAnimationFrame(t);
-  }, [value]);
-  if (w < 40) return null;
-  const v = Math.min(1, Math.max(0, value));
-  // 240° gauge. Pick r so that height = 1.5r + stroke and width = 2r + stroke both fit.
-  const r = Math.min(h / 1.6, w / 2.1) - 2,
-    stroke = Math.max(6, r * 0.14),
-    cx0 = w / 2,
-    cy0 = r + stroke / 2 + 2;
-  const a0 = Math.PI * 7 / 6,
-    a1 = -Math.PI / 6;
-  const pt = (/** @type {number} */a) => (/** @type {Point} */[r1(cx0 + Math.cos(a) * r), r1(cy0 - Math.sin(a) * r)]);
-  const [sx, sy] = pt(a0),
-    [ex, ey] = pt(a1);
-  const d = `M${sx} ${sy} A${r} ${r} 0 1 1 ${ex} ${ey}`;
-  const len = r * (a0 - a1);
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("svg", {
-    viewBox: `0 0 ${w} ${h}`,
-    width: w,
-    height: h,
-    className: "bds-chart__svg",
-    "aria-hidden": "true"
-  }, /*#__PURE__*/React.createElement("path", {
-    d: d,
-    fill: "none",
-    strokeWidth: stroke,
-    strokeLinecap: "round",
-    className: "bds-chart__track"
-  }), /*#__PURE__*/React.createElement("path", {
-    d: d,
-    fill: "none",
-    strokeWidth: stroke,
-    strokeLinecap: "round",
-    stroke: toneVar(tone, 0),
-    strokeDasharray: len,
-    strokeDashoffset: r1(len * (1 - Math.min(1, Math.max(0, shown)))),
-    className: "bds-chart__arc"
-  })), /*#__PURE__*/React.createElement("div", {
-    className: "bds-chart__center",
-    style: {
-      "--center-size": `${Math.max(13, Math.round(r * 0.33))}px`,
-      top: cy0 - r * 0.5,
-      bottom: "auto",
-      height: r * 1.05,
-      padding: `0 ${Math.round(stroke + 6)}px`
-    }
-  }, /*#__PURE__*/React.createElement("b", {
-    style: {
-      "--tone-ink": toneInk(tone)
-    }
-  }, fmt(v)), label != null && /*#__PURE__*/React.createElement("small", null, label)));
-}
-
-/* ---------- Radar ---------- */
-/** @param {{ axes: string[], series: ChartSeries[], max?: number, fmt: Fmt, w: number, h: number, hover: number | null, setHover: (i: number | null) => void }} props */
-function Radar({
-  axes,
-  series,
-  max,
-  fmt,
-  w,
-  h,
-  hover,
-  setHover
-}) {
-  const n = axes.length;
-  if (n < 3 || w < 40) return null;
-  const all = series.flatMap(s => s.values).filter(v => v != null);
-  const top = (max ?? (all.length ? Math.max(...all) : 1)) || 1;
-  const cx0 = w / 2,
-    cy0 = h / 2,
-    R = Math.min(w, h) / 2 - 18;
-  const pt = (/** @type {number} */i, /** @type {number} */f) => {
-    const a = -Math.PI / 2 + i * 2 * Math.PI / n;
-    return /** @type {Point} */[r1(cx0 + Math.cos(a) * R * f), r1(cy0 + Math.sin(a) * R * f)];
-  };
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("svg", {
-    viewBox: `0 0 ${w} ${h}`,
-    width: w,
-    height: h,
-    className: "bds-chart__svg",
-    onMouseLeave: () => setHover(null),
-    "aria-hidden": "true"
-  }, [0.25, 0.5, 0.75, 1].map(f => /*#__PURE__*/React.createElement("polygon", {
-    key: f,
-    className: "bds-chart__radar-grid",
-    points: axes.map((_, i) => pt(i, f).join(",")).join(" ")
-  })), axes.map((_, i) => /*#__PURE__*/React.createElement("line", {
-    key: i,
-    className: "bds-chart__radar-grid",
-    x1: cx0,
-    y1: cy0,
-    x2: pt(i, 1)[0],
-    y2: pt(i, 1)[1]
-  })), series.map((s, si) => {
-    const points = axes.map((_, i) => s.values[i] == null ? null : pt(i, Math.max(0, s.values[i] / top)));
-    const color = toneVar(s.tone, si);
-    // The closed fill is drawn only when every axis has a value; never bridge across a missing axis.
-    if (points.every(Boolean)) return /*#__PURE__*/React.createElement("polygon", {
-      key: si,
-      points: /** @type {Point[]} */points.map(p => p.join(",")).join(" "),
-      fill: color,
-      fillOpacity: ".2",
-      stroke: color,
-      strokeWidth: "2",
-      strokeLinejoin: "round"
-    });
-    return /*#__PURE__*/React.createElement("g", {
-      key: si
-    }, points.map((p, i) => {
-      const next = points[(i + 1) % n];
-      return p && next ? /*#__PURE__*/React.createElement("line", {
-        key: i,
-        x1: p[0],
-        y1: p[1],
-        x2: next[0],
-        y2: next[1],
-        stroke: color,
-        strokeWidth: "2"
-      }) : null;
-    }));
-  }), series.map((s, si) => axes.map((_, i) => s.values[i] == null ? null : /*#__PURE__*/React.createElement("circle", {
-    key: `${si}-${i}`,
-    cx: pt(i, Math.max(0, s.values[i] / top))[0],
-    cy: pt(i, Math.max(0, s.values[i] / top))[1],
-    r: hover === i ? 5 : 3,
-    fill: toneVar(s.tone, si),
-    className: "bds-chart__dot",
-    onMouseEnter: () => setHover(i)
-  }))), axes.map((ax, i) => {
-    const [lx, ly] = pt(i, 1.14);
-    return /*#__PURE__*/React.createElement("text", {
-      key: ax,
-      className: "bds-chart__tick",
-      x: lx,
-      y: ly,
-      textAnchor: "middle",
-      dominantBaseline: "central",
-      onMouseEnter: () => setHover(i),
-      onTouchStart: () => setHover(i)
-    }, ax);
-  })), hover != null && /*#__PURE__*/React.createElement(Tip, {
-    x: pt(hover, 1)[0],
-    w: w,
-    title: axes[hover],
-    rows: series.map((s, si) => ({
-      color: toneVar(s.tone, si),
-      name: s.label,
-      value: cell(fmt, s.values[hover])
-    }))
-  }));
-}
-
-/* ---------- Histogram ---------- */
-/** Raw samples binned into bars. Percentile lines (p50/p95) are vertical dashes like thresholds. Bins come from chart-math.histBins, shared with the SR table. */
-/** @param {{ hist: ReturnType<typeof histBins>, fmt: Fmt, w: number, h: number, tone?: ChartTone, percentiles?: number[], unit?: string, animate?: boolean, hover: number | null, setHover: (i: number | null) => void }} props */
-function Histogram({
-  hist,
-  fmt,
-  w,
-  h,
-  tone,
-  percentiles = [],
-  unit,
-  animate,
-  hover,
-  setHover
-}) {
-  const b = hist;
-  if (!b || w < 40) return null;
-  const {
-    xs,
-    lo,
-    span,
-    n,
-    counts
-  } = b;
-  const max = Math.max(...counts);
-  const sorted = [...xs].sort((p, q2) => p - q2);
-  const q = (/** @type {number} */p) => sorted[Math.min(sorted.length - 1, Math.floor(p * (sorted.length - 1)))];
-  const padL = estWidth(String(max)),
-    padR = 8,
-    padT = 10,
-    padB = 26,
-    iw = w - padL - padR,
-    ih = h - padT - padB;
-  const bw = iw / n;
-  const {
-    ticks
-  } = niceTicks(0, max, h < 140 ? 2 : 3);
-  const y = (/** @type {number} */c) => r1(padT + (1 - c / (ticks[ticks.length - 1] || 1)) * ih);
-  const xv = (/** @type {number} */v) => r1(padL + (v - lo) / span * iw);
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("svg", {
-    viewBox: `0 0 ${w} ${h}`,
-    width: w,
-    height: h,
-    className: "bds-chart__svg",
-    onMouseLeave: () => setHover(null),
-    "aria-hidden": "true"
-  }, ticks.map(t => /*#__PURE__*/React.createElement("g", {
-    key: t
-  }, /*#__PURE__*/React.createElement("line", {
-    className: "bds-chart__grid",
-    x1: padL,
-    x2: w - padR,
-    y1: y(t),
-    y2: y(t),
-    style: t === 0 ? {
-      stroke: "var(--plot-axis)"
-    } : undefined
-  }), /*#__PURE__*/React.createElement("text", {
-    className: "bds-chart__tick",
-    x: padL - 6,
-    y: y(t),
-    textAnchor: "end",
-    dominantBaseline: "central"
-  }, t))), counts.map((c, i) => /*#__PURE__*/React.createElement("rect", {
-    key: i,
-    className: "bds-chart__bar",
-    x: r1(padL + i * bw + 1),
-    y: y(c),
-    width: Math.max(1, bw - 2),
-    height: r1(y(0) - y(c)),
-    fill: toneVar(tone, 0),
-    opacity: hover == null || hover === i ? 1 : 0.45,
-    onMouseEnter: () => setHover(i),
-    style: animate ? {
-      transformOrigin: `0 ${y(0)}px`,
-      animation: "bds-grow-y var(--dur-gauge) var(--ease-out) both"
-    } : undefined
-  })), percentiles.map(p => {
-    const v = q(p),
-      x = xv(v);
-    return /*#__PURE__*/React.createElement("g", {
-      key: p
-    }, /*#__PURE__*/React.createElement("line", {
-      x1: x,
-      x2: x,
-      y1: padT,
-      y2: y(0),
-      stroke: "var(--ink-2)",
-      strokeDasharray: "3 3",
-      strokeWidth: "1"
-    }), /*#__PURE__*/React.createElement("text", {
-      className: "bds-chart__tick bds-chart__tick--secondary",
-      x: x,
-      y: padT - 2,
-      textAnchor: "middle"
-    }, `p${Math.round(p * 100)} ${fmt(v)}${unit ?? ""}`));
-  }), [lo, lo + span / 2, lo + span].map((v, i) => /*#__PURE__*/React.createElement("text", {
-    key: i,
-    className: "bds-chart__tick",
-    x: xv(v),
-    y: h - 8,
-    textAnchor: i === 0 ? "start" : i === 2 ? "end" : "middle"
-  }, fmt(v), unit ?? ""))), hover != null && /*#__PURE__*/React.createElement(Tip, {
-    x: r1(padL + (hover + 0.5) * bw),
-    w: w,
-    title: `${fmt(lo + hover / n * span)}~${fmt(lo + (hover + 1) / n * span)}${unit ?? ""}`,
-    rows: [{
-      color: toneVar(tone, 0),
-      name: "표본",
-      value: `${counts[hover]}건`
-    }]
-  }));
-}
-
-/* ---------- Screen-reader table ---------- */
-/** The visual chart's data as a table. Always rendered (hidden with bds-sr) and referenced by aria-describedby. */
-/** @param {{ id: string, kind: NonNullable<NormProps["kind"]>, props: NormProps, bins: ReturnType<typeof histBins>, fmt: Fmt }} props */
-function SrTable({
-  id,
-  kind,
-  props,
-  bins,
-  fmt
-}) {
-  /** @type {import("react").ReactNode[]} */
-  let head = [];
-  /** @type {import("react").ReactNode[][]} */
-  let rows = [];
-  if (kind === "pie") {
-    head = ["항목", "값"];
-    rows = (props.segments ?? []).map(sg => [sg.label, cell(fmt, sg.value == null ? null : Math.max(0, sg.value))]);
-  } else if (kind === "radial") {
-    head = props.label != null ? ["값", "상태"] : ["값"];
-    const rv = numeric(props.value) == null ? MISSING_TEXT : fmt(Math.min(1, Math.max(0, /** @type {number} */props.value)));
-    rows = [props.label != null ? [rv, props.label] : [rv]];
-  } else if (kind === "histogram") {
-    const b = bins;
-    head = ["구간", "표본"];
-    rows = b ? b.counts.map((c, i) => [`${fmt(b.lo + i / b.n * b.span)}~${fmt(b.lo + (i + 1) / b.n * b.span)}${props.unit ?? ""}`, `${c}건`]) : [];
-  } else {
-    const cols = kind === "radar" ? props.axes ?? [] : props.labels ?? [];
-    head = ["계열"].concat(cols);
-    rows = (props.series ?? []).map(s => [s.label].concat(cols.map((_, i) => cell(fmt, s.values[i]))));
-  }
-  // A table grows to its content and ignores width:1px; the block wrapper must do the hiding or the document overflows horizontally.
-  return /*#__PURE__*/React.createElement("div", {
-    className: "bds-sr"
-  }, /*#__PURE__*/React.createElement("table", {
-    id: id
-  }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, head.map((c, i) => /*#__PURE__*/React.createElement("th", {
-    key: i,
-    scope: "col"
-  }, c)))), /*#__PURE__*/React.createElement("tbody", null, rows.map((r, i) => /*#__PURE__*/React.createElement("tr", {
-    key: i
-  }, r.map((c, j) => j === 0 ? /*#__PURE__*/React.createElement("th", {
-    key: j,
-    scope: "row"
-  }, c) : /*#__PURE__*/React.createElement("td", {
-    key: j
-  }, c)))))));
-}
-
-/* ---------- Entry point ---------- */
-const DEFAULT_H = {
-  line: 200,
-  area: 200,
-  bar: 200,
-  pie: 180,
-  radial: 110,
-  radar: 260,
-  histogram: 180
-};
-
-/** Single chart component. kind: line | area | bar | pie | radial | radar | histogram.
- *  paused=true keeps drawing the last props snapshot while the stream moves on.
- *  Keyboard on the stage: ←/→ move the index, Home/End jump to the ends, Esc clears. Colors, motion and a11y surfaces follow RULE.md "설계 원칙" and "접근성".
- * @param {Parameters<typeof import("./Chart.d.ts").Chart>[0]} rawProps
- */
-function Chart(rawProps) {
-  /* paused means "keep what is on screen", so it is state: capture props when freezing, drop them when
-     unfreezing. Writing a ref during render could leave a discarded render's props as the snapshot. */
-  const [frozen, setFrozen] = useState(/** @type {typeof rawProps | null} */null);
-  if (rawProps.paused && frozen === null) setFrozen(rawProps);
-  if (!rawProps.paused && frozen !== null) setFrozen(null);
-  const props = normalize(frozen ?? rawProps);
-  const {
-    kind = "line",
-    fit = "flex",
-    width,
-    height,
-    valueFormatter = fmtKo,
-    emptyText = MISSING_TEXT,
-    showLegend = true,
-    live = false,
-    animate = !live,
-    className,
-    style,
-    "aria-label": ariaLabel
-  } = props;
-  const uid = useId().replace(/:/g, "");
-  const srId = `${uid}-sr`;
-  const ref = useRef(/** @type {HTMLDivElement | null} */null);
-  const [hoverRaw, setHover] = useState(/** @type {number | null} */null);
-  const h = height ?? DEFAULT_H[kind];
-  const size = useSize(ref, fit === "fixed" ? Number(width) : undefined, Number(h));
-  const anim = useAnimateOnce(animate && !live);
-  const w = fit === "fixed" && typeof width === "number" ? width : size.w;
-  const lineKind = kind === "line" || kind === "area";
-  /* Bin once per render so Histogram, SrTable and count agree. */
-  const bins = kind === "histogram" ? histBins(props.samples, props.bins) : null;
-  const count = kind === "pie" ? (props.segments ?? []).length : kind === "histogram" ? bins ? bins.n : 0 : kind === "radar" ? (props.axes ?? []).length : kind === "radial" ? 0 : (props.labels ?? []).length;
-  /* hover indexes into count. When a stream shrinks the old index goes out of range and the tooltip
-     and cursor would linger outside the plot, so filter once here instead of guarding every read. */
-  const hover = hoverRaw != null && hoverRaw < count ? hoverRaw : null;
-  /** @type {import("react").ReactNode} */
-  let body = null;
-  let hasData = false;
-  /** @type {Parameters<typeof Legend>[0]["items"]} */
-  let legend = [];
-  if (showLegend) {
-    if (kind === "pie") legend = (props.segments ?? []).map((sg, i) => ({
-      color: toneVar(sg.tone, i),
-      label: sg.label,
-      value: cell(valueFormatter, sg.value == null ? null : Math.max(0, sg.value))
-    }));else if (kind !== "radial") {
-      const list = props.series ?? [];
-      if (list.length > 1) legend = list.map((sr, i) => ({
-        color: toneVar(sr.tone, i),
-        label: sr.label,
-        shape: lineKind ? "line" : "square",
-        dash: lineKind ? seriesDash(sr, i, list.length) : undefined
-      }));
-    }
-  }
-  if (kind === "pie") {
-    hasData = (props.segments ?? []).some(s => (s.value ?? 0) > 0);
-    body = /*#__PURE__*/React.createElement(Pie, {
-      segments: props.segments ?? [],
-      fmt: valueFormatter,
-      caption: props.caption,
-      w: w,
-      h: h,
-      hover: hover,
-      setHover: setHover
-    });
-  } else if (kind === "radial") {
-    hasData = props.value != null;
-    body = /*#__PURE__*/React.createElement(Radial, {
-      value: props.value ?? 0,
-      label: props.label,
-      tone: props.tone,
-      fmt: valueFormatter,
-      w: w,
-      h: h,
-      animate: animate && !live
-    });
-  } else if (kind === "histogram") {
-    hasData = !!bins;
-    body = /*#__PURE__*/React.createElement(Histogram, {
-      hist: bins,
-      tone: props.tone,
-      percentiles: props.percentiles ?? [],
-      unit: props.unit,
-      fmt: valueFormatter,
-      w: w,
-      h: h,
-      animate: anim,
-      hover: hover,
-      setHover: setHover
-    });
-  } else if (kind === "radar") {
-    const axes = props.axes ?? [];
-    hasData = axes.length >= 3 && (props.series ?? []).some(s => axes.some((_, i) => s.values[i] != null));
-    body = /*#__PURE__*/React.createElement(Radar, {
-      axes: props.axes ?? [],
-      series: props.series ?? [],
-      max: props.max,
-      fmt: valueFormatter,
-      w: w,
-      h: h,
-      hover: hover,
-      setHover: setHover
-    });
-  } else {
-    hasData = (props.labels ?? []).length > 0 && (props.series ?? []).some(s => s.values.some(v => v != null));
-    body = /*#__PURE__*/React.createElement(Cartesian, {
-      kind: kind,
-      labels: props.labels ?? [],
-      series: props.series ?? [],
-      fmt: valueFormatter,
-      uid: uid,
-      xTicks: props.xTicks ?? "auto",
-      w: w,
-      h: h,
-      thresholds: props.thresholds,
-      stacked: props.stacked,
-      yMin: props.yMin,
-      yMax: props.yMax,
-      hover: hover,
-      setHover: setHover
-    });
-  }
-  /* Text readout for the keyboard-selected point; same content as the visual Tip. */
-  const readout = hover == null ? "" : [kind === "pie" ? props.segments?.[hover]?.label : kind === "radar" ? props.axes?.[hover] : props.labels?.[hover], ...(props.series ?? []).map(s => `${s.label} ${cell(valueFormatter, s.values[hover])}`), kind === "pie" ? cell(valueFormatter, props.segments?.[hover]?.value) : null].filter(Boolean).join(", ");
-  /** @param {import("react").KeyboardEvent<HTMLDivElement>} e */
-  const onKey = e => {
-    if (!count) return;
-    /** @type {number | null | undefined} */
-    let next;
-    if (e.key === "ArrowRight") next = hover == null ? 0 : Math.min(count - 1, hover + 1);else if (e.key === "ArrowLeft") next = hover == null ? count - 1 : Math.max(0, hover - 1);else if (e.key === "Home") next = 0;else if (e.key === "End") next = count - 1;else if (e.key === "Escape") next = null;else return;
-    e.preventDefault();
-    setHover(next ?? null);
-  };
-  return /*#__PURE__*/React.createElement("div", {
-    role: "group",
-    "aria-label": ariaLabel ?? "차트",
-    className: cx("bds-chart", `bds-chart--${kind}`, anim && "bds-chart--animate", className),
-    style: frameStyle({
-      fit,
-      width,
-      style
-    })
-  }, hasData ? /*#__PURE__*/React.createElement("div", {
-    ref: ref,
-    className: "bds-chart__stage",
-    style: {
-      height: h
-    },
-    role: "application",
-    tabIndex: 0,
-    "aria-label": `${ariaLabel ?? "차트"} 탐색`,
-    "aria-describedby": `${srId} ${srId}-now`,
-    onKeyDown: onKey,
-    onBlur: () => setHover(null)
-  }, w > 0 && body) : /*#__PURE__*/React.createElement("div", {
-    id: srId,
-    className: "bds-chart__empty",
-    style: {
-      height: h
-    }
-  }, emptyText), hasData && /*#__PURE__*/React.createElement("p", {
-    id: `${srId}-now`,
-    className: "bds-sr",
-    role: "status"
-  }, readout), hasData && /*#__PURE__*/React.createElement(SrTable, {
-    id: srId,
-    kind: kind,
-    props: props,
-    bins: bins,
-    fmt: valueFormatter
-  }), hasData && legend.length > 0 && /*#__PURE__*/React.createElement(Legend, {
-    items: legend,
-    compact: true
-  }));
-}
-Object.assign(__ds_scope, { Chart });
-})(); } catch (e) { __ds_ns.__errors.push({ path: "components/data/Chart.jsx", error: String((e && e.message) || e) }); }
-
 // components/data/Sparkline.jsx
 try { (() => {
 const { useId } = React;
@@ -2597,6 +1515,459 @@ function Sparkline({
 }
 Object.assign(__ds_scope, { Sparkline });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/data/Sparkline.jsx", error: String((e && e.message) || e) }); }
+
+// components/data/plot-layout.js
+try { (() => {
+const { useEffect, useState } = React;
+const { estWidth } = __ds_scope;
+/** Server geometry is provisional; browser layout uses resolved tokens and the loaded font.
+ * @typedef {{ width: number, height: number, micro: number, caption: number, min: number, max: number, gap: number, snug: number, measure: (text: string, ui?: boolean, size?: number, bold?: boolean) => number }} PlotMetrics */
+/** @type {PlotMetrics} */
+const emptyPlotMetrics = {
+  width: 0,
+  height: 0,
+  micro: 0,
+  caption: 0,
+  min: 0,
+  max: 0,
+  gap: 0,
+  snug: 1,
+  measure: text => estWidth(text)
+};
+
+/** @param {{ current: HTMLElement | null }} ref */
+function usePlotMetrics(ref) {
+  const [metrics, setMetrics] = useState(emptyPlotMetrics);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const doc = el.ownerDocument;
+    const context = doc.createElement("canvas").getContext("2d");
+    let active = true;
+    const read = () => {
+      if (!active) return;
+      const css = getComputedStyle(el);
+      // Resolve CSS lengths through the browser, including rem/em and consumer token overrides.
+      const probe = doc.createElement("span");
+      probe.style.cssText = "position:absolute;left:0;top:0;width:0;height:0;visibility:hidden;pointer-events:none;transition:none!important";
+      el.append(probe);
+      const size = (/** @type {string} */token) => {
+        probe.style.fontSize = `var(${token})`;
+        return parseFloat(getComputedStyle(probe).fontSize);
+      };
+      const micro = size("--fs-micro"),
+        caption = size("--fs-caption"),
+        min = size("--fs-subheading"),
+        max = size("--fs-title");
+      probe.style.paddingLeft = "var(--sp-1)";
+      const gap = parseFloat(getComputedStyle(probe).paddingLeft);
+      probe.style.lineHeight = "var(--lh-snug)";
+      const snug = parseFloat(getComputedStyle(probe).lineHeight) / max;
+      probe.remove();
+      const uiFont = css.getPropertyValue("--font-ui"),
+        dataFont = css.getPropertyValue("--font-data");
+      const rect = el.getBoundingClientRect();
+      setMetrics({
+        width: rect.width,
+        height: rect.height,
+        micro,
+        caption,
+        min,
+        max,
+        gap,
+        snug,
+        measure: (text, ui = false, fontSize = ui ? caption : micro, bold = false) => {
+          if (!context) return estWidth(text);
+          context.font = `${bold ? 700 : 400} ${fontSize}px ${ui ? uiFont : dataFont}`;
+          // Data tracking is part of the measured width, not an assumed glyph count.
+          context.letterSpacing = ui ? "0px" : `${fontSize * parseFloat(css.getPropertyValue("--ls-data") || "0")}px`;
+          return context.measureText(text).width;
+        }
+      });
+    };
+    read();
+    const observer = new ResizeObserver(read);
+    observer.observe(el);
+    const theme = new MutationObserver(read);
+    for (let parent = /** @type {HTMLElement | null} */el; parent; parent = parent.parentElement) theme.observe(parent, {
+      attributes: true,
+      attributeFilter: ["class", "style", "data-theme", "data-density"]
+    });
+    doc.fonts.ready.then(read);
+    doc.fonts.addEventListener("loadingdone", read);
+    return () => {
+      active = false;
+      observer.disconnect();
+      theme.disconnect();
+      doc.fonts.removeEventListener("loadingdone", read);
+    };
+  }, [ref]);
+  return metrics;
+}
+
+/** @param {string} text */
+const plotLabelIsUI = text => !/^[\d\s:./%°+−-]+$/.test(text);
+
+/** Place text within a row and drop colliding labels, including the last endpoint.
+ * @param {Array<{ index: number, x: number, text: string, ui?: boolean }>} labels
+ * @param {number} width @param {PlotMetrics} metrics */
+function plotLabels(labels, width, metrics) {
+  let edge = 0;
+  return labels.flatMap(label => {
+    const textWidth = metrics.measure(label.text, label.ui);
+    if (textWidth > width) return [];
+    const left = Math.max(0, Math.min(width - textWidth, label.x - textWidth / 2));
+    if (left < edge) return [];
+    edge = left + textWidth + metrics.gap;
+    return [{
+      ...label,
+      x: left,
+      width: textWidth
+    }];
+  });
+}
+Object.assign(__ds_scope, { emptyPlotMetrics, usePlotMetrics, plotLabelIsUI, plotLabels });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/data/plot-layout.js", error: String((e && e.message) || e) }); }
+
+// components/data/StateTimeline.jsx
+try { (() => {
+const { useEffect, useId, useRef, useState } = React;
+const { cx, frameStyle, MISSING_TEXT, usePlotMetrics, plotLabels } = __ds_scope;
+const clockTime = (/** @type {number} */time) => new Date(time).toLocaleTimeString("ko-KR", {
+  hour: "2-digit",
+  minute: "2-digit",
+  hour12: false
+});
+/** @param {import("./StateTimeline.d.ts").StateTimelineProps} props */
+function StateTimeline({
+  rows = [],
+  from,
+  to,
+  formatTime = clockTime,
+  fit = "flex",
+  width,
+  height = 240,
+  className,
+  style,
+  "aria-label": ariaLabel = "상태 타임라인",
+  ...rest
+}) {
+  const id = useId(),
+    ref = useRef(/** @type {HTMLDivElement | null} */null),
+    stage = useRef(/** @type {HTMLDivElement | null} */null);
+  const keyboardNavigation = useRef(false);
+  const m = usePlotMetrics(ref),
+    [selected, setSelected] = useState(/** @type {string | null} */null);
+  const valid = rows.flatMap(row => row.intervals.filter(s => Number.isFinite(s.start) && Number.isFinite(s.end) && s.end > s.start));
+  const lo = Number.isFinite(from) ? (/** @type {number} */from) : valid.length ? Math.min(...valid.map(s => s.start)) : 0;
+  const hi = Number.isFinite(to) ? (/** @type {number} */to) : valid.length ? Math.max(...valid.map(s => s.end)) : 1;
+  const labelW = Math.max(0, ...rows.map(row => m.measure(row.label, true))) + m.gap * 2;
+  const W = Math.max(m.width, labelW + m.micro * 24),
+    plotW = Math.max(0, W - labelW - m.gap);
+  const rowH = m.caption * 2 + m.gap,
+    top = m.micro * 2 + m.gap;
+  const x = (/** @type {number} */time) => labelW + (time - lo) / (hi - lo || 1) * plotW;
+  const position = {
+    offset: top
+  };
+  const layout = rows.map(row => {
+    /** @type {number[]} */const ends = [];
+    const intervals = row.intervals.filter(s => Number.isFinite(s.start) && Number.isFinite(s.end) && s.end > s.start && hi > lo && s.end > lo && s.start < hi).sort((a, b) => a.start - b.start).map(s => {
+      let lane = ends.findIndex(end => end <= s.start);
+      if (lane < 0) lane = ends.length;
+      ends[lane] = s.end;
+      return {
+        ...s,
+        lane,
+        key: `${row.id}/${s.id}`,
+        row: row.label,
+        y: position.offset + lane * rowH
+      };
+    });
+    const y = position.offset;
+    position.offset += Math.max(1, ends.length) * rowH + m.gap;
+    return {
+      row,
+      y,
+      intervals
+    };
+  });
+  const intervals = layout.flatMap(row => row.intervals),
+    current = intervals.find(s => s.key === selected);
+  const ticks = plotLabels([lo, (lo + hi) / 2, hi].map((t, index) => ({
+    index,
+    x: x(t),
+    text: formatTime(t)
+  })), W, m);
+  useEffect(() => {
+    const el = stage.current;
+    if (!el || !selected || !keyboardNavigation.current) return;
+    const target = [...el.querySelectorAll('[data-interval]')].find(node => node.getAttribute("data-interval") === selected);
+    if (!target) return;
+    const a = target.getBoundingClientRect(),
+      b = el.getBoundingClientRect();
+    if (a.left < b.left) el.scrollLeft += a.left - b.left;else if (a.right > b.right) el.scrollLeft += a.width > b.width ? a.left - b.left : a.right - b.right;
+    if (a.top < b.top) el.scrollTop += a.top - b.top;else if (a.bottom > b.bottom) el.scrollTop += a.bottom - b.bottom;
+  }, [selected, m.width]);
+  return /*#__PURE__*/React.createElement("div", {
+    ref: ref,
+    role: "group",
+    "aria-label": ariaLabel,
+    className: cx("bds-state-timeline", className),
+    style: frameStyle({
+      fit,
+      width,
+      style
+    }),
+    ...rest
+  }, /*#__PURE__*/React.createElement("div", {
+    ref: stage,
+    role: "application",
+    tabIndex: 0,
+    "aria-label": `${ariaLabel} 탐색`,
+    "aria-describedby": `${id}-table ${id}-now`,
+    className: "bds-state-timeline__stage",
+    style: {
+      height
+    },
+    onKeyDown: e => {
+      const i = intervals.findIndex(s => s.key === selected);
+      let next;
+      if (["ArrowRight", "ArrowDown"].includes(e.key)) next = Math.min(intervals.length - 1, i + 1);else if (["ArrowLeft", "ArrowUp"].includes(e.key)) next = Math.max(0, i - 1);else if (e.key === "Home") next = 0;else if (e.key === "End") next = intervals.length - 1;else if (e.key === "Escape") {
+        e.preventDefault();
+        setSelected(null);
+        return;
+      } else return;
+      e.preventDefault();
+      keyboardNavigation.current = true;
+      setSelected(intervals[next]?.key ?? null);
+    }
+  }, intervals.length ? /*#__PURE__*/React.createElement("svg", {
+    className: "bds-state-timeline__svg",
+    width: W,
+    height: position.offset,
+    viewBox: `0 0 ${W} ${position.offset}`,
+    "aria-hidden": "true"
+  }, ticks.map(tick => /*#__PURE__*/React.createElement("text", {
+    key: tick.index,
+    className: "bds-chart__tick",
+    x: tick.x,
+    y: m.micro * 1.4
+  }, tick.text)), layout.map(({
+    row,
+    y,
+    intervals: spans
+  }) => /*#__PURE__*/React.createElement("g", {
+    key: row.id
+  }, /*#__PURE__*/React.createElement("text", {
+    className: "bds-chart__label",
+    x: 0,
+    y: y + rowH / 2,
+    dominantBaseline: "central"
+  }, row.label), !spans.length && /*#__PURE__*/React.createElement("text", {
+    className: "bds-chart__label",
+    x: labelW,
+    y: y + rowH / 2,
+    dominantBaseline: "central"
+  }, MISSING_TEXT), spans.map(span => {
+    const left = x(Math.max(lo, span.start)),
+      size = Math.max(0, x(Math.min(hi, span.end)) - left),
+      text = span.status === "off" ? MISSING_TEXT : span.label;
+    return /*#__PURE__*/React.createElement("g", {
+      key: span.id,
+      "data-interval": span.key,
+      className: cx("bds-state-timeline__interval", selected === span.key && "bds-state-timeline__interval--selected"),
+      onMouseEnter: () => {
+        keyboardNavigation.current = false;
+        setSelected(span.key);
+      },
+      onTouchStart: () => {
+        keyboardNavigation.current = false;
+        setSelected(span.key);
+      },
+      style: {
+        "--interval-bg": span.status === "off" ? "var(--meter-track)" : `var(--${span.status}-tint)`,
+        "--interval-ink": span.status === "off" ? "var(--ink-3)" : `var(--${span.status}-ink)`
+      }
+    }, /*#__PURE__*/React.createElement("rect", {
+      x: left,
+      y: span.y + m.gap / 2,
+      width: size,
+      height: Math.max(0, rowH - m.gap),
+      rx: m.gap / 2
+    }), m.measure(text, true) + m.gap * 2 <= size && /*#__PURE__*/React.createElement("text", {
+      className: "bds-chart__label",
+      x: left + m.gap,
+      y: span.y + rowH / 2,
+      dominantBaseline: "central"
+    }, text));
+  })))) : /*#__PURE__*/React.createElement("p", null, MISSING_TEXT)), /*#__PURE__*/React.createElement("p", {
+    id: `${id}-now`,
+    role: "status",
+    className: "bds-state-timeline__readout"
+  }, current ? `${current.row} · ${current.status === "off" ? MISSING_TEXT : current.label} · ${formatTime(current.start)} ~ ${formatTime(current.end)}` : "구간을 선택하면 상태와 시간을 표시합니다."), /*#__PURE__*/React.createElement("div", {
+    className: "bds-sr"
+  }, /*#__PURE__*/React.createElement("table", {
+    id: `${id}-table`
+  }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("th", {
+    scope: "col"
+  }, "대상"), /*#__PURE__*/React.createElement("th", {
+    scope: "col"
+  }, "상태"), /*#__PURE__*/React.createElement("th", {
+    scope: "col"
+  }, "시작"), /*#__PURE__*/React.createElement("th", {
+    scope: "col"
+  }, "종료"))), /*#__PURE__*/React.createElement("tbody", null, intervals.map(s => /*#__PURE__*/React.createElement("tr", {
+    key: s.key
+  }, /*#__PURE__*/React.createElement("th", {
+    scope: "row"
+  }, s.row), /*#__PURE__*/React.createElement("td", null, s.status === "off" ? MISSING_TEXT : s.label), /*#__PURE__*/React.createElement("td", null, formatTime(s.start)), /*#__PURE__*/React.createElement("td", null, formatTime(s.end))))))));
+}
+Object.assign(__ds_scope, { StateTimeline });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/data/StateTimeline.jsx", error: String((e && e.message) || e) }); }
+
+// components/data/plot-value.jsx
+try { (() => {
+const { useEffect, useRef, useState } = React;
+const { cx, MISSING_CLASS, isMissing } = __ds_scope;
+// Lowercase export keeps this implementation detail out of the public component manifest.
+const plotValue = function PlotValue(/** @type {{ value: string, caption?: import("react").ReactNode, unit?: string, box: { left: number, top: number, width: number, height: number }, metrics: import("./plot-layout.js").PlotMetrics, tone?: string }} */
+{
+  value,
+  caption,
+  unit,
+  box,
+  metrics: m,
+  tone
+}) {
+  const ref = useRef(/** @type {HTMLSpanElement | null} */null);
+  const [captionText, setCaptionText] = useState(typeof caption === "string" ? caption : "");
+  useEffect(() => {
+    setCaptionText(ref.current?.textContent ?? "");
+  }, [caption]);
+  const missing = isMissing(value),
+    text = value + (unit ? ` ${unit}` : "");
+  const available = Math.max(0, box.width - 2 * m.gap);
+  const valueHeight = box.height - 2 * m.gap - (captionText ? m.caption * m.snug + m.gap : 0);
+  const fontSize = Math.min(m.max, valueHeight / m.snug, available / (m.measure(text, missing, 1, !missing) || 1));
+  const fits = m.max > 0 && fontSize >= m.min && m.measure(captionText, true) <= available && fontSize * m.snug + (captionText ? m.caption * m.snug + m.gap : 0) <= box.height - 2 * m.gap;
+  return /*#__PURE__*/React.createElement("div", {
+    role: fits ? undefined : "region",
+    "aria-label": fits ? undefined : "측정값",
+    tabIndex: fits ? undefined : 0,
+    className: cx("bds-plot-value", fits && "bds-plot-value--inside"),
+    style: {
+      "--value-size": `${fits ? fontSize : m.max}px`,
+      "--tone-ink": tone,
+      ...(fits ? {
+        left: box.left,
+        top: box.top,
+        width: box.width,
+        height: box.height
+      } : {})
+    }
+  }, /*#__PURE__*/React.createElement("b", {
+    className: missing ? MISSING_CLASS : undefined
+  }, value, unit && /*#__PURE__*/React.createElement("small", null, " ", unit)), caption != null && /*#__PURE__*/React.createElement("span", {
+    ref: ref
+  }, caption));
+};
+Object.assign(__ds_scope, { plotValue });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/data/plot-value.jsx", error: String((e && e.message) || e) }); }
+
+// components/data/Gauge.jsx
+try { (() => {
+const { useRef } = React;
+const { cx, frameStyle, MISSING_TEXT, numeric, usePlotMetrics, plotValue } = __ds_scope;
+const PlotValue = plotValue;
+
+/** Half-circle gauge. value 0–1 (or relative to max); tone follows thresholds (ok/warn/crit).
+ * @param {Parameters<typeof import("./Gauge.d.ts").Gauge>[0]} props
+ */
+function Gauge({
+  value,
+  max = 1,
+  label,
+  unit,
+  valueFormatter,
+  thresholds = {
+    warn: 0.7,
+    crit: 0.9
+  },
+  tone,
+  ticks = false,
+  fit = "flex",
+  width,
+  height,
+  className,
+  style,
+  ...rest
+}) {
+  const n = numeric(value);
+  const r = n == null ? null : Math.max(0, Math.min(1, n / max));
+  const t = tone ?? (r == null ? "off" : r >= thresholds.crit ? "crit" : r >= thresholds.warn ? "warn" : "ok");
+  const ref = useRef(/** @type {HTMLDivElement | null} */null);
+  const metrics = usePlotMetrics(ref),
+    W = metrics.width,
+    H = metrics.height;
+  const sw = Math.min(W, H * 2) / 12,
+    R = Math.max(0, Math.min((W - sw) / 2, H - sw));
+  const cx0 = W / 2,
+    cy = R + sw / 2;
+  const len = Math.PI * R;
+  const d = "M " + (cx0 - R) + " " + cy + " A " + R + " " + R + " 0 0 1 " + (cx0 + R) + " " + cy;
+  const txt = r == null || n == null ? MISSING_TEXT : valueFormatter ? valueFormatter(n) : Math.round(r * 100) + "%";
+  return /*#__PURE__*/React.createElement("div", {
+    className: cx("bds-gauge", "bds-gauge--" + t, className),
+    style: frameStyle({
+      fit,
+      width,
+      height,
+      style
+    }),
+    role: "meter",
+    "aria-valuemin": 0,
+    "aria-valuemax": max,
+    "aria-valuenow": r == null ? undefined : n ?? undefined,
+    "aria-valuetext": txt + (label ? " " + label : ""),
+    ...rest
+  }, /*#__PURE__*/React.createElement("div", {
+    ref: ref,
+    className: "bds-gauge__plot"
+  }, /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 " + W + " " + H,
+    "aria-hidden": "true"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: d,
+    fill: "none",
+    className: "bds-gauge__track",
+    strokeWidth: sw,
+    strokeLinecap: "round"
+  }), r != null && /*#__PURE__*/React.createElement("path", {
+    d: d,
+    fill: "none",
+    className: "bds-gauge__arc",
+    strokeWidth: sw,
+    strokeLinecap: "round",
+    strokeDasharray: len,
+    strokeDashoffset: len * (1 - r)
+  }))), /*#__PURE__*/React.createElement(PlotValue, {
+    value: txt,
+    unit: r == null ? undefined : unit,
+    caption: label,
+    metrics: metrics,
+    box: {
+      left: cx0 - R * 0.65,
+      top: cy - R * 0.65,
+      width: R * 1.3,
+      height: R * 0.6
+    }
+  }), ticks && /*#__PURE__*/React.createElement("div", {
+    className: "bds-gauge__ticks"
+  }, /*#__PURE__*/React.createElement("span", null, "0"), /*#__PURE__*/React.createElement("span", null, valueFormatter ? valueFormatter(max) : "100%")));
+}
+Object.assign(__ds_scope, { Gauge });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/data/Gauge.jsx", error: String((e && e.message) || e) }); }
 
 // components/display/Accordion.jsx
 try { (() => {
@@ -3619,8 +2990,8 @@ Object.assign(__ds_scope, { Checkbox });
 
 // components/data/DataTable.jsx
 try { (() => {
-const { Fragment, useId, useState } = React;
-const { cx, frameStyle, MISSING_CLASS, MISSING_TEXT, isMissing, Icon, Checkbox } = __ds_scope;
+const { Fragment, useEffect, useId, useRef, useState } = React;
+const { cx, frameStyle, MISSING_CLASS, MISSING_TEXT, isMissing, Icon, Button, IconButton, Checkbox } = __ds_scope;
 const TABLE_DESKTOP_HIDE = "bds-table__d-hide";
 const TABLE_MOBILE_HIDE = "bds-table__m-hide";
 const hideCls = (/** @type {import("./DataTable.d.ts").DataTableColumn<any>} */c) => c.hideBelow === "desktop" ? TABLE_DESKTOP_HIDE : c.hideBelow === "tablet" ? TABLE_MOBILE_HIDE : undefined;
@@ -3642,7 +3013,10 @@ const cellOf = (/** @type {import("./DataTable.d.ts").DataTableColumn<any>} */c,
  * @param {Parameters<typeof import("./DataTable.d.ts").DataTable>[0]} props
  */
 function DataTable({
-  columns = [],
+  columns: sourceColumns = [],
+  columnState,
+  onColumnStateChange,
+  columnSettings = false,
   rows = [],
   rowKey,
   rowLabel,
@@ -3664,6 +3038,72 @@ function DataTable({
   "aria-label": ariaLabel,
   ...rest
 }) {
+  const [localColumns, setLocalColumns] = useState(/** @type {import("./DataTable.d.ts").TableColumnState[]} */[]);
+  const [settingsOpen, setSettingsOpen] = useState(false);
+  const [pinOffsets, setPinOffsets] = useState(/** @type {Record<string, number>} */{});
+  const tableRef = useRef(/** @type {HTMLDivElement | null} */null);
+  const state = columnState ?? localColumns;
+  const configuredLayout = columnSettings || columnState !== undefined || localColumns.length > 0;
+  const keysInOrder = [...new Set([...state.map(c => c.key), ...sourceColumns.map(c => c.key)])];
+  const configured = keysInOrder.flatMap(key => {
+    const source = sourceColumns.find(c => c.key === key);
+    return source ? [{
+      ...source,
+      hideBelow: configuredLayout ? undefined : source.hideBelow,
+      ...state.find(c => c.key === key)
+    }] : [];
+  });
+  const shown = configured.filter(c => !c.hidden);
+  const columns = (shown.length ? shown : configured.slice(0, 1)).slice().sort((a, b) => Number(!!b.pinned) - Number(!!a.pinned));
+  const signature = JSON.stringify(columns.map(c => [c.key, c.width, c.pinned]));
+  useEffect(() => {
+    const root = tableRef.current,
+      scroll = root?.querySelector('.bds-table__scroll');
+    if (!root || !scroll) return;
+    const heads = [...root.querySelectorAll('th[data-column]')];
+    const read = () => {
+      const pinned = heads.filter(el => el.getAttribute("data-pinned") === "true");
+      const total = pinned.reduce((sum, el) => sum + el.getBoundingClientRect().width, 0);
+      /** @type {Record<string, number>} */
+      const offsets = {};
+      let left = 0;
+      if (total < scroll.clientWidth * .65) for (const el of pinned) {
+        offsets[el.getAttribute("data-column") ?? ""] = left;
+        left += el.getBoundingClientRect().width;
+      }
+      setPinOffsets(prev => JSON.stringify(prev) === JSON.stringify(offsets) ? prev : offsets);
+    };
+    const observer = new ResizeObserver(read);
+    observer.observe(scroll);
+    heads.forEach(el => observer.observe(el));
+    read();
+    return () => observer.disconnect();
+  }, [signature, rows, settingsOpen]);
+  const updateColumns = (/** @type {import("./DataTable.d.ts").TableColumnState[]} */next) => {
+    setLocalColumns(next);
+    onColumnStateChange?.(next);
+  };
+  const changeColumn = (/** @type {string} */key, /** @type {Partial<import("./DataTable.d.ts").TableColumnState>} */patch) => updateColumns(configured.map(c => ({
+    key: c.key,
+    hidden: c.hidden,
+    width: typeof c.width === "number" ? c.width : undefined,
+    pinned: c.pinned,
+    ...(c.key === key ? patch : {})
+  })));
+  const moveColumn = (/** @type {string} */key, /** @type {number} */direction) => {
+    const next = configured.map(c => ({
+      key: c.key,
+      hidden: c.hidden,
+      width: typeof c.width === "number" ? c.width : undefined,
+      pinned: c.pinned
+    }));
+    const i = next.findIndex(c => c.key === key),
+      target = i + direction;
+    if (target >= 0 && target < next.length) {
+      [next[i], next[target]] = [next[target], next[i]];
+      updateColumns(next);
+    }
+  };
   const [expanded, setExpanded] = useState(() => new Set(defaultExpandedKeys));
   const autoId = useId(),
     hid = header?.id ?? autoId;
@@ -3696,6 +3136,7 @@ function DataTable({
     dir: "asc"
   });
   return /*#__PURE__*/React.createElement("div", {
+    ref: tableRef,
     className: cx("bds-table", className),
     style: frameStyle({
       fit,
@@ -3708,7 +3149,68 @@ function DataTable({
     className: "bds-table__hd"
   }, /*#__PURE__*/React.createElement("h2", {
     id: hid
-  }, header.title), header.meta != null && /*#__PURE__*/React.createElement("span", null, header.meta)), /*#__PURE__*/React.createElement("div", {
+  }, header.title), header.meta != null && /*#__PURE__*/React.createElement("span", null, header.meta)), columnSettings && /*#__PURE__*/React.createElement("div", {
+    className: "bds-table__preferences"
+  }, /*#__PURE__*/React.createElement(Button, {
+    variant: "secondary",
+    size: "sm",
+    icon: "columns",
+    "aria-expanded": settingsOpen,
+    "aria-controls": `${autoId}-columns`,
+    onClick: () => setSettingsOpen(!settingsOpen)
+  }, "열 설정"), settingsOpen && /*#__PURE__*/React.createElement("div", {
+    id: `${autoId}-columns`,
+    className: "bds-table__settings",
+    role: "region",
+    "aria-label": "열 설정",
+    tabIndex: 0
+  }, configured.map((c, i) => /*#__PURE__*/React.createElement("div", {
+    key: c.key,
+    className: "bds-table__setting"
+  }, /*#__PURE__*/React.createElement(Checkbox, {
+    checked: columns.some(col => col.key === c.key),
+    disabled: columns.length === 1 && columns[0].key === c.key,
+    onChange: e => changeColumn(c.key, {
+      hidden: !e.target.checked
+    })
+  }, c.header), /*#__PURE__*/React.createElement(Checkbox, {
+    checked: !!c.pinned,
+    onChange: e => changeColumn(c.key, {
+      pinned: e.target.checked
+    })
+  }, c.key, " 고정"), /*#__PURE__*/React.createElement("label", {
+    className: "bds-table__width"
+  }, "폭 ", /*#__PURE__*/React.createElement("input", {
+    type: "number",
+    min: 1,
+    "aria-label": `${c.key} 열 너비`,
+    value: typeof c.width === "number" ? c.width : "",
+    placeholder: "자동",
+    onChange: e => {
+      const value = e.target.valueAsNumber;
+      if (!e.target.value) changeColumn(c.key, {
+        width: undefined
+      });else if (Number.isFinite(value) && value > 0) changeColumn(c.key, {
+        width: value
+      });
+    }
+  }), " px"), /*#__PURE__*/React.createElement(IconButton, {
+    icon: "arrow-up",
+    size: "sm",
+    "aria-label": `${c.key} 열 앞으로`,
+    disabled: i === 0,
+    onClick: () => moveColumn(c.key, -1)
+  }), /*#__PURE__*/React.createElement(IconButton, {
+    icon: "arrow-down",
+    size: "sm",
+    "aria-label": `${c.key} 열 뒤로`,
+    disabled: i === configured.length - 1,
+    onClick: () => moveColumn(c.key, 1)
+  }))), /*#__PURE__*/React.createElement(Button, {
+    variant: "ghost",
+    size: "sm",
+    onClick: () => updateColumns([])
+  }, "초기화"))), /*#__PURE__*/React.createElement("div", {
     className: "bds-table__wrap",
     style: height ? {
       overflow: "auto",
@@ -3726,6 +3228,7 @@ function DataTable({
     role: "region",
     "aria-label": ariaLabel ?? "표"
   }, /*#__PURE__*/React.createElement("table", {
+    className: configuredLayout ? "bds-table__configured" : undefined,
     "aria-label": ariaLabel,
     "aria-labelledby": !ariaLabel && header ? hid : undefined
   }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, selectable && /*#__PURE__*/React.createElement("th", {
@@ -3744,10 +3247,16 @@ function DataTable({
     return /*#__PURE__*/React.createElement("th", {
       key: c.key,
       scope: "col",
-      style: c.width != null ? {
-        width: c.width
-      } : undefined,
-      className: cx(c.align === "num" && "bds-table__num", sorted && "bds-table__sorted", hideCls(c)),
+      "data-column": c.key,
+      "data-pinned": !!c.pinned,
+      style: {
+        width: c.width,
+        minWidth: c.width,
+        ...(pinOffsets[c.key] != null ? {
+          "--pin-left": `${pinOffsets[c.key]}px`
+        } : {})
+      },
+      className: cx(pinOffsets[c.key] != null && "bds-table__pinned", c.align === "num" && "bds-table__num", sorted && "bds-table__sorted", hideCls(c)),
       "aria-sort": c.sortable ? sorted ? sort.dir === "asc" ? "ascending" : "descending" : "none" : undefined
     }, c.sortable ? /*#__PURE__*/React.createElement("button", {
       type: "button",
@@ -3793,7 +3302,13 @@ function DataTable({
       } = cellOf(c, row, i);
       return /*#__PURE__*/React.createElement("td", {
         key: c.key,
-        className: cx(colCls[ci], na && MISSING_CLASS)
+        style: {
+          minWidth: c.width,
+          ...(pinOffsets[c.key] != null ? {
+            "--pin-left": `${pinOffsets[c.key]}px`
+          } : {})
+        },
+        className: cx(colCls[ci], pinOffsets[c.key] != null && "bds-table__pinned", na && MISSING_CLASS)
       }, value);
     })), expandable && open && /*#__PURE__*/React.createElement("tr", {
       className: "bds-table__exprow"
@@ -5421,6 +4936,1297 @@ function Select({
 Object.assign(__ds_scope, { Select });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/input/Select.jsx", error: String((e && e.message) || e) }); }
 
+// components/data/Chart.jsx
+try { (() => {
+const { useEffect, useId, useRef, useState } = React;
+const { cx, frameStyle, MISSING_CLASS, MISSING_TEXT, isMissing, numeric, r1, toneVar, toneInk, fmtKo, niceTicks, stackBars, smoothPath, runsOf, pathLength, seriesDash, histBins, Legend, emptyPlotMetrics, usePlotMetrics, plotLabels, plotLabelIsUI, plotValue, Button, Select } = __ds_scope;
+const PlotValue = plotValue;
+/** @typedef {import("../core/frame.js").DSStyle} DSStyle */
+/** @typedef {import("./Chart.d.ts").ChartTone} ChartTone */
+/** @typedef {import("./Chart.d.ts").ChartSeries} ChartSeries */
+/** @typedef {import("./Chart.d.ts").ChartThreshold} ChartThreshold */
+/** @typedef {(v: number) => string} Fmt */
+/** @typedef {[number, number]} Point */
+/** Segment with missing values normalized to null. Coercing to 0 would make a failed collection look like "0".
+ * @typedef {Omit<import("./Chart.d.ts").ChartSegment, "value"> & { value: number | null }} NormSegment */
+/** Internal shape after normalize. The public contract is the ChartProps union in Chart.d.ts;
+ * here it is a flat object where only the fields relevant to kind are filled.
+ * @typedef {{
+ *   kind?: "line" | "area" | "bar" | "pie" | "radial" | "radar" | "histogram",
+ *   labels?: string[], series?: ChartSeries[], segments?: NormSegment[],
+ *   samples?: (number | null)[], bins?: number, axes?: string[],
+ *   value?: number | null, label?: import("react").ReactNode, tone?: ChartTone,
+ *   thresholds?: ChartThreshold[], stacked?: boolean, yMin?: number, yMax?: number,
+ *   max?: number, unit?: string, percentiles?: number[], caption?: import("react").ReactNode,
+ *   xTicks?: "auto" | "ends" | "none", fit?: "flex" | "fixed" | "auto", width?: number | string, height?: number,
+ *   xValues?: number[], hoverValue?: number | null, onHoverValueChange?: (value: number | null) => void,
+ *   zoomable?: boolean, range?: [number, number] | null, onRangeChange?: (range: [number, number] | null) => void,
+ *   events?: import("./Chart.d.ts").ChartEvent[],
+ *   valueFormatter?: Fmt, emptyText?: string, showLegend?: boolean,
+ *   animate?: boolean, live?: boolean, paused?: boolean, className?: string,
+ *   style?: DSStyle, "aria-label"?: string
+ * }} NormProps */
+
+/* ---------- Shared chrome ---------- */
+/** @param {boolean} enabled */
+function useAnimateOnce(enabled) {
+  const [on, setOn] = useState(enabled);
+  /* Re-arm when enabled turns back on. Without resetting, turning live off later would never
+     replay the entry animation. */
+  const [prevEnabled, setPrevEnabled] = useState(enabled);
+  if (prevEnabled !== enabled) {
+    setPrevEnabled(enabled);
+    setOn(enabled);
+  }
+  useEffect(() => {
+    if (!enabled) return;
+    const t = setTimeout(() => setOn(false), 1100);
+    return () => clearTimeout(t);
+  }, [enabled]);
+  return on;
+}
+/** @param {{ x: number, w: number, h: number, title?: import("react").ReactNode, rows: { color: string, name: import("react").ReactNode, value: import("react").ReactNode }[] }} props */
+function Tip({
+  x,
+  w,
+  h,
+  title,
+  rows
+}) {
+  const ref = useRef(/** @type {HTMLDivElement | null} */null);
+  const size = usePlotMetrics(ref);
+  const gap = size.gap;
+  const left = Math.max(0, Math.min(w - size.width, x + gap + size.width <= w ? x + gap : x - gap - size.width));
+  return /*#__PURE__*/React.createElement("div", {
+    ref: ref,
+    role: "region",
+    "aria-label": "차트 상세",
+    tabIndex: 0,
+    className: "bds-chart__tip",
+    style: {
+      left,
+      visibility: size.width ? "visible" : "hidden",
+      maxHeight: Math.max(0, h - gap * 2)
+    }
+  }, title != null && /*#__PURE__*/React.createElement("div", {
+    className: "bds-chart__tip-t"
+  }, title), rows.map((r, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    className: "bds-chart__tip-row"
+  }, /*#__PURE__*/React.createElement("i", {
+    style: {
+      "--series-color": r.color
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "bds-chart__tip-n bds-ellipsis"
+  }, r.name), /*#__PURE__*/React.createElement("span", {
+    className: cx("bds-chart__tip-v", isMissing(r.value) && MISSING_CLASS)
+  }, r.value))));
+}
+/** @param {Fmt} fmt @param {number | null | undefined} v */
+const cell = (fmt, v) => {
+  const n = numeric(v);
+  return n == null ? MISSING_TEXT : fmt(n);
+};
+
+/* The single boundary before data reaches geometry. Every missing value becomes null here, so the math below
+   only checks for null. Without it one NaN would poison the axis range and every coordinate in the chart. */
+/** @param {NormProps} props @returns {NormProps} */
+function normalize(props) {
+  const series = props.series?.map(s => ({
+    ...s,
+    values: (s.values ?? []).map(numeric)
+  }));
+  const segments = props.segments?.map(sg => ({
+    ...sg,
+    value: numeric(sg.value)
+  }));
+  const out = {
+    ...props
+  };
+  if (series) out.series = series;
+  if (segments) out.segments = segments;
+  if ("value" in props) out.value = numeric(props.value);
+  if (props.samples) out.samples = props.samples.map(numeric);
+  if (props.thresholds) out.thresholds = props.thresholds.filter(t => numeric(t.value) != null);
+  if (props.max != null) out.max = numeric(props.max) ?? undefined;
+  if (props.yMin != null) out.yMin = numeric(props.yMin) ?? undefined;
+  if (props.yMax != null) out.yMax = numeric(props.yMax) ?? undefined;
+  return out;
+}
+
+/* ---------- Cartesian (line · area · bar) ---------- */
+/** hover/setHover live in Chart so mouse and keyboard drive the same index and the same Tip. */
+/** @param {{ kind: "line" | "area" | "bar", labels: string[], series: ChartSeries[], fmt: Fmt, uid: string, xTicks?: "auto" | "ends" | "none", w: number, h: number, thresholds?: ChartThreshold[], stacked?: boolean, yMin?: number, yMax?: number, hover: number | null, setHover: (i: number | null) => void, metrics?: import("./plot-layout.js").PlotMetrics, xValues?: number[], events?: import("./Chart.d.ts").ChartEvent[], onZoom?: (range: [number, number]) => void }} props */
+function Cartesian({
+  kind,
+  labels,
+  series,
+  fmt,
+  uid,
+  xTicks,
+  w: width,
+  h: height,
+  thresholds = [],
+  stacked,
+  yMin,
+  yMax,
+  hover,
+  setHover,
+  metrics: m = emptyPlotMetrics,
+  xValues,
+  events = [],
+  onZoom
+}) {
+  const [drag, setDrag] = useState(/** @type {number | null} */null);
+  const n = labels.length;
+  const h = Math.max(height, m.caption * 5 + m.micro * 2);
+  const stack = stacked && kind === "bar" ? stackBars(series, n) : null;
+  const all = (stack ? [stack.lo, stack.hi] : series.flatMap(s => s.values)).filter(v => v != null).concat(thresholds.map(t => t.value));
+  if (!n || !all.length || width < 40) return null;
+  const lo0 = Math.min(0, ...all),
+    hi0 = Math.max(...all);
+  const {
+    ticks,
+    lo,
+    hi
+  } = niceTicks(yMin ?? lo0, yMax ?? hi0, h < 140 ? 2 : 4);
+  const padL = Math.max(...ticks.map(t => m.measure(fmt(t)))) + m.gap * 2,
+    padR = m.gap * 2,
+    padT = m.caption,
+    padB = xTicks === "none" ? m.micro : m.caption * 2 + m.micro / 2 + m.gap;
+  const w = Math.max(width, padL + padR + m.micro * 4);
+  const iw = w - padL - padR,
+    ih = h - padT - padB;
+  const step = n > 1 ? iw / (n - 1) : 0;
+  const bandW = xValues && n > 1 ? Math.min(iw / n, ...xValues.slice(1).map((v, i) => (v - xValues[i]) / ((xValues.at(-1) ?? 1) - xValues[0]) * iw)) : iw / n;
+  const coordinate = (/** @type {number} */value) => n === 1 ? padL + iw / 2 : padL + (kind === "bar" ? bandW / 2 : 0) + (value - (xValues?.[0] ?? 0)) / ((xValues?.at(-1) ?? 1) - (xValues?.[0] ?? 0) || 1) * (iw - (kind === "bar" ? bandW : 0));
+  const x = (/** @type {number} */i) => r1(xValues ? coordinate(xValues[i]) : kind === "bar" ? padL + bandW * (i + 0.5) : n > 1 ? padL + i * step : padL + iw / 2);
+  const y = (/** @type {number} */v) => r1(padT + (1 - (v - lo) / (hi - lo || 1)) * ih);
+  const xLabels = plotLabels(labels.flatMap((text, index) => xTicks === "none" || xTicks === "ends" && index !== 0 && index !== n - 1 ? [] : [{
+    index,
+    x: x(index),
+    text,
+    ui: plotLabelIsUI(text)
+  }]), w, m);
+  const annotations = thresholds.map(t => t.label ?? fmt(t.value));
+  const groupW = Math.min(28, bandW * 0.62 / (stacked ? 1 : series.length));
+  const indexAt = (/** @type {number} */px) => {
+    let closest = 0;
+    for (let i = 1; i < n; i++) if (Math.abs(x(i) - px) < Math.abs(x(closest) - px)) closest = i;
+    return closest;
+  };
+  const onMove = (/** @type {import("react").MouseEvent<SVGSVGElement> | import("react").TouchEvent<SVGSVGElement>} */e) => {
+    const r = e.currentTarget.getBoundingClientRect();
+    setHover(indexAt(("clientX" in e ? e.clientX : e.touches[0]?.clientX ?? 0) - r.left));
+  };
+  const rows = hover == null ? [] : series.map((s, si) => ({
+    color: toneVar(s.tone, si),
+    name: s.label,
+    value: cell(fmt, s.values[hover])
+  }));
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("svg", {
+    viewBox: `0 0 ${w} ${h}`,
+    width: w,
+    height: h,
+    className: "bds-chart__svg",
+    onPointerDown: e => {
+      if (!onZoom || e.button !== 0) return;
+      e.preventDefault();
+      const i = indexAt(e.clientX - e.currentTarget.getBoundingClientRect().left);
+      setDrag(i);
+      setHover(i);
+      e.currentTarget.setPointerCapture(e.pointerId);
+    },
+    onPointerUp: e => {
+      if (drag == null || !onZoom || !xValues) return;
+      const end = indexAt(e.clientX - e.currentTarget.getBoundingClientRect().left);
+      if (end !== drag) onZoom([xValues[Math.min(drag, end)], xValues[Math.max(drag, end)]]);
+      setDrag(null);
+      if (e.currentTarget.hasPointerCapture(e.pointerId)) e.currentTarget.releasePointerCapture(e.pointerId);
+    },
+    onPointerCancel: () => setDrag(null),
+    onMouseMove: onMove,
+    onTouchStart: onMove,
+    onTouchMove: onMove,
+    "aria-hidden": "true"
+  }, /*#__PURE__*/React.createElement("defs", null, series.map((s, si) => /*#__PURE__*/React.createElement("linearGradient", {
+    key: si,
+    id: `${uid}-g${si}`,
+    x1: "0",
+    y1: "0",
+    x2: "0",
+    y2: "1"
+  }, /*#__PURE__*/React.createElement("stop", {
+    offset: "0",
+    stopColor: toneVar(s.tone, si),
+    stopOpacity: ".14"
+  }), /*#__PURE__*/React.createElement("stop", {
+    offset: "1",
+    stopColor: toneVar(s.tone, si),
+    stopOpacity: "0"
+  }))), /*#__PURE__*/React.createElement("clipPath", {
+    id: `${uid}-c`
+  }, /*#__PURE__*/React.createElement("rect", {
+    x: padL,
+    y: 0,
+    width: iw,
+    height: h
+  }))), ticks.filter((_, i) => i % Math.max(1, Math.ceil((m.micro * 1.4 + m.gap) / (ih / Math.max(1, ticks.length - 1)))) === 0).map(t => /*#__PURE__*/React.createElement("g", {
+    key: t
+  }, /*#__PURE__*/React.createElement("line", {
+    className: "bds-chart__grid",
+    x1: padL,
+    x2: w - padR,
+    y1: y(t),
+    y2: y(t),
+    style: t === ticks[0] ? {
+      stroke: "var(--plot-axis)"
+    } : undefined
+  }), /*#__PURE__*/React.createElement("text", {
+    className: "bds-chart__tick",
+    x: padL - m.gap,
+    y: y(t),
+    dominantBaseline: "central",
+    textAnchor: "end"
+  }, fmt(t)))), xLabels.map(lb => /*#__PURE__*/React.createElement("text", {
+    key: lb.index,
+    className: lb.ui ? "bds-chart__label" : "bds-chart__tick",
+    x: lb.x,
+    y: h - m.gap - m.caption / 3,
+    textAnchor: "start"
+  }, lb.text)), thresholds.map((t, i) => /*#__PURE__*/React.createElement("g", {
+    key: i
+  }, /*#__PURE__*/React.createElement("line", {
+    x1: padL,
+    x2: w - padR,
+    y1: y(t.value),
+    y2: y(t.value),
+    stroke: `var(--${t.tone ?? "warn"})`,
+    strokeDasharray: "4 4",
+    strokeWidth: "1"
+  }), m.measure(annotations[i], true) <= iw && y(t.value) >= m.caption * 2 && !thresholds.slice(0, i).some(prev => Math.abs(y(prev.value) - y(t.value)) < m.caption * 1.5) && /*#__PURE__*/React.createElement("text", {
+    className: "bds-chart__label",
+    style: {
+      "--tick-ink": `var(--${t.tone ?? "warn"}-ink)`
+    },
+    x: w - padR,
+    y: y(t.value) - m.gap,
+    textAnchor: "end"
+  }, annotations[i]))), xValues && events.filter(event => event.value >= xValues[0] && event.value <= (xValues.at(-1) ?? 0)).map(event => /*#__PURE__*/React.createElement("line", {
+    key: event.id,
+    className: "bds-chart__event",
+    x1: coordinate(event.value),
+    x2: coordinate(event.value),
+    y1: padT,
+    y2: h - padB
+  })), drag != null && hover != null && /*#__PURE__*/React.createElement("rect", {
+    className: "bds-chart__selection",
+    x: Math.min(x(drag), x(hover)),
+    y: padT,
+    width: Math.abs(x(drag) - x(hover)),
+    height: Math.max(0, ih)
+  }), /*#__PURE__*/React.createElement("g", {
+    clipPath: `url(#${uid}-c)`
+  }, series.map((s, si) => {
+    const color = toneVar(s.tone, si);
+    if (kind === "bar") {
+      const off = stacked ? 0 : (si - (series.length - 1) / 2) * groupW;
+      return /*#__PURE__*/React.createElement("g", {
+        key: si
+      }, s.values.map((v, i) => {
+        if (v == null) return null;
+        const band = stack?.bands[si][i];
+        const y1 = y(band ? band.end : v),
+          y0 = y(band ? band.start : 0);
+        return /*#__PURE__*/React.createElement("rect", {
+          key: i,
+          className: "bds-chart__bar",
+          x: r1(x(i) + off - groupW / 2),
+          y: Math.min(y0, y1),
+          width: r1(groupW),
+          height: Math.max(1, Math.abs(y0 - y1)),
+          rx: stacked ? 0 : 3,
+          fill: color,
+          opacity: hover == null || hover === i ? 1 : 0.45,
+          style: {
+            animationDelay: `${i * 25}ms`
+          }
+        });
+      }));
+    }
+    /* Dash goes on as a presentation attribute. During the entry animation the .bds-chart--animate .bds-chart__line CSS (draw-on dasharray) overrides it; once the class drops, this pattern shows. */
+    const runs = runsOf(s.values, x, y),
+      baseY = y(Math.max(lo, 0)),
+      dash = seriesDash(s, si, series.length);
+    return /*#__PURE__*/React.createElement("g", {
+      key: si
+    }, runs.map((pts, ri) => pts.length === 1 ? /*#__PURE__*/React.createElement("circle", {
+      key: ri,
+      cx: pts[0][0],
+      cy: pts[0][1],
+      r: 3,
+      fill: color
+    }) : /*#__PURE__*/React.createElement("g", {
+      key: ri
+    }, kind === "area" && /*#__PURE__*/React.createElement("path", {
+      className: "bds-chart__area",
+      d: `${smoothPath(pts)} L${pts[pts.length - 1][0]} ${baseY} L${pts[0][0]} ${baseY}Z`,
+      fill: `url(#${uid}-g${si})`
+    }), /*#__PURE__*/React.createElement("path", {
+      className: "bds-chart__line",
+      d: smoothPath(pts),
+      stroke: color,
+      strokeDasharray: dash,
+      style: {
+        "--draw-len": r1(pathLength(pts))
+      }
+    }))));
+  })), kind !== "bar" && series.map((s, si) => {
+    const last = runsOf(s.values, x, y).pop();
+    return last ? /*#__PURE__*/React.createElement("circle", {
+      key: si,
+      className: "bds-chart__dot bds-chart__end",
+      cx: last[last.length - 1][0],
+      cy: last[last.length - 1][1],
+      r: 2.5,
+      fill: toneVar(s.tone, si)
+    }) : null;
+  }), hover != null && kind !== "bar" && /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("line", {
+    className: "bds-chart__cursor",
+    x1: x(hover),
+    x2: x(hover),
+    y1: padT,
+    y2: h - padB
+  }), series.map((s, si) => s.values[hover] == null ? null : /*#__PURE__*/React.createElement("circle", {
+    key: si,
+    className: "bds-chart__dot",
+    cx: x(hover),
+    cy: y(s.values[hover]),
+    r: 4,
+    fill: toneVar(s.tone, si)
+  })))), hover != null && rows.length > 0 && /*#__PURE__*/React.createElement(Tip, {
+    h: height,
+    x: x(hover),
+    w: width,
+    title: labels[hover],
+    rows: rows
+  }));
+}
+
+/* ---------- Donut ---------- */
+/** @param {{ segments: NormSegment[], fmt: Fmt, caption?: import("react").ReactNode, w: number, h: number, hover: number | null, setHover: (i: number | null) => void }} props */
+function Pie({
+  segments,
+  w,
+  h,
+  hover,
+  setHover
+}) {
+  // Missing segments stay null; 0 would read as a collected zero.
+  const vals = segments.map(s => s.value == null ? null : Math.max(0, s.value)),
+    sum = vals.reduce((/** @type {number} */a, b) => a + (b ?? 0), 0);
+  if (!sum || w < 40) return null;
+  const R = Math.max(0, Math.min(w, h) / 2 - 4),
+    stroke = Math.min(R, Math.max(10, R * 0.34)),
+    r = R - stroke / 2,
+    C = 2 * Math.PI * r,
+    cx0 = w / 2,
+    cy0 = h / 2;
+  /** @type {{ i: number, dash: number, off: number }[]} */
+  const arcs = [];
+  let acc = 0;
+  for (let i = 0; i < vals.length; i++) {
+    const v = vals[i];
+    if (v == null) continue;
+    const dash = v / sum * C;
+    if (dash > 0) arcs.push({
+      i,
+      dash,
+      off: -(acc / sum) * C
+    });
+    acc += v;
+  }
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("svg", {
+    viewBox: `0 0 ${w} ${h}`,
+    width: w,
+    height: h,
+    className: "bds-chart__svg",
+    "aria-hidden": "true"
+  }, /*#__PURE__*/React.createElement("circle", {
+    cx: cx0,
+    cy: cy0,
+    r: r,
+    fill: "none",
+    strokeWidth: stroke,
+    className: "bds-chart__track"
+  }), arcs.map(a => /*#__PURE__*/React.createElement("circle", {
+    key: a.i,
+    className: "bds-chart__pieseg",
+    cx: cx0,
+    cy: cy0,
+    r: r,
+    fill: "none",
+    strokeWidth: hover === a.i ? stroke + 4 : stroke,
+    stroke: toneVar(segments[a.i].tone, a.i),
+    strokeDasharray: `${Math.max(0, a.dash - 2).toFixed(2)} ${C.toFixed(2)}`,
+    strokeDashoffset: a.off.toFixed(2),
+    transform: `rotate(-90 ${cx0} ${cy0})`,
+    opacity: hover == null || hover === a.i ? 1 : 0.4,
+    onMouseEnter: () => setHover(a.i),
+    style: {
+      transition: "stroke-width var(--dur-fast) var(--ease-out), opacity var(--dur-fast)"
+    }
+  }))));
+}
+
+/** @param {number} w @param {number} h */
+function radialGeometry(w, h) {
+  const stroke = Math.max(0, Math.min(w, h) / 12);
+  const r = Math.max(0, Math.min((w - stroke) / 2, (h - stroke) / 1.5));
+  return {
+    r,
+    stroke,
+    cx0: w / 2,
+    cy0: r + stroke / 2
+  };
+}
+
+/* ---------- Radial gauge ---------- */
+/** @param {{ value: number, label?: import("react").ReactNode, tone?: ChartTone, fmt: Fmt, w: number, h: number, animate?: boolean }} props */
+function Radial({
+  value,
+  tone,
+  w,
+  h,
+  animate
+}) {
+  const [shown, setShown] = useState(animate ? 0 : value);
+  useEffect(() => {
+    const t = requestAnimationFrame(() => setShown(value));
+    return () => cancelAnimationFrame(t);
+  }, [value]);
+  if (w < 40) return null;
+  // 240° gauge. Pick r so that height = 1.5r + stroke and width = 2r + stroke both fit.
+  const {
+    r,
+    stroke,
+    cx0,
+    cy0
+  } = radialGeometry(w, h);
+  const a0 = Math.PI * 7 / 6,
+    a1 = -Math.PI / 6;
+  const pt = (/** @type {number} */a) => (/** @type {Point} */[r1(cx0 + Math.cos(a) * r), r1(cy0 - Math.sin(a) * r)]);
+  const [sx, sy] = pt(a0),
+    [ex, ey] = pt(a1);
+  const d = `M${sx} ${sy} A${r} ${r} 0 1 1 ${ex} ${ey}`;
+  const len = r * (a0 - a1);
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("svg", {
+    viewBox: `0 0 ${w} ${h}`,
+    width: w,
+    height: h,
+    className: "bds-chart__svg",
+    "aria-hidden": "true"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: d,
+    fill: "none",
+    strokeWidth: stroke,
+    strokeLinecap: "round",
+    className: "bds-chart__track"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: d,
+    fill: "none",
+    strokeWidth: stroke,
+    strokeLinecap: "round",
+    stroke: toneVar(tone, 0),
+    strokeDasharray: len,
+    strokeDashoffset: r1(len * (1 - Math.min(1, Math.max(0, shown)))),
+    className: "bds-chart__arc"
+  })));
+}
+
+/* ---------- Radar ---------- */
+/** @param {{ axes: string[], series: ChartSeries[], max?: number, fmt: Fmt, w: number, h: number, hover: number | null, setHover: (i: number | null) => void, metrics?: import("./plot-layout.js").PlotMetrics }} props */
+function Radar({
+  axes,
+  series,
+  max,
+  fmt,
+  w: width,
+  h: height,
+  hover,
+  setHover,
+  metrics: m = emptyPlotMetrics
+}) {
+  const n = axes.length;
+  if (n < 3 || width < 40) return null;
+  const all = series.flatMap(s => s.values).filter(v => v != null);
+  const top = (max ?? (all.length ? Math.max(...all) : 1)) || 1;
+  const labelWidths = axes.map(ax => m.measure(ax, true)),
+    labelWidth = Math.max(0, ...labelWidths);
+  const directions = axes.map((_, i) => {
+    const a = -Math.PI / 2 + i * 2 * Math.PI / n;
+    return [Math.cos(a), Math.sin(a)];
+  });
+  // Find the smallest label radius that separates every pair horizontally or vertically.
+  let labelRadius = 0;
+  for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++) {
+    const dx = Math.abs(directions[i][0] - directions[j][0]),
+      dy = Math.abs(directions[i][1] - directions[j][1]);
+    labelRadius = Math.max(labelRadius, Math.min(dx ? ((labelWidths[i] + labelWidths[j]) / 2 + m.gap) / dx : Infinity, dy ? (m.caption * 1.4 + m.gap) / dy : Infinity));
+  }
+  const R = Math.max(labelRadius, Math.min(width / 2 - labelWidth / 2 - m.gap, height / 2 - m.caption - m.gap), 0) / 1.14;
+  const w = Math.max(width, 2 * (R * 1.14 + labelWidth / 2 + m.gap)),
+    h = Math.max(height, 2 * (R * 1.14 + m.caption + m.gap));
+  const cx0 = w / 2,
+    cy0 = h / 2;
+  const pt = (/** @type {number} */i, /** @type {number} */f) => {
+    const a = -Math.PI / 2 + i * 2 * Math.PI / n;
+    return /** @type {Point} */[r1(cx0 + Math.cos(a) * R * f), r1(cy0 + Math.sin(a) * R * f)];
+  };
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("svg", {
+    viewBox: `0 0 ${w} ${h}`,
+    width: w,
+    height: h,
+    className: "bds-chart__svg",
+    "aria-hidden": "true"
+  }, [0.25, 0.5, 0.75, 1].map(f => /*#__PURE__*/React.createElement("polygon", {
+    key: f,
+    className: "bds-chart__radar-grid",
+    points: axes.map((_, i) => pt(i, f).join(",")).join(" ")
+  })), axes.map((_, i) => /*#__PURE__*/React.createElement("line", {
+    key: i,
+    className: "bds-chart__radar-grid",
+    x1: cx0,
+    y1: cy0,
+    x2: pt(i, 1)[0],
+    y2: pt(i, 1)[1]
+  })), series.map((s, si) => {
+    const points = axes.map((_, i) => s.values[i] == null ? null : pt(i, Math.min(1, Math.max(0, s.values[i] / top))));
+    const color = toneVar(s.tone, si);
+    // The closed fill is drawn only when every axis has a value; never bridge across a missing axis.
+    if (points.every(Boolean)) return /*#__PURE__*/React.createElement("polygon", {
+      key: si,
+      points: /** @type {Point[]} */points.map(p => p.join(",")).join(" "),
+      fill: color,
+      fillOpacity: ".2",
+      stroke: color,
+      strokeWidth: "2",
+      strokeLinejoin: "round"
+    });
+    return /*#__PURE__*/React.createElement("g", {
+      key: si
+    }, points.map((p, i) => {
+      const next = points[(i + 1) % n];
+      return p && next ? /*#__PURE__*/React.createElement("line", {
+        key: i,
+        x1: p[0],
+        y1: p[1],
+        x2: next[0],
+        y2: next[1],
+        stroke: color,
+        strokeWidth: "2"
+      }) : null;
+    }));
+  }), series.map((s, si) => axes.map((_, i) => s.values[i] == null ? null : /*#__PURE__*/React.createElement("circle", {
+    key: `${si}-${i}`,
+    cx: pt(i, Math.min(1, Math.max(0, s.values[i] / top)))[0],
+    cy: pt(i, Math.min(1, Math.max(0, s.values[i] / top)))[1],
+    r: hover === i ? 5 : 3,
+    fill: toneVar(s.tone, si),
+    className: "bds-chart__dot",
+    onMouseEnter: () => setHover(i)
+  }))), axes.map((ax, i) => {
+    const [lx, ly] = pt(i, 1.14);
+    return /*#__PURE__*/React.createElement("text", {
+      key: ax,
+      className: "bds-chart__label",
+      x: lx,
+      y: ly,
+      textAnchor: "middle",
+      dominantBaseline: "central",
+      onMouseEnter: () => setHover(i),
+      onTouchStart: () => setHover(i)
+    }, ax);
+  })), hover != null && /*#__PURE__*/React.createElement(Tip, {
+    h: height,
+    x: pt(hover, 1)[0],
+    w: width,
+    title: axes[hover],
+    rows: series.map((s, si) => ({
+      color: toneVar(s.tone, si),
+      name: s.label,
+      value: cell(fmt, s.values[hover])
+    }))
+  }));
+}
+
+/* ---------- Histogram ---------- */
+/** Raw samples binned into bars. Percentile lines (p50/p95) are vertical dashes like thresholds. Bins come from chart-math.histBins, shared with the SR table. */
+/** @param {{ hist: ReturnType<typeof histBins>, fmt: Fmt, w: number, h: number, tone?: ChartTone, percentiles?: number[], unit?: string, animate?: boolean, hover: number | null, setHover: (i: number | null) => void, metrics: import("./plot-layout.js").PlotMetrics }} props */
+function Histogram({
+  hist,
+  fmt,
+  w: width,
+  h: height,
+  tone,
+  percentiles = [],
+  unit,
+  animate,
+  hover,
+  setHover,
+  metrics: m
+}) {
+  const b = hist;
+  if (!b || width < 40) return null;
+  const {
+    xs,
+    lo,
+    span,
+    n,
+    counts
+  } = b;
+  const max = Math.max(...counts);
+  const sorted = [...xs].sort((p, q2) => p - q2);
+  const q = (/** @type {number} */p) => sorted[Math.min(sorted.length - 1, Math.floor(p * (sorted.length - 1)))];
+  const h = Math.max(height, m.caption * 5 + m.micro * 2);
+  const {
+    ticks
+  } = niceTicks(0, max, h < 140 ? 2 : 3);
+  const padL = Math.max(...ticks.map(t => m.measure(String(t)))) + m.gap * 2,
+    padR = m.gap * 2,
+    padT = m.caption * 2,
+    padB = m.caption * 2 + m.micro / 2 + m.gap;
+  const w = Math.max(width, padL + padR + m.micro * 4);
+  const iw = w - padL - padR,
+    ih = h - padT - padB;
+  const bw = iw / n;
+  const y = (/** @type {number} */c) => r1(padT + (1 - c / (ticks[ticks.length - 1] || 1)) * ih);
+  const xv = (/** @type {number} */v) => r1(padL + (v - lo) / span * iw);
+  const markers = plotLabels(percentiles.map((p, index) => ({
+    index,
+    x: xv(q(p)),
+    text: `p${Math.round(p * 100)} ${fmt(q(p))}${unit ?? ""}`
+  })).sort((a, b) => a.x - b.x), w, m);
+  const xLabels = plotLabels([lo, lo + span / 2, lo + span].map((v, index) => ({
+    index,
+    x: xv(v),
+    text: `${fmt(v)}${unit ?? ""}`
+  })), w, m);
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("svg", {
+    viewBox: `0 0 ${w} ${h}`,
+    width: w,
+    height: h,
+    className: "bds-chart__svg",
+    "aria-hidden": "true"
+  }, ticks.filter((_, i) => i % Math.max(1, Math.ceil((m.micro * 1.4 + m.gap) / (ih / Math.max(1, ticks.length - 1)))) === 0).map(t => /*#__PURE__*/React.createElement("g", {
+    key: t
+  }, /*#__PURE__*/React.createElement("line", {
+    className: "bds-chart__grid",
+    x1: padL,
+    x2: w - padR,
+    y1: y(t),
+    y2: y(t),
+    style: t === 0 ? {
+      stroke: "var(--plot-axis)"
+    } : undefined
+  }), /*#__PURE__*/React.createElement("text", {
+    className: "bds-chart__tick",
+    x: padL - m.gap,
+    y: y(t),
+    textAnchor: "end",
+    dominantBaseline: "central"
+  }, t))), counts.map((c, i) => /*#__PURE__*/React.createElement("rect", {
+    key: i,
+    className: "bds-chart__bar",
+    x: r1(padL + i * bw + 1),
+    y: y(c),
+    width: Math.max(1, bw - 2),
+    height: r1(y(0) - y(c)),
+    fill: toneVar(tone, 0),
+    opacity: hover == null || hover === i ? 1 : 0.45,
+    onMouseEnter: () => setHover(i),
+    style: animate ? {
+      transformOrigin: `0 ${y(0)}px`,
+      animation: "bds-grow-y var(--dur-gauge) var(--ease-out) both"
+    } : undefined
+  })), percentiles.map(p => {
+    const v = q(p),
+      x = xv(v);
+    return /*#__PURE__*/React.createElement("g", {
+      key: p
+    }, /*#__PURE__*/React.createElement("line", {
+      x1: x,
+      x2: x,
+      y1: padT,
+      y2: y(0),
+      stroke: "var(--ink-2)",
+      strokeDasharray: "3 3",
+      strokeWidth: "1"
+    }));
+  }), markers.map(label => /*#__PURE__*/React.createElement("text", {
+    key: label.index,
+    className: "bds-chart__tick bds-chart__tick--secondary",
+    x: label.x,
+    y: m.caption,
+    textAnchor: "start"
+  }, label.text)), xLabels.map(label => /*#__PURE__*/React.createElement("text", {
+    key: label.index,
+    className: "bds-chart__tick",
+    x: label.x,
+    y: h - m.gap - m.caption / 3,
+    textAnchor: "start"
+  }, label.text))), hover != null && /*#__PURE__*/React.createElement(Tip, {
+    h: height,
+    x: r1(padL + (hover + 0.5) * bw),
+    w: width,
+    title: `${fmt(lo + hover / n * span)}~${fmt(lo + (hover + 1) / n * span)}${unit ?? ""}`,
+    rows: [{
+      color: toneVar(tone, 0),
+      name: "표본",
+      value: `${counts[hover]}건`
+    }]
+  }));
+}
+
+/* ---------- Screen-reader table ---------- */
+/** The visual chart's data as a table. Always rendered (hidden with bds-sr) and referenced by aria-describedby. */
+/** @param {{ id: string, kind: NonNullable<NormProps["kind"]>, props: NormProps, bins: ReturnType<typeof histBins>, fmt: Fmt }} props */
+function SrTable({
+  id,
+  kind,
+  props,
+  bins,
+  fmt
+}) {
+  /** @type {import("react").ReactNode[]} */
+  let head = [];
+  /** @type {import("react").ReactNode[][]} */
+  let rows = [];
+  if (kind === "pie") {
+    head = ["항목", "값"];
+    rows = (props.segments ?? []).map(sg => [sg.label, cell(fmt, sg.value == null ? null : Math.max(0, sg.value))]);
+  } else if (kind === "radial") {
+    head = props.label != null ? ["값", "상태"] : ["값"];
+    const rv = numeric(props.value) == null ? MISSING_TEXT : fmt(Math.min(1, Math.max(0, /** @type {number} */props.value)));
+    rows = [props.label != null ? [rv, props.label] : [rv]];
+  } else if (kind === "histogram") {
+    const b = bins;
+    head = ["구간", "표본"];
+    rows = b ? b.counts.map((c, i) => [`${fmt(b.lo + i / b.n * b.span)}~${fmt(b.lo + (i + 1) / b.n * b.span)}${props.unit ?? ""}`, `${c}건`]) : [];
+  } else {
+    const cols = kind === "radar" ? props.axes ?? [] : props.labels ?? [];
+    head = ["계열"].concat(cols);
+    rows = (props.series ?? []).map(s => [s.label].concat(cols.map((_, i) => cell(fmt, s.values[i]))));
+  }
+  // A table grows to its content and ignores width:1px; the block wrapper must do the hiding or the document overflows horizontally.
+  return /*#__PURE__*/React.createElement("div", {
+    className: "bds-sr"
+  }, /*#__PURE__*/React.createElement("table", {
+    id: id
+  }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, head.map((c, i) => /*#__PURE__*/React.createElement("th", {
+    key: i,
+    scope: "col"
+  }, c)))), /*#__PURE__*/React.createElement("tbody", null, rows.map((r, i) => /*#__PURE__*/React.createElement("tr", {
+    key: i
+  }, r.map((c, j) => j === 0 ? /*#__PURE__*/React.createElement("th", {
+    key: j,
+    scope: "row"
+  }, c) : /*#__PURE__*/React.createElement("td", {
+    key: j
+  }, c)))))));
+}
+
+/* ---------- Entry point ---------- */
+const DEFAULT_H = {
+  line: 200,
+  area: 200,
+  bar: 200,
+  pie: 180,
+  radial: 110,
+  radar: 260,
+  histogram: 180
+};
+
+/** Single chart component. kind: line | area | bar | pie | radial | radar | histogram.
+ *  paused=true keeps drawing the last props snapshot while the stream moves on.
+ *  Keyboard on the stage: ←/→ move the index, Home/End jump to the ends, Esc clears. Colors, motion and a11y surfaces follow RULE.md "설계 원칙" and "접근성".
+ * @param {Parameters<typeof import("./Chart.d.ts").Chart>[0]} rawProps
+ */
+function Chart(rawProps) {
+  /* paused means "keep what is on screen", so it is state: capture props when freezing, drop them when
+     unfreezing. Writing a ref during render could leave a discarded render's props as the snapshot. */
+  const [frozen, setFrozen] = useState(/** @type {typeof rawProps | null} */null);
+  if (rawProps.paused && frozen === null) setFrozen(rawProps);
+  if (!rawProps.paused && frozen !== null) setFrozen(null);
+  const full = normalize(frozen ?? rawProps);
+  const [localRange, setLocalRange] = useState(/** @type {[number, number] | null} */null);
+  const [draftRange, setDraftRange] = useState(/** @type {[number, number] | null} */null);
+  const coordinates = full.xValues;
+  const linked = !!coordinates?.length && coordinates.length === full.labels?.length && coordinates.every((v, i) => Number.isFinite(v) && (i === 0 || v > coordinates[i - 1]));
+  const requestedRange = full.range === undefined ? localRange : full.range;
+  const range = linked && requestedRange && requestedRange[0] < requestedRange[1] ? requestedRange : null;
+  const indices = (full.labels ?? []).flatMap((_, i) => !range || coordinates && coordinates[i] >= range[0] && coordinates[i] <= range[1] ? [i] : []);
+  const props = linked ? {
+    ...full,
+    labels: indices.map(i => full.labels?.[i] ?? ""),
+    xValues: indices.map(i => coordinates?.[i] ?? i),
+    series: full.series?.map(series => ({
+      ...series,
+      values: indices.map(i => series.values[i])
+    }))
+  } : full;
+  const {
+    kind = "line",
+    fit = "flex",
+    width,
+    height,
+    valueFormatter = fmtKo,
+    emptyText = MISSING_TEXT,
+    showLegend = true,
+    live = false,
+    animate = !live,
+    className,
+    style,
+    "aria-label": ariaLabel
+  } = props;
+  const uid = useId().replace(/:/g, "");
+  const srId = `${uid}-sr`;
+  const ref = useRef(/** @type {HTMLDivElement | null} */null);
+  const [hoverRaw, setHoverRaw] = useState(/** @type {number | null} */null);
+  const h = height ?? DEFAULT_H[kind];
+  const metrics = usePlotMetrics(ref);
+  const anim = useAnimateOnce(animate && !live);
+  const w = metrics.width || (fit === "fixed" && typeof width === "number" ? width : 0);
+  const lineKind = kind === "line" || kind === "area";
+  /* Bin once per render so Histogram, SrTable and count agree. */
+  const bins = kind === "histogram" ? histBins(props.samples, props.bins) : null;
+  const count = kind === "pie" ? (props.segments ?? []).length : kind === "histogram" ? bins ? bins.n : 0 : kind === "radar" ? (props.axes ?? []).length : kind === "radial" ? 0 : (props.labels ?? []).length;
+  /* hover indexes into count. When a stream shrinks the old index goes out of range and the tooltip
+     and cursor would linger outside the plot, so filter once here instead of guarding every read. */
+  const setHover = (/** @type {number | null} */index) => {
+    setHoverRaw(index);
+    if (linked) full.onHoverValueChange?.(index == null ? null : props.xValues?.[index] ?? null);
+  };
+  let hover = hoverRaw != null && hoverRaw < count ? hoverRaw : null;
+  if (linked && full.hoverValue !== undefined) {
+    hover = null;
+    if (full.hoverValue != null && props.xValues?.length && full.hoverValue >= props.xValues[0] && full.hoverValue <= (props.xValues.at(-1) ?? 0)) {
+      const coordinate = full.hoverValue;
+      hover = props.xValues.reduce((best, value, i, values) => Math.abs(value - coordinate) < Math.abs(values[best] - coordinate) ? i : best, 0);
+    }
+  }
+  const zoom = (/** @type {[number, number] | null} */next) => {
+    setLocalRange(next);
+    full.onRangeChange?.(next);
+    setHover(null);
+  };
+  const draftStart = coordinates?.includes(draftRange?.[0] ?? NaN) ? draftRange?.[0] : coordinates?.[0];
+  const draftEnd = coordinates?.includes(draftRange?.[1] ?? NaN) ? draftRange?.[1] : coordinates?.at(-1);
+  /** @type {import("react").ReactNode} */
+  let body = null;
+  let hasData = false;
+  /** @type {Parameters<typeof Legend>[0]["items"]} */
+  let legend = [];
+  if (showLegend) {
+    if (kind === "pie") legend = (props.segments ?? []).map((sg, i) => ({
+      color: toneVar(sg.tone, i),
+      label: sg.label,
+      value: cell(valueFormatter, sg.value == null ? null : Math.max(0, sg.value))
+    }));else if (kind !== "radial") {
+      const list = props.series ?? [];
+      if (list.length > 1) legend = list.map((sr, i) => ({
+        color: toneVar(sr.tone, i),
+        label: sr.label,
+        shape: lineKind ? "line" : "square",
+        dash: lineKind ? seriesDash(sr, i, list.length) : undefined
+      }));
+    }
+  }
+  if (kind === "pie") {
+    hasData = (props.segments ?? []).some(s => (s.value ?? 0) > 0);
+    body = /*#__PURE__*/React.createElement(Pie, {
+      segments: props.segments ?? [],
+      fmt: valueFormatter,
+      caption: props.caption,
+      w: w,
+      h: h,
+      hover: hover,
+      setHover: setHover
+    });
+  } else if (kind === "radial") {
+    hasData = props.value != null;
+    body = /*#__PURE__*/React.createElement(Radial, {
+      value: props.value ?? 0,
+      label: props.label,
+      tone: props.tone,
+      fmt: valueFormatter,
+      w: w,
+      h: h,
+      animate: animate && !live
+    });
+  } else if (kind === "histogram") {
+    hasData = !!bins;
+    body = /*#__PURE__*/React.createElement(Histogram, {
+      metrics: metrics,
+      hist: bins,
+      tone: props.tone,
+      percentiles: props.percentiles ?? [],
+      unit: props.unit,
+      fmt: valueFormatter,
+      w: w,
+      h: h,
+      animate: anim,
+      hover: hover,
+      setHover: setHover
+    });
+  } else if (kind === "radar") {
+    const axes = props.axes ?? [];
+    hasData = axes.length >= 3 && (props.series ?? []).some(s => axes.some((_, i) => s.values[i] != null));
+    body = /*#__PURE__*/React.createElement(Radar, {
+      metrics: metrics,
+      axes: props.axes ?? [],
+      series: props.series ?? [],
+      max: props.max,
+      fmt: valueFormatter,
+      w: w,
+      h: h,
+      hover: hover,
+      setHover: setHover
+    });
+  } else {
+    hasData = (props.labels ?? []).length > 0 && (props.series ?? []).some(s => s.values.some(v => v != null));
+    body = /*#__PURE__*/React.createElement(Cartesian, {
+      xValues: linked ? props.xValues : undefined,
+      events: linked ? props.events : undefined,
+      onZoom: linked && full.zoomable ? zoom : undefined,
+      metrics: metrics,
+      kind: kind,
+      labels: props.labels ?? [],
+      series: props.series ?? [],
+      fmt: valueFormatter,
+      uid: uid,
+      xTicks: props.xTicks ?? "auto",
+      w: w,
+      h: h,
+      thresholds: props.thresholds,
+      stacked: props.stacked,
+      yMin: props.yMin,
+      yMax: props.yMax,
+      hover: hover,
+      setHover: setHover
+    });
+  }
+  /* Text readout for the keyboard-selected point; same content as the visual Tip. */
+  const readout = hover == null ? "" : [kind === "pie" ? props.segments?.[hover]?.label : kind === "radar" ? props.axes?.[hover] : props.labels?.[hover], ...(props.series ?? []).map(s => `${s.label} ${cell(valueFormatter, s.values[hover])}`), kind === "pie" ? cell(valueFormatter, props.segments?.[hover]?.value) : null].filter(Boolean).join(", ");
+  /** @param {import("react").KeyboardEvent<HTMLDivElement>} e */
+  const onKey = e => {
+    if (!count) return;
+    /** @type {number | null | undefined} */
+    let next;
+    if (e.key === "ArrowRight") next = hover == null ? 0 : Math.min(count - 1, hover + 1);else if (e.key === "ArrowLeft") next = hover == null ? count - 1 : Math.max(0, hover - 1);else if (e.key === "Home") next = 0;else if (e.key === "End") next = count - 1;else if (e.key === "Escape") next = null;else return;
+    e.preventDefault();
+    setHover(next ?? null);
+  };
+  let center = null;
+  if (hasData && kind === "pie") {
+    const R = Math.max(0, Math.min(w, h) / 2 - 4),
+      stroke = Math.min(R, Math.max(10, R * 0.34)),
+      side = Math.max(0, (R - stroke) * Math.SQRT2);
+    const selected = hover == null ? null : props.segments?.[hover];
+    const total = (props.segments ?? []).reduce((sum, segment) => sum + Math.max(0, segment.value ?? 0), 0);
+    center = /*#__PURE__*/React.createElement(PlotValue, {
+      metrics: metrics,
+      value: selected ? cell(valueFormatter, selected.value) : valueFormatter(total),
+      caption: selected ? selected.label : props.caption,
+      box: {
+        left: (w - side) / 2,
+        top: (h - side) / 2,
+        width: side,
+        height: side
+      }
+    });
+  } else if (hasData && kind === "radial") {
+    const {
+        r,
+        stroke,
+        cy0
+      } = radialGeometry(w, h),
+      side = Math.max(0, (r - stroke / 2) * Math.SQRT2);
+    center = /*#__PURE__*/React.createElement(PlotValue, {
+      metrics: metrics,
+      value: valueFormatter(Math.min(1, Math.max(0, props.value ?? 0))),
+      caption: props.label,
+      tone: toneInk(props.tone),
+      box: {
+        left: (w - side) / 2,
+        top: cy0 - side / 2,
+        width: side,
+        height: side / 1.5
+      }
+    });
+  }
+  const sortedSamples = bins ? [...bins.xs].sort((a, b) => a - b) : [];
+  const notes = kind === "histogram" && bins ? (props.percentiles ?? []).map(p => {
+    const sorted = sortedSamples;
+    return `p${Math.round(p * 100)} ${valueFormatter(sorted[Math.min(sorted.length - 1, Math.floor(p * (sorted.length - 1)))])}${props.unit ?? ""}`;
+  }) : (props.thresholds ?? []).map(t => t.label ?? valueFormatter(t.value));
+  return /*#__PURE__*/React.createElement("div", {
+    ref: ref,
+    role: "group",
+    "aria-label": ariaLabel ?? "차트",
+    className: cx("bds-chart", `bds-chart--${kind}`, anim && "bds-chart--animate", className),
+    style: frameStyle({
+      fit,
+      width,
+      style
+    })
+  }, linked && full.zoomable && /*#__PURE__*/React.createElement("div", {
+    className: "bds-explore-tools",
+    role: "group",
+    "aria-label": "차트 구간 선택"
+  }, /*#__PURE__*/React.createElement(Select, {
+    "aria-label": "확대 시작",
+    value: draftStart,
+    options: (full.labels ?? []).map((label, i) => ({
+      value: String(coordinates?.[i]),
+      label
+    })),
+    onChange: e => setDraftRange([Number(e.target.value), draftEnd ?? 0])
+  }), /*#__PURE__*/React.createElement(Select, {
+    "aria-label": "확대 종료",
+    value: draftEnd,
+    options: (full.labels ?? []).map((label, i) => ({
+      value: String(coordinates?.[i]),
+      label
+    })),
+    onChange: e => setDraftRange([draftStart ?? 0, Number(e.target.value)])
+  }), /*#__PURE__*/React.createElement(Button, {
+    variant: "secondary",
+    disabled: draftStart == null || draftEnd == null || draftStart >= draftEnd,
+    onClick: () => {
+      if (draftStart != null && draftEnd != null) zoom([draftStart, draftEnd]);
+    }
+  }, "확대"), /*#__PURE__*/React.createElement(Button, {
+    variant: "ghost",
+    disabled: !range,
+    onClick: () => {
+      zoom(null);
+      setDraftRange(null);
+    }
+  }, "초기화")), hasData ? /*#__PURE__*/React.createElement("div", {
+    className: "bds-chart__stage",
+    style: {
+      height: h
+    },
+    role: "application",
+    tabIndex: 0,
+    "aria-label": `${ariaLabel ?? "차트"} 탐색`,
+    "aria-describedby": `${srId} ${srId}-now`,
+    onKeyDown: onKey,
+    onMouseLeave: () => setHover(null),
+    onBlur: e => {
+      if (!e.currentTarget.contains(e.relatedTarget)) setHover(null);
+    }
+  }, w > 0 && body) : /*#__PURE__*/React.createElement("div", {
+    id: srId,
+    className: "bds-chart__empty",
+    style: {
+      height: h
+    }
+  }, emptyText), center, linked && !!props.events?.length && /*#__PURE__*/React.createElement("div", {
+    className: "bds-chart__notes",
+    "aria-label": "차트 이벤트"
+  }, props.events.filter(event => !range || event.value >= range[0] && event.value <= range[1]).map(event => /*#__PURE__*/React.createElement("span", {
+    key: event.id
+  }, event.label))), hasData && notes.length > 0 && /*#__PURE__*/React.createElement("div", {
+    className: "bds-chart__notes"
+  }, notes.map((note, index) => /*#__PURE__*/React.createElement("span", {
+    key: index
+  }, note))), hasData && /*#__PURE__*/React.createElement("p", {
+    id: `${srId}-now`,
+    className: "bds-sr",
+    role: "status"
+  }, readout), hasData && /*#__PURE__*/React.createElement(SrTable, {
+    id: srId,
+    kind: kind,
+    props: props,
+    bins: bins,
+    fmt: valueFormatter
+  }), hasData && legend.length > 0 && /*#__PURE__*/React.createElement(Legend, {
+    items: legend,
+    compact: true
+  }));
+}
+Object.assign(__ds_scope, { Chart });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/data/Chart.jsx", error: String((e && e.message) || e) }); }
+
+// components/data/LogViewer.jsx
+try { (() => {
+const { useEffect, useRef, useState } = React;
+const { cx, frameStyle, SearchField, Select, Button, IconButton } = __ds_scope;
+/** @param {Parameters<typeof import("./LogViewer.d.ts").LogViewer>[0]} props */
+function LogViewer({
+  lines = [],
+  follow = true,
+  searchable = false,
+  wrap = true,
+  numbers = true,
+  fit = "flex",
+  width,
+  height = 240,
+  className,
+  style,
+  "aria-label": ariaLabel = "로그",
+  ...rest
+}) {
+  const ref = useRef(/** @type {HTMLDivElement | null} */null);
+  const [previous, setPrevious] = useState(lines);
+  const [query, setQuery] = useState(""),
+    [level, setLevel] = useState("all"),
+    [paused, setPaused] = useState(false),
+    [unread, setUnread] = useState(0),
+    [match, setMatch] = useState(0);
+  const following = follow && !paused && !query;
+  const records = lines.map((line, index) => ({
+    ...(typeof line === "string" ? {
+      text: line
+    } : line),
+    index
+  }));
+  const visible = records.filter(line => level === "all" || line.level === level);
+  const matches = query ? visible.filter(line => line.text.toLocaleLowerCase().includes(query.toLocaleLowerCase())) : [];
+  const selected = matches[Math.min(match, Math.max(0, matches.length - 1))];
+  if (previous !== lines) {
+    const last = previous.at(-1);
+    const lastIndex = last == null ? -1 : lines.findIndex(line => typeof line === "object" && typeof last === "object" && last.id != null ? line.id === last.id : line === last);
+    setPrevious(lines);
+    setUnread(count => following ? 0 : count + Math.max(0, lines.length - lastIndex - 1));
+  }
+  useEffect(() => {
+    if (following && ref.current) ref.current.scrollTop = ref.current.scrollHeight;
+  }, [lines, following]);
+  useEffect(() => {
+    const parent = ref.current,
+      index = selected?.index;
+    if (!parent || index == null) return;
+    const target = parent.querySelector(`[data-log-index="${index}"]`);
+    if (!target) return;
+    const a = target.getBoundingClientRect(),
+      b = parent.getBoundingClientRect();
+    if (a.top < b.top) parent.scrollTop += a.top - b.top;else if (a.bottom > b.bottom) parent.scrollTop += a.bottom - b.bottom;
+  }, [selected?.index, query]);
+  const highlight = (/** @type {string} */text) => {
+    if (!query) return text;
+    /** @type {import("react").ReactNode[]} */
+    const parts = [];
+    const lower = text.toLocaleLowerCase(),
+      needle = query.toLocaleLowerCase();
+    let start = 0,
+      found = lower.indexOf(needle);
+    while (found >= 0) {
+      parts.push(text.slice(start, found), /*#__PURE__*/React.createElement("mark", {
+        key: found
+      }, text.slice(found, found + query.length)));
+      start = found + query.length;
+      found = lower.indexOf(needle, start);
+    }
+    parts.push(text.slice(start));
+    return parts;
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    className: cx("bds-logviewer", className),
+    style: frameStyle({
+      fit,
+      width,
+      height,
+      style
+    }),
+    ...rest
+  }, searchable && /*#__PURE__*/React.createElement("div", {
+    className: "bds-explore-tools",
+    role: "region",
+    "aria-label": "로그 도구",
+    tabIndex: 0
+  }, /*#__PURE__*/React.createElement(SearchField, {
+    "aria-label": "로그 검색",
+    shortcut: false,
+    value: query,
+    onChange: value => {
+      setQuery(value);
+      setMatch(0);
+      if (value) setPaused(true);
+    }
+  }), /*#__PURE__*/React.createElement(Select, {
+    "aria-label": "로그 레벨",
+    value: level,
+    options: [{
+      value: "all",
+      label: "모든 레벨"
+    }, ...["info", "warn", "error", "debug", "ok"].map(value => ({
+      value,
+      label: value.toUpperCase()
+    }))],
+    onChange: e => {
+      setLevel(e.target.value);
+      setMatch(0);
+      setPaused(true);
+    }
+  }), /*#__PURE__*/React.createElement(IconButton, {
+    icon: "caret-up",
+    "aria-label": "이전 검색 결과",
+    disabled: !matches.length,
+    onClick: () => setMatch((Math.min(match, matches.length - 1) - 1 + matches.length) % matches.length)
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "bds-logviewer__count",
+    role: "status"
+  }, matches.length ? `${Math.min(match + 1, matches.length)} / ${matches.length}행` : query ? "검색 결과 없음" : "검색 대기"), /*#__PURE__*/React.createElement(IconButton, {
+    icon: "caret-down",
+    "aria-label": "다음 검색 결과",
+    disabled: !matches.length,
+    onClick: () => setMatch((match + 1) % matches.length)
+  }), /*#__PURE__*/React.createElement(Button, {
+    variant: "ghost",
+    disabled: !follow,
+    onClick: () => {
+      setPaused(following);
+      if (!following) {
+        setQuery("");
+        setUnread(0);
+      }
+    }
+  }, following ? "일시 정지" : `따라가기${unread ? ` · ${unread}건` : ""}`)), /*#__PURE__*/React.createElement("div", {
+    ref: ref,
+    tabIndex: 0,
+    role: "log",
+    "aria-label": ariaLabel,
+    "aria-live": following ? "polite" : "off",
+    className: cx("bds-log", !wrap && "bds-log--nowrap"),
+    onScroll: e => {
+      if (!searchable) return;
+      const el = e.currentTarget;
+      if (el.scrollHeight - el.clientHeight - el.scrollTop > 1) setPaused(true);
+    }
+  }, visible.map(o => /*#__PURE__*/React.createElement("div", {
+    key: o.id ?? o.index,
+    "data-log-index": o.index,
+    className: cx("bds-log__line", selected?.index === o.index && "bds-log__line--match")
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "bds-log__ln",
+    "aria-hidden": "true"
+  }, numbers ? o.index + 1 : ""), /*#__PURE__*/React.createElement("span", {
+    className: cx("bds-log__lv", o.level && `bds-log__lv--${o.level}`)
+  }, o.time ?? (o.level ? o.level.toUpperCase() : "")), /*#__PURE__*/React.createElement("span", {
+    className: "bds-log__msg"
+  }, o.level && o.time ? /*#__PURE__*/React.createElement("span", {
+    className: `bds-log__lv bds-log__lv--${o.level}`
+  }, o.level.toUpperCase(), " ") : null, highlight(o.text)))), !visible.length && /*#__PURE__*/React.createElement("p", {
+    className: "bds-logviewer__empty"
+  }, "표시할 로그가 없습니다.")));
+}
+Object.assign(__ds_scope, { LogViewer });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/data/LogViewer.jsx", error: String((e && e.message) || e) }); }
+
 // components/input/Slider.jsx
 try { (() => {
 const { forwardRef } = React;
@@ -5630,6 +6436,139 @@ function TextField({
 });
 Object.assign(__ds_scope, { TextField });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/input/TextField.jsx", error: String((e && e.message) || e) }); }
+
+// components/input/FilterBar.jsx
+try { (() => {
+const { forwardRef, useId, useRef, useState } = React;
+const { cx, frameStyle, assignRef, SearchField, Select, TextField, Button, IconButton } = __ds_scope;
+const OPERATORS = [{
+  value: "equals",
+  label: "같음"
+}, {
+  value: "notEquals",
+  label: "다름"
+}, {
+  value: "contains",
+  label: "포함"
+}];
+/** @param {import("./FilterBar.d.ts").FilterBarProps} props
+ * @param {import("react").ForwardedRef<HTMLInputElement>} forwardedRef */
+function FilterBarImpl({
+  fields = [],
+  filters = [],
+  onFiltersChange,
+  query = "",
+  onQueryChange,
+  fit = "flex",
+  width,
+  className,
+  style,
+  ...rest
+}, forwardedRef) {
+  const uid = useId(),
+    serial = useRef(0),
+    search = useRef(/** @type {HTMLInputElement | null} */null);
+  const [fieldKey, setField] = useState("");
+  const [operator, setOperator] = useState(/** @type {import("./FilterBar.d.ts").FilterOperator} */"equals");
+  const [draft, setDraft] = useState("");
+  const field = fields.find(f => f.key === fieldKey) ?? fields[0];
+  const value = field?.options ? field.options.some(o => o.value === draft) ? draft : field.options[0]?.value ?? "" : draft;
+  const add = () => {
+    if (!field || !value.trim()) return;
+    onFiltersChange?.([...filters, {
+      id: `${uid}-${serial.current++}`,
+      field: field.key,
+      operator,
+      value
+    }]);
+    setDraft("");
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    className: cx("bds-filter", className),
+    style: frameStyle({
+      fit,
+      width,
+      style
+    }),
+    ...rest
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "bds-explore-tools"
+  }, /*#__PURE__*/React.createElement(SearchField, {
+    ref: el => {
+      search.current = el;
+      assignRef(forwardedRef, el);
+    },
+    "aria-label": "검색",
+    shortcut: false,
+    value: query,
+    onChange: onQueryChange ?? (() => {})
+  }), field && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Select, {
+    "aria-label": "필터 항목",
+    value: field.key,
+    options: fields.map(f => ({
+      value: f.key,
+      label: f.label
+    })),
+    onChange: e => {
+      setField(e.target.value);
+      setDraft("");
+    }
+  }), /*#__PURE__*/React.createElement(Select, {
+    "aria-label": "필터 연산",
+    options: OPERATORS,
+    value: operator,
+    onChange: e => setOperator(/** @type {import("./FilterBar.d.ts").FilterOperator} */e.target.value)
+  }), field.options ? /*#__PURE__*/React.createElement(Select, {
+    "aria-label": "필터 값",
+    options: field.options,
+    value: value,
+    onChange: e => setDraft(e.target.value)
+  }) : /*#__PURE__*/React.createElement(TextField, {
+    "aria-label": "필터 값",
+    value: draft,
+    onChange: e => setDraft(e.target.value),
+    onKeyDown: e => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        add();
+      }
+    }
+  }), /*#__PURE__*/React.createElement(Button, {
+    variant: "secondary",
+    icon: "plus",
+    onClick: add,
+    disabled: !value.trim()
+  }, "추가")), (filters.length > 0 || query) && /*#__PURE__*/React.createElement(Button, {
+    variant: "ghost",
+    onClick: () => {
+      onFiltersChange?.([]);
+      onQueryChange?.("");
+      search.current?.focus();
+    }
+  }, "초기화")), filters.length > 0 && /*#__PURE__*/React.createElement("ul", {
+    className: "bds-filter__tokens",
+    "aria-label": "적용된 필터"
+  }, filters.map(token => {
+    const f = fields.find(item => item.key === token.field),
+      v = f?.options?.find(o => o.value === token.value)?.label ?? token.value;
+    const label = `${f?.label ?? token.field} ${OPERATORS.find(o => o.value === token.operator)?.label ?? token.operator} ${v}`;
+    return /*#__PURE__*/React.createElement("li", {
+      key: token.id
+    }, /*#__PURE__*/React.createElement("span", null, label), /*#__PURE__*/React.createElement(IconButton, {
+      icon: "x",
+      variant: "ghost",
+      size: "sm",
+      "aria-label": `${label} 해제`,
+      onClick: () => {
+        onFiltersChange?.(filters.filter(t => t.id !== token.id));
+        search.current?.focus();
+      }
+    }));
+  })));
+}
+const FilterBar = /*#__PURE__*/forwardRef(FilterBarImpl);
+Object.assign(__ds_scope, { FilterBar });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/input/FilterBar.jsx", error: String((e && e.message) || e) }); }
 
 // components/input/PasswordField.jsx
 try { (() => {
@@ -6205,6 +7144,117 @@ function Spacer({
 Object.assign(__ds_scope, { Spacer });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/layout/Spacer.jsx", error: String((e && e.message) || e) }); }
 
+// components/layout/SplitPane.jsx
+try { (() => {
+const { useEffect, useId, useRef, useState } = React;
+const { cx } = __ds_scope;
+/** @param {import("./SplitPane.d.ts").SplitPaneProps} props */
+function SplitPane({
+  first,
+  second,
+  ratio,
+  defaultRatio = .35,
+  onRatioChange,
+  firstLabel = "목록",
+  secondLabel = "상세",
+  height,
+  className,
+  style,
+  ...rest
+}) {
+  const dividerFocused = useRef(false);
+  const uid = useId(),
+    ref = useRef(/** @type {HTMLDivElement | null} */null);
+  const [local, setLocal] = useState(defaultRatio),
+    [stacked, setStacked] = useState(false);
+  const value = Math.max(.1, Math.min(.9, Number.isFinite(ratio ?? local) ? ratio ?? local : .35));
+  const change = (/** @type {number} */next) => {
+    const n = Math.max(.1, Math.min(.9, next));
+    setLocal(n);
+    onRatioChange?.(n);
+  };
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const read = () => {
+      const vertical = getComputedStyle(el).flexDirection === "column";
+      setStacked(vertical);
+      if (vertical && dividerFocused.current) {
+        dividerFocused.current = false; /** @type {HTMLElement | null} */
+        el.querySelector(".bds-split__first")?.focus();
+      }
+    };
+    const observer = new ResizeObserver(read);
+    observer.observe(el);
+    read();
+    return () => observer.disconnect();
+  }, []);
+  const move = (/** @type {import("react").PointerEvent<HTMLDivElement>} */e) => {
+    const box = ref.current?.getBoundingClientRect();
+    if (box && box.width) change((e.clientX - box.left) / box.width);
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    className: cx("bds-split", className),
+    style: {
+      height,
+      ...style
+    },
+    ...rest
+  }, /*#__PURE__*/React.createElement("div", {
+    ref: ref,
+    className: "bds-split__layout",
+    style: {
+      "--split-ratio": value
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    id: `${uid}-first`,
+    className: "bds-split__first",
+    role: "region",
+    "aria-label": firstLabel,
+    tabIndex: 0
+  }, first), /*#__PURE__*/React.createElement("div", {
+    role: "separator",
+    "aria-label": `${firstLabel} 영역 크기`,
+    "aria-controls": `${uid}-first`,
+    "aria-orientation": "vertical",
+    "aria-valuemin": 10,
+    "aria-valuemax": 90,
+    "aria-valuenow": Math.round(value * 100),
+    tabIndex: stacked ? -1 : 0,
+    className: "bds-split__handle",
+    onFocus: () => {
+      dividerFocused.current = true;
+    },
+    onBlur: e => {
+      if (e.relatedTarget) dividerFocused.current = false;
+    },
+    onPointerDown: e => {
+      e.preventDefault();
+      e.currentTarget.setPointerCapture(e.pointerId);
+    },
+    onPointerMove: e => {
+      if (e.currentTarget.hasPointerCapture(e.pointerId)) move(e);
+    },
+    onPointerUp: e => {
+      if (e.currentTarget.hasPointerCapture(e.pointerId)) {
+        move(e);
+        e.currentTarget.releasePointerCapture(e.pointerId);
+      }
+    },
+    onKeyDown: e => {
+      if (e.key === "ArrowLeft") change(value - .05);else if (e.key === "ArrowRight") change(value + .05);else if (e.key === "Home") change(.1);else if (e.key === "End") change(.9);else return;
+      e.preventDefault();
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "bds-split__second",
+    role: "region",
+    "aria-label": secondLabel,
+    tabIndex: 0
+  }, second)));
+}
+Object.assign(__ds_scope, { SplitPane });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/layout/SplitPane.jsx", error: String((e && e.message) || e) }); }
+
 // components/layout/Stack.jsx
 try { (() => {
 const { cx, spaceToken } = __ds_scope;
@@ -6463,6 +7513,72 @@ function Pagination({
 }
 Object.assign(__ds_scope, { Pagination });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/navigation/Pagination.jsx", error: String((e && e.message) || e) }); }
+
+// components/navigation/SavedViews.jsx
+try { (() => {
+const { useState } = React;
+const { cx, Select, TextField, Button } = __ds_scope;
+/** @param {import("./SavedViews.d.ts").SavedViewsProps<any>} props */
+function SavedViews({
+  items = [],
+  value,
+  selectedId,
+  onApply,
+  onSave,
+  onDelete,
+  onRename,
+  className,
+  ...rest
+}) {
+  const [name, setName] = useState("");
+  const selected = items.find(item => item.id === selectedId);
+  return /*#__PURE__*/React.createElement("div", {
+    className: cx("bds-saved-views", "bds-explore-tools", className),
+    ...rest
+  }, /*#__PURE__*/React.createElement(Select, {
+    "aria-label": "저장된 보기",
+    value: selected?.id ?? "",
+    options: [{
+      value: "",
+      label: "보기 선택",
+      disabled: true
+    }, ...items.map(item => ({
+      value: item.id,
+      label: item.name
+    }))],
+    onChange: e => {
+      const next = items.find(item => item.id === e.target.value);
+      if (next) onApply?.(next);
+    }
+  }), /*#__PURE__*/React.createElement(TextField, {
+    "aria-label": "보기 이름",
+    placeholder: "보기 이름",
+    value: name,
+    onChange: e => setName(e.target.value)
+  }), /*#__PURE__*/React.createElement(Button, {
+    variant: "secondary",
+    disabled: !name.trim(),
+    onClick: () => {
+      onSave?.(name.trim(), value);
+      setName("");
+    }
+  }, "저장"), onRename && /*#__PURE__*/React.createElement(Button, {
+    variant: "ghost",
+    disabled: !selected || !name.trim(),
+    onClick: () => {
+      if (selected) onRename(selected.id, name.trim());
+      setName("");
+    }
+  }, "이름 변경"), onDelete && /*#__PURE__*/React.createElement(Button, {
+    variant: "ghost",
+    disabled: !selected,
+    onClick: () => {
+      if (selected) onDelete(selected.id);
+    }
+  }, "삭제"));
+}
+Object.assign(__ds_scope, { SavedViews });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/navigation/SavedViews.jsx", error: String((e && e.message) || e) }); }
 
 // components/navigation/SidebarShell.jsx
 try { (() => {
@@ -6743,6 +7859,130 @@ function TopNav({
 }
 Object.assign(__ds_scope, { TopNav });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/navigation/TopNav.jsx", error: String((e && e.message) || e) }); }
+
+// components/navigation/TreeView.jsx
+try { (() => {
+const { useEffect, useRef, useState } = React;
+const { cx, Icon } = __ds_scope;
+/** @param {import("./TreeView.d.ts").TreeViewProps} props */
+function TreeView({
+  nodes = [],
+  selectedId,
+  onSelect,
+  expandedIds,
+  defaultExpandedIds = [],
+  onExpandedChange,
+  className,
+  "aria-label": ariaLabel = "계층 탐색",
+  ...rest
+}) {
+  const [local, setLocal] = useState(defaultExpandedIds),
+    [active, setActive] = useState(/** @type {string | null} */null);
+  const root = useRef(/** @type {HTMLDivElement | null} */null);
+  const hadFocus = useRef(false);
+  const open = new Set(expandedIds ?? local);
+  /** @type {{node: import("./TreeView.d.ts").TreeNode, level: number, parent: string | null, pos: number, size: number}[]} */
+  const rows = [];
+  const visit = (/** @type {import("./TreeView.d.ts").TreeNode[]} */list, /** @type {number} */level, /** @type {string | null} */parent) => list.forEach((node, i) => {
+    rows.push({
+      node,
+      level,
+      parent,
+      pos: i + 1,
+      size: list.length
+    });
+    if (open.has(node.id) && node.children) visit(node.children, level + 1, node.id);
+  });
+  visit(nodes, 1, null);
+  const focusId = rows.some(r => r.node.id === active) ? active : rows.some(r => r.node.id === selectedId) ? selectedId : rows[0]?.node.id;
+  useEffect(() => {
+    if (hadFocus.current && root.current && !root.current.contains(document.activeElement)) /** @type {HTMLElement | null} */root.current.querySelector('[tabindex="0"]')?.focus();
+  }, [focusId]);
+  const focus = (/** @type {string} */id) => {
+    setActive(id);
+    const target = [...(root.current?.querySelectorAll('[role="treeitem"]') ?? [])].find(el => el.getAttribute("data-node") === id); /** @type {HTMLElement | undefined} */
+    target?.focus();
+  };
+  const expand = (/** @type {string} */id) => {
+    const next = new Set(open);
+    next.has(id) ? next.delete(id) : next.add(id);
+    setLocal([...next]);
+    onExpandedChange?.([...next]);
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    ref: root,
+    role: "tree",
+    "aria-label": ariaLabel,
+    className: cx("bds-tree", className),
+    onFocus: () => {
+      hadFocus.current = true;
+    },
+    onBlur: e => {
+      if (e.relatedTarget && !e.currentTarget.contains(e.relatedTarget)) hadFocus.current = false;
+    },
+    ...rest
+  }, rows.map(({
+    node,
+    level,
+    pos,
+    size,
+    parent
+  }, index) => /*#__PURE__*/React.createElement("div", {
+    key: node.id,
+    role: "treeitem",
+    "data-node": node.id,
+    "aria-level": level,
+    "aria-posinset": pos,
+    "aria-setsize": size,
+    "aria-expanded": node.children?.length ? open.has(node.id) : undefined,
+    "aria-selected": selectedId === node.id,
+    "aria-disabled": node.disabled || undefined,
+    tabIndex: focusId === node.id ? 0 : -1,
+    className: "bds-tree__item",
+    style: {
+      "--tree-level": level - 1
+    },
+    onFocus: () => setActive(node.id),
+    onClick: () => {
+      focus(node.id);
+      if (!node.disabled) onSelect?.(node.id);
+    },
+    onKeyDown: e => {
+      let next;
+      if (e.key === "ArrowDown") next = rows[index + 1]?.node.id;else if (e.key === "ArrowUp") next = rows[index - 1]?.node.id;else if (e.key === "Home") next = rows[0]?.node.id;else if (e.key === "End") next = rows.at(-1)?.node.id;else if (e.key === "ArrowRight") {
+        if (node.children?.length) {
+          if (!open.has(node.id)) expand(node.id);else next = node.children[0].id;
+        }
+      } else if (e.key === "ArrowLeft") {
+        if (node.children?.length && open.has(node.id)) expand(node.id);else next = parent;
+      } else if (e.key === "Enter" || e.key === " ") {
+        if (!node.disabled) onSelect?.(node.id);
+      } else return;
+      e.preventDefault();
+      if (next) focus(next);
+    }
+  }, node.children?.length ? /*#__PURE__*/React.createElement("button", {
+    type: "button",
+    className: "bds-tree__toggle",
+    tabIndex: -1,
+    "aria-label": `${node.label} ${open.has(node.id) ? "접기" : "펼치기"}`,
+    onClick: e => {
+      e.stopPropagation();
+      focus(node.id);
+      expand(node.id);
+    }
+  }, /*#__PURE__*/React.createElement(Icon, {
+    name: open.has(node.id) ? "caret-down" : "caret-right",
+    size: 14
+  })) : /*#__PURE__*/React.createElement(Icon, {
+    name: "file",
+    size: 14
+  }), /*#__PURE__*/React.createElement("span", null, node.label))), !rows.length && /*#__PURE__*/React.createElement("p", {
+    className: "bds-tree__empty"
+  }, "표시할 항목이 없습니다."));
+}
+Object.assign(__ds_scope, { TreeView });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/navigation/TreeView.jsx", error: String((e && e.message) || e) }); }
 
 // components/overlay/DropdownMenu.jsx
 try { (() => {
@@ -7599,6 +8839,112 @@ function FormModal({
 Object.assign(__ds_scope, { FormModal });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/overlay/FormModal.jsx", error: String((e && e.message) || e) }); }
 
+// components/overlay/ImageViewer.jsx
+try { (() => {
+const { useState } = React;
+const { Modal, Button, IconButton, MISSING_CLASS, MISSING_TEXT, isMissing } = __ds_scope;
+/** @param {import("./ImageViewer.d.ts").ImageViewerProps} props */
+function ImageViewer({
+  open,
+  onClose,
+  images = [],
+  index,
+  onIndexChange,
+  "aria-label": ariaLabel = "이미지 뷰어"
+}) {
+  const [local, setLocal] = useState(0),
+    [zoom, setZoom] = useState(1);
+  const active = Math.min(Math.max(0, Number.isFinite(index ?? local) ? Math.trunc(index ?? local) : 0), Math.max(0, images.length - 1));
+  const current = images[active];
+  const identity = open && current ? `${current.id}\n${current.src}` : "";
+  const [shown, setShown] = useState(identity),
+    [status, setStatus] = useState("loading");
+  if (shown !== identity) {
+    setShown(identity);
+    setZoom(1);
+    setStatus("loading");
+  }
+  const move = (/** @type {number} */next) => {
+    const n = Math.min(images.length - 1, Math.max(0, next));
+    setLocal(n);
+    onIndexChange?.(n);
+  };
+  const scale = (/** @type {number} */next) => setZoom(Math.max(1, Math.min(8, next)));
+  return /*#__PURE__*/React.createElement(Modal, {
+    open: open,
+    onClose: onClose,
+    title: current?.title ?? ariaLabel,
+    size: "xl",
+    className: "bds-imageviewer",
+    onKeyDown: e => {
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLSelectElement) return;
+      if (e.key === "+" || e.key === "=") scale(zoom * 1.25);else if (e.key === "-") scale(zoom / 1.25);else if (e.key === "0") setZoom(1);else if (e.key === "ArrowLeft" && zoom === 1) move(active - 1);else if (e.key === "ArrowRight" && zoom === 1) move(active + 1);else return;
+      e.preventDefault();
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "bds-explore-tools"
+  }, /*#__PURE__*/React.createElement(IconButton, {
+    icon: "caret-left",
+    "aria-label": "이전 이미지",
+    disabled: active === 0 || !images.length,
+    onClick: () => move(active - 1)
+  }), /*#__PURE__*/React.createElement("span", {
+    role: "status"
+  }, images.length ? `${active + 1} / ${images.length}` : "이미지 없음"), /*#__PURE__*/React.createElement(IconButton, {
+    icon: "caret-right",
+    "aria-label": "다음 이미지",
+    disabled: active >= images.length - 1,
+    onClick: () => move(active + 1)
+  }), /*#__PURE__*/React.createElement(IconButton, {
+    icon: "magnifying-glass-minus",
+    "aria-label": "축소",
+    disabled: zoom <= 1 || !current,
+    onClick: () => scale(zoom / 1.25)
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "bds-mono"
+  }, Math.round(zoom * 100), "%"), /*#__PURE__*/React.createElement(IconButton, {
+    icon: "magnifying-glass-plus",
+    "aria-label": "확대",
+    disabled: zoom >= 8 || !current,
+    onClick: () => scale(zoom * 1.25)
+  }), /*#__PURE__*/React.createElement(Button, {
+    variant: "ghost",
+    disabled: !current,
+    onClick: () => setZoom(1)
+  }, "화면 맞춤")), /*#__PURE__*/React.createElement("div", {
+    className: "bds-imageviewer__viewport",
+    role: "region",
+    "aria-label": "이미지 확대 영역",
+    tabIndex: 0
+  }, current ? /*#__PURE__*/React.createElement("div", {
+    className: "bds-imageviewer__canvas",
+    style: {
+      width: `${zoom * 100}%`,
+      height: `${zoom * 100}%`
+    }
+  }, /*#__PURE__*/React.createElement("img", {
+    key: identity,
+    src: current.src,
+    alt: current.alt,
+    onLoad: () => setStatus("ready"),
+    onError: () => setStatus("error")
+  })) : /*#__PURE__*/React.createElement("p", null, "표시할 이미지가 없습니다.")), current && status !== "ready" && /*#__PURE__*/React.createElement("p", {
+    className: "bds-imageviewer__message",
+    role: "status"
+  }, status === "error" ? "이미지를 불러오지 못했습니다." : "이미지 로딩 중"), !!current?.metadata?.length && /*#__PURE__*/React.createElement("dl", {
+    className: "bds-imageviewer__metadata",
+    role: "region",
+    "aria-label": "이미지 정보",
+    tabIndex: 0
+  }, current.metadata.map((item, i) => /*#__PURE__*/React.createElement("div", {
+    key: i
+  }, /*#__PURE__*/React.createElement("dt", null, item.label), /*#__PURE__*/React.createElement("dd", {
+    className: isMissing(item.value) ? MISSING_CLASS : undefined
+  }, isMissing(item.value) ? MISSING_TEXT : item.value)))));
+}
+Object.assign(__ds_scope, { ImageViewer });
+})(); } catch (e) { __ds_ns.__errors.push({ path: "components/overlay/ImageViewer.jsx", error: String((e && e.message) || e) }); }
+
 // theme-toggle.js
 try { (() => {
 /* Document theme sync. See RULE.md "컴포넌트 사용 규칙" (document theme controls). */
@@ -7695,6 +9041,8 @@ __ds_ns.Sparkline = __ds_scope.Sparkline;
 
 __ds_ns.StatTile = __ds_scope.StatTile;
 
+__ds_ns.StateTimeline = __ds_scope.StateTimeline;
+
 __ds_ns.Timeline = __ds_scope.Timeline;
 
 __ds_ns.TrendDelta = __ds_scope.TrendDelta;
@@ -7767,6 +9115,8 @@ __ds_ns.Field = __ds_scope.Field;
 
 __ds_ns.FileUpload = __ds_scope.FileUpload;
 
+__ds_ns.FilterBar = __ds_scope.FilterBar;
+
 __ds_ns.MultiSelect = __ds_scope.MultiSelect;
 
 __ds_ns.NumberStepper = __ds_scope.NumberStepper;
@@ -7817,6 +9167,8 @@ __ds_ns.Panel = __ds_scope.Panel;
 
 __ds_ns.Spacer = __ds_scope.Spacer;
 
+__ds_ns.SplitPane = __ds_scope.SplitPane;
+
 __ds_ns.Stack = __ds_scope.Stack;
 
 __ds_ns.StatusBar = __ds_scope.StatusBar;
@@ -7835,6 +9187,8 @@ __ds_ns.Link = __ds_scope.Link;
 
 __ds_ns.Pagination = __ds_scope.Pagination;
 
+__ds_ns.SavedViews = __ds_scope.SavedViews;
+
 __ds_ns.SidebarShell = __ds_scope.SidebarShell;
 
 __ds_ns.SidebarNavItem = __ds_scope.SidebarNavItem;
@@ -7845,11 +9199,15 @@ __ds_ns.Tabs = __ds_scope.Tabs;
 
 __ds_ns.TopNav = __ds_scope.TopNav;
 
+__ds_ns.TreeView = __ds_scope.TreeView;
+
 __ds_ns.Drawer = __ds_scope.Drawer;
 
 __ds_ns.DropdownMenu = __ds_scope.DropdownMenu;
 
 __ds_ns.FormModal = __ds_scope.FormModal;
+
+__ds_ns.ImageViewer = __ds_scope.ImageViewer;
 
 __ds_ns.Modal = __ds_scope.Modal;
 

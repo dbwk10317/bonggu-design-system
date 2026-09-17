@@ -5,3 +5,5 @@ FileUpload · 프로젝트 ZIP·Dataset ZIP 청크 업로드. 이미지 한 장�
   items={[{id:"1",name:"ocr-finetune.zip",size:193e6,status:"uploading",progress:.44,chunk:4,chunks:9,rate:"42 MiB/s"},{id:"2",name:"asr.zip",size:8.1e8,status:"verifying"}]} />
 ```
 - 업로드 로직(청크 PUT, SHA-256)은 컴포넌트 밖. 이 컴포넌트는 표시와 버튼만.
+
+`fit="auto"`와 `width`를 함께 넘겨 콘텐츠 배치에 맞춘 폭을 지정할 수 있습니다. 크기 계약은 RULE.md를 따릅니다.

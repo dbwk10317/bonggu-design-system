@@ -8,6 +8,8 @@
 <body class="bds-demo-page"><div id="root"></div>
 <script type="text/babel">
 const NS = window.Ds_d3ea90;
+const { SplitPane } = NS;
+
 
 const { PageStack, PageHeader, Panel, CardHead, Toolbar, ToolbarGrow, Grid, GridItem, StatusBar, Container, Stack, Inline, Spacer, Divider, AspectRatio, JustifiedGallery, Visible, Button, SearchField, Select } = NS;
 function App(){ const [q,setQ]=React.useState(""); return <>
@@ -40,6 +42,7 @@ function App(){ const [q,setQ]=React.useState(""); return <>
     <div className="bds-demo-caption">마지막 줄은 늘리지 않음 · 원본 크기 결측은 1:1</div>
     <JustifiedGallery aria-label="설치 현장 사진" onOpen={() => {}} items={[[4000,2492],[3000,3000],[4000,2760],[2410,3000],[4000,3000],[2150,3000],[4000,2245],[null,null]].map(([width,height],i)=>({ id: i, src: "../../assets/mascot-neutral.svg", alt: `설치 현장 사진 ${i + 1}`, width, height }))} />
   </section>
+<div className="bds-demo-section"><div className="bds-demo-label">SplitPane · 목록과 상세</div><SplitPane first={<p>서비스 목록</p>} second={<p>선택한 서비스의 상세를 표시합니다. 경계는 키보드와 드래그로 조절할 수 있습니다.</p>} /></div>
 </>; }
 ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
 </script></body></html>

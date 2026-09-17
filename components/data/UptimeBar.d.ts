@@ -1,3 +1,4 @@
+/** @visualization */
 import type { HTMLAttributes, ReactNode } from "react";
 export interface UptimeSegment { status: "ok" | "warn" | "crit" | "off"; label?: string; }
 export interface UptimeBarProps extends HTMLAttributes<HTMLDivElement> {

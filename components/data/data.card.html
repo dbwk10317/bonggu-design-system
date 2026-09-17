@@ -8,6 +8,8 @@
 <body class="bds-demo-page"><div id="root"></div>
 <script type="text/babel">
 const NS = window.Ds_d3ea90;
+const { StateTimeline } = NS;
+
 const { Chart, StatTile, BarList, KeyValues, CardHead, DataTable, LogViewer, DescriptionList, StatusPill, Panel, Tag, Heatmap, Timeline, DiffView, Gauge, TrendDelta, Legend, UptimeBar, Stack } = NS;
 const R = (s) => { let x = s; return () => (x = (x * 9301 + 49297) % 233280) / 233280; };
 
@@ -87,6 +89,7 @@ function App(){ return <>
   <Basic />
   <Viz />
   <More />
+<div className="bds-demo-section"><div className="bds-demo-label">StateTimeline · 상태 지속 시간</div><StateTimeline formatTime={v=>`${v}분`} rows={[{id:"api",label:"인증 API",intervals:[{id:"ok",start:0,end:40,status:"ok",label:"정상"},{id:"warn",start:40,end:55,status:"warn",label:"응답 지연"},{id:"off",start:55,end:60,status:"off",label:"수집 지연"}]}]} /></div>
 </>; }
 ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
 </script></body></html>

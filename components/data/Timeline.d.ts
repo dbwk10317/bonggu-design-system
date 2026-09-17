@@ -4,7 +4,7 @@ export interface TimelineItem { id?: string; time: ReactNode; title: ReactNode; 
 export interface TimelineProps extends Omit<HTMLAttributes<HTMLOListElement>, "children"> {
   items: TimelineItem[];
   dense?: boolean;
-  fit?: "flex" | "fixed";
+  fit?: "flex" | "fixed" | "auto";
   width?: number | string;
   "aria-label"?: string;
 }

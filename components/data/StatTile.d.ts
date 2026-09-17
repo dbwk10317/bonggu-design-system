@@ -27,7 +27,7 @@ export interface StatTileProps extends HTMLAttributes<HTMLDivElement> {
   /** One-time count-up on entry. Default false: live numbers change instantly */
   animate?: boolean;
   /** flex = parent width (default), fixed = width/height */
-  fit?: "flex" | "fixed";
+  fit?: "flex" | "fixed" | "auto";
   width?: number | string;
 }
 export declare function StatTile(props: StatTileProps): ReactNode;

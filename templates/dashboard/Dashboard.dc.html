@@ -8,7 +8,7 @@
 </head>
 <body>
 <x-dc>
-<!-- @template name="봉구 엣지 콘솔" description="가상 운영 콘솔. 개요·노드·장치·배포·접근·설정 6화면과 공개 상태 페이지. 이 시스템의 컴포넌트를 모두 쓴다. 라이트 기본, 상단바에서 다크 전환" -->
+<!-- @template name="봉구 엣지 콘솔" description="가상 운영 콘솔. 개요·노드·장치·배포·접근·설정·탐색 7화면과 공개 상태 페이지. 이 시스템의 컴포넌트를 모두 쓴다. 라이트 기본, 상단바에서 다크 전환" -->
 <helmet>
 <script src="./ds-base.js"></script>
 <script src="./data.js"></script>
@@ -16,6 +16,7 @@
 <style>html,body{height:100%;margin:0}</style>
 </helmet>
 <x-import component-from-global-scope="KitNoop" from="./OverviewScreen.jsx" hint-size="0,0" style="display:none"></x-import>
+<x-import component-from-global-scope="KitNoop" from="./ExploreScreen.jsx" hint-size="0,0" style="display:none"></x-import>
 <x-import component-from-global-scope="KitNoop" from="./NodesScreen.jsx" hint-size="0,0" style="display:none"></x-import>
 <x-import component-from-global-scope="KitNoop" from="./DevicesScreen.jsx" hint-size="0,0" style="display:none"></x-import>
 <x-import component-from-global-scope="KitNoop" from="./DeploysScreen.jsx" hint-size="0,0" style="display:none"></x-import>

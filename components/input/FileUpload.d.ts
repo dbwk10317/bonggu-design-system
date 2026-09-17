@@ -13,7 +13,7 @@ export interface FileUploadProps extends Omit<HTMLAttributes<HTMLDivElement>, "t
   onCancel?: (id: string) => void;
   title?: ReactNode;
   hint?: ReactNode;
-  fit?: "flex" | "fixed";
+  fit?: "flex" | "fixed" | "auto";
   width?: number | string;
 }
 export declare const FileUpload: ForwardRefExoticComponent<FileUploadProps & RefAttributes<HTMLDivElement>>;

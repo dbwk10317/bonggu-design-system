@@ -8,3 +8,5 @@ Timeline · 시간순 이벤트. KeyValues 나열 대신 "언제 무엇이" 한�
 ```
 - time은 mono, 최신이 위. tone은 점 색만 바꾸고 텍스트가 뜻을 전한다.
 - tone(ok·warn·crit·info)은 제목 앞에 스크린리더용 "정상,"/"주의," 같은 텍스트로도 읽힌다.
+
+`fit="auto"`와 `width`를 함께 넘겨 콘텐츠 배치에 맞춘 폭을 지정할 수 있습니다. 크기 계약은 RULE.md를 따릅니다.

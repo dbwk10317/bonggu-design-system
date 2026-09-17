@@ -6,7 +6,7 @@ export interface ColorInputProps extends Omit<HTMLAttributes<HTMLDivElement>, "o
   defaultValue?: string;
   presets?: string[];
   size?: "sm" | "md";
-  fit?: "flex" | "fixed";
+  fit?: "flex" | "fixed" | "auto";
   width?: number | string;
   disabled?: boolean;
   invalid?: boolean;

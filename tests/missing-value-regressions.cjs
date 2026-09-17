@@ -50,7 +50,7 @@ const marks = [
   ['BarList', render(BarList, { items: [{ name: 'nvme0n1', value: null }] }), true],
   ['KeyValues', render(KeyValues, { rows: [['실행 중', null]] }), true],
   ['Heatmap', render(Heatmap, { rows: ['월'], cols: ['00'], values: [[null]] }), false], // marker text only in the hidden table
-  ['Gauge', render(Gauge, { value: null }), false], // SVG text: the .bds-gauge--off rule handles the marker
+  ['Gauge', render(Gauge, { value: null }), true], // HTML readout shares the missing marker
   ['TrendDelta', render(TrendDelta, { value: null }), true],
   ['UptimeBar', render(UptimeBar, { name: 'svc', segments: [{ status: 'off' }] }), true],
   ['StatTile', render(StatTile, { label: '요청', value: null, unit: '건' }), true],

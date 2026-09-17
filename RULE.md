@@ -8,9 +8,9 @@
 
 - **데이터는 nullable이 기본.** 수집되지 않은 값은 꾸미지 않고 **"수집 안 됨"**으로 그대로 보여준다. 일부 실패는 페이지 실패가 아니라 `degraded` + 해당 카드의 결측으로 표현한다. 표기 문구·판정·클래스는 `components/core/frame.js`의 fit 계약처럼 `components/core/missing.js` 한 곳에서 나온다(`MISSING_TEXT`·`isMissing()`·`bds-na`). `null`·`undefined`·`NaN`이 결측이고 `""`·`0`은 수집된 값이다. 이 판정은 표기만의 규칙이 아니다. 좌표·누적·합계·축 범위 같은 계산에도 같은 기준을 쓰고, 유한한 수가 아닌 값은 계산에 들어가지 않는다.
 - **상태는 색 단독으로 전하지 않는다.** 항상 텍스트를 병기한다. 알림은 래치되어 읽음 처리 전까지 남는다.
-- **고정 픽셀 대신 `fit` 계약 + 컨테이너 쿼리.** 모든 컨테이너형 컴포넌트가 `fit="flex" | "fixed" | "auto"`를 받는다. flex(기본)는 부모 폭을 채우고 `min-width:0`으로 격자에서 찌그러지지 않으며, fixed는 `width`/`height`를 그대로 쓴다. 열 숨김·격자 접힘은 뷰포트가 아니라 **컨테이너 폭**(`@container`) 기준이다. 차트는 ResizeObserver로 실제 픽셀을 재서 viewBox를 맞춘다. 격자는 `repeat(auto-fit, minmax(min(100%, N), 1fr))`로만 만든다.
+- **고정 픽셀 대신 `fit` 계약 + 컨테이너 쿼리.** `fit`을 공개하는 컴포넌트는 `fit="flex" | "fixed" | "auto"`를 모두 받는다. Grid·Stack처럼 자식 배치를 소유하는 레이아웃은 자기 배치 API를 쓰고, Sparkline처럼 부모 영역을 그리는 그래픽은 부모가 크기를 소유한다. flex(기본)는 부모 폭을 채우고 `min-width:0`으로 격자에서 찌그러지지 않으며, fixed는 `width`/`height`를 그대로 쓴다. 열 숨김·격자 접힘은 뷰포트가 아니라 **컨테이너 폭**(`@container`) 기준이다. 차트는 ResizeObserver로 실제 픽셀을 재서 viewBox를 맞춘다. 격자는 `repeat(auto-fit, minmax(min(100%, N), 1fr))`로만 만든다.
 - **전역 토큰은 별칭 없이 정본 하나로 유지한다.** 이름을 바꿀 때는 별칭을 추가하지 않고 정본을 개명한 뒤 모든 사용처를 함께 이관한다. 공개 토큰의 삭제·개명은 major 변경으로 처리하고 이관표를 제공한다.
-- **차트와 UI는 한 팔레트, 한 크롬.** 차트 색은 범주형 8색(`--series-1~8`, oklch 명도 0.62·채도 0.14 고정), 의미 고정 쌍(`--series-rx/tx/used/reserved/free`), 순차 램프(`--ramp-1~6`) 세 계열만. 상태색은 임계선·미터 전용. 모든 차트(`Chart` kind 7종)는 격자(hairline)·축(mono 10.5)·범례·툴팁(elev-2)·빈 상태 크롬을 공유한다. 결측은 0으로 그리지 않고 종류마다 생략 방식이 정해져 있다. 선과 면은 구간을 끊고, 막대는 그리지 않으며 누적 합계에서도 뺀다. 파이는 세그먼트를 링과 합계에서 빼고 범례에는 결측으로 남긴다. 레이더는 결측 축에 닿는 선과 그 계열의 면 채움을 생략한다. 방사 게이지와 Sparkline은 값 자리에 결측을 표시한다. 어느 종류든 결측 하나가 축 범위나 다른 계열의 좌표를 바꾸지 않는다.
+- **차트와 UI는 한 팔레트, 한 크롬.** 차트 색은 범주형 8색(`--series-1~8`, 테마 안에서 같은 명도·채도), 의미 고정 쌍(`--series-rx/tx/used/reserved/free`), 순차 램프(`--ramp-1~6`) 세 계열만. 상태색은 임계선·미터·상태 구간을 표현한다. 모든 차트(`Chart` kind 7종)는 격자(hairline)·축(mono 10.5)·범례·툴팁(elev-2)·빈 상태 크롬을 공유한다. 결측은 0으로 그리지 않고 종류마다 생략 방식이 정해져 있다. 선과 면은 구간을 끊고, 막대는 그리지 않으며 누적 합계에서도 뺀다. 파이는 세그먼트를 링과 합계에서 빼고 범례에는 결측으로 남긴다. 레이더는 결측 축에 닿는 선과 그 계열의 면 채움을 생략한다. 방사 게이지와 Sparkline은 값 자리에 결측을 표시한다. 어느 종류든 결측 하나가 축 범위나 다른 계열의 좌표를 바꾸지 않는다.
 - **반응형 검수 폭**: PC 1280 · 태블릿 834 · 모바일 390 + 라이트(기본)·다크 양쪽이 항상 깨지지 않아야 한다.
 
 ## 동작 계약
@@ -40,7 +40,7 @@
 - JustifiedGallery는 사진을 순서대로 행에 담고, 마지막 행을 뺀 모든 행의 폭을 컨테이너 폭과 정확히 맞춘다. 반올림 오차는 그 행의 마지막 타일이 흡수한다. 마지막 행은 늘리지 않고 목표 높이를 넘지 않는다. 목표 행 높이는 컨테이너 폭에서 나오며 `rowHeight`로 고정할 수 있다. 원본 크기가 결측이거나 0 이하이면 1:1로 배치한다.
 - **DataTable 행의 신원은 위치가 아니라 값이다.** `rowKey`나 `row.id`가 신원이고, 선택·펼침은 그 신원에 붙는다. 정렬은 표시만 하고 실제 정렬은 소비자가 `rows`에 반영하므로, 인덱스를 신원으로 쓰면 정렬·필터 뒤 같은 인덱스가 다른 레코드를 가리킨다. 신원 없이 선택·펼침을 켜면 알린다.
 - DataTable에서 `render`가 없는 열의 `null`은 결측으로 표시한다. `render`가 돌려준 `null`은 React 규칙대로 빈 칸이다. 값 대신 빈 칸을 원하면 빈 문자열을 넘긴다.
-- 결측 표기는 그리는 매체를 따른다. **HTML 텍스트**면 `bds-na`, **SVG 텍스트**면 `fill`로 색을 받고(Gauge), **텍스트가 아닌 칸**이면 track 색과 `title`로 알린다(UptimeBar). 문구 상수는 셋 다 공통을 쓴다. StatTile의 `deltaLabel`은 결측 표기가 아니라 보조 라벨이다.
+- 결측 표기는 그리는 매체를 따른다. **HTML 텍스트**면 `bds-na`, **SVG 텍스트**면 `fill`로 색을 받고, **텍스트가 아닌 칸**이면 track 색과 `title`로 알린다(UptimeBar). 문구 상수는 셋 다 공통을 쓴다. StatTile의 `deltaLabel`은 결측 표기가 아니라 보조 라벨이다.
 
 **접근성**
 
@@ -50,7 +50,7 @@
 - **셸은 본문으로 건너뛰는 링크를 낸다.** 화면마다 같은 내비게이션이 앞에 오므로, 키보드 사용자가 매번 그것을 지나야 본문에 닿는다. 링크는 첫 탭 스톱이고 평소에는 보이지 않다가 초점을 받으면 나타난다(`.bds-sr` 로 숨기기만 하면 초점을 받아도 보이지 않는다). `SidebarShell`은 자기 본문으로 링크하고, 본문을 갖지 않는 `TopNav`는 `skipTo`로 받은 본문 id로 링크한다. `TopNav`를 쓰는 화면은 `skipTo`를 넘긴다.
 - **잘리는 스크롤 영역은 초점을 받는다.** 가로·세로로 내용이 잘리는 상자(넓은 표, 로그)는 `tabIndex=0`과 이름을 주고 그 영역을 뜻하는 역할(`region`·`log`)을 붙인다. 마우스 없이는 잘린 내용에 닿을 방법이 없다(WCAG 2.1.1).
 - **라디오그룹과 그리드는 탭 스톱이 하나다.** 선택된 것(없으면 첫 항목)만 `tabIndex=0`이고 나머지는 `-1`이며, 화살표로 옮긴다. 옮길 때 선택과 **포커스를 함께** 옮긴다. 포커스가 따라가지 않으면 스크린리더가 옛 항목을 계속 읽는다. 화살표는 `preventDefault`로 페이지 스크롤을 막는다.
-- **그림으로 그리는 데이터(Chart·Heatmap)는 세 가지를 함께 낸다.** ① 시각(`aria-hidden`), ② 같은 데이터를 담은 숨김 표(`bds-sr`), ③ 화살표로 지점을 옮기며 읽는 탐색 표면. 셋을 감싸는 루트는 `role="group"`이다. 루트에 `role="img"`를 두면 후손이 접근성 트리에서 잘려 숨김 표와 탐색 표면이 함께 사라진다.
+- **그림으로 그리는 데이터(Chart·Heatmap·StateTimeline)는 세 가지를 함께 낸다.** ① 시각(`aria-hidden`), ② 같은 데이터를 담은 숨김 표(`bds-sr`), ③ 화살표로 지점을 옮기며 읽는 탐색 표면. 셋을 감싸는 루트는 `role="group"`이다. 루트에 `role="img"`를 두면 후손이 접근성 트리에서 잘려 숨김 표와 탐색 표면이 함께 사라진다.
 - **탐색 표면은 `role="application"` + `tabIndex=0`이다.** 화살표를 컴포넌트가 받아야 하는데, 역할이 없으면 스크린리더의 브라우즈 모드가 화살표를 먼저 가져가 탐색이 동작하지 않는다. 표면은 접근 가능한 이름을 갖고, 현재 지점의 읽을거리를 `role="status"` 라이브 영역으로 알린다. 라이브 영역은 표면 밖(루트 안)에 두어야 갱신이 전달된다.
 
 **생성과 검증**
@@ -96,7 +96,7 @@
 - **아이콘**은 Phosphor Bold에서만 온다. 손으로 그린 SVG를 아이콘으로 두지 않고, 이모지·유니코드 기호도 아이콘이 아니다(가운뎃점 `·`은 텍스트 구분자로만). **브랜드 마크**는 아이콘이 아니라 브랜드 자산이고 `MascotMark`(봉구) 하나뿐이다.
 - 자산: `assets/mascot-neutral.svg`(정적 마스코트), `assets/favicon.svg`. 로고 워드마크는 없다. 브랜드 이름은 Spoqa 700 텍스트로 쓴다.
 
-## fit 계약 (모든 컨테이너형 컴포넌트)
+## fit 계약 (크기 선택 API)
 
 ```jsx
 <Chart kind="area" … />                       // fit="flex": 부모 폭, height만 지정
@@ -104,6 +104,27 @@
 <Button fit="flex">모바일 전폭</Button>        // 컨트롤은 auto 기본
 ```
 `components/core/frame.js`의 `frameStyle()`이 한 곳에서 구현한다. 새 컴포넌트도 이것을 쓴다. 결측 계약도 같은 방식으로 `components/core/missing.js`에 있다.
+
+## 시각화 크기와 텍스트 배치
+
+- **타이포는 역할, 배치는 실측으로 정한다.** 수치·시간 눈금은 `--fs-micro`·데이터 서체, 항목 이름은 `--fs-caption`·UI 서체다. 도형 안 대표값은 `--fs-subheading` 이상 `--fs-title` 이하이며 공간에 맞춰 그 사이에서 조절한다. SVG 전체를 확대해 글자까지 비례 확대하지 않는다. 폰트 로딩·컨테이너 리사이즈 뒤 실제 서체와 토큰으로 다시 계산한다.
+- **도형과 글자는 같은 공간을 중복 점유하지 않는다.** 원형 중앙값은 선 두께를 뺀 안쪽 영역에 내접하는 안전 상자 안에 둔다. 최소 글자 크기로도 값·단위·설명이 함께 들어가지 않으면 완전한 읽을거리를 도형 아래로 옮긴다. 숫자 자르기·임의 반올림·무한 축소로 맞추지 않는다. 대표값이 없는 순수 그래픽(Sparkline)은 부모 영역과 일정한 선 두께를 따른다.
+- **축과 주석은 영역 안에서 충돌 없이 배치한다.** 실제 텍스트 폭·높이를 여백과 표시 개수에 반영하고, 양끝 라벨도 서로 겹치면 생략한다. 레이더는 항목명에 필요한 여백을 먼저 확보한다. 백분위·임계 라벨은 겹치지 않는 항목만 도형에 쓰며 전체 값은 같은 차트의 텍스트 읽을거리로 제공한다. 공간이 부족하면 그래픽 영역을 내부 스크롤로 제공한다. 작은 높이 때문에 음수 좌표·음수 크기를 만들지 않는다.
+- **툴팁은 실측한 상자 전체가 탐색 영역 안에 든다.** 포인터 위치의 비율만으로 좌우를 고르지 않는다. 긴 문자열은 줄바꿈하고, 영역 높이를 넘는 목록은 툴팁 안에서 스크롤하며 키보드로도 읽을 수 있다.
+- **행렬은 읽을 수 있는 셀 크기를 유지한다.** Heatmap은 열을 숨기거나 압축해 의미를 잃게 하지 않고, 최소 셀 폭의 합이 컨테이너보다 크면 이름 있는 키보드 탐색 영역 안에서 가로 스크롤한다. 선택한 셀은 그 영역 안으로 따라온다. 범례와 일반 목록은 줄바꿈으로 폭에 맞춘다.
+- **새 시각화도 동일한 크기 게이트를 통과한다. 공개 `.d.ts`의 `@visualization`과 `tests/visualization-regressions.cjs`의 fixture를 함께 등록한다.** 데이터 그래픽마다 좁은 폭·낮은 높이·긴 값·긴 한글 항목명·재리사이즈·폰트 변경을 포함한다. 페이지의 scrollWidth뿐 아니라 텍스트 경계·글자 간 충돌·도형 안전 영역·내부 스크롤 경계를 검사한다. 검수 크기는 재현 fixture이고 디자인의 고정 크기가 아니다.
+
+## 탐색·작업 확장 계약
+
+- **화면 상태와 저장 책임을 분리한다.** 필터·정렬·열 구성·저장된 보기는 값과 변경 이벤트로 연결한다. 컴포넌트는 임의로 데이터 조회, 권한 판단, 영구 저장을 수행하지 않는다. 저장된 보기를 적용하면 같은 조건과 열 구성을 재현하며, 삭제·이름 변경은 항목의 안정적인 신원으로 처리한다.
+- **조건과 설정은 좁은 폭에서도 수정할 수 있다.** 필터는 조건의 필드·연산·값을 함께 보여주고 개별 해제와 전체 초기화를 제공한다. 도구와 조건은 줄바꿈하거나 펼칠 수 있는 영역으로 이동한다. 긴 이름과 값 때문에 조작 영역을 축소하거나 본문을 밖으로 밀지 않는다.
+- **표의 열 구성도 신원에 붙는다.** 열의 순서·표시·폭·고정은 열 key를 기준으로 적용한다. 적어도 하나의 데이터 열을 남기며, 고정 열이 나머지 데이터를 가리킬 공간을 잠식하면 고정을 해제하고 내부 스크롤로 접근한다. 드래그 없이도 열 순서·폭을 조절할 수 있다.
+- **연결된 차트는 데이터 좌표로 소통한다.** 커서와 선택 구간은 화면 픽셀이나 배열 위치가 아닌 동일한 시간·수치 좌표를 공유한다. 확대는 표시 범위를 바꾸며 원본 값을 변형하지 않는다. 구간 선택에는 키보드 조작과 초기화 경로를 제공한다. 사건 표시는 데이터와 구분하고, 설명은 도형 경계를 벗어나지 않는 별도 읽을거리로 제공한다.
+- **로그를 읽는 위치를 보호한다.** 과거 로그를 읽거나 검색할 때 새 로그가 도착해도 자동으로 맨 아래로 이동시키지 않는다. 새로 도착한 양과 따라가기 복귀 경로를 제공한다. 검색·레벨 필터 뒤에도 원본 행의 신원과 순서를 유지하며, 검색 결과 이동은 로그 영역만 스크롤한다.
+- **계층 탐색과 분할 배치는 키보드에서도 완결된다.** 트리는 펼침·선택을 구분하고, 화살표로 보이는 항목과 부모·자식 사이를 이동한다. 접히거나 사라진 항목에 포커스를 남기지 않는다. 분할 경계는 드래그와 키보드 조절을 모두 제공하며, 병렬 배치가 어려운 공간에서는 읽는 순서를 유지한 세로 배치로 전환한다.
+- **상태의 지속 시간은 실제 구간에 비례한다.** 상태 타임라인은 시간 구간을 같은 좌표계로 비교하고 범위 밖을 잘라낸다. 결측을 정상으로 채우지 않으며, 겹치는 구간은 서로 덮지 않는 행으로 분리한다. 상태는 색과 텍스트로 함께 전하고, 좁은 구간의 설명은 선택 읽을거리와 표로 제공한다.
+- **이미지 확대는 뷰어 안에 머문다.** 원본 비율을 유지하고 화면 맞춤을 제공하며, 확대된 내용은 이름 있는 내부 영역에서 탐색한다. 이전·다음 이동과 확대·축소에는 키보드 경로를 제공한다. 사진이 바뀌면 새 사진에 맞춰 배치를 초기화하고, 로딩·오류·메타데이터도 같은 영역 안에서 읽을 수 있게 한다. 모달의 닫힘·포커스 복원 계약을 그대로 따른다.
+- **새 기능은 내용 변화까지 검수한다.** 폭·높이·테마·밀도·입력 방식·글자 설정이 달라지는 조합에서 긴 이름, 많은 항목, 빈 값, 데이터 교체, 확대 후 축소를 확인한다. 공개 선언의 `@responsive`와 `tests/exploration-regressions.cjs`에 기능을 함께 등록한다. 구체적인 시험 치수는 검증 fixture가 소유하며 규칙의 고정 배치값으로 사용하지 않는다. 외부 넘침뿐 아니라 내부 조작 접근성, 텍스트 충돌, 선택 유지와 포커스 복원도 검사한다.
 
 ## 컴포넌트 사용 규칙
 
@@ -125,22 +146,22 @@
 - `styles/c-*.css` · 컴포넌트 클래스(action · input · status · data · chart · layout · overlay · feedback · extra · more)
 - `fonts/` · Spoqa Han Sans Neo 300/400/500/700, JetBrains Mono latin/latin-ext (woff2), `fonts/phosphor/` Phosphor Bold 웹폰트(셀프호스팅)
 - `assets/` · mascot-neutral.svg, favicon.svg
-- `guidelines/` · `index.html`(컴포넌트 97개 목록 + 카드·템플릿을 검수 폭별로 열어 보는 가이드 페이지), 검수 카드 공통 레이아웃 `card.css`, 색·타이포·간격·반응형·모션 스펙 카드 13장
+- `guidelines/` · `index.html`(컴포넌트 103개 목록 + 카드·템플릿을 검수 폭별로 열어 보는 가이드 페이지), 검수 카드 공통 레이아웃 `card.css`, 색·타이포·간격·반응형·모션 스펙 카드 13장
 - `theme-toggle.js` · 문서 테마 동기화. 가이드 상단 바 또는 독립 카드 우상단의 라이트/다크 토글을 사용한다. 제품에서는 `:root.dark` 클래스만 토글한다
 - `components/` · 9그룹, `components/<group>/<Name>.jsx` + `.d.ts` + `.prompt.md`(사용법), 그룹별 카드(`*.card.html`). 스타일은 `styles/c-*.css`의 `bds-*` 클래스와 토큰만. 번들 네임스페이스는 `window.Ds_d3ea90`이고, 공개 진입점이 내보내는 것은 컴포넌트든 훅이든 그대로 올라간다(`Ds_d3ea90.useToast`). 내부 훅은 올리지 않는다.
-- `templates/dashboard/` · 조립 예시. 가상 제품 "봉구 엣지 콘솔"을 이 시스템의 컴포넌트만으로 만든 클릭 가능한 대시보드(`Dashboard.dc.html`; 개요·노드·장치·배포·접근·설정 6화면 + 공개 상태 페이지, 라이트 기본 + 다크 토글). 소비 프로젝트는 `ds-base.js` 한 줄만 고쳐 쓴다.
+- `templates/dashboard/` · 조립 예시. 가상 제품 "봉구 엣지 콘솔"을 이 시스템의 컴포넌트만으로 만든 클릭 가능한 대시보드(`Dashboard.dc.html`; 개요·노드·장치·배포·접근·설정·탐색 7화면 + 공개 상태 페이지, 라이트 기본 + 다크 토글). 소비 프로젝트는 `ds-base.js` 한 줄만 고쳐 쓴다.
 - `build-bundle.mjs` · `_ds_bundle.js`·`_ds_manifest.json` 빌드. 컴포넌트 소스를 고치면 `node build-bundle.mjs`로 다시 만든다(`@babel/standalone` 필요, 없으면 `BABEL_STANDALONE=<경로>`)
 - `token-parser.mjs` · `tokens/*.css`를 읽는 유일한 파서. 빌드와 검사가 같이 쓰고, 파서 자체는 `tests/fixtures/token-parser`가 검증한다
 
-### Components (97 · 9그룹)
+### Components (103 · 9그룹)
 - action: Button, IconButton, Icon
 - brand: MascotMark
-- layout: PageStack, PageHeader, Panel, CardHead, Toolbar, ToolbarGrow, Grid, GridItem, StatusBar, Container, Stack, Inline, Spacer, Divider, AspectRatio, JustifiedGallery, Visible
-- navigation: SidebarShell, SidebarNavItem, SidebarNavGroup, TopNav, Tabs, Breadcrumb, Pagination, Link, CommandPalette
-- input: Field, TextField, TextArea, Select, Checkbox, RadioGroup, Switch, SearchField, SegmentedControl, Slider, NumberStepper, ColorInput, Combobox, MultiSelect, DatePicker, DateRangePicker, TimePicker, PasswordField, OTPInput, CodeEditor, Dropzone, FileUpload
-- data: Chart(line·area·bar·pie·radial·radar·histogram), Sparkline, Gauge, Heatmap, StatTile, TrendDelta, BarList, KeyValues, DescriptionList, DataTable, LogViewer, Timeline, DiffView, Legend, UptimeBar
+- layout: PageStack, PageHeader, Panel, CardHead, Toolbar, ToolbarGrow, Grid, GridItem, StatusBar, Container, Stack, Inline, Spacer, Divider, AspectRatio, JustifiedGallery, Visible, SplitPane
+- navigation: SidebarShell, SidebarNavItem, SidebarNavGroup, TopNav, Tabs, Breadcrumb, Pagination, Link, CommandPalette, SavedViews, TreeView
+- input: Field, TextField, TextArea, Select, Checkbox, RadioGroup, Switch, SearchField, SegmentedControl, Slider, NumberStepper, ColorInput, Combobox, MultiSelect, DatePicker, DateRangePicker, TimePicker, PasswordField, OTPInput, CodeEditor, Dropzone, FileUpload, FilterBar
+- data: Chart(line·area·bar·pie·radial·radar·histogram), Sparkline, Gauge, Heatmap, StatTile, TrendDelta, BarList, KeyValues, DescriptionList, DataTable, LogViewer, Timeline, DiffView, Legend, UptimeBar, StateTimeline
 - display: StatusPill, Tag, Badge, Avatar, AvatarGroup, Accordion, Code, CodeBlock, Kbd, CopyField
-- overlay: Modal, FormModal, Drawer, Popover, Tooltip, DropdownMenu
+- overlay: Modal, FormModal, Drawer, Popover, Tooltip, DropdownMenu, ImageViewer
 - feedback: AlertBanner, Toast, ToastProvider, NotificationDrawer, NotificationTrigger, InlineMessage, ProgressBar, Stepper, Skeleton, Spinner, LoadingOverlay, EmptyState, ErrorState, ConfirmDialog
 
 그룹 기준: **action** 행동을 일으킴 · **layout** 자리와 간격 · **navigation** 화면·뷰 이동 · **input** 값을 받음 · **data** 수치·기록을 보임 · **display** 짧은 표식·텍스트 · **overlay** 위에 뜸 · **feedback** 시스템이 사용자에게 말함(진행·알림·상태).
@@ -148,7 +169,7 @@
 ### 공개 API·버전·배포 계약
 
 - **패키지 식별자·라이선스**: 패키지명은 `@dbwk10317/bonggu-design-system`이고 저장소는 `https://github.com/dbwk10317/bonggu-design-system`이다. 프로젝트 코드는 `Copyright (c) 2026 dbwk10317`의 MIT License로 배포한다. 포함된 Spoqa Han Sans Neo·JetBrains Mono·Phosphor Icons는 `THIRD_PARTY_NOTICES.md`와 `licenses/`에 적힌 각 원래 라이선스를 유지한다.
-- **공개 JS·타입 표면**: 위 Components 목록의 97개 컴포넌트와 `useToast`, 그리고 각 공개 컴포넌트·훅의 `.d.ts`가 내보내는 관련 `type`·`interface`가 공개 API다. `components/core/`, `components/data/chart-math.js`, `theme-toggle.js`, `useFieldContext`, `passwordStrength`는 내부 구현이며 공개 진입점에서 내보내지 않는다. 번들 네임스페이스는 공개 진입점을 그대로 따르지만, 정본은 `public-entry.js`다.
+- **공개 JS·타입 표면**: 위 Components 목록의 103개 컴포넌트와 `useToast`, 그리고 각 공개 컴포넌트·훅의 `.d.ts`가 내보내는 관련 `type`·`interface`가 공개 API다. `components/core/`, `components/data/chart-math.js`, `theme-toggle.js`, `useFieldContext`, `passwordStrength`는 내부 구현이며 공개 진입점에서 내보내지 않는다. 번들 네임스페이스는 공개 진입점을 그대로 따르지만, 정본은 `public-entry.js`다.
 - **SemVer 경계**: 1.0.0 이후 patch는 공개 계약을 유지하는 수정, minor는 기존 사용법을 유지하는 선택적 API 추가, major는 공개 컴포넌트·훅·타입·토큰·경로의 삭제·개명, 필수 prop·기본 동작·이벤트 시점의 비호환 변경, 지원 환경 축소다. 기본 크기·간격·타이포가 기존 레이아웃을 깨뜨리는 변경도 major다. 폐기 예정 API는 대체 방법을 먼저 알리고 major에서 제거하며, 토큰 이름은 호환 별칭을 만들지 않고 major 이관표로 안내한다.
 - **스타일 범위**: `styles.css`는 토큰, 폰트, 아이콘, 컴포넌트 스타일과 `tokens/base.css`를 함께 불러오는 단일 full-app 진입점이다. `base.css`의 요소 리셋(`body`·제목·링크·목록·폼 요소 등)은 `@layer bds-reset` 안에 있다. 레이어 밖 규칙이 레이어 안 규칙보다 항상 우선하므로, 소비 앱이 같은 요소를 직접 스타일하면 앱의 규칙이 이기고 앱이 건드리지 않은 요소에만 리셋이 적용된다. 컴포넌트 스타일(`bds-*`)과 유틸(`.bds-mono`·`.bds-sr`)은 레이어 밖이다. 별도 scoped CSS 진입점은 없다.
 - **테마·밀도**: 라이트가 기본이고 다크는 `:root.dark` 또는 `[data-theme="dark"]`, compact 밀도는 `<html data-density="compact">`로 선택한다. `theme-toggle.js`는 문서 카드 전용 자동 실행 스크립트라 공개 npm 진입점에 포함하지 않는다. 컴포넌트의 브라우저 API 접근은 effect 또는 이벤트 시점에만 일어나며 모듈 import 자체가 DOM·`localStorage`·테마를 바꾸지 않는다.
@@ -165,6 +186,7 @@
 - 선택: 2~3개 `SegmentedControl`, 2~5개(설명 포함) `RadioGroup`, 6개 이상 `Select`, 검색 필요 `Combobox`, 여러 개 `MultiSelect`. 날짜 하나 `DatePicker`, 기간 `DateRangePicker`, 시각 `TimePicker`. 비밀번호 `PasswordField`, 인증 코드 `OTPInput`.
 - 표시: 사람·서비스 `Avatar`, 건수 `Badge`(0이면 없음), 상태 문구 `StatusPill`, 분류 `Tag`. 접이식 `Accordion`(설정 고급 옵션만), 클릭 설명 패널 `Popover`, 한 줄 설명 `Tooltip`.
 - 피드백: 필드·카드 안 한 줄 `InlineMessage`, 페이지 `AlertBanner`, 일시 `Toast`. 재조회 `LoadingOverlay`, 첫 로딩 `Skeleton`. 파괴적 동작 `ConfirmDialog`(crit 채움은 여기서만). 카드 실패 `ErrorState`, 빈 결과 `EmptyState`, 값 하나 결측은 텍스트 "수집 안 됨".
+- 탐색: 조건 조합 `FilterBar`, 조건·정렬·열 구성 재현 `SavedViews`, 계층 선택 `TreeView`, 목록·상세 동시 보기 `SplitPane`. 상태 지속 시간 비교 `StateTimeline`, 사진 확대 `ImageViewer`.
 - 수치: 사용률 하나 `Gauge`(70/90 자동 톤), 증감 `TrendDelta`(나쁜 지표는 inverse), 공유 범례 `Legend`, 가용성 `UptimeBar`.
 
 ## 릴리스

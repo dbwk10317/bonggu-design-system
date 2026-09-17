@@ -17,3 +17,5 @@ StatTile · 큰 수치 하나(활성 모델 3개, 요청 12,480건). 숫자면 m
   detail={<><Tag>ko-embed-v3</Tag><Tag>whisper-large</Tag><Tag>llama-3.1-8b</Tag></>} />
 <StatTile icon="robot" label="프로세스 자동 제어" value="사용 중" pill={{tone:"ok",text:"host agent"}} detail={<>heartbeat <span className="bds-mono">4초 전</span> · 자동 시작 2 · 자동 종료 1</>} />
 ```
+
+`fit="auto"`와 `width`를 함께 넘겨 콘텐츠 배치에 맞춘 폭을 지정할 수 있습니다. 크기 계약은 RULE.md를 따릅니다.

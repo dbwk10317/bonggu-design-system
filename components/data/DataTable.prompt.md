@@ -15,3 +15,11 @@ DataTable · 서비스·사용자 표. 좁아지면 hideBelow 열을 숨기고 e
 // 값이 null이면 표가 알아서 "수집 안 됨"으로 그린다. 열에 render를 두지 않는 쪽이 낫다.
 <DataTable rows={[{name:"monitoring-api",cpu:null}]} columns={[{key:"name",header:"이름"},{key:"cpu",header:"CPU",align:"num"}]} />
 ```
+
+`fit="auto"`와 `width`를 함께 넘겨 콘텐츠 배치에 맞춘 폭을 지정할 수 있습니다. 크기 계약은 RULE.md를 따릅니다.
+
+`columnSettings`를 켜면 열 표시·순서·폭·고정을 조절할 수 있습니다. `columnState`와 `onColumnStateChange`로 구성을 저장된 보기와 연결합니다.
+
+```jsx
+<DataTable rows={rows} columns={columns} columnSettings columnState={columnState} onColumnStateChange={setColumnState} />
+```

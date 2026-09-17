@@ -11,7 +11,7 @@ export interface CodeEditorProps extends Omit<HTMLAttributes<HTMLDivElement>, "o
   lineNumbers?: boolean;
   readOnly?: boolean;
   placeholder?: string;
-  fit?: "flex" | "fixed";
+  fit?: "flex" | "fixed" | "auto";
   width?: number | string;
   height?: number | string;
   disabled?: boolean;

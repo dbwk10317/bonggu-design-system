@@ -1,3 +1,5 @@
+/** @responsive */
+/** @visualization */
 import type { ReactNode } from "react";
 /** Categorical 1–8, fixed semantic pairs "rx"|"tx"|"used"|"reserved"|"free", meter thresholds "ok"|"warn"|"crit" (radial, BarList) */
 export type ChartTone = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | "rx" | "tx" | "used" | "reserved" | "free" | "ok" | "warn" | "crit";
@@ -8,13 +10,14 @@ export interface ChartSeries {
   /** line/area stroke-dasharray. Omitted: with 3+ series cycles solid · "6 4" · "2 4" · "8 3 2 3". false: always solid */
   dash?: string | false;
 }
-export interface ChartSegment { label: ReactNode; value: number; tone?: ChartTone }
+export interface ChartSegment { label: ReactNode; value: number | null; tone?: ChartTone }
+export interface ChartEvent { id: string; value: number; label: string }
 export interface ChartThreshold { value: number; label?: string; tone?: "warn" | "crit" | "info" | "ok" }
 interface ChartBase {
-  /** flex = parent width (default), fixed = width/height */
-  fit?: "flex" | "fixed";
+  /** flex = parent width (default), fixed/auto = explicit width; height sizes the plot viewport */
+  fit?: "flex" | "fixed" | "auto";
   width?: number | string;
-  /** Plot height (px). Defaults: line/area/bar 200, pie 180, radial 110, radar 260, histogram 180 */
+  /** Plot viewport height (px); external readout, annotations and legend follow below. Defaults: line/area/bar 200, pie 180, radial 110, radar 260, histogram 180 */
   height?: number;
   /** What the chart shows. Defaults to "차트". The hidden data table is always linked via aria-describedby */
   "aria-label"?: string;
@@ -33,6 +36,15 @@ interface ChartBase {
 export interface CartesianChartProps extends ChartBase {
   kind: "line" | "area" | "bar";
   labels: string[];
+  /** Strictly increasing finite data coordinates, one per label. Required for linked cursor, events and zoom. */
+  xValues?: number[];
+  hoverValue?: number | null;
+  onHoverValueChange?: (value: number | null) => void;
+  zoomable?: boolean;
+  /** Controlled displayed domain. null resets to the full domain. */
+  range?: [number, number] | null;
+  onRangeChange?: (range: [number, number] | null) => void;
+  events?: ChartEvent[];
   /** Series with different units do not share one chart */
   series: ChartSeries[];
   xTicks?: "auto" | "ends" | "none";

@@ -8,6 +8,8 @@
 <body class="bds-demo-page"><div id="root"></div>
 <script type="text/babel">
 const NS = window.Ds_d3ea90;
+const { ImageViewer } = NS;
+function ExtensionDemo(){const [open,setOpen]=React.useState(false);return <><Button onClick={()=>setOpen(true)}>이미지 열기</Button><ImageViewer open={open} onClose={()=>setOpen(false)} images={[{id:"mascot",src:"../../assets/mascot-neutral.svg",alt:"봉구 안내 이미지",metadata:[{label:"이름",value:"봉구"}]}]}/></>;}
 
 const { Modal, FormModal, Drawer, Popover, Tooltip, DropdownMenu, Button, IconButton, Field, TextField, Select, Panel, DescriptionList, StatusPill, CopyField } = NS;
 function App(){ const [open,setOpen]=React.useState(false); return <>
@@ -29,6 +31,7 @@ function App(){ const [open,setOpen]=React.useState(false); return <>
     <Panel caption="실행 정보" padding="sm"><DescriptionList items={[{term:"상태",detail:<StatusPill size="sm" tone="ok">실행 중</StatusPill>},{term:"프로젝트 revision",detail:"rev_0913",mono:true},{term:"recipe",detail:"finetune"},{term:"우선순위",detail:"standard"}]} /></Panel>
     <CopyField label="run id" value="run-0913-a" />
   </Drawer>
+<div className="bds-demo-section"><div className="bds-demo-label">ImageViewer · 확대와 정보</div><ExtensionDemo /></div>
 </>; }
 ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
 </script></body></html>

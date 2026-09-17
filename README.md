@@ -8,7 +8,7 @@
 
 A React design system for operations and monitoring dashboards: screens full of live numbers, device controls, and statuses that change every few seconds. One set of tokens and components renders the same way in light and dark, on desktop, tablet, and phone.
 
-- 97 components in 9 groups, one `Chart` component with 7 chart kinds
+- 103 components in 9 groups, one `Chart` component with 7 chart kinds
 - Light and dark themes from the same token names, plus a compact density
 - Missing data is a first-class state ("not collected"), never drawn as zero
 - Native `<dialog>` and Popover API for overlays, keyboard navigation and live regions built in
@@ -70,12 +70,12 @@ export function App() {
 |---|---|
 | action | Button, IconButton, Icon |
 | brand | MascotMark |
-| layout | PageStack, PageHeader, Panel, CardHead, Toolbar, Grid, StatusBar, Container, Stack, Inline, Spacer, Divider, AspectRatio, JustifiedGallery, Visible |
-| navigation | SidebarShell, TopNav, Tabs, Breadcrumb, Pagination, Link, CommandPalette |
-| input | Field, TextField, TextArea, Select, Checkbox, RadioGroup, Switch, SearchField, SegmentedControl, Slider, NumberStepper, ColorInput, Combobox, MultiSelect, DatePicker, DateRangePicker, TimePicker, PasswordField, OTPInput, CodeEditor, Dropzone, FileUpload |
-| data | Chart (line, area, bar, pie, radial, radar, histogram), Sparkline, Gauge, Heatmap, StatTile, TrendDelta, BarList, KeyValues, DescriptionList, DataTable, LogViewer, Timeline, DiffView, Legend, UptimeBar |
+| layout | PageStack, PageHeader, Panel, CardHead, Toolbar, Grid, StatusBar, Container, Stack, Inline, Spacer, Divider, AspectRatio, JustifiedGallery, Visible, SplitPane |
+| navigation | SidebarShell, TopNav, Tabs, Breadcrumb, Pagination, Link, CommandPalette, SavedViews, TreeView |
+| input | Field, TextField, TextArea, Select, Checkbox, RadioGroup, Switch, SearchField, SegmentedControl, Slider, NumberStepper, ColorInput, Combobox, MultiSelect, DatePicker, DateRangePicker, TimePicker, PasswordField, OTPInput, CodeEditor, Dropzone, FileUpload, FilterBar |
+| data | Chart (line, area, bar, pie, radial, radar, histogram), Sparkline, Gauge, Heatmap, StatTile, TrendDelta, BarList, KeyValues, DescriptionList, DataTable, LogViewer, Timeline, DiffView, Legend, UptimeBar, StateTimeline |
 | display | StatusPill, Tag, Badge, Avatar, Accordion, Code, CodeBlock, Kbd, CopyField |
-| overlay | Modal, FormModal, Drawer, Popover, Tooltip, DropdownMenu |
+| overlay | Modal, FormModal, Drawer, Popover, Tooltip, DropdownMenu, ImageViewer |
 | feedback | AlertBanner, Toast, NotificationDrawer, InlineMessage, ProgressBar, Stepper, Skeleton, Spinner, LoadingOverlay, EmptyState, ErrorState, ConfirmDialog |
 
 Every input component forwards its `ref` to the underlying control, so form libraries and programmatic focus work as expected. Each component ships with a `.d.ts` and a short usage note (`components/<group>/<Name>.prompt.md`).

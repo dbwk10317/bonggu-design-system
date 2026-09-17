@@ -9,7 +9,7 @@ export interface CopyFieldProps extends Omit<HTMLAttributes<HTMLDivElement>, "ch
   copyLabel?: string;
   copiedLabel?: string;
   onCopy?: (ok: boolean) => void;
-  fit?: "flex" | "fixed";
+  fit?: "flex" | "fixed" | "auto";
   width?: number | string;
 }
 export declare function CopyField(props: CopyFieldProps): ReactNode;

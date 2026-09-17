@@ -1,3 +1,4 @@
+/** @visualization */
 import type { HTMLAttributes, ReactNode } from "react";
 export interface GaugeProps extends HTMLAttributes<HTMLDivElement> {
   /** Missing (null/undefined/NaN) shows "수집 안 됨" with tone off */
@@ -13,6 +14,7 @@ export interface GaugeProps extends HTMLAttributes<HTMLDivElement> {
   ticks?: boolean;
   fit?: "flex" | "fixed" | "auto";
   width?: number | string;
+  /** Total height including the readout and ticks; the plot uses remaining space. */
   height?: number | string;
 }
 export declare function Gauge(props: GaugeProps): ReactNode;

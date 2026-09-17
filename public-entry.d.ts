@@ -96,3 +96,10 @@ export * from "./components/feedback/LoadingOverlay.js";
 export * from "./components/feedback/EmptyState.js";
 export * from "./components/feedback/ErrorState.js";
 export * from "./components/feedback/ConfirmDialog.js";
+
+export * from "./components/input/FilterBar.js";
+export * from "./components/navigation/SavedViews.js";
+export * from "./components/navigation/TreeView.js";
+export * from "./components/layout/SplitPane.js";
+export * from "./components/data/StateTimeline.js";
+export * from "./components/overlay/ImageViewer.js";

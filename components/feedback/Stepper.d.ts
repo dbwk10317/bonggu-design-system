@@ -8,7 +8,7 @@ export interface StepperProps extends Omit<HTMLAttributes<HTMLOListElement>, "ch
   current?: number;
   orientation?: "horizontal" | "vertical";
   size?: "sm" | "md";
-  fit?: "flex" | "fixed";
+  fit?: "flex" | "fixed" | "auto";
   width?: number | string;
   "aria-label"?: string;
 }

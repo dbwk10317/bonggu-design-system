@@ -6,7 +6,7 @@ export interface DiffViewProps extends Omit<HTMLAttributes<HTMLDivElement>, "chi
   from?: ReactNode;
   to?: ReactNode;
   emptyText?: ReactNode;
-  fit?: "flex" | "fixed";
+  fit?: "flex" | "fixed" | "auto";
   width?: number | string;
   "aria-label"?: string;
 }

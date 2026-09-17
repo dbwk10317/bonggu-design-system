@@ -8,3 +8,5 @@ JustifiedGallery · 여러 장을 훑어보는 사진 목록. 원본 비율을 �
   footer={next ? <Button onClick={loadMore}>더 불러오기</Button> : null}
 />
 ```
+
+`fit="auto"`와 `width`를 함께 넘겨 콘텐츠 배치에 맞춘 폭을 지정할 수 있습니다. 크기 계약은 RULE.md를 따릅니다.

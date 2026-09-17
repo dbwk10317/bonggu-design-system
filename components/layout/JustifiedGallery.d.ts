@@ -19,7 +19,7 @@ export interface JustifiedGalleryProps extends Omit<HTMLAttributes<HTMLDivElemen
   /** Full-width slot under the last row (load more) */
   footer?: ReactNode;
   /** flex = parent width (default), fixed = width */
-  fit?: "flex" | "fixed";
+  fit?: "flex" | "fixed" | "auto";
   width?: number | string;
   "aria-label"?: string;
 }

@@ -8,7 +8,7 @@
 
 운영·모니터링 대시보드를 위한 React 디자인 시스템입니다. 실시간 수치, 장치 제어, 몇 초마다 바뀌는 상태처럼 숫자가 많고 자주 변하는 화면을 위해 만들었습니다. 같은 token과 component로 light와 dark, PC·태블릿·모바일에서 같은 모습으로 그립니다.
 
-- component 97개(9개 그룹), chart 7종을 그리는 `Chart` component 하나
+- component 103개(9개 그룹), chart 7종을 그리는 `Chart` component 하나
 - 같은 token 이름으로 light·dark 테마를 제공하고, compact 밀도도 있습니다
 - 수집되지 않은 값은 0으로 그리지 않고 "수집 안 됨"으로 표시합니다
 - overlay는 native `<dialog>`와 Popover API를 쓰고, 키보드 이동과 live region이 기본으로 들어 있습니다
@@ -70,12 +70,12 @@ export function App() {
 |---|---|
 | action | Button, IconButton, Icon |
 | brand | MascotMark |
-| layout | PageStack, PageHeader, Panel, CardHead, Toolbar, Grid, StatusBar, Container, Stack, Inline, Spacer, Divider, AspectRatio, JustifiedGallery, Visible |
-| navigation | SidebarShell, TopNav, Tabs, Breadcrumb, Pagination, Link, CommandPalette |
-| input | Field, TextField, TextArea, Select, Checkbox, RadioGroup, Switch, SearchField, SegmentedControl, Slider, NumberStepper, ColorInput, Combobox, MultiSelect, DatePicker, DateRangePicker, TimePicker, PasswordField, OTPInput, CodeEditor, Dropzone, FileUpload |
-| data | Chart(line, area, bar, pie, radial, radar, histogram), Sparkline, Gauge, Heatmap, StatTile, TrendDelta, BarList, KeyValues, DescriptionList, DataTable, LogViewer, Timeline, DiffView, Legend, UptimeBar |
+| layout | PageStack, PageHeader, Panel, CardHead, Toolbar, Grid, StatusBar, Container, Stack, Inline, Spacer, Divider, AspectRatio, JustifiedGallery, Visible, SplitPane |
+| navigation | SidebarShell, TopNav, Tabs, Breadcrumb, Pagination, Link, CommandPalette, SavedViews, TreeView |
+| input | Field, TextField, TextArea, Select, Checkbox, RadioGroup, Switch, SearchField, SegmentedControl, Slider, NumberStepper, ColorInput, Combobox, MultiSelect, DatePicker, DateRangePicker, TimePicker, PasswordField, OTPInput, CodeEditor, Dropzone, FileUpload, FilterBar |
+| data | Chart(line, area, bar, pie, radial, radar, histogram), Sparkline, Gauge, Heatmap, StatTile, TrendDelta, BarList, KeyValues, DescriptionList, DataTable, LogViewer, Timeline, DiffView, Legend, UptimeBar, StateTimeline |
 | display | StatusPill, Tag, Badge, Avatar, Accordion, Code, CodeBlock, Kbd, CopyField |
-| overlay | Modal, FormModal, Drawer, Popover, Tooltip, DropdownMenu |
+| overlay | Modal, FormModal, Drawer, Popover, Tooltip, DropdownMenu, ImageViewer |
 | feedback | AlertBanner, Toast, NotificationDrawer, InlineMessage, ProgressBar, Stepper, Skeleton, Spinner, LoadingOverlay, EmptyState, ErrorState, ConfirmDialog |
 
 입력 component는 모두 `ref`를 실제 control 요소로 넘깁니다. form 라이브러리의 `register`나 코드에서 focus를 옮기는 일이 그대로 됩니다. component마다 `.d.ts`와 짧은 사용법(`components/<group>/<Name>.prompt.md`)이 같이 있습니다.

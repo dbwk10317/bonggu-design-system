@@ -7,3 +7,5 @@ UptimeBar · 서비스별 90일 가용성. 색은 상태색 넷, 비율 텍스�
 ```jsx
 <UptimeBar name="ai-hub" segments={days} start="6월 11일" end="오늘" />
 ```
+
+간격도 각 칸이 차지하는 폭에 맞춰 줄어듭니다. 서비스명·가용성 문구는 좁은 폭에서 줄바꿈됩니다.

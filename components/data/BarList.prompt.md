@@ -5,3 +5,7 @@ BarList · 이름·값·막대 목록(디스크별 사용량, GPU 예약). 값 �
   items={[{name:"nvme0n1 · 시스템",value:63.2},{name:"sda · 미디어",value:91.4},{name:"sdb · 백업",value:null}]} />
 ```
 - 값이 `null`·`undefined`·`NaN`이면 막대는 0, 값 자리는 "수집 안 됨"이다(mono 없음). 0은 수집된 값이라 그대로 0으로 그린다.
+
+`fit="auto"`와 `width`를 함께 넘겨 콘텐츠 배치에 맞춘 폭을 지정할 수 있습니다. 크기 계약은 RULE.md를 따릅니다.
+
+긴 값은 값을 자르지 않고 열 안에서 줄바꿈합니다.

@@ -5,3 +5,5 @@ CopyField · 값을 "읽고 복사"하는 곳. 편집은 TextField.
 <CopyField label="호출 예시" multiline value={curl} />
 ```
 - 복사가 끝나면 "복사됨"이 스크린리더에 status로 읽힌다.
+
+`fit="auto"`와 `width`를 함께 넘겨 콘텐츠 배치에 맞춘 폭을 지정할 수 있습니다. 크기 계약은 RULE.md를 따릅니다.

@@ -10,7 +10,7 @@ export interface SliderProps extends Omit<InputHTMLAttributes<HTMLInputElement>,
   valueFormatter?: (v: number) => string;
   unit?: string;
   size?: "sm" | "md";
-  fit?: "flex" | "fixed";
+  fit?: "flex" | "fixed" | "auto";
   width?: number | string;
   onChange?: (value: number, event: React.ChangeEvent<HTMLInputElement>) => void;
 }

@@ -3,7 +3,7 @@ import type { ComponentType } from "react";
 
 declare global {
   /** Screen module names App looks up on window */
-  type ScreenName = "OverviewScreen" | "NodesScreen" | "DevicesScreen" | "DeploysScreen" | "AccessScreen" | "SettingsScreen" | "StatusScreen";
+  type ScreenName = "ExploreScreen" | "OverviewScreen" | "NodesScreen" | "DevicesScreen" | "DeploysScreen" | "AccessScreen" | "SettingsScreen" | "StatusScreen";
 
   interface Window {
     DS: typeof import("../../public-entry.js");
@@ -13,6 +13,7 @@ declare global {
     React: typeof import("react");
     /** Screen modules are IIFEs registered on window; App renders them by name */
     DashboardApp: ComponentType<any>;
+    ExploreScreen: ComponentType<any>;
     OverviewScreen: ComponentType<any>;
     NodesScreen: ComponentType<any>;
     DevicesScreen: ComponentType<any>;

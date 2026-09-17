@@ -34,7 +34,7 @@ const jsExports = [...jsEntry.matchAll(/^export \{([^}]+)\} from "([^"]+)";/gm)]
 const expectedValues = [...documented, "useToast"].sort();
 const actualValues = [...jsExports].sort();
 if (JSON.stringify(actualValues) !== JSON.stringify(expectedValues)) {
-  throw new Error("public-entry.js는 RULE.md 96개 컴포넌트와 useToast만 내보내야 합니다.");
+  throw new Error("public-entry.js는 RULE.md의 공개 컴포넌트와 useToast만 내보내야 합니다.");
 }
 for (const internal of ["useFieldContext", "passwordStrength", "NOTIFICATION_DRAWER_ID"]) {
   if (jsExports.includes(internal)) throw new Error(`public-entry.js가 내부 값 ${internal}을 내보냅니다.`);

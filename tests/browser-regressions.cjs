@@ -1,8 +1,10 @@
+const { assertExploration } = require('./exploration-regressions.cjs');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const http = require('node:http');
 const { createRequire } = require('node:module');
+const { assertVisualizations } = require('./visualization-regressions.cjs');
 const deps = process.env.DS_TEST_NODE_MODULES ? createRequire(path.join(path.resolve(process.env.DS_TEST_NODE_MODULES), '__browser-tests.cjs')) : require;
 // The debug module inside @babel/standalone reads bare localStorage at load, which makes Node emit an ExperimentalWarning; stub it first.
 try { Object.defineProperty(globalThis, 'localStorage', { value: { getItem: () => null }, configurable: true, writable: true }); } catch {}
@@ -40,7 +42,7 @@ const server = http.createServer((req, res) => {
     : localScripts[url] ?? path.resolve(root, '.' + url);
   if (!file.startsWith(root + path.sep) && !Object.values(localScripts).includes(file)) { res.writeHead(403); res.end(); return; }
   try {
-    const type = file.endsWith('.css') ? 'text/css' : file.endsWith('.js') ? 'text/javascript' : file.endsWith('.html') ? 'text/html' : 'application/octet-stream';
+    const type = file.endsWith('.css') ? 'text/css' : file.endsWith('.js') ? 'text/javascript' : file.endsWith('.html') ? 'text/html' : file.endsWith('.svg') ? 'image/svg+xml' : 'application/octet-stream';
     const body = url === '/templates/dashboard/support.js' || file.endsWith('.html') ? rewriteSupport(fs.readFileSync(file, 'utf8')) : fs.readFileSync(file);
     res.setHeader('Content-Type', type); res.end(body);
   } catch { res.writeHead(404); res.end(); }
@@ -278,10 +280,10 @@ async function run() {
       await context.close();
     }
     // Dashboard template gate (templates/dashboard/Dashboard.dc.html).
-    // Coverage: all 7 routes at 1280 and 390, only 3 representative routes at 834 (it shares the <1024 drawer path
+    // Coverage: all 8 routes at 1280 and 390, only 3 representative routes at 834 (it shares the <1024 drawer path
     // with 390, so the full set only adds run time). One document load per width; routes switch via hash (App
     // subscribes to hashchange). `status` is a public page without the shell, so it is matched by data-screen instead of the shell title.
-    const TITLES = { overview: '개요', nodes: '노드', devices: '장치', deploys: '배포', access: '접근', settings: '설정' };
+    const TITLES = { overview: '개요', nodes: '노드', devices: '장치', deploys: '배포', access: '접근', settings: '설정', explore: '탐색' };
     const ROUTES = [...Object.keys(TITLES), 'status'];
     const mounted = ([route, title]) => {
       const screen = document.querySelector(`[data-screen="${route}"]`);
@@ -310,6 +312,27 @@ async function run() {
           .map((element) => `${element.tagName.toLowerCase()}.${element.className || ''}:${Math.round(element.getBoundingClientRect().right)}/${document.documentElement.clientWidth}`));
         assert.deepEqual(dashOverflow, [], `가로 넘침 ${route} @${width}`);
         assert.equal(await dash.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), true, `문서 가로 스크롤 ${route} @${width}`);
+        if (route === 'explore') {
+          const gallery = dash.locator('[data-screen="explore"] .bds-jgal');
+          await gallery.scrollIntoViewIfNeeded();
+          await gallery.locator('img').evaluateAll(images => Promise.all(images.map(image => image.decode())));
+          await gallery.getByRole('button').first().click();
+          await dash.locator('dialog[open] img').evaluate(image => image.decode());
+          if (process.env.DS_TEST_SCREENSHOTS) {
+            fs.mkdirSync(process.env.DS_TEST_SCREENSHOTS, { recursive: true });
+            await dash.screenshot({ animations: 'disabled', path: path.join(process.env.DS_TEST_SCREENSHOTS, `explore-image-${width}.png`) });
+          }
+          await dash.keyboard.press('Escape');
+          assert.equal(await gallery.getByRole('button').first().evaluate(button => button === document.activeElement), true, `갤러리 포커스 복원 @${width}`);
+        }
+        if (process.env.DS_TEST_SCREENSHOTS && route === 'explore') {
+          fs.mkdirSync(process.env.DS_TEST_SCREENSHOTS, { recursive: true });
+          await dash.evaluate(() => document.fonts.ready);
+          const panels = dash.locator('[data-screen="explore"] .bds-panel');
+          for (let index = 0; index < await panels.count(); index++) {
+            await panels.nth(index).screenshot({ path: path.join(process.env.DS_TEST_SCREENSHOTS, `explore-${width}-${index}.png`) });
+          }
+        }
       }
       // Screen modules get hooks through the window.DS proxy; a mount-only check passes even if that delegation
       // breaks, so trigger a real toast once. Width-independent, hence 1280 only.
@@ -318,6 +341,7 @@ async function run() {
         await dash.waitForFunction(mounted, ['devices', TITLES.devices]);
         await dash.getByRole('button', { name: '적용', exact: true }).click();
         await dash.getByRole('status').filter({ hasText: '두 장치에 적용했습니다.' }).waitFor();
+        await dash.locator('.bds-toasts').getByRole('button', { name: '닫기', exact: true }).click();
       }
       // >=1024 fixed rail, below that hamburger -> drawer. Measured on a shell screen only.
       await dash.evaluate(() => { window.location.hash = '#overview'; });
@@ -377,8 +401,10 @@ async function run() {
     }
     await touchContext.close();
 
+    await assertVisualizations(page, `http://127.0.0.1:${server.address().port}`);
+    await assertExploration(page, `http://127.0.0.1:${server.address().port}`);
     assert.deepEqual(errors, []);
-    console.log('PASS: overlay lifecycle, menu clipping/top layer/keyboard, input editing, 46 guide page/width combinations, 24 responsive/theme/density/pointer combinations, dashboard 17 route/width combinations, coarse pointer 조작 영역');
+    console.log('PASS: overlay lifecycle, menu clipping/top layer/keyboard, input editing, 46 guide page/width combinations, 24 responsive/theme/density/pointer combinations, dashboard 19 route/width combinations, coarse pointer 조작 영역');
   } finally { await browser.close(); }
 }
 run().catch(error => { console.error(error); process.exitCode = 1; }).finally(() => server.close());

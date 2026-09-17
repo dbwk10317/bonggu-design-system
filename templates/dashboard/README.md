@@ -22,7 +22,7 @@ python3 -m http.server 8080
 
 ## 화면
 
-해시로 전환합니다(`#overview #nodes #devices #deploys #access #settings #status`). 독립 실행에서는 상단바에서 다크·라이트를 바꾸고, 가이드 안에서는 가이드 상단 토글을 따릅니다. `Ctrl`+`K`로 명령 팔레트를 엽니다.
+해시로 전환합니다(`#overview #nodes #devices #deploys #access #settings #explore #status`). 독립 실행에서는 상단바에서 다크·라이트를 바꾸고, 가이드 안에서는 가이드 상단 토글을 따릅니다. `Ctrl`+`K`로 명령 팔레트를 엽니다.
 
 - `App.jsx` · 셸(SidebarShell) + 라우팅 + 명령 팔레트 + 알림 드로어 + 테마 전환
 - `OverviewScreen.jsx` · 함대 요약. StatTile, 12열 격자, Chart 7종 중 6종, Heatmap, UptimeBar, Timeline, 로딩·오류·빈 상태 카드
@@ -31,6 +31,7 @@ python3 -m http.server 8080
 - `DeploysScreen.jsx` · 롤아웃. 단계 표시와 진행 바, 로그, 릴리스 선택과 설정 diff, JSON 편집기, 청크 업로드, 배포 예약과 되돌리기
 - `AccessScreen.jsx` · 운영자와 권한. 탭, 계정 표, 초대 폼 모달, 2단계 인증 코드 입력, 감사 로그
 - `SettingsScreen.jsx` · 콘솔 설정. 좁은 폼 폭, 밀도 전환, 수집 값, 자동화 토큰 발급과 폐기, 고급 아코디언, 위험 구역
+- `ExploreScreen.jsx` · 서비스 탐색. 필터·저장된 보기, 열 설정, 트리·분할 패널, 연동 차트·상태 타임라인, 로그 검색, 이미지 상세 뷰어
 - `StatusScreen.jsx` · 고객이 보는 공개 상태 페이지. 셸 대신 TopNav를 쓰는 유일한 화면
 
 검수 폭과 테마 조건은 `RULE.md`의 규칙을 따릅니다.

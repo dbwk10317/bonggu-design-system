@@ -10,7 +10,7 @@ export interface ProgressBarProps extends Omit<HTMLAttributes<HTMLDivElement>, "
   size?: "sm" | "md";
   showValue?: boolean;
   valueFormatter?: (v: number) => string;
-  fit?: "flex" | "fixed";
+  fit?: "flex" | "fixed" | "auto";
   width?: number | string;
   "aria-label"?: string;
 }

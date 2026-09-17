@@ -1,13 +1,14 @@
 /* Extras: Heatmap, ProgressBar, Stepper, Timeline, DiffView, CopyField, Code, Slider, NumberStepper, ColorInput, Combobox, DateRangePicker, CodeEditor, FileUpload, Tooltip, DropdownMenu, Drawer(side) */
 /* ---- Heatmap ---- */
 .bds-heat{display:grid;gap:8px;min-width:0;container-type:inline-size}
+.bds-heat__scroll{min-width:0;max-width:100%;overflow:auto}
 .bds-heat__grid{display:grid;grid-template-columns:auto repeat(var(--cols),minmax(var(--cell),1fr));gap:var(--gap);align-items:center;max-width:calc(var(--cols) * (var(--cell) * 1.6 + var(--gap)) + 3em)}
-.bds-heat__col,.bds-heat__row{font-family:var(--font-data);font-size:var(--fs-micro);color:var(--plot-axis-ink);letter-spacing:var(--ls-data);white-space:nowrap}
+.bds-heat__col,.bds-heat__row{font-family:var(--font-ui);font-size:var(--fs-caption);color:var(--plot-axis-ink);white-space:nowrap}
 .bds-heat__col{text-align:center;overflow:hidden}.bds-heat__row{padding-right:6px;text-align:right}
 .bds-heat__cell{display:block;aspect-ratio:1;border-radius:3px;background:var(--ramp-1);transition:transform var(--dur-fast) var(--ease-out),outline-color var(--dur-fast) var(--ease-out)}
 .bds-heat__cell:hover,.bds-heat__cell--on{outline:2px solid var(--ink);outline-offset:-1px;z-index:1}
 .bds-heat__cell--na{background:transparent;border:1px dashed var(--line)}
-.bds-heat__cell[data-step="1"]{background:var(--ramp-1)}.bds-heat__cell[data-step="2"]{background:var(--ramp-2)}.bds-heat__cell[data-step="3"]{background:var(--ramp-3)}.bds-heat__cell[data-step="4"]{background:var(--ramp-4)}.bds-heat__cell[data-step="5"]{background:var(--ramp-5)}.bds-heat__cell[data-step="6"]{background:var(--ramp-6)}
+.bds-heat [data-step="1"]{background:var(--ramp-1)}.bds-heat [data-step="2"]{background:var(--ramp-2)}.bds-heat [data-step="3"]{background:var(--ramp-3)}.bds-heat [data-step="4"]{background:var(--ramp-4)}.bds-heat [data-step="5"]{background:var(--ramp-5)}.bds-heat [data-step="6"]{background:var(--ramp-6)}
 .bds-heat__foot{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:var(--fs-caption);color:var(--ink-2);min-height:18px;flex-wrap:wrap}
 .bds-heat__tip b{font-weight:var(--fw-medium);color:var(--ink)}
 .bds-heat__scale{display:inline-flex;align-items:center;gap:3px;color:var(--ink-3)}.bds-heat__scale i{width:12px;height:10px;border-radius:2px;display:block}.bds-heat__scale small{font-size:var(--fs-caption);margin:0 3px}

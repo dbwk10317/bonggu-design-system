@@ -93,3 +93,10 @@ export { LoadingOverlay } from "./components/feedback/LoadingOverlay.jsx";
 export { EmptyState } from "./components/feedback/EmptyState.jsx";
 export { ErrorState } from "./components/feedback/ErrorState.jsx";
 export { ConfirmDialog } from "./components/feedback/ConfirmDialog.jsx";
+
+export { FilterBar } from "./components/input/FilterBar.jsx";
+export { SavedViews } from "./components/navigation/SavedViews.jsx";
+export { TreeView } from "./components/navigation/TreeView.jsx";
+export { SplitPane } from "./components/layout/SplitPane.jsx";
+export { StateTimeline } from "./components/data/StateTimeline.jsx";
+export { ImageViewer } from "./components/overlay/ImageViewer.jsx";

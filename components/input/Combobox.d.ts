@@ -8,7 +8,7 @@ export interface ComboboxProps extends Omit<HTMLAttributes<HTMLDivElement>, "onC
   placeholder?: string;
   emptyText?: ReactNode;
   size?: "sm" | "md";
-  fit?: "flex" | "fixed";
+  fit?: "flex" | "fixed" | "auto";
   width?: number | string;
   disabled?: boolean;
   invalid?: boolean;

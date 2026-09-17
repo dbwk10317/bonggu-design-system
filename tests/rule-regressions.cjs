@@ -527,7 +527,7 @@ function guideCardStructureViolations() {
    taking the hidden table and the navigation surface with it. */
 function dataGraphicA11yViolations() {
   const violations = [];
-  for (const file of ['components/data/Chart.jsx', 'components/data/Heatmap.jsx']) {
+  for (const file of ['components/data/Chart.jsx', 'components/data/Heatmap.jsx', 'components/data/StateTimeline.jsx']) {
     const src = read(file);
     if (/role="img"/.test(src)) {
       violations.push({ file, line: lineOf(src, src.indexOf('role="img"')), detail: '루트가 role="img"라 숨김 표와 탐색 표면이 접근성 트리에서 잘림' });
@@ -696,7 +696,25 @@ function printViolations(title, violations, recommendation) {
   console.error(`  권장 수정: ${recommendation}`);
 }
 
+function plotContractViolations() {
+  const violations = [];
+  require('./visualization-regressions.cjs').assertVisualizationCoverage();
+  require('./exploration-regressions.cjs').assertExplorationCoverage();
+  for (const file of walk('components').filter((f) => f.endsWith('.d.ts'))) {
+    const src = read(file);
+    for (const match of src.matchAll(/fit\?:\s*([^;]+);/g)) {
+      if (!['flex', 'fixed', 'auto'].every((v) => match[1].includes('"' + v + '"'))) violations.push({ file, line: lineOf(src, match.index), detail: 'fit 공개 타입은 flex·fixed·auto를 모두 허용해야 함' });
+    }
+  }
+  const split = read('components/layout/SplitPane.jsx');
+  for (const contract of ['role="separator"', 'aria-valuenow=', 'onKeyDown=', 'onPointerDown=']) {
+    if (!split.includes(contract)) violations.push({file:'components/layout/SplitPane.jsx',line:1,detail:'분할 경계의 키보드·포인터 크기 계약이 빠졌습니다: '+contract});
+  }
+  return violations;
+}
+
 const checks = [
+  ['시각화·크기 계약', plotContractViolations(), 'RULE.md의 fit·시각화 크기 계약과 공개 타입을 맞춥니다.'],
   ['em-dash', emDashViolations(), '가시 문구의 —를 가운뎃점(·), 쉼표 또는 문장 분리로 바꿉니다.'],
   ['inline style 색·폰트', inlineStyleViolations(), '색·폰트 선언을 tokens/styles의 bds- 클래스와 토큰으로 옮깁니다.'],
   ['CSS class prefix', cssClassViolations(), '공개·내부 CSS 클래스에 bds- 접두사를 붙이고, 외부 계약이 아니면 기존 이름을 제거합니다.'],
@@ -712,7 +730,7 @@ const checks = [
   ['그룹 카드 누락', cardCoverageViolations(), '그 컴포넌트를 자기 그룹의 *.card.html에 한 번 이상 그립니다.'],
   ['가이드 카드 구조', guideCardStructureViolations(), '공통 검수 밀도를 쓰고 각 컴포넌트 이름을 해당 예제의 라벨에 둡니다. 삽입된 카드는 자체 테마 토글을 그리지 않습니다.'],
   ['컴포넌트 시각 계약', componentVisualContractViolations(), 'StatusBar 서체 역할과 Select 선택값의 세로 정렬을 readme의 기준에 맞춥니다.'],
-  ['데이터 그래픽 접근성', dataGraphicA11yViolations(), 'Chart·Heatmap은 시각·숨김 표·탐색 표면 셋을 함께 냅니다. 루트는 role="group", 탐색 표면은 role="application" + tabIndex=0, 현재 지점은 role="status"로 알립니다.'],
+  ['데이터 그래픽 접근성', dataGraphicA11yViolations(), 'Chart·Heatmap·StateTimeline은 시각·숨김 표·탐색 표면 셋을 함께 냅니다. 루트는 role="group", 탐색 표면은 role="application" + tabIndex=0, 현재 지점은 role="status"로 알립니다.'],
   ['호버·프레스 짝', pressStateViolations(), '호버는 --panel-2 한 단계, 프레스는 --panel-3 두 단계입니다. 눌러서 동작하는 표면은 둘을 짝으로 냅니다(터치 기기에는 호버가 없습니다).'],
   ['모서리 토큰', radiusTokenViolations(), '컨트롤 모서리는 --radius-xs/ctl/panel/sheet/pill을 씁니다. 안쪽 상자는 바깥 − 패딩을 calc()로 적습니다. 리터럴은 그래픽 마크(막대·잉크·셀·구분선)에만 허용합니다.'],
   ['테마 전환·DOM id', themeAndIdViolations(), '테마 토글은 트랜지션을 끄고 리플로우 뒤 다음 프레임에 되돌립니다. 컴포넌트의 DOM id 는 useId 로 만듭니다.'],

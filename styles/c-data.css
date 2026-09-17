@@ -28,7 +28,7 @@
 .bds-barlist{display:grid;gap:10px;min-width:0}
 .bds-barlist__row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;font-size:var(--fs-caption);align-items:baseline}
 .bds-barlist__n{color:var(--ink-2);min-width:0}
-.bds-barlist__v{color:var(--ink);font-family:var(--font-data);font-variant-numeric:tabular-nums}
+.bds-barlist__v{min-width:0;overflow-wrap:anywhere;color:var(--ink);font-family:var(--font-data);font-variant-numeric:tabular-nums}
 .bds-barlist__track{grid-column:1/-1;height:6px;border-radius:3px;background:var(--meter-track);overflow:hidden}
 .bds-barlist__fill{height:100%;border-radius:3px;background:var(--bar,var(--series-1));transform-origin:left;animation:bds-grow-x var(--dur-gauge) var(--ease-out) both;transition:width var(--dur-slow) var(--ease-out)}
 .bds-barlist--thick .bds-barlist__track{height:10px;border-radius:5px}
@@ -76,6 +76,6 @@
    components/core/missing.js attaches MISSING_CLASS. The text drops mono (Korean in monospace looks spaced out) and uses --ink-3.
    The extra selectors undo the mono rules each component sets on values (.bds-table td / .bds-table__num, chart tooltip values,
    TrendDelta, UptimeBar ratio) in place; this block is the only declaration. */
-.bds-na,.bds-table td.bds-na,.bds-chart__tip-row .bds-chart__tip-v.bds-na,.bds-delta.bds-na,.bds-uptime__pct.bds-na{font-family:var(--font-ui);font-weight:var(--fw-regular);font-variant-numeric:normal;letter-spacing:var(--ls-ui);color:var(--ink-3)}
+.bds-na,.bds-plot-value b.bds-na,.bds-table td.bds-na,.bds-chart__tip-row .bds-chart__tip-v.bds-na,.bds-delta.bds-na,.bds-uptime__pct.bds-na{font-family:var(--font-ui);font-weight:var(--fw-regular);font-variant-numeric:normal;letter-spacing:var(--ls-ui);color:var(--ink-3)}
 /* StatTile delta label is prose, not a number, so no mono (distinct from the missing-value mark) */
 .bds-stat__dl{font-family:var(--font-ui);color:var(--ink-3)}

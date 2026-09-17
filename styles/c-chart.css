@@ -1,9 +1,9 @@
 /* chart: one chrome for every kind (grid, axes, legend, tooltip). Colors: --series-* only. Draw-in animation runs once. */
 .bds-chart{position:relative;display:grid;gap:10px;min-width:0;container-type:inline-size}
-.bds-chart__stage{position:relative;min-width:0;width:100%}
-.bds-chart__svg{display:block;width:100%;height:100%;overflow:visible}
+.bds-chart__stage{position:relative;min-width:0;width:100%;overflow:auto}
+.bds-chart__svg{display:block;max-width:none;overflow:visible}
 .bds-chart__grid{stroke:var(--plot-grid);stroke-width:1;shape-rendering:crispEdges}
-.bds-chart__tick{fill:var(--plot-axis-ink);font-family:var(--font-data);font-size:10.5px;letter-spacing:var(--ls-data);font-variant-numeric:tabular-nums}
+.bds-chart__tick{fill:var(--plot-axis-ink);font-family:var(--font-data);font-size:var(--fs-micro);letter-spacing:var(--ls-data);font-variant-numeric:tabular-nums}
 .bds-chart__cursor{stroke:var(--line-strong);stroke-width:1;stroke-dasharray:3 3}
 .bds-chart__line{fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 .bds-chart--animate .bds-chart__line{stroke-dasharray:var(--draw-len);stroke-dashoffset:var(--draw-len);animation:bds-draw var(--dur-gauge) var(--ease-out) forwards}
@@ -11,22 +11,17 @@
 .bds-chart__bar{transform-box:fill-box;transform-origin:bottom;transition:opacity var(--dur-fast) var(--ease-out)}
 .bds-chart--animate .bds-chart__bar{animation:bds-grow-y var(--dur-gauge) var(--ease-out) both}
 .bds-chart__dot{stroke:var(--panel);stroke-width:2}
-.bds-chart__tip{position:absolute;top:8px;transform:translateX(12px);z-index:2;pointer-events:none;background:var(--panel-2);border:1px solid var(--line);border-radius:var(--radius-ctl);padding:8px 10px;box-shadow:var(--elev-2);min-width:120px;max-width:min(260px,90%);font-size:var(--fs-caption);animation:bds-fade var(--dur-fast) var(--ease-out)}
-.bds-chart__tip--flip{transform:translateX(calc(-100% - 12px))}
+.bds-chart__tip{position:absolute;top:var(--sp-1);z-index:2;pointer-events:auto;overflow:auto;overflow-wrap:anywhere;background:var(--panel-2);border:1px solid var(--line);border-radius:var(--radius-ctl);padding:8px 10px;box-shadow:var(--elev-2);width:max-content;min-width:min(12em,100%);max-width:100%;font-size:var(--fs-caption);animation:bds-fade var(--dur-fast) var(--ease-out)}
 .bds-chart__tip-t{color:var(--ink-3);font-family:var(--font-data);margin-bottom:4px}
 .bds-chart__tip-row{display:flex;align-items:center;gap:6px;justify-content:space-between}
 .bds-chart__tip-row i{width:8px;height:8px;border-radius:2px;flex:none;background:var(--series-color)}
 .bds-chart__tip-row .bds-chart__tip-n{color:var(--ink-2);flex:1;min-width:0}
-.bds-chart__tip-row .bds-chart__tip-v{font-family:var(--font-data);font-variant-numeric:tabular-nums;color:var(--ink)}
+.bds-chart__tip-row .bds-chart__tip-v{min-width:0;overflow-wrap:anywhere;font-family:var(--font-data);font-variant-numeric:tabular-nums;color:var(--ink)}
 .bds-chart__empty{display:grid;place-items:center;min-height:80px;color:var(--ink-3);font-size:var(--fs-caption);border:1px dashed var(--line);border-radius:var(--radius-ctl)}
 .bds-chart__track{stroke:var(--meter-track)}
 .bds-chart__arc{transition:stroke-dashoffset var(--dur-gauge) var(--ease-out)}
-.bds-chart__center{position:absolute;inset:0;display:grid;place-content:center;text-align:center;pointer-events:none;gap:2px}
-.bds-chart__center b{font-family:var(--font-data);font-variant-numeric:tabular-nums;font-weight:var(--fw-bold);color:var(--tone-ink,var(--ink));line-height:1;font-size:min(var(--center-size,22px),var(--fs-metric));letter-spacing:-.02em}
-.bds-chart__center small{font-size:var(--fs-caption);color:var(--ink-3);line-height:1.2}
 .bds-chart__tick--secondary{fill:var(--ink-2)}
 .bds-chart__tick[style]{fill:var(--tick-ink,var(--plot-axis-ink))}
-.bds-chart--radial .bds-chart__center{align-content:center}
 .bds-chart__pieseg{transition:opacity var(--dur-fast) var(--ease-out)}
 .bds-chart--animate .bds-chart__pieseg{animation:bds-fade var(--dur-gauge) var(--ease-out) both}
 .bds-chart__radar-grid{fill:none;stroke:var(--plot-grid);stroke-width:1}
@@ -35,3 +30,11 @@
 .bds-chart--animate .bds-chart__end{animation:bds-fade var(--dur-gauge) var(--ease-out) both}
 .bds-legend--compact{font-size:var(--fs-caption);gap:6px 14px}
 .bds-legend__sw-line{display:block;width:14px;height:8px;flex:none;overflow:visible}
+
+.bds-chart__label{fill:var(--plot-axis-ink);font-family:var(--font-ui);font-size:var(--fs-caption)}
+.bds-chart__label[style]{fill:var(--tick-ink,var(--plot-axis-ink))}
+.bds-chart__notes{display:flex;flex-wrap:wrap;gap:var(--sp-1) var(--sp-3);font:var(--fs-caption)/var(--lh-body) var(--font-ui);color:var(--ink-2);overflow-wrap:anywhere}
+.bds-plot-value{display:grid;grid-template-columns:minmax(0,1fr);place-content:center;gap:var(--sp-1);min-width:0;text-align:center;overflow-wrap:anywhere}
+.bds-plot-value--inside{position:absolute;pointer-events:none}
+.bds-plot-value b{font-family:var(--font-data);font-size:clamp(var(--fs-subheading),var(--value-size,var(--fs-title)),var(--fs-title));font-weight:var(--fw-bold);line-height:var(--lh-snug);color:var(--tone-ink,var(--ink));font-variant-numeric:tabular-nums}
+.bds-plot-value small,.bds-plot-value>span{font-family:var(--font-ui);font-size:var(--fs-caption);line-height:var(--lh-snug);color:var(--ink-3)}

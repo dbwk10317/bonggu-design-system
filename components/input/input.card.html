@@ -8,6 +8,8 @@
 <body class="bds-demo-page"><div id="root"></div>
 <script type="text/babel">
 const NS = window.Ds_d3ea90;
+const { FilterBar } = NS;
+function ExtensionDemo(){const [query,setQuery]=React.useState("");const [filters,setFilters]=React.useState([]);return <FilterBar query={query} onQueryChange={setQuery} filters={filters} onFiltersChange={setFilters} fields={[{key:"status",label:"상태",options:[{value:"ok",label:"정상"},{value:"warn",label:"지연"}]}]} />;}
 const { Field, TextField, TextArea, Select, Checkbox, Switch, SearchField, SegmentedControl, Dropzone, Slider, NumberStepper, ColorInput, Combobox, DateRangePicker, CodeEditor, FileUpload, RadioGroup, DatePicker, TimePicker, MultiSelect, PasswordField, OTPInput, Inline } = NS;
 
 
@@ -68,6 +70,7 @@ function App(){ return <>
   <Basic />
   <Advanced />
   <More />
+<div className="bds-demo-section"><div className="bds-demo-label">FilterBar · 검색과 조건</div><ExtensionDemo /></div>
 </>; }
 ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
 </script></body></html>

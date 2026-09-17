@@ -47,15 +47,15 @@ export default [
       "react-hooks/exhaustive-deps": "error",
       // Only the roles RULE.md "접근성" says must take focus: application (navigation surface for drawn data;
       // without it browse mode steals the arrow keys) and region/log (clipped scroll areas, unreachable without
-      // a mouse). jsx-a11y classes all three as structural, so only this documented set is opened.
-      "jsx-a11y/no-noninteractive-tabindex": ["error", { tags: [], roles: ["tabpanel", "application", "region", "log"] }],
+      // a mouse), plus the keyboard-adjustable separator. jsx-a11y classes these as structural, so only this documented set is opened.
+      "jsx-a11y/no-noninteractive-tabindex": ["error", { tags: [], roles: ["tabpanel", "application", "region", "log", "separator"] }],
     },
   },
   {
     // Navigation surfaces for drawn data: RULE.md "접근성" requires role="application" + tabIndex=0 + a
     // role="status" readout. no-noninteractive-element-interactions can't allow per role (it only takes
-    // handlers), so it is off for these two files only; tests/rule-regressions.cjs checks all three elements exist.
-    files: ["components/data/Chart.jsx", "components/data/Heatmap.jsx"],
+    // handlers), so it is off for the graph surfaces and adjustable separator; tests/rule-regressions.cjs checks all three elements exist.
+    files: ["components/data/Chart.jsx", "components/data/Heatmap.jsx", "components/data/StateTimeline.jsx", "components/layout/SplitPane.jsx"],
     rules: { "jsx-a11y/no-noninteractive-element-interactions": "off" },
   },
   {

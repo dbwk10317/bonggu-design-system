@@ -4,10 +4,10 @@
 const Screen = ({ name, ...p }) => { const C = window[name]; return C ? <C {...p} /> : null; };
 const { SidebarShell, SidebarNavItem, SidebarNavGroup, StatusBar, StatusPill, MascotMark, NotificationTrigger, NotificationDrawer, ToastProvider, IconButton, Button, Badge, Tooltip, Kbd, CommandPalette, PageStack, PageHeader, EmptyState } = window.DS;
 
-const TITLES = { overview: "개요", nodes: "노드", devices: "장치", deploys: "배포", access: "접근", settings: "설정", status: "상태 페이지" };
-const SOURCES = { nodes: "edge-gateway", devices: "device-api", deploys: "artifact-cdn", access: "config-api", settings: "config-api" };
+const TITLES = { explore: "탐색", overview: "개요", nodes: "노드", devices: "장치", deploys: "배포", access: "접근", settings: "설정", status: "상태 페이지" };
+const SOURCES = { explore: "telemetry-api", nodes: "edge-gateway", devices: "device-api", deploys: "artifact-cdn", access: "config-api", settings: "config-api" };
 /** @type {Record<string, ScreenName>} */
-const SCREEN = { overview: "OverviewScreen", nodes: "NodesScreen", devices: "DevicesScreen", deploys: "DeploysScreen", access: "AccessScreen", settings: "SettingsScreen", status: "StatusScreen" };
+const SCREEN = { explore: "ExploreScreen", overview: "OverviewScreen", nodes: "NodesScreen", devices: "DevicesScreen", deploys: "DeploysScreen", access: "AccessScreen", settings: "SettingsScreen", status: "StatusScreen" };
 const go = (id) => { window.location.hash = "#" + id; };
 const EMBEDDED = (() => { try { return window.self !== window.top; } catch { return true; } })();
 
@@ -43,7 +43,7 @@ function App() {
   const nav = (id, icon, badge) => <SidebarNavItem key={id} icon={icon} label={TITLES[id]} href={`#${id}`} active={view === id} badge={badge} />;
   const shell = (
     <SidebarShell brand={{ name: "봉구 엣지 콘솔", sub: "edge.bonggu.me" }}
-      nav={<>{nav("overview", "pulse")}{nav("nodes", "hard-drives", <Badge count={2} tone="warn" />)}<SidebarNavGroup label="운영" />{nav("devices", "devices")}{nav("deploys", "rocket-launch")}<SidebarNavGroup label="계정" />{nav("access", "users-three")}{nav("settings", "gear-six")}<SidebarNavGroup label="링크" />{nav("status", "broadcast")}<SidebarNavItem icon="chart-line-up" label="Grafana" href="https://grafana.example" target="_blank" /></>}
+      nav={<>{nav("overview", "pulse")}{nav("explore", "magnifying-glass")}{nav("nodes", "hard-drives", <Badge count={2} tone="warn" />)}<SidebarNavGroup label="운영" />{nav("devices", "devices")}{nav("deploys", "rocket-launch")}<SidebarNavGroup label="계정" />{nav("access", "users-three")}{nav("settings", "gear-six")}<SidebarNavGroup label="링크" />{nav("status", "broadcast")}<SidebarNavItem icon="chart-line-up" label="Grafana" href="https://grafana.example" target="_blank" /></>}
       footer={<><span className="bds-mono">agent 2.14.0</span> · 봉구 인프라팀</>}
       topbar={<><h1>{TITLES[view] ?? "없는 화면"}</h1><MascotMark face={live ? "worried" : "neutral"} size={26} animated={false} /><StatusPill tone={live ? "warn" : "info"} pulse={live}>{live ? "노드 2대 수집 지연" : SOURCES[view] ?? "알 수 없는 화면"}</StatusPill><span className="bds-shell__spacer" />
         <Tooltip content={<>명령 팔레트 <Kbd>Ctrl</Kbd> <Kbd>K</Kbd></>}><IconButton icon="magnifying-glass" variant="ghost" aria-label="명령 팔레트 열기" className="kit-mobile-hide" onClick={() => setPalette(true)} /></Tooltip>

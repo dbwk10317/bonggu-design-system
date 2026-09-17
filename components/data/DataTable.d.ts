@@ -1,3 +1,4 @@
+/** @responsive */
 import type { HTMLAttributes, Key, ReactNode } from "react";
 export interface DataTableColumn<T> { key: string; header: ReactNode; /** Numeric column: mono, right-aligned */ align?: "num"; sortable?: boolean; width?: number | string; /** Hidden below a 640px (tablet) / 900px (desktop) container width */ hideBelow?: "tablet" | "desktop";
   /**
@@ -5,6 +6,7 @@ export interface DataTableColumn<T> { key: string; header: ReactNode; /** Numeri
    * To show a missing value, omit render and pass null as the value, or return the missing text ("수집 안 됨") itself.
    */
   render?: (row: T, index: number) => ReactNode }
+export interface TableColumnState { key: string; hidden?: boolean; width?: number; pinned?: boolean }
 export interface DataTableSort { key: string; dir: "asc" | "desc" }
 export interface DataTableHeader { title: ReactNode; meta?: ReactNode; id?: string }
 /**
@@ -15,6 +17,11 @@ export interface DataTableHeader { title: ReactNode; meta?: ReactNode; id?: stri
  */
 export interface DataTableProps<T = any> extends Omit<HTMLAttributes<HTMLDivElement>, "children"> {
   columns: DataTableColumn<T>[];
+  /** Entries define order; unknown keys are ignored and new columns are appended. */
+  columnState?: TableColumnState[];
+  onColumnStateChange?: (state: TableColumnState[]) => void;
+  /** Show the accessible column configuration panel. Default false. */
+  columnSettings?: boolean;
   rows: T[];
   rowKey?: (row: T, index: number) => Key;
   rowLabel?: (row: T) => string;
@@ -29,7 +36,7 @@ export interface DataTableProps<T = any> extends Omit<HTMLAttributes<HTMLDivElem
   header?: DataTableHeader;
   empty?: ReactNode;
   /** flex = parent width (default), fixed = width/height */
-  fit?: "flex" | "fixed";
+  fit?: "flex" | "fixed" | "auto";
   width?: number | string;
   /** Table area height when fixed (scrolls internally) */
   height?: number | string;
