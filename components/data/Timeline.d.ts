@@ -4,6 +4,7 @@ export interface TimelineItem { id?: string; /** Timestamp or date-time; wraps w
 /** Time-ordered event list: recent ops changes, lease transitions, training stage history. */
 export interface TimelineProps extends Omit<HTMLAttributes<HTMLOListElement>, "children"> {
   items: TimelineItem[];
+  /** Compact spacing between events. */
   dense?: boolean;
   fit?: "flex" | "fixed" | "auto";
   width?: number | string;

@@ -97,7 +97,12 @@ async function assertVisualizations(page, url) {
           for (const row of host.querySelectorAll('.bds-tl')) {
             const time = row.querySelector('.bds-tl__time'), dot = row.querySelector('.bds-tl__dot'), body = row.querySelector('.bds-tl__body');
             const line = getComputedStyle(row, '::after');
-            if (row.nextElementSibling && Math.abs(parseFloat(line.left) + parseFloat(line.width) / 2 - dot.getBoundingClientRect().width / 2) > 1) problems.push('연결선이 사건 표시의 중심을 벗어납니다');
+            if (row.nextElementSibling) {
+              const probe = document.createElement('span');
+              for (const key of ['gridColumn', 'gridRow', 'justifySelf', 'alignSelf', 'width', 'marginTop', 'marginBottom']) probe.style[key] = line[key];
+              row.append(probe); const a = probe.getBoundingClientRect(), b = dot.getBoundingClientRect(); probe.remove();
+              if (Math.abs((a.left + a.right - b.left - b.right) / 2) > 1) problems.push('연결선이 사건 표시의 중심을 벗어납니다');
+            }
             const ranges = [time, body].map(el => { const range = document.createRange(); range.selectNodeContents(el); return range.getBoundingClientRect(); });
             if (ranges[0].right > dot.getBoundingClientRect().left || ranges[1].left < dot.getBoundingClientRect().right) problems.push('시간·사건 표시·본문이 겹칩니다');
             if (ranges.some(r => r.bottom > row.getBoundingClientRect().bottom + 1)) problems.push('사건 글자가 다음 행을 침범합니다');

@@ -1,5 +1,11 @@
 # @dbwk10317/bonggu-design-system
 
+## 2.0.4
+
+### Patch Changes
+
+- Timeline 연결선을 사건 표시와 같은 그리드 셀에서 정렬해 브라우저별 절대 위치 계산 차이를 제거합니다. 사건 사이 간격은 밀도별 간격 토큰을 사용합니다.
+
 ## 2.0.3
 
 ### Patch Changes
