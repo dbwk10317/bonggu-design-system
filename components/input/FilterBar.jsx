@@ -16,7 +16,12 @@ function FilterBarImpl({ fields = [], filters = [], onFiltersChange, query = "",
   const [draft, setDraft] = useState("");
   const field = fields.find(f => f.key === fieldKey) ?? fields[0];
   const value = field?.options ? (field.options.some(o => o.value === draft) ? draft : field.options[0]?.value ?? "") : draft;
-  const add = () => { if (!field || !value.trim()) return; onFiltersChange?.([...filters, { id: `${uid}-${serial.current++}`, field: field.key, operator, value }]); setDraft(""); };
+  const add = () => {
+    if (!field || !value.trim()) return;
+    let id = "";
+    do { id = `${uid}-${serial.current++}`; } while (filters.some(token => token.id === id));
+    onFiltersChange?.([...filters, { id, field: field.key, operator, value }]); setDraft("");
+  };
   return <div className={cx("bds-filter", className)} style={frameStyle({ fit, width, style })} {...rest}>
     <div className="bds-explore-tools">
       <SearchField ref={el => { search.current = el; assignRef(forwardedRef, el); }} aria-label="검색" shortcut={false} value={query} onChange={onQueryChange ?? (() => {})} />

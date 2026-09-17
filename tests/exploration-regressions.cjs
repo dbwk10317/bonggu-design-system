@@ -49,13 +49,17 @@ async function assertExploration(page, url) {
   // Saving a view must restore filters and column configuration, not just its label.
   await page.evaluate(()=>{
     const D=window.Ds_d3ea90,h=React.createElement;
-    D.__ViewsHarness=function(){const [filters,setFilters]=React.useState([]),[query,setQuery]=React.useState(''),[columns,setColumns]=React.useState([]),[views,setViews]=React.useState([]),[selected,setSelected]=React.useState(null);window.exploreState={filters,query,columns,views};return h(React.Fragment,null,
+    D.__ViewsHarness=function(){const [filters,setFilters]=React.useState([]),[query,setQuery]=React.useState(''),[columns,setColumns]=React.useState([]),[views,setViews]=React.useState([]),[selected,setSelected]=React.useState(null);window.exploreState={filters,query,columns,views};window.replaceFilters=setFilters;return h(React.Fragment,null,
       h(D.FilterBar,{fields:[{key:'status',label:'서비스 상태',options:[{value:'ok',label:'정상'},{value:'warn',label:'응답 지연'}]}],filters,onFiltersChange:setFilters,query,onQueryChange:setQuery}),
       h(D.SavedViews,{items:views,value:{filters,query,columns},selectedId:selected,onSave:(name,value)=>{setViews([...views,{id:name,name,value:structuredClone(value)}]);setSelected(name);},onApply:v=>{setSelected(v.id);setFilters(v.value.filters);setQuery(v.value.query);setColumns(v.value.columns);},onRename:(id,name)=>setViews(views.map(v=>v.id===id?{...v,name}:v)),onDelete:id=>{setViews(views.filter(v=>v.id!==id));setSelected(null);}}),
       h(D.DataTable,{columnSettings:true,columnState:columns,onColumnStateChange:setColumns,columns:[{key:'name',header:'이름'},{key:'cpu',header:'CPU'},{key:'status',header:'상태'}],rows:[{id:1,name:'api',cpu:62,status:'정상'}]}));};ReactDOM.flushSync(()=>mount('__ViewsHarness',{}));
   });
   await page.getByRole('combobox',{name:'필터 값'}).selectOption('warn');await page.getByRole('button',{name:'추가',exact:true}).click();
   assert.equal(await page.locator('.bds-filter__tokens li').count(),1);
+  // A saved filter may already own this instance's next generated ID.
+  await page.evaluate(()=>replaceFilters([{...exploreState.filters[0],id:exploreState.filters[0].id.replace(/-0$/, '-1')}]));
+  await page.getByRole('button',{name:'추가',exact:true}).click();
+  assert.equal(await page.evaluate(()=>new Set(exploreState.filters.map(filter=>filter.id)).size),2,'복원된 필터와 새 조건의 ID가 충돌하면 안 됩니다');
   await page.getByRole('searchbox',{name:'검색',exact:true}).fill('서울');
   await page.getByRole('button',{name:'열 설정',exact:true}).click();
   await page.getByRole('button',{name:'cpu 열 앞으로'}).click();
