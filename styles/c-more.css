@@ -169,7 +169,8 @@ dialog.bds-cmdk__panel::backdrop{background:var(--scrim);animation:bds-fade var(
 .bds-errstate__code{font-family:var(--font-data);font-size:var(--fs-micro);color:var(--ink-3);background:var(--canvas-sunken);border-radius:var(--radius-xs);padding:2px 6px}
 .bds-errstate__a{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
 /* ---- Gauge · TrendDelta · Legend · UptimeBar ---- */
-.bds-gauge{position:relative;display:flex;flex-direction:column;gap:var(--sp-1);min-width:0;overflow:auto}
+.bds-gauge{position:relative;display:flex;flex-direction:column;gap:var(--sp-1);min-width:0}
+.bds-gauge--bounded{overflow:auto}
 .bds-gauge__plot{position:relative;flex:1 1 auto;min-height:0;aspect-ratio:12/7;width:100%}
 .bds-gauge svg{position:absolute;inset:0;display:block;width:100%;height:100%}
 .bds-gauge__track{stroke:var(--meter-track)}.bds-gauge__arc{transition:stroke-dashoffset var(--dur-gauge) var(--ease-out)}

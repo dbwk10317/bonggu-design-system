@@ -3,6 +3,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const visualizationCases = [
+  { name: 'Timeline', props: { items: [{ time: '09. 17. 12:24:22', title: '프로젝트 A 임베딩 모델', detail: '모델 활성화' }, { time: '2026-09-17T12:24:22+09:00', title: 'very-long-model-identifier-without-spaces', detail: '운영변경설명이길어도다음사건을침범하지않습니다' }] } },
   { name: 'StateTimeline', props: { rows: [{ id: 'api', label: '인증 서비스', intervals: [{ id: 'ok', start: 0, end: 60, label: '정상', status: 'ok' }, { id: 'warn', start: 50, end: 80, label: '응답 지연', status: 'warn' }, { id: 'off', start: 80, end: 100, label: '수집 지연', status: 'off' }] }, { id: 'db', label: '데이터베이스', intervals: [{ id: 'ok', start: 0, end: 100, label: '정상', status: 'ok' }] }] } },
   ...['line', 'area', 'bar'].map(kind => ({ name: 'Chart', kind, props: { kind, labels: ['2026-09-17 00:00', '2026-09-17 06:00', '2026-09-17 12:00', '2026-09-17 18:00'], series: [{ label: '수신 처리량', values: [20, 50, 30, 70] }, { label: '송신 처리량', values: [10, 30, 20, 50] }] } })),
   { name: 'Chart', kind: 'pie', props: { kind: 'pie', segments: [{ label: '사용 중인 저장 공간', value: 1234567 }, { label: '예약 공간', value: 345678 }, { label: '수집 지연', value: null }], caption: '전체 저장 공간' } },
@@ -93,6 +94,12 @@ async function assertVisualizations(page, url) {
               }
             }
           }
+          for (const row of host.querySelectorAll('.bds-tl')) {
+            const time = row.querySelector('.bds-tl__time'), dot = row.querySelector('.bds-tl__dot'), body = row.querySelector('.bds-tl__body');
+            const ranges = [time, body].map(el => { const range = document.createRange(); range.selectNodeContents(el); return range.getBoundingClientRect(); });
+            if (ranges[0].right > dot.getBoundingClientRect().left || ranges[1].left < dot.getBoundingClientRect().right) problems.push('시간·사건 표시·본문이 겹칩니다');
+            if (ranges.some(r => r.bottom > row.getBoundingClientRect().bottom + 1)) problems.push('사건 글자가 다음 행을 침범합니다');
+          }
           const gauge = host.querySelector('.bds-gauge');
           if (gauge && gauge.getBoundingClientRect().height > parseFloat(gauge.style.height) + 1) problems.push('Gauge가 지정 높이를 지키지 않습니다');
           return problems;
@@ -102,6 +109,25 @@ async function assertVisualizations(page, url) {
       }
     }
   }
+  // Unbounded gauges in real cards must not acquire scrollbars, including at fractional widths and zoom.
+  for (const zoom of [.875, 1, 1.25, 2]) for (const width of [116, 129.671875, 240]) for (const value of [null, .035, .625]) for (const label of ['정상', '수집 상태와 메모리 사용률']) {
+    await page.evaluate(({ zoom, width, value, label }) => {
+      const host = document.getElementById('app'); host.style.width = `${width}px`; host.style.zoom = zoom;
+      ReactDOM.flushSync(() => mount('Gauge', { value, label, ticks: true }));
+    }, { zoom, width, value, label });
+    await settle(page);
+    assert.deepEqual(await page.evaluate(() => {
+      const g = document.querySelector('.bds-gauge'), box = g.getBoundingClientRect(), issues = [];
+      if (['auto', 'scroll', 'hidden', 'clip'].includes(getComputedStyle(g).overflow)) issues.push('자연 높이 게이지가 내용을 스크롤하거나 가립니다');
+      if (g.scrollWidth > g.clientWidth + 1 || g.scrollHeight > g.clientHeight + 1) issues.push('게이지 내용이 넘칩니다');
+      for (const el of g.querySelectorAll('.bds-plot-value b,.bds-plot-value>span,.bds-gauge__ticks span')) {
+        const range = document.createRange(); range.selectNodeContents(el); const r = range.getBoundingClientRect();
+        if (r.left < box.left - 1 || r.right > box.right + 1 || r.top < box.top - 1 || r.bottom > box.bottom + 1) issues.push('게이지 읽을거리가 경계를 벗어납니다');
+      }
+      return issues;
+    }), [], `자연 높이 Gauge ${width}/${zoom}/${value}`);
+  }
+  await page.evaluate(() => document.getElementById('app').style.zoom = '');
   // Empty-to-collected data must start measurement without a forced remount.
   for (const kind of ['line', 'pie', 'histogram']) {
     await page.evaluate(kind => ReactDOM.flushSync(() => mount('Chart', { kind, labels: [], series: [], segments: [], samples: [], animate: false })), kind);

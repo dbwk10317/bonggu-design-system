@@ -14,7 +14,7 @@ export interface GaugeProps extends HTMLAttributes<HTMLDivElement> {
   ticks?: boolean;
   fit?: "flex" | "fixed" | "auto";
   width?: number | string;
-  /** Total height including the readout and ticks; the plot uses remaining space. */
+  /** Optional total height including the readout and ticks. Omit for intrinsic height without a scroll container. */
   height?: number | string;
 }
 export declare function Gauge(props: GaugeProps): ReactNode;

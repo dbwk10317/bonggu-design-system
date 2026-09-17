@@ -10,6 +10,7 @@ const PlotValue = plotValue;
  * @param {Parameters<typeof import("./Gauge.d.ts").Gauge>[0]} props
  */
 export function Gauge({ value, max = 1, label, unit, valueFormatter, thresholds = { warn: 0.7, crit: 0.9 }, tone, ticks = false, fit = "flex", width, height, className, style, ...rest }) {
+  const frame = frameStyle({ fit, width, height, style });
   const n = numeric(value);
   const r = n == null ? null : Math.max(0, Math.min(1, n / max));
   const t = tone ?? (r == null ? "off" : r >= thresholds.crit ? "crit" : r >= thresholds.warn ? "warn" : "ok");
@@ -21,7 +22,7 @@ export function Gauge({ value, max = 1, label, unit, valueFormatter, thresholds 
   const d = "M " + (cx0 - R) + " " + cy + " A " + R + " " + R + " 0 0 1 " + (cx0 + R) + " " + cy;
   const txt = r == null || n == null ? MISSING_TEXT : valueFormatter ? valueFormatter(n) : Math.round(r * 100) + "%";
   return (
-    <div className={cx("bds-gauge", "bds-gauge--" + t, className)} style={frameStyle({ fit, width, height, style })} role="meter" aria-valuemin={0} aria-valuemax={max} aria-valuenow={r == null ? undefined : (n ?? undefined)} aria-valuetext={txt + (label ? " " + label : "")} {...rest}>
+    <div className={cx("bds-gauge", "bds-gauge--" + t, frame.height != null && "bds-gauge--bounded", className)} style={frame} role="meter" aria-valuemin={0} aria-valuemax={max} aria-valuenow={r == null ? undefined : (n ?? undefined)} aria-valuetext={txt + (label ? " " + label : "")} {...rest}>
       <div ref={ref} className="bds-gauge__plot">
       <svg viewBox={"0 0 " + W + " " + H} aria-hidden="true">
         <path d={d} fill="none" className="bds-gauge__track" strokeWidth={sw} strokeLinecap="round" />

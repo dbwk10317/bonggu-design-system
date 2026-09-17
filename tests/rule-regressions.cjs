@@ -706,6 +706,8 @@ function plotContractViolations() {
       if (!['flex', 'fixed', 'auto'].every((v) => match[1].includes('"' + v + '"'))) violations.push({ file, line: lineOf(src, match.index), detail: 'fit 공개 타입은 flex·fixed·auto를 모두 허용해야 함' });
     }
   }
+  const gaugeCSS = read('styles/c-more.css').match(/\.bds-gauge\{([^}]+)\}/)?.[1] ?? '';
+  if (/overflow\s*:\s*(auto|scroll|hidden|clip)/.test(gaugeCSS)) violations.push({file:'styles/c-more.css',line:1,detail:'자연 높이 Gauge는 스크롤·잘림 없이 내용만큼 성장해야 합니다'});
   const split = read('components/layout/SplitPane.jsx');
   for (const contract of ['role="separator"', 'aria-valuenow=', 'onKeyDown=', 'onPointerDown=']) {
     if (!split.includes(contract)) violations.push({file:'components/layout/SplitPane.jsx',line:1,detail:'분할 경계의 키보드·포인터 크기 계약이 빠졌습니다: '+contract});

@@ -30,8 +30,8 @@ export function usePlotMetrics(ref) {
       const snug = parseFloat(getComputedStyle(probe).lineHeight) / max;
       probe.remove();
       const uiFont = css.getPropertyValue("--font-ui"), dataFont = css.getPropertyValue("--font-data");
-      const rect = el.getBoundingClientRect();
-      setMetrics({ width: rect.width, height: rect.height, micro, caption, min, max, gap, snug,
+      // DOMRect includes zoom/transforms; SVG coordinates and CSS text use layout pixels.
+      setMetrics({ width: parseFloat(css.width) || 0, height: parseFloat(css.height) || 0, micro, caption, min, max, gap, snug,
         measure: (text, ui = false, fontSize = ui ? caption : micro, bold = false) => {
           if (!context) return estWidth(text);
           context.font = `${bold ? 700 : 400} ${fontSize}px ${ui ? uiFont : dataFont}`;
