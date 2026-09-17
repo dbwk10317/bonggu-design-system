@@ -96,6 +96,8 @@ async function assertVisualizations(page, url) {
           }
           for (const row of host.querySelectorAll('.bds-tl')) {
             const time = row.querySelector('.bds-tl__time'), dot = row.querySelector('.bds-tl__dot'), body = row.querySelector('.bds-tl__body');
+            const line = getComputedStyle(row, '::after');
+            if (row.nextElementSibling && Math.abs(parseFloat(line.left) + parseFloat(line.width) / 2 - dot.getBoundingClientRect().width / 2) > 1) problems.push('연결선이 사건 표시의 중심을 벗어납니다');
             const ranges = [time, body].map(el => { const range = document.createRange(); range.selectNodeContents(el); return range.getBoundingClientRect(); });
             if (ranges[0].right > dot.getBoundingClientRect().left || ranges[1].left < dot.getBoundingClientRect().right) problems.push('시간·사건 표시·본문이 겹칩니다');
             if (ranges.some(r => r.bottom > row.getBoundingClientRect().bottom + 1)) problems.push('사건 글자가 다음 행을 침범합니다');
@@ -126,6 +128,26 @@ async function assertVisualizations(page, url) {
       }
       return issues;
     }), [], `자연 높이 Gauge ${width}/${zoom}/${value}`);
+  }
+  await page.evaluate(() => document.getElementById('app').style.zoom = '');
+  for (const zoom of [.875, 1.25, 2]) {
+    await page.evaluate(zoom => {
+      const host = document.getElementById('app'); host.style.width = '320px'; host.style.zoom = zoom;
+      window.zoomResult = null;
+      ReactDOM.flushSync(() => mount('Chart', { kind: 'line', height: 180, animate: false, labels: ['시각 A', '시각 B', '시각 C', '시각 D'], xValues: [0, 1, 2, 3], series: [{ label: '수신', values: [1, 2, 3, 4] }], zoomable: true, range: null, onRangeChange: range => window.zoomResult = range }));
+    }, zoom);
+    await settle(page);
+    const points = await page.locator('.bds-chart__svg').evaluate(svg => {
+      const r = svg.getBoundingClientRect(), grid = svg.querySelector('.bds-chart__grid');
+      const start = Number(grid.getAttribute('x1')), end = Number(grid.getAttribute('x2'));
+      return [0, 1, 2, 3].map(i => ({ x: r.left + (start + (end - start) * i / 3) * r.width / svg.viewBox.baseVal.width, y: r.top + r.height / 2 }));
+    });
+    for (let i = 0; i < points.length; i++) {
+      await page.mouse.move(points[i].x, points[i].y); await settle(page);
+      assert((await page.locator('.bds-chart__tip').innerText()).includes(`시각 ${'ABCD'[i]}`), `확대된 차트 포인터 ${zoom}/${i}`);
+    }
+    await page.mouse.move(points[1].x, points[1].y); await page.mouse.down(); await page.mouse.move(points[2].x, points[2].y); await page.mouse.up(); await settle(page);
+    assert.deepEqual(await page.evaluate(() => window.zoomResult), [1, 2], `확대된 차트 구간 선택 ${zoom}`);
   }
   await page.evaluate(() => document.getElementById('app').style.zoom = '');
   // Empty-to-collected data must start measurement without a forced remount.

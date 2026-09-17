@@ -61,7 +61,7 @@
 .bds-tl{display:grid;grid-column:1/-1;grid-template-columns:subgrid;align-items:start;position:relative;padding-bottom:14px}
 .bds-timeline--dense .bds-tl{padding-bottom:8px}
 .bds-tl:last-child{padding-bottom:0}
-.bds-tl:not(:last-child)::after{content:"";position:absolute;grid-column:2;left:calc(50% - .5px);top:16px;bottom:-1px;width:1px;background:var(--line)}
+.bds-tl:not(:last-child)::after{content:"";position:absolute;grid-column:2/3;left:calc(50% - .5px);top:16px;bottom:-1px;width:1px;background:var(--line)}
 .bds-tl__time{font-size:var(--fs-caption);color:var(--ink-3);text-align:right;padding-top:2px;letter-spacing:var(--ls-data);min-width:0;white-space:normal;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
 .bds-tl__dot{width:12px;height:12px;border-radius:50%;background:var(--neutral);display:grid;place-items:center;color:var(--ink-inverse);margin-top:3px;position:relative;z-index:1}
 .bds-tl.bds-tone--ok .bds-tl__dot{background:var(--ok)}.bds-tl.bds-tone--warn .bds-tl__dot{background:var(--warn)}.bds-tl.bds-tone--crit .bds-tl__dot{background:var(--crit)}.bds-tl.bds-tone--info .bds-tl__dot{background:var(--info)}.bds-tl.bds-tone--accent .bds-tl__dot{background:var(--signal)}

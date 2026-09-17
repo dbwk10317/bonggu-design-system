@@ -38,6 +38,7 @@ export interface CartesianChartProps extends ChartBase {
   labels: string[];
   /** Strictly increasing finite data coordinates, one per label. Required for linked cursor, events and zoom. */
   xValues?: number[];
+  /** Selected data coordinate, independent of display scale. */
   hoverValue?: number | null;
   onHoverValueChange?: (value: number | null) => void;
   zoomable?: boolean;

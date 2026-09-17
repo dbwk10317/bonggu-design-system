@@ -31,3 +31,5 @@ Chart · 모든 차트는 이 하나로. kind가 표현을 정하고 격자·축
   hoverValue={cursor} onHoverValueChange={setCursor} range={range} onRangeChange={setRange}
   events={[{id:"deploy",value:deployTime,label:"서비스 배포"}]} />
 ```
+
+차트 컨테이너에 확대 배율이 적용된 경우에도 포인터와 구간 선택은 같은 데이터 좌표를 사용합니다.
